@@ -1,0 +1,49 @@
+{
+  "name": "overload-series-fantasy",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "lint": "eslint .",
+    "sync:challenge": "node scripts/syncChallengeData.mjs",
+    "sync:challenge:watch": "node scripts/watchChallenge.mjs",
+    "cap:sync": "npm run build && cap sync",
+    "android:apk": "npm run cap:sync && cd android && gradlew.bat assembleDebug",
+    "mobile:assets": "capacitor-assets generate --android --ios"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.3.4",
+    "@capacitor/cli": "^8.3.4",
+    "@capacitor/core": "^8.3.4",
+    "@capacitor/ios": "^8.3.4",
+    "@supabase/supabase-js": "^2.49.8",
+    "@vitejs/plugin-react": "^5.0.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.12.1",
+    "lucide-react": "^0.511.0",
+    "pg": "^8.16.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@eslint/js": "^9.27.0",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.27.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.1.0",
+    "postcss": "^8.5.3",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.32.1",
+    "vite": "^6.3.5"
+  }
+}

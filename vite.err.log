@@ -1,0 +1,143 @@
+[2m10:25:00[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/data/scoringRules.ts (resolved id: C:/Users/pablo/Documents/Fantasy/src/data/scoringRules.ts) in C:/Users/pablo/Documents/Fantasy/src/store/fantasyStore.tsx. Does the file exist?
+[2m10:25:00[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/data/scoringRules.ts (resolved id: C:/Users/pablo/Documents/Fantasy/src/data/scoringRules.ts) in C:/Users/pablo/Documents/Fantasy/src/store/fantasyStore.tsx. Does the file exist?
+[2m10:25:00[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/data/scoringRules.ts (resolved id: C:/Users/pablo/Documents/Fantasy/src/data/scoringRules.ts) in C:/Users/pablo/Documents/Fantasy/src/store/fantasyStore.tsx. Does the file exist?
+[2m10:25:00[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/data/scoringRules.ts (resolved id: C:/Users/pablo/Documents/Fantasy/src/data/scoringRules.ts) in C:/Users/pablo/Documents/Fantasy/src/store/fantasyStore.tsx. Does the file exist?
+[2m10:26:02[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/utils/calculatePoints.ts (resolved id: C:/Users/pablo/Documents/Fantasy/src/utils/calculatePoints.ts) in C:/Users/pablo/Documents/Fantasy/src/store/fantasyStore.tsx. Does the file exist?
+[2m10:26:02[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/utils/calculatePoints.ts (resolved id: C:/Users/pablo/Documents/Fantasy/src/utils/calculatePoints.ts) in C:/Users/pablo/Documents/Fantasy/src/store/fantasyStore.tsx. Does the file exist?
+[2m10:26:02[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/utils/calculatePoints.ts (resolved id: C:/Users/pablo/Documents/Fantasy/src/utils/calculatePoints.ts) in C:/Users/pablo/Documents/Fantasy/src/store/fantasyStore.tsx. Does the file exist?
+[2m10:26:02[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/utils/calculatePoints.ts (resolved id: C:/Users/pablo/Documents/Fantasy/src/utils/calculatePoints.ts) in C:/Users/pablo/Documents/Fantasy/src/store/fantasyStore.tsx. Does the file exist?
+[2m10:26:02[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to load url /src/utils/calculatePoints.ts (resolved id: C:/Users/pablo/Documents/Fantasy/src/utils/calculatePoints.ts) in C:/Users/pablo/Documents/Fantasy/src/store/fantasyStore.tsx. Does the file exist?
+[2m15:56:18[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\pablo\Documents\Fantasy\src\components\layout\AppShell.tsx: Expected corresponding JSX closing tag for <div>. (95:6)
+
+[0m [90m 93 |[31m           [33m<[31m[33m/[31m[33mdiv[31m[33m>[31m
+ [90m 94 |[31m         [33m<[31m[33m/[31m[33mdiv[31m[33m>[31m
+[31m[1m>[22m[31m[90m 95 |[31m       [33m<[31m[33m/[31m[33maside[31m[33m>[31m
+ [90m    |[31m       [31m[1m^[22m[31m
+ [90m 96 |[31m
+ [90m 97 |[31m       [33m<[31m[33mmain[31m className[33m=[31m[32m"lg:pl-72"[31m[33m>[31m
+ [90m 98 |[31m         [33m<[31m[33mheader[31m className[33m=[31m[32m"sticky top-0 z-20 border-b border-white/10 bg-[#080d1b]/82 backdrop-blur-xl"[31m[33m>[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/pablo/Documents/Fantasy/src/components/layout/AppShell.tsx[39m:95:6
+[33m  93 |            </div>
+  94 |          </div>
+  95 |        </aside>
+     |        ^
+  96 |  
+  97 |        <main className="lg:pl-72">[39m
+      at constructor (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:6616:19)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:4739:16)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElement (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:4761:17)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:4771:19)
+      at TypeScriptParserMixin.parseExprSubscripts (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10848:21)
+      at C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:9792:39
+      at TypeScriptParserMixin.tryParse (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:6924:20)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:9792:18)
+      at C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10817:39
+      at TypeScriptParserMixin.allowInAnd (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:12443:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10817:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:12510:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11692:28)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11348:23)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:4776:20)
+      at TypeScriptParserMixin.parseExprSubscripts (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10848:21)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:9803:20)
+      at TypeScriptParserMixin.parseExpressionBase (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10801:23)
+      at C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10797:39
+      at TypeScriptParserMixin.allowInAnd (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:12438:16)
+      at TypeScriptParserMixin.parseExpression (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10797:17)
+      at TypeScriptParserMixin.parseReturnStatement (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:13159:28)
+      at TypeScriptParserMixin.parseStatementContent (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:12815:21)
+      at TypeScriptParserMixin.parseStatementContent (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:9525:18)
+      at TypeScriptParserMixin.parseStatementLike (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:12784:17)
+      at TypeScriptParserMixin.parseStatementListItem (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:12764:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:13333:61)
+      at TypeScriptParserMixin.parseBlockBody (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:13326:10)
+      at TypeScriptParserMixin.parseBlock (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:13314:10)
+      at TypeScriptParserMixin.parseFunctionBody (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:12117:24)
+      at TypeScriptParserMixin.parseArrowExpression (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:12092:10)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11704:12)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11348:23)
+[2m15:56:18[22m [31m[1m[vite][22m[39m [31mInternal server error: C:\Users\pablo\Documents\Fantasy\src\components\layout\AppShell.tsx: Expected corresponding JSX closing tag for <div>. (95:6)
+
+[0m [90m 93 |[31m           [33m<[31m[33m/[31m[33mdiv[31m[33m>[31m
+ [90m 94 |[31m         [33m<[31m[33m/[31m[33mdiv[31m[33m>[31m
+[31m[1m>[22m[31m[90m 95 |[31m       [33m<[31m[33m/[31m[33maside[31m[33m>[31m
+ [90m    |[31m       [31m[1m^[22m[31m
+ [90m 96 |[31m
+ [90m 97 |[31m       [33m<[31m[33mmain[31m className[33m=[31m[32m"lg:pl-72"[31m[33m>[31m
+ [90m 98 |[31m         [33m<[31m[33mheader[31m className[33m=[31m[32m"sticky top-0 z-20 border-b border-white/10 bg-[#080d1b]/82 backdrop-blur-xl"[31m[33m>[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mC:/Users/pablo/Documents/Fantasy/src/components/layout/AppShell.tsx[39m:95:6
+[33m  93 |            </div>
+  94 |          </div>
+  95 |        </aside>
+     |        ^
+  96 |  
+  97 |        <main className="lg:pl-72">[39m
+      at constructor (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:365:19)
+      at TypeScriptParserMixin.raise (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:6616:19)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:4739:16)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElementAt (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:4710:32)
+      at TypeScriptParserMixin.jsxParseElement (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:4761:17)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:4771:19)
+      at TypeScriptParserMixin.parseExprSubscripts (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10848:21)
+      at C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:9792:39
+      at TypeScriptParserMixin.tryParse (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:6924:20)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:9792:18)
+      at C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10817:39
+      at TypeScriptParserMixin.allowInAnd (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:12443:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10817:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:12510:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11692:28)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11348:23)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:4776:20)
+      at TypeScriptParserMixin.parseExprSubscripts (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10848:21)
+      at TypeScriptParserMixin.parseMaybeAssign (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:9803:20)
+      at TypeScriptParserMixin.parseExpressionBase (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10801:23)
+      at C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10797:39
+      at TypeScriptParserMixin.allowInAnd (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:12438:16)
+      at TypeScriptParserMixin.parseExpression (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:10797:17)
+      at TypeScriptParserMixin.parseReturnStatement (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:13159:28)
+      at TypeScriptParserMixin.parseStatementContent (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:12815:21)
+      at TypeScriptParserMixin.parseStatementContent (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:9525:18)
+      at TypeScriptParserMixin.parseStatementLike (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:12784:17)
+      at TypeScriptParserMixin.parseStatementListItem (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:12764:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:13333:61)
+      at TypeScriptParserMixin.parseBlockBody (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:13326:10)
+      at TypeScriptParserMixin.parseBlock (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:13314:10)
+      at TypeScriptParserMixin.parseFunctionBody (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:12117:24)
+      at TypeScriptParserMixin.parseArrowExpression (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:12092:10)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11704:12)
+      at TypeScriptParserMixin.parseExprAtom (C:\Users\pablo\Documents\Fantasy\node_modules\@babel\parser\lib\index.js:11348:23)

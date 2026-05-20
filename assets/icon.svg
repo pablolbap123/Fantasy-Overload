@@ -1,0 +1,20 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="42%" cy="18%" r="85%">
+      <stop offset="0" stop-color="#141a2f"/>
+      <stop offset="1" stop-color="#05070f"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="170" y1="150" x2="830" y2="820">
+      <stop offset="0" stop-color="#ffe08a"/>
+      <stop offset="0.45" stop-color="#f5bd43"/>
+      <stop offset="1" stop-color="#b87918"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="28" stdDeviation="28" flood-color="#000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" rx="220" fill="url(#bg)"/>
+  <circle cx="512" cy="356" r="192" fill="none" stroke="url(#gold)" stroke-width="74" filter="url(#shadow)"/>
+  <path d="M650 182 374 522h134L374 810 704 430H561z" fill="url(#gold)" filter="url(#shadow)"/>
+  <text x="512" y="824" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-size="132" font-weight="900" fill="#fff" letter-spacing="1">FANTASY</text>
+</svg>
