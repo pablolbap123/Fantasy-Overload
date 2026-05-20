@@ -9,6 +9,7 @@
     "preview": "vite preview --host 0.0.0.0",
     "lint": "eslint .",
     "sync:challenge": "node scripts/syncChallengeData.mjs",
+    "sync:challenge:apply": "node scripts/applyChallengeSnapshot.mjs",
     "sync:challenge:watch": "node scripts/watchChallenge.mjs",
     "cap:sync": "npm run build && cap sync",
     "android:apk": "npm run cap:sync && cd android && gradlew.bat assembleDebug",

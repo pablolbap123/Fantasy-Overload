@@ -1,11 +1,11 @@
-import { BarChart3, CalendarDays, Home, LineChart, LogOut, RefreshCw, Settings, Shield, Store, Trophy, Users, Wifi } from "lucide-react";
-import { NavLink, Outlet, useNavigate, useParams } from "react-router-dom";
+import { BarChart3, CalendarDays, Home, LogOut, RefreshCw, Shield, Store, Trophy, Users, Wifi } from "lucide-react";
 import { clsx } from "clsx";
-import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { useFantasy } from "../../store/fantasyStore";
+import { useEffect, useState } from "react";
+import { NavLink, Outlet, useNavigate, useParams } from "react-router-dom";
 import { LeagueIntroOverlay } from "../fantasy/LeagueIntroOverlay";
 import { Button } from "../ui/Button";
+import { useFantasy } from "../../store/fantasyStore";
 import { formatDate } from "../../utils/formatters";
 
 const navItems = [
@@ -16,8 +16,6 @@ const navItems = [
   { label: "Ranking", to: "standings", icon: Trophy },
   { label: "Stats", to: "stats", icon: BarChart3 },
   { label: "Miembros", to: "members", icon: Users },
-  { label: "Admin", to: "admin", icon: LineChart },
-  { label: "Ajustes", to: "settings", icon: Settings },
 ];
 
 const navClass = ({ isActive }: { isActive: boolean }) =>
@@ -40,8 +38,20 @@ const syncTone = (status?: string) =>
 
 export const AppShell = () => {
   const { leagueId } = useParams();
-  const { currentLeague, selectLeague, profile, signOut, demoMode, onlineReady, players, leaguePlayers, userId, challengeSyncStatus } = useFantasy();
+  const {
+    currentLeague,
+    selectLeague,
+    profile,
+    signOut,
+    onlineReady,
+    players,
+    leaguePlayers,
+    userId,
+    challengeSyncStatus,
+    requestChallengeSync,
+  } = useFantasy();
   const navigate = useNavigate();
+  const [syncing, setSyncing] = useState(false);
 
   useEffect(() => {
     if (leagueId && leagueId !== currentLeague?.id) void selectLeague(leagueId);
@@ -50,6 +60,17 @@ export const AppShell = () => {
   const liveStatus = challengeSyncStatus?.status ?? (onlineReady ? "idle" : undefined);
   const liveMessage = challengeSyncStatus?.message ?? (onlineReady ? "Esperando watcher de Challenge." : "Solo disponible en modo online.");
   const liveChecked = challengeSyncStatus?.lastCheckedAt ? formatDate(challengeSyncStatus.lastCheckedAt) : "Pendiente";
+
+  const syncChallenge = async () => {
+    setSyncing(true);
+    try {
+      await requestChallengeSync();
+    } catch (error) {
+      window.alert(error instanceof Error ? error.message : "No se pudo pedir la actualizacion de Challenge.");
+    } finally {
+      setSyncing(false);
+    }
+  };
 
   return (
     <div className="min-h-screen pb-24 lg:pb-0">
@@ -80,24 +101,34 @@ export const AppShell = () => {
             </div>
             <p className="mt-1 line-clamp-2 text-[11px] font-semibold opacity-90">{liveMessage}</p>
             <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.08em] opacity-70">Ultima comprobacion: {liveChecked}</p>
+            <Button
+              variant="secondary"
+              className="mt-3 min-h-9 w-full px-3 text-xs"
+              icon={<RefreshCw className="h-3.5 w-3.5" />}
+              loading={syncing}
+              disabled={!onlineReady}
+              onClick={() => void syncChallenge()}
+            >
+              Actualizar Challenge
+            </Button>
           </div>
           <div className="rounded-lg border border-white/10 bg-[#202a43]/85 p-3">
             <div className="flex items-center justify-between gap-3">
-            <div className="min-w-0">
-              <div className="truncate text-sm font-semibold text-white">{profile?.username ?? "Manager"}</div>
-              <div className="text-xs text-slate-400">{onlineReady ? "Online realtime" : demoMode ? "Modo demo" : "Sin sesión"}</div>
+              <div className="min-w-0">
+                <div className="truncate text-sm font-semibold text-white">{profile?.username ?? "Manager"}</div>
+                <div className="text-xs text-slate-400">{onlineReady ? "Online realtime" : "Sin sesion"}</div>
+              </div>
+              <Button variant="ghost" className="min-h-9 px-2" aria-label="Cerrar sesion" onClick={() => void signOut()}>
+                <LogOut className="h-4 w-4" />
+              </Button>
             </div>
-            <Button variant="ghost" className="min-h-9 px-2" aria-label="Cerrar sesión" onClick={() => void signOut()}>
-              <LogOut className="h-4 w-4" />
-            </Button>
-          </div>
           </div>
         </div>
       </aside>
 
       <main className="lg:pl-72">
-        <header className="sticky top-0 z-20 border-b border-white/10 bg-[#080d1b]/82 backdrop-blur-xl">
-          <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3">
+        <header className="safe-top-header sticky top-0 z-20 border-b border-white/10 bg-[#080d1b]/82 backdrop-blur-xl">
+          <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 pb-3 pt-1 lg:py-3">
             <button className="flex min-w-0 items-center gap-3 text-left lg:hidden" onClick={() => navigate("/leagues")}>
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-black text-sm font-black text-[#f5bd43] ring-1 ring-[#f5bd43]/35">
                 O
@@ -108,8 +139,8 @@ export const AppShell = () => {
               </div>
             </button>
             <div className="hidden min-w-0 lg:block">
-              <h1 className="truncate text-xl font-black text-white">{currentLeague?.name ?? "Overload Series Simulación"}</h1>
-              <p className="text-sm text-slate-400">Código: {currentLeague?.inviteCode ?? "----"}</p>
+              <h1 className="truncate text-xl font-black text-white">{currentLeague?.name ?? "Overload Series Simulacion"}</h1>
+              <p className="text-sm text-slate-400">Codigo: {currentLeague?.inviteCode ?? "----"}</p>
             </div>
             <div className="flex items-center gap-2">
               <div className={clsx("flex h-10 w-10 items-center justify-center rounded-lg sm:hidden", syncTone(liveStatus))} title={liveMessage}>
@@ -119,6 +150,16 @@ export const AppShell = () => {
                 {liveStatus === "checking" ? <RefreshCw className="h-3.5 w-3.5 animate-spin" /> : <Wifi className="h-3.5 w-3.5" />}
                 <span>Challenge live</span>
               </div>
+              <Button
+                variant="secondary"
+                className="hidden min-h-10 px-3 sm:inline-flex"
+                icon={<RefreshCw className="h-4 w-4" />}
+                loading={syncing}
+                disabled={!onlineReady}
+                onClick={() => void syncChallenge()}
+              >
+                Actualizar
+              </Button>
               <Button variant="secondary" className="hidden sm:inline-flex" onClick={() => navigate("/leagues")}>
                 Mis ligas
               </Button>
@@ -139,20 +180,20 @@ export const AppShell = () => {
       </main>
 
       <nav className="safe-bottom fixed bottom-0 left-0 right-0 z-40 border-t border-white/10 bg-[#080d1b]/92 px-2 pt-2 backdrop-blur-xl lg:hidden">
-        <div className="mx-auto grid max-w-lg grid-cols-5 gap-1">
-          {navItems.slice(0, 5).map((item) => (
+        <div className="mx-auto grid max-w-2xl grid-cols-7 gap-0.5">
+          {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={`/league/${leagueId}/${item.to}`}
               className={({ isActive }) =>
                 clsx(
-                  "flex flex-col items-center justify-center rounded-lg px-1 py-2 text-[11px] font-bold transition",
+                  "flex min-w-0 flex-col items-center justify-center rounded-lg px-0.5 py-1.5 text-[10px] font-bold leading-tight transition",
                   isActive ? "bg-gradient-to-r from-[#ff3f55] to-[#f5bd43] text-white" : "text-slate-400",
                 )
               }
             >
-              <item.icon className="mb-1 h-5 w-5" />
-              {item.label}
+              <item.icon className="mb-1 h-4 w-4" />
+              <span className="max-w-full truncate">{item.label}</span>
             </NavLink>
           ))}
         </div>

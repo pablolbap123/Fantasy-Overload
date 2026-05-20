@@ -1,18 +1,18 @@
-import { Crown, UserMinus } from "lucide-react";
+import { Crown } from "lucide-react";
 import { InviteLeagueCard } from "../components/fantasy/InviteLeagueCard";
 import { Card } from "../components/ui/Card";
 import { useFantasy } from "../store/fantasyStore";
 import { formatMoney } from "../utils/formatters";
 
 export const MembersPage = () => {
-  const { currentLeague, members, userId } = useFantasy();
-  const me = members.find((member) => member.userId === userId);
+  const { currentLeague, members } = useFantasy();
+  const ownerId = currentLeague?.ownerId;
 
   return (
     <div className="space-y-5">
       <div>
         <h1 className="text-2xl font-black text-white">Miembros</h1>
-        <p className="mt-1 text-sm text-slate-400">Presupuestos, puntos y roles de la liga.</p>
+        <p className="mt-1 text-sm text-slate-400">Presupuestos y puntos reales de la liga.</p>
       </div>
       <InviteLeagueCard league={currentLeague} />
       <div className="grid gap-3 lg:grid-cols-2">
@@ -30,12 +30,11 @@ export const MembersPage = () => {
                 <div className="min-w-0">
                   <div className="flex items-center gap-2">
                     <h2 className="truncate text-base font-black text-white">{member.username}</h2>
-                    {member.role === "admin" ? <Crown className="h-4 w-4 text-turbo-gold" /> : null}
+                    {member.userId === ownerId ? <Crown className="h-4 w-4 text-turbo-gold" /> : null}
                   </div>
-                  <p className="text-xs text-slate-400">{member.role === "admin" ? "Administrador" : "Miembro"}</p>
+                  <p className="text-xs text-slate-400">{member.userId === ownerId ? "Creador de la liga" : "Miembro"}</p>
                 </div>
               </div>
-              {me?.role === "admin" && member.userId !== userId ? <UserMinus className="h-4 w-4 text-slate-500" /> : null}
             </div>
             <div className="mt-4 grid grid-cols-3 gap-2 text-center">
               <div className="rounded-xl bg-white/[0.04] p-2">

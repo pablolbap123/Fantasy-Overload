@@ -251,13 +251,13 @@ const priceFor = (team, position, totalPoints, stats, seed) => {
 
 const readInitialState = async (url) => {
   let response;
-  for (let attempt = 0; attempt < 5; attempt += 1) {
+  for (let attempt = 0; attempt < 8; attempt += 1) {
     response = await fetch(url);
     if (response.ok) break;
-    if (response.status !== 429 || attempt === 4) {
+    if (response.status !== 429 || attempt === 7) {
       throw new Error(`Challenge responded ${response.status} for ${url}`);
     }
-    await new Promise((resolve) => setTimeout(resolve, 1500 + attempt * 1500));
+    await new Promise((resolve) => setTimeout(resolve, 2500 + attempt * 2500));
   }
   const html = await response.text();
   const marker = "window.__INITIAL_STATE__=";
@@ -318,7 +318,7 @@ for (const player of rawPlayers) {
 }
 const stageStatsByPlayerId = new Map();
 
-await mapLimit(teams, 3, async (team) => {
+await mapLimit(teams, 4, async (team) => {
   const teamState = await readInitialState(`${challengeUrl}/competitor/${team.challengeId}`);
   const teamRoom = Object.values(teamState.rooms)[0];
   for (const player of Object.values(teamRoom?.players ?? {})) {
@@ -461,7 +461,7 @@ const buildMatchEvents = (matchRoom, matchId) =>
 
 const rounds = Object.values(stageRoom.rounds).sort((a, b) => Number(a.order ?? 0) - Number(b.order ?? 0));
 await mapLimit(rounds, 1, async (round) => {
-  const matchStates = await mapLimit(round.seriesIds ?? [], 2, async (seriesId) => {
+  const matchStates = await mapLimit(round.seriesIds ?? [], 3, async (seriesId) => {
     const matchChallengeId = matchIdFromSeriesId(seriesId);
     return readInitialState(`${challengeUrl}/match/${matchChallengeId}`);
   });
@@ -502,6 +502,10 @@ await mapLimit(rounds, 1, async (round) => {
         matchStatsByPlayer.set(stat.playerId, aggregate);
       }
 
+      const timestamp = Number(matchRoom.timestamp);
+      const stableFallbackTime = Date.UTC(2026, 0, 1, 12, 0, 0) + (matchdayNumber * 100 + Number(matchRoom.order ?? 0)) * 60_000;
+      const playedAt = Number.isFinite(timestamp) && timestamp > 0 ? new Date(timestamp).toISOString() : new Date(stableFallbackTime).toISOString();
+
       return {
         id: matchId,
         challengeId: matchChallengeId,
@@ -515,7 +519,7 @@ await mapLimit(rounds, 1, async (round) => {
         homeScore,
         awayScore,
         status: "finalizada",
-        playedAt: new Date(Number(matchRoom.timestamp ?? Date.now())).toISOString(),
+        playedAt,
         events: buildMatchEvents(matchRoom, matchId),
         playerStats,
       };

@@ -1,24 +1,20 @@
-import { Eye, Plus, Share2, Trash2, Trophy } from "lucide-react";
+import { Plus, Share2, Trash2, Trophy } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
 import { EmptyState } from "../components/ui/EmptyState";
+import { ChallengeSyncButton } from "../components/fantasy/ChallengeSyncButton";
 import { useFantasy } from "../store/fantasyStore";
 import { formatMoney } from "../utils/formatters";
 
 export const LeagueSelectPage = () => {
-  const { leagues, selectLeague, members, demoMode, onlineReady, enterDemoMode, deleteLeague, userId } = useFantasy();
+  const { leagues, selectLeague, members, onlineReady, deleteLeague, userId } = useFantasy();
   const navigate = useNavigate();
 
   const openLeague = async (leagueId: string) => {
     await selectLeague(leagueId);
     navigate(`/league/${leagueId}/home`);
-  };
-
-  const openPreview = () => {
-    enterDemoMode();
-    window.setTimeout(() => navigate("/league/league-demo/home"), 0);
   };
 
   const removeLeague = async (leagueId: string, leagueName: string) => {
@@ -33,14 +29,10 @@ export const LeagueSelectPage = () => {
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
           <div>
             <h1 className="text-3xl font-black text-white">Mis ligas fantasy</h1>
-            <p className="mt-1 text-sm text-slate-400">
-              {onlineReady ? "Conectado a Supabase Realtime." : demoMode ? "Modo demo para revisar la experiencia." : "Inicia sesión para jugar online."}
-            </p>
+            <p className="mt-1 text-sm text-slate-400">{onlineReady ? "Conectado a Supabase Realtime." : "Inicia sesion para jugar online."}</p>
           </div>
-          <div className="flex gap-2">
-            <Button variant="secondary" icon={<Eye className="h-4 w-4" />} onClick={openPreview}>
-              Ver menú
-            </Button>
+          <div className="flex flex-wrap gap-2">
+            <ChallengeSyncButton className="w-full sm:w-auto" label="Actualizar Challenge" compact />
             <Button icon={<Plus className="h-4 w-4" />} onClick={() => navigate("/leagues/create")}>
               Crear
             </Button>
@@ -53,15 +45,13 @@ export const LeagueSelectPage = () => {
         {leagues.length === 0 ? (
           <div className="mt-8">
             <EmptyState
-              title="Todavía no tienes ligas"
-              description="Puedes abrir una vista previa completa del fantasy o crear una liga privada cuando Supabase esté listo."
+              title="Todavia no tienes ligas"
+              description="Crea una liga privada online o unete con el codigo de invitacion de tus amigos."
               action={
                 <div className="flex flex-wrap justify-center gap-2">
-                  <Button icon={<Eye className="h-4 w-4" />} onClick={openPreview}>
-                    Ver menú demo
-                  </Button>
-                  <Button variant="secondary" onClick={() => navigate("/leagues/create")}>
-                    Crear liga real
+                  <Button onClick={() => navigate("/leagues/create")}>Crear liga</Button>
+                  <Button variant="secondary" onClick={() => navigate("/leagues/join")}>
+                    Unirme con codigo
                   </Button>
                 </div>
               }
@@ -83,16 +73,16 @@ export const LeagueSelectPage = () => {
                   <Card className="h-full border-emerald-300/20 transition hover:-translate-y-0.5 hover:border-emerald-300/35">
                     <button className="block w-full text-left" onClick={() => void openLeague(league.id)}>
                       <div className="flex items-start justify-between gap-3 rounded-lg border border-emerald-300/10 bg-emerald-300/10 p-3">
-                      <div>
-                        <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-300 via-sky-300 to-turbo-gold text-lg font-black text-slate-950">
-                          <Trophy className="h-6 w-6" />
+                        <div>
+                          <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-300 via-sky-300 to-turbo-gold text-lg font-black text-slate-950">
+                            <Trophy className="h-6 w-6" />
+                          </div>
+                          <h2 className="text-lg font-black text-white">{league.name}</h2>
+                          <p className="mt-1 text-sm font-semibold text-emerald-100">Codigo {league.inviteCode}</p>
                         </div>
-                        <h2 className="text-lg font-black text-white">{league.name}</h2>
-                        <p className="mt-1 text-sm font-semibold text-emerald-100">Codigo {league.inviteCode}</p>
-                      </div>
-                      <span className="rounded-full border border-turbo-gold/30 bg-turbo-gold/10 px-3 py-1 text-xs font-black text-turbo-gold">
-                        J{league.currentMatchday}
-                      </span>
+                        <span className="rounded-full border border-turbo-gold/30 bg-turbo-gold/10 px-3 py-1 text-xs font-black text-turbo-gold">
+                          J{league.currentMatchday}
+                        </span>
                       </div>
                     </button>
                     <div className="mt-4 grid grid-cols-3 gap-2 text-center">
@@ -102,10 +92,10 @@ export const LeagueSelectPage = () => {
                       </div>
                       <div className="rounded-lg border border-emerald-300/10 bg-slate-950/45 p-2">
                         <div className="font-black text-white">{league.maxMembers}</div>
-                        <div className="text-xs text-slate-500">Máx.</div>
+                        <div className="text-xs text-slate-500">Max.</div>
                       </div>
                       <div className="rounded-lg border border-emerald-300/10 bg-slate-950/45 p-2">
-                        <div className="font-black text-white">{formatMoney(league.initialBudget).replace("€", "")}</div>
+                        <div className="font-black text-white">{formatMoney(league.initialBudget).replace("EUR", "").replace("€", "")}</div>
                         <div className="text-xs text-slate-500">Inicio</div>
                       </div>
                     </div>

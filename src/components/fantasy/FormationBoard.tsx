@@ -27,16 +27,16 @@ export const FormationBoard = ({ formation, players, starterIds, onPlayerClick, 
   ] as Player[][];
 
   return (
-    <div className="relative overflow-hidden rounded-lg border border-emerald-300/20 bg-emerald-950/35 p-3 shadow-2xl shadow-black/25">
+    <div className="relative max-w-full overflow-hidden rounded-lg border border-emerald-300/20 bg-emerald-950/35 p-2 shadow-2xl shadow-black/25 sm:p-3">
       <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(90deg,transparent_49%,rgba(255,255,255,.35)_50%,transparent_51%),linear-gradient(0deg,rgba(255,255,255,.12)_1px,transparent_1px)] [background-size:100%_100%,100%_24%]" />
-      <div className="relative z-10 space-y-5 py-2">
+      <div className="relative z-10 space-y-4 py-2 sm:space-y-5">
         {rows.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex min-h-16 items-center justify-center gap-2">
+          <div key={rowIndex} className="flex min-h-16 min-w-0 items-center justify-center gap-1 sm:gap-2">
             {row.map((player) => (
-              <div key={player.id} className="relative w-[4.7rem]">
+              <div key={player.id} className="relative w-[clamp(3.35rem,17vw,4.7rem)] shrink">
                 <button
                   className={clsx(
-                    "w-full rounded-lg border border-emerald-300/15 bg-slate-950/90 p-2 text-center shadow-xl transition hover:-translate-y-0.5 hover:border-emerald-300/35 hover:bg-slate-900",
+                    "w-full rounded-lg border border-emerald-300/15 bg-slate-950/90 p-1.5 text-center shadow-xl transition hover:-translate-y-0.5 hover:border-emerald-300/35 hover:bg-slate-900 sm:p-2",
                     onPlayerClick && !readOnly && "cursor-pointer",
                   )}
                   onClick={() => {
@@ -70,7 +70,7 @@ export const FormationBoard = ({ formation, players, starterIds, onPlayerClick, 
               </div>
             ))}
             {Array.from({ length: Math.max(0, Object.values(shape)[3 - rowIndex] - row.length) }).map((_, index) => (
-              <div key={index} className="w-[4.7rem] rounded-lg border border-dashed border-emerald-300/15 bg-emerald-300/[0.03] p-2 text-center">
+              <div key={index} className="w-[clamp(3.35rem,17vw,4.7rem)] shrink rounded-lg border border-dashed border-emerald-300/15 bg-emerald-300/[0.03] p-1.5 text-center sm:p-2">
                 <div className="mx-auto h-8 w-8 rounded-lg bg-emerald-300/5" />
                 <div className="mt-2 text-[11px] text-slate-500">Libre</div>
               </div>

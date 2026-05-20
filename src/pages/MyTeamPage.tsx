@@ -14,15 +14,18 @@ import { formatMoney, positionTone } from "../utils/formatters";
 
 const formations = Object.keys(formationShape) as Formation[];
 
-const lineupForMatchday = (lineups: Lineup[], userId: string | null, matchdayId?: string) =>
-  [...lineups]
-    .filter((lineup) => lineup.userId === userId && (!matchdayId || lineup.matchdayId === matchdayId))
+const lineupForMatchday = (lineups: Lineup[], userId: string | null, matchdayId?: string) => {
+  if (!matchdayId) return undefined;
+  return [...lineups]
+    .filter((lineup) => lineup.userId === userId && lineup.matchdayId === matchdayId)
     .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())[0];
+};
 
 export const MyTeamPage = () => {
   const { currentLeague, userId, leaguePlayers, players, members, lineups, matchdays, submitLineup, sellPlayer } = useFantasy();
   const currentMatchdayNumber = currentLeague?.currentMatchday ?? matchdays.at(-1)?.number ?? 1;
-  const [selectedMatchdayNumber, setSelectedMatchdayNumber] = useState(currentMatchdayNumber);
+  const nextMatchdayNumber = currentMatchdayNumber + 1;
+  const [selectedMatchdayNumber, setSelectedMatchdayNumber] = useState(nextMatchdayNumber);
   const [formation, setFormation] = useState<Formation>("4-4-2");
   const [starterIds, setStarterIds] = useState<string[]>([]);
   const [benchIds, setBenchIds] = useState<string[]>([]);
@@ -32,8 +35,8 @@ export const MyTeamPage = () => {
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    setSelectedMatchdayNumber(currentMatchdayNumber);
-  }, [currentMatchdayNumber]);
+    setSelectedMatchdayNumber(nextMatchdayNumber);
+  }, [nextMatchdayNumber]);
 
   const myLeaguePlayers = useMemo(() => leaguePlayers.filter((item) => item.ownerUserId === userId), [leaguePlayers, userId]);
   const squad = useMemo(
@@ -52,16 +55,15 @@ export const MyTeamPage = () => {
   const me = members.find((member) => member.userId === userId);
   const activeMatchday = matchdays.find((matchday) => matchday.number === selectedMatchdayNumber);
   const activeLineup = lineupForMatchday(lineups, userId, activeMatchday?.id);
-  const currentMatchday = matchdays.find((matchday) => matchday.number === currentMatchdayNumber);
-  const savedCurrentLineup = lineupForMatchday(lineups, userId, currentMatchday?.id);
-  const isCurrentMatchday = selectedMatchdayNumber === currentMatchdayNumber;
-  const isEditable = isCurrentMatchday && !currentLeague?.lineupsLocked;
+  const isPlanningMatchday = selectedMatchdayNumber >= nextMatchdayNumber;
+  const isEditable = isPlanningMatchday;
 
   const availableMatchdayNumbers = useMemo(() => {
     const numbers = new Set<number>();
     matchdays.forEach((matchday) => {
       if (matchday.number <= currentMatchdayNumber) numbers.add(matchday.number);
     });
+    numbers.add(nextMatchdayNumber);
     lineups
       .filter((lineup) => lineup.userId === userId)
       .forEach((lineup) => {
@@ -69,7 +71,7 @@ export const MyTeamPage = () => {
         if (found) numbers.add(found.number);
       });
     return [...numbers].sort((a, b) => a - b);
-  }, [currentMatchdayNumber, lineups, matchdays, userId]);
+  }, [currentMatchdayNumber, lineups, matchdays, nextMatchdayNumber, userId]);
 
   const starters = Array.from(new Set(starterIds))
     .map((id) => squad.find((player) => player.id === id))
@@ -98,7 +100,7 @@ export const MyTeamPage = () => {
       return;
     }
 
-    if (!isCurrentMatchday) {
+    if (!isPlanningMatchday) {
       setStarterIds([]);
       setBenchIds([]);
       return;
@@ -113,7 +115,7 @@ export const MyTeamPage = () => {
     setFormation("4-4-2");
     setStarterIds(startersByDefault);
     setBenchIds(squad.filter((player) => !startersByDefault.includes(player.id)).map((player) => player.id));
-  }, [activeLineup, isCurrentMatchday, squad]);
+  }, [activeLineup, isPlanningMatchday, squad]);
 
   const validation = useMemo(() => validateLineup(squad, starterIds, formation), [formation, squad, starterIds]);
 
@@ -161,7 +163,7 @@ export const MyTeamPage = () => {
     setError("");
     setSaving(true);
     try {
-      await submitLineup(formation, starterIds, benchIds);
+      await submitLineup(formation, starterIds, benchIds, selectedMatchdayNumber);
     } catch (err) {
       setError(err instanceof Error ? err.message : "No se pudo guardar la alineacion.");
     } finally {
@@ -183,17 +185,17 @@ export const MyTeamPage = () => {
             {formatMoney(me?.budget ?? 0)}
           </p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <Button variant="secondary" icon={<Shuffle className="h-4 w-4" />} onClick={autofill} disabled={!isEditable}>
             Auto once
           </Button>
           <Button loading={saving} icon={<Save className="h-4 w-4" />} onClick={() => void save()} disabled={!isEditable}>
-            Guardar
+            Subir J{selectedMatchdayNumber}
           </Button>
         </div>
       </div>
 
-      <Card>
+      <Card className="overflow-hidden">
         <div className="mb-3 flex items-center justify-between gap-3">
           <div>
             <h2 className="text-base font-black text-white">Onces guardados</h2>
@@ -216,7 +218,9 @@ export const MyTeamPage = () => {
               }`}
               onClick={() => setSelectedMatchdayNumber(number)}
             >
-              <div className="text-xs font-black uppercase text-slate-300">{number === currentMatchdayNumber ? "Actual" : "Historico"}</div>
+              <div className="text-xs font-black uppercase text-slate-300">
+                {number === nextMatchdayNumber ? "Proxima" : number === currentMatchdayNumber ? "Actual" : "Historico"}
+              </div>
               <div className="text-lg font-black">J{number}</div>
               <div className="text-sm font-black text-[#21d17f]">{squadPointsFor(number)} pts</div>
             </button>
@@ -224,14 +228,14 @@ export const MyTeamPage = () => {
         </div>
       </Card>
 
-      {currentLeague?.lineupsLocked ? (
+      {currentLeague?.lineupsLocked && !isPlanningMatchday ? (
         <div className="rounded-lg border border-[#f5bd43]/25 bg-[#f5bd43]/15 p-3 text-sm font-semibold text-[#ffe2a2]">
           La alineacion esta bloqueada porque la jornada esta en curso.
         </div>
       ) : null}
 
       <div className="grid gap-5 xl:grid-cols-[1.1fr_.9fr]">
-        <Card>
+        <Card className="overflow-hidden">
           <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
             <div>
               <h2 className="text-base font-black text-white">Once titular · J{selectedMatchdayNumber}</h2>
@@ -275,17 +279,17 @@ export const MyTeamPage = () => {
                 </Badge>
               ))
             )}
-            {savedCurrentLineup ? <Badge className="bg-[#62d7ff]/20 text-[#c5f2ff] ring-[#62d7ff]/35">Guardada</Badge> : null}
+            {activeLineup ? <Badge className="bg-[#62d7ff]/20 text-[#c5f2ff] ring-[#62d7ff]/35">Guardada</Badge> : null}
           </div>
           {error ? <div className="mt-3 rounded-lg border border-[#ff3f55]/30 bg-[#ff3f55]/15 p-3 text-sm text-rose-100">{error}</div> : null}
         </Card>
 
         <div className="space-y-5">
-          <Card>
+          <Card className="overflow-hidden">
             <h2 className="mb-3 text-base font-black text-white">Banquillo</h2>
             <div className="space-y-2">
               {bench.map((player) => (
-                <div key={player.id} className="flex items-center gap-3 rounded-lg bg-[#202a43]/80 p-3">
+                <div key={player.id} className="grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-lg bg-[#202a43]/80 p-3 sm:flex">
                   <PlayerAvatar player={player} />
                   <div className="min-w-0 flex-1">
                     <div className="truncate text-sm font-black text-white">{player.name}</div>
@@ -296,25 +300,27 @@ export const MyTeamPage = () => {
                     <Badge className={positionTone[player.position]}>{player.position}</Badge>
                     <div className="mt-1 text-sm font-black text-[#21d17f]">{player.pointsByMatchday[selectedMatchdayNumber] ?? 0} pts</div>
                   </div>
-                  <button className="rounded-lg p-2 text-slate-200 hover:bg-white/10 hover:text-white" onClick={() => setSelectedPlayer(player)} aria-label="Ver detalle">
-                    <Eye className="h-4 w-4" />
-                  </button>
-                  {isEditable ? (
-                    <>
-                      <Button variant="secondary" icon={<UserRoundPlus className="h-4 w-4" />} onClick={() => moveToStarter(player.id)}>
+                  <div className="col-span-3 flex flex-wrap justify-end gap-2 sm:col-span-1">
+                    <button className="rounded-lg p-2 text-slate-200 hover:bg-white/10 hover:text-white" onClick={() => setSelectedPlayer(player)} aria-label="Ver detalle">
+                      <Eye className="h-4 w-4" />
+                    </button>
+                    {isEditable ? (
+                      <>
+                      <Button variant="secondary" className="px-3" icon={<UserRoundPlus className="h-4 w-4" />} onClick={() => moveToStarter(player.id)}>
                         Titular
                       </Button>
                       <button className="rounded-lg p-2 text-rose-200 hover:bg-rose-500/10" onClick={() => void sellPlayer(player.id)} aria-label="Vender">
                         <Trash2 className="h-4 w-4" />
                       </button>
-                    </>
-                  ) : null}
+                      </>
+                    ) : null}
+                  </div>
                 </div>
               ))}
             </div>
           </Card>
 
-          <Card>
+          <Card className="overflow-hidden">
             <h2 className="mb-3 text-base font-black text-white">Puntos de plantilla · J{selectedMatchdayNumber}</h2>
             <div className="space-y-2">
               {squad

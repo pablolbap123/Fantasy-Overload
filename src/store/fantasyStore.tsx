@@ -92,7 +92,8 @@ interface FantasyContextValue {
   refreshDailyMarket: () => Promise<void>;
   acceptOffer: (offerId: string) => Promise<void>;
   rejectOffer: (offerId: string) => Promise<void>;
-  submitLineup: (formation: Formation, starterIds: string[], benchIds: string[]) => Promise<void>;
+  submitLineup: (formation: Formation, starterIds: string[], benchIds: string[], matchdayNumber?: number) => Promise<void>;
+  requestChallengeSync: () => Promise<void>;
   simulateCurrentMatchday: () => Promise<void>;
   updateMatchResult: (match: Match) => Promise<void>;
   resetDemoSeason: () => void;
@@ -781,6 +782,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       .on("postgres_changes", { event: "*", schema: "public", table: "matches" }, () => void loadLeagueData(selectedLeagueId))
       .on("postgres_changes", { event: "*", schema: "public", table: "player_match_stats" }, () => void loadLeagueData(selectedLeagueId))
       .on("postgres_changes", { event: "*", schema: "public", table: "challenge_sync_status" }, () => void loadLeagueData(selectedLeagueId))
+      .on("postgres_changes", { event: "*", schema: "public", table: "challenge_sync_requests" }, () => void loadLeagueData(selectedLeagueId))
       .subscribe();
 
     return () => {
@@ -818,7 +820,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
   const signIn = useCallback(
     async (email: string, password: string) => {
       if (!supabase) {
-        throw new Error("Supabase no está configurado. Añade VITE_SUPABASE_URL y VITE_SUPABASE_ANON_KEY o usa el modo demo explícito.");
+        throw new Error("Supabase no esta configurado. Anade VITE_SUPABASE_URL y VITE_SUPABASE_ANON_KEY para jugar online.");
       }
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) throw error;
@@ -1524,32 +1526,48 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
   );
 
   const submitLineup = useCallback(
-    async (formation: Formation, starterIds: string[], benchIds: string[]) => {
+    async (formation: Formation, starterIds: string[], benchIds: string[], matchdayNumber?: number) => {
       if (!currentLeague || !userId) return;
-      if (currentLeague.lineupsLocked) throw new Error("Las alineaciones están bloqueadas.");
+      const requestedMatchdayNumber = matchdayNumber ?? currentLeague.currentMatchday;
+      if (currentLeague.lineupsLocked && requestedMatchdayNumber <= currentLeague.currentMatchday) {
+        throw new Error("Las alineaciones de esta jornada estan bloqueadas. Puedes preparar la siguiente.");
+      }
       const squadPlayers = leaguePlayers
         .filter((leaguePlayer) => leaguePlayer.ownerUserId === userId)
         .map((leaguePlayer) => players.find((player) => player.id === leaguePlayer.playerId))
         .filter(Boolean) as Player[];
       const validation = validateLineup(squadPlayers, starterIds, formation);
       if (!validation.valid) throw new Error(validation.errors.join(" "));
-      const currentMatchday = matchdays.find((matchday) => matchday.number === currentLeague.currentMatchday) ?? matchdays[0];
-      if (!currentMatchday) throw new Error("No hay jornada activa.");
+      const targetMatchday =
+        matchdays.find((matchday) => matchday.number === requestedMatchdayNumber) ??
+        matchdays.find((matchday) => matchday.number === currentLeague.currentMatchday) ??
+        matchdays[0];
+      if (!targetMatchday && !onlineReady) throw new Error("No hay jornada activa.");
 
       if (onlineReady && supabase) {
-        const { error } = await supabase.rpc("submit_lineup", {
+        const { error } = await supabase.rpc("submit_lineup_by_number", {
           p_league_id: currentLeague.id,
-          p_matchday_id: currentMatchday.id,
+          p_matchday_number: requestedMatchdayNumber,
           p_formation: formation,
           p_starters: starterIds,
           p_bench: benchIds,
         });
         if (error) throw error;
         await loadLeagueData(currentLeague.id);
-        pushToast("Alineación guardada.", "success");
+        pushToast(`Alineacion subida para J${requestedMatchdayNumber}.`, "success");
         return;
       }
 
+      const offlineMatchday =
+        targetMatchday ??
+        ({
+          id: randomId("matchday"),
+          leagueId: currentLeague.id,
+          number: requestedMatchdayNumber,
+          status: "pendiente",
+          startsAt: new Date().toISOString(),
+          matches: [],
+        } satisfies Matchday);
       const lineupPlayers: LineupPlayer[] = [
         ...starterIds.map((playerId, slot) => {
           const player = players.find((item) => item.id === playerId)!;
@@ -1565,7 +1583,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           id: randomId("lineup"),
           leagueId: currentLeague.id,
           userId,
-          matchdayId: currentMatchday.id,
+          matchdayId: offlineMatchday.id,
           formation,
           status: "submitted",
           players: lineupPlayers,
@@ -1573,13 +1591,37 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
         },
         ...current.filter(
           (lineup) =>
-            !(lineup.leagueId === currentLeague.id && lineup.userId === userId && lineup.matchdayId === currentMatchday.id),
+            !(lineup.leagueId === currentLeague.id && lineup.userId === userId && lineup.matchdayId === offlineMatchday.id),
         ),
       ]);
-      pushToast("Alineación guardada.", "success");
+      setMatchdays((current) => (current.some((matchday) => matchday.id === offlineMatchday.id) ? current : [...current, offlineMatchday]));
+      pushToast(`Alineacion subida para J${requestedMatchdayNumber}.`, "success");
     },
     [currentLeague, leaguePlayers, loadLeagueData, matchdays, onlineReady, players, pushToast, userId],
   );
+
+  const requestChallengeSync = useCallback(async () => {
+    if (!isSupabaseConfigured || !supabase) {
+      throw new Error("Supabase no esta configurado.");
+    }
+    const { error } = await supabase.from("challenge_sync_requests").insert({
+      requested_by: userId ?? null,
+      status: "pending",
+      message: "Solicitud manual desde la app.",
+    });
+    if (error) throw new Error(getErrorMessage(error, "No se pudo pedir la actualizacion de Challenge."));
+    setChallengeSyncStatus((current) =>
+      current
+        ? {
+            ...current,
+            status: "checking",
+            message: "Solicitud enviada. El watcher esta revisando Challenge.",
+            updatedAt: new Date().toISOString(),
+          }
+        : current,
+    );
+    pushToast("Actualizacion de Challenge solicitada.", "success");
+  }, [pushToast, userId]);
 
   const simulateCurrentMatchday = useCallback(async () => {
     if (!currentLeague) return;
@@ -1832,6 +1874,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       acceptOffer,
       rejectOffer,
       submitLineup,
+      requestChallengeSync,
       simulateCurrentMatchday,
       updateMatchResult,
       resetDemoSeason,
@@ -1868,6 +1911,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       raisePlayerClause,
       refreshDailyMarket,
       rejectOffer,
+      requestChallengeSync,
       resetDemoSeason,
       resetPassword,
       scoringRules,

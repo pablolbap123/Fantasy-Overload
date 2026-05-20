@@ -10,11 +10,15 @@ import { formatMoney } from "../utils/formatters";
 const avatarLabel = (name: string) => name.slice(0, 2).toUpperCase();
 
 export const StandingsPage = () => {
-  const { standings, members } = useFantasy();
+  const { standings, members, currentLeague } = useFantasy();
   const [leftUserId, setLeftUserId] = useState(standings[0]?.userId ?? "");
   const [rightUserId, setRightUserId] = useState(standings[1]?.userId ?? standings[0]?.userId ?? "");
   const left = members.find((member) => member.userId === leftUserId);
   const right = members.find((member) => member.userId === rightUserId);
+  const currentMatchdayNumber = currentLeague?.currentMatchday ?? 1;
+  const visibleMatchdays = Array.from({ length: Math.min(4, currentMatchdayNumber) }, (_, index) => currentMatchdayNumber - index).filter(
+    (number) => number > 0,
+  );
 
   if (standings.length === 0) {
     return <EmptyState title="Todavia no hay clasificacion" description="Cuando haya miembros y puntos, aparecera el ranking de la liga." />;
@@ -35,6 +39,7 @@ export const StandingsPage = () => {
 
         <div className="divide-y divide-[#25304a]">
           {standings.map((standing) => {
+            const member = members.find((item) => item.userId === standing.userId);
             const tone =
               standing.position === 1
                 ? "from-[#f5bd43]/20"
@@ -61,11 +66,21 @@ export const StandingsPage = () => {
                     </span>
                     <span className="truncate">{formatMoney(standing.squadValue).replace(/\s?€/u, "")}</span>
                   </div>
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {visibleMatchdays.map((number) => (
+                      <span
+                        key={number}
+                        className="rounded-md border border-white/10 bg-white/10 px-2 py-1 text-[11px] font-black text-slate-100"
+                      >
+                        J{number}: {member?.pointsByMatchday[number] ?? 0}
+                      </span>
+                    ))}
+                  </div>
                 </div>
                 <div className="text-right">
                   <div className="text-4xl font-light tracking-wide text-white sm:text-6xl">{standing.totalPoints}</div>
                   <div className="text-sm font-bold uppercase text-slate-300 sm:text-base">PFSY</div>
-                  <div className="mt-1 text-sm font-black text-[#21d17f]">+{standing.lastMatchdayPoints} J</div>
+                  <div className="mt-1 text-sm font-black text-[#21d17f]">J{currentMatchdayNumber}: +{standing.lastMatchdayPoints}</div>
                 </div>
               </motion.div>
             );

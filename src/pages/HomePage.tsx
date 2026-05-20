@@ -17,8 +17,6 @@ const quickLinks = [
   ["Clasificación", "standings"],
   ["Jornada", "matchday"],
   ["Estadísticas", "stats"],
-  ["Reglas", "settings"],
-  ["Admin resultados", "admin"],
 ];
 
 export const HomePage = () => {

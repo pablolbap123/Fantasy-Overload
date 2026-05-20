@@ -9,8 +9,8 @@ export const challengeMatchdays: Matchday[] = [
     "leagueId": "league-demo",
     "number": 1,
     "status": "finalizada",
-    "startsAt": "2026-05-20T13:14:26.413Z",
-    "endsAt": "2026-05-20T13:14:32.937Z",
+    "startsAt": "2026-05-20T16:19:34.561Z",
+    "endsAt": "2026-05-20T16:19:41.133Z",
     "matches": [
       {
         "id": "challenge-match-69e7bc5e8e207fa2468b5739",
@@ -22,7 +22,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 3,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:26.413Z",
+        "playedAt": "2026-05-20T16:19:34.561Z",
         "events": [
           {
             "id": "event-69e7bf3ea02ad2e0770f9d53",
@@ -962,7 +962,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:26.876Z",
+        "playedAt": "2026-05-20T16:19:35.215Z",
         "events": [
           {
             "id": "event-69e7bfef7bb157f6388ac018",
@@ -1899,7 +1899,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 4,
         "awayScore": 4,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:27.413Z",
+        "playedAt": "2026-05-20T16:19:35.555Z",
         "events": [
           {
             "id": "event-69e7c090ac01f19c4c6a04ba",
@@ -2925,7 +2925,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 3,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:27.926Z",
+        "playedAt": "2026-05-20T16:19:36.032Z",
         "events": [
           {
             "id": "event-69e7c1bf3a3efafddd23bb3f",
@@ -3865,7 +3865,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:28.460Z",
+        "playedAt": "2026-05-20T16:19:36.557Z",
         "events": [
           {
             "id": "event-69e7c45f9abb1f97a8f3b092",
@@ -4811,7 +4811,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:28.939Z",
+        "playedAt": "2026-05-20T16:19:37.044Z",
         "events": [
           {
             "id": "event-69e7c2dc91104fc583b0e842",
@@ -5739,7 +5739,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 3,
         "awayScore": 4,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:29.382Z",
+        "playedAt": "2026-05-20T16:19:37.629Z",
         "events": [
           {
             "id": "event-69e7c3659d8e9cc624cb3bd5",
@@ -6853,7 +6853,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:29.855Z",
+        "playedAt": "2026-05-20T16:19:38.154Z",
         "events": [
           {
             "id": "event-69e7c534833f3fba402be9dd",
@@ -7826,7 +7826,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 0,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:30.458Z",
+        "playedAt": "2026-05-20T16:19:38.527Z",
         "events": [
           {
             "id": "event-69e7c60e9abb1f97a8fb324a",
@@ -8730,7 +8730,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 4,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:30.954Z",
+        "playedAt": "2026-05-20T16:19:39.137Z",
         "events": [
           {
             "id": "event-69e7c6d902b11038670bfad1",
@@ -9697,7 +9697,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:31.458Z",
+        "playedAt": "2026-05-20T16:19:39.646Z",
         "events": [
           {
             "id": "event-69e7c88fad8b31fb5ee861b8",
@@ -10625,7 +10625,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:31.886Z",
+        "playedAt": "2026-05-20T16:19:40.046Z",
         "events": [
           {
             "id": "event-69e7c93b315ee46afd2a0e25",
@@ -11529,7 +11529,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:32.429Z",
+        "playedAt": "2026-05-20T16:19:40.622Z",
         "events": [
           {
             "id": "event-69e7c9a8ac01f19c4c97df6d",
@@ -12442,7 +12442,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:32.937Z",
+        "playedAt": "2026-05-20T16:19:41.133Z",
         "events": [
           {
             "id": "event-69e7ca5ec9181d12c7fa3093",
@@ -13376,8 +13376,8 @@ export const challengeMatchdays: Matchday[] = [
     "leagueId": "league-demo",
     "number": 2,
     "status": "finalizada",
-    "startsAt": "2026-05-20T13:14:33.883Z",
-    "endsAt": "2026-05-20T13:14:40.446Z",
+    "startsAt": "2026-05-20T16:19:42.002Z",
+    "endsAt": "2026-05-20T16:19:48.442Z",
     "matches": [
       {
         "id": "challenge-match-69f36da702b1103867135d49",
@@ -13389,7 +13389,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:33.883Z",
+        "playedAt": "2026-05-20T16:19:42.002Z",
         "events": [
           {
             "id": "event-69f36e6df1bb586d409d3fb6",
@@ -14329,7 +14329,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 3,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:34.288Z",
+        "playedAt": "2026-05-20T16:19:42.495Z",
         "events": [
           {
             "id": "event-69f70c12833f3fba4076c894",
@@ -15269,7 +15269,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:34.885Z",
+        "playedAt": "2026-05-20T16:19:43.039Z",
         "events": [
           {
             "id": "event-69f70d656ce3e4031569852b",
@@ -16215,7 +16215,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:35.319Z",
+        "playedAt": "2026-05-20T16:19:43.484Z",
         "events": [
           {
             "id": "event-69f70de7276408d07b051eae",
@@ -17164,7 +17164,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 0,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:35.878Z",
+        "playedAt": "2026-05-20T16:19:44.080Z",
         "events": [
           {
             "id": "event-69f7184587acd3d077ca0180",
@@ -18074,7 +18074,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 4,
         "awayScore": 3,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:36.336Z",
+        "playedAt": "2026-05-20T16:19:44.551Z",
         "events": [
           {
             "id": "event-69f71890833f3fba40abb152",
@@ -19092,7 +19092,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 3,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:36.793Z",
+        "playedAt": "2026-05-20T16:19:44.955Z",
         "events": [
           {
             "id": "event-69f719aec9181d12c7b44c19",
@@ -20074,7 +20074,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:37.363Z",
+        "playedAt": "2026-05-20T16:19:45.486Z",
         "events": [
           {
             "id": "event-69f71a71fa670bd55b9405ec",
@@ -21014,7 +21014,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 3,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:37.923Z",
+        "playedAt": "2026-05-20T16:19:46.027Z",
         "events": [
           {
             "id": "event-69f71affa9da26e8ef4f60cb",
@@ -21981,7 +21981,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 3,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:38.290Z",
+        "playedAt": "2026-05-20T16:19:46.466Z",
         "events": [
           {
             "id": "event-69f71b8c8c41158d9abe16aa",
@@ -22981,7 +22981,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 3,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:38.953Z",
+        "playedAt": "2026-05-20T16:19:46.984Z",
         "events": [
           {
             "id": "event-69f71c476ce3e403159c98e9",
@@ -23954,7 +23954,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:39.308Z",
+        "playedAt": "2026-05-20T16:19:47.601Z",
         "events": [
           {
             "id": "event-69f71cc89abb1f97a88159a0",
@@ -24409,7 +24409,7 @@ export const challengeMatchdays: Matchday[] = [
             "teamLost": false,
             "highlighted": false,
             "errorLedToGoal": false,
-            "fantasyPoints": 7
+            "fantasyPoints": 6
           },
           {
             "matchId": "challenge-match-69f36dc57383e21f15f92c2b",
@@ -24903,7 +24903,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 0,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:39.917Z",
+        "playedAt": "2026-05-20T16:19:48.014Z",
         "events": [
           {
             "id": "event-69f71da8cd6d796046f76afb",
@@ -25837,7 +25837,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:40.446Z",
+        "playedAt": "2026-05-20T16:19:48.442Z",
         "events": [
           {
             "id": "event-69f71dec9d8e9cc6246d0c6b",
@@ -26789,8 +26789,8 @@ export const challengeMatchdays: Matchday[] = [
     "leagueId": "league-demo",
     "number": 3,
     "status": "finalizada",
-    "startsAt": "2026-05-20T13:14:41.852Z",
-    "endsAt": "2026-05-20T13:14:48.417Z",
+    "startsAt": "2026-05-20T16:19:49.250Z",
+    "endsAt": "2026-05-20T16:19:55.827Z",
     "matches": [
       {
         "id": "challenge-match-69f76761de2b834ad4b49e0a",
@@ -26802,7 +26802,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:41.852Z",
+        "playedAt": "2026-05-20T16:19:49.250Z",
         "events": [
           {
             "id": "event-69f767e79abb1f97a8c4604e",
@@ -27706,7 +27706,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 3,
         "awayScore": 3,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:41.386Z",
+        "playedAt": "2026-05-20T16:19:49.785Z",
         "events": [
           {
             "id": "event-69f76e626efa15a298d012cc",
@@ -28781,7 +28781,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 3,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:42.358Z",
+        "playedAt": "2026-05-20T16:19:50.371Z",
         "events": [
           {
             "id": "event-69f7717a59ad6186598083ed",
@@ -29757,7 +29757,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:42.867Z",
+        "playedAt": "2026-05-20T16:19:50.816Z",
         "events": [
           {
             "id": "event-69f7a9c733b571b1ffb76bbe",
@@ -30679,7 +30679,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 4,
         "awayScore": 3,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:43.486Z",
+        "playedAt": "2026-05-20T16:19:51.294Z",
         "events": [
           {
             "id": "event-69f7ab9544ffe789793c2208",
@@ -31745,7 +31745,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:44.242Z",
+        "playedAt": "2026-05-20T16:19:51.840Z",
         "events": [
           {
             "id": "event-69f7af7a7bb157f638e5b79c",
@@ -32733,7 +32733,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:44.520Z",
+        "playedAt": "2026-05-20T16:19:52.356Z",
         "events": [
           {
             "id": "event-69f7b1308c41158d9a0bb7a0",
@@ -33655,7 +33655,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 3,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:45.227Z",
+        "playedAt": "2026-05-20T16:19:52.811Z",
         "events": [
           {
             "id": "event-69f7b76dc20720f2ba996176",
@@ -34631,7 +34631,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:45.716Z",
+        "playedAt": "2026-05-20T16:19:53.400Z",
         "events": [
           {
             "id": "event-69f7bacefa670bd55b1f826e",
@@ -35559,7 +35559,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:46.364Z",
+        "playedAt": "2026-05-20T16:19:53.815Z",
         "events": [
           {
             "id": "event-69f7c276dcb3bcc8cbade023",
@@ -36490,7 +36490,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 0,
         "awayScore": 0,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:46.791Z",
+        "playedAt": "2026-05-20T16:19:54.318Z",
         "events": [
           {
             "id": "event-69f7c5946ce3e4031535d6fc",
@@ -37349,7 +37349,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 4,
         "awayScore": 3,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:47.356Z",
+        "playedAt": "2026-05-20T16:19:54.924Z",
         "events": [
           {
             "id": "event-69f7c6b7c9181d12c7582ba2",
@@ -38349,7 +38349,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 3,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:47.938Z",
+        "playedAt": "2026-05-20T16:19:55.410Z",
         "events": [
           {
             "id": "event-69f7c9b5f9768dc9bac45729",
@@ -39298,7 +39298,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:48.417Z",
+        "playedAt": "2026-05-20T16:19:55.827Z",
         "events": [
           {
             "id": "event-69f7cb959d8e9cc6243dcf8f",
@@ -40217,8 +40217,8 @@ export const challengeMatchdays: Matchday[] = [
     "leagueId": "league-demo",
     "number": 4,
     "status": "finalizada",
-    "startsAt": "2026-05-20T13:14:49.341Z",
-    "endsAt": "2026-05-20T13:14:56.043Z",
+    "startsAt": "2026-05-20T16:19:56.667Z",
+    "endsAt": "2026-05-20T16:20:03.145Z",
     "matches": [
       {
         "id": "challenge-match-69f8a36dc9181d12c713b437",
@@ -40230,7 +40230,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 0,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:49.341Z",
+        "playedAt": "2026-05-20T16:19:56.667Z",
         "events": [
           {
             "id": "event-69f8a5c33a3efafddd813ed3",
@@ -41143,7 +41143,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:49.842Z",
+        "playedAt": "2026-05-20T16:19:57.682Z",
         "events": [
           {
             "id": "event-69f8a85c702303888528b118",
@@ -42080,7 +42080,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:50.430Z",
+        "playedAt": "2026-05-20T16:19:57.162Z",
         "events": [
           {
             "id": "event-69f8a9b5ac01f19c4cdab247",
@@ -42999,7 +42999,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 3,
         "awayScore": 3,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:50.884Z",
+        "playedAt": "2026-05-20T16:19:58.170Z",
         "events": [
           {
             "id": "event-69f8bcf52fffff37070babad",
@@ -44011,7 +44011,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:51.391Z",
+        "playedAt": "2026-05-20T16:19:58.675Z",
         "events": [
           {
             "id": "event-69f8f9cebdf45a5308529acf",
@@ -44412,7 +44412,7 @@ export const challengeMatchdays: Matchday[] = [
             "teamLost": true,
             "highlighted": false,
             "errorLedToGoal": false,
-            "fantasyPoints": 6
+            "fantasyPoints": 5
           },
           {
             "matchId": "challenge-match-69f8a961315ee46afdd0aa51",
@@ -44906,7 +44906,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 3,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:51.973Z",
+        "playedAt": "2026-05-20T16:19:59.184Z",
         "events": [
           {
             "id": "event-69f8bfe99abb1f97a87e96e4",
@@ -45810,7 +45810,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:52.532Z",
+        "playedAt": "2026-05-20T16:19:59.671Z",
         "events": [
           {
             "id": "event-69f8fa408c41158d9a3f1003",
@@ -46738,7 +46738,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:52.933Z",
+        "playedAt": "2026-05-20T16:20:00.297Z",
         "events": [
           {
             "id": "event-69f8ab87833f3fba403c452d",
@@ -47711,7 +47711,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 4,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:53.443Z",
+        "playedAt": "2026-05-20T16:20:00.683Z",
         "events": [
           {
             "id": "event-69f8ac49dcb3bcc8cbc5ffd4",
@@ -48720,7 +48720,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:53.899Z",
+        "playedAt": "2026-05-20T16:20:01.212Z",
         "events": [
           {
             "id": "event-69f8ad707bb157f6389bb067",
@@ -49675,7 +49675,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:54.435Z",
+        "playedAt": "2026-05-20T16:20:01.717Z",
         "events": [
           {
             "id": "event-69f8adf1a9da26e8efe7fbf8",
@@ -50681,7 +50681,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 3,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:54.931Z",
+        "playedAt": "2026-05-20T16:20:02.348Z",
         "events": [
           {
             "id": "event-69f8ae92f09f38cf9a7d3832",
@@ -51672,7 +51672,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 3,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:55.599Z",
+        "playedAt": "2026-05-20T16:20:02.756Z",
         "events": [
           {
             "id": "event-69f8af50c20720f2ba0055d7",
@@ -52669,7 +52669,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:56.043Z",
+        "playedAt": "2026-05-20T16:20:03.145Z",
         "events": [
           {
             "id": "event-69f8b006a5f5a3a2c6dc3905",
@@ -53579,8 +53579,8 @@ export const challengeMatchdays: Matchday[] = [
     "leagueId": "league-demo",
     "number": 5,
     "status": "finalizada",
-    "startsAt": "2026-05-20T13:14:57.457Z",
-    "endsAt": "2026-05-20T13:15:03.390Z",
+    "startsAt": "2026-05-20T16:20:04.074Z",
+    "endsAt": "2026-05-20T16:20:10.514Z",
     "matches": [
       {
         "id": "challenge-match-69f8fadc6efa15a2987cd75b",
@@ -53592,7 +53592,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:57.457Z",
+        "playedAt": "2026-05-20T16:20:04.074Z",
         "events": [
           {
             "id": "event-69ff877a1cdee0c96a89c0de",
@@ -54463,7 +54463,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:56.983Z",
+        "playedAt": "2026-05-20T16:20:04.512Z",
         "events": [
           {
             "id": "event-69ff888299a101a46efd2051",
@@ -55290,7 +55290,7 @@ export const challengeMatchdays: Matchday[] = [
             "teamLost": false,
             "highlighted": false,
             "errorLedToGoal": false,
-            "fantasyPoints": 12
+            "fantasyPoints": 10
           },
           {
             "matchId": "challenge-match-69f8fadf7023038885cd9b08",
@@ -55400,7 +55400,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 0,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:57.941Z",
+        "playedAt": "2026-05-20T16:20:05.037Z",
         "events": [
           {
             "id": "event-69ff89a072571265b0862ef7",
@@ -56325,7 +56325,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:58.374Z",
+        "playedAt": "2026-05-20T16:20:05.559Z",
         "events": [
           {
             "id": "event-69ff8a1040f3cd059c35c41a",
@@ -57247,7 +57247,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 3,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:58.879Z",
+        "playedAt": "2026-05-20T16:20:06.025Z",
         "events": [
           {
             "id": "event-69ff8a91438aea5581837d7b",
@@ -58196,7 +58196,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 3,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:59.351Z",
+        "playedAt": "2026-05-20T16:20:06.586Z",
         "events": [
           {
             "id": "event-69ff8b3482a8985eaa4f5a43",
@@ -59127,7 +59127,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:14:59.911Z",
+        "playedAt": "2026-05-20T16:20:07.046Z",
         "events": [
           {
             "id": "event-69ff8bc2af667a3639e6487f",
@@ -60046,7 +60046,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 4,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:00.362Z",
+        "playedAt": "2026-05-20T16:20:07.477Z",
         "events": [
           {
             "id": "event-6a00bfaf82a8985eaafb90af",
@@ -61019,7 +61019,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:00.911Z",
+        "playedAt": "2026-05-20T16:20:08.018Z",
         "events": [
           {
             "id": "event-6a00c06e9a9787b3146dcdac",
@@ -62040,7 +62040,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 5,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:01.459Z",
+        "playedAt": "2026-05-20T16:20:08.540Z",
         "events": [
           {
             "id": "event-6a00c11cb81e518dd79d87ec",
@@ -63049,7 +63049,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:01.881Z",
+        "playedAt": "2026-05-20T16:20:09.039Z",
         "events": [
           {
             "id": "event-6a00c1b182a8985eaa060961",
@@ -63998,7 +63998,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 3,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:02.407Z",
+        "playedAt": "2026-05-20T16:20:09.535Z",
         "events": [
           {
             "id": "event-6a00c226f46c5dddee454c81",
@@ -64971,7 +64971,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:02.880Z",
+        "playedAt": "2026-05-20T16:20:10.041Z",
         "events": [
           {
             "id": "event-6a00c2ad25eb52f957f933f8",
@@ -65908,7 +65908,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:03.390Z",
+        "playedAt": "2026-05-20T16:20:10.514Z",
         "events": [
           {
             "id": "event-6a00c2f9f8b41a87fa0f1395",
@@ -66827,8 +66827,8 @@ export const challengeMatchdays: Matchday[] = [
     "leagueId": "league-demo",
     "number": 6,
     "status": "finalizada",
-    "startsAt": "2026-05-20T13:15:04.841Z",
-    "endsAt": "2026-05-20T13:15:10.889Z",
+    "startsAt": "2026-05-20T16:20:11.424Z",
+    "endsAt": "2026-05-20T16:20:17.857Z",
     "matches": [
       {
         "id": "challenge-match-6a04ab99d9f6f8af564eccad",
@@ -66840,7 +66840,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:04.841Z",
+        "playedAt": "2026-05-20T16:20:11.424Z",
         "events": [
           {
             "id": "event-6a04ac509a9787b31435240a",
@@ -67795,7 +67795,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 0,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:04.256Z",
+        "playedAt": "2026-05-20T16:20:11.856Z",
         "events": [
           {
             "id": "event-6a04acfc0587959bed729d2a",
@@ -68672,7 +68672,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 3,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:05.279Z",
+        "playedAt": "2026-05-20T16:20:12.375Z",
         "events": [
           {
             "id": "event-6a04ad5703dec21f7344e5d7",
@@ -69621,7 +69621,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 4,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:05.897Z",
+        "playedAt": "2026-05-20T16:20:12.821Z",
         "events": [
           {
             "id": "event-6a04ae1f3b79020d920b22ad",
@@ -70612,7 +70612,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:06.442Z",
+        "playedAt": "2026-05-20T16:20:13.323Z",
         "events": [
           {
             "id": "event-6a04af1b8502b0016af45487",
@@ -71525,7 +71525,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 0,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:06.831Z",
+        "playedAt": "2026-05-20T16:20:13.866Z",
         "events": [
           {
             "id": "event-6a04af951e3d1eb107169818",
@@ -72411,7 +72411,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:07.403Z",
+        "playedAt": "2026-05-20T16:20:14.336Z",
         "events": [
           {
             "id": "event-6a04b021af667a363951dac5",
@@ -73366,7 +73366,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 5,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:07.779Z",
+        "playedAt": "2026-05-20T16:20:14.906Z",
         "events": [
           {
             "id": "event-6a062dbe8502b0016a4377e6",
@@ -74360,7 +74360,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:08.393Z",
+        "playedAt": "2026-05-20T16:20:15.403Z",
         "events": [
           {
             "id": "event-6a062ebb79d491a4906ea22c",
@@ -75273,7 +75273,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:08.894Z",
+        "playedAt": "2026-05-20T16:20:15.847Z",
         "events": [
           {
             "id": "event-6a063263d070a9f87006ac59",
@@ -76255,7 +76255,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 3,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:09.460Z",
+        "playedAt": "2026-05-20T16:20:16.353Z",
         "events": [
           {
             "id": "event-6a063164595d79bd9c6f84ce",
@@ -77249,7 +77249,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 0,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:09.970Z",
+        "playedAt": "2026-05-20T16:20:16.883Z",
         "events": [
           {
             "id": "event-6a0630e73961bb98b582648a",
@@ -78135,7 +78135,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 2,
         "awayScore": 2,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:10.396Z",
+        "playedAt": "2026-05-20T16:20:17.401Z",
         "events": [
           {
             "id": "event-6a063051d9f6f8af5677f976",
@@ -79123,7 +79123,7 @@ export const challengeMatchdays: Matchday[] = [
         "homeScore": 1,
         "awayScore": 1,
         "status": "finalizada",
-        "playedAt": "2026-05-20T13:15:10.889Z",
+        "playedAt": "2026-05-20T16:20:17.857Z",
         "events": [
           {
             "id": "event-6a062f9ad070a9f870f7437b",
@@ -79533,7 +79533,7 @@ export const challengeMatchdays: Matchday[] = [
             "teamLost": false,
             "highlighted": false,
             "errorLedToGoal": false,
-            "fantasyPoints": 9
+            "fantasyPoints": 7
           },
           {
             "matchId": "challenge-match-6a062d3ef8b41a87fa0eb4ec",

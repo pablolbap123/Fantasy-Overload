@@ -12,7 +12,8 @@ begin
     'players',
     'transfers',
     'offers',
-    'challenge_sync_status'
+    'challenge_sync_status',
+    'challenge_sync_requests'
   ]
   loop
     if not exists (

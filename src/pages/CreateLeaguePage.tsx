@@ -42,7 +42,7 @@ export const CreateLeaguePage = () => {
           </div>
           <div>
             <h1 className="text-2xl font-black text-white">Crear liga privada</h1>
-            <p className="text-sm text-slate-400">Configura presupuesto, plazas y reglas iniciales.</p>
+            <p className="text-sm text-slate-400">Configura presupuesto y plazas para jugar online.</p>
           </div>
         </div>
         <form className="space-y-4" onSubmit={submit}>

@@ -228,9 +228,19 @@ insert into public.challenge_sync_status (id)
 values ('overload-series')
 on conflict (id) do nothing;
 
+create table if not exists public.challenge_sync_requests (
+  id uuid primary key default gen_random_uuid(),
+  requested_by uuid references public.profiles(user_id) on delete set null,
+  status text not null default 'pending' check (status in ('pending', 'processing', 'completed', 'failed')),
+  message text,
+  created_at timestamptz not null default now(),
+  processed_at timestamptz
+);
+
 create index if not exists idx_league_members_user on public.league_members(user_id);
 create index if not exists idx_league_players_league_owner on public.league_players(league_id, owner_user_id);
 create index if not exists idx_squads_league_user on public.squads(league_id, user_id);
 create index if not exists idx_matches_matchday on public.matches(matchday_id);
 create index if not exists idx_player_stats_match on public.player_match_stats(match_id);
 create index if not exists idx_activity_league_created on public.activity_feed(league_id, created_at desc);
+create index if not exists idx_challenge_sync_requests_status_created on public.challenge_sync_requests(status, created_at);

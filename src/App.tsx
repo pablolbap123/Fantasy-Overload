@@ -3,7 +3,6 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { AppShell } from "./components/layout/AppShell";
 import { LoadingScreen } from "./components/ui/LoadingScreen";
 import { ToastHost } from "./components/ui/ToastHost";
-import { AdminPage } from "./pages/AdminPage";
 import { AuthCallbackPage } from "./pages/AuthCallbackPage";
 import { AuthPage } from "./pages/AuthPage";
 import { CreateLeaguePage } from "./pages/CreateLeaguePage";
@@ -16,7 +15,6 @@ import { MatchdayPage } from "./pages/MatchdayPage";
 import { MembersPage } from "./pages/MembersPage";
 import { MyTeamPage } from "./pages/MyTeamPage";
 import { ProfilePage } from "./pages/ProfilePage";
-import { SettingsPage } from "./pages/SettingsPage";
 import { StandingsPage } from "./pages/StandingsPage";
 import { StatsPage } from "./pages/StatsPage";
 import { useFantasy } from "./store/fantasyStore";
@@ -103,8 +101,6 @@ export default function App() {
           <Route path="matchday" element={<MatchdayPage />} />
           <Route path="standings" element={<StandingsPage />} />
           <Route path="stats" element={<StatsPage />} />
-          <Route path="admin" element={<AdminPage />} />
-          <Route path="settings" element={<SettingsPage />} />
           <Route path="members" element={<MembersPage />} />
         </Route>
         <Route path="*" element={<Navigate to={defaultPath} replace />} />

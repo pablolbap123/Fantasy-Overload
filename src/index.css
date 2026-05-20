@@ -23,16 +23,23 @@
 html {
   min-height: 100%;
   background: var(--app-bg);
+  overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
   margin: 0;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 16% 10%, rgba(255, 63, 85, 0.16), transparent 28rem),
     radial-gradient(circle at 86% 0%, rgba(98, 215, 255, 0.18), transparent 26rem),
     linear-gradient(180deg, #11182d 0%, #080d1b 54%, #070a14 100%);
   color: #f7f9ff;
+}
+
+#root {
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 html,
@@ -88,5 +95,15 @@ textarea {
 
   .safe-bottom {
     padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .safe-top-header {
+    padding-top: max(0.85rem, env(safe-area-inset-top));
+  }
+
+  @media (min-width: 1024px) {
+    .safe-top-header {
+      padding-top: 0;
+    }
   }
 }

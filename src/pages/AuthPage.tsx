@@ -4,13 +4,14 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
+import { ChallengeSyncButton } from "../components/fantasy/ChallengeSyncButton";
 import { isSupabaseConfigured } from "../lib/supabaseClient";
 import { useFantasy } from "../store/fantasyStore";
 
 type Mode = "login" | "register" | "reset";
 
 export const AuthPage = () => {
-  const { userId, signIn, signUp, resetPassword, enterDemoMode } = useFantasy();
+  const { userId, signIn, signUp, resetPassword } = useFantasy();
   const [mode, setMode] = useState<Mode>("login");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -65,6 +66,12 @@ export const AuthPage = () => {
               </div>
             ))}
           </div>
+          {isSupabaseConfigured ? (
+            <div className="mt-5 rounded-lg border border-[#62d7ff]/20 bg-[#62d7ff]/10 p-4">
+              <div className="mb-3 text-sm font-black text-white">Challenge en vivo</div>
+              <ChallengeSyncButton />
+            </div>
+          ) : null}
         </motion.section>
 
         <Card className="p-5 sm:p-6">
@@ -106,10 +113,7 @@ export const AuthPage = () => {
           </div>
           {!isSupabaseConfigured ? (
             <div className="mt-5 rounded-2xl border border-amber-300/20 bg-amber-400/10 p-4">
-              <p className="text-sm text-amber-50">No hay variables de Supabase configuradas. Puedes revisar la app en modo demo en memoria.</p>
-              <Button className="mt-3 w-full" variant="secondary" onClick={enterDemoMode}>
-                Entrar en modo demo
-              </Button>
+              <p className="text-sm text-amber-50">Supabase no esta configurado. Para jugar online necesitas configurar VITE_SUPABASE_URL y VITE_SUPABASE_ANON_KEY.</p>
             </div>
           ) : null}
         </Card>

@@ -39,7 +39,7 @@ export const JoinLeaguePage = () => {
           </div>
           <div>
             <h1 className="text-2xl font-black text-white">Unirme con código</h1>
-            <p className="text-sm text-slate-400">Introduce el código que te ha compartido el admin.</p>
+            <p className="text-sm text-slate-400">Introduce el codigo de invitacion que te han compartido.</p>
           </div>
         </div>
         <form className="space-y-4" onSubmit={submit}>
