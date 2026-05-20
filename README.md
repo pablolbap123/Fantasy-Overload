@@ -148,20 +148,20 @@ Challenge Place no expone webhooks publicos en la pagina de la liga. Para que la
 
 ```bash
 SUPABASE_DB_URL="postgresql://postgres:<PASSWORD>@db.<PROJECT>.supabase.co:5432/postgres"
-CHALLENGE_SYNC_INTERVAL_MS=10000
+CHALLENGE_SYNC_INTERVAL_MS=60000
 npm run sync:challenge:watch
 ```
 
-El watcher consulta Challenge cada 10 segundos por defecto. Si detecta cambios, actualiza Supabase, recalcula todas las ligas y Supabase Realtime refresca las pantallas abiertas en web, Android e iOS. Sin un webhook oficial de Challenge, esto es lo mas cercano a "al momento"; puedes bajar o subir `CHALLENGE_SYNC_INTERVAL_MS` segun el servidor y el trafico que quieras asumir.
+El watcher consulta Challenge cada 60 segundos por defecto. Si detecta cambios, actualiza Supabase, recalcula todas las ligas y Supabase Realtime refresca las pantallas abiertas en web, Android e iOS. Sin un webhook oficial de Challenge, esto es lo mas cercano a "al momento"; puedes bajar o subir `CHALLENGE_SYNC_INTERVAL_MS` segun el servidor y el trafico que quieras asumir.
 
-La app tambien guarda el ultimo estado del watcher en `challenge_sync_status`. Ese estado aparece en el menu como **Challenge en vivo**, por lo que puedes ver si el proceso esta comprobando, si aplico cambios o si hubo un error.
+La app tambien guarda el ultimo estado del watcher en `challenge_sync_status`. Ese estado aparece en el menu como **Challenge en vivo**, por lo que puedes ver si el proceso esta comprobando, si aplico cambios o si hubo un error. El boton **Actualizar Challenge** crea una solicitud en `challenge_sync_requests`; el watcher la atiende en el siguiente ciclo y fuerza una comprobacion.
 
 Para desplegar el watcher en Render:
 
 1. Sube el repo a GitHub.
 2. En Render crea un **Blueprint** usando `render.yaml`, o crea un **Background Worker** con Docker y `Dockerfile.worker`.
 3. Anade la variable privada `SUPABASE_DB_URL`.
-4. Deja `CHALLENGE_SYNC_INTERVAL_MS=10000` o subelo si quieres menos trafico.
+4. Deja `CHALLENGE_SYNC_INTERVAL_MS=60000` o bajalo si quieres mas inmediatez.
 5. Arranca el worker. Mientras este activo, web y apps moviles se actualizaran por Supabase Realtime.
 
 No pongas `SUPABASE_DB_URL` en variables `VITE_`: es una credencial de servidor y solo debe vivir en el worker, GitHub Actions o una maquina privada.
@@ -254,13 +254,13 @@ En Windows se puede generar el proyecto iOS de Capacitor, pero no se puede firma
 4. Puja por los 10 jugadores del mercado diario. Cada ciclo dura 24 horas.
 5. Cuando termina el ciclo, el manager con la puja más alta se lleva al jugador.
 6. Paga cláusulas o sube cláusulas pagando presupuesto.
-7. Guarda tu alineación.
-8. El admin corrige resultados oficiales si hace falta.
+7. Sube tu alineacion para la siguiente jornada.
+8. El watcher sincroniza jugadores, posiciones, resultados y puntos desde Challenge.
 9. La clasificación se recalcula y se actualiza con Realtime.
 
-## Modo demo
+## Sin modo demo
 
-Si no hay variables de Supabase configuradas, la app permite entrar en un modo demo en memoria para revisar la experiencia. La persistencia principal del producto está diseñada para Supabase; `localStorage` solo se usa para preferencias locales.
+La app esta pensada para jugar online con Supabase. Si faltan `VITE_SUPABASE_URL` o `VITE_SUPABASE_ANON_KEY`, se muestra el login pero no se ofrece modo demo. `localStorage` queda reservado para preferencias locales y cache ligera.
 
 ## Estructura
 
@@ -280,5 +280,7 @@ supabase/
   rpc.sql
   seed.sql
 ```
+#   F a n t a s y - O v e r l o a d  
+ 
 #   F a n t a s y - O v e r l o a d  
  
