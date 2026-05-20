@@ -126,45 +126,31 @@ VITE_SUPABASE_ANON_KEY=tu_anon_o_publishable_key
 
 El archivo `netlify.toml` ya está preparado para SPA routing.
 
-## Sincronización automática
+## Sincronizacion manual con Challenge
 
-El repositorio incluye `.github/workflows/sync-challenge.yml`. En GitHub, crea el secret:
+Para ahorrar base de datos y evitar escrituras constantes en el plan gratuito, no hay sincronizacion automatica por tiempo. La app solo actualiza Challenge cuando alguien pulsa el boton **Actualizar Challenge**. Ese boton crea una solicitud en `challenge_sync_requests` y el watcher la procesa.
 
-```text
-SUPABASE_DB_URL=postgresql://postgres:<PASSWORD>@db.ipegwbbiuryviechkssc.supabase.co:5432/postgres
-```
-
-El workflow se ejecuta cada 5 minutos y hace:
-
-- descarga el snapshot actual de Challenge Place,
-- actualiza equipos, jugadores, posiciones, precios, jornadas y partidos oficiales,
-- refresca todas las ligas privadas existentes,
-- recalcula puntos,
-- resuelve subastas de mercado vencidas.
-
-### Sincronizacion casi en tiempo real
-
-Challenge Place no expone webhooks publicos en la pagina de la liga. Para que la app cambie en cuanto detecte una modificacion oficial, ejecuta un watcher permanente en un servidor propio, Railway, Render, Fly.io, una VPS o similar:
+Ejecuta un watcher permanente en un servidor propio, Railway, Render, Fly.io, una VPS o similar:
 
 ```bash
 SUPABASE_DB_URL="postgresql://postgres:<PASSWORD>@db.<PROJECT>.supabase.co:5432/postgres"
-CHALLENGE_SYNC_INTERVAL_MS=60000
+CHALLENGE_REQUEST_POLL_MS=15000
 npm run sync:challenge:watch
 ```
 
-El watcher consulta Challenge cada 60 segundos por defecto. Si detecta cambios, actualiza Supabase, recalcula todas las ligas y Supabase Realtime refresca las pantallas abiertas en web, Android e iOS. Sin un webhook oficial de Challenge, esto es lo mas cercano a "al momento"; puedes bajar o subir `CHALLENGE_SYNC_INTERVAL_MS` segun el servidor y el trafico que quieras asumir.
+El watcher no consulta Challenge por su cuenta. Solo revisa la tabla de solicitudes y, si hay una solicitud pendiente, descarga Challenge, actualiza equipos, jugadores, posiciones, precios, jornadas y partidos oficiales, recalcula ligas y avisa por Supabase Realtime.
 
-La app tambien guarda el ultimo estado del watcher en `challenge_sync_status`. Ese estado aparece en el menu como **Challenge en vivo**, por lo que puedes ver si el proceso esta comprobando, si aplico cambios o si hubo un error. El boton **Actualizar Challenge** crea una solicitud en `challenge_sync_requests`; el watcher la atiende en el siguiente ciclo y fuerza una comprobacion.
+La app guarda el ultimo estado en `challenge_sync_status`. Ese estado aparece como **Challenge manual**, por lo que puedes ver si la ultima actualizacion se aplico o si hubo un error.
 
 Para desplegar el watcher en Render:
 
 1. Sube el repo a GitHub.
 2. En Render crea un **Blueprint** usando `render.yaml`, o crea un **Background Worker** con Docker y `Dockerfile.worker`.
 3. Anade la variable privada `SUPABASE_DB_URL`.
-4. Deja `CHALLENGE_SYNC_INTERVAL_MS=60000` o bajalo si quieres mas inmediatez.
-5. Arranca el worker. Mientras este activo, web y apps moviles se actualizaran por Supabase Realtime.
+4. Deja `CHALLENGE_REQUEST_POLL_MS=15000`.
+5. Arranca el worker. Mientras este activo, web y apps moviles se actualizaran cuando alguien pulse el boton.
 
-No pongas `SUPABASE_DB_URL` en variables `VITE_`: es una credencial de servidor y solo debe vivir en el worker, GitHub Actions o una maquina privada.
+No pongas `SUPABASE_DB_URL` en variables `VITE_`: es una credencial de servidor y solo debe vivir en el worker o una maquina privada.
 
 ## Datos Challenge
 
@@ -188,7 +174,7 @@ Esto regenera:
 - `src/data/challengeFixtures.ts`
 - `supabase/seed.sql`
 
-Con el workflow activo y el secret `SUPABASE_DB_URL` configurado, la app online se refresca automaticamente: el job descarga Challenge, sube el seed, ejecuta `sync_all_leagues_from_official()` y Supabase Realtime avisa a las pantallas abiertas. En local puedes forzarlo con `npm run sync:challenge` y aplicando `supabase/seed.sql`.
+En local puedes forzar una actualizacion tecnica con `npm run sync:challenge` y aplicando `supabase/seed.sql`, pero el flujo normal online es el boton de la app.
 
 ## App movil
 

@@ -68,7 +68,7 @@ export const AuthPage = () => {
           </div>
           {isSupabaseConfigured ? (
             <div className="mt-5 rounded-lg border border-[#62d7ff]/20 bg-[#62d7ff]/10 p-4">
-              <div className="mb-3 text-sm font-black text-white">Challenge en vivo</div>
+              <div className="mb-3 text-sm font-black text-white">Challenge manual</div>
               <ChallengeSyncButton />
             </div>
           ) : null}

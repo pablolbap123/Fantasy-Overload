@@ -1,4 +1,3 @@
-import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import { spawn } from "node:child_process";
 
@@ -21,17 +20,12 @@ await loadEnvFile(".env");
 await loadEnvFile(".env.local");
 await loadEnvFile(".env.server.local");
 
-const intervalMs = Number(process.env.CHALLENGE_SYNC_INTERVAL_MS ?? 60_000);
+const pollMs = Number(process.env.CHALLENGE_REQUEST_POLL_MS ?? 15_000);
 const databaseUrl = process.env.SUPABASE_DB_URL;
 
 const sleep = (ms) => new Promise((resolve) => {
   setTimeout(resolve, ms);
 });
-
-const hashFile = async (fileUrl) => {
-  const content = await readFile(fileUrl);
-  return createHash("sha256").update(content).digest("hex");
-};
 
 const runNode = (args) =>
   new Promise((resolve, reject) => {
@@ -153,6 +147,27 @@ const finishSyncRequests = async (requestIds, status, message) => {
   }
 };
 
+const cleanupSyncRequests = async () => {
+  try {
+    await applySql(`
+      delete from public.challenge_sync_requests
+      where status in ('completed', 'failed')
+        and (
+          created_at < now() - interval '7 days'
+          or id in (
+            select id
+            from public.challenge_sync_requests
+            where status in ('completed', 'failed')
+            order by created_at desc
+            offset 100
+          )
+        )
+    `);
+  } catch (error) {
+    console.warn("[challenge-watch] No se pudieron limpiar solicitudes antiguas:", shortError(error));
+  }
+};
+
 const applyLatestSnapshot = async () => {
   const seedSql = await readFile(seedPath, "utf8");
   await applySql(`
@@ -163,36 +178,30 @@ const applyLatestSnapshot = async () => {
   `);
 };
 
-let lastHash = "";
-console.log(`[challenge-watch] Vigilando Challenge cada ${intervalMs}ms.`);
+console.log(`[challenge-watch] Modo manual: solo sincroniza Challenge cuando llega una solicitud. Revisa solicitudes cada ${pollMs}ms.`);
 
 while (true) {
   let requestIds = [];
   try {
     requestIds = await takePendingSyncRequests();
+    if (!requestIds.length) {
+      await sleep(pollMs);
+      continue;
+    }
     await updateSyncStatus(
       "checking",
-      requestIds.length ? "Actualizacion manual solicitada. Comprobando Challenge Place..." : "Comprobando cambios oficiales de Challenge Place...",
+      "Actualizacion manual solicitada. Comprobando Challenge Place...",
     );
-    const beforeHash = await hashFile(seedPath).catch(() => "");
     await runNode(["scripts/syncChallengeData.mjs"]);
-    const nextHash = await hashFile(seedPath);
-    const changed = nextHash !== beforeHash || nextHash !== lastHash;
-    if (changed) {
-      await applyLatestSnapshot();
-      lastHash = nextHash;
-      await updateSyncStatus("changed", "Cambios de Challenge aplicados en web y movil.", { snapshotHash: nextHash, changed: true });
-      await finishSyncRequests(requestIds, "completed", "Cambios de Challenge aplicados.");
-      console.log(`[challenge-watch] Cambios aplicados en Supabase: ${new Date().toISOString()}`);
-    } else {
-      await updateSyncStatus("ok", "Sin cambios oficiales detectados.", { snapshotHash: nextHash });
-      await finishSyncRequests(requestIds, "completed", "No habia cambios oficiales nuevos.");
-      console.log(`[challenge-watch] Sin cambios: ${new Date().toISOString()}`);
-    }
+    await applyLatestSnapshot();
+    await updateSyncStatus("changed", "Actualizacion manual de Challenge aplicada en web y movil.", { changed: true });
+    await finishSyncRequests(requestIds, "completed", "Actualizacion manual de Challenge aplicada.");
+    await cleanupSyncRequests();
+    console.log(`[challenge-watch] Actualizacion manual aplicada en Supabase: ${new Date().toISOString()}`);
   } catch (error) {
     await updateSyncStatus("error", `Error al sincronizar Challenge: ${shortError(error)}`);
     await finishSyncRequests(requestIds, "failed", shortError(error));
     console.error("[challenge-watch] Error:", error);
   }
-  await sleep(intervalMs);
+  await sleep(pollMs);
 }

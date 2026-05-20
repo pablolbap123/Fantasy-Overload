@@ -1,10 +1,10 @@
 services:
   - type: worker
-    name: overload-challenge-live-sync
+    name: overload-challenge-manual-sync
     runtime: docker
     dockerfilePath: ./Dockerfile.worker
     envVars:
       - key: SUPABASE_DB_URL
         sync: false
-      - key: CHALLENGE_SYNC_INTERVAL_MS
-        value: "10000"
+      - key: CHALLENGE_REQUEST_POLL_MS
+        value: "15000"

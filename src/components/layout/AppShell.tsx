@@ -58,8 +58,8 @@ export const AppShell = () => {
   }, [currentLeague?.id, leagueId, selectLeague]);
 
   const liveStatus = challengeSyncStatus?.status ?? (onlineReady ? "idle" : undefined);
-  const liveMessage = challengeSyncStatus?.message ?? (onlineReady ? "Esperando watcher de Challenge." : "Solo disponible en modo online.");
-  const liveChecked = challengeSyncStatus?.lastCheckedAt ? formatDate(challengeSyncStatus.lastCheckedAt) : "Pendiente";
+  const liveMessage = challengeSyncStatus?.message ?? (onlineReady ? "Pulsa el boton para actualizar desde Challenge." : "Solo disponible en modo online.");
+  const liveChecked = challengeSyncStatus?.lastCheckedAt ? formatDate(challengeSyncStatus.lastCheckedAt) : "Sin actualizar";
 
   const syncChallenge = async () => {
     setSyncing(true);
@@ -97,10 +97,10 @@ export const AppShell = () => {
           <div className={clsx("rounded-lg p-3", syncTone(liveStatus))}>
             <div className="flex items-center gap-2">
               {liveStatus === "checking" ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Wifi className="h-4 w-4" />}
-              <span>Challenge en vivo</span>
+              <span>Challenge manual</span>
             </div>
             <p className="mt-1 line-clamp-2 text-[11px] font-semibold opacity-90">{liveMessage}</p>
-            <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.08em] opacity-70">Ultima comprobacion: {liveChecked}</p>
+            <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.08em] opacity-70">Ultima actualizacion: {liveChecked}</p>
             <Button
               variant="secondary"
               className="mt-3 min-h-9 w-full px-3 text-xs"
@@ -148,7 +148,7 @@ export const AppShell = () => {
               </div>
               <div className={clsx("hidden items-center gap-2 rounded-lg px-3 py-2 sm:flex", syncTone(liveStatus))}>
                 {liveStatus === "checking" ? <RefreshCw className="h-3.5 w-3.5 animate-spin" /> : <Wifi className="h-3.5 w-3.5" />}
-                <span>Challenge live</span>
+                <span>Challenge manual</span>
               </div>
               <Button
                 variant="secondary"

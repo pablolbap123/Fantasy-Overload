@@ -42,7 +42,7 @@ export const ChallengeSyncButton = ({ className, label = "Actualizar Challenge",
       </Button>
       {!compact ? (
         <p className="mt-2 text-xs font-semibold text-slate-400">
-          {message || error || (onlineReady ? "Fuerza una comprobacion en el siguiente ciclo del watcher." : "Disponible aunque no hayas entrado aun a una liga.")}
+          {message || error || (onlineReady ? "Solo actualiza cuando alguien pulsa este boton." : "Disponible aunque no hayas entrado aun a una liga.")}
         </p>
       ) : null}
     </div>
