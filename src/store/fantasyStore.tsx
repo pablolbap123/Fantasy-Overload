@@ -88,7 +88,7 @@ interface FantasyContextValue {
   listPlayerOnMarket: (playerId: string) => Promise<void>;
   cancelMarketListing: (playerId: string) => Promise<void>;
   raisePlayerClause: (playerId: string, newClause: number) => Promise<void>;
-  makeOffer: (playerId: string, amount: number) => Promise<void>;
+  makeOffer: (playerId: string, amount: number, exchangePlayerId?: string | null) => Promise<void>;
   refreshDailyMarket: () => Promise<void>;
   acceptOffer: (offerId: string) => Promise<void>;
   rejectOffer: (offerId: string) => Promise<void>;
@@ -123,6 +123,10 @@ const makeInviteCode = () => Math.random().toString(36).slice(2, 8).toUpperCase(
 const clone = <T,>(value: T): T => JSON.parse(JSON.stringify(value)) as T;
 const supabasePageSize = 1000;
 const supabaseQueryTimeoutMs = 20_000;
+const releaseClauseFor = (price: number) => Math.round((price * 1.2) / 50_000) * 50_000;
+const clauseRaiseCost = (fromClause: number, toClause: number) =>
+  Math.max(250_000, Math.round(((toClause - fromClause) * 0.6) / 50_000) * 50_000);
+const clauseLockUntil = () => new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString();
 
 const withSupabaseTimeout = async <T,>(query: PromiseLike<T>, label = "Supabase") =>
   new Promise<T>((resolve, reject) => {
@@ -202,7 +206,8 @@ const buildDemoSnapshot = (): DemoSnapshot => {
     listedByUserId: null,
     marketStatus: ownerByPlayer.has(player.id) ? "owned" : "market",
     price: player.currentPrice,
-    releaseClause: Math.round((player.currentPrice * 1.8) / 50_000) * 50_000,
+    releaseClause: releaseClauseFor(player.currentPrice),
+    clauseLockedUntil: ownerByPlayer.has(player.id) ? clauseLockUntil() : null,
     marketListedAt: null,
     marketExpiresAt: null,
     createdAt: now,
@@ -567,7 +572,8 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           marketStatus: row.market_status,
           price: Number(row.price),
           releaseClause:
-            row.release_clause && Number(row.release_clause) > 0 ? Number(row.release_clause) : Math.round((Number(row.price) * 1.8) / 50_000) * 50_000,
+            row.release_clause && Number(row.release_clause) > 0 ? Number(row.release_clause) : releaseClauseFor(Number(row.price)),
+          clauseLockedUntil: row.clause_locked_until,
           marketListedAt: row.market_listed_at,
           marketExpiresAt: row.market_expires_at,
           createdAt: row.created_at,
@@ -636,6 +642,8 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           toUserId: row.to_user_id,
           playerId: row.player_id,
           amount: Number(row.amount),
+          kind: row.kind ?? "transfer",
+          exchangePlayerId: row.exchange_player_id,
           status: row.status,
           createdAt: row.created_at,
         })) satisfies Offer[];
@@ -917,7 +925,8 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           listedByUserId: null,
           marketStatus: "market",
           price: player.currentPrice,
-          releaseClause: Math.round((player.currentPrice * 1.8) / 50_000) * 50_000,
+          releaseClause: releaseClauseFor(player.currentPrice),
+          clauseLockedUntil: null,
           marketListedAt: null,
           marketExpiresAt: null,
           createdAt: league.createdAt,
@@ -1060,6 +1069,9 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       if (!player || !target) throw new Error("Jugador no encontrado.");
       if (currentLeague.marketLocked) throw new Error("El mercado está bloqueado.");
       if (target.ownerUserId === userId) throw new Error("Ese jugador ya es tuyo.");
+      if (target.ownerUserId && target.clauseLockedUntil && new Date(target.clauseLockedUntil).getTime() > Date.now()) {
+        throw new Error(`No se puede clausular hasta ${new Date(target.clauseLockedUntil).toLocaleDateString("es-ES")}.`);
+      }
 
       if (onlineReady && supabase) {
         const { error } = await supabase.rpc("buy_player", {
@@ -1086,7 +1098,8 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
                 listedByUserId: null,
                 marketStatus: "owned",
                 price,
-                releaseClause: Math.round((price * 1.8) / 50_000) * 50_000,
+                releaseClause: releaseClauseFor(price),
+                clauseLockedUntil: clauseLockUntil(),
               }
             : item,
         ),
@@ -1169,7 +1182,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       }
 
       const member = members.find((item) => item.userId === userId);
-      const cost = Math.round(((newClause - target.releaseClause) * 0.2) / 50_000) * 50_000;
+      const cost = clauseRaiseCost(target.releaseClause, newClause);
       if (!member || member.budget < cost) throw new Error("No tienes presupuesto suficiente para subir la cláusula.");
       setLeaguePlayers((current) => current.map((item) => (item.playerId === playerId ? { ...item, releaseClause: newClause } : item)));
       setMembers((current) =>
@@ -1240,7 +1253,8 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
                 listedByUserId: null,
                 marketStatus: "locked",
                 price: amount,
-                releaseClause: Math.round((amount * 1.8) / 50_000) * 50_000,
+                releaseClause: releaseClauseFor(amount),
+                clauseLockedUntil: null,
                 marketListedAt: null,
                 marketExpiresAt: null,
               }
@@ -1437,18 +1451,20 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
   }, [currentLeague, leaguePlayers, loadLeagueData, members, offers, onlineReady, players, pushToast]);
 
   const makeOffer = useCallback(
-    async (playerId: string, amount: number) => {
+    async (playerId: string, amount: number, exchangePlayerId?: string | null) => {
       if (!currentLeague || !userId) return;
       const player = players.find((item) => item.id === playerId);
       const target = leaguePlayers.find((item) => item.playerId === playerId);
       const owner = target?.ownerUserId ?? null;
       const member = members.find((item) => item.userId === userId);
+      const exchangePlayer = exchangePlayerId ? leaguePlayers.find((item) => item.playerId === exchangePlayerId) : undefined;
       const highestBid = getHighestBid(offers, playerId);
       const minimumBid = getNextBidAmount(target?.price ?? player?.currentPrice ?? 0, highestBid);
 
       if (!player || !target) throw new Error("Jugador no encontrado.");
       if (target.listedByUserId === userId) throw new Error("No puedes pujar por tu propio jugador.");
       if (!member || member.budget < amount) throw new Error("No tienes presupuesto suficiente para esa puja.");
+      if (exchangePlayerId && exchangePlayer?.ownerUserId !== userId) throw new Error("Solo puedes ofrecer jugadores de tu plantilla.");
       if (!owner) {
         if (target.marketStatus !== "market" || !target.marketExpiresAt) throw new Error("Este jugador no está en la subasta diaria.");
         if (new Date(target.marketExpiresAt).getTime() <= Date.now()) throw new Error("La subasta ya ha terminado. Actualiza el mercado.");
@@ -1463,6 +1479,8 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
               to_user_id: owner,
               player_id: playerId,
               amount,
+              kind: exchangePlayerId ? "exchange" : "transfer",
+              exchange_player_id: exchangePlayerId ?? null,
               status: "pending",
             })
           : await supabase.rpc("place_market_bid", {
@@ -1485,6 +1503,8 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
               toUserId: owner,
               playerId,
               amount,
+              kind: exchangePlayerId ? "exchange" : "transfer",
+              exchangePlayerId: exchangePlayerId ?? null,
               status: "pending",
               createdAt: new Date().toISOString(),
             },

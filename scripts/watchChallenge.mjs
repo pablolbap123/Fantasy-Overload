@@ -132,6 +132,16 @@ const takePendingSyncRequests = async () => {
 const finishSyncRequests = async (requestIds, status, message) => {
   if (!requestIds.length) return;
   try {
+    if (status === "completed") {
+      await applySql(
+        `
+          delete from public.challenge_sync_requests
+          where id = any($1::uuid[])
+        `,
+        [requestIds],
+      );
+      return;
+    }
     await applySql(
       `
         update public.challenge_sync_requests

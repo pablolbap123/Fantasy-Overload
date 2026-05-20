@@ -1,11 +1,17 @@
 import { Crown } from "lucide-react";
+import { useState } from "react";
 import { InviteLeagueCard } from "../components/fantasy/InviteLeagueCard";
+import { PlayerAvatar } from "../components/players/PlayerAvatar";
+import { PlayerDetailDrawer } from "../components/players/PlayerDetailDrawer";
+import { Badge } from "../components/ui/Badge";
 import { Card } from "../components/ui/Card";
 import { useFantasy } from "../store/fantasyStore";
-import { formatMoney } from "../utils/formatters";
+import type { Player } from "../types";
+import { formatMoney, positionTone } from "../utils/formatters";
 
 export const MembersPage = () => {
-  const { currentLeague, members } = useFantasy();
+  const { currentLeague, members, leaguePlayers, players } = useFantasy();
+  const [selectedPlayer, setSelectedPlayer] = useState<Player | undefined>();
   const ownerId = currentLeague?.ownerId;
 
   return (
@@ -16,7 +22,13 @@ export const MembersPage = () => {
       </div>
       <InviteLeagueCard league={currentLeague} />
       <div className="grid gap-3 lg:grid-cols-2">
-        {members.map((member) => (
+        {members.map((member) => {
+          const squad = leaguePlayers
+            .filter((leaguePlayer) => leaguePlayer.ownerUserId === member.userId)
+            .map((leaguePlayer) => players.find((player) => player.id === leaguePlayer.playerId))
+            .filter(Boolean)
+            .sort((a, b) => b!.currentPrice - a!.currentPrice) as Player[];
+          return (
           <Card key={member.id}>
             <div className="flex items-center justify-between gap-3">
               <div className="flex min-w-0 items-center gap-3">
@@ -50,9 +62,41 @@ export const MembersPage = () => {
                 <div className="text-xs text-slate-500">Caja</div>
               </div>
             </div>
+            <div className="mt-4">
+              <div className="mb-2 flex items-center justify-between gap-2">
+                <h2 className="text-sm font-black text-white">Plantilla</h2>
+                <span className="text-xs font-bold text-slate-400">{squad.length} jugadores</span>
+              </div>
+              <div className="max-h-72 space-y-2 overflow-y-auto pr-1">
+                {squad.map((player) => {
+                  const leaguePlayer = leaguePlayers.find((item) => item.playerId === player.id);
+                  return (
+                    <button
+                      key={player.id}
+                      className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-3 rounded-lg bg-white/[0.045] p-2 text-left transition hover:bg-white/[0.08]"
+                      onClick={() => setSelectedPlayer(player)}
+                    >
+                      <PlayerAvatar player={player} size="sm" />
+                      <div className="min-w-0">
+                        <div className="truncate text-sm font-black text-white">{player.name}</div>
+                        <div className="truncate text-xs text-slate-400">{formatMoney(player.currentPrice)}</div>
+                      </div>
+                      <div className="text-right">
+                        <Badge className={positionTone[player.position]}>{player.position}</Badge>
+                        <div className="mt-1 text-xs font-black text-[#f5bd43]">
+                          {leaguePlayer?.releaseClause ? formatMoney(leaguePlayer.releaseClause) : "Sin clausula"}
+                        </div>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
           </Card>
-        ))}
+          );
+        })}
       </div>
+      <PlayerDetailDrawer player={selectedPlayer} onClose={() => setSelectedPlayer(undefined)} />
     </div>
   );
 };

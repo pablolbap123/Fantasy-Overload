@@ -19,6 +19,22 @@ as $$
   }'::jsonb;
 $$;
 
+create or replace function public.default_release_clause(p_price numeric)
+returns numeric
+language sql
+immutable
+as $$
+  select round((greatest(coalesce(p_price, 0), 0) * 1.2) / 50000) * 50000;
+$$;
+
+create or replace function public.clause_raise_cost(p_from numeric, p_to numeric)
+returns numeric
+language sql
+immutable
+as $$
+  select greatest(250000, round(((greatest(coalesce(p_to, 0), 0) - greatest(coalesce(p_from, 0), 0)) * 0.6) / 50000) * 50000);
+$$;
+
 create or replace function public.generate_invite_code()
 returns text
 language plpgsql
@@ -133,7 +149,8 @@ begin
     set owner_user_id = p_user_id,
         market_status = 'owned',
         price = selected.current_price,
-        release_clause = round((selected.current_price * 1.8) / 50000) * 50000,
+        release_clause = public.default_release_clause(selected.current_price),
+        clause_locked_until = now() + interval '5 days',
         market_listed_at = null,
         market_expires_at = null
     from selected
@@ -219,7 +236,7 @@ begin
     id,
     'locked',
     current_price,
-    round((current_price * 1.8) / 50000) * 50000,
+    public.default_release_clause(current_price),
     null,
     null
   from public.players;
@@ -399,13 +416,13 @@ begin
     p.id,
     'locked',
     p.current_price,
-    round((p.current_price * 1.8) / 50000) * 50000
+    public.default_release_clause(p.current_price)
   from public.players p
   on conflict (league_id, player_id) do update
   set price = excluded.price,
       release_clause = case
         when public.league_players.owner_user_id is null then excluded.release_clause
-        else greatest(public.league_players.release_clause, excluded.release_clause)
+        else greatest(public.league_players.release_clause, public.default_release_clause(excluded.price))
       end;
 
   insert into public.matchdays (league_id, number, status, starts_at, ends_at)
@@ -567,6 +584,9 @@ begin
   if v_lp.owner_user_id = auth.uid() then raise exception 'already_owner'; end if;
   if v_lp.owner_user_id is null and v_lp.market_status <> 'market' then raise exception 'player_not_in_market'; end if;
   if v_lp.owner_user_id is null and p_amount < v_lp.price then raise exception 'amount_below_price'; end if;
+  if v_lp.owner_user_id is not null and v_lp.clause_locked_until is not null and v_lp.clause_locked_until > now() then
+    raise exception 'clause_locked_until_%', v_lp.clause_locked_until;
+  end if;
   if v_lp.owner_user_id is not null and p_amount < v_lp.release_clause then raise exception 'amount_below_clause'; end if;
   if v_member.budget < p_amount then raise exception 'not_enough_budget'; end if;
   v_previous_owner := v_lp.owner_user_id;
@@ -594,7 +614,8 @@ begin
       listed_by_user_id = null,
       market_status = 'owned',
       price = p_amount,
-      release_clause = round((p_amount * 1.8) / 50000) * 50000
+      release_clause = public.default_release_clause(p_amount),
+      clause_locked_until = now() + interval '5 days'
   where id = v_lp.id;
 
   insert into public.squads (league_id, user_id, player_id, acquired_price)
@@ -655,7 +676,8 @@ begin
       listed_by_user_id = null,
       market_status = 'locked',
       price = v_amount,
-      release_clause = round((v_amount * 1.8) / 50000) * 50000,
+      release_clause = public.default_release_clause(v_amount),
+      clause_locked_until = null,
       market_listed_at = null,
       market_expires_at = null
   where id = v_lp.id;
@@ -808,7 +830,7 @@ begin
     raise exception 'clause_not_higher';
   end if;
 
-  v_cost := round(((p_new_clause - v_lp.release_clause) * 0.2) / 50000) * 50000;
+  v_cost := public.clause_raise_cost(v_lp.release_clause, p_new_clause);
 
   select * into v_member
   from public.league_members
@@ -979,7 +1001,8 @@ begin
           listed_by_user_id = null,
           market_status = 'owned',
           price = v_offer.amount,
-          release_clause = round((v_offer.amount * 1.8) / 50000) * 50000,
+          release_clause = public.default_release_clause(v_offer.amount),
+          clause_locked_until = now() + interval '5 days',
           market_listed_at = null,
           market_expires_at = null
       where id = v_lp.id;
@@ -1020,7 +1043,8 @@ begin
         set listed_by_user_id = null,
             market_status = 'locked',
             price = v_league_offer,
-            release_clause = round((v_league_offer * 1.8) / 50000) * 50000,
+            release_clause = public.default_release_clause(v_league_offer),
+            clause_locked_until = null,
             market_listed_at = null,
             market_expires_at = null
         where id = v_lp.id;
@@ -1529,6 +1553,7 @@ as $$
 declare
   v_offer public.offers%rowtype;
   v_lp public.league_players%rowtype;
+  v_exchange_lp public.league_players%rowtype;
   v_buyer public.league_members%rowtype;
 begin
   select * into v_offer from public.offers where id = p_offer_id for update;
@@ -1551,18 +1576,64 @@ begin
     raise exception 'buyer_not_enough_budget';
   end if;
 
+  if v_offer.kind = 'exchange' then
+    if v_offer.exchange_player_id is null then
+      raise exception 'exchange_player_required';
+    end if;
+
+    select * into v_exchange_lp
+    from public.league_players
+    where league_id = v_offer.league_id and player_id = v_offer.exchange_player_id
+    for update;
+
+    if not found or v_exchange_lp.owner_user_id <> v_offer.from_user_id then
+      raise exception 'exchange_player_not_owned';
+    end if;
+  end if;
+
   update public.league_members set budget = budget - v_offer.amount where league_id = v_offer.league_id and user_id = v_offer.from_user_id;
   update public.league_members set budget = budget + v_offer.amount where league_id = v_offer.league_id and user_id = auth.uid();
-  update public.league_players set owner_user_id = v_offer.from_user_id, listed_by_user_id = null, price = v_offer.amount where id = v_lp.id;
+  update public.league_players
+  set owner_user_id = v_offer.from_user_id,
+      listed_by_user_id = null,
+      price = greatest(v_offer.amount, v_lp.price),
+      release_clause = public.default_release_clause(greatest(v_offer.amount, v_lp.price)),
+      clause_locked_until = now() + interval '5 days'
+  where id = v_lp.id;
 
   delete from public.squads where league_id = v_offer.league_id and user_id = auth.uid() and player_id = v_offer.player_id;
   insert into public.squads (league_id, user_id, player_id, acquired_price)
-  values (v_offer.league_id, v_offer.from_user_id, v_offer.player_id, v_offer.amount)
+  values (v_offer.league_id, v_offer.from_user_id, v_offer.player_id, greatest(v_offer.amount, v_lp.price))
   on conflict (league_id, user_id, player_id) do update set acquired_price = excluded.acquired_price, acquired_at = now();
+
+  if v_offer.kind = 'exchange' then
+    update public.league_players
+    set owner_user_id = auth.uid(),
+        listed_by_user_id = null,
+        release_clause = public.default_release_clause(price),
+        clause_locked_until = now() + interval '5 days'
+    where id = v_exchange_lp.id;
+
+    delete from public.squads where league_id = v_offer.league_id and user_id = v_offer.from_user_id and player_id = v_offer.exchange_player_id;
+    insert into public.squads (league_id, user_id, player_id, acquired_price)
+    values (v_offer.league_id, auth.uid(), v_offer.exchange_player_id, v_exchange_lp.price)
+    on conflict (league_id, user_id, player_id) do update set acquired_price = excluded.acquired_price, acquired_at = now();
+
+    delete from public.lineup_players lp
+    using public.lineups l
+    where l.id = lp.lineup_id and l.league_id = v_offer.league_id and l.user_id = v_offer.from_user_id and lp.player_id = v_offer.exchange_player_id;
+
+    insert into public.transfers (league_id, user_id, player_id, type, amount)
+    values (v_offer.league_id, auth.uid(), v_offer.exchange_player_id, 'offer_accepted', v_exchange_lp.price);
+  end if;
+
+  delete from public.lineup_players lp
+  using public.lineups l
+  where l.id = lp.lineup_id and l.league_id = v_offer.league_id and l.user_id = auth.uid() and lp.player_id = v_offer.player_id;
 
   update public.offers set status = 'accepted' where id = p_offer_id;
   insert into public.transfers (league_id, user_id, player_id, type, amount)
-  values (v_offer.league_id, v_offer.from_user_id, v_offer.player_id, 'offer_accepted', v_offer.amount);
+  values (v_offer.league_id, v_offer.from_user_id, v_offer.player_id, 'offer_accepted', greatest(v_offer.amount, v_lp.price));
 end;
 $$;
 

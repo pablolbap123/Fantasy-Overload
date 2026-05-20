@@ -158,7 +158,8 @@ export const resolveExpiredDailyMarket = ({ leagueId, leaguePlayers, players, me
                 listedByUserId: null,
                 marketStatus: "locked",
                 price: leagueOfferAmount,
-                releaseClause: roundBidAmount(leagueOfferAmount * 1.8),
+                releaseClause: roundBidAmount(leagueOfferAmount * 1.2),
+                clauseLockedUntil: null,
                 marketListedAt: null,
                 marketExpiresAt: null,
               }
@@ -221,7 +222,8 @@ export const resolveExpiredDailyMarket = ({ leagueId, leaguePlayers, players, me
             listedByUserId: null,
             marketStatus: "owned",
             price: winningBid.amount,
-            releaseClause: roundBidAmount(winningBid.amount * 1.8),
+            releaseClause: roundBidAmount(winningBid.amount * 1.2),
+            clauseLockedUntil: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString(),
             marketListedAt: null,
             marketExpiresAt: null,
           }

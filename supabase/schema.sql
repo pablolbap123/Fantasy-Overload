@@ -69,6 +69,7 @@ create table if not exists public.league_players (
   market_status text not null default 'market' check (market_status in ('market', 'owned', 'locked')),
   price numeric not null check (price >= 0),
   release_clause numeric not null default 0 check (release_clause >= 0),
+  clause_locked_until timestamptz,
   market_listed_at timestamptz,
   market_expires_at timestamptz,
   created_at timestamptz not null default now(),
@@ -193,6 +194,8 @@ create table if not exists public.offers (
   to_user_id uuid references public.profiles(user_id) on delete cascade,
   player_id uuid not null references public.players(id) on delete cascade,
   amount numeric not null check (amount >= 0),
+  kind text not null default 'transfer' check (kind in ('transfer', 'exchange')),
+  exchange_player_id uuid references public.players(id) on delete set null,
   status text not null default 'pending' check (status in ('pending', 'accepted', 'rejected', 'outbid')),
   created_at timestamptz not null default now()
 );

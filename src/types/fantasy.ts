@@ -5,6 +5,7 @@ export type LeagueRole = "admin" | "member";
 export type MarketStatus = "market" | "owned" | "locked";
 export type TransferType = "buy" | "sell" | "offer" | "offer_accepted" | "clause_buy" | "clause_raise" | "auction_win" | "league_offer";
 export type OfferStatus = "pending" | "accepted" | "rejected" | "outbid";
+export type OfferKind = "transfer" | "exchange";
 
 export interface Profile {
   id: string;
@@ -52,6 +53,7 @@ export interface LeaguePlayer {
   marketStatus: MarketStatus;
   price: number;
   releaseClause: number;
+  clauseLockedUntil?: string | null;
   marketListedAt?: string | null;
   marketExpiresAt?: string | null;
   createdAt: string;
@@ -104,6 +106,8 @@ export interface Offer {
   toUserId?: string | null;
   playerId: string;
   amount: number;
+  kind: OfferKind;
+  exchangePlayerId?: string | null;
   status: OfferStatus;
   createdAt: string;
 }

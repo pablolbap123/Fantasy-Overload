@@ -13,7 +13,7 @@ import { formatMoney } from "../utils/formatters";
 import { formatTimeLeft, getHighestBid, getNextBidAmount } from "../utils/market";
 
 export const MarketPage = () => {
-  const { currentLeague, userId, players, leaguePlayers, teams, members, sellPlayer, makeOffer, refreshDailyMarket, transfers, offers } = useFantasy();
+  const { currentLeague, userId, players, leaguePlayers, teams, members, sellPlayer, makeOffer, refreshDailyMarket, transfers, offers, acceptOffer, rejectOffer } = useFantasy();
   const [position, setPosition] = useState<(typeof marketFilterOptions.positions)[number]>("todos");
   const [status, setStatus] = useState<(typeof marketFilterOptions.statuses)[number]>("todos");
   const [teamId, setTeamId] = useState("todos");
@@ -86,6 +86,7 @@ export const MarketPage = () => {
   const activeMarketCount = rows.daily.length;
   const firstExpiration = rows.daily[0]?.leaguePlayer.marketExpiresAt;
   const pendingOffers = offers.filter((offer) => offer.status === "pending");
+  const receivedOffers = pendingOffers.filter((offer) => offer.toUserId === userId);
 
   const renderPlayerAuction = (row: NonNullable<(typeof rows.daily)[number]>, sellerLabel?: string) => {
     const leaguePlayer = row.leaguePlayer;
@@ -179,6 +180,41 @@ export const MarketPage = () => {
       ) : null}
 
       <div className="grid gap-5 lg:grid-cols-2">
+        {receivedOffers.length > 0 ? (
+          <Card className="lg:col-span-2">
+            <h2 className="mb-3 text-base font-black text-white">Ofertas recibidas</h2>
+            <div className="grid gap-3 md:grid-cols-2">
+              {receivedOffers.map((offer) => {
+                const player = players.find((item) => item.id === offer.playerId);
+                const bidder = ownerNameByUser.get(offer.fromUserId) ?? "Manager";
+                const exchangePlayer = offer.exchangePlayerId ? players.find((item) => item.id === offer.exchangePlayerId) : undefined;
+                return (
+                  <div key={offer.id} className="rounded-lg border border-white/10 bg-white/[0.04] p-3">
+                    <div className="text-sm font-black text-white">{player?.name ?? "Jugador"}</div>
+                    <div className="mt-1 text-xs font-semibold text-slate-400">
+                      {bidder} ofrece {formatMoney(offer.amount)}
+                      {exchangePlayer ? ` + ${exchangePlayer.name}` : ""}
+                    </div>
+                    <div className="mt-3 flex gap-2">
+                      <button
+                        className="min-h-9 flex-1 rounded-lg bg-emerald-400 px-3 text-sm font-black text-slate-950"
+                        onClick={() => void runAction(() => acceptOffer(offer.id))}
+                      >
+                        Aceptar
+                      </button>
+                      <button
+                        className="min-h-9 flex-1 rounded-lg border border-white/10 bg-white/10 px-3 text-sm font-black text-white"
+                        onClick={() => void runAction(() => rejectOffer(offer.id))}
+                      >
+                        Rechazar
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </Card>
+        ) : null}
         <Card>
           <h2 className="mb-3 text-base font-black text-white">Historial de fichajes</h2>
           <div className="space-y-2">

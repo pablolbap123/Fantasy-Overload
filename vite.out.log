@@ -964,3 +964,50 @@
 [2m23:27:15[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/AuthPage.tsx, /src/index.css[22m
 [2m23:36:35[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mandroid/app/src/main/assets/public/index.html[22m
 [2m23:36:54[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mandroid/app/build/intermediates/assets/debug/mergeDebugAssets/public/index.html[22m
+[2m23:40:51[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/store/fantasyStore.tsx[22m
+[2m23:40:51[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/store/fantasyStore.tsx[22m
+[2m23:40:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/store/fantasyStore.tsx[22m Could not Fast Refresh ("useFantasy" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m23:40:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/store/fantasyStore.tsx[22m
+[2m23:45:37[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/types/fantasy.ts[22m
+[2m23:47:23[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/store/fantasyStore.tsx, /src/index.css[22m
+[2m23:47:24[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/store/fantasyStore.tsx[22m Could not Fast Refresh ("useFantasy" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m23:47:24[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/store/fantasyStore.tsx[22m
+[2m23:47:27[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/store/fantasyStore.tsx, /src/index.css[22m
+[2m23:47:27[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/store/fantasyStore.tsx[22m Could not Fast Refresh ("useFantasy" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m23:47:27[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/store/fantasyStore.tsx[22m
+[2m23:47:32[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/store/fantasyStore.tsx, /src/index.css[22m
+[2m23:47:32[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/store/fantasyStore.tsx[22m Could not Fast Refresh ("useFantasy" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m23:47:32[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/store/fantasyStore.tsx[22m
+[2m23:47:37[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/store/fantasyStore.tsx, /src/index.css[22m
+[2m23:47:37[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/store/fantasyStore.tsx[22m Could not Fast Refresh ("useFantasy" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m23:47:37[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/store/fantasyStore.tsx[22m
+[2m23:47:41[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/store/fantasyStore.tsx, /src/index.css[22m
+[2m23:47:41[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/store/fantasyStore.tsx[22m Could not Fast Refresh ("useFantasy" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m23:47:41[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/store/fantasyStore.tsx[22m
+[2m23:47:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/store/fantasyStore.tsx, /src/index.css[22m
+[2m23:47:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/store/fantasyStore.tsx[22m Could not Fast Refresh ("useFantasy" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m23:47:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/store/fantasyStore.tsx[22m
+[2m23:48:11[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/store/fantasyStore.tsx, /src/index.css[22m
+[2m23:48:11[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/store/fantasyStore.tsx[22m Could not Fast Refresh ("useFantasy" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m23:48:11[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/store/fantasyStore.tsx[22m
+[2m23:48:18[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/store/fantasyStore.tsx, /src/index.css[22m
+[2m23:48:18[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/store/fantasyStore.tsx[22m Could not Fast Refresh ("useFantasy" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m23:48:18[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/store/fantasyStore.tsx[22m
+[2m23:48:55[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/store/fantasyStore.tsx, /src/index.css[22m
+[2m23:48:55[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/store/fantasyStore.tsx[22m Could not Fast Refresh ("useFantasy" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m23:48:55[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/store/fantasyStore.tsx[22m
+[2m23:49:07[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/players/PlayerDetailDrawer.tsx, /src/index.css[22m
+[2m23:49:11[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/players/PlayerDetailDrawer.tsx, /src/index.css[22m
+[2m23:49:16[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/players/PlayerDetailDrawer.tsx, /src/index.css[22m
+[2m23:49:22[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/players/PlayerDetailDrawer.tsx, /src/index.css[22m
+[2m23:49:31[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/players/PlayerDetailDrawer.tsx, /src/index.css[22m
+[2m23:49:41[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/players/PlayerDetailDrawer.tsx, /src/index.css[22m
+[2m23:49:46[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/players/PlayerDetailDrawer.tsx, /src/index.css[22m
+[2m23:49:58[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/players/PlayerDetailDrawer.tsx, /src/index.css[22m
+[2m23:50:13[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/MembersPage.tsx, /src/index.css[22m
+[2m23:50:41[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/store/fantasyStore.tsx, /src/pages/MarketPage.tsx, /src/components/players/PlayerDetailDrawer.tsx[22m
+[2m23:50:41[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [33mhmr invalidate [39m[2m/src/store/fantasyStore.tsx[22m Could not Fast Refresh ("useFantasy" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m23:50:41[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/store/fantasyStore.tsx[22m
+[2m23:50:59[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/MarketPage.tsx, /src/index.css[22m
+[2m23:51:26[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/players/PlayerDetailDrawer.tsx, /src/index.css[22m
+[2m23:52:54[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mandroid/app/src/main/assets/public/index.html[22m

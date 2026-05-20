@@ -16,6 +16,7 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
   const {
     matchdays,
     scoringRules,
+    players,
     leaguePlayers,
     userId,
     members,
@@ -29,6 +30,9 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
   } = useFantasy();
   const [selectedNumber, setSelectedNumber] = useState<number | null>(null);
   const [showActions, setShowActions] = useState(false);
+  const [showValueHistory, setShowValueHistory] = useState(false);
+  const [offerAmount, setOfferAmount] = useState("");
+  const [exchangePlayerId, setExchangePlayerId] = useState("");
   const [actionError, setActionError] = useState("");
   const [actionLoading, setActionLoading] = useState("");
   const contentRef = useRef<HTMLDivElement>(null);
@@ -36,6 +40,9 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
   useEffect(() => {
     setSelectedNumber(null);
     setShowActions(false);
+    setShowValueHistory(false);
+    setOfferAmount("");
+    setExchangePlayerId("");
     setActionError("");
   }, [player?.id]);
 
@@ -70,6 +77,7 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
   const breakdown = player && selectedStat ? buildPlayerPointBreakdown(selectedStat, scoringRules, player.position) : [];
   const selectedPoints = selectedStat?.fantasyPoints ?? player?.pointsByMatchday[activeNumber] ?? 0;
   const maxAbsPoints = Math.max(1, ...visibleMatchdays.map((number) => Math.abs(player?.pointsByMatchday[number] ?? 0)));
+  const playersById = useMemo(() => new Map(players.map((item) => [item.id, item])), [players]);
   const leaguePlayer = player ? leaguePlayers.find((item) => item.playerId === player.id) : undefined;
   const owner = leaguePlayer?.ownerUserId ? members.find((member) => member.userId === leaguePlayer.ownerUserId) : undefined;
   const listedBy = leaguePlayer?.listedByUserId ? members.find((member) => member.userId === leaguePlayer.listedByUserId) : undefined;
@@ -79,8 +87,24 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
   const highestBid = player ? getHighestBid(offers, player.id) : undefined;
   const nextBidAmount = player && leaguePlayer ? getNextBidAmount(leaguePlayer.price, highestBid) : 0;
   const quickSellAmount = leaguePlayer ? roundBidAmount(leaguePlayer.price * 0.5) : 0;
-  const nextClause = leaguePlayer ? roundBidAmount(Math.max(leaguePlayer.releaseClause * 1.1, leaguePlayer.releaseClause + 1_000_000)) : 0;
-  const nextClauseCost = leaguePlayer ? roundBidAmount((nextClause - leaguePlayer.releaseClause) * 0.2) : 0;
+  const nextClause = leaguePlayer ? roundBidAmount(Math.max(leaguePlayer.releaseClause * 1.05, leaguePlayer.releaseClause + 500_000)) : 0;
+  const nextClauseCost = leaguePlayer ? Math.max(250_000, roundBidAmount((nextClause - leaguePlayer.releaseClause) * 0.6)) : 0;
+  const myPlayers = leaguePlayers
+    .filter((item) => item.ownerUserId === userId && item.playerId !== player?.id)
+    .map((item) => playersById.get(item.playerId))
+    .filter(Boolean) as Player[];
+  const clauseLockedUntil = leaguePlayer?.clauseLockedUntil ? new Date(leaguePlayer.clauseLockedUntil) : null;
+  const isClauseLocked = Boolean(clauseLockedUntil && clauseLockedUntil.getTime() > Date.now());
+  const suggestedOffer = leaguePlayer && player ? roundBidAmount(Math.max(leaguePlayer.price, player.currentPrice) * 1.05) : 0;
+  const parsedOfferAmount = Number(offerAmount || suggestedOffer);
+  const valueHistory = player ? visibleMatchdays.map((number, index) => {
+    const points = Number(player.pointsByMatchday[number] ?? 0);
+    const previousImpact = visibleMatchdays
+      .slice(index + 1)
+      .reduce((sum, item) => sum + Number(player.pointsByMatchday[item] ?? 0), 0);
+    const estimatedValue = roundBidAmount(Math.max(player.basePrice, player.currentPrice - previousImpact * 120_000));
+    return { number, points, estimatedValue };
+  }) : [];
 
   const runPlayerAction = async (key: string, action: () => Promise<void>) => {
     setActionError("");
@@ -146,8 +170,16 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
                         <div className="text-base font-black text-white">{formatMoney(player.currentPrice)}</div>
                       </div>
                       <div className="rounded-lg bg-white/10 px-3 py-2">
+                        <div className="text-xs text-slate-300">Clausula</div>
+                        <div className="text-base font-black text-white">{leaguePlayer?.releaseClause ? formatMoney(leaguePlayer.releaseClause) : "-"}</div>
+                      </div>
+                      <div className="rounded-lg bg-white/10 px-3 py-2">
                         <div className="text-xs text-slate-300">Estado</div>
                         <Badge className={statusTone[player.status]}>{statusLabel[player.status]}</Badge>
+                      </div>
+                      <div className="rounded-lg bg-white/10 px-3 py-2">
+                        <div className="text-xs text-slate-300">Bloqueo</div>
+                        <div className="text-sm font-black text-white">{isClauseLocked ? `${Math.ceil((clauseLockedUntil!.getTime() - Date.now()) / 86_400_000)} dias` : "Libre"}</div>
                       </div>
                     </div>
                   </div>
@@ -169,13 +201,33 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
                 </div>
 
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <Button variant="secondary" icon={<TrendingUp className="h-4 w-4" />}>
+                  <Button variant="secondary" icon={<TrendingUp className="h-4 w-4" />} onClick={() => setShowValueHistory((current) => !current)}>
                     Valor historico
                   </Button>
                   <Button variant="danger" icon={<Lock className="h-4 w-4" />} onClick={() => setShowActions((current) => !current)}>
                     Acciones
                   </Button>
                 </div>
+
+                {showValueHistory ? (
+                  <div className="mt-3 rounded-lg border border-white/10 bg-slate-950/45 p-3">
+                    <div className="mb-2 flex items-center justify-between gap-2">
+                      <div className="text-sm font-black text-white">Valor historico</div>
+                      <div className="text-xs font-bold text-slate-300">Actual {formatMoney(player.currentPrice)}</div>
+                    </div>
+                    <div className="grid gap-2 sm:grid-cols-3">
+                      {valueHistory.map((item) => (
+                        <div key={item.number} className="rounded-lg border border-white/10 bg-white/[0.05] p-3">
+                          <div className="text-xs font-black uppercase text-slate-400">J{item.number}</div>
+                          <div className="mt-1 text-base font-black text-white">{formatMoney(item.estimatedValue)}</div>
+                          <div className={`text-xs font-black ${item.points < 0 ? "text-rose-300" : "text-emerald-300"}`}>
+                            {item.points > 0 ? "+" : ""}{item.points} pts
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
 
                 {showActions ? (
                   <div className="mt-3 rounded-lg border border-white/10 bg-slate-950/45 p-3">
@@ -190,6 +242,25 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
                             ? `En mercado${listedBy ? ` por ${listedBy.username}` : ""}`
                             : "Jugador libre"}
                     </div>
+                    {!isMine && owner ? (
+                      <div className="mb-3 grid gap-2 sm:grid-cols-[1fr_1fr]">
+                        <input
+                          className="field"
+                          inputMode="numeric"
+                          value={offerAmount}
+                          onChange={(event) => setOfferAmount(event.target.value)}
+                          placeholder={`Oferta sugerida ${formatMoney(suggestedOffer)}`}
+                        />
+                        <select className="field" value={exchangePlayerId} onChange={(event) => setExchangePlayerId(event.target.value)}>
+                          <option value="">Sin intercambio</option>
+                          {myPlayers.map((ownedPlayer) => (
+                            <option key={ownedPlayer.id} value={ownedPlayer.id}>
+                              {ownedPlayer.name} · {formatMoney(ownedPlayer.currentPrice)}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    ) : null}
                     <div className="grid gap-2 sm:grid-cols-2">
                       {isMine ? (
                         <>
@@ -223,14 +294,33 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
                         </>
                       ) : null}
                       {!isMine && owner && leaguePlayer?.releaseClause ? (
-                        <Button
-                          variant="danger"
-                          loading={actionLoading === "buyClause"}
-                          icon={<ShieldPlus className="h-4 w-4" />}
-                          onClick={() => void runPlayerAction("buyClause", () => buyPlayer(player.id, leaguePlayer.releaseClause))}
-                        >
-                          Pagar clausula {formatMoney(leaguePlayer.releaseClause)}
-                        </Button>
+                        <>
+                          <Button
+                            loading={actionLoading === "offer"}
+                            icon={<Gavel className="h-4 w-4" />}
+                            onClick={() => void runPlayerAction("offer", () => makeOffer(player.id, parsedOfferAmount || suggestedOffer, null))}
+                          >
+                            Oferta {formatMoney(parsedOfferAmount || suggestedOffer)}
+                          </Button>
+                          <Button
+                            variant="secondary"
+                            loading={actionLoading === "exchange"}
+                            icon={<RotateCcw className="h-4 w-4" />}
+                            disabled={!exchangePlayerId}
+                            onClick={() => void runPlayerAction("exchange", () => makeOffer(player.id, parsedOfferAmount || 0, exchangePlayerId))}
+                          >
+                            Intercambio
+                          </Button>
+                          <Button
+                            variant="danger"
+                            loading={actionLoading === "buyClause"}
+                            icon={<ShieldPlus className="h-4 w-4" />}
+                            disabled={isClauseLocked}
+                            onClick={() => void runPlayerAction("buyClause", () => buyPlayer(player.id, leaguePlayer.releaseClause))}
+                          >
+                            {isClauseLocked ? `Clausula bloqueada ${Math.ceil((clauseLockedUntil!.getTime() - Date.now()) / 86_400_000)}d` : `Pagar clausula ${formatMoney(leaguePlayer.releaseClause)}`}
+                          </Button>
+                        </>
                       ) : null}
                       {!isMine && isListed ? (
                         <Button
