@@ -280,3 +280,5 @@ supabase/
   rpc.sql
   seed.sql
 ```
+#   F a n t a s y - O v e r l o a d  
+ 
