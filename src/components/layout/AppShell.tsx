@@ -1,4 +1,4 @@
-import { BarChart3, CalendarDays, Home, LogOut, RefreshCw, Shield, Store, Trophy, Users, Wifi } from "lucide-react";
+import { BarChart3, CalendarDays, Home, LogOut, RefreshCw, Shield, SlidersHorizontal, Store, Trophy, Users, Wifi } from "lucide-react";
 import { clsx } from "clsx";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -8,7 +8,7 @@ import { Button } from "../ui/Button";
 import { useFantasy } from "../../store/fantasyStore";
 import { formatDate } from "../../utils/formatters";
 
-const navItems = [
+const baseNavItems = [
   { label: "Inicio", to: "home", icon: Home },
   { label: "Equipo", to: "team", icon: Shield },
   { label: "Mercado", to: "market", icon: Store },
@@ -49,6 +49,8 @@ export const AppShell = () => {
     userId,
     challengeSyncStatus,
     requestChallengeSync,
+    leagues,
+    isOverloadAdmin,
   } = useFantasy();
   const navigate = useNavigate();
   const [syncing, setSyncing] = useState(false);
@@ -60,6 +62,7 @@ export const AppShell = () => {
   const liveStatus = challengeSyncStatus?.status ?? (onlineReady ? "idle" : undefined);
   const liveMessage = challengeSyncStatus?.message ?? (onlineReady ? "Pulsa el boton para actualizar desde Challenge." : "Solo disponible en modo online.");
   const liveChecked = challengeSyncStatus?.lastCheckedAt ? formatDate(challengeSyncStatus.lastCheckedAt) : "Sin actualizar";
+  const navItems = isOverloadAdmin ? [...baseNavItems, { label: "Admin", to: "admin", icon: SlidersHorizontal }] : baseNavItems;
 
   const syncChallenge = async () => {
     setSyncing(true);
@@ -85,6 +88,22 @@ export const AppShell = () => {
             <div className="text-xs text-slate-400">{currentLeague?.name ?? "Selecciona liga"}</div>
           </div>
         </button>
+        {leagues.length > 1 ? (
+          <select
+            className="field mb-4"
+            value={currentLeague?.id ?? ""}
+            onChange={(event) => {
+              void selectLeague(event.target.value);
+              navigate(`/league/${event.target.value}/home`);
+            }}
+          >
+            {leagues.map((league) => (
+              <option key={league.id} value={league.id}>
+                {league.name}
+              </option>
+            ))}
+          </select>
+        ) : null}
         <nav className="space-y-1">
           {navItems.map((item) => (
             <NavLink key={item.to} to={`/league/${leagueId}/${item.to}`} className={navClass}>
@@ -180,14 +199,14 @@ export const AppShell = () => {
       </main>
 
       <nav className="safe-bottom fixed bottom-0 left-0 right-0 z-40 border-t border-white/10 bg-[#080d1b]/92 px-2 pt-2 backdrop-blur-xl lg:hidden">
-        <div className="mx-auto grid max-w-2xl grid-cols-7 gap-0.5">
+        <div className="mx-auto flex max-w-2xl gap-1 overflow-x-auto pb-1">
           {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={`/league/${leagueId}/${item.to}`}
               className={({ isActive }) =>
                 clsx(
-                  "flex min-w-0 flex-col items-center justify-center rounded-lg px-0.5 py-1.5 text-[10px] font-bold leading-tight transition",
+                  "flex min-w-[4.35rem] flex-col items-center justify-center rounded-lg px-1 py-1.5 text-[10px] font-bold leading-tight transition",
                   isActive ? "bg-gradient-to-r from-[#ff3f55] to-[#f5bd43] text-white" : "text-slate-400",
                 )
               }

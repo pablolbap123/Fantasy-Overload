@@ -2,6 +2,7 @@ import { Zap } from "lucide-react";
 import { useMemo, useState } from "react";
 import type { Match, PlayerMatchStats } from "../types";
 import { MatchCard } from "../components/matches/MatchCard";
+import { PlayerDetailDrawer } from "../components/players/PlayerDetailDrawer";
 import { Badge } from "../components/ui/Badge";
 import { Card } from "../components/ui/Card";
 import { EmptyState } from "../components/ui/EmptyState";
@@ -11,6 +12,7 @@ export const MatchdayPage = () => {
   const { currentLeague, matchdays, teams, players } = useFantasy();
   const [selectedMatchdayId, setSelectedMatchdayId] = useState(matchdays[0]?.id ?? "");
   const [selectedMatch, setSelectedMatch] = useState<Match | undefined>();
+  const [selectedPlayerId, setSelectedPlayerId] = useState<string | undefined>();
   const selectedMatchday = matchdays.find((matchday) => matchday.id === selectedMatchdayId) ?? matchdays[0];
 
   const topStats = useMemo(() => {
@@ -89,7 +91,11 @@ export const MatchdayPage = () => {
                       {topStats.map((stat: PlayerMatchStats) => {
                         const player = players.find((item) => item.id === stat.playerId);
                         return (
-                          <div key={`${stat.matchId}-${stat.playerId}`} className="flex items-center justify-between gap-3 rounded-xl bg-white/[0.04] p-3">
+                          <button
+                            key={`${stat.matchId}-${stat.playerId}`}
+                            className="flex w-full items-center justify-between gap-3 rounded-xl bg-white/[0.04] p-3 text-left transition hover:bg-white/[0.08]"
+                            onClick={() => setSelectedPlayerId(player?.id)}
+                          >
                             <div className="min-w-0">
                               <div className="truncate text-sm font-bold text-white">{player?.name ?? "Jugador"}</div>
                               <div className="text-xs text-slate-500">
@@ -97,7 +103,7 @@ export const MatchdayPage = () => {
                               </div>
                             </div>
                             <div className="text-lg font-black text-emerald-200">{stat.fantasyPoints ?? 0}</div>
-                          </div>
+                          </button>
                         );
                       })}
                       {topStats.length === 0 ? <p className="text-sm text-slate-400">Los puntos aparecerÃ¡n cuando el partido tenga estadÃ­sticas oficiales cargadas.</p> : null}
@@ -115,6 +121,7 @@ export const MatchdayPage = () => {
           </Card>
         </section>
       </div>
+      <PlayerDetailDrawer player={players.find((player) => player.id === selectedPlayerId)} onClose={() => setSelectedPlayerId(undefined)} />
     </div>
   );
 };

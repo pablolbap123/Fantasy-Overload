@@ -35,6 +35,7 @@ export interface Player {
   totalPoints: number;
   pointsByMatchday: Record<number, number>;
   status: PlayerStatus;
+  unavailableUntilMatchday?: number | null;
   stats: PlayerStats;
 }
 

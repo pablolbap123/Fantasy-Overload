@@ -3,6 +3,7 @@ import { Eye } from "lucide-react";
 import type { Formation, Player } from "../../types";
 import { formationShape } from "../../utils/calculatePoints";
 import { positionTone } from "../../utils/formatters";
+import { availabilityText, isUnavailableForMatchday, playerMatchdayPoints } from "../../utils/playerAvailability";
 import { PlayerAvatar } from "../players/PlayerAvatar";
 import { Badge } from "../ui/Badge";
 
@@ -49,8 +50,14 @@ export const FormationBoard = ({ formation, players, starterIds, onPlayerClick, 
                   <div className="truncate text-[11px] font-bold text-white">{player.name.split(" ").at(-1)}</div>
                   <Badge className={`${positionTone[player.position]} mt-1 px-1.5 py-0 text-[10px]`}>{player.position}</Badge>
                   {typeof matchdayNumber === "number" ? (
-                    <div className="mt-1 rounded-md bg-white/10 px-1 py-0.5 text-[10px] font-black text-[#21d17f]">
-                      {player.pointsByMatchday[matchdayNumber] ?? 0} pts
+                    <div
+                      className={clsx(
+                        "mt-1 rounded-md px-1 py-0.5 text-[10px] font-black",
+                        isUnavailableForMatchday(player, matchdayNumber) ? "bg-rose-500/15 text-rose-200" : "bg-white/10 text-[#21d17f]",
+                      )}
+                      title={availabilityText(player, matchdayNumber)}
+                    >
+                      {playerMatchdayPoints(player, matchdayNumber)} pts
                     </div>
                   ) : null}
                 </button>

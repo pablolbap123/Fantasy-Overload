@@ -1,4 +1,5 @@
 import type { Player, PlayerMatchStats, PlayerPosition, ScoringRules } from "../types";
+import { isUnavailableForMatchday } from "./playerAvailability";
 
 export const formationShape: Record<string, Record<PlayerPosition, number>> = {
   "4-4-2": { POR: 1, DEF: 4, MED: 4, DEL: 2 },
@@ -102,7 +103,7 @@ export const buildPlayerPointBreakdown = (
 export const calculatePlayerFantasyPoints = (playerMatchStats: PlayerMatchStats, scoringRules: ScoringRules, position: PlayerPosition) =>
   buildPlayerPointBreakdown(playerMatchStats, scoringRules, position).reduce((sum, item) => sum + item.points, 0);
 
-export const validateLineup = (players: Player[], starterIds: string[], formation: keyof typeof formationShape) => {
+export const validateLineup = (players: Player[], starterIds: string[], formation: keyof typeof formationShape, matchdayNumber?: number) => {
   const errors: string[] = [];
   const shape = formationShape[formation];
   const starters = starterIds.map((playerId) => players.find((player) => player.id === playerId)).filter(Boolean) as Player[];
@@ -118,7 +119,7 @@ export const validateLineup = (players: Player[], starterIds: string[], formatio
     }
   });
 
-  const blocked = starters.filter((player) => player.status === "lesionado" || player.status === "sancionado");
+  const blocked = starters.filter((player) => isUnavailableForMatchday(player, matchdayNumber));
   if (blocked.length > 0) {
     errors.push(`No puedes alinear lesionados o sancionados: ${blocked.map((player) => player.name).join(", ")}.`);
   }

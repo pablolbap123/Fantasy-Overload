@@ -1,6 +1,6 @@
 import { ArrowRightLeft, Euro, TrendingUp, Trophy } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
 import { EmptyState } from "../components/ui/EmptyState";
@@ -13,12 +13,47 @@ export const StandingsPage = () => {
   const { standings, members, currentLeague } = useFantasy();
   const [leftUserId, setLeftUserId] = useState(standings[0]?.userId ?? "");
   const [rightUserId, setRightUserId] = useState(standings[1]?.userId ?? standings[0]?.userId ?? "");
+  useEffect(() => {
+    if (!leftUserId && standings[0]) setLeftUserId(standings[0].userId);
+    if (!rightUserId && standings[1]) setRightUserId(standings[1].userId);
+  }, [leftUserId, rightUserId, standings]);
   const left = members.find((member) => member.userId === leftUserId);
   const right = members.find((member) => member.userId === rightUserId);
   const currentMatchdayNumber = currentLeague?.currentMatchday ?? 1;
-  const visibleMatchdays = Array.from({ length: Math.min(4, currentMatchdayNumber) }, (_, index) => currentMatchdayNumber - index).filter(
-    (number) => number > 0,
-  );
+  const visibleMatchdays = useMemo(() => {
+    const numbers = new Set<number>();
+    members.forEach((member) => Object.keys(member.pointsByMatchday).forEach((number) => numbers.add(Number(number))));
+    Array.from({ length: currentMatchdayNumber }, (_, index) => index + 1).forEach((number) => numbers.add(number));
+    return [...numbers].filter(Boolean).sort((a, b) => a - b);
+  }, [currentMatchdayNumber, members]);
+
+  const chart = useMemo(() => {
+    const chartMembers = [left, right].filter(Boolean);
+    const maxTotal = Math.max(
+      1,
+      ...chartMembers.flatMap((member) => {
+        let total = 0;
+        return visibleMatchdays.map((number) => {
+          total += Number(member!.pointsByMatchday[number] ?? 0);
+          return total;
+        });
+      }),
+    );
+    return { maxTotal, width: 640, height: 180, padding: 24 };
+  }, [left, right, visibleMatchdays]);
+
+  const lineFor = (member?: typeof left) => {
+    if (!member || visibleMatchdays.length === 0) return "";
+    let total = 0;
+    return visibleMatchdays
+      .map((number, index) => {
+        total += Number(member.pointsByMatchday[number] ?? 0);
+        const x = chart.padding + (index / Math.max(1, visibleMatchdays.length - 1)) * (chart.width - chart.padding * 2);
+        const y = chart.height - chart.padding - (total / chart.maxTotal) * (chart.height - chart.padding * 2);
+        return `${x},${y}`;
+      })
+      .join(" ");
+  };
 
   if (standings.length === 0) {
     return <EmptyState title="Todavia no hay clasificacion" description="Cuando haya miembros y puntos, aparecera el ranking de la liga." />;
@@ -141,6 +176,27 @@ export const StandingsPage = () => {
               </div>
             ) : null,
           )}
+        </div>
+        <div className="mt-4 rounded-lg border border-white/10 bg-[#202a43]/80 p-3">
+          <div className="mb-2 text-sm font-black text-white">Evolucion completa por jornada</div>
+          <svg viewBox={`0 0 ${chart.width} ${chart.height}`} className="h-48 w-full overflow-visible">
+            {[0, 0.5, 1].map((ratio) => (
+              <line
+                key={ratio}
+                x1={chart.padding}
+                x2={chart.width - chart.padding}
+                y1={chart.padding + ratio * (chart.height - chart.padding * 2)}
+                y2={chart.padding + ratio * (chart.height - chart.padding * 2)}
+                stroke="rgba(255,255,255,.10)"
+              />
+            ))}
+            <polyline points={lineFor(left)} fill="none" stroke="#62d7ff" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+            <polyline points={lineFor(right)} fill="none" stroke="#f5bd43" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          <div className="flex flex-wrap gap-3 text-xs font-bold">
+            <span className="text-[#62d7ff]">{left?.username ?? "Manager 1"}</span>
+            <span className="text-[#f5bd43]">{right?.username ?? "Manager 2"}</span>
+          </div>
         </div>
       </Card>
 

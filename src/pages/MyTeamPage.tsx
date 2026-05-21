@@ -11,6 +11,7 @@ import { EmptyState } from "../components/ui/EmptyState";
 import { useFantasy } from "../store/fantasyStore";
 import { formationShape, validateLineup } from "../utils/calculatePoints";
 import { formatMoney, positionTone } from "../utils/formatters";
+import { availabilityText, isUnavailableForMatchday, playerMatchdayPoints } from "../utils/playerAvailability";
 
 const formations = Object.keys(formationShape) as Formation[];
 
@@ -83,7 +84,7 @@ export const MyTeamPage = () => {
     .filter(Boolean) as Player[];
 
   const squadPointsFor = (matchdayNumber: number) =>
-    squad.reduce((sum, player) => sum + Number(player.pointsByMatchday[matchdayNumber] ?? 0), 0);
+    squad.reduce((sum, player) => sum + playerMatchdayPoints(player, matchdayNumber), 0);
 
   const selectedSquadPoints = squadPointsFor(selectedMatchdayNumber);
 
@@ -107,22 +108,29 @@ export const MyTeamPage = () => {
     }
 
     const startersByDefault = [
-      ...squad.filter((player) => player.position === "POR").slice(0, 1),
-      ...squad.filter((player) => player.position === "DEF").slice(0, 4),
-      ...squad.filter((player) => player.position === "MED").slice(0, 4),
-      ...squad.filter((player) => player.position === "DEL").slice(0, 2),
+      ...squad.filter((player) => player.position === "POR" && !isUnavailableForMatchday(player, selectedMatchdayNumber)).slice(0, 1),
+      ...squad.filter((player) => player.position === "DEF" && !isUnavailableForMatchday(player, selectedMatchdayNumber)).slice(0, 4),
+      ...squad.filter((player) => player.position === "MED" && !isUnavailableForMatchday(player, selectedMatchdayNumber)).slice(0, 4),
+      ...squad.filter((player) => player.position === "DEL" && !isUnavailableForMatchday(player, selectedMatchdayNumber)).slice(0, 2),
     ].map((player) => player.id);
     setFormation("4-4-2");
     setStarterIds(startersByDefault);
     setBenchIds(squad.filter((player) => !startersByDefault.includes(player.id)).map((player) => player.id));
-  }, [activeLineup, isPlanningMatchday, squad]);
+  }, [activeLineup, isPlanningMatchday, selectedMatchdayNumber, squad]);
 
-  const validation = useMemo(() => validateLineup(squad, starterIds, formation), [formation, squad, starterIds]);
+  const validation = useMemo(
+    () => validateLineup(squad, starterIds, formation, selectedMatchdayNumber),
+    [formation, selectedMatchdayNumber, squad, starterIds],
+  );
 
   const moveToStarter = (playerId: string) => {
     if (!isEditable) return;
     const player = squad.find((item) => item.id === playerId);
     if (!player) return;
+    if (isUnavailableForMatchday(player, selectedMatchdayNumber)) {
+      setError(`${player.name} no puede ser titular: ${availabilityText(player, selectedMatchdayNumber)}.`);
+      return;
+    }
     const shape = formationShape[formation];
     const samePositionStarters = starters.filter((item) => item.position === player.position);
     if (samePositionStarters.length >= shape[player.position]) {
@@ -150,7 +158,7 @@ export const MyTeamPage = () => {
     const shape = formationShape[formation];
     const startersByPoints = (Object.keys(shape) as Array<keyof typeof shape>).flatMap((position) =>
       squad
-        .filter((player) => player.position === position && player.status !== "lesionado" && player.status !== "sancionado")
+        .filter((player) => player.position === position && !isUnavailableForMatchday(player, selectedMatchdayNumber))
         .sort((a, b) => b.totalPoints - a.totalPoints)
         .slice(0, shape[position])
         .map((player) => player.id),
@@ -298,7 +306,10 @@ export const MyTeamPage = () => {
                   </div>
                   <div className="text-right">
                     <Badge className={positionTone[player.position]}>{player.position}</Badge>
-                    <div className="mt-1 text-sm font-black text-[#21d17f]">{player.pointsByMatchday[selectedMatchdayNumber] ?? 0} pts</div>
+                    <div className="mt-1 text-sm font-black text-[#21d17f]">{playerMatchdayPoints(player, selectedMatchdayNumber)} pts</div>
+                    {isUnavailableForMatchday(player, selectedMatchdayNumber) ? (
+                      <div className="mt-1 text-[11px] font-bold text-rose-200">{availabilityText(player, selectedMatchdayNumber)}</div>
+                    ) : null}
                   </div>
                   <div className="col-span-3 flex flex-wrap justify-end gap-2 sm:col-span-1">
                     <button className="rounded-lg p-2 text-slate-200 hover:bg-white/10 hover:text-white" onClick={() => setSelectedPlayer(player)} aria-label="Ver detalle">
@@ -309,7 +320,13 @@ export const MyTeamPage = () => {
                       <Button variant="secondary" className="px-3" icon={<UserRoundPlus className="h-4 w-4" />} onClick={() => moveToStarter(player.id)}>
                         Titular
                       </Button>
-                      <button className="rounded-lg p-2 text-rose-200 hover:bg-rose-500/10" onClick={() => void sellPlayer(player.id)} aria-label="Vender">
+                      <button
+                        className="rounded-lg p-2 text-rose-200 hover:bg-rose-500/10"
+                        onClick={() => {
+                          if (window.confirm(`Vender rapido a ${player.name} por la mitad de su precio de mercado?`)) void sellPlayer(player.id);
+                        }}
+                        aria-label="Vender"
+                      >
                         <Trash2 className="h-4 w-4" />
                       </button>
                       </>
@@ -324,7 +341,7 @@ export const MyTeamPage = () => {
             <h2 className="mb-3 text-base font-black text-white">Puntos de plantilla · J{selectedMatchdayNumber}</h2>
             <div className="space-y-2">
               {squad
-                .sort((a, b) => (b.pointsByMatchday[selectedMatchdayNumber] ?? 0) - (a.pointsByMatchday[selectedMatchdayNumber] ?? 0))
+                .sort((a, b) => playerMatchdayPoints(b, selectedMatchdayNumber) - playerMatchdayPoints(a, selectedMatchdayNumber))
                 .map((player) => (
                   <button
                     key={player.id}
@@ -336,7 +353,7 @@ export const MyTeamPage = () => {
                       <div className="truncate text-sm font-black text-white">{player.name}</div>
                       <div className="truncate text-xs font-semibold text-slate-300">{player.teamName}</div>
                     </div>
-                    <div className="text-right text-lg font-black text-[#21d17f]">{player.pointsByMatchday[selectedMatchdayNumber] ?? 0}</div>
+                    <div className="text-right text-lg font-black text-[#21d17f]">{playerMatchdayPoints(player, selectedMatchdayNumber)}</div>
                   </button>
                 ))}
             </div>
@@ -363,7 +380,7 @@ export const MyTeamPage = () => {
                     <PlayerAvatar player={starter} size="sm" />
                     <div className="min-w-0 flex-1">
                       <div className="truncate font-black text-white">{starter.name}</div>
-                      <div className="text-xs text-slate-300">{starter.pointsByMatchday[selectedMatchdayNumber] ?? 0} pts en J{selectedMatchdayNumber}</div>
+                      <div className="text-xs text-slate-300">{playerMatchdayPoints(starter, selectedMatchdayNumber)} pts en J{selectedMatchdayNumber}</div>
                     </div>
                     <ArrowRightLeft className="h-5 w-5 text-[#62d7ff]" />
                   </button>

@@ -7,6 +7,7 @@ import { buildPlayerPointBreakdown } from "../../utils/calculatePoints";
 import { getErrorMessage } from "../../utils/errors";
 import { formatMoney, positionLabel, positionTone, statusLabel, statusTone } from "../../utils/formatters";
 import { getHighestBid, getNextBidAmount, roundBidAmount } from "../../utils/market";
+import { availabilityText, isUnavailableForMatchday, playerMatchdayPoints } from "../../utils/playerAvailability";
 import { Badge } from "../ui/Badge";
 import { Button } from "../ui/Button";
 import { Card } from "../ui/Card";
@@ -75,8 +76,8 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
   const selectedAppearance = appearances.find((item) => item.matchdayNumber === activeNumber);
   const selectedStat = selectedAppearance?.stat;
   const breakdown = player && selectedStat ? buildPlayerPointBreakdown(selectedStat, scoringRules, player.position) : [];
-  const selectedPoints = selectedStat?.fantasyPoints ?? player?.pointsByMatchday[activeNumber] ?? 0;
-  const maxAbsPoints = Math.max(1, ...visibleMatchdays.map((number) => Math.abs(player?.pointsByMatchday[number] ?? 0)));
+  const selectedPoints = player ? playerMatchdayPoints(player, activeNumber) : 0;
+  const maxAbsPoints = Math.max(1, ...visibleMatchdays.map((number) => Math.abs(player ? playerMatchdayPoints(player, number) : 0)));
   const playersById = useMemo(() => new Map(players.map((item) => [item.id, item])), [players]);
   const leaguePlayer = player ? leaguePlayers.find((item) => item.playerId === player.id) : undefined;
   const owner = leaguePlayer?.ownerUserId ? members.find((member) => member.userId === leaguePlayer.ownerUserId) : undefined;
@@ -98,10 +99,10 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
   const suggestedOffer = leaguePlayer && player ? roundBidAmount(Math.max(leaguePlayer.price, player.currentPrice) * 1.05) : 0;
   const parsedOfferAmount = Number(offerAmount || suggestedOffer);
   const valueHistory = player ? visibleMatchdays.map((number, index) => {
-    const points = Number(player.pointsByMatchday[number] ?? 0);
+    const points = playerMatchdayPoints(player, number);
     const previousImpact = visibleMatchdays
       .slice(index + 1)
-      .reduce((sum, item) => sum + Number(player.pointsByMatchday[item] ?? 0), 0);
+      .reduce((sum, item) => sum + playerMatchdayPoints(player, item), 0);
     const estimatedValue = roundBidAmount(Math.max(player.basePrice, player.currentPrice - previousImpact * 120_000));
     return { number, points, estimatedValue };
   }) : [];
@@ -174,8 +175,11 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
                         <div className="text-base font-black text-white">{leaguePlayer?.releaseClause ? formatMoney(leaguePlayer.releaseClause) : "-"}</div>
                       </div>
                       <div className="rounded-lg bg-white/10 px-3 py-2">
-                        <div className="text-xs text-slate-300">Estado</div>
+                          <div className="text-xs text-slate-300">Estado</div>
                         <Badge className={statusTone[player.status]}>{statusLabel[player.status]}</Badge>
+                        {availabilityText(player, activeNumber) ? (
+                          <div className="mt-1 text-[11px] font-bold text-rose-100">{availabilityText(player, activeNumber)}</div>
+                        ) : null}
                       </div>
                       <div className="rounded-lg bg-white/10 px-3 py-2">
                         <div className="text-xs text-slate-300">Bloqueo</div>
@@ -353,7 +357,7 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
                   style={{ gridTemplateColumns: `repeat(${Math.max(1, visibleMatchdays.length)}, minmax(0, 1fr))` }}
                 >
                   {visibleMatchdays.map((number) => {
-                    const points = player.pointsByMatchday[number] ?? appearances.find((item) => item.matchdayNumber === number)?.points ?? 0;
+                    const points = playerMatchdayPoints(player, number);
                     const active = number === activeNumber;
                     return (
                       <button key={number} className="min-w-0 text-center" onClick={() => setSelectedNumber(number)}>
@@ -387,14 +391,19 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
                   <span className="text-right">Puntos</span>
                 </div>
                 <div>
-                  {breakdown.map((item) => (
+                  {isUnavailableForMatchday(player, activeNumber) ? (
+                    <div className="rounded-lg border border-rose-300/20 bg-rose-500/10 p-4 text-center text-sm font-semibold text-rose-100">
+                      No suma en J{activeNumber}: {availabilityText(player, activeNumber)}.
+                    </div>
+                  ) : null}
+                  {!isUnavailableForMatchday(player, activeNumber) && breakdown.map((item) => (
                     <div key={item.key} className="grid grid-cols-[.7fr_1.4fr_.7fr] border-b border-white/10 px-3 py-4 text-base">
                       <span className="font-black text-white">{item.quantity}</span>
                       <span className="text-slate-100">{item.label}</span>
                       <span className={`text-right font-black ${item.points < 0 ? "text-rose-300" : "text-emerald-300"}`}>{item.points}</span>
                     </div>
                   ))}
-                  {breakdown.length === 0 ? (
+                  {!isUnavailableForMatchday(player, activeNumber) && breakdown.length === 0 ? (
                     <div className="rounded-lg border border-white/10 bg-white/[0.04] p-4 text-center text-sm text-slate-400">
                       No hay desglose cargado para esta jornada.
                     </div>

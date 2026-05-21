@@ -1,4 +1,4 @@
-import { Clock3, Lock, RefreshCw } from "lucide-react";
+import { BellRing, Clock3, Lock, RefreshCw } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import type { Player } from "../types";
 import { MarketFilters, marketFilterOptions } from "../components/market/MarketFilters";
@@ -13,7 +13,21 @@ import { formatMoney } from "../utils/formatters";
 import { formatTimeLeft, getHighestBid, getNextBidAmount } from "../utils/market";
 
 export const MarketPage = () => {
-  const { currentLeague, userId, players, leaguePlayers, teams, members, sellPlayer, makeOffer, refreshDailyMarket, transfers, offers, acceptOffer, rejectOffer } = useFantasy();
+  const {
+    currentLeague,
+    userId,
+    players,
+    leaguePlayers,
+    teams,
+    members,
+    sellPlayer,
+    makeOffer,
+    refreshDailyMarket,
+    transfers,
+    offers,
+    acceptOffer,
+    rejectOffer,
+  } = useFantasy();
   const [position, setPosition] = useState<(typeof marketFilterOptions.positions)[number]>("todos");
   const [status, setStatus] = useState<(typeof marketFilterOptions.statuses)[number]>("todos");
   const [teamId, setTeamId] = useState("todos");
@@ -22,6 +36,7 @@ export const MarketPage = () => {
   const [error, setError] = useState("");
   const [maxPrice, setMaxPrice] = useState(80_000_000);
   const [now, setNow] = useState(Date.now());
+  const [dismissedOutbidIds, setDismissedOutbidIds] = useState<string[]>([]);
 
   const me = members.find((member) => member.userId === userId);
   const ownerNameByUser = new Map(members.map((member) => [member.userId, member.username]));
@@ -36,12 +51,20 @@ export const MarketPage = () => {
   };
 
   useEffect(() => {
-    void refreshDailyMarket().catch((err) => setError(getErrorMessage(err, "No se pudo actualizar el mercado diario.")));
+    let mounted = true;
+    void refreshDailyMarket().catch((err) => {
+      if (mounted) setError(getErrorMessage(err, "No se pudo actualizar el mercado diario."));
+    });
     const interval = window.setInterval(() => {
       setNow(Date.now());
-      void refreshDailyMarket().catch(() => undefined);
+      void refreshDailyMarket().catch((err) => {
+        if (mounted) setError(getErrorMessage(err, "No se pudo actualizar el mercado diario."));
+      });
     }, 60_000);
-    return () => window.clearInterval(interval);
+    return () => {
+      mounted = false;
+      window.clearInterval(interval);
+    };
   }, [refreshDailyMarket]);
 
   const rows = useMemo(() => {
@@ -61,11 +84,13 @@ export const MarketPage = () => {
           leaguePlayer.marketStatus === "market" &&
           Boolean(leaguePlayer.marketExpiresAt) &&
           new Date(leaguePlayer.marketExpiresAt ?? "").getTime() > now;
-        const matchPosition = position === "todos" || player.position === position;
-        const matchStatus = status === "todos" || player.status === status;
-        const matchTeam = teamId === "todos" || player.teamId === teamId;
-        const matchPrice = currentPrice <= maxPrice;
-        return isActiveAuction && matchPosition && matchStatus && matchTeam && matchPrice;
+        return (
+          isActiveAuction &&
+          (position === "todos" || player.position === position) &&
+          (status === "todos" || player.status === status) &&
+          (teamId === "todos" || player.teamId === teamId) &&
+          currentPrice <= maxPrice
+        );
       })
       .sort((a, b) => {
         const aBid = getHighestBid(offers, a!.player.id);
@@ -87,6 +112,8 @@ export const MarketPage = () => {
   const firstExpiration = rows.daily[0]?.leaguePlayer.marketExpiresAt;
   const pendingOffers = offers.filter((offer) => offer.status === "pending");
   const receivedOffers = pendingOffers.filter((offer) => offer.toUserId === userId);
+  const sentOffers = offers.filter((offer) => offer.fromUserId === userId);
+  const outbidOffers = sentOffers.filter((offer) => offer.status === "outbid" && !dismissedOutbidIds.includes(offer.id));
 
   const renderPlayerAuction = (row: NonNullable<(typeof rows.daily)[number]>, sellerLabel?: string) => {
     const leaguePlayer = row.leaguePlayer;
@@ -107,7 +134,9 @@ export const MarketPage = () => {
         ownerLabel={leader ? `Lider actual: ${leader.username}` : (sellerLabel ?? "Sin pujas todavia")}
         action="bid"
         onBid={() => void runAction(() => makeOffer(player.id, nextBidAmount))}
-        onSell={() => void runAction(() => sellPlayer(player.id))}
+        onSell={() => {
+          if (window.confirm(`Vender rapido a ${player.name} por la mitad de su precio?`)) void runAction(() => sellPlayer(player.id));
+        }}
         onDetail={() => setSelectedPlayer(player)}
       />
     );
@@ -158,8 +187,31 @@ export const MarketPage = () => {
         {error ? <div className="mt-3 rounded-xl border border-rose-300/20 bg-rose-500/10 p-3 text-sm text-rose-100">{error}</div> : null}
       </div>
 
+      {outbidOffers.length > 0 ? (
+        <div className="rounded-lg border border-[#f5bd43]/30 bg-[#f5bd43]/15 p-3">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-start gap-3">
+              <BellRing className="mt-0.5 h-5 w-5 text-[#f5bd43]" />
+              <div>
+                <div className="font-black text-white">Te han superado {outbidOffers.length} puja{outbidOffers.length === 1 ? "" : "s"}</div>
+                <p className="text-sm text-[#ffe2a2]">Revisa tus pujas enviadas para volver a pujar antes del cierre.</p>
+              </div>
+            </div>
+            <button
+              className="rounded-lg border border-[#f5bd43]/30 px-3 py-2 text-sm font-black text-[#ffe2a2]"
+              onClick={() => setDismissedOutbidIds((current) => [...current, ...outbidOffers.map((offer) => offer.id)])}
+            >
+              Entendido
+            </button>
+          </div>
+        </div>
+      ) : null}
+
       {rows.daily.length === 0 ? (
-        <EmptyState title="Mercado diario vacio" description="Ajusta filtros o pulsa actualizar para abrir el siguiente ciclo de 10 jugadores." />
+        <EmptyState
+          title="Mercado diario vacio"
+          description="Si los filtros no ocultan jugadores, el mercado esta agotado: espera ventas de managers o pulsa actualizar cuando haya jugadores libres."
+        />
       ) : (
         <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">{rows.daily.map((row) => renderPlayerAuction(row!))}</div>
       )}
@@ -196,16 +248,10 @@ export const MarketPage = () => {
                       {exchangePlayer ? ` + ${exchangePlayer.name}` : ""}
                     </div>
                     <div className="mt-3 flex gap-2">
-                      <button
-                        className="min-h-9 flex-1 rounded-lg bg-emerald-400 px-3 text-sm font-black text-slate-950"
-                        onClick={() => void runAction(() => acceptOffer(offer.id))}
-                      >
+                      <button className="min-h-9 flex-1 rounded-lg bg-emerald-400 px-3 text-sm font-black text-slate-950" onClick={() => void runAction(() => acceptOffer(offer.id))}>
                         Aceptar
                       </button>
-                      <button
-                        className="min-h-9 flex-1 rounded-lg border border-white/10 bg-white/10 px-3 text-sm font-black text-white"
-                        onClick={() => void runAction(() => rejectOffer(offer.id))}
-                      >
+                      <button className="min-h-9 flex-1 rounded-lg border border-white/10 bg-white/10 px-3 text-sm font-black text-white" onClick={() => void runAction(() => rejectOffer(offer.id))}>
                         Rechazar
                       </button>
                     </div>
@@ -232,26 +278,25 @@ export const MarketPage = () => {
           </div>
         </Card>
         <Card>
-          <h2 className="mb-3 text-base font-black text-white">Pujas activas</h2>
+          <h2 className="mb-3 text-base font-black text-white">Mis pujas y ofertas</h2>
           <div className="space-y-2">
-            {pendingOffers.slice(0, 8).map((offer) => {
+            {sentOffers.slice(0, 10).map((offer) => {
               const player = players.find((item) => item.id === offer.playerId);
-              const bidder = ownerNameByUser.get(offer.fromUserId) ?? "Manager";
+              const exchangePlayer = offer.exchangePlayerId ? players.find((item) => item.id === offer.exchangePlayerId) : undefined;
               return (
                 <div key={offer.id} className="flex items-center justify-between gap-3 rounded-xl bg-white/[0.04] p-3">
                   <div className="min-w-0">
                     <div className="truncate text-sm font-bold text-white">{player?.name ?? "Jugador"}</div>
                     <div className="text-xs text-slate-500">
-                      {bidder} · {offer.status}
+                      {offer.status}
+                      {exchangePlayer ? ` · intercambio: ${exchangePlayer.name}` : ""}
                     </div>
                   </div>
                   <div className="text-sm font-black text-emerald-200">{formatMoney(offer.amount)}</div>
                 </div>
               );
             })}
-            {pendingOffers.length === 0 ? (
-              <p className="text-sm text-slate-400">Aun no hay pujas. Cada boton puja automaticamente un 5% por encima del precio actual.</p>
-            ) : null}
+            {sentOffers.length === 0 ? <p className="text-sm text-slate-400">Aun no participas en subastas ni has enviado ofertas.</p> : null}
           </div>
         </Card>
       </div>

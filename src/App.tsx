@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import { AppShell } from "./components/layout/AppShell";
 import { LoadingScreen } from "./components/ui/LoadingScreen";
 import { ToastHost } from "./components/ui/ToastHost";
@@ -14,6 +14,8 @@ import { MarketPage } from "./pages/MarketPage";
 import { MatchdayPage } from "./pages/MatchdayPage";
 import { MembersPage } from "./pages/MembersPage";
 import { MyTeamPage } from "./pages/MyTeamPage";
+import { AdminPage } from "./pages/AdminPage";
+import { NotFoundPage } from "./pages/NotFoundPage";
 import { ProfilePage } from "./pages/ProfilePage";
 import { StandingsPage } from "./pages/StandingsPage";
 import { StatsPage } from "./pages/StatsPage";
@@ -28,8 +30,12 @@ const PrivateRoute = ({ children }: { children: ReactElement }) => {
 
 const LeagueGuard = ({ children }: { children: ReactElement }) => {
   const { currentLeague, leagues, loading } = useFantasy();
+  const { leagueId } = useParams();
   if (loading) return <LoadingScreen />;
   if (!currentLeague && leagues.length === 0) return <Navigate to="/leagues" replace />;
+  if (leagueId && leagues.length > 0 && !leagues.some((league) => league.id === leagueId)) {
+    return <NotFoundPage message="La liga de esta URL no existe o no perteneces a ella." />;
+  }
   return children;
 };
 
@@ -102,8 +108,9 @@ export default function App() {
           <Route path="standings" element={<StandingsPage />} />
           <Route path="stats" element={<StatsPage />} />
           <Route path="members" element={<MembersPage />} />
+          <Route path="admin" element={<AdminPage />} />
         </Route>
-        <Route path="*" element={<Navigate to={defaultPath} replace />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <ToastHost />
     </>

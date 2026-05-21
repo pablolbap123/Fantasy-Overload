@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import type { Session } from "@supabase/supabase-js";
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { defaultScoringRules } from "../data/scoringRules";
 import { mockMatchdays } from "../data/mockFixtures";
 import { mockPlayers } from "../data/mockPlayers";
@@ -31,6 +31,7 @@ import { getErrorMessage } from "../utils/errors";
 import { formatMoney } from "../utils/formatters";
 import { getHighestBid, getNextBidAmount, normalizeDailyMarket, openDailyMarketCycle, resolveExpiredDailyMarket } from "../utils/market";
 import { simulateMatch } from "../utils/simulateMatch";
+import type { PlayerStatus } from "../types";
 
 type ToastTone = "success" | "error" | "info";
 
@@ -82,7 +83,11 @@ interface FantasyContextValue {
   leaveLeague: (leagueId: string) => Promise<void>;
   deleteLeague: (leagueId: string) => Promise<void>;
   updateProfile: (input: { username: string; avatarUrl?: string }) => Promise<void>;
+  uploadAvatar: (file: File) => Promise<string>;
   updateLeagueSettings: (patch: Partial<League> & { scoringRules?: ScoringRules }) => Promise<void>;
+  isOverloadAdmin: boolean;
+  updatePlayerAvailability: (playerId: string, status: PlayerStatus, unavailableUntilMatchday?: number | null) => Promise<void>;
+  advanceLeagueMatchday: (matchdayNumber: number) => Promise<void>;
   buyPlayer: (playerId: string, amount?: number) => Promise<void>;
   sellPlayer: (playerId: string) => Promise<void>;
   listPlayerOnMarket: (playerId: string) => Promise<void>;
@@ -342,6 +347,10 @@ const mapPlayer = (row: any): Player => ({
   totalPoints: Number(row.total_points ?? 0),
   pointsByMatchday: row.points_by_matchday ?? {},
   status: row.status,
+  unavailableUntilMatchday:
+    row.unavailable_until_matchday === undefined || row.unavailable_until_matchday === null
+      ? null
+      : Number(row.unavailable_until_matchday),
   stats: {
     appearances: Number(row.stats_json?.appearances ?? 0),
     goals: Number(row.stats_json?.goals ?? 0),
@@ -422,9 +431,11 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
   const [challengeSyncStatus, setChallengeSyncStatus] = useState<ChallengeSyncStatus | undefined>();
   const [scoringRules, setScoringRules] = useState<ScoringRules>(defaultScoringRules);
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
+  const reloadTimerRef = useRef<number | null>(null);
 
   const userId = demoMode ? demoUserId : session?.user.id ?? null;
   const onlineReady = Boolean(isSupabaseConfigured && supabase && session && !demoMode);
+  const isOverloadAdmin = Boolean(session?.user.email?.toLowerCase().startsWith("pablogarvac"));
 
   const pushToast = useCallback((message: string, tone: ToastTone = "info") => {
     const toast: ToastMessage = { id: randomId("toast"), tone, message };
@@ -764,36 +775,42 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const client = supabase;
     if (!onlineReady || !selectedLeagueId || !client) return;
+    const scheduleReload = () => {
+      if (reloadTimerRef.current) window.clearTimeout(reloadTimerRef.current);
+      reloadTimerRef.current = window.setTimeout(() => {
+        void loadLeagueData(selectedLeagueId);
+      }, 350);
+    };
     const channel = client
       .channel(`league-${selectedLeagueId}`)
       .on(
         "postgres_changes",
         { event: "*", schema: "public", table: "league_members", filter: `league_id=eq.${selectedLeagueId}` },
-        () => void loadLeagueData(selectedLeagueId),
+        scheduleReload,
       )
       .on(
         "postgres_changes",
         { event: "*", schema: "public", table: "league_players", filter: `league_id=eq.${selectedLeagueId}` },
-        () => void loadLeagueData(selectedLeagueId),
+        scheduleReload,
       )
       .on(
         "postgres_changes",
         { event: "*", schema: "public", table: "activity_feed", filter: `league_id=eq.${selectedLeagueId}` },
-        () => void loadLeagueData(selectedLeagueId),
+        scheduleReload,
       )
       .on(
         "postgres_changes",
         { event: "*", schema: "public", table: "matchdays", filter: `league_id=eq.${selectedLeagueId}` },
-        () => void loadLeagueData(selectedLeagueId),
+        scheduleReload,
       )
-      .on("postgres_changes", { event: "*", schema: "public", table: "players" }, () => void loadLeagueData(selectedLeagueId))
-      .on("postgres_changes", { event: "*", schema: "public", table: "matches" }, () => void loadLeagueData(selectedLeagueId))
-      .on("postgres_changes", { event: "*", schema: "public", table: "player_match_stats" }, () => void loadLeagueData(selectedLeagueId))
-      .on("postgres_changes", { event: "*", schema: "public", table: "challenge_sync_status" }, () => void loadLeagueData(selectedLeagueId))
-      .on("postgres_changes", { event: "*", schema: "public", table: "challenge_sync_requests" }, () => void loadLeagueData(selectedLeagueId))
+      .on("postgres_changes", { event: "*", schema: "public", table: "players" }, scheduleReload)
+      .on("postgres_changes", { event: "*", schema: "public", table: "matches" }, scheduleReload)
+      .on("postgres_changes", { event: "*", schema: "public", table: "player_match_stats" }, scheduleReload)
+      .on("postgres_changes", { event: "*", schema: "public", table: "challenge_sync_status" }, scheduleReload)
       .subscribe();
 
     return () => {
+      if (reloadTimerRef.current) window.clearTimeout(reloadTimerRef.current);
       void client.removeChannel(channel);
     };
   }, [loadLeagueData, onlineReady, selectedLeagueId]);
@@ -1027,6 +1044,22 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
     [ensureProfile, onlineReady, profile, pushToast, session],
   );
 
+  const uploadAvatar = useCallback(
+    async (file: File) => {
+      if (!onlineReady || !supabase || !session) throw new Error("Necesitas iniciar sesion para subir avatar.");
+      const extension = file.name.split(".").pop()?.toLowerCase() || "jpg";
+      const path = `${session.user.id}/${Date.now()}.${extension}`;
+      const { error } = await supabase.storage.from("avatars").upload(path, file, {
+        cacheControl: "3600",
+        upsert: true,
+      });
+      if (error) throw error;
+      const { data } = supabase.storage.from("avatars").getPublicUrl(path);
+      return data.publicUrl;
+    },
+    [onlineReady, session],
+  );
+
   const updateLeagueSettings = useCallback(
     async (patch: Partial<League> & { scoringRules?: ScoringRules }) => {
       if (!currentLeague) return;
@@ -1058,6 +1091,53 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       pushToast("Configuración guardada.", "success");
     },
     [currentLeague, loadLeagueData, onlineReady, pushToast],
+  );
+
+  const updatePlayerAvailability = useCallback(
+    async (playerId: string, status: PlayerStatus, unavailableUntilMatchday?: number | null) => {
+      if (!isOverloadAdmin) throw new Error("Solo el admin Overload puede editar lesiones y sanciones.");
+      const player = players.find((item) => item.id === playerId);
+      if (!player) throw new Error("Jugador no encontrado.");
+
+      if (onlineReady && supabase) {
+        const { error } = await supabase.rpc("admin_update_player_availability", {
+          p_player_id: playerId,
+          p_status: status,
+          p_unavailable_until_matchday: unavailableUntilMatchday ?? null,
+        });
+        if (error) throw error;
+        if (currentLeague) await loadLeagueData(currentLeague.id);
+      } else {
+        setPlayers((current) =>
+          current.map((item) =>
+            item.id === playerId ? { ...item, status, unavailableUntilMatchday: unavailableUntilMatchday ?? null } : item,
+          ),
+        );
+      }
+      pushToast(`Estado de ${player.name} actualizado.`, "success");
+    },
+    [currentLeague, isOverloadAdmin, loadLeagueData, onlineReady, players, pushToast],
+  );
+
+  const advanceLeagueMatchday = useCallback(
+    async (matchdayNumber: number) => {
+      if (!currentLeague) return;
+      if (!isOverloadAdmin) throw new Error("Solo el admin Overload puede avanzar la jornada.");
+      if (onlineReady && supabase) {
+        const { error } = await supabase.rpc("admin_set_current_matchday", {
+          p_league_id: currentLeague.id,
+          p_matchday_number: matchdayNumber,
+        });
+        if (error) throw error;
+        await loadLeagueData(currentLeague.id);
+      } else {
+        setLeagues((current) =>
+          current.map((league) => (league.id === currentLeague.id ? { ...league, currentMatchday: matchdayNumber } : league)),
+        );
+      }
+      pushToast(`Jornada actual movida a J${matchdayNumber}.`, "success");
+    },
+    [currentLeague, isOverloadAdmin, loadLeagueData, onlineReady, pushToast],
   );
 
   const buyPlayer = useCallback(
@@ -1556,7 +1636,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
         .filter((leaguePlayer) => leaguePlayer.ownerUserId === userId)
         .map((leaguePlayer) => players.find((player) => player.id === leaguePlayer.playerId))
         .filter(Boolean) as Player[];
-      const validation = validateLineup(squadPlayers, starterIds, formation);
+      const validation = validateLineup(squadPlayers, starterIds, formation, requestedMatchdayNumber);
       if (!validation.valid) throw new Error(validation.errors.join(" "));
       const targetMatchday =
         matchdays.find((matchday) => matchday.number === requestedMatchdayNumber) ??
@@ -1868,6 +1948,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       scoringRules,
       standings,
       toasts,
+      isOverloadAdmin,
       signIn,
       signUp,
       resetPassword,
@@ -1883,7 +1964,10 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       leaveLeague,
       deleteLeague,
       updateProfile,
+      uploadAvatar,
       updateLeagueSettings,
+      updatePlayerAvailability,
+      advanceLeagueMatchday,
       buyPlayer,
       sellPlayer,
       listPlayerOnMarket,
@@ -1913,6 +1997,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       demoMode,
       exportLeagueData,
       importDemoData,
+      isOverloadAdmin,
       joinLeague,
       leaveLeague,
       leaguePlayers,
@@ -1948,7 +2033,10 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       teams,
       toasts,
       transfers,
+      uploadAvatar,
+      updatePlayerAvailability,
       updateLeagueSettings,
+      advanceLeagueMatchday,
       updateMatchResult,
       updateProfile,
       userId,

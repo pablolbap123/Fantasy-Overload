@@ -28,6 +28,7 @@ create table if not exists public.players (
   current_price numeric not null default 1000000 check (current_price >= 0),
   fantasy_value numeric not null default 0,
   status text not null default 'disponible' check (status in ('disponible', 'lesionado', 'sancionado', 'duda')),
+  unavailable_until_matchday integer,
   total_points integer not null default 0,
   points_by_matchday jsonb not null default '{}'::jsonb,
   stats_json jsonb not null default '{}'::jsonb,
