@@ -18,7 +18,7 @@ export const AdminPage = () => {
   const [query, setQuery] = useState("");
   const [selectedPlayerId, setSelectedPlayerId] = useState("");
   const [status, setStatus] = useState<PlayerStatus>("lesionado");
-  const [remaining, setRemaining] = useState(1);
+  const [untilMatchday, setUntilMatchday] = useState(currentLeague?.currentMatchday ?? 6);
   const [targetMatchday, setTargetMatchday] = useState(currentLeague?.currentMatchday ?? 6);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState("");
@@ -34,7 +34,6 @@ export const AdminPage = () => {
 
   const selectedPlayer = players.find((player) => player.id === selectedPlayerId) ?? filteredPlayers[0];
   const currentMatchdayNumber = currentLeague?.currentMatchday ?? matchdays.at(-1)?.number ?? 6;
-  const unavailableUntil = status === "lesionado" || status === "sancionado" ? currentMatchdayNumber + Math.max(0, remaining - 1) : null;
   const matchdayNumbers = useMemo(() => {
     const maxNumber = Math.max(
       minimumAdminMatchdays,
@@ -44,9 +43,14 @@ export const AdminPage = () => {
     return Array.from({ length: maxNumber }, (_, index) => index + 1);
   }, [currentLeague?.currentMatchday, matchdays]);
   const officialMatchdayNumbers = useMemo(() => new Set(matchdays.map((matchday) => matchday.number)), [matchdays]);
+  const unavailableUntil = status === "lesionado" || status === "sancionado" ? untilMatchday : null;
+  const absenceLength = unavailableUntil ? Math.max(1, unavailableUntil - currentMatchdayNumber + 1) : 0;
 
   useEffect(() => {
-    if (currentLeague?.currentMatchday) setTargetMatchday(currentLeague.currentMatchday);
+    if (currentLeague?.currentMatchday) {
+      setTargetMatchday(currentLeague.currentMatchday);
+      setUntilMatchday((current) => Math.max(current, currentLeague.currentMatchday));
+    }
   }, [currentLeague?.currentMatchday]);
 
   const saveAvailability = async () => {
@@ -90,25 +94,50 @@ export const AdminPage = () => {
       <div className="grid gap-5 xl:grid-cols-[1.1fr_.9fr]">
         <Card>
           <h2 className="mb-3 text-base font-black text-white">Disponibilidad de jugadores</h2>
-          <div className="grid gap-3 sm:grid-cols-[1fr_.7fr_.45fr]">
-            <input className="field" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar jugador o equipo" />
-            <select className="field" value={status} onChange={(event) => setStatus(event.target.value as PlayerStatus)}>
-              {editableStatuses.map((item) => (
-                <option key={item} value={item}>
-                  {statusLabel[item]}
-                </option>
-              ))}
-            </select>
-            <input
-              className="field"
-              type="number"
-              min={1}
-              max={20}
-              value={remaining}
-              disabled={status !== "lesionado" && status !== "sancionado"}
-              onChange={(event) => setRemaining(Number(event.target.value))}
-              aria-label="Jornadas restantes"
-            />
+          <div className="grid gap-3 lg:grid-cols-[1fr_.65fr_.75fr]">
+            <label className="block">
+              <span className="mb-1 block text-[11px] font-black uppercase tracking-[0.12em] text-slate-500">Jugador</span>
+              <input className="field" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar jugador o equipo" />
+            </label>
+            <label className="block">
+              <span className="mb-1 block text-[11px] font-black uppercase tracking-[0.12em] text-slate-500">Estado</span>
+              <select className="field" value={status} onChange={(event) => setStatus(event.target.value as PlayerStatus)}>
+                {editableStatuses.map((item) => (
+                  <option key={item} value={item}>
+                    {statusLabel[item]}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="block">
+              <span className="mb-1 block text-[11px] font-black uppercase tracking-[0.12em] text-slate-500">Hasta jornada incluida</span>
+              <select
+                className="field"
+                value={untilMatchday}
+                disabled={status !== "lesionado" && status !== "sancionado"}
+                onChange={(event) => setUntilMatchday(Number(event.target.value))}
+              >
+                {matchdayNumbers.map((matchdayNumber) => (
+                  <option key={matchdayNumber} value={matchdayNumber}>
+                    J{matchdayNumber}
+                    {officialMatchdayNumbers.has(matchdayNumber) ? "" : " - pendiente"}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+          <div className="mt-3 rounded-lg border border-white/10 bg-[#202a43]/65 p-3">
+            <div className="flex flex-wrap items-center gap-2 text-sm font-bold text-white">
+              <Badge className={statusTone[status]}>{statusLabel[status]}</Badge>
+              {unavailableUntil ? (
+                <>
+                  <span>no puntuara hasta la J{unavailableUntil} incluida</span>
+                  <span className="text-slate-400">({absenceLength} jornada{absenceLength === 1 ? "" : "s"})</span>
+                </>
+              ) : (
+                <span className="text-slate-300">puede puntuar con normalidad</span>
+              )}
+            </div>
           </div>
           <div className="mt-3 max-h-[28rem] space-y-2 overflow-y-auto pr-1">
             {filteredPlayers.map((player) => (
@@ -120,7 +149,7 @@ export const AdminPage = () => {
                 onClick={() => {
                   setSelectedPlayerId(player.id);
                   setStatus(player.status);
-                  setRemaining(Math.max(1, (player.unavailableUntilMatchday ?? currentMatchdayNumber) - currentMatchdayNumber + 1));
+                  setUntilMatchday(Math.max(currentMatchdayNumber, player.unavailableUntilMatchday ?? currentMatchdayNumber));
                 }}
               >
                 <PlayerAvatar player={player} size="sm" />
