@@ -6,6 +6,7 @@ const challengeUrl = "https://challenge.place/c/68486e1155cbb0e036a0559f";
 const stageId = "69de85f89e7d357d88be816c";
 const stageName = "Temporada 1 GO";
 const stageUrl = `${challengeUrl}/stage/${stageId}`;
+const transfersUrl = `${challengeUrl}/transfers`;
 const staticBaseUrl = "https://static.challengeplace.com";
 
 const canonicalNames = {
@@ -153,6 +154,10 @@ const derivePosition = (player, lineupPositions, index) => {
 };
 
 const numberStat = (stats, key) => Number(stats?.[key] ?? 0);
+const safeTimestamp = (value) => {
+  const timestamp = Number(value);
+  return Number.isFinite(timestamp) && timestamp > 0 ? timestamp : 0;
+};
 
 const makeEmptyStats = () => ({
   appearances: 0,
@@ -285,8 +290,25 @@ const mapLimit = async (items, limit, mapper) => {
 const matchIdFromSeriesId = (seriesId) => (BigInt(`0x${seriesId}`) + 1n).toString(16).padStart(seriesId.length, "0");
 
 const stageState = await readInitialState(stageUrl);
+const transferState = await readInitialState(transfersUrl).catch(() => ({ rooms: {} }));
 const stageRoom = Object.values(stageState.rooms)[0];
-const rawTeams = Object.values(stageRoom.competitors).sort((a, b) => {
+const transferRoom = Object.values(transferState.rooms ?? {})[0] ?? {};
+const mergedCompetitors = new Map();
+for (const team of [...Object.values(transferRoom.competitors ?? {}), ...Object.values(stageRoom.competitors ?? {})]) {
+  mergedCompetitors.set(team.id, team);
+}
+const rawTransfers = (transferRoom.transfers ?? stageRoom.latestTransfers ?? [])
+  .filter((transfer) => transfer?.playerId && transfer?.fromCompetitorId && transfer?.toCompetitorId)
+  .map((transfer) => ({
+    ...transfer,
+    date: safeTimestamp(transfer.date),
+  }))
+  .filter((transfer) => transfer.date > 0)
+  .sort((a, b) => a.date - b.date || a.playerId.localeCompare(b.playerId));
+const latestTransferByPlayerId = new Map();
+for (const transfer of rawTransfers) latestTransferByPlayerId.set(transfer.playerId, transfer);
+
+const rawTeams = [...mergedCompetitors.values()].sort((a, b) => {
   if (a.acronym === "BLSA") return -1;
   if (b.acronym === "BLSA") return 1;
   return cleanName(a.name, a.acronym).localeCompare(cleanName(b.name, b.acronym));
@@ -309,13 +331,35 @@ const teams = rawTeams.map((team) => {
 
 const teamByChallengeId = new Map(teams.map((team) => [team.challengeId, team]));
 const teamByShortName = new Map(teams.map((team) => [team.shortName, team]));
-const rawPlayers = Object.values(stageRoom.players).sort((a, b) => (a.order ?? 0) - (b.order ?? 0) || a.name.localeCompare(b.name));
-const playerIdsByCompetitorId = new Map();
-for (const player of rawPlayers) {
-  const current = playerIdsByCompetitorId.get(player.competitorId) ?? [];
-  current.push(player.id);
-  playerIdsByCompetitorId.set(player.competitorId, current);
+const mergedPlayers = new Map();
+for (const player of Object.values(transferRoom.players ?? {})) {
+  const latestTransfer = latestTransferByPlayerId.get(player.id);
+  mergedPlayers.set(player.id, { ...player, competitorId: latestTransfer?.toCompetitorId ?? player.competitorId });
 }
+for (const player of Object.values(stageRoom.players ?? {})) {
+  const latestTransfer = latestTransferByPlayerId.get(player.id);
+  mergedPlayers.set(player.id, { ...mergedPlayers.get(player.id), ...player, competitorId: latestTransfer?.toCompetitorId ?? player.competitorId });
+}
+const rawPlayers = [...mergedPlayers.values()].sort((a, b) => (a.order ?? 0) - (b.order ?? 0) || a.name.localeCompare(b.name));
+const transfersByPlayerId = new Map();
+for (const transfer of rawTransfers) {
+  const current = transfersByPlayerId.get(transfer.playerId) ?? [];
+  current.push(transfer);
+  transfersByPlayerId.set(transfer.playerId, current);
+}
+const competitorIdForPlayerAt = (playerId, matchTimestamp) => {
+  const player = mergedPlayers.get(playerId);
+  const transfers = transfersByPlayerId.get(playerId) ?? [];
+  if (transfers.length === 0) return player?.competitorId;
+  let competitorId = transfers[0].fromCompetitorId;
+  for (const transfer of transfers) {
+    if (transfer.date <= matchTimestamp) competitorId = transfer.toCompetitorId;
+    else break;
+  }
+  return competitorId ?? player?.competitorId;
+};
+const playerIdsForCompetitorAt = (competitorId, matchTimestamp) =>
+  rawPlayers.filter((player) => competitorIdForPlayerAt(player.id, matchTimestamp) === competitorId).map((player) => player.id);
 const stageStatsByPlayerId = new Map();
 
 await mapLimit(teams, 4, async (team) => {
@@ -364,12 +408,13 @@ const officialMatchdays = [];
 const pointBucketsByPlayer = new Map();
 const matchStatsByPlayer = new Map();
 
-const buildPlayerMatchStats = (matchRoom, matchId, homeScore, awayScore) => {
+const buildPlayerMatchStats = (matchRoom, matchId, homeScore, awayScore, matchTimestamp) => {
   const buckets = new Map();
   const touch = (playerId, competitorId) => {
     const key = `${matchId}-${playerId}`;
     if (!buckets.has(key)) {
-      const teamIsHome = competitorId === matchRoom.homeCompetitorId;
+      const resolvedCompetitorId = competitorId ?? competitorIdForPlayerAt(playerId, matchTimestamp);
+      const teamIsHome = resolvedCompetitorId === matchRoom.homeCompetitorId;
       const teamGoalsConceded = teamIsHome ? awayScore : homeScore;
       buckets.set(key, {
         matchId,
@@ -400,7 +445,7 @@ const buildPlayerMatchStats = (matchRoom, matchId, homeScore, awayScore) => {
   };
 
   for (const competitorId of [matchRoom.homeCompetitorId, matchRoom.awayCompetitorId]) {
-    for (const playerId of playerIdsByCompetitorId.get(competitorId) ?? []) {
+    for (const playerId of playerIdsForCompetitorAt(competitorId, matchTimestamp)) {
       touch(playerId, competitorId);
     }
   }
@@ -460,6 +505,9 @@ const buildMatchEvents = (matchRoom, matchId) =>
     });
 
 const rounds = Object.values(stageRoom.rounds).sort((a, b) => Number(a.order ?? 0) - Number(b.order ?? 0));
+const roundNumberFor = (round, fallback = 1) => Number(String(round.name).replace(/\D+/g, "")) || Number(round.order ?? fallback);
+const maxRoundNumber = Math.max(1, ...rounds.map((round, index) => roundNumberFor(round, index + 1)));
+const fallbackReferenceTime = safeTimestamp(stageRoom.lastUpdate) || safeTimestamp(stageRoom.timestamp) || Date.now();
 await mapLimit(rounds, 1, async (round) => {
   const matchStates = await mapLimit(round.seriesIds ?? [], 3, async (seriesId) => {
     const matchChallengeId = matchIdFromSeriesId(seriesId);
@@ -476,8 +524,15 @@ await mapLimit(rounds, 1, async (round) => {
       const away = teamByChallengeId.get(matchRoom.awayCompetitorId) ?? teamByShortName.get("BLSA");
       const homeScore = Number(matchRoom.homeScore ?? 0);
       const awayScore = Number(matchRoom.awayScore ?? 0);
-      const playerStats = buildPlayerMatchStats(matchRoom, matchId, homeScore, awayScore);
       const matchdayNumber = Number(String(matchRoom.roundName ?? round.name).replace(/\D+/g, "")) || Number(round.order ?? 1);
+      const timestamp = safeTimestamp(matchRoom.timestamp);
+      const stableFallbackTime =
+        fallbackReferenceTime -
+        Math.max(0, maxRoundNumber - matchdayNumber + 1) * 86_400_000 +
+        Number(matchRoom.order ?? 0) * 60_000;
+      const matchTimestamp = timestamp || stableFallbackTime;
+      const playedAt = new Date(matchTimestamp).toISOString();
+      const playerStats = buildPlayerMatchStats(matchRoom, matchId, homeScore, awayScore, matchTimestamp);
       for (const stat of playerStats) {
         const current = pointBucketsByPlayer.get(stat.playerId) ?? {};
         current[matchdayNumber] = (current[matchdayNumber] ?? 0) + Number(stat.fantasyPoints ?? 0);
@@ -502,10 +557,6 @@ await mapLimit(rounds, 1, async (round) => {
         matchStatsByPlayer.set(stat.playerId, aggregate);
       }
 
-      const timestamp = Number(matchRoom.timestamp);
-      const stableFallbackTime = Date.UTC(2026, 0, 1, 12, 0, 0) + (matchdayNumber * 100 + Number(matchRoom.order ?? 0)) * 60_000;
-      const playedAt = Number.isFinite(timestamp) && timestamp > 0 ? new Date(timestamp).toISOString() : new Date(stableFallbackTime).toISOString();
-
       return {
         id: matchId,
         challengeId: matchChallengeId,
@@ -525,7 +576,7 @@ await mapLimit(rounds, 1, async (round) => {
       };
     });
 
-  const number = Number(String(round.name).replace(/\D+/g, "")) || Number(round.order ?? 1);
+  const number = roundNumberFor(round);
   const startsAt = matches[0]?.playedAt ?? new Date().toISOString();
   officialMatchdays.push({
     id: `matchday-${number}`,
@@ -566,8 +617,10 @@ const ts = `${header}import type { Player, Team } from "../types";\n\nexport con
     teamCount: teams.length,
     matchdayCount: officialMatchdays.length,
     matchCount: officialMatchdays.reduce((sum, matchday) => sum + matchday.matches.length, 0),
-    currentMatchday: 6,
+    currentMatchday: Math.max(1, ...officialMatchdays.map((matchday) => matchday.number)),
     playersWithStageStats: stageStatsByPlayerId.size,
+    transferCount: rawTransfers.length,
+    transferHistorySource: transfersUrl,
   },
   null,
   2,
@@ -660,7 +713,72 @@ const officialMatchSqlRows = officialMatchdays.flatMap((matchday) =>
   })),
 );
 
-const seedSql = `-- Generated by scripts/syncChallengeData.mjs from ${stageUrl}\n-- Public Challenge snapshot: ${players.length} players, ${teams.length} competitors, ${officialMatchSqlRows.length} played matches.\n\ninsert into public.teams (id, name, short_name, color, badge_url, strength)\nselect * from jsonb_to_recordset($teams$${JSON.stringify(
+const matchdayStarts = officialMatchdays
+  .map((matchday) => ({ number: matchday.number, timestamp: safeTimestamp(new Date(matchday.startsAt).getTime()) }))
+  .filter((item) => item.timestamp > 0)
+  .sort((a, b) => a.timestamp - b.timestamp);
+const effectiveMatchdayForTransfer = (timestamp) =>
+  matchdayStarts.find((matchday) => matchday.timestamp >= timestamp)?.number ?? maxRoundNumber + 1;
+
+const transferSqlRows = rawTransfers
+  .filter((transfer) => playerByChallengeId.has(transfer.playerId))
+  .map((transfer) => ({
+    challenge_transfer_key: `${transfer.playerId}:${transfer.fromCompetitorId}:${transfer.toCompetitorId}:${transfer.date}`,
+    player_id: uuidFrom(`player-${transfer.playerId}`),
+    from_team_short_name: teamByChallengeId.get(transfer.fromCompetitorId)?.shortName ?? "BLSA",
+    to_team_short_name: teamByChallengeId.get(transfer.toCompetitorId)?.shortName ?? "BLSA",
+    transfer_date: new Date(transfer.date).toISOString(),
+    effective_matchday: effectiveMatchdayForTransfer(transfer.date),
+    raw_json: transfer,
+  }));
+
+const historySqlRows = [];
+for (const player of rawPlayers) {
+  const transfers = transfersByPlayerId.get(player.id) ?? [];
+  if (transfers.length === 0) {
+    historySqlRows.push({
+      id: uuidFrom(`history-${player.id}-${player.competitorId ?? "unknown"}-current`),
+      player_id: uuidFrom(`player-${player.id}`),
+      team_short_name: teamByChallengeId.get(player.competitorId)?.shortName ?? "BLSA",
+      from_date: null,
+      to_date: null,
+      from_matchday: null,
+      to_matchday: null,
+    });
+    continue;
+  }
+
+  let activeTeamId = transfers[0].fromCompetitorId;
+  let activeFromDate = null;
+  let activeFromMatchday = null;
+  transfers.forEach((transfer, index) => {
+    historySqlRows.push({
+      id: uuidFrom(`history-${player.id}-${activeTeamId}-${activeFromDate ?? "origin"}-${transfer.date}`),
+      player_id: uuidFrom(`player-${player.id}`),
+      team_short_name: teamByChallengeId.get(activeTeamId)?.shortName ?? "BLSA",
+      from_date: activeFromDate ? new Date(activeFromDate).toISOString() : null,
+      to_date: new Date(transfer.date).toISOString(),
+      from_matchday: activeFromMatchday,
+      to_matchday: Math.max(1, effectiveMatchdayForTransfer(transfer.date) - 1),
+    });
+    activeTeamId = transfer.toCompetitorId;
+    activeFromDate = transfer.date;
+    activeFromMatchday = effectiveMatchdayForTransfer(transfer.date);
+    if (index === transfers.length - 1) {
+      historySqlRows.push({
+        id: uuidFrom(`history-${player.id}-${activeTeamId}-${activeFromDate}-current`),
+        player_id: uuidFrom(`player-${player.id}`),
+        team_short_name: teamByChallengeId.get(activeTeamId)?.shortName ?? "BLSA",
+        from_date: new Date(activeFromDate).toISOString(),
+        to_date: null,
+        from_matchday: activeFromMatchday,
+        to_matchday: null,
+      });
+    }
+  });
+}
+
+let seedSql = `-- Generated by scripts/syncChallengeData.mjs from ${stageUrl}\n-- Public Challenge snapshot: ${players.length} players, ${teams.length} competitors, ${officialMatchSqlRows.length} played matches.\n\ninsert into public.teams (id, name, short_name, color, badge_url, strength)\nselect * from jsonb_to_recordset($teams$${JSON.stringify(
   teamSqlRows,
 )}$teams$::jsonb) as t(id uuid, name text, short_name text, color text, badge_url text, strength integer)\non conflict (short_name) do update\nset name = excluded.name,\n    color = excluded.color,\n    badge_url = excluded.badge_url,\n    strength = excluded.strength;\n\ninsert into public.players (\n  id, name, image_url, team_id, position, base_price, current_price, fantasy_value, status, total_points, points_by_matchday, stats_json\n)\nselect\n  p.id,\n  p.name,\n  p.image_url,\n  t.id,\n  p.position,\n  p.base_price,\n  p.current_price,\n  p.fantasy_value,\n  p.status,\n  p.total_points,\n  p.points_by_matchday,\n  p.stats_json || jsonb_build_object('challengeStageStats', p.challenge_stage_stats, 'sourceStage', '${stageName}')\nfrom jsonb_to_recordset($players$${JSON.stringify(
   playerSqlRows,
@@ -670,6 +788,90 @@ const seedSql = `-- Generated by scripts/syncChallengeData.mjs from ${stageUrl}\
   officialMatchSqlRows,
 )}$official_matches$::jsonb) as m(\n  challenge_match_id text,\n  matchday_number integer,\n  home_team_short_name text,\n  away_team_short_name text,\n  home_score integer,\n  away_score integer,\n  status text,\n  played_at timestamptz,\n  events_json jsonb,\n  player_stats_json jsonb\n)\non conflict (challenge_match_id) do update\nset matchday_number = excluded.matchday_number,\n    home_team_short_name = excluded.home_team_short_name,\n    away_team_short_name = excluded.away_team_short_name,\n    home_score = excluded.home_score,\n    away_score = excluded.away_score,\n    status = excluded.status,\n    played_at = excluded.played_at,\n    events_json = excluded.events_json,\n    player_stats_json = excluded.player_stats_json;\n`;
 
+const transferSeedSql = `\n\ninsert into public.challenge_transfers (
+  challenge_transfer_key, player_id, from_team_id, to_team_id, transfer_date, effective_matchday, raw_json
+)
+select
+  tr.challenge_transfer_key,
+  tr.player_id,
+  ft.id,
+  tt.id,
+  tr.transfer_date,
+  tr.effective_matchday,
+  tr.raw_json
+from jsonb_to_recordset($challenge_transfers$${JSON.stringify(
+  transferSqlRows,
+)}$challenge_transfers$::jsonb) as tr(
+  challenge_transfer_key text,
+  player_id uuid,
+  from_team_short_name text,
+  to_team_short_name text,
+  transfer_date timestamptz,
+  effective_matchday integer,
+  raw_json jsonb
+)
+left join public.teams ft on ft.short_name = tr.from_team_short_name
+left join public.teams tt on tt.short_name = tr.to_team_short_name
+on conflict (challenge_transfer_key) do update
+set player_id = excluded.player_id,
+    from_team_id = excluded.from_team_id,
+    to_team_id = excluded.to_team_id,
+    transfer_date = excluded.transfer_date,
+    effective_matchday = excluded.effective_matchday,
+    raw_json = excluded.raw_json;
+
+insert into public.player_team_history (
+  id, player_id, team_id, from_date, to_date, from_matchday, to_matchday, source
+)
+select
+  h.id,
+  h.player_id,
+  t.id,
+  h.from_date,
+  h.to_date,
+  h.from_matchday,
+  h.to_matchday,
+  'challenge'
+from jsonb_to_recordset($player_team_history$${JSON.stringify(
+  historySqlRows,
+)}$player_team_history$::jsonb) as h(
+  id uuid,
+  player_id uuid,
+  team_short_name text,
+  from_date timestamptz,
+  to_date timestamptz,
+  from_matchday integer,
+  to_matchday integer
+)
+join public.teams t on t.short_name = h.team_short_name
+on conflict (id) do update
+set player_id = excluded.player_id,
+    team_id = excluded.team_id,
+    from_date = excluded.from_date,
+    to_date = excluded.to_date,
+    from_matchday = excluded.from_matchday,
+    to_matchday = excluded.to_matchday,
+    source = excluded.source;\n`;
+
+const cleanupSeedSql = `\n\nwith snapshot_players as (
+  select id
+  from jsonb_to_recordset($snapshot_players$${JSON.stringify(playerSqlRows.map((player) => ({ id: player.id })))}$snapshot_players$::jsonb) as p(id uuid)
+)
+delete from public.league_players lp
+where not exists (select 1 from snapshot_players sp where sp.id = lp.player_id)
+  and lp.owner_user_id is null;
+
+with snapshot_players as (
+  select id
+  from jsonb_to_recordset($snapshot_players$${JSON.stringify(playerSqlRows.map((player) => ({ id: player.id })))}$snapshot_players$::jsonb) as p(id uuid)
+)
+delete from public.players p
+where not exists (select 1 from snapshot_players sp where sp.id = p.id)
+  and not exists (select 1 from public.squads s where s.player_id = p.id);\n`;
+
+seedSql = seedSql
+  .replace("on conflict (short_name) do update\nset name = excluded.name,", "on conflict (id) do update\nset name = excluded.name,\n    short_name = excluded.short_name,");
+
 const tsPath = resolve("src/data/challengeData.ts");
 const fixturesPath = resolve("src/data/challengeFixtures.ts");
 const seedPath = resolve("supabase/seed.sql");
@@ -677,7 +879,7 @@ await mkdir(dirname(tsPath), { recursive: true });
 await mkdir(dirname(seedPath), { recursive: true });
 await writeFile(tsPath, ts, "utf8");
 await writeFile(fixturesPath, fixturesTs, "utf8");
-await writeFile(seedPath, seedSql, "utf8");
+await writeFile(seedPath, seedSql + transferSeedSql + cleanupSeedSql, "utf8");
 
 const byPosition = players.reduce((acc, player) => {
   acc[player.position] = (acc[player.position] ?? 0) + 1;

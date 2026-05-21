@@ -18,6 +18,8 @@ alter table public.scoring_rules enable row level security;
 alter table public.activity_feed enable row level security;
 alter table public.challenge_sync_status enable row level security;
 alter table public.challenge_sync_requests enable row level security;
+alter table public.challenge_transfers enable row level security;
+alter table public.player_team_history enable row level security;
 
 create or replace function public.is_league_member(p_league_id uuid, p_user_id uuid default auth.uid())
 returns boolean
@@ -237,3 +239,13 @@ drop policy if exists challenge_sync_requests_insert_public on public.challenge_
 create policy challenge_sync_requests_insert_public on public.challenge_sync_requests
 for insert to anon
 with check (requested_by is null and status = 'pending');
+
+drop policy if exists challenge_transfers_read_member on public.challenge_transfers;
+create policy challenge_transfers_read_member on public.challenge_transfers
+for select to authenticated
+using (true);
+
+drop policy if exists player_team_history_read_member on public.player_team_history;
+create policy player_team_history_read_member on public.player_team_history
+for select to authenticated
+using (true);
