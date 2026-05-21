@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Save, SkipForward } from "lucide-react";
 import type { PlayerStatus } from "../types";
 import { PlayerAvatar } from "../components/players/PlayerAvatar";
@@ -11,6 +11,7 @@ import { getErrorMessage } from "../utils/errors";
 import { positionTone, statusLabel, statusTone } from "../utils/formatters";
 
 const editableStatuses: PlayerStatus[] = ["disponible", "duda", "lesionado", "sancionado"];
+const minimumAdminMatchdays = 13;
 
 export const AdminPage = () => {
   const { isOverloadAdmin, currentLeague, players, matchdays, updatePlayerAvailability, advanceLeagueMatchday } = useFantasy();
@@ -34,6 +35,19 @@ export const AdminPage = () => {
   const selectedPlayer = players.find((player) => player.id === selectedPlayerId) ?? filteredPlayers[0];
   const currentMatchdayNumber = currentLeague?.currentMatchday ?? matchdays.at(-1)?.number ?? 6;
   const unavailableUntil = status === "lesionado" || status === "sancionado" ? currentMatchdayNumber + Math.max(0, remaining - 1) : null;
+  const matchdayNumbers = useMemo(() => {
+    const maxNumber = Math.max(
+      minimumAdminMatchdays,
+      currentLeague?.currentMatchday ?? 1,
+      ...matchdays.map((matchday) => matchday.number),
+    );
+    return Array.from({ length: maxNumber }, (_, index) => index + 1);
+  }, [currentLeague?.currentMatchday, matchdays]);
+  const officialMatchdayNumbers = useMemo(() => new Set(matchdays.map((matchday) => matchday.number)), [matchdays]);
+
+  useEffect(() => {
+    if (currentLeague?.currentMatchday) setTargetMatchday(currentLeague.currentMatchday);
+  }, [currentLeague?.currentMatchday]);
 
   const saveAvailability = async () => {
     if (!selectedPlayer) return;
@@ -133,9 +147,10 @@ export const AdminPage = () => {
             <p className="text-sm text-slate-400">Usalo cuando Challenge ya tenga datos oficiales y quieras mover la liga a la siguiente jornada.</p>
             <div className="mt-4 grid gap-3 sm:grid-cols-[1fr_auto]">
               <select className="field" value={targetMatchday} onChange={(event) => setTargetMatchday(Number(event.target.value))}>
-                {matchdays.map((matchday) => (
-                  <option key={matchday.id} value={matchday.number}>
-                    Jornada {matchday.number}
+                {matchdayNumbers.map((matchdayNumber) => (
+                  <option key={matchdayNumber} value={matchdayNumber}>
+                    Jornada {matchdayNumber}
+                    {officialMatchdayNumbers.has(matchdayNumber) ? "" : " - pendiente"}
                   </option>
                 ))}
               </select>
