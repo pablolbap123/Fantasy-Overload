@@ -225,6 +225,11 @@ create policy challenge_sync_status_select_auth on public.challenge_sync_status
 for select to authenticated
 using (true);
 
+drop policy if exists challenge_sync_status_select_public on public.challenge_sync_status;
+create policy challenge_sync_status_select_public on public.challenge_sync_status
+for select to anon
+using (true);
+
 drop policy if exists challenge_sync_requests_select_own on public.challenge_sync_requests;
 create policy challenge_sync_requests_select_own on public.challenge_sync_requests
 for select to authenticated

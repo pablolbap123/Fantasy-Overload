@@ -143,6 +143,11 @@ const withSupabaseTimeout = async <T,>(query: PromiseLike<T>, label = "Supabase"
       .finally(() => window.clearTimeout(timeout));
   });
 
+const wait = (ms: number) =>
+  new Promise<void>((resolve) => {
+    window.setTimeout(resolve, ms);
+  });
+
 const fetchRows = async (query: PromiseLike<{ data: any[] | null; error: unknown }>) => {
   const { data, error } = await withSupabaseTimeout(query);
   if (error) throw error;
@@ -1704,24 +1709,74 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
     if (!isSupabaseConfigured || !supabase) {
       throw new Error("Supabase no esta configurado.");
     }
-    const { error } = await supabase.from("challenge_sync_requests").insert({
-      requested_by: userId ?? null,
-      status: "pending",
-      message: "Solicitud manual desde la app.",
-    });
-    if (error) throw new Error(getErrorMessage(error, "No se pudo pedir la actualizacion de Challenge."));
-    setChallengeSyncStatus((current) =>
-      current
-        ? {
-            ...current,
-            status: "checking",
-            message: "Solicitud enviada. El watcher esta revisando Challenge.",
-            updatedAt: new Date().toISOString(),
-          }
-        : current,
+    const requestedAt = new Date();
+    const requestId = crypto.randomUUID();
+    setChallengeSyncStatus((current) => ({
+      id: current?.id ?? "overload-series",
+      sourceUrl: current?.sourceUrl ?? "https://challenge.place/c/68486e1155cbb0e036a0559f/stage/69de85f89e7d357d88be816c",
+      status: "checking",
+      message: "Solicitud enviada. Esperando respuesta del worker de Challenge.",
+      snapshotHash: current?.snapshotHash,
+      lastCheckedAt: current?.lastCheckedAt,
+      lastChangedAt: current?.lastChangedAt,
+      updatedAt: new Date().toISOString(),
+    }));
+
+    const { error } = await withSupabaseTimeout(
+      supabase.from("challenge_sync_requests").insert({
+        id: requestId,
+        requested_by: userId ?? null,
+        status: "pending",
+        message: "Solicitud manual desde la app.",
+      }),
+      "Solicitud de Challenge",
     );
+    if (error) throw new Error(getErrorMessage(error, "No se pudo pedir la actualizacion de Challenge."));
     pushToast("Actualizacion de Challenge solicitada.", "success");
-  }, [pushToast, userId]);
+
+    const deadline = Date.now() + 120_000;
+    while (Date.now() < deadline) {
+      await wait(2500);
+
+      const syncStatusRow = await fetchMaybeRow(
+        supabase.from("challenge_sync_status").select("*").eq("id", "overload-series").maybeSingle(),
+      ).catch(() => null);
+      const latestStatus = syncStatusRow ? mapChallengeSyncStatus(syncStatusRow) : undefined;
+      if (latestStatus) setChallengeSyncStatus(latestStatus);
+
+      const isFreshStatus =
+        latestStatus?.updatedAt && new Date(latestStatus.updatedAt).getTime() >= requestedAt.getTime() - 1000;
+      if (isFreshStatus && latestStatus?.status === "error") {
+        throw new Error(latestStatus.message || "Challenge devolvio un error al sincronizar.");
+      }
+      if (isFreshStatus && (latestStatus?.status === "changed" || latestStatus?.status === "ok")) {
+        if (currentLeague?.id) await loadLeagueData(currentLeague.id);
+        pushToast("Challenge actualizado correctamente.", "success");
+        return;
+      }
+
+      if (session) {
+        const requestRow = await fetchMaybeRow(
+          supabase.from("challenge_sync_requests").select("status,message,processed_at").eq("id", requestId).maybeSingle(),
+        ).catch(() => null);
+        if (requestRow?.status === "failed") {
+          throw new Error(requestRow.message ?? "El worker no pudo sincronizar Challenge.");
+        }
+      }
+    }
+
+    setChallengeSyncStatus((current) => ({
+      id: current?.id ?? "overload-series",
+      sourceUrl: current?.sourceUrl ?? "https://challenge.place/c/68486e1155cbb0e036a0559f/stage/69de85f89e7d357d88be816c",
+      status: "error",
+      message: "La solicitud se envio, pero no hay un worker activo respondiendo. Arranca npm run sync:challenge:watch en el servidor.",
+      snapshotHash: current?.snapshotHash,
+      lastCheckedAt: current?.lastCheckedAt,
+      lastChangedAt: current?.lastChangedAt,
+      updatedAt: new Date().toISOString(),
+    }));
+    throw new Error("La solicitud se envio, pero el worker de Challenge no respondio. Hay que arrancar npm run sync:challenge:watch en el servidor.");
+  }, [currentLeague?.id, loadLeagueData, pushToast, session, userId]);
 
   const simulateCurrentMatchday = useCallback(async () => {
     if (!currentLeague) return;

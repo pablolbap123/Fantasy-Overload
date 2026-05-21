@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { spawn } from "node:child_process";
+import { createHash } from "node:crypto";
 
 const seedPath = new URL("../supabase/seed.sql", import.meta.url);
 const challengeStageUrl = "https://challenge.place/c/68486e1155cbb0e036a0559f/stage/69de85f89e7d357d88be816c";
@@ -129,6 +130,21 @@ const takePendingSyncRequests = async () => {
   }
 };
 
+const recoverStaleProcessingRequests = async () => {
+  try {
+    await applySql(`
+      update public.challenge_sync_requests
+      set status = 'pending',
+          message = 'Reintentando sincronizacion; la ejecucion anterior no termino.',
+          processed_at = null
+      where status = 'processing'
+        and processed_at < now() - interval '20 minutes'
+    `);
+  } catch (error) {
+    console.warn("[challenge-watch] No se pudieron recuperar solicitudes atascadas:", shortError(error));
+  }
+};
+
 const finishSyncRequests = async (requestIds, status, message) => {
   if (!requestIds.length) return;
   try {
@@ -161,7 +177,11 @@ const cleanupSyncRequests = async () => {
   try {
     await applySql(`
       delete from public.challenge_sync_requests
-      where status in ('completed', 'failed')
+      where status = 'completed'
+        or (
+          status = 'failed'
+          and created_at < now() - interval '1 day'
+        )
         and (
           created_at < now() - interval '7 days'
           or id in (
@@ -180,12 +200,14 @@ const cleanupSyncRequests = async () => {
 
 const applyLatestSnapshot = async () => {
   const seedSql = await readFile(seedPath, "utf8");
+  const snapshotHash = createHash("sha256").update(seedSql).digest("hex");
   await applySql(`
     ${seedSql}
     select set_config('request.jwt.claim.role', 'service_role', false);
     select public.sync_all_leagues_from_official();
     select public.resolve_all_market_auctions();
   `);
+  return snapshotHash;
 };
 
 console.log(`[challenge-watch] Modo manual: solo sincroniza Challenge cuando llega una solicitud. Revisa solicitudes cada ${pollMs}ms.`);
@@ -193,6 +215,7 @@ console.log(`[challenge-watch] Modo manual: solo sincroniza Challenge cuando lle
 while (true) {
   let requestIds = [];
   try {
+    await recoverStaleProcessingRequests();
     requestIds = await takePendingSyncRequests();
     if (!requestIds.length) {
       await sleep(pollMs);
@@ -203,8 +226,8 @@ while (true) {
       "Actualizacion manual solicitada. Comprobando Challenge Place...",
     );
     await runNode(["scripts/syncChallengeData.mjs"]);
-    await applyLatestSnapshot();
-    await updateSyncStatus("changed", "Actualizacion manual de Challenge aplicada en web y movil.", { changed: true });
+    const snapshotHash = await applyLatestSnapshot();
+    await updateSyncStatus("changed", "Actualizacion manual de Challenge aplicada en web y movil.", { changed: true, snapshotHash });
     await finishSyncRequests(requestIds, "completed", "Actualizacion manual de Challenge aplicada.");
     await cleanupSyncRequests();
     console.log(`[challenge-watch] Actualizacion manual aplicada en Supabase: ${new Date().toISOString()}`);

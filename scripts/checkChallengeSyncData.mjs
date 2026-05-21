@@ -9,14 +9,12 @@ if (!connectionString) {
 const client = new Client({ connectionString, ssl: { rejectUnauthorized: false } });
 await client.connect();
 
-const [players, teams, matches, transfers, history, syncStatus] = await Promise.all([
-  client.query("select count(*)::int as count from public.players"),
-  client.query("select count(*)::int as count from public.teams"),
-  client.query("select count(*)::int as count from public.official_matches"),
-  client.query("select count(*)::int as count from public.challenge_transfers"),
-  client.query("select count(*)::int as count from public.player_team_history"),
-  client.query("select status, message, snapshot_hash from public.challenge_sync_status where id = 'overload-series'"),
-]);
+const players = await client.query("select count(*)::int as count from public.players");
+const teams = await client.query("select count(*)::int as count from public.teams");
+const matches = await client.query("select count(*)::int as count from public.official_matches");
+const transfers = await client.query("select count(*)::int as count from public.challenge_transfers");
+const history = await client.query("select count(*)::int as count from public.player_team_history");
+const syncStatus = await client.query("select status, message, snapshot_hash from public.challenge_sync_status where id = 'overload-series'");
 
 await client.end();
 console.log(
