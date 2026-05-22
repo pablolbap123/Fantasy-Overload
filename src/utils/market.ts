@@ -2,8 +2,8 @@ import type { ActivityItem, LeagueMember, LeaguePlayer, Offer, Player, Transfer 
 import { calculateSquadValue } from "./calculatePoints";
 import { formatMoney } from "./formatters";
 
-export const DAILY_MARKET_SIZE = 10;
-export const MARKET_DURATION_MS = 24 * 60 * 60 * 1000;
+export const DAILY_MARKET_SIZE = 20;
+export const MARKET_DURATION_MS = 3 * 60 * 60 * 1000;
 export const MIN_BID_INCREMENT = 50_000;
 
 export const roundBidAmount = (amount: number) => Math.ceil(amount / MIN_BID_INCREMENT) * MIN_BID_INCREMENT;
@@ -34,6 +34,11 @@ const stableHash = (value: string) => {
   return hash;
 };
 
+const marketWindowSeed = (date: Date) => {
+  const windowIndex = Math.floor(date.getUTCHours() / 3);
+  return `${date.toISOString().slice(0, 10)}-${windowIndex}`;
+};
+
 export const openDailyMarketCycle = (
   leaguePlayers: LeaguePlayer[],
   players: Player[],
@@ -42,6 +47,7 @@ export const openDailyMarketCycle = (
 ) => {
   const listedAt = now.toISOString();
   const expiresAt = new Date(now.getTime() + MARKET_DURATION_MS).toISOString();
+  const hashSeed = marketWindowSeed(now);
   const playerById = new Map(players.map((player) => [player.id, player]));
   const excluded = new Set(excludePlayerIds);
   const available = leaguePlayers
@@ -49,7 +55,6 @@ export const openDailyMarketCycle = (
     .sort((a, b) => {
       const aPlayer = playerById.get(a.playerId);
       const bPlayer = playerById.get(b.playerId);
-      const hashSeed = listedAt.slice(0, 10);
       return (
         stableHash(`${hashSeed}-${a.playerId}`) - stableHash(`${hashSeed}-${b.playerId}`) ||
         (bPlayer?.currentPrice ?? 0) - (aPlayer?.currentPrice ?? 0)
@@ -87,7 +92,7 @@ export const normalizeDailyMarket = (leaguePlayers: LeaguePlayer[], players: Pla
       item.marketExpiresAt &&
       new Date(item.marketExpiresAt).getTime() > Date.now(),
   );
-  if (active.length > 0 && active.length <= DAILY_MARKET_SIZE) return leaguePlayers;
+  if (active.length >= DAILY_MARKET_SIZE) return leaguePlayers;
   return openDailyMarketCycle(leaguePlayers, players);
 };
 
@@ -100,7 +105,7 @@ interface ResolveDailyMarketInput {
   createdAt: string;
 }
 
-// Resuelve subastas vencidas y abre un nuevo ciclo diario de 10 jugadores si hace falta.
+// Resuelve subastas vencidas y abre un nuevo ciclo rotativo de 20 jugadores si hace falta.
 export const resolveExpiredDailyMarket = ({ leagueId, leaguePlayers, players, members, offers, createdAt }: ResolveDailyMarketInput) => {
   const now = Date.now();
   const expired = leaguePlayers.filter(

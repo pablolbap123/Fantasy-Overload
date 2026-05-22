@@ -10,10 +10,12 @@ interface ChallengeSyncButtonProps {
 }
 
 export const ChallengeSyncButton = ({ className, label = "Actualizar Challenge", compact }: ChallengeSyncButtonProps) => {
-  const { requestChallengeSync, onlineReady } = useFantasy();
+  const { requestChallengeSync, onlineReady, isOverloadAdmin } = useFantasy();
   const [syncing, setSyncing] = useState(false);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+
+  if (!isOverloadAdmin) return null;
 
   const sync = async () => {
     setSyncing(true);

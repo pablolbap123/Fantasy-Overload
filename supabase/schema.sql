@@ -41,7 +41,7 @@ create table if not exists public.leagues (
   invite_code text not null unique,
   owner_id uuid not null references public.profiles(user_id) on delete cascade,
   initial_budget numeric not null default 150000000 check (initial_budget >= 0),
-  max_members integer not null default 12 check (max_members between 2 and 100),
+  max_members integer not null default 50 check (max_members between 2 and 50),
   current_matchday integer not null default 1,
   market_locked boolean not null default false,
   lineups_locked boolean not null default false,
@@ -57,6 +57,7 @@ create table if not exists public.league_members (
   total_points integer not null default 0,
   last_matchday_points integer not null default 0,
   points_by_matchday jsonb not null default '{}'::jsonb,
+  joined_matchday integer not null,
   created_at timestamptz not null default now(),
   unique (league_id, user_id)
 );

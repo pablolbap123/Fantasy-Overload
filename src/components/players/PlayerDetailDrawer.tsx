@@ -33,6 +33,7 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
   const [showActions, setShowActions] = useState(false);
   const [showValueHistory, setShowValueHistory] = useState(false);
   const [offerAmount, setOfferAmount] = useState("");
+  const [clauseSpend, setClauseSpend] = useState("1000000");
   const [exchangePlayerId, setExchangePlayerId] = useState("");
   const [actionError, setActionError] = useState("");
   const [actionLoading, setActionLoading] = useState("");
@@ -43,6 +44,7 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
     setShowActions(false);
     setShowValueHistory(false);
     setOfferAmount("");
+    setClauseSpend("1000000");
     setExchangePlayerId("");
     setActionError("");
   }, [player?.id]);
@@ -81,6 +83,7 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
   const playersById = useMemo(() => new Map(players.map((item) => [item.id, item])), [players]);
   const leaguePlayer = player ? leaguePlayers.find((item) => item.playerId === player.id) : undefined;
   const owner = leaguePlayer?.ownerUserId ? members.find((member) => member.userId === leaguePlayer.ownerUserId) : undefined;
+  const myMember = members.find((member) => member.userId === userId);
   const listedBy = leaguePlayer?.listedByUserId ? members.find((member) => member.userId === leaguePlayer.listedByUserId) : undefined;
   const isMine = Boolean(leaguePlayer?.ownerUserId && leaguePlayer.ownerUserId === userId);
   const isMyListing = Boolean(leaguePlayer?.listedByUserId && leaguePlayer.listedByUserId === userId);
@@ -88,8 +91,11 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
   const highestBid = player ? getHighestBid(offers, player.id) : undefined;
   const nextBidAmount = player && leaguePlayer ? getNextBidAmount(leaguePlayer.price, highestBid) : 0;
   const quickSellAmount = leaguePlayer ? roundBidAmount(leaguePlayer.price * 0.5) : 0;
-  const nextClause = leaguePlayer ? roundBidAmount(Math.max(leaguePlayer.releaseClause * 1.05, leaguePlayer.releaseClause + 500_000)) : 0;
-  const nextClauseCost = leaguePlayer ? Math.max(250_000, roundBidAmount((nextClause - leaguePlayer.releaseClause) * 0.6)) : 0;
+  const parsedClauseSpend = Number(clauseSpend.replace(/[^\d]/g, ""));
+  const clauseSpendAmount = Number.isFinite(parsedClauseSpend) ? roundBidAmount(parsedClauseSpend) : 0;
+  const clauseIncrease = clauseSpendAmount * 3;
+  const projectedClause = leaguePlayer ? leaguePlayer.releaseClause + clauseIncrease : 0;
+  const projectedBudget = myMember ? myMember.budget - clauseSpendAmount : 0;
   const myPlayers = leaguePlayers
     .filter((item) => item.ownerUserId === userId && item.playerId !== player?.id)
     .map((item) => playersById.get(item.playerId))
@@ -100,10 +106,11 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
   const parsedOfferAmount = Number(offerAmount || suggestedOffer);
   const valueHistory = player ? visibleMatchdays.map((number, index) => {
     const points = playerMatchdayPoints(player, number);
-    const previousImpact = visibleMatchdays
-      .slice(index + 1)
+    const storedValue = player.priceHistory?.[number];
+    const cumulativePoints = visibleMatchdays
+      .slice(0, index + 1)
       .reduce((sum, item) => sum + playerMatchdayPoints(player, item), 0);
-    const estimatedValue = roundBidAmount(Math.max(player.basePrice, player.currentPrice - previousImpact * 120_000));
+    const estimatedValue = storedValue ?? roundBidAmount(Math.max(500_000, player.basePrice + cumulativePoints * 250_000 + points * 150_000));
     return { number, points, estimatedValue };
   }) : [];
 
@@ -268,14 +275,36 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
                     <div className="grid gap-2 sm:grid-cols-2">
                       {isMine ? (
                         <>
-                          <Button
-                            variant="secondary"
-                            loading={actionLoading === "clause"}
-                            icon={<ShieldPlus className="h-4 w-4" />}
-                            onClick={() => void runPlayerAction("clause", () => raisePlayerClause(player.id, nextClause))}
-                          >
-                            Subir clausula {formatMoney(nextClauseCost)}
-                          </Button>
+                          <div className="rounded-lg border border-white/10 bg-white/[0.05] p-3 sm:col-span-2">
+                            <div className="flex flex-wrap items-end gap-2">
+                              <label className="min-w-0 flex-1">
+                                <span className="mb-1 block text-xs font-black uppercase text-slate-400">Invertir en clausula</span>
+                                <input
+                                  className="field"
+                                  inputMode="numeric"
+                                  value={clauseSpend}
+                                  onChange={(event) => setClauseSpend(event.target.value)}
+                                  placeholder="1000000"
+                                />
+                              </label>
+                              <Button
+                                variant="secondary"
+                                loading={actionLoading === "clause"}
+                                icon={<ShieldPlus className="h-4 w-4" />}
+                                disabled={!myMember || clauseSpendAmount <= 0 || projectedBudget < 0}
+                                onClick={() => void runPlayerAction("clause", () => raisePlayerClause(player.id, clauseSpendAmount))}
+                              >
+                                Subir clausula
+                              </Button>
+                            </div>
+                            <div className="mt-2 grid gap-2 text-xs font-bold text-slate-300 sm:grid-cols-3">
+                              <span>Sube {formatMoney(clauseIncrease)}</span>
+                              <span>Nueva {formatMoney(projectedClause)}</span>
+                              <span className={projectedBudget < 0 ? "text-rose-300" : "text-emerald-300"}>
+                                Te quedas con {formatMoney(Math.max(projectedBudget, 0))}
+                              </span>
+                            </div>
+                          </div>
                           <Button
                             variant="danger"
                             loading={actionLoading === "quickSell"}

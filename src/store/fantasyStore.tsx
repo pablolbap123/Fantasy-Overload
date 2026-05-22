@@ -29,7 +29,15 @@ import { calculateSquadValue, validateLineup } from "../utils/calculatePoints";
 import { getAuthRedirectUrl } from "../utils/authRedirect";
 import { getErrorMessage } from "../utils/errors";
 import { formatMoney } from "../utils/formatters";
-import { getHighestBid, getNextBidAmount, normalizeDailyMarket, openDailyMarketCycle, resolveExpiredDailyMarket } from "../utils/market";
+import {
+  DAILY_MARKET_SIZE,
+  MARKET_DURATION_MS,
+  getHighestBid,
+  getNextBidAmount,
+  normalizeDailyMarket,
+  openDailyMarketCycle,
+  resolveExpiredDailyMarket,
+} from "../utils/market";
 import { simulateMatch } from "../utils/simulateMatch";
 import type { PlayerStatus } from "../types";
 
@@ -92,7 +100,7 @@ interface FantasyContextValue {
   sellPlayer: (playerId: string) => Promise<void>;
   listPlayerOnMarket: (playerId: string) => Promise<void>;
   cancelMarketListing: (playerId: string) => Promise<void>;
-  raisePlayerClause: (playerId: string, newClause: number) => Promise<void>;
+  raisePlayerClause: (playerId: string, spendAmount: number) => Promise<void>;
   makeOffer: (playerId: string, amount: number, exchangePlayerId?: string | null) => Promise<void>;
   refreshDailyMarket: () => Promise<void>;
   acceptOffer: (offerId: string) => Promise<void>;
@@ -129,8 +137,7 @@ const clone = <T,>(value: T): T => JSON.parse(JSON.stringify(value)) as T;
 const supabasePageSize = 1000;
 const supabaseQueryTimeoutMs = 20_000;
 const releaseClauseFor = (price: number) => Math.round((price * 1.2) / 50_000) * 50_000;
-const clauseRaiseCost = (fromClause: number, toClause: number) =>
-  Math.max(250_000, Math.round(((toClause - fromClause) * 0.6) / 50_000) * 50_000);
+const clauseRaiseIncrease = (spendAmount: number) => Math.round((Math.max(spendAmount, 0) * 3) / 50_000) * 50_000;
 const clauseLockUntil = () => new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString();
 
 const withSupabaseTimeout = async <T,>(query: PromiseLike<T>, label = "Supabase") =>
@@ -190,7 +197,7 @@ const buildDemoSnapshot = (): DemoSnapshot => {
     initialBudget: 250_000_000,
     maxMembers: 12,
     memberCount: 1,
-    currentMatchday: 6,
+    currentMatchday: 8,
     marketLocked: false,
     lineupsLocked: false,
     createdAt: now,
@@ -237,6 +244,7 @@ const buildDemoSnapshot = (): DemoSnapshot => {
       lastMatchdayPoints: 0,
       squadValue: userSquadValue,
       pointsByMatchday: {},
+      joinedMatchday: league.currentMatchday,
       createdAt: now,
     },
   ];
@@ -351,6 +359,7 @@ const mapPlayer = (row: any): Player => ({
   fantasyValue: Number(row.fantasy_value ?? 0),
   totalPoints: Number(row.total_points ?? 0),
   pointsByMatchday: row.points_by_matchday ?? {},
+  priceHistory: row.stats_json?.priceHistory ?? row.stats_json?.price_history ?? {},
   status: row.status,
   unavailableUntilMatchday:
     row.unavailable_until_matchday === undefined || row.unavailable_until_matchday === null
@@ -440,7 +449,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
 
   const userId = demoMode ? demoUserId : session?.user.id ?? null;
   const onlineReady = Boolean(isSupabaseConfigured && supabase && session && !demoMode);
-  const isOverloadAdmin = Boolean(session?.user.email?.toLowerCase().startsWith("pablogarvac"));
+  const isOverloadAdmin = session?.user.email?.toLowerCase() === "pablogarvac@gmail.com";
 
   const pushToast = useCallback((message: string, tone: ToastTone = "info") => {
     const toast: ToastMessage = { id: randomId("toast"), tone, message };
@@ -611,6 +620,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
             lastMatchdayPoints: Number(row.last_matchday_points ?? 0),
             squadValue: calculateSquadValue(ownedPlayers),
             pointsByMatchday: row.points_by_matchday ?? {},
+            joinedMatchday: Number(row.joined_matchday ?? 1),
             createdAt: row.created_at,
           } satisfies LeagueMember;
         });
@@ -916,7 +926,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
         initialBudget: input.initialBudget,
         maxMembers: input.maxMembers,
         memberCount: 1,
-        currentMatchday: 6,
+        currentMatchday: 8,
         marketLocked: false,
         lineupsLocked: false,
         createdAt: new Date().toISOString(),
@@ -935,6 +945,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           lastMatchdayPoints: 0,
           squadValue: 0,
           pointsByMatchday: {},
+          joinedMatchday: league.currentMatchday,
           createdAt: league.createdAt,
         },
       ]);
@@ -1247,10 +1258,12 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
   );
 
   const raisePlayerClause = useCallback(
-    async (playerId: string, newClause: number) => {
+    async (playerId: string, spendAmount: number) => {
       if (!currentLeague || !userId) return;
       const target = leaguePlayers.find((item) => item.playerId === playerId);
       const player = players.find((item) => item.id === playerId);
+      const cost = Number.isFinite(spendAmount) ? Math.max(50_000, Math.round(spendAmount / 50_000) * 50_000) : 0;
+      const newClause = target ? target.releaseClause + clauseRaiseIncrease(cost) : 0;
       if (!player || !target || target.ownerUserId !== userId) throw new Error("Ese jugador no pertenece a tu plantilla.");
       if (newClause <= target.releaseClause) throw new Error("La nueva cláusula debe ser superior a la actual.");
 
@@ -1258,7 +1271,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
         const { error } = await supabase.rpc("raise_player_clause", {
           p_league_id: currentLeague.id,
           p_player_id: playerId,
-          p_new_clause: newClause,
+          p_spend_amount: cost,
         });
         if (error) throw error;
         await loadLeagueData(currentLeague.id);
@@ -1267,7 +1280,6 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       }
 
       const member = members.find((item) => item.userId === userId);
-      const cost = clauseRaiseCost(target.releaseClause, newClause);
       if (!member || member.budget < cost) throw new Error("No tienes presupuesto suficiente para subir la cláusula.");
       setLeaguePlayers((current) => current.map((item) => (item.playerId === playerId ? { ...item, releaseClause: newClause } : item)));
       setMembers((current) =>
@@ -1408,7 +1420,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
         });
         if (error) throw error;
         await loadLeagueData(currentLeague.id);
-        pushToast(`${player.name} puesto en mercado durante 24 horas.`, "success");
+        pushToast(`${player.name} puesto en mercado durante 3 horas.`, "success");
         return;
       }
 
@@ -1422,7 +1434,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
                 listedByUserId: userId,
                 marketStatus: "market",
                 marketListedAt: listedAt.toISOString(),
-                marketExpiresAt: new Date(listedAt.getTime() + 24 * 60 * 60 * 1000).toISOString(),
+                marketExpiresAt: new Date(listedAt.getTime() + MARKET_DURATION_MS).toISOString(),
               }
             : item,
         ),
@@ -1439,12 +1451,12 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           id: randomId("activity"),
           leagueId: currentLeague.id,
           type: "market_listing",
-          message: `${player.name} sale al mercado durante 24 horas.`,
+          message: `${player.name} sale al mercado durante 3 horas.`,
           createdAt: listedAt.toISOString(),
         },
         ...current,
       ]);
-      pushToast(`${player.name} puesto en mercado durante 24 horas.`, "success");
+      pushToast(`${player.name} puesto en mercado durante 3 horas.`, "success");
     },
     [currentLeague, leaguePlayers, loadLeagueData, onlineReady, players, pushToast, userId],
   );
@@ -1506,7 +1518,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       const { error } = await supabase.rpc("resolve_market_auctions", {
         p_league_id: currentLeague.id,
       });
-      if (error) throw new Error(getErrorMessage(error, "No se pudo actualizar el mercado diario."));
+      if (error) throw new Error(getErrorMessage(error, "No se pudo actualizar el mercado rotativo."));
       await loadLeagueData(currentLeague.id);
       return;
     }
@@ -1528,8 +1540,8 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
     if (resolved.rotated) {
       pushToast(
         resolved.awardedCount > 0
-          ? `Mercado diario resuelto: ${resolved.awardedCount} fichaje${resolved.awardedCount === 1 ? "" : "s"} adjudicado${resolved.awardedCount === 1 ? "" : "s"}.`
-          : "Nuevo mercado diario abierto con 10 jugadores.",
+          ? `Mercado rotativo resuelto: ${resolved.awardedCount} fichaje${resolved.awardedCount === 1 ? "" : "s"} adjudicado${resolved.awardedCount === 1 ? "" : "s"}.`
+          : `Nuevo mercado rotativo abierto con ${DAILY_MARKET_SIZE} jugadores.`,
         "success",
       );
     }
@@ -1709,6 +1721,9 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
     if (!isSupabaseConfigured || !supabase) {
       throw new Error("Supabase no esta configurado.");
     }
+    if (!isOverloadAdmin) {
+      throw new Error("Solo el admin Overload puede actualizar Challenge.");
+    }
     const requestedAt = new Date();
     const requestId = crypto.randomUUID();
     setChallengeSyncStatus((current) => ({
@@ -1776,7 +1791,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       updatedAt: new Date().toISOString(),
     }));
     throw new Error("La solicitud se envio, pero el worker de Challenge no respondio. Hay que arrancar npm run sync:challenge:watch en el servidor.");
-  }, [currentLeague?.id, loadLeagueData, pushToast, session, userId]);
+  }, [currentLeague?.id, isOverloadAdmin, loadLeagueData, pushToast, session, userId]);
 
   const simulateCurrentMatchday = useCallback(async () => {
     if (!currentLeague) return;

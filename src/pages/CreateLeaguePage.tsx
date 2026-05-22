@@ -11,7 +11,7 @@ export const CreateLeaguePage = () => {
   const { createLeague } = useFantasy();
   const [name, setName] = useState("Overload Friends League");
   const [initialBudget, setInitialBudget] = useState(150_000_000);
-  const [maxMembers, setMaxMembers] = useState(12);
+  const [maxMembers, setMaxMembers] = useState(50);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -56,7 +56,7 @@ export const CreateLeaguePage = () => {
           </label>
           <label className="block">
             <span className="mb-1 block text-sm font-semibold text-slate-300">Máximo de participantes</span>
-            <input className="field" type="number" min={2} max={30} value={maxMembers} onChange={(event) => setMaxMembers(Number(event.target.value))} />
+            <input className="field" type="number" min={2} max={50} value={maxMembers} onChange={(event) => setMaxMembers(Number(event.target.value))} />
           </label>
           {error ? <div className="rounded-xl border border-rose-300/20 bg-rose-500/10 p-3 text-sm text-rose-100">{error}</div> : null}
           <Button className="w-full" loading={loading}>

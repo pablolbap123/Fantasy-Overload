@@ -113,24 +113,26 @@ export const AppShell = () => {
           ))}
         </nav>
         <div className="absolute bottom-4 left-4 right-4 space-y-3">
-          <div className={clsx("rounded-lg p-3", syncTone(liveStatus))}>
-            <div className="flex items-center gap-2">
-              {liveStatus === "checking" ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Wifi className="h-4 w-4" />}
-              <span>Challenge manual</span>
+          {isOverloadAdmin ? (
+            <div className={clsx("rounded-lg p-3", syncTone(liveStatus))}>
+              <div className="flex items-center gap-2">
+                {liveStatus === "checking" ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Wifi className="h-4 w-4" />}
+                <span>Challenge manual</span>
+              </div>
+              <p className="mt-1 line-clamp-2 text-[11px] font-semibold opacity-90">{liveMessage}</p>
+              <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.08em] opacity-70">Ultima actualizacion: {liveChecked}</p>
+              <Button
+                variant="secondary"
+                className="mt-3 min-h-9 w-full px-3 text-xs"
+                icon={<RefreshCw className="h-3.5 w-3.5" />}
+                loading={syncing}
+                disabled={!onlineReady}
+                onClick={() => void syncChallenge()}
+              >
+                Actualizar Challenge
+              </Button>
             </div>
-            <p className="mt-1 line-clamp-2 text-[11px] font-semibold opacity-90">{liveMessage}</p>
-            <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.08em] opacity-70">Ultima actualizacion: {liveChecked}</p>
-            <Button
-              variant="secondary"
-              className="mt-3 min-h-9 w-full px-3 text-xs"
-              icon={<RefreshCw className="h-3.5 w-3.5" />}
-              loading={syncing}
-              disabled={!onlineReady}
-              onClick={() => void syncChallenge()}
-            >
-              Actualizar Challenge
-            </Button>
-          </div>
+          ) : null}
           <div className="rounded-lg border border-white/10 bg-[#202a43]/85 p-3">
             <div className="flex items-center justify-between gap-3">
               <div className="min-w-0">
@@ -162,23 +164,27 @@ export const AppShell = () => {
               <p className="text-sm text-slate-400">Codigo: {currentLeague?.inviteCode ?? "----"}</p>
             </div>
             <div className="flex items-center gap-2">
-              <div className={clsx("flex h-10 w-10 items-center justify-center rounded-lg sm:hidden", syncTone(liveStatus))} title={liveMessage}>
-                {liveStatus === "checking" ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Wifi className="h-4 w-4" />}
-              </div>
-              <div className={clsx("hidden items-center gap-2 rounded-lg px-3 py-2 sm:flex", syncTone(liveStatus))}>
-                {liveStatus === "checking" ? <RefreshCw className="h-3.5 w-3.5 animate-spin" /> : <Wifi className="h-3.5 w-3.5" />}
-                <span>Challenge manual</span>
-              </div>
-              <Button
-                variant="secondary"
-                className="hidden min-h-10 px-3 sm:inline-flex"
-                icon={<RefreshCw className="h-4 w-4" />}
-                loading={syncing}
-                disabled={!onlineReady}
-                onClick={() => void syncChallenge()}
-              >
-                Actualizar
-              </Button>
+              {isOverloadAdmin ? (
+                <>
+                  <div className={clsx("flex h-10 w-10 items-center justify-center rounded-lg sm:hidden", syncTone(liveStatus))} title={liveMessage}>
+                    {liveStatus === "checking" ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Wifi className="h-4 w-4" />}
+                  </div>
+                  <div className={clsx("hidden items-center gap-2 rounded-lg px-3 py-2 sm:flex", syncTone(liveStatus))}>
+                    {liveStatus === "checking" ? <RefreshCw className="h-3.5 w-3.5 animate-spin" /> : <Wifi className="h-3.5 w-3.5" />}
+                    <span>Challenge manual</span>
+                  </div>
+                  <Button
+                    variant="secondary"
+                    className="hidden min-h-10 px-3 sm:inline-flex"
+                    icon={<RefreshCw className="h-4 w-4" />}
+                    loading={syncing}
+                    disabled={!onlineReady}
+                    onClick={() => void syncChallenge()}
+                  >
+                    Actualizar
+                  </Button>
+                </>
+              ) : null}
               <Button variant="secondary" className="hidden sm:inline-flex" onClick={() => navigate("/leagues")}>
                 Mis ligas
               </Button>

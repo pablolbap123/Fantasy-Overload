@@ -10,7 +10,7 @@ import { EmptyState } from "../components/ui/EmptyState";
 import { useFantasy } from "../store/fantasyStore";
 import { getErrorMessage } from "../utils/errors";
 import { formatMoney } from "../utils/formatters";
-import { formatTimeLeft, getHighestBid, getNextBidAmount } from "../utils/market";
+import { DAILY_MARKET_SIZE, formatTimeLeft, getHighestBid, getNextBidAmount } from "../utils/market";
 
 export const MarketPage = () => {
   const {
@@ -53,12 +53,12 @@ export const MarketPage = () => {
   useEffect(() => {
     let mounted = true;
     void refreshDailyMarket().catch((err) => {
-      if (mounted) setError(getErrorMessage(err, "No se pudo actualizar el mercado diario."));
+      if (mounted) setError(getErrorMessage(err, "No se pudo actualizar el mercado rotativo."));
     });
     const interval = window.setInterval(() => {
       setNow(Date.now());
       void refreshDailyMarket().catch((err) => {
-        if (mounted) setError(getErrorMessage(err, "No se pudo actualizar el mercado diario."));
+        if (mounted) setError(getErrorMessage(err, "No se pudo actualizar el mercado rotativo."));
       });
     }, 60_000);
     return () => {
@@ -103,7 +103,7 @@ export const MarketPage = () => {
       });
 
     return {
-      daily: mappedRows.filter((row) => !row!.leaguePlayer.listedByUserId).slice(0, 10),
+      daily: mappedRows.filter((row) => !row!.leaguePlayer.listedByUserId).slice(0, DAILY_MARKET_SIZE),
       listed: mappedRows.filter((row) => Boolean(row!.leaguePlayer.listedByUserId)),
     };
   }, [leaguePlayers, maxPrice, now, offers, players, position, sortBy, status, teamId]);
@@ -146,9 +146,9 @@ export const MarketPage = () => {
     <div className="space-y-5">
       <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
         <div>
-          <h1 className="text-2xl font-black text-white">Mercado diario</h1>
+          <h1 className="text-2xl font-black text-white">Mercado rotativo</h1>
           <p className="mt-1 text-sm text-slate-400">
-            Presupuesto {formatMoney(me?.budget ?? 0)} · {activeMarketCount}/10 jugadores activos · cierre cada 24 horas · gana la puja mas alta
+            Presupuesto {formatMoney(me?.budget ?? 0)} · {activeMarketCount}/{DAILY_MARKET_SIZE} jugadores activos · cierre cada 3 horas · gana la puja mas alta
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -209,7 +209,7 @@ export const MarketPage = () => {
 
       {rows.daily.length === 0 ? (
         <EmptyState
-          title="Mercado diario vacio"
+          title="Mercado rotativo vacio"
           description="Si los filtros no ocultan jugadores, el mercado esta agotado: espera ventas de managers o pulsa actualizar cuando haya jugadores libres."
         />
       ) : (
@@ -220,7 +220,7 @@ export const MarketPage = () => {
         <div className="space-y-3">
           <div>
             <h2 className="text-lg font-black text-white">Puestos por managers</h2>
-            <p className="text-sm text-slate-400">Tambien cierran a las 24 horas. Si no hay pujas, la liga ofrece una cantidad automatica.</p>
+            <p className="text-sm text-slate-400">Tambien cierran cada 3 horas. Si no hay pujas, la liga ofrece una cantidad automatica.</p>
           </div>
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
             {rows.listed.map((row) => {

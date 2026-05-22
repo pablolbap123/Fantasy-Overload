@@ -34,6 +34,7 @@ export interface Player {
   fantasyValue: number;
   totalPoints: number;
   pointsByMatchday: Record<number, number>;
+  priceHistory?: Record<number, number>;
   status: PlayerStatus;
   unavailableUntilMatchday?: number | null;
   stats: PlayerStats;

@@ -41,6 +41,7 @@ export interface LeagueMember {
   lastMatchdayPoints: number;
   squadValue: number;
   pointsByMatchday: Record<number, number>;
+  joinedMatchday: number;
   createdAt: string;
 }
 

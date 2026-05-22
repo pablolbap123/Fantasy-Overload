@@ -11,7 +11,7 @@ import { useFantasy } from "../store/fantasyStore";
 type Mode = "login" | "register" | "reset";
 
 export const AuthPage = () => {
-  const { userId, signIn, signUp, resetPassword } = useFantasy();
+  const { userId, signIn, signUp, resetPassword, isOverloadAdmin } = useFantasy();
   const [mode, setMode] = useState<Mode>("login");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -83,7 +83,7 @@ export const AuthPage = () => {
               </div>
             ))}
           </div>
-          {isSupabaseConfigured ? (
+          {isSupabaseConfigured && isOverloadAdmin ? (
             <div className="mt-5 rounded-lg border border-[#62d7ff]/20 bg-[#62d7ff]/10 p-4">
               <div className="mb-3 text-sm font-black text-white">Challenge manual</div>
               <ChallengeSyncButton />

@@ -27,12 +27,86 @@ as $$
   select round((greatest(coalesce(p_price, 0), 0) * 1.2) / 50000) * 50000;
 $$;
 
+create or replace function public.default_joined_matchday(p_league_id uuid)
+returns integer
+language sql
+stable
+set search_path = public
+as $$
+  select coalesce(
+    (select max(number) + 1 from public.official_matchdays),
+    (select current_matchday from public.leagues where id = p_league_id),
+    1
+  );
+$$;
+
 create or replace function public.clause_raise_cost(p_from numeric, p_to numeric)
 returns numeric
 language sql
 immutable
 as $$
   select greatest(250000, round(((greatest(coalesce(p_to, 0), 0) - greatest(coalesce(p_from, 0), 0)) * 0.6) / 50000) * 50000);
+$$;
+
+create or replace function public.recalculate_player_market_values()
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  with point_rows as (
+    select
+      p.id,
+      p.base_price,
+      entry.key::integer as number,
+      entry.value::numeric as points
+    from public.players p
+    cross join lateral jsonb_each_text(coalesce(p.points_by_matchday, '{}'::jsonb)) as entry(key, value)
+    where entry.key ~ '^[0-9]+$'
+  ),
+  cumulative as (
+    select
+      id,
+      number,
+      points,
+      round((greatest(500000, least(250000000, base_price + sum(points) over (partition by id order by number) * 250000 + points * 150000))) / 50000) * 50000 as market_value
+    from point_rows
+  ),
+  histories as (
+    select id, jsonb_object_agg(number::text, market_value order by number) as price_history
+    from cumulative
+    group by id
+  ),
+  latest as (
+    select distinct on (id) id, market_value
+    from cumulative
+    order by id, number desc
+  )
+  update public.players p
+  set
+    current_price = coalesce(latest.market_value, p.base_price),
+    stats_json = coalesce(p.stats_json, '{}'::jsonb) || jsonb_build_object('priceHistory', coalesce(histories.price_history, '{}'::jsonb))
+  from histories
+  left join latest on latest.id = histories.id
+  where p.id = histories.id;
+
+  update public.players p
+  set
+    current_price = p.base_price,
+    stats_json = coalesce(p.stats_json, '{}'::jsonb) || jsonb_build_object('priceHistory', '{}'::jsonb)
+  where not exists (
+    select 1
+    from jsonb_each_text(coalesce(p.points_by_matchday, '{}'::jsonb))
+  );
+
+  update public.league_players lp
+  set
+    price = p.current_price,
+    release_clause = greatest(coalesce(lp.release_clause, 0), public.default_release_clause(p.current_price))
+  from public.players p
+  where p.id = lp.player_id;
+end;
 $$;
 
 create or replace function public.generate_invite_code()
@@ -221,11 +295,11 @@ begin
   end if;
 
   insert into public.leagues (name, invite_code, owner_id, initial_budget, max_members, current_matchday)
-  values (p_name, public.generate_invite_code(), auth.uid(), p_initial_budget, p_max_members, 6)
+  values (p_name, public.generate_invite_code(), auth.uid(), p_initial_budget, least(p_max_members, 50), coalesce((select max(number) + 1 from public.official_matchdays), 8))
   returning id into v_league_id;
 
-  insert into public.league_members (league_id, user_id, role, budget)
-  values (v_league_id, auth.uid(), 'admin', p_initial_budget);
+  insert into public.league_members (league_id, user_id, role, budget, joined_matchday)
+  values (v_league_id, auth.uid(), 'admin', p_initial_budget, public.default_joined_matchday(v_league_id));
 
   insert into public.scoring_rules (league_id, rules_json)
   values (v_league_id, coalesce(p_rules, public.default_scoring_rules()));
@@ -350,8 +424,8 @@ begin
     raise exception 'league_full';
   end if;
 
-  insert into public.league_members (league_id, user_id, role, budget)
-  values (v_league.id, auth.uid(), 'member', v_league.initial_budget);
+  insert into public.league_members (league_id, user_id, role, budget, joined_matchday)
+  values (v_league.id, auth.uid(), 'member', v_league.initial_budget, public.default_joined_matchday(v_league.id));
 
   perform public.assign_initial_squad(v_league.id, auth.uid());
   perform public.resolve_market_auctions(v_league.id);
@@ -524,7 +598,7 @@ begin
       fantasy_points = excluded.fantasy_points;
 
   update public.leagues
-  set current_matchday = coalesce((select max(number) from public.official_matchdays), current_matchday)
+  set current_matchday = coalesce((select max(number) + 1 from public.official_matchdays), current_matchday)
   where id = p_league_id;
 
   perform public.recalculate_league_points(p_league_id, null);
@@ -547,6 +621,11 @@ begin
   for v_league_id in select id from public.leagues loop
     perform public.sync_league_from_official(v_league_id);
   end loop;
+
+  update public.leagues
+  set current_matchday = coalesce((select max(number) + 1 from public.official_matchdays), current_matchday);
+
+  perform public.recalculate_player_market_values();
 end;
 $$;
 
@@ -728,7 +807,7 @@ begin
       listed_by_user_id = auth.uid(),
       market_status = 'market',
       market_listed_at = now(),
-      market_expires_at = now() + interval '24 hours'
+      market_expires_at = now() + interval '3 hours'
   where id = v_lp.id;
 
   delete from public.squads
@@ -744,7 +823,7 @@ begin
     p_league_id,
     'market_listing',
     'Jugador puesto en mercado: ' || coalesce(v_player_name, 'jugador'),
-    jsonb_build_object('user_id', auth.uid(), 'player_id', p_player_id, 'expires_at', now() + interval '24 hours')
+    jsonb_build_object('user_id', auth.uid(), 'player_id', p_player_id, 'expires_at', now() + interval '3 hours')
   );
 end;
 $$;
@@ -799,7 +878,7 @@ begin
 end;
 $$;
 
-create or replace function public.raise_player_clause(p_league_id uuid, p_player_id uuid, p_new_clause numeric)
+create or replace function public.raise_player_clause(p_league_id uuid, p_player_id uuid, p_spend_amount numeric)
 returns void
 language plpgsql
 security definer
@@ -810,6 +889,7 @@ declare
   v_member public.league_members%rowtype;
   v_player_name text;
   v_cost numeric;
+  v_new_clause numeric;
 begin
   perform public.ensure_profile();
 
@@ -826,11 +906,12 @@ begin
     raise exception 'not_player_owner';
   end if;
 
-  if p_new_clause <= v_lp.release_clause then
-    raise exception 'clause_not_higher';
+  v_cost := round(greatest(coalesce(p_spend_amount, 0), 0) / 50000) * 50000;
+  if v_cost <= 0 then
+    raise exception 'invalid_clause_spend';
   end if;
 
-  v_cost := public.clause_raise_cost(v_lp.release_clause, p_new_clause);
+  v_new_clause := v_lp.release_clause + (v_cost * 3);
 
   select * into v_member
   from public.league_members
@@ -850,7 +931,7 @@ begin
   where id = v_member.id;
 
   update public.league_players
-  set release_clause = p_new_clause
+  set release_clause = v_new_clause
   where id = v_lp.id;
 
   insert into public.transfers (league_id, user_id, player_id, type, amount)
@@ -862,7 +943,7 @@ begin
     p_league_id,
     'clause',
     'Cláusula actualizada: ' || coalesce(v_player_name, 'jugador'),
-    jsonb_build_object('user_id', auth.uid(), 'player_id', p_player_id, 'new_clause', p_new_clause, 'cost', v_cost)
+    jsonb_build_object('user_id', auth.uid(), 'player_id', p_player_id, 'new_clause', v_new_clause, 'cost', v_cost, 'increase', v_cost * 3)
   );
 end;
 $$;
@@ -1079,7 +1160,7 @@ begin
     and market_status = 'market'
     and market_expires_at > now();
 
-  if v_active_count = 0 then
+  if v_active_count < 20 then
     with next_players as (
       select id
       from public.league_players
@@ -1088,17 +1169,17 @@ begin
         and listed_by_user_id is null
         and market_status = 'locked'
       order by random()
-      limit 10
+      limit greatest(0, 20 - v_active_count)
     )
     update public.league_players lp
     set market_status = 'market',
         listed_by_user_id = null,
         market_listed_at = now(),
-        market_expires_at = now() + interval '24 hours'
+        market_expires_at = now() + interval '3 hours'
     where lp.id in (select id from next_players);
 
     insert into public.activity_feed (league_id, type, message, metadata_json)
-    values (p_league_id, 'market', 'Nuevo mercado diario abierto con 10 jugadores.', jsonb_build_object('size', 10));
+    values (p_league_id, 'market', 'Mercado rotativo actualizado con hasta 20 jugadores.', jsonb_build_object('size', 20, 'duration_hours', 3));
   end if;
 end;
 $$;
@@ -1201,24 +1282,34 @@ begin
 
   with squad_scores as (
     select
-      lp.owner_user_id as user_id,
+      s.user_id,
       md.number,
       coalesce(sum(pms.fantasy_points), 0)::integer as points
-    from public.league_players lp
-    join public.matchdays md on md.league_id = lp.league_id
+    from public.squads s
+    join public.league_members lm on lm.league_id = s.league_id and lm.user_id = s.user_id
+    join public.matchdays md on md.league_id = s.league_id
     join public.matches m on m.matchday_id = md.id
-    join public.player_match_stats pms on pms.match_id = m.id and pms.player_id = lp.player_id
-    where lp.league_id = p_league_id
-      and lp.owner_user_id is not null
+    join public.player_match_stats pms on pms.match_id = m.id and pms.player_id = s.player_id
+    where s.league_id = p_league_id
       and (p_matchday_id is null or md.id = p_matchday_id)
-    group by lp.owner_user_id, md.number
+      and md.number >= coalesce(lm.joined_matchday, 1)
+      and coalesce(m.played_at, md.starts_at, now()) >= s.acquired_at
+    group by s.user_id, md.number
+  ),
+  latest_matchday as (
+    select md.number
+    from public.matchdays md
+    where md.league_id = p_league_id
+      and (p_matchday_id is null or md.id = p_matchday_id)
+    order by md.number desc
+    limit 1
   ),
   totals as (
     select
       user_id,
       sum(points)::integer as total_points,
       jsonb_object_agg(number::text, points) as points_by_matchday,
-      coalesce((array_agg(points order by number desc))[1], 0)::integer as last_points
+      coalesce(sum(points) filter (where number = (select number from latest_matchday)), 0)::integer as last_points
     from squad_scores
     group by user_id
   )

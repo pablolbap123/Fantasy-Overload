@@ -1,121 +1,204 @@
-import { ArrowRightLeft, Euro, TrendingUp, Trophy } from "lucide-react";
+import { ArrowRightLeft, CalendarDays, Euro, TrendingUp, Trophy } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
 import { EmptyState } from "../components/ui/EmptyState";
 import { useFantasy } from "../store/fantasyStore";
+import type { LeagueMember, Matchday } from "../types";
 import { formatMoney } from "../utils/formatters";
 
 const avatarLabel = (name: string) => name.slice(0, 2).toUpperCase();
+const scoreFrom = (member: LeagueMember, matchdayNumber: number) => Number(member.pointsByMatchday[matchdayNumber] ?? 0);
+
+const joinedFromMatchday = (member: LeagueMember, matchdays: Matchday[], fallback: number) => {
+  if (member.joinedMatchday > 0) return member.joinedMatchday;
+  const joinedAt = new Date(member.createdAt).getTime();
+  const sorted = [...matchdays].sort((a, b) => a.number - b.number);
+  const firstAfterJoin = sorted.find((matchday) => new Date(matchday.startsAt).getTime() >= joinedAt);
+  return firstAfterJoin?.number ?? Math.max(1, fallback);
+};
+
+type RankingMode = "total" | "matchday";
 
 export const StandingsPage = () => {
-  const { standings, members, currentLeague } = useFantasy();
-  const [leftUserId, setLeftUserId] = useState(standings[0]?.userId ?? "");
-  const [rightUserId, setRightUserId] = useState(standings[1]?.userId ?? standings[0]?.userId ?? "");
-  useEffect(() => {
-    if (!leftUserId && standings[0]) setLeftUserId(standings[0].userId);
-    if (!rightUserId && standings[1]) setRightUserId(standings[1].userId);
-  }, [leftUserId, rightUserId, standings]);
-  const left = members.find((member) => member.userId === leftUserId);
-  const right = members.find((member) => member.userId === rightUserId);
-  const currentMatchdayNumber = currentLeague?.currentMatchday ?? 1;
+  const { members, currentLeague, matchdays } = useFantasy();
+  const [mode, setMode] = useState<RankingMode>("total");
+  const [selectedMatchday, setSelectedMatchday] = useState(currentLeague?.currentMatchday ?? 1);
+  const [leftUserId, setLeftUserId] = useState(members[0]?.userId ?? "");
+  const [rightUserId, setRightUserId] = useState(members[1]?.userId ?? members[0]?.userId ?? "");
+
+  const currentMatchdayNumber = currentLeague?.currentMatchday ?? matchdays.at(-1)?.number ?? 1;
   const visibleMatchdays = useMemo(() => {
     const numbers = new Set<number>();
     members.forEach((member) => Object.keys(member.pointsByMatchday).forEach((number) => numbers.add(Number(number))));
+    matchdays.forEach((matchday) => {
+      if (matchday.number <= currentMatchdayNumber) numbers.add(matchday.number);
+    });
     Array.from({ length: currentMatchdayNumber }, (_, index) => index + 1).forEach((number) => numbers.add(number));
     return [...numbers].filter(Boolean).sort((a, b) => a - b);
-  }, [currentMatchdayNumber, members]);
+  }, [currentMatchdayNumber, matchdays, members]);
+
+  useEffect(() => {
+    if (!leftUserId && members[0]) setLeftUserId(members[0].userId);
+    if (!rightUserId && members[1]) setRightUserId(members[1].userId);
+    if (!visibleMatchdays.includes(selectedMatchday)) setSelectedMatchday(visibleMatchdays.at(-1) ?? currentMatchdayNumber);
+  }, [currentMatchdayNumber, leftUserId, members, rightUserId, selectedMatchday, visibleMatchdays]);
+
+  const rows = useMemo(() => {
+    return members
+      .map((member) => {
+        const joinedFrom = joinedFromMatchday(member, matchdays, currentMatchdayNumber + 1);
+        const activeMatchdays = visibleMatchdays.filter((number) => number >= joinedFrom && number <= currentMatchdayNumber);
+        const activeForSelected = selectedMatchday >= joinedFrom;
+        const total = Number(member.totalPoints ?? 0);
+        const matchdayScore = activeForSelected ? scoreFrom(member, selectedMatchday) : null;
+        const score = mode === "total" ? total : matchdayScore;
+        const average = activeMatchdays.length > 0 ? total / activeMatchdays.length : 0;
+        return { member, joinedFrom, activeMatchdays, score, total, matchdayScore, average };
+      })
+      .sort((a, b) => {
+        const aScore = a.score ?? Number.NEGATIVE_INFINITY;
+        const bScore = b.score ?? Number.NEGATIVE_INFINITY;
+        return bScore - aScore || b.total - a.total || b.member.squadValue - a.member.squadValue;
+      })
+      .map((row, index) => ({ ...row, position: index + 1 }));
+  }, [currentMatchdayNumber, matchdays, members, mode, selectedMatchday, visibleMatchdays]);
+
+  const left = members.find((member) => member.userId === leftUserId);
+  const right = members.find((member) => member.userId === rightUserId);
 
   const chart = useMemo(() => {
-    const chartMembers = [left, right].filter(Boolean);
-    const maxTotal = Math.max(
-      1,
-      ...chartMembers.flatMap((member) => {
-        let total = 0;
-        return visibleMatchdays.map((number) => {
-          total += Number(member!.pointsByMatchday[number] ?? 0);
+    const chartMembers = [left, right].filter(Boolean) as LeagueMember[];
+    const totals = chartMembers.flatMap((member) => {
+      const joinedFrom = joinedFromMatchday(member, matchdays, currentMatchdayNumber + 1);
+      let total = 0;
+      return visibleMatchdays
+        .filter((number) => number >= joinedFrom)
+        .map((number) => {
+          total += scoreFrom(member, number);
           return total;
         });
-      }),
-    );
-    return { maxTotal, width: 640, height: 180, padding: 24 };
-  }, [left, right, visibleMatchdays]);
+    });
+    return { maxTotal: Math.max(1, ...totals), width: 640, height: 180, padding: 24 };
+  }, [currentMatchdayNumber, left, matchdays, right, visibleMatchdays]);
 
-  const lineFor = (member?: typeof left) => {
+  const lineFor = (member?: LeagueMember) => {
     if (!member || visibleMatchdays.length === 0) return "";
+    const joinedFrom = joinedFromMatchday(member, matchdays, currentMatchdayNumber + 1);
+    const activeNumbers = visibleMatchdays.filter((number) => number >= joinedFrom);
+    if (activeNumbers.length === 0) return "";
     let total = 0;
-    return visibleMatchdays
+    return activeNumbers
       .map((number, index) => {
-        total += Number(member.pointsByMatchday[number] ?? 0);
-        const x = chart.padding + (index / Math.max(1, visibleMatchdays.length - 1)) * (chart.width - chart.padding * 2);
+        total += scoreFrom(member, number);
+        const x = chart.padding + (index / Math.max(1, activeNumbers.length - 1)) * (chart.width - chart.padding * 2);
         const y = chart.height - chart.padding - (total / chart.maxTotal) * (chart.height - chart.padding * 2);
         return `${x},${y}`;
       })
       .join(" ");
   };
 
-  if (standings.length === 0) {
+  if (members.length === 0) {
     return <EmptyState title="Todavia no hay clasificacion" description="Cuando haya miembros y puntos, aparecera el ranking de la liga." />;
   }
 
   return (
     <div className="space-y-5">
       <div className="overflow-hidden rounded-lg border border-white/10 bg-[#46536f] shadow-2xl shadow-black/30">
-        <div className="flex items-center justify-between border-b border-black/15 bg-[#3f4b66] px-5 py-5">
+        <div className="flex flex-col gap-4 border-b border-black/15 bg-[#3f4b66] px-4 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-5">
           <div>
             <h1 className="text-3xl font-black text-white sm:text-4xl">
-              <span className="text-[#f5bd43]">Top {Math.min(100, standings.length)}</span> Managers
+              <span className="text-[#f5bd43]">Top {Math.min(100, rows.length)}</span> Managers
             </h1>
-            <p className="mt-1 text-sm font-semibold text-slate-200">Clasificacion general de la liga privada</p>
+            <p className="mt-1 text-sm font-semibold text-slate-200">
+              {mode === "total" ? "Clasificacion total desde que cada manager entro en la liga" : `Ranking solo de la jornada ${selectedMatchday}`}
+            </p>
           </div>
-          <Trophy className="hidden h-12 w-12 text-[#f5bd43] sm:block" />
+          <div className="flex flex-col gap-2 sm:items-end">
+            <div className="flex rounded-lg border border-white/10 bg-white/10 p-1">
+              <button
+                className={`rounded-md px-3 py-2 text-sm font-black ${mode === "total" ? "bg-[#f5bd43] text-[#11182d]" : "text-white"}`}
+                onClick={() => setMode("total")}
+              >
+                Total
+              </button>
+              <button
+                className={`rounded-md px-3 py-2 text-sm font-black ${mode === "matchday" ? "bg-[#62d7ff] text-[#11182d]" : "text-white"}`}
+                onClick={() => setMode("matchday")}
+              >
+                Jornada
+              </button>
+            </div>
+            <label className="flex items-center gap-2 text-sm font-bold text-slate-100">
+              <CalendarDays className="h-4 w-4 text-[#62d7ff]" />
+              <select className="field min-h-9 py-1.5" value={selectedMatchday} onChange={(event) => setSelectedMatchday(Number(event.target.value))}>
+                {visibleMatchdays.map((number) => (
+                  <option key={number} value={number}>
+                    Jornada {number}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
         </div>
 
         <div className="divide-y divide-[#25304a]">
-          {standings.map((standing) => {
-            const member = members.find((item) => item.userId === standing.userId);
+          {rows.map((row) => {
+            const { member } = row;
+            const scoreLabel = mode === "total" ? "PFSY" : `J${selectedMatchday}`;
+            const scoreText = row.score === null ? "-" : row.score;
             const tone =
-              standing.position === 1
+              row.position === 1
                 ? "from-[#f5bd43]/20"
-                : standing.position === 2
+                : row.position === 2
                   ? "from-[#62d7ff]/14"
-                  : standing.position === 3
+                  : row.position === 3
                     ? "from-[#ff3f55]/12"
                     : "from-white/[0.025]";
             return (
               <motion.div
                 layout
-                key={standing.userId}
-                className={`grid grid-cols-[2.5rem_4rem_1fr_auto] items-center gap-3 bg-gradient-to-r ${tone} to-transparent px-4 py-4 sm:grid-cols-[4rem_6rem_1fr_auto] sm:px-6 sm:py-5`}
+                key={member.userId}
+                className={`grid grid-cols-[2rem_3.25rem_1fr] gap-3 bg-gradient-to-r ${tone} to-transparent px-3 py-4 sm:grid-cols-[3.5rem_5rem_1fr_auto] sm:items-center sm:px-6 sm:py-5`}
               >
-                <div className="text-2xl font-black text-white sm:text-3xl">{standing.position}</div>
-                <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border-4 border-white bg-[#202a43] text-xl font-black text-white shadow-lg shadow-black/20 sm:h-20 sm:w-20">
-                  {standing.avatarUrl ? <img src={standing.avatarUrl} alt={standing.username} className="h-full w-full object-cover" /> : avatarLabel(standing.username)}
+                <div className="pt-2 text-xl font-black text-white sm:pt-0 sm:text-3xl">{row.position}</div>
+                <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 border-white bg-[#202a43] text-base font-black text-white shadow-lg shadow-black/20 sm:h-20 sm:w-20 sm:border-4 sm:text-xl">
+                  {member.avatarUrl ? <img src={member.avatarUrl} alt={member.username} className="h-full w-full object-cover" /> : avatarLabel(member.username)}
                 </div>
                 <div className="min-w-0">
-                  <div className="truncate text-2xl font-black text-white sm:text-4xl">{standing.username}</div>
-                  <div className="mt-2 flex items-center gap-2 text-base font-black text-white sm:text-2xl">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-200 text-sm text-[#46536f]">
+                  <div className="truncate text-xl font-black text-white sm:text-4xl">{member.username}</div>
+                  <div className="mt-2 flex flex-wrap items-center gap-2 text-xs font-black text-slate-100 sm:text-sm">
+                    <span className="rounded-md bg-white/10 px-2 py-1">Desde J{row.joinedFrom}</span>
+                    <span className="rounded-md bg-white/10 px-2 py-1">Media {row.average.toFixed(1)}</span>
+                    <span className="rounded-md bg-white/10 px-2 py-1">Caja {formatMoney(member.budget)}</span>
+                  </div>
+                  <div className="mt-2 flex min-w-0 items-center gap-2 text-sm font-black text-white sm:text-lg">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-200 text-sm text-[#46536f]">
                       <Euro className="h-4 w-4" />
                     </span>
-                    <span className="truncate">{formatMoney(standing.squadValue).replace(/\s?€/u, "")}</span>
+                    <span className="truncate">{formatMoney(member.squadValue).replace(/\s?€/u, "")}</span>
                   </div>
-                  <div className="mt-3 flex flex-wrap gap-1.5">
-                    {visibleMatchdays.map((number) => (
-                      <span
-                        key={number}
-                        className="rounded-md border border-white/10 bg-white/10 px-2 py-1 text-[11px] font-black text-slate-100"
-                      >
-                        J{number}: {member?.pointsByMatchday[number] ?? 0}
-                      </span>
-                    ))}
+                  <div className="mt-3 flex max-w-full gap-1.5 overflow-x-auto pb-1">
+                    {visibleMatchdays.map((number) => {
+                      const active = number >= row.joinedFrom;
+                      return (
+                        <span
+                          key={number}
+                          className={`shrink-0 rounded-md border px-2 py-1 text-[11px] font-black ${
+                            active ? "border-white/10 bg-white/10 text-slate-100" : "border-slate-500/10 bg-slate-900/25 text-slate-500"
+                          }`}
+                        >
+                          J{number}: {active ? scoreFrom(member, number) : "-"}
+                        </span>
+                      );
+                    })}
                   </div>
                 </div>
-                <div className="text-right">
-                  <div className="text-4xl font-light tracking-wide text-white sm:text-6xl">{standing.totalPoints}</div>
-                  <div className="text-sm font-bold uppercase text-slate-300 sm:text-base">PFSY</div>
-                  <div className="mt-1 text-sm font-black text-[#21d17f]">J{currentMatchdayNumber}: +{standing.lastMatchdayPoints}</div>
+                <div className="col-span-3 rounded-lg bg-slate-950/20 px-3 py-2 text-right sm:col-span-1 sm:bg-transparent sm:px-0 sm:py-0">
+                  <div className="text-4xl font-light tracking-wide text-white sm:text-6xl">{scoreText}</div>
+                  <div className="text-sm font-bold uppercase text-slate-300 sm:text-base">{scoreLabel}</div>
+                  <div className="mt-1 text-sm font-black text-[#21d17f]">Total: {member.totalPoints}</div>
                 </div>
               </motion.div>
             );
@@ -162,11 +245,11 @@ export const StandingsPage = () => {
                 <div className="mt-3 grid grid-cols-3 gap-2 text-center">
                   <div className="rounded-lg bg-white/[0.06] p-2">
                     <div className="font-black text-white">{member.totalPoints}</div>
-                    <div className="text-xs text-slate-300">PFSY</div>
+                    <div className="text-xs text-slate-300">Total</div>
                   </div>
                   <div className="rounded-lg bg-white/[0.06] p-2">
-                    <div className="font-black text-[#21d17f]">{member.lastMatchdayPoints}</div>
-                    <div className="text-xs text-slate-300">Ultima</div>
+                    <div className="font-black text-[#21d17f]">{scoreFrom(member, selectedMatchday)}</div>
+                    <div className="text-xs text-slate-300">J{selectedMatchday}</div>
                   </div>
                   <div className="rounded-lg bg-white/[0.06] p-2">
                     <div className="truncate font-black text-white">{formatMoney(member.budget).replace(/\s?€/u, "")}</div>
@@ -178,7 +261,7 @@ export const StandingsPage = () => {
           )}
         </div>
         <div className="mt-4 rounded-lg border border-white/10 bg-[#202a43]/80 p-3">
-          <div className="mb-2 text-sm font-black text-white">Evolucion completa por jornada</div>
+          <div className="mb-2 text-sm font-black text-white">Evolucion desde entrada en liga</div>
           <svg viewBox={`0 0 ${chart.width} ${chart.height}`} className="h-48 w-full overflow-visible">
             {[0, 0.5, 1].map((ratio) => (
               <line
@@ -203,9 +286,9 @@ export const StandingsPage = () => {
       <Card className="flex items-center justify-between gap-3">
         <div>
           <h2 className="text-base font-black text-white">Ranking por jornada</h2>
-          <p className="text-sm text-slate-300">La columna verde muestra los puntos de la ultima jornada calculada.</p>
+          <p className="text-sm text-slate-300">Usa el selector superior para ver quien fue el mejor de cada jornada o vuelve a Total para la general.</p>
         </div>
-        <TrendingUp className="h-6 w-6 text-[#21d17f]" />
+        {mode === "matchday" ? <TrendingUp className="h-6 w-6 text-[#21d17f]" /> : <Trophy className="h-6 w-6 text-[#f5bd43]" />}
       </Card>
     </div>
   );
