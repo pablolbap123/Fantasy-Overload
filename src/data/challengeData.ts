@@ -8,12 +8,12 @@ export const challengeMeta = {
   "stageUrl": "https://challenge.place/c/68486e1155cbb0e036a0559f/stage/69de85f89e7d357d88be816c",
   "stageName": "Temporada 1 GO",
   "stageId": "69de85f89e7d357d88be816c",
-  "fetchedAt": "2026-05-21T20:30:47.490Z",
+  "fetchedAt": "2026-05-22T07:54:27.940Z",
   "playerCount": 1148,
   "teamCount": 39,
   "matchdayCount": 7,
   "matchCount": 98,
-  "currentMatchday": 7,
+  "currentMatchday": 8,
   "playersWithStageStats": 407,
   "transferCount": 3258,
   "transferHistorySource": "https://challenge.place/c/68486e1155cbb0e036a0559f/transfers"
@@ -342,8 +342,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEL",
-    "basePrice": 8333722,
-    "currentPrice": 8333722,
+    "basePrice": 4739612,
+    "currentPrice": 7350000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -374,6 +374,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5550000,
+      "2": 5250000,
+      "3": 5250000,
+      "4": 5650000,
+      "5": 5900000,
+      "6": 5750000,
+      "7": 7350000
     }
   },
   {
@@ -407,7 +416,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69922f36265a40c1eeee527a",
@@ -416,8 +426,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "POR",
-    "basePrice": 3952720,
-    "currentPrice": 3952720,
+    "basePrice": 4108610,
+    "currentPrice": 3400000,
     "fantasyValue": -0.1,
     "totalPoints": -1,
     "pointsByMatchday": {
@@ -448,6 +458,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4900000,
+      "2": 5000000,
+      "3": 5650000,
+      "4": 4950000,
+      "5": 4700000,
+      "6": 4450000,
+      "7": 3400000
     }
   },
   {
@@ -457,8 +476,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "MED",
-    "basePrice": 16887993,
-    "currentPrice": 16887993,
+    "basePrice": 4562924,
+    "currentPrice": 12650000,
     "fantasyValue": 3.9,
     "totalPoints": 27,
     "pointsByMatchday": {
@@ -489,6 +508,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 7350000,
+      "2": 9500000,
+      "3": 8700000,
+      "4": 8550000,
+      "5": 8550000,
+      "6": 9350000,
+      "7": 12650000
     }
   },
   {
@@ -522,7 +550,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69922e6c46ac2f6077350aab",
@@ -531,8 +560,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "POR",
-    "basePrice": 3760632,
-    "currentPrice": 3760632,
+    "basePrice": 4076933,
+    "currentPrice": 3450000,
     "fantasyValue": -0.3,
     "totalPoints": -2,
     "pointsByMatchday": {
@@ -563,6 +592,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4900000,
+      "2": 4200000,
+      "3": 3950000,
+      "4": 3700000,
+      "5": 4250000,
+      "6": 3700000,
+      "7": 3450000
     }
   },
   {
@@ -572,8 +610,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEF",
-    "basePrice": 6801721,
-    "currentPrice": 6801721,
+    "basePrice": 3957474,
+    "currentPrice": 5150000,
     "fantasyValue": 0.9,
     "totalPoints": 6,
     "pointsByMatchday": {
@@ -604,6 +642,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 7550000,
+      "2": 5800000,
+      "3": 5550000,
+      "4": 6100000,
+      "5": 6350000,
+      "6": 5800000,
+      "7": 5150000
     }
   },
   {
@@ -613,8 +660,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "MED",
-    "basePrice": 14326610,
-    "currentPrice": 14326610,
+    "basePrice": 5011130,
+    "currentPrice": 10600000,
     "fantasyValue": 2.9,
     "totalPoints": 20,
     "pointsByMatchday": {
@@ -645,6 +692,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 5800000,
+      "2": 5500000,
+      "3": 5500000,
+      "4": 5500000,
+      "5": 9500000,
+      "6": 9600000,
+      "7": 10600000
     }
   },
   {
@@ -678,7 +734,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479def",
@@ -687,8 +744,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "POR",
-    "basePrice": 3851025,
-    "currentPrice": 3851025,
+    "basePrice": 4327326,
+    "currentPrice": 3450000,
     "fantasyValue": -0.4,
     "totalPoints": -3,
     "pointsByMatchday": {
@@ -719,6 +776,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4750000,
+      "2": 3400000,
+      "3": 3450000,
+      "4": 4000000,
+      "5": 4250000,
+      "6": 3700000,
+      "7": 3450000
     }
   },
   {
@@ -728,8 +794,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "POR",
-    "basePrice": 8158383,
-    "currentPrice": 8158383,
+    "basePrice": 4493999,
+    "currentPrice": 7250000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -760,6 +826,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4100000,
+      "2": 3850000,
+      "3": 3600000,
+      "4": 3350000,
+      "5": 3900000,
+      "6": 6150000,
+      "7": 7250000
     }
   },
   {
@@ -793,7 +868,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a06b",
@@ -802,8 +878,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "MED",
-    "basePrice": 19154631,
-    "currentPrice": 19154631,
+    "basePrice": 5348603,
+    "currentPrice": 13600000,
     "fantasyValue": 4.3,
     "totalPoints": 30,
     "pointsByMatchday": {
@@ -834,6 +910,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 14,
       "minutes": 0,
       "keyActions": 6
+    },
+    "priceHistory": {
+      "1": 6950000,
+      "2": 7950000,
+      "3": 7750000,
+      "4": 7600000,
+      "5": 12400000,
+      "6": 12200000,
+      "7": 13600000
     }
   },
   {
@@ -867,7 +952,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ffd",
@@ -900,7 +986,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fd1",
@@ -909,8 +996,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "MED",
-    "basePrice": 4649668,
-    "currentPrice": 4649668,
+    "basePrice": 5284599,
+    "currentPrice": 4300000,
     "fantasyValue": -0.6,
     "totalPoints": -4,
     "pointsByMatchday": {
@@ -941,6 +1028,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 4800000,
+      "3": 4400000,
+      "4": 4950000,
+      "5": 4400000,
+      "6": 4150000,
+      "7": 4300000
     }
   },
   {
@@ -950,8 +1046,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "POR",
-    "basePrice": 3246096,
-    "currentPrice": 3246096,
+    "basePrice": 4042123,
+    "currentPrice": 2950000,
     "fantasyValue": -0.7,
     "totalPoints": -5,
     "pointsByMatchday": {
@@ -982,6 +1078,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3650000,
+      "2": 3400000,
+      "3": 3150000,
+      "4": 2900000,
+      "5": 1850000,
+      "6": 2700000,
+      "7": 2950000
     }
   },
   {
@@ -1015,7 +1120,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69923018521d568b0b528362",
@@ -1024,8 +1130,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "POR",
-    "basePrice": 9318341,
-    "currentPrice": 9318341,
+    "basePrice": 4154505,
+    "currentPrice": 8050000,
     "fantasyValue": 1.7,
     "totalPoints": 12,
     "pointsByMatchday": {
@@ -1056,6 +1162,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3750000,
+      "2": 3500000,
+      "3": 3250000,
+      "4": 5800000,
+      "5": 5700000,
+      "6": 5800000,
+      "7": 8050000
     }
   },
   {
@@ -1065,8 +1180,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEL",
-    "basePrice": 6554172,
-    "currentPrice": 6554172,
+    "basePrice": 4679788,
+    "currentPrice": 5700000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -1097,6 +1212,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4700000,
+      "2": 4700000,
+      "3": 4700000,
+      "4": 4700000,
+      "5": 6300000,
+      "6": 5700000,
+      "7": 5700000
     }
   },
   {
@@ -1106,8 +1230,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "DEF",
-    "basePrice": 6020849,
-    "currentPrice": 6020849,
+    "basePrice": 4727424,
+    "currentPrice": 5650000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -1138,6 +1262,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5150000,
+      "2": 5400000,
+      "3": 5250000,
+      "4": 4850000,
+      "5": 4600000,
+      "6": 5550000,
+      "7": 5650000
     }
   },
   {
@@ -1147,8 +1280,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "MED",
-    "basePrice": 20687255,
-    "currentPrice": 20687255,
+    "basePrice": 5051090,
+    "currentPrice": 14600000,
     "fantasyValue": 4.9,
     "totalPoints": 34,
     "pointsByMatchday": {
@@ -1179,6 +1312,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 14,
       "minutes": 0,
       "keyActions": 6
+    },
+    "priceHistory": {
+      "1": 7450000,
+      "2": 8150000,
+      "3": 9150000,
+      "4": 10150000,
+      "5": 11550000,
+      "6": 12400000,
+      "7": 14600000
     }
   },
   {
@@ -1188,8 +1330,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "MED",
-    "basePrice": 26395210,
-    "currentPrice": 26395210,
+    "basePrice": 4387675,
+    "currentPrice": 16750000,
     "fantasyValue": 6.7,
     "totalPoints": 47,
     "pointsByMatchday": {
@@ -1220,6 +1362,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 17,
       "minutes": 0,
       "keyActions": 9
+    },
+    "priceHistory": {
+      "1": 7600000,
+      "2": 10400000,
+      "3": 8900000,
+      "4": 8900000,
+      "5": 12900000,
+      "6": 17400000,
+      "7": 16750000
     }
   },
   {
@@ -1229,8 +1380,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "POR",
-    "basePrice": 4174219,
-    "currentPrice": 4174219,
+    "basePrice": 4170520,
+    "currentPrice": 4000000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -1261,6 +1412,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4550000,
+      "2": 4000000,
+      "3": 3750000,
+      "4": 4300000,
+      "5": 4950000,
+      "6": 4250000,
+      "7": 4000000
     }
   },
   {
@@ -1270,8 +1430,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "POR",
-    "basePrice": 4415868,
-    "currentPrice": 4415868,
+    "basePrice": 3551895,
+    "currentPrice": 3900000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -1302,6 +1462,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3950000,
+      "2": 6200000,
+      "3": 4900000,
+      "4": 3850000,
+      "5": 3900000,
+      "6": 4450000,
+      "7": 3900000
     }
   },
   {
@@ -1311,8 +1480,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "MED",
-    "basePrice": 8449246,
-    "currentPrice": 8449246,
+    "basePrice": 4274177,
+    "currentPrice": 7550000,
     "fantasyValue": 1.3,
     "totalPoints": 9,
     "pointsByMatchday": {
@@ -1343,6 +1512,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 4650000,
+      "2": 5300000,
+      "3": 5000000,
+      "4": 5400000,
+      "5": 4850000,
+      "6": 4600000,
+      "7": 7550000
     }
   },
   {
@@ -1376,7 +1554,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f4e",
@@ -1385,8 +1564,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEF",
-    "basePrice": 8064695,
-    "currentPrice": 8064695,
+    "basePrice": 3779215,
+    "currentPrice": 6050000,
     "fantasyValue": 1.3,
     "totalPoints": 9,
     "pointsByMatchday": {
@@ -1417,6 +1596,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 2600000,
+      "2": 7050000,
+      "3": 5150000,
+      "4": 4900000,
+      "5": 7450000,
+      "6": 5750000,
+      "7": 6050000
     }
   },
   {
@@ -1426,8 +1614,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "MED",
-    "basePrice": 20247849,
-    "currentPrice": 20247849,
+    "basePrice": 4351273,
+    "currentPrice": 14050000,
     "fantasyValue": 4.9,
     "totalPoints": 34,
     "pointsByMatchday": {
@@ -1458,6 +1646,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 14,
       "minutes": 0,
       "keyActions": 7
+    },
+    "priceHistory": {
+      "1": 6350000,
+      "2": 7200000,
+      "3": 10600000,
+      "4": 11900000,
+      "5": 10850000,
+      "6": 10850000,
+      "7": 14050000
     }
   },
   {
@@ -1467,8 +1664,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "POR",
-    "basePrice": 3038534,
-    "currentPrice": 3038534,
+    "basePrice": 3834150,
+    "currentPrice": 2450000,
     "fantasyValue": -0.7,
     "totalPoints": -5,
     "pointsByMatchday": {
@@ -1499,6 +1696,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3450000,
+      "2": 3200000,
+      "3": 2950000,
+      "4": 2700000,
+      "5": 2450000,
+      "6": 3000000,
+      "7": 2450000
     }
   },
   {
@@ -1508,8 +1714,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEF",
-    "basePrice": 6353921,
-    "currentPrice": 6353921,
+    "basePrice": 4049400,
+    "currentPrice": 5000000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -1540,6 +1746,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 3650000,
+      "2": 5000000,
+      "3": 4150000,
+      "4": 4700000,
+      "5": 4150000,
+      "6": 6700000,
+      "7": 5000000
     }
   },
   {
@@ -1549,8 +1764,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEL",
-    "basePrice": 12762989,
-    "currentPrice": 12762989,
+    "basePrice": 5277098,
+    "currentPrice": 9300000,
     "fantasyValue": 2.3,
     "totalPoints": 16,
     "pointsByMatchday": {
@@ -1581,6 +1796,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 9300000,
+      "2": 9400000,
+      "3": 8800000,
+      "4": 8800000,
+      "5": 9600000,
+      "6": 9300000,
+      "7": 9300000
     }
   },
   {
@@ -1590,8 +1814,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "POR",
-    "basePrice": 3330279,
-    "currentPrice": 3330279,
+    "basePrice": 4286032,
+    "currentPrice": 2650000,
     "fantasyValue": -0.9,
     "totalPoints": -6,
     "pointsByMatchday": {
@@ -1622,6 +1846,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3900000,
+      "2": 4850000,
+      "3": 3350000,
+      "4": 3400000,
+      "5": 3150000,
+      "6": 2900000,
+      "7": 2650000
     }
   },
   {
@@ -1631,8 +1864,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "POR",
-    "basePrice": 4827769,
-    "currentPrice": 4827769,
+    "basePrice": 3964344,
+    "currentPrice": 4300000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -1663,6 +1896,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4350000,
+      "2": 3800000,
+      "3": 4750000,
+      "4": 4050000,
+      "5": 4600000,
+      "6": 4850000,
+      "7": 4300000
     }
   },
   {
@@ -1696,7 +1938,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e74",
@@ -1729,7 +1972,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f39",
@@ -1738,8 +1982,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEL",
-    "basePrice": 8716856,
-    "currentPrice": 8716856,
+    "basePrice": 5290965,
+    "currentPrice": 6900000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -1770,6 +2014,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 4900000,
+      "2": 5050000,
+      "3": 5050000,
+      "4": 5850000,
+      "5": 5150000,
+      "6": 8500000,
+      "7": 6900000
     }
   },
   {
@@ -1779,8 +2032,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEF",
-    "basePrice": 2608643,
-    "currentPrice": 2608643,
+    "basePrice": 4363848,
+    "currentPrice": 1450000,
     "fantasyValue": -1.6,
     "totalPoints": -11,
     "pointsByMatchday": {
@@ -1811,6 +2064,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3150000,
+      "2": 3200000,
+      "3": 2950000,
+      "4": 3500000,
+      "5": 2150000,
+      "6": 1400000,
+      "7": 1450000
     }
   },
   {
@@ -1820,8 +2082,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEF",
-    "basePrice": 7801503,
-    "currentPrice": 7801503,
+    "basePrice": 4357941,
+    "currentPrice": 6650000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -1852,6 +2114,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 6750000,
+      "2": 6250000,
+      "3": 6100000,
+      "4": 5700000,
+      "5": 5450000,
+      "6": 6000000,
+      "7": 6650000
     }
   },
   {
@@ -1861,8 +2132,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEF",
-    "basePrice": 4382594,
-    "currentPrice": 4382594,
+    "basePrice": 4859032,
+    "currentPrice": 3950000,
     "fantasyValue": -0.4,
     "totalPoints": -3,
     "pointsByMatchday": {
@@ -1893,6 +2164,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5250000,
+      "2": 4700000,
+      "3": 4450000,
+      "4": 4200000,
+      "5": 4750000,
+      "6": 4200000,
+      "7": 3950000
     }
   },
   {
@@ -1902,8 +2182,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEL",
-    "basePrice": 18465064,
-    "currentPrice": 18465064,
+    "basePrice": 5339173,
+    "currentPrice": 13700000,
     "fantasyValue": 4,
     "totalPoints": 28,
     "pointsByMatchday": {
@@ -1934,6 +2214,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 14,
       "minutes": 0,
       "keyActions": 5
+    },
+    "priceHistory": {
+      "1": 6150000,
+      "2": 7850000,
+      "3": 7100000,
+      "4": 9100000,
+      "5": 11150000,
+      "6": 10100000,
+      "7": 13700000
     }
   },
   {
@@ -1943,8 +2232,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEF",
-    "basePrice": 7909416,
-    "currentPrice": 7909416,
+    "basePrice": 3775032,
+    "currentPrice": 6350000,
     "fantasyValue": 1.3,
     "totalPoints": 9,
     "pointsByMatchday": {
@@ -1975,6 +2264,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4600000,
+      "2": 3900000,
+      "3": 3650000,
+      "4": 6600000,
+      "5": 5150000,
+      "6": 5700000,
+      "7": 6350000
     }
   },
   {
@@ -1984,8 +2282,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "DEF",
-    "basePrice": 3243570,
-    "currentPrice": 3243570,
+    "basePrice": 3559460,
+    "currentPrice": 3200000,
     "fantasyValue": -0.3,
     "totalPoints": -2,
     "pointsByMatchday": {
@@ -2016,6 +2314,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 2350000,
+      "2": 3200000,
+      "3": 2650000,
+      "4": 2400000,
+      "5": 3350000,
+      "6": 2650000,
+      "7": 3200000
     }
   },
   {
@@ -2025,8 +2332,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEL",
-    "basePrice": 13750798,
-    "currentPrice": 13750798,
+    "basePrice": 5334907,
+    "currentPrice": 11200000,
     "fantasyValue": 2.6,
     "totalPoints": 18,
     "pointsByMatchday": {
@@ -2057,6 +2364,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 5350000,
+      "2": 5750000,
+      "3": 5600000,
+      "4": 7600000,
+      "5": 6850000,
+      "6": 8050000,
+      "7": 11200000
     }
   },
   {
@@ -2090,7 +2406,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69922f3b551e0f251ca384d8",
@@ -2099,8 +2416,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEF",
-    "basePrice": 8815699,
-    "currentPrice": 8815699,
+    "basePrice": 4511863,
+    "currentPrice": 7900000,
     "fantasyValue": 1.4,
     "totalPoints": 10,
     "pointsByMatchday": {
@@ -2131,6 +2448,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4100000,
+      "2": 3450000,
+      "3": 3350000,
+      "4": 5900000,
+      "5": 5400000,
+      "6": 5650000,
+      "7": 7900000
     }
   },
   {
@@ -2164,7 +2490,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0c4",
@@ -2197,7 +2524,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a014",
@@ -2230,7 +2558,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992310b8f33d6d4aebe8617",
@@ -2239,8 +2568,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEF",
-    "basePrice": 4362831,
-    "currentPrice": 4362831,
+    "basePrice": 3929269,
+    "currentPrice": 4200000,
     "fantasyValue": 0.1,
     "totalPoints": 1,
     "pointsByMatchday": {
@@ -2271,6 +2600,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3550000,
+      "2": 4100000,
+      "3": 3550000,
+      "4": 4100000,
+      "5": 4750000,
+      "6": 4050000,
+      "7": 4200000
     }
   },
   {
@@ -2280,8 +2618,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEL",
-    "basePrice": 21766490,
-    "currentPrice": 21766490,
+    "basePrice": 5580051,
+    "currentPrice": 14100000,
     "fantasyValue": 4.9,
     "totalPoints": 34,
     "pointsByMatchday": {
@@ -2312,6 +2650,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 14,
       "minutes": 0,
       "keyActions": 6
+    },
+    "priceHistory": {
+      "1": 5600000,
+      "2": 7600000,
+      "3": 8850000,
+      "4": 10100000,
+      "5": 13750000,
+      "6": 15300000,
+      "7": 14100000
     }
   },
   {
@@ -2345,7 +2692,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a082",
@@ -2354,8 +2702,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "MED",
-    "basePrice": 10290605,
-    "currentPrice": 10290605,
+    "basePrice": 5145399,
+    "currentPrice": 7900000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -2386,6 +2734,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 6750000,
+      "2": 8550000,
+      "3": 7650000,
+      "4": 7650000,
+      "5": 7650000,
+      "6": 8050000,
+      "7": 7900000
     }
   },
   {
@@ -2395,8 +2752,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "MED",
-    "basePrice": 10591736,
-    "currentPrice": 10591736,
+    "basePrice": 4587078,
+    "currentPrice": 7850000,
     "fantasyValue": 1.9,
     "totalPoints": 13,
     "pointsByMatchday": {
@@ -2427,6 +2784,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 5000000,
+      "2": 6850000,
+      "3": 6100000,
+      "4": 8100000,
+      "5": 8150000,
+      "6": 7850000,
+      "7": 7850000
     }
   },
   {
@@ -2436,8 +2802,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "MED",
-    "basePrice": 8519373,
-    "currentPrice": 8519373,
+    "basePrice": 4774578,
+    "currentPrice": 7350000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -2468,6 +2834,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 6350000,
+      "2": 5750000,
+      "3": 5750000,
+      "4": 5750000,
+      "5": 5750000,
+      "6": 5750000,
+      "7": 7350000
     }
   },
   {
@@ -2501,7 +2876,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f4f",
@@ -2510,8 +2886,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEF",
-    "basePrice": 4162854,
-    "currentPrice": 4162854,
+    "basePrice": 4478881,
+    "currentPrice": 3700000,
     "fantasyValue": -0.3,
     "totalPoints": -2,
     "pointsByMatchday": {
@@ -2542,6 +2918,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5300000,
+      "2": 4600000,
+      "3": 4350000,
+      "4": 4500000,
+      "5": 4900000,
+      "6": 4350000,
+      "7": 3700000
     }
   },
   {
@@ -2575,7 +2960,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fe8",
@@ -2608,7 +2994,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a098",
@@ -2617,8 +3004,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "MED",
-    "basePrice": 4990283,
-    "currentPrice": 4990283,
+    "basePrice": 5305488,
+    "currentPrice": 4800000,
     "fantasyValue": -0.3,
     "totalPoints": -2,
     "pointsByMatchday": {
@@ -2649,6 +3036,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4900000,
+      "2": 5050000,
+      "3": 5050000,
+      "4": 5450000,
+      "5": 4900000,
+      "6": 4650000,
+      "7": 4800000
     }
   },
   {
@@ -2682,7 +3078,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479df0",
@@ -2691,8 +3088,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEL",
-    "basePrice": 11319635,
-    "currentPrice": 11319635,
+    "basePrice": 5465799,
+    "currentPrice": 8850000,
     "fantasyValue": 1.9,
     "totalPoints": 13,
     "pointsByMatchday": {
@@ -2723,6 +3120,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 6650000,
+      "2": 6600000,
+      "3": 7250000,
+      "4": 6950000,
+      "5": 6950000,
+      "6": 9350000,
+      "7": 8850000
     }
   },
   {
@@ -2756,7 +3162,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a040",
@@ -2789,7 +3196,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0ae",
@@ -2798,8 +3206,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEF",
-    "basePrice": 7266672,
-    "currentPrice": 7266672,
+    "basePrice": 4849959,
+    "currentPrice": 5650000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -2830,6 +3238,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4450000,
+      "2": 4200000,
+      "3": 5950000,
+      "4": 7750000,
+      "5": 7250000,
+      "6": 6700000,
+      "7": 5650000
     }
   },
   {
@@ -2839,8 +3256,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "DEL",
-    "basePrice": 14479472,
-    "currentPrice": 14479472,
+    "basePrice": 4513855,
+    "currentPrice": 9900000,
     "fantasyValue": 3,
     "totalPoints": 21,
     "pointsByMatchday": {
@@ -2871,6 +3288,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 6100000,
+      "2": 5900000,
+      "3": 9350000,
+      "4": 8000000,
+      "5": 8400000,
+      "6": 10250000,
+      "7": 9900000
     }
   },
   {
@@ -2880,8 +3306,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "MED",
-    "basePrice": 7618109,
-    "currentPrice": 7618109,
+    "basePrice": 5033999,
+    "currentPrice": 6550000,
     "fantasyValue": 0.9,
     "totalPoints": 6,
     "pointsByMatchday": {
@@ -2912,6 +3338,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5450000,
+      "2": 6900000,
+      "3": 6300000,
+      "4": 5900000,
+      "5": 6050000,
+      "6": 6850000,
+      "7": 6550000
     }
   },
   {
@@ -2945,7 +3380,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e49",
@@ -2954,8 +3390,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEL",
-    "basePrice": 11290906,
-    "currentPrice": 11290906,
+    "basePrice": 5715974,
+    "currentPrice": 8700000,
     "fantasyValue": 1.7,
     "totalPoints": 12,
     "pointsByMatchday": {
@@ -2986,6 +3422,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 5700000,
+      "2": 6100000,
+      "3": 5950000,
+      "4": 7550000,
+      "5": 6550000,
+      "6": 9900000,
+      "7": 8700000
     }
   },
   {
@@ -3019,7 +3464,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479df1",
@@ -3028,8 +3474,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEL",
-    "basePrice": 13469884,
-    "currentPrice": 13469884,
+    "basePrice": 5653308,
+    "currentPrice": 10250000,
     "fantasyValue": 2.3,
     "totalPoints": 16,
     "pointsByMatchday": {
@@ -3060,6 +3506,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 5250000,
+      "2": 5400000,
+      "3": 5400000,
+      "4": 9400000,
+      "5": 7500000,
+      "6": 9250000,
+      "7": 10250000
     }
   },
   {
@@ -3069,8 +3524,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "DEL",
-    "basePrice": 17669910,
-    "currentPrice": 17669910,
+    "basePrice": 5084704,
+    "currentPrice": 12000000,
     "fantasyValue": 3.9,
     "totalPoints": 27,
     "pointsByMatchday": {
@@ -3101,6 +3556,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 5
+    },
+    "priceHistory": {
+      "1": 7100000,
+      "2": 8750000,
+      "3": 8250000,
+      "4": 9700000,
+      "5": 12700000,
+      "6": 11750000,
+      "7": 12000000
     }
   },
   {
@@ -3134,7 +3598,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fbd",
@@ -3143,8 +3608,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "MED",
-    "basePrice": 4720490,
-    "currentPrice": 4720490,
+    "basePrice": 4716517,
+    "currentPrice": 4700000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -3175,6 +3640,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4700000,
+      "2": 4700000,
+      "3": 4700000,
+      "4": 4700000,
+      "5": 4700000,
+      "6": 4700000,
+      "7": 4700000
     }
   },
   {
@@ -3208,7 +3682,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699231638334d431b34397d2",
@@ -3217,8 +3692,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEF",
-    "basePrice": 4219703,
-    "currentPrice": 4219703,
+    "basePrice": 4535319,
+    "currentPrice": 4200000,
     "fantasyValue": -0.3,
     "totalPoints": -2,
     "pointsByMatchday": {
@@ -3249,6 +3724,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4950000,
+      "2": 4400000,
+      "3": 4150000,
+      "4": 3100000,
+      "5": 3150000,
+      "6": 4100000,
+      "7": 4200000
     }
   },
   {
@@ -3282,7 +3766,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699230c6232f90c18a9b9cd0",
@@ -3315,7 +3800,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0af",
@@ -3324,8 +3810,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "MED",
-    "basePrice": 5397529,
-    "currentPrice": 5397529,
+    "basePrice": 4533145,
+    "currentPrice": 5050000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -3356,6 +3842,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4950000,
+      "2": 6000000,
+      "3": 5550000,
+      "4": 4750000,
+      "5": 4650000,
+      "6": 5200000,
+      "7": 5050000
     }
   },
   {
@@ -3365,8 +3860,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEF",
-    "basePrice": 3578329,
-    "currentPrice": 3578329,
+    "basePrice": 4214630,
+    "currentPrice": 3050000,
     "fantasyValue": -0.6,
     "totalPoints": -4,
     "pointsByMatchday": {
@@ -3397,6 +3892,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4200000,
+      "2": 3800000,
+      "3": 3550000,
+      "4": 3300000,
+      "5": 3850000,
+      "6": 3300000,
+      "7": 3050000
     }
   },
   {
@@ -3406,8 +3910,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "MED",
-    "basePrice": 7888171,
-    "currentPrice": 7888171,
+    "basePrice": 4573239,
+    "currentPrice": 6000000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -3438,6 +3942,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 5350000,
+      "2": 5050000,
+      "3": 5050000,
+      "4": 6250000,
+      "5": 5400000,
+      "6": 7550000,
+      "7": 6000000
     }
   },
   {
@@ -3471,7 +3984,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a015",
@@ -3504,7 +4018,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992310dc68c0157b57ef04c",
@@ -3513,8 +4028,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "DEF",
-    "basePrice": 5807811,
-    "currentPrice": 5807811,
+    "basePrice": 4084523,
+    "currentPrice": 5250000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -3545,6 +4060,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 4750000,
+      "3": 5400000,
+      "4": 4700000,
+      "5": 4450000,
+      "6": 5000000,
+      "7": 5250000
     }
   },
   {
@@ -3578,7 +4102,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992307f5865cd51255af64f",
@@ -3611,7 +4136,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a041",
@@ -3620,8 +4146,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEL",
-    "basePrice": 10631929,
-    "currentPrice": 10631929,
+    "basePrice": 5636997,
+    "currentPrice": 8700000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -3652,6 +4178,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5650000,
+      "2": 5650000,
+      "3": 8850000,
+      "4": 8050000,
+      "5": 7900000,
+      "6": 7900000,
+      "7": 8700000
     }
   },
   {
@@ -3661,8 +4196,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "POR",
-    "basePrice": 5153774,
-    "currentPrice": 5153774,
+    "basePrice": 3860212,
+    "currentPrice": 4900000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -3693,6 +4228,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3450000,
+      "2": 4400000,
+      "3": 3700000,
+      "4": 4250000,
+      "5": 4500000,
+      "6": 3950000,
+      "7": 4900000
     }
   },
   {
@@ -3702,8 +4246,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "DEF",
-    "basePrice": 3554883,
-    "currentPrice": 3554883,
+    "basePrice": 4510362,
+    "currentPrice": 2400000,
     "fantasyValue": -0.9,
     "totalPoints": -6,
     "pointsByMatchday": {
@@ -3734,6 +4278,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4900000,
+      "2": 4750000,
+      "3": 5550000,
+      "4": 4450000,
+      "5": 4350000,
+      "6": 3700000,
+      "7": 2400000
     }
   },
   {
@@ -3743,8 +4296,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "POR",
-    "basePrice": 4073741,
-    "currentPrice": 4073741,
+    "basePrice": 4070042,
+    "currentPrice": 3900000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -3775,6 +4328,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4850000,
+      "2": 4150000,
+      "3": 3900000,
+      "4": 4450000,
+      "5": 4700000,
+      "6": 4150000,
+      "7": 3900000
     }
   },
   {
@@ -3808,7 +4370,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69922fb2eed6e169e6ae2e96",
@@ -3841,7 +4404,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a083",
@@ -3850,8 +4414,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEF",
-    "basePrice": 7161167,
-    "currentPrice": 7161167,
+    "basePrice": 4147331,
+    "currentPrice": 6650000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -3882,6 +4446,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4950000,
+      "2": 3850000,
+      "3": 4150000,
+      "4": 4150000,
+      "5": 4550000,
+      "6": 4800000,
+      "7": 6650000
     }
   },
   {
@@ -3915,7 +4488,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fd3",
@@ -3948,7 +4522,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a099",
@@ -3957,8 +4532,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEF",
-    "basePrice": 3079009,
-    "currentPrice": 3079009,
+    "basePrice": 4195036,
+    "currentPrice": 2300000,
     "fantasyValue": -1,
     "totalPoints": -7,
     "pointsByMatchday": {
@@ -3989,6 +4564,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3800000,
+      "2": 3550000,
+      "3": 3300000,
+      "4": 3050000,
+      "5": 2800000,
+      "6": 2550000,
+      "7": 2300000
     }
   },
   {
@@ -4022,7 +4606,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e1d",
@@ -4031,8 +4616,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEL",
-    "basePrice": 23442746,
-    "currentPrice": 23442746,
+    "basePrice": 4845896,
+    "currentPrice": 16100000,
     "fantasyValue": 5.6,
     "totalPoints": 39,
     "pointsByMatchday": {
@@ -4063,6 +4648,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 15,
       "minutes": 0,
       "keyActions": 7
+    },
+    "priceHistory": {
+      "1": 7250000,
+      "2": 8350000,
+      "3": 10000000,
+      "4": 11900000,
+      "5": 10850000,
+      "6": 12850000,
+      "7": 16100000
     }
   },
   {
@@ -4072,8 +4666,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEF",
-    "basePrice": 7078797,
-    "currentPrice": 7078797,
+    "basePrice": 4924961,
+    "currentPrice": 6450000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -4104,6 +4698,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 4250000,
+      "3": 6800000,
+      "4": 6300000,
+      "5": 5750000,
+      "6": 5500000,
+      "7": 6450000
     }
   },
   {
@@ -4137,7 +4740,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a042",
@@ -4146,8 +4750,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "POR",
-    "basePrice": 8391862,
-    "currentPrice": 8391862,
+    "basePrice": 4088300,
+    "currentPrice": 6750000,
     "fantasyValue": 1.4,
     "totalPoints": 10,
     "pointsByMatchday": {
@@ -4178,6 +4782,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 6500000,
+      "2": 6400000,
+      "3": 6500000,
+      "4": 5950000,
+      "5": 5700000,
+      "6": 6650000,
+      "7": 6750000
     }
   },
   {
@@ -4187,8 +4800,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEF",
-    "basePrice": 5911239,
-    "currentPrice": 5911239,
+    "basePrice": 4465622,
+    "currentPrice": 5050000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -4219,6 +4832,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4850000,
+      "2": 7100000,
+      "3": 5800000,
+      "4": 4750000,
+      "5": 6000000,
+      "6": 5300000,
+      "7": 5050000
     }
   },
   {
@@ -4228,8 +4850,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEL",
-    "basePrice": 7616707,
-    "currentPrice": 7616707,
+    "basePrice": 5032871,
+    "currentPrice": 6850000,
     "fantasyValue": 0.9,
     "totalPoints": 6,
     "pointsByMatchday": {
@@ -4260,6 +4882,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 5050000,
+      "3": 6250000,
+      "4": 6200000,
+      "5": 6050000,
+      "6": 6050000,
+      "7": 6850000
     }
   },
   {
@@ -4269,8 +4900,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "DEF",
-    "basePrice": 3784359,
-    "currentPrice": 3784359,
+    "basePrice": 4420249,
+    "currentPrice": 3550000,
     "fantasyValue": -0.6,
     "totalPoints": -4,
     "pointsByMatchday": {
@@ -4301,6 +4932,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4000000,
+      "2": 3750000,
+      "3": 3500000,
+      "4": 3250000,
+      "5": 2200000,
+      "6": 3450000,
+      "7": 3550000
     }
   },
   {
@@ -4310,8 +4950,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEF",
-    "basePrice": 2795338,
-    "currentPrice": 2795338,
+    "basePrice": 4079310,
+    "currentPrice": 2300000,
     "fantasyValue": -1.3,
     "totalPoints": -9,
     "pointsByMatchday": {
@@ -4342,6 +4982,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 2900000,
+      "2": 2950000,
+      "3": 1900000,
+      "4": 1950000,
+      "5": 1700000,
+      "6": 650000,
+      "7": 2300000
     }
   },
   {
@@ -4351,8 +5000,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEL",
-    "basePrice": 8541231,
-    "currentPrice": 8541231,
+    "basePrice": 5376710,
+    "currentPrice": 7150000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -4383,6 +5032,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5800000,
+      "2": 6850000,
+      "3": 6400000,
+      "4": 5600000,
+      "5": 7500000,
+      "6": 7300000,
+      "7": 7150000
     }
   },
   {
@@ -4416,7 +5074,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699230838de9396db93ca11e",
@@ -4449,7 +5108,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a02c",
@@ -4458,8 +5118,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "MED",
-    "basePrice": 8196378,
-    "currentPrice": 8196378,
+    "basePrice": 5182679,
+    "currentPrice": 7100000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -4490,6 +5150,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5200000,
+      "2": 6800000,
+      "3": 7000000,
+      "4": 6700000,
+      "5": 6700000,
+      "6": 6700000,
+      "7": 7100000
     }
   },
   {
@@ -4499,8 +5168,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "DEF",
-    "basePrice": 3692403,
-    "currentPrice": 3692403,
+    "basePrice": 3857608,
+    "currentPrice": 3350000,
     "fantasyValue": -0.3,
     "totalPoints": -2,
     "pointsByMatchday": {
@@ -4531,6 +5200,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 2250000,
+      "2": 3250000,
+      "3": 4300000,
+      "4": 3450000,
+      "5": 4000000,
+      "6": 3050000,
+      "7": 3350000
     }
   },
   {
@@ -4564,7 +5242,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ddc",
@@ -4573,8 +5252,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "MED",
-    "basePrice": 11691006,
-    "currentPrice": 11691006,
+    "basePrice": 4547307,
+    "currentPrice": 9150000,
     "fantasyValue": 2.3,
     "totalPoints": 16,
     "pointsByMatchday": {
@@ -4605,6 +5284,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4950000,
+      "2": 4800000,
+      "3": 7600000,
+      "4": 6950000,
+      "5": 7600000,
+      "6": 7700000,
+      "7": 9150000
     }
   },
   {
@@ -4614,8 +5302,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
-    "basePrice": 9681738,
-    "currentPrice": 9681738,
+    "basePrice": 4646943,
+    "currentPrice": 8450000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -4646,6 +5334,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 4650000,
+      "2": 4650000,
+      "3": 4650000,
+      "4": 4650000,
+      "5": 5450000,
+      "6": 5950000,
+      "7": 8450000
     }
   },
   {
@@ -4655,8 +5352,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEF",
-    "basePrice": 3908272,
-    "currentPrice": 3908272,
+    "basePrice": 4703888,
+    "currentPrice": 3300000,
     "fantasyValue": -0.7,
     "totalPoints": -5,
     "pointsByMatchday": {
@@ -4687,6 +5384,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4300000,
+      "2": 4050000,
+      "3": 3800000,
+      "4": 3550000,
+      "5": 3300000,
+      "6": 3850000,
+      "7": 3300000
     }
   },
   {
@@ -4696,8 +5402,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "MED",
-    "basePrice": 6136453,
-    "currentPrice": 6136453,
+    "basePrice": 4262069,
+    "currentPrice": 5850000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -4728,6 +5434,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4250000,
+      "2": 4250000,
+      "3": 4250000,
+      "4": 4250000,
+      "5": 4250000,
+      "6": 4250000,
+      "7": 5850000
     }
   },
   {
@@ -4761,7 +5476,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479df2",
@@ -4770,8 +5486,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEL",
-    "basePrice": 6641439,
-    "currentPrice": 6641439,
+    "basePrice": 5777192,
+    "currentPrice": 6150000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -4802,6 +5518,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5800000,
+      "2": 5800000,
+      "3": 6600000,
+      "4": 6300000,
+      "5": 6700000,
+      "6": 6550000,
+      "7": 6150000
     }
   },
   {
@@ -4811,8 +5536,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEF",
-    "basePrice": 4322912,
-    "currentPrice": 4322912,
+    "basePrice": 4648528,
+    "currentPrice": 3750000,
     "fantasyValue": -0.4,
     "totalPoints": -3,
     "pointsByMatchday": {
@@ -4843,6 +5568,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5850000,
+      "2": 5000000,
+      "3": 4750000,
+      "4": 4500000,
+      "5": 4250000,
+      "6": 4000000,
+      "7": 3750000
     }
   },
   {
@@ -4852,8 +5586,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "POR",
-    "basePrice": 6173981,
-    "currentPrice": 6173981,
+    "basePrice": 4450419,
+    "currentPrice": 5600000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -4884,6 +5618,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4050000,
+      "2": 6600000,
+      "3": 6100000,
+      "4": 5550000,
+      "5": 5300000,
+      "6": 5050000,
+      "7": 5600000
     }
   },
   {
@@ -4893,8 +5636,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEF",
-    "basePrice": 5787192,
-    "currentPrice": 5787192,
+    "basePrice": 4343082,
+    "currentPrice": 4950000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -4925,6 +5668,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4750000,
+      "2": 5800000,
+      "3": 5750000,
+      "4": 6000000,
+      "5": 5450000,
+      "6": 5200000,
+      "7": 4950000
     }
   },
   {
@@ -4934,8 +5686,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEF",
-    "basePrice": 5176223,
-    "currentPrice": 5176223,
+    "basePrice": 4312798,
+    "currentPrice": 5100000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -4966,6 +5718,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3900000,
+      "2": 4450000,
+      "3": 3900000,
+      "4": 4450000,
+      "5": 4700000,
+      "6": 4150000,
+      "7": 5100000
     }
   },
   {
@@ -4999,7 +5760,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e1e",
@@ -5008,8 +5770,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "MED",
-    "basePrice": 9344944,
-    "currentPrice": 9344944,
+    "basePrice": 4890834,
+    "currentPrice": 7550000,
     "fantasyValue": 1.4,
     "totalPoints": 10,
     "pointsByMatchday": {
@@ -5040,6 +5802,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4900000,
+      "2": 4900000,
+      "3": 6500000,
+      "4": 6300000,
+      "5": 6150000,
+      "6": 7750000,
+      "7": 7550000
     }
   },
   {
@@ -5049,8 +5820,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEF",
-    "basePrice": 3858152,
-    "currentPrice": 3858152,
+    "basePrice": 4334042,
+    "currentPrice": 3600000,
     "fantasyValue": -0.4,
     "totalPoints": -3,
     "pointsByMatchday": {
@@ -5081,6 +5852,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4350000,
+      "2": 3950000,
+      "3": 3300000,
+      "4": 3200000,
+      "5": 2950000,
+      "6": 3900000,
+      "7": 3600000
     }
   },
   {
@@ -5114,7 +5894,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0b0",
@@ -5123,8 +5904,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEL",
-    "basePrice": 9468574,
-    "currentPrice": 9468574,
+    "basePrice": 5164875,
+    "currentPrice": 7950000,
     "fantasyValue": 1.4,
     "totalPoints": 10,
     "pointsByMatchday": {
@@ -5155,6 +5936,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 6350000,
+      "2": 6300000,
+      "3": 6950000,
+      "4": 6650000,
+      "5": 6650000,
+      "6": 7450000,
+      "7": 7950000
     }
   },
   {
@@ -5188,7 +5978,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fbe",
@@ -5197,8 +5988,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "MED",
-    "basePrice": 7863394,
-    "currentPrice": 7863394,
+    "basePrice": 4157366,
+    "currentPrice": 6150000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -5229,6 +6020,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4150000,
+      "2": 3750000,
+      "3": 6300000,
+      "4": 6200000,
+      "5": 6300000,
+      "6": 6150000,
+      "7": 6150000
     }
   },
   {
@@ -5238,8 +6038,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "MED",
-    "basePrice": 6001542,
-    "currentPrice": 6001542,
+    "basePrice": 5137158,
+    "currentPrice": 5650000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -5270,6 +6070,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4750000,
+      "2": 4900000,
+      "3": 4900000,
+      "4": 4500000,
+      "5": 5450000,
+      "6": 5950000,
+      "7": 5650000
     }
   },
   {
@@ -5279,8 +6088,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEL",
-    "basePrice": 16224216,
-    "currentPrice": 16224216,
+    "basePrice": 5398599,
+    "currentPrice": 11150000,
     "fantasyValue": 3.3,
     "totalPoints": 23,
     "pointsByMatchday": {
@@ -5311,6 +6120,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 5400000,
+      "2": 7400000,
+      "3": 10250000,
+      "4": 8900000,
+      "5": 11300000,
+      "6": 11600000,
+      "7": 11150000
     }
   },
   {
@@ -5344,7 +6162,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a058",
@@ -5353,8 +6172,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEL",
-    "basePrice": 28753239,
-    "currentPrice": 28753239,
+    "basePrice": 4905978,
+    "currentPrice": 19050000,
     "fantasyValue": 7.1,
     "totalPoints": 50,
     "pointsByMatchday": {
@@ -5385,6 +6204,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 17,
       "minutes": 0,
       "keyActions": 9
+    },
+    "priceHistory": {
+      "1": 6900000,
+      "2": 9350000,
+      "3": 8550000,
+      "4": 8400000,
+      "5": 14400000,
+      "6": 16150000,
+      "7": 19050000
     }
   },
   {
@@ -5418,7 +6246,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a059",
@@ -5451,7 +6280,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a06f",
@@ -5460,8 +6290,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEF",
-    "basePrice": 3342842,
-    "currentPrice": 3342842,
+    "basePrice": 4937910,
+    "currentPrice": 2300000,
     "fantasyValue": -1.4,
     "totalPoints": -10,
     "pointsByMatchday": {
@@ -5492,6 +6322,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3750000,
+      "2": 3800000,
+      "3": 3550000,
+      "4": 4500000,
+      "5": 3000000,
+      "6": 2250000,
+      "7": 2300000
     }
   },
   {
@@ -5501,8 +6340,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "MED",
-    "basePrice": 7758522,
-    "currentPrice": 7758522,
+    "basePrice": 5174823,
+    "currentPrice": 6650000,
     "fantasyValue": 0.9,
     "totalPoints": 6,
     "pointsByMatchday": {
@@ -5533,6 +6372,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5150000,
+      "2": 5150000,
+      "3": 5150000,
+      "4": 6750000,
+      "5": 6550000,
+      "6": 6800000,
+      "7": 6650000
     }
   },
   {
@@ -5542,8 +6390,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "MED",
-    "basePrice": 5218783,
-    "currentPrice": 5218783,
+    "basePrice": 3923988,
+    "currentPrice": 4500000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -5574,6 +6422,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3900000,
+      "2": 3900000,
+      "3": 3500000,
+      "4": 4050000,
+      "5": 3900000,
+      "6": 5500000,
+      "7": 4500000
     }
   },
   {
@@ -5583,8 +6440,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "MED",
-    "basePrice": 20368464,
-    "currentPrice": 20368464,
+    "basePrice": 4982436,
+    "currentPrice": 13550000,
     "fantasyValue": 4.7,
     "totalPoints": 33,
     "pointsByMatchday": {
@@ -5615,6 +6472,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 15,
       "minutes": 0,
       "keyActions": 5
+    },
+    "priceHistory": {
+      "1": 5800000,
+      "2": 5500000,
+      "3": 8700000,
+      "4": 9900000,
+      "5": 10200000,
+      "6": 14550000,
+      "7": 13550000
     }
   },
   {
@@ -5648,7 +6514,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ddd",
@@ -5681,7 +6548,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fbf",
@@ -5690,8 +6558,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "POR",
-    "basePrice": 3881002,
-    "currentPrice": 3881002,
+    "basePrice": 4357440,
+    "currentPrice": 3450000,
     "fantasyValue": -0.4,
     "totalPoints": -3,
     "pointsByMatchday": {
@@ -5722,6 +6590,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4750000,
+      "2": 4200000,
+      "3": 3950000,
+      "4": 3700000,
+      "5": 4250000,
+      "6": 3700000,
+      "7": 3450000
     }
   },
   {
@@ -5731,8 +6608,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEL",
-    "basePrice": 18519060,
-    "currentPrice": 18519060,
+    "basePrice": 5293717,
+    "currentPrice": 13000000,
     "fantasyValue": 4.1,
     "totalPoints": 29,
     "pointsByMatchday": {
@@ -5763,6 +6640,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 14,
       "minutes": 0,
       "keyActions": 5
+    },
+    "priceHistory": {
+      "1": 8900000,
+      "2": 9150000,
+      "3": 10950000,
+      "4": 10450000,
+      "5": 10700000,
+      "6": 12550000,
+      "7": 13000000
     }
   },
   {
@@ -5772,8 +6658,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "DEF",
-    "basePrice": 3092306,
-    "currentPrice": 3092306,
+    "basePrice": 3728196,
+    "currentPrice": 2900000,
     "fantasyValue": -0.6,
     "totalPoints": -4,
     "pointsByMatchday": {
@@ -5804,6 +6690,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3350000,
+      "2": 3100000,
+      "3": 2850000,
+      "4": 2600000,
+      "5": 1550000,
+      "6": 2800000,
+      "7": 2900000
     }
   },
   {
@@ -5837,7 +6732,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e61",
@@ -5846,8 +6742,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEF",
-    "basePrice": 4556162,
-    "currentPrice": 4556162,
+    "basePrice": 4871778,
+    "currentPrice": 3900000,
     "fantasyValue": -0.3,
     "totalPoints": -2,
     "pointsByMatchday": {
@@ -5878,6 +6774,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4450000,
+      "2": 4200000,
+      "3": 6750000,
+      "4": 5450000,
+      "5": 5600000,
+      "6": 4800000,
+      "7": 3900000
     }
   },
   {
@@ -5887,8 +6792,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "DEL",
-    "basePrice": 16051646,
-    "currentPrice": 16051646,
+    "basePrice": 4855344,
+    "currentPrice": 11200000,
     "fantasyValue": 3.3,
     "totalPoints": 23,
     "pointsByMatchday": {
@@ -5919,6 +6824,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 5
+    },
+    "priceHistory": {
+      "1": 4850000,
+      "2": 6850000,
+      "3": 9700000,
+      "4": 8350000,
+      "5": 9950000,
+      "6": 9750000,
+      "7": 11200000
     }
   },
   {
@@ -5952,7 +6866,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69922e83ad2d585c203db3e5",
@@ -5961,8 +6876,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "DEF",
-    "basePrice": 3408160,
-    "currentPrice": 3408160,
+    "basePrice": 4203913,
+    "currentPrice": 3100000,
     "fantasyValue": -0.7,
     "totalPoints": -5,
     "pointsByMatchday": {
@@ -5993,6 +6908,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3000000,
+      "2": 3450000,
+      "3": 2650000,
+      "4": 2550000,
+      "5": 3100000,
+      "6": 2550000,
+      "7": 3100000
     }
   },
   {
@@ -6002,8 +6926,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "MED",
-    "basePrice": 11227446,
-    "currentPrice": 11227446,
+    "basePrice": 4792788,
+    "currentPrice": 9350000,
     "fantasyValue": 2,
     "totalPoints": 14,
     "pointsByMatchday": {
@@ -6034,6 +6958,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 5200000,
+      "2": 7050000,
+      "3": 6300000,
+      "4": 6700000,
+      "5": 6550000,
+      "6": 6550000,
+      "7": 9350000
     }
   },
   {
@@ -6067,7 +7000,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69922fc015adfbb713883fef",
@@ -6076,8 +7010,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEF",
-    "basePrice": 2334154,
-    "currentPrice": 2334154,
+    "basePrice": 4249222,
+    "currentPrice": 1100000,
     "fantasyValue": -1.7,
     "totalPoints": -12,
     "pointsByMatchday": {
@@ -6108,6 +7042,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3050000,
+      "2": 3100000,
+      "3": 2850000,
+      "4": 3000000,
+      "5": 1800000,
+      "6": 1050000,
+      "7": 1100000
     }
   },
   {
@@ -6117,8 +7060,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEF",
-    "basePrice": 3639766,
-    "currentPrice": 3639766,
+    "basePrice": 3796067,
+    "currentPrice": 3400000,
     "fantasyValue": -0.1,
     "totalPoints": -1,
     "pointsByMatchday": {
@@ -6149,6 +7092,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4200000,
+      "2": 4450000,
+      "3": 3900000,
+      "4": 4450000,
+      "5": 3900000,
+      "6": 3650000,
+      "7": 3400000
     }
   },
   {
@@ -6158,8 +7110,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEL",
-    "basePrice": 5441274,
-    "currentPrice": 5441274,
+    "basePrice": 5596342,
+    "currentPrice": 5350000,
     "fantasyValue": -0.1,
     "totalPoints": -1,
     "pointsByMatchday": {
@@ -6190,6 +7142,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5200000,
+      "2": 5350000,
+      "3": 5350000,
+      "4": 6150000,
+      "5": 5450000,
+      "6": 5200000,
+      "7": 5350000
     }
   },
   {
@@ -6199,8 +7160,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEL",
-    "basePrice": 16194983,
-    "currentPrice": 16194983,
+    "basePrice": 5118955,
+    "currentPrice": 11700000,
     "fantasyValue": 3.4,
     "totalPoints": 24,
     "pointsByMatchday": {
@@ -6231,6 +7192,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 5
+    },
+    "priceHistory": {
+      "1": 5100000,
+      "2": 5100000,
+      "3": 6700000,
+      "4": 6900000,
+      "5": 8200000,
+      "6": 11600000,
+      "7": 11700000
     }
   },
   {
@@ -6264,7 +7234,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699230877b4555b9bda1d180",
@@ -6273,8 +7244,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "DEF",
-    "basePrice": 2845296,
-    "currentPrice": 2845296,
+    "basePrice": 3800501,
+    "currentPrice": 2600000,
     "fantasyValue": -0.9,
     "totalPoints": -6,
     "pointsByMatchday": {
@@ -6305,6 +7276,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 2600000,
+      "2": 2650000,
+      "3": 2400000,
+      "4": 2150000,
+      "5": 1100000,
+      "6": 1950000,
+      "7": 2600000
     }
   },
   {
@@ -6338,7 +7318,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fd5",
@@ -6347,8 +7328,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEF",
-    "basePrice": 3558404,
-    "currentPrice": 3558404,
+    "basePrice": 4514157,
+    "currentPrice": 2850000,
     "fantasyValue": -0.9,
     "totalPoints": -6,
     "pointsByMatchday": {
@@ -6379,6 +7360,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4100000,
+      "2": 5050000,
+      "3": 3550000,
+      "4": 3600000,
+      "5": 3350000,
+      "6": 3100000,
+      "7": 2850000
     }
   },
   {
@@ -6412,7 +7402,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f3c",
@@ -6421,8 +7412,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "MED",
-    "basePrice": 10554086,
-    "currentPrice": 10554086,
+    "basePrice": 4549291,
+    "currentPrice": 7800000,
     "fantasyValue": 1.9,
     "totalPoints": 13,
     "pointsByMatchday": {
@@ -6453,6 +7444,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 4550000,
+      "2": 4550000,
+      "3": 4150000,
+      "4": 4300000,
+      "5": 8700000,
+      "6": 8250000,
+      "7": 7800000
     }
   },
   {
@@ -6462,8 +7462,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEL",
-    "basePrice": 4877975,
-    "currentPrice": 4877975,
+    "basePrice": 4874002,
+    "currentPrice": 4850000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -6494,6 +7494,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4850000,
+      "2": 4850000,
+      "3": 4850000,
+      "4": 4850000,
+      "5": 4850000,
+      "6": 4850000,
+      "7": 4850000
     }
   },
   {
@@ -6503,8 +7512,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "MED",
-    "basePrice": 18349658,
-    "currentPrice": 18349658,
+    "basePrice": 5013356,
+    "currentPrice": 13300000,
     "fantasyValue": 4.1,
     "totalPoints": 29,
     "pointsByMatchday": {
@@ -6535,6 +7544,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 15,
       "minutes": 0,
       "keyActions": 5
+    },
+    "priceHistory": {
+      "1": 6600000,
+      "2": 7600000,
+      "3": 10200000,
+      "4": 9000000,
+      "5": 9800000,
+      "6": 11100000,
+      "7": 13300000
     }
   },
   {
@@ -6544,8 +7562,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
-    "basePrice": 6623196,
-    "currentPrice": 6623196,
+    "basePrice": 4469497,
+    "currentPrice": 5700000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -6576,6 +7594,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4450000,
+      "2": 4450000,
+      "3": 5250000,
+      "4": 4950000,
+      "5": 5350000,
+      "6": 6000000,
+      "7": 5700000
     }
   },
   {
@@ -6585,8 +7612,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "MED",
-    "basePrice": 7171308,
-    "currentPrice": 7171308,
+    "basePrice": 4436924,
+    "currentPrice": 6100000,
     "fantasyValue": 0.9,
     "totalPoints": 6,
     "pointsByMatchday": {
@@ -6617,6 +7644,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5250000,
+      "2": 4550000,
+      "3": 6300000,
+      "4": 5700000,
+      "5": 5300000,
+      "6": 5850000,
+      "7": 6100000
     }
   },
   {
@@ -6650,7 +7686,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a017",
@@ -6683,7 +7720,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0c8",
@@ -6692,8 +7730,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "MED",
-    "basePrice": 8469178,
-    "currentPrice": 8469178,
+    "basePrice": 4294383,
+    "currentPrice": 6700000,
     "fantasyValue": 1.3,
     "totalPoints": 9,
     "pointsByMatchday": {
@@ -6724,6 +7762,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 5900000,
+      "2": 5300000,
+      "3": 6900000,
+      "4": 6300000,
+      "5": 5900000,
+      "6": 6450000,
+      "7": 6700000
     }
   },
   {
@@ -6733,8 +7780,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "MED",
-    "basePrice": 5564899,
-    "currentPrice": 5564899,
+    "basePrice": 4438734,
+    "currentPrice": 5700000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -6765,6 +7812,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4050000,
+      "2": 4200000,
+      "3": 3800000,
+      "4": 3950000,
+      "5": 3950000,
+      "6": 3550000,
+      "7": 5700000
     }
   },
   {
@@ -6774,8 +7830,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "MED",
-    "basePrice": 12730099,
-    "currentPrice": 12730099,
+    "basePrice": 4853934,
+    "currentPrice": 9700000,
     "fantasyValue": 2.4,
     "totalPoints": 17,
     "pointsByMatchday": {
@@ -6806,6 +7862,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 6850000,
+      "2": 6100000,
+      "3": 8500000,
+      "4": 7600000,
+      "5": 8400000,
+      "6": 8100000,
+      "7": 9700000
     }
   },
   {
@@ -6815,8 +7880,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "POR",
-    "basePrice": 4897774,
-    "currentPrice": 4897774,
+    "basePrice": 4033801,
+    "currentPrice": 4400000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -6847,6 +7912,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3650000,
+      "2": 4200000,
+      "3": 3650000,
+      "4": 3400000,
+      "5": 3150000,
+      "6": 5700000,
+      "7": 4400000
     }
   },
   {
@@ -6856,8 +7930,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEF",
-    "basePrice": 7161369,
-    "currentPrice": 7161369,
+    "basePrice": 4145341,
+    "currentPrice": 6800000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -6888,6 +7962,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3350000,
+      "2": 2450000,
+      "3": 2500000,
+      "4": 5050000,
+      "5": 4150000,
+      "6": 4550000,
+      "7": 6800000
     }
   },
   {
@@ -6897,8 +7980,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "MED",
-    "basePrice": 12567334,
-    "currentPrice": 12567334,
+    "basePrice": 4430621,
+    "currentPrice": 8700000,
     "fantasyValue": 2.4,
     "totalPoints": 17,
     "pointsByMatchday": {
@@ -6929,6 +8012,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 8050000,
+      "2": 6700000,
+      "3": 10300000,
+      "4": 8950000,
+      "5": 8950000,
+      "6": 8550000,
+      "7": 8700000
     }
   },
   {
@@ -6938,8 +8030,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEL",
-    "basePrice": 12955410,
-    "currentPrice": 12955410,
+    "basePrice": 4540204,
+    "currentPrice": 9050000,
     "fantasyValue": 2.6,
     "totalPoints": 18,
     "pointsByMatchday": {
@@ -6970,6 +8062,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 6550000,
+      "2": 7800000,
+      "3": 8650000,
+      "4": 8450000,
+      "5": 8300000,
+      "6": 9500000,
+      "7": 9050000
     }
   },
   {
@@ -6979,8 +8080,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEL",
-    "basePrice": 6735027,
-    "currentPrice": 6735027,
+    "basePrice": 4860506,
+    "currentPrice": 5850000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -7011,6 +8112,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4850000,
+      "2": 5250000,
+      "3": 4700000,
+      "4": 4850000,
+      "5": 4850000,
+      "6": 6450000,
+      "7": 5850000
     }
   },
   {
@@ -7020,8 +8130,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEF",
-    "basePrice": 4300074,
-    "currentPrice": 4300074,
+    "basePrice": 3865964,
+    "currentPrice": 3800000,
     "fantasyValue": 0.1,
     "totalPoints": 1,
     "pointsByMatchday": {
@@ -7052,6 +8162,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4250000,
+      "2": 6500000,
+      "3": 5200000,
+      "4": 4150000,
+      "5": 4200000,
+      "6": 4750000,
+      "7": 3800000
     }
   },
   {
@@ -7061,8 +8180,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "MED",
-    "basePrice": 6593516,
-    "currentPrice": 6593516,
+    "basePrice": 4286803,
+    "currentPrice": 5850000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -7093,6 +8212,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 3900000,
+      "2": 4050000,
+      "3": 5650000,
+      "4": 5050000,
+      "5": 4250000,
+      "6": 5350000,
+      "7": 5850000
     }
   },
   {
@@ -7102,8 +8230,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEL",
-    "basePrice": 6453118,
-    "currentPrice": 6453118,
+    "basePrice": 5159008,
+    "currentPrice": 5750000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -7134,6 +8262,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5150000,
+      "2": 5150000,
+      "3": 5150000,
+      "4": 5150000,
+      "5": 5550000,
+      "6": 6600000,
+      "7": 5750000
     }
   },
   {
@@ -7143,8 +8280,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "MED",
-    "basePrice": 11573053,
-    "currentPrice": 11573053,
+    "basePrice": 5098121,
+    "currentPrice": 8600000,
     "fantasyValue": 2,
     "totalPoints": 14,
     "pointsByMatchday": {
@@ -7175,6 +8312,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 7100000,
+      "2": 7550000,
+      "3": 8700000,
+      "4": 8500000,
+      "5": 8750000,
+      "6": 8600000,
+      "7": 8600000
     }
   },
   {
@@ -7208,7 +8354,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69922f61521d568b0b4e2f5a",
@@ -7217,8 +8364,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "MED",
-    "basePrice": 20342417,
-    "currentPrice": 20342417,
+    "basePrice": 4055978,
+    "currentPrice": 12800000,
     "fantasyValue": 5,
     "totalPoints": 35,
     "pointsByMatchday": {
@@ -7249,6 +8396,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 15,
       "minutes": 0,
       "keyActions": 6
+    },
+    "priceHistory": {
+      "1": 4450000,
+      "2": 7500000,
+      "3": 6300000,
+      "4": 11100000,
+      "5": 13300000,
+      "6": 13400000,
+      "7": 12800000
     }
   },
   {
@@ -7282,7 +8438,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69922e888de9396db934df1e",
@@ -7291,8 +8448,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "MED",
-    "basePrice": 4478437,
-    "currentPrice": 4478437,
+    "basePrice": 4474327,
+    "currentPrice": 4600000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -7323,6 +8480,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4450000,
+      "2": 4450000,
+      "3": 4450000,
+      "4": 4450000,
+      "5": 4050000,
+      "6": 4200000,
+      "7": 4600000
     }
   },
   {
@@ -7356,7 +8522,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992308a5865cd51255b17c6",
@@ -7365,8 +8532,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "MED",
-    "basePrice": 9787626,
-    "currentPrice": 9787626,
+    "basePrice": 4793379,
+    "currentPrice": 7700000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -7397,6 +8564,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5600000,
+      "2": 5300000,
+      "3": 5300000,
+      "4": 7700000,
+      "5": 6800000,
+      "6": 7600000,
+      "7": 7700000
     }
   },
   {
@@ -7406,8 +8582,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "MED",
-    "basePrice": 8825607,
-    "currentPrice": 8825607,
+    "basePrice": 4521908,
+    "currentPrice": 7600000,
     "fantasyValue": 1.4,
     "totalPoints": 10,
     "pointsByMatchday": {
@@ -7438,6 +8614,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 4500000,
+      "3": 4500000,
+      "4": 6100000,
+      "5": 5900000,
+      "6": 6150000,
+      "7": 7600000
     }
   },
   {
@@ -7447,8 +8632,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "MED",
-    "basePrice": 5898985,
-    "currentPrice": 5898985,
+    "basePrice": 4604875,
+    "currentPrice": 5500000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -7479,6 +8664,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4600000,
+      "2": 4200000,
+      "3": 5550000,
+      "4": 5100000,
+      "5": 5100000,
+      "6": 5100000,
+      "7": 5500000
     }
   },
   {
@@ -7488,8 +8682,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "MED",
-    "basePrice": 8659133,
-    "currentPrice": 8659133,
+    "basePrice": 4913653,
+    "currentPrice": 6750000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -7520,6 +8714,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 4900000,
+      "2": 6100000,
+      "3": 5250000,
+      "4": 5400000,
+      "5": 7000000,
+      "6": 7600000,
+      "7": 6750000
     }
   },
   {
@@ -7529,8 +8732,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEF",
-    "basePrice": 3460326,
-    "currentPrice": 3460326,
+    "basePrice": 4894435,
+    "currentPrice": 2500000,
     "fantasyValue": -1.3,
     "totalPoints": -9,
     "pointsByMatchday": {
@@ -7561,6 +8764,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 3450000,
+      "3": 3500000,
+      "4": 2450000,
+      "5": 2500000,
+      "6": 3050000,
+      "7": 2500000
     }
   },
   {
@@ -7570,8 +8782,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "MED",
-    "basePrice": 10174739,
-    "currentPrice": 10174739,
+    "basePrice": 4988574,
+    "currentPrice": 8200000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -7602,6 +8814,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 4600000,
+      "2": 7950000,
+      "3": 6750000,
+      "4": 6750000,
+      "5": 6350000,
+      "6": 7300000,
+      "7": 8200000
     }
   },
   {
@@ -7635,7 +8856,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a02e",
@@ -7644,8 +8866,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEF",
-    "basePrice": 6339766,
-    "currentPrice": 6339766,
+    "basePrice": 4615930,
+    "currentPrice": 5900000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -7676,6 +8898,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3800000,
+      "2": 6500000,
+      "3": 6000000,
+      "4": 5450000,
+      "5": 5200000,
+      "6": 4950000,
+      "7": 5900000
     }
   },
   {
@@ -7685,8 +8916,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "MED",
-    "basePrice": 16081352,
-    "currentPrice": 16081352,
+    "basePrice": 5283954,
+    "currentPrice": 11650000,
     "fantasyValue": 3.3,
     "totalPoints": 23,
     "pointsByMatchday": {
@@ -7717,6 +8948,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 14,
       "minutes": 0,
       "keyActions": 6
+    },
+    "priceHistory": {
+      "1": 6500000,
+      "2": 7650000,
+      "3": 8650000,
+      "4": 10450000,
+      "5": 9150000,
+      "6": 10500000,
+      "7": 11650000
     }
   },
   {
@@ -7726,8 +8966,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "POR",
-    "basePrice": 2887170,
-    "currentPrice": 2887170,
+    "basePrice": 4642375,
+    "currentPrice": 1750000,
     "fantasyValue": -1.6,
     "totalPoints": -11,
     "pointsByMatchday": {
@@ -7758,6 +8998,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3450000,
+      "2": 3500000,
+      "3": 3250000,
+      "4": 3800000,
+      "5": 2450000,
+      "6": 1700000,
+      "7": 1750000
     }
   },
   {
@@ -7791,7 +9040,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e78",
@@ -7824,7 +9074,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a019",
@@ -7833,8 +9084,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "MED",
-    "basePrice": 12870912,
-    "currentPrice": 12870912,
+    "basePrice": 4525432,
+    "currentPrice": 8900000,
     "fantasyValue": 2.6,
     "totalPoints": 18,
     "pointsByMatchday": {
@@ -7865,6 +9116,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 6550000,
+      "2": 9400000,
+      "3": 8450000,
+      "4": 9900000,
+      "5": 9300000,
+      "6": 9300000,
+      "7": 8900000
     }
   },
   {
@@ -7874,8 +9134,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "MED",
-    "basePrice": 11269295,
-    "currentPrice": 11269295,
+    "basePrice": 4985048,
+    "currentPrice": 8650000,
     "fantasyValue": 2,
     "totalPoints": 14,
     "pointsByMatchday": {
@@ -7906,6 +9166,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 6600000,
+      "2": 6400000,
+      "3": 6650000,
+      "4": 8900000,
+      "5": 8000000,
+      "6": 8400000,
+      "7": 8650000
     }
   },
   {
@@ -7915,8 +9184,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEL",
-    "basePrice": 22598127,
-    "currentPrice": 22598127,
+    "basePrice": 4930866,
+    "currentPrice": 14950000,
     "fantasyValue": 5.3,
     "totalPoints": 37,
     "pointsByMatchday": {
@@ -7947,6 +9216,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 15,
       "minutes": 0,
       "keyActions": 8
+    },
+    "priceHistory": {
+      "1": 6950000,
+      "2": 8200000,
+      "3": 10650000,
+      "4": 11050000,
+      "5": 14450000,
+      "6": 12950000,
+      "7": 14950000
     }
   },
   {
@@ -7956,8 +9234,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEF",
-    "basePrice": 3972858,
-    "currentPrice": 3972858,
+    "basePrice": 3969022,
+    "currentPrice": 3800000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -7988,6 +9266,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4350000,
+      "2": 5000000,
+      "3": 4300000,
+      "4": 4850000,
+      "5": 4300000,
+      "6": 4050000,
+      "7": 3800000
     }
   },
   {
@@ -8021,7 +9308,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a071",
@@ -8030,8 +9318,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEF",
-    "basePrice": 4002087,
-    "currentPrice": 4002087,
+    "basePrice": 4317566,
+    "currentPrice": 3500000,
     "fantasyValue": -0.3,
     "totalPoints": -2,
     "pointsByMatchday": {
@@ -8062,6 +9350,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 2700000,
+      "2": 4100000,
+      "3": 3400000,
+      "4": 3150000,
+      "5": 2500000,
+      "6": 5200000,
+      "7": 3500000
     }
   },
   {
@@ -8095,7 +9392,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a05b",
@@ -8104,8 +9402,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEL",
-    "basePrice": 8652681,
-    "currentPrice": 8652681,
+    "basePrice": 5638845,
+    "currentPrice": 7700000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -8136,6 +9434,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5650000,
+      "2": 6850000,
+      "3": 7200000,
+      "4": 6900000,
+      "5": 6900000,
+      "6": 6900000,
+      "7": 7700000
     }
   },
   {
@@ -8145,8 +9452,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEF",
-    "basePrice": 3249230,
-    "currentPrice": 3249230,
+    "basePrice": 3885120,
+    "currentPrice": 2600000,
     "fantasyValue": -0.6,
     "totalPoints": -4,
     "pointsByMatchday": {
@@ -8177,6 +9484,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3900000,
+      "2": 3100000,
+      "3": 3800000,
+      "4": 4050000,
+      "5": 3500000,
+      "6": 3250000,
+      "7": 2600000
     }
   },
   {
@@ -8210,7 +9526,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f3e",
@@ -8219,8 +9536,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "DEL",
-    "basePrice": 17980068,
-    "currentPrice": 17980068,
+    "basePrice": 5173903,
+    "currentPrice": 12200000,
     "fantasyValue": 3.9,
     "totalPoints": 27,
     "pointsByMatchday": {
@@ -8251,6 +9568,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 5
+    },
+    "priceHistory": {
+      "1": 4750000,
+      "2": 5300000,
+      "3": 10750000,
+      "4": 10650000,
+      "5": 10300000,
+      "6": 12150000,
+      "7": 12200000
     }
   },
   {
@@ -8260,8 +9586,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "MED",
-    "basePrice": 7850373,
-    "currentPrice": 7850373,
+    "basePrice": 4685852,
+    "currentPrice": 6750000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -8292,6 +9618,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4300000,
+      "2": 4850000,
+      "3": 6300000,
+      "4": 5700000,
+      "5": 6100000,
+      "6": 5950000,
+      "7": 6750000
     }
   },
   {
@@ -8301,8 +9636,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEL",
-    "basePrice": 17112904,
-    "currentPrice": 17112904,
+    "basePrice": 4846465,
+    "currentPrice": 11500000,
     "fantasyValue": 3.7,
     "totalPoints": 26,
     "pointsByMatchday": {
@@ -8333,6 +9668,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 5
+    },
+    "priceHistory": {
+      "1": 8450000,
+      "2": 7100000,
+      "3": 9100000,
+      "4": 8350000,
+      "5": 11150000,
+      "6": 11700000,
+      "7": 11500000
     }
   },
   {
@@ -8342,8 +9686,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "MED",
-    "basePrice": 21224936,
-    "currentPrice": 21224936,
+    "basePrice": 4357675,
+    "currentPrice": 15000000,
     "fantasyValue": 5.1,
     "totalPoints": 36,
     "pointsByMatchday": {
@@ -8374,6 +9718,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 16,
       "minutes": 0,
       "keyActions": 7
+    },
+    "priceHistory": {
+      "1": 3950000,
+      "2": 4100000,
+      "3": 4100000,
+      "4": 6900000,
+      "5": 8650000,
+      "6": 12400000,
+      "7": 15000000
     }
   },
   {
@@ -8383,8 +9736,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "MED",
-    "basePrice": 13739250,
-    "currentPrice": 13739250,
+    "basePrice": 4853633,
+    "currentPrice": 10050000,
     "fantasyValue": 2.7,
     "totalPoints": 19,
     "pointsByMatchday": {
@@ -8415,6 +9768,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 8050000,
+      "2": 8050000,
+      "3": 9200000,
+      "4": 8600000,
+      "5": 9000000,
+      "6": 8850000,
+      "7": 10050000
     }
   },
   {
@@ -8424,8 +9786,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "MED",
-    "basePrice": 8398600,
-    "currentPrice": 8398600,
+    "basePrice": 4524627,
+    "currentPrice": 6750000,
     "fantasyValue": 1.3,
     "totalPoints": 9,
     "pointsByMatchday": {
@@ -8456,6 +9818,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 6100000,
+      "2": 6300000,
+      "3": 6800000,
+      "4": 6500000,
+      "5": 6100000,
+      "6": 7050000,
+      "7": 6750000
     }
   },
   {
@@ -8489,7 +9860,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e4d",
@@ -8498,8 +9870,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "MED",
-    "basePrice": 6300629,
-    "currentPrice": 6300629,
+    "basePrice": 5006656,
+    "currentPrice": 5900000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -8530,6 +9902,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5000000,
+      "2": 6600000,
+      "3": 6000000,
+      "4": 5600000,
+      "5": 5750000,
+      "6": 5350000,
+      "7": 5900000
     }
   },
   {
@@ -8539,8 +9920,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEL",
-    "basePrice": 16028246,
-    "currentPrice": 16028246,
+    "basePrice": 5573040,
+    "currentPrice": 11750000,
     "fantasyValue": 3.3,
     "totalPoints": 23,
     "pointsByMatchday": {
@@ -8571,6 +9952,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 14,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 5550000,
+      "2": 5550000,
+      "3": 7150000,
+      "4": 9350000,
+      "5": 11100000,
+      "6": 10850000,
+      "7": 11750000
     }
   },
   {
@@ -8580,8 +9970,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "MED",
-    "basePrice": 5958542,
-    "currentPrice": 5958542,
+    "basePrice": 4234432,
+    "currentPrice": 5250000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -8612,6 +10002,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 4750000,
+      "3": 5150000,
+      "4": 5800000,
+      "5": 5100000,
+      "6": 5250000,
+      "7": 5250000
     }
   },
   {
@@ -8621,8 +10020,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
-    "basePrice": 15785750,
-    "currentPrice": 15785750,
+    "basePrice": 4429311,
+    "currentPrice": 10700000,
     "fantasyValue": 3.6,
     "totalPoints": 25,
     "pointsByMatchday": {
@@ -8653,6 +10052,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 17,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 5250000,
+      "2": 4950000,
+      "3": 5750000,
+      "4": 8650000,
+      "5": 11850000,
+      "6": 11000000,
+      "7": 10700000
     }
   },
   {
@@ -8662,8 +10070,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "DEL",
-    "basePrice": 12669668,
-    "currentPrice": 12669668,
+    "basePrice": 4574325,
+    "currentPrice": 9850000,
     "fantasyValue": 2.4,
     "totalPoints": 17,
     "pointsByMatchday": {
@@ -8694,6 +10102,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 6550000,
+      "2": 5800000,
+      "3": 7800000,
+      "4": 7050000,
+      "5": 6650000,
+      "6": 7200000,
+      "7": 9850000
     }
   },
   {
@@ -8727,7 +10144,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a003",
@@ -8736,8 +10154,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEF",
-    "basePrice": 3298486,
-    "currentPrice": 3298486,
+    "basePrice": 4094102,
+    "currentPrice": 2700000,
     "fantasyValue": -0.7,
     "totalPoints": -5,
     "pointsByMatchday": {
@@ -8768,6 +10186,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3700000,
+      "2": 3450000,
+      "3": 3200000,
+      "4": 2950000,
+      "5": 2700000,
+      "6": 3250000,
+      "7": 2700000
     }
   },
   {
@@ -8777,8 +10204,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "MED",
-    "basePrice": 5574227,
-    "currentPrice": 5574227,
+    "basePrice": 5139980,
+    "currentPrice": 5250000,
     "fantasyValue": 0.1,
     "totalPoints": 1,
     "pointsByMatchday": {
@@ -8809,6 +10236,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5150000,
+      "2": 5150000,
+      "3": 6750000,
+      "4": 6150000,
+      "5": 6550000,
+      "6": 5200000,
+      "7": 5250000
     }
   },
   {
@@ -8818,8 +10254,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "MED",
-    "basePrice": 24894303,
-    "currentPrice": 24894303,
+    "basePrice": 5227590,
+    "currentPrice": 17700000,
     "fantasyValue": 6,
     "totalPoints": 42,
     "pointsByMatchday": {
@@ -8850,6 +10286,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 15,
       "minutes": 0,
       "keyActions": 7
+    },
+    "priceHistory": {
+      "1": 7650000,
+      "2": 8750000,
+      "3": 9600000,
+      "4": 12200000,
+      "5": 11000000,
+      "6": 13400000,
+      "7": 17700000
     }
   },
   {
@@ -8859,8 +10304,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "POR",
-    "basePrice": 2440643,
-    "currentPrice": 2440643,
+    "basePrice": 3556670,
+    "currentPrice": 1650000,
     "fantasyValue": -1,
     "totalPoints": -7,
     "pointsByMatchday": {
@@ -8891,6 +10336,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3150000,
+      "2": 2900000,
+      "3": 2650000,
+      "4": 2400000,
+      "5": 2150000,
+      "6": 1900000,
+      "7": 1650000
     }
   },
   {
@@ -8924,7 +10378,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699230397b4555b9bda07107",
@@ -8933,8 +10388,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "MED",
-    "basePrice": 9601186,
-    "currentPrice": 9601186,
+    "basePrice": 4456391,
+    "currentPrice": 8250000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -8965,6 +10420,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 6450000,
+      "2": 5700000,
+      "3": 5700000,
+      "4": 4500000,
+      "5": 5750000,
+      "6": 5450000,
+      "7": 8250000
     }
   },
   {
@@ -8974,8 +10438,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "POR",
-    "basePrice": 1394510,
-    "currentPrice": 1394510,
+    "basePrice": 4107112,
+    "currentPrice": 500000,
     "fantasyValue": -2.4,
     "totalPoints": -17,
     "pointsByMatchday": {
@@ -9006,6 +10470,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 2500000,
+      "2": 2300000,
+      "3": 1000000,
+      "4": 800000,
+      "5": 700000,
+      "6": 500000,
+      "7": 500000
     }
   },
   {
@@ -9039,7 +10512,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f6a",
@@ -9072,7 +10546,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69923172a92bf30b1b1f9c6c",
@@ -9105,7 +10580,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a087",
@@ -9114,8 +10590,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEF",
-    "basePrice": 4154463,
-    "currentPrice": 4154463,
+    "basePrice": 4629805,
+    "currentPrice": 3300000,
     "fantasyValue": -0.4,
     "totalPoints": -3,
     "pointsByMatchday": {
@@ -9146,6 +10622,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5450000,
+      "2": 3950000,
+      "3": 4000000,
+      "4": 4950000,
+      "5": 5450000,
+      "6": 4750000,
+      "7": 3300000
     }
   },
   {
@@ -9155,8 +10640,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEL",
-    "basePrice": 15851881,
-    "currentPrice": 15851881,
+    "basePrice": 5026264,
+    "currentPrice": 12150000,
     "fantasyValue": 3.3,
     "totalPoints": 23,
     "pointsByMatchday": {
@@ -9187,6 +10672,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 7450000,
+      "3": 8550000,
+      "4": 7800000,
+      "5": 7800000,
+      "6": 9000000,
+      "7": 12150000
     }
   },
   {
@@ -9196,8 +10690,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "POR",
-    "basePrice": 6851775,
-    "currentPrice": 6851775,
+    "basePrice": 4267802,
+    "currentPrice": 6050000,
     "fantasyValue": 0.9,
     "totalPoints": 6,
     "pointsByMatchday": {
@@ -9228,6 +10722,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3850000,
+      "2": 3600000,
+      "3": 6150000,
+      "4": 6050000,
+      "5": 5350000,
+      "6": 5100000,
+      "7": 6050000
     }
   },
   {
@@ -9237,8 +10740,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEF",
-    "basePrice": 2043021,
-    "currentPrice": 2043021,
+    "basePrice": 4437678,
+    "currentPrice": 550000,
     "fantasyValue": -2.1,
     "totalPoints": -15,
     "pointsByMatchday": {
@@ -9269,6 +10772,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 2850000,
+      "2": 2650000,
+      "3": 2150000,
+      "4": 2850000,
+      "5": 1500000,
+      "6": 500000,
+      "7": 550000
     }
   },
   {
@@ -9278,8 +10790,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "MED",
-    "basePrice": 9702201,
-    "currentPrice": 9702201,
+    "basePrice": 4516721,
+    "currentPrice": 7850000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -9310,6 +10822,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 6100000,
+      "2": 7100000,
+      "3": 6100000,
+      "4": 6250000,
+      "5": 5850000,
+      "6": 6400000,
+      "7": 7850000
     }
   },
   {
@@ -9319,8 +10840,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
-    "basePrice": 15097226,
-    "currentPrice": 15097226,
+    "basePrice": 4489965,
+    "currentPrice": 10250000,
     "fantasyValue": 3.3,
     "totalPoints": 23,
     "pointsByMatchday": {
@@ -9351,6 +10872,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 16,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 6100000,
+      "2": 5500000,
+      "3": 9100000,
+      "4": 10550000,
+      "5": 10300000,
+      "6": 10400000,
+      "7": 10250000
     }
   },
   {
@@ -9360,8 +10890,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEF",
-    "basePrice": 5664496,
-    "currentPrice": 5664496,
+    "basePrice": 4370386,
+    "currentPrice": 4950000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -9392,6 +10922,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3950000,
+      "2": 3700000,
+      "3": 3450000,
+      "4": 3200000,
+      "5": 4150000,
+      "6": 6250000,
+      "7": 4950000
     }
   },
   {
@@ -9401,8 +10940,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "MED",
-    "basePrice": 10920184,
-    "currentPrice": 10920184,
+    "basePrice": 4636211,
+    "currentPrice": 8450000,
     "fantasyValue": 2,
     "totalPoints": 14,
     "pointsByMatchday": {
@@ -9433,6 +10972,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5450000,
+      "2": 5550000,
+      "3": 5800000,
+      "4": 5650000,
+      "5": 8450000,
+      "6": 7800000,
+      "7": 8450000
     }
   },
   {
@@ -9442,8 +10990,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "MED",
-    "basePrice": 7266944,
-    "currentPrice": 7266944,
+    "basePrice": 4683108,
+    "currentPrice": 6350000,
     "fantasyValue": 0.9,
     "totalPoints": 6,
     "pointsByMatchday": {
@@ -9474,6 +11022,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 6300000,
+      "2": 6500000,
+      "3": 6200000,
+      "4": 5800000,
+      "5": 5550000,
+      "6": 6100000,
+      "7": 6350000
     }
   },
   {
@@ -9507,7 +11064,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f6b",
@@ -9540,7 +11098,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-685002c096631a82248c9d0a",
@@ -9549,8 +11108,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEL",
-    "basePrice": 8811636,
-    "currentPrice": 8811636,
+    "basePrice": 5066704,
+    "currentPrice": 7050000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -9581,6 +11140,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 5450000,
+      "3": 6500000,
+      "4": 7650000,
+      "5": 7050000,
+      "6": 7050000,
+      "7": 7050000
     }
   },
   {
@@ -9590,8 +11158,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEF",
-    "basePrice": 2963337,
-    "currentPrice": 2963337,
+    "basePrice": 4079364,
+    "currentPrice": 1750000,
     "fantasyValue": -1,
     "totalPoints": -7,
     "pointsByMatchday": {
@@ -9622,6 +11190,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 3150000,
+      "3": 3200000,
+      "4": 3350000,
+      "5": 3750000,
+      "6": 3200000,
+      "7": 1750000
     }
   },
   {
@@ -9631,8 +11208,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "POR",
-    "basePrice": 8804425,
-    "currentPrice": 8804425,
+    "basePrice": 4071137,
+    "currentPrice": 7700000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -9663,6 +11240,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4450000,
+      "2": 3900000,
+      "3": 4450000,
+      "4": 4700000,
+      "5": 5350000,
+      "6": 5450000,
+      "7": 7700000
     }
   },
   {
@@ -9672,8 +11258,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "MED",
-    "basePrice": 7093058,
-    "currentPrice": 7093058,
+    "basePrice": 5368948,
+    "currentPrice": 6350000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -9704,6 +11290,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5350000,
+      "2": 5750000,
+      "3": 5600000,
+      "4": 5200000,
+      "5": 5350000,
+      "6": 6950000,
+      "7": 6350000
     }
   },
   {
@@ -9713,8 +11308,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "DEF",
-    "basePrice": 3366589,
-    "currentPrice": 3366589,
+    "basePrice": 4002616,
+    "currentPrice": 2550000,
     "fantasyValue": -0.6,
     "totalPoints": -4,
     "pointsByMatchday": {
@@ -9745,6 +11340,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4400000,
+      "2": 4250000,
+      "3": 4650000,
+      "4": 4100000,
+      "5": 3850000,
+      "6": 3600000,
+      "7": 2550000
     }
   },
   {
@@ -9754,8 +11358,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEF",
-    "basePrice": 4719773,
-    "currentPrice": 4719773,
+    "basePrice": 4875526,
+    "currentPrice": 4200000,
     "fantasyValue": -0.1,
     "totalPoints": -1,
     "pointsByMatchday": {
@@ -9786,6 +11390,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 4250000,
+      "3": 6800000,
+      "4": 5100000,
+      "5": 5800000,
+      "6": 5250000,
+      "7": 4200000
     }
   },
   {
@@ -9819,7 +11432,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e0c",
@@ -9828,8 +11442,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "POR",
-    "basePrice": 4555460,
-    "currentPrice": 4555460,
+    "basePrice": 3691487,
+    "currentPrice": 4050000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -9860,6 +11474,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3300000,
+      "2": 3050000,
+      "3": 2800000,
+      "4": 3350000,
+      "5": 2800000,
+      "6": 5350000,
+      "7": 4050000
     }
   },
   {
@@ -9869,8 +11492,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEF",
-    "basePrice": 2192208,
-    "currentPrice": 2192208,
+    "basePrice": 4427002,
+    "currentPrice": 800000,
     "fantasyValue": -2,
     "totalPoints": -14,
     "pointsByMatchday": {
@@ -9901,6 +11524,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3250000,
+      "2": 3300000,
+      "3": 2250000,
+      "4": 1900000,
+      "5": 1800000,
+      "6": 750000,
+      "7": 800000
     }
   },
   {
@@ -9934,7 +11566,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f55",
@@ -9943,8 +11576,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEF",
-    "basePrice": 8262351,
-    "currentPrice": 8262351,
+    "basePrice": 4557830,
+    "currentPrice": 6400000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -9975,6 +11608,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4150000,
+      "2": 3900000,
+      "3": 6450000,
+      "4": 4750000,
+      "5": 5450000,
+      "6": 7700000,
+      "7": 6400000
     }
   },
   {
@@ -10008,7 +11650,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69922fd832694b82e19c85f9",
@@ -10017,8 +11660,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "DEF",
-    "basePrice": 6160305,
-    "currentPrice": 6160305,
+    "basePrice": 4006606,
+    "currentPrice": 5550000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -10049,6 +11692,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4800000,
+      "2": 4900000,
+      "3": 5550000,
+      "4": 4850000,
+      "5": 4600000,
+      "6": 4750000,
+      "7": 5550000
     }
   },
   {
@@ -10058,8 +11710,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "DEL",
-    "basePrice": 21441671,
-    "currentPrice": 21441671,
+    "basePrice": 5045780,
+    "currentPrice": 14700000,
     "fantasyValue": 5,
     "totalPoints": 35,
     "pointsByMatchday": {
@@ -10090,6 +11742,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 15,
       "minutes": 0,
       "keyActions": 6
+    },
+    "priceHistory": {
+      "1": 5450000,
+      "2": 7700000,
+      "3": 9200000,
+      "4": 10700000,
+      "5": 9800000,
+      "6": 13800000,
+      "7": 14700000
     }
   },
   {
@@ -10123,7 +11784,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a088",
@@ -10132,8 +11794,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEL",
-    "basePrice": 9696517,
-    "currentPrice": 9696517,
+    "basePrice": 5132681,
+    "currentPrice": 7950000,
     "fantasyValue": 1.4,
     "totalPoints": 10,
     "pointsByMatchday": {
@@ -10164,6 +11826,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 7150000,
+      "2": 6800000,
+      "3": 6650000,
+      "4": 7050000,
+      "5": 7300000,
+      "6": 7150000,
+      "7": 7950000
     }
   },
   {
@@ -10173,8 +11844,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEF",
-    "basePrice": 6807521,
-    "currentPrice": 6807521,
+    "basePrice": 4502726,
+    "currentPrice": 5600000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -10205,6 +11876,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 6900000,
+      "3": 7200000,
+      "4": 5150000,
+      "5": 5350000,
+      "6": 6300000,
+      "7": 5600000
     }
   },
   {
@@ -10214,8 +11894,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEL",
-    "basePrice": 19720595,
-    "currentPrice": 19720595,
+    "basePrice": 4573745,
+    "currentPrice": 13150000,
     "fantasyValue": 4.6,
     "totalPoints": 32,
     "pointsByMatchday": {
@@ -10246,6 +11926,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 14,
       "minutes": 0,
       "keyActions": 7
+    },
+    "priceHistory": {
+      "1": 4950000,
+      "2": 6800000,
+      "3": 9650000,
+      "4": 10300000,
+      "5": 11550000,
+      "6": 12000000,
+      "7": 13150000
     }
   },
   {
@@ -10255,8 +11944,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEL",
-    "basePrice": 15979444,
-    "currentPrice": 15979444,
+    "basePrice": 5054375,
+    "currentPrice": 11200000,
     "fantasyValue": 3.4,
     "totalPoints": 24,
     "pointsByMatchday": {
@@ -10287,6 +11976,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 7850000,
+      "2": 8800000,
+      "3": 8450000,
+      "4": 9900000,
+      "5": 10900000,
+      "6": 11100000,
+      "7": 11200000
     }
   },
   {
@@ -10296,8 +11994,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEL",
-    "basePrice": 6472301,
-    "currentPrice": 6472301,
+    "basePrice": 5026547,
+    "currentPrice": 5800000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -10328,6 +12026,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4650000,
+      "2": 5200000,
+      "3": 4650000,
+      "4": 4800000,
+      "5": 4800000,
+      "6": 6400000,
+      "7": 5800000
     }
   },
   {
@@ -10361,7 +12068,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69922e9503a416cfe92238e0",
@@ -10394,7 +12102,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992312f4177d9f2b85d1a2d",
@@ -10403,8 +12112,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEL",
-    "basePrice": 8047861,
-    "currentPrice": 8047861,
+    "basePrice": 5201833,
+    "currentPrice": 6550000,
     "fantasyValue": 0.9,
     "totalPoints": 6,
     "pointsByMatchday": {
@@ -10435,6 +12144,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5200000,
+      "2": 5600000,
+      "3": 5450000,
+      "4": 5450000,
+      "5": 4650000,
+      "6": 8150000,
+      "7": 6550000
     }
   },
   {
@@ -10444,8 +12162,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEF",
-    "basePrice": 4245595,
-    "currentPrice": 4245595,
+    "basePrice": 4561759,
+    "currentPrice": 3900000,
     "fantasyValue": -0.3,
     "totalPoints": -2,
     "pointsByMatchday": {
@@ -10476,6 +12194,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4550000,
+      "2": 4950000,
+      "3": 4400000,
+      "4": 4950000,
+      "5": 4400000,
+      "6": 4150000,
+      "7": 3900000
     }
   },
   {
@@ -10485,8 +12212,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEF",
-    "basePrice": 2761749,
-    "currentPrice": 2761749,
+    "basePrice": 4197365,
+    "currentPrice": 1650000,
     "fantasyValue": -1.3,
     "totalPoints": -9,
     "pointsByMatchday": {
@@ -10517,6 +12244,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3800000,
+      "2": 4350000,
+      "3": 3000000,
+      "4": 3050000,
+      "5": 2400000,
+      "6": 2300000,
+      "7": 1650000
     }
   },
   {
@@ -10526,8 +12262,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "MED",
-    "basePrice": 15115143,
-    "currentPrice": 15115143,
+    "basePrice": 4509663,
+    "currentPrice": 11450000,
     "fantasyValue": 3.3,
     "totalPoints": 23,
     "pointsByMatchday": {
@@ -10558,6 +12294,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 8100000,
+      "2": 8350000,
+      "3": 7750000,
+      "4": 7750000,
+      "5": 7750000,
+      "6": 8550000,
+      "7": 11450000
     }
   },
   {
@@ -10567,8 +12312,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "DEL",
-    "basePrice": 6053765,
-    "currentPrice": 6053765,
+    "basePrice": 4759655,
+    "currentPrice": 5650000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -10599,6 +12344,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4350000,
+      "2": 4900000,
+      "3": 4750000,
+      "4": 4750000,
+      "5": 5550000,
+      "6": 5250000,
+      "7": 5650000
     }
   },
   {
@@ -10608,8 +12362,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "DEL",
-    "basePrice": 6945422,
-    "currentPrice": 6945422,
+    "basePrice": 4791723,
+    "currentPrice": 6050000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -10640,6 +12394,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5200000,
+      "2": 4650000,
+      "3": 5600000,
+      "4": 5300000,
+      "5": 6100000,
+      "6": 6200000,
+      "7": 6050000
     }
   },
   {
@@ -10673,7 +12436,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e7d",
@@ -10706,7 +12470,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f6c",
@@ -10715,8 +12480,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "MED",
-    "basePrice": 12564389,
-    "currentPrice": 12564389,
+    "basePrice": 4648498,
+    "currentPrice": 9350000,
     "fantasyValue": 2.4,
     "totalPoints": 17,
     "pointsByMatchday": {
@@ -10747,6 +12512,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 4650000,
+      "2": 4250000,
+      "3": 5200000,
+      "4": 6900000,
+      "5": 7750000,
+      "6": 8750000,
+      "7": 9350000
     }
   },
   {
@@ -10756,8 +12530,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "MED",
-    "basePrice": 8362685,
-    "currentPrice": 8362685,
+    "basePrice": 4919397,
+    "currentPrice": 7500000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -10788,6 +12562,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4900000,
+      "2": 4900000,
+      "3": 5300000,
+      "4": 5550000,
+      "5": 5800000,
+      "6": 6050000,
+      "7": 7500000
     }
   },
   {
@@ -10821,7 +12604,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a033",
@@ -10830,8 +12614,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "POR",
-    "basePrice": 5927222,
-    "currentPrice": 5927222,
+    "basePrice": 3773797,
+    "currentPrice": 5150000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -10862,6 +12646,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4550000,
+      "2": 5050000,
+      "3": 5150000,
+      "4": 4600000,
+      "5": 4350000,
+      "6": 4900000,
+      "7": 5150000
     }
   },
   {
@@ -10871,8 +12664,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEL",
-    "basePrice": 6631806,
-    "currentPrice": 6631806,
+    "basePrice": 4906737,
+    "currentPrice": 5900000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -10903,6 +12696,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4900000,
+      "2": 4900000,
+      "3": 4900000,
+      "4": 4900000,
+      "5": 5300000,
+      "6": 6350000,
+      "7": 5900000
     }
   },
   {
@@ -10912,8 +12714,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "MED",
-    "basePrice": 6552771,
-    "currentPrice": 6552771,
+    "basePrice": 4398524,
+    "currentPrice": 5650000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -10944,6 +12746,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5200000,
+      "2": 4900000,
+      "3": 5700000,
+      "4": 6200000,
+      "5": 5900000,
+      "6": 5500000,
+      "7": 5650000
     }
   },
   {
@@ -10953,8 +12764,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "MED",
-    "basePrice": 14348408,
-    "currentPrice": 14348408,
+    "basePrice": 4643339,
+    "currentPrice": 10050000,
     "fantasyValue": 3,
     "totalPoints": 21,
     "pointsByMatchday": {
@@ -10985,6 +12796,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 4250000,
+      "2": 8400000,
+      "3": 8500000,
+      "4": 8300000,
+      "5": 10550000,
+      "6": 9650000,
+      "7": 10050000
     }
   },
   {
@@ -10994,8 +12814,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEF",
-    "basePrice": 4080153,
-    "currentPrice": 4080153,
+    "basePrice": 4234673,
+    "currentPrice": 3700000,
     "fantasyValue": -0.1,
     "totalPoints": -1,
     "pointsByMatchday": {
@@ -11026,6 +12846,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3850000,
+      "2": 4400000,
+      "3": 3050000,
+      "4": 3100000,
+      "5": 2850000,
+      "6": 5400000,
+      "7": 3700000
     }
   },
   {
@@ -11035,8 +12864,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEL",
-    "basePrice": 30989113,
-    "currentPrice": 30989113,
+    "basePrice": 5268838,
+    "currentPrice": 20250000,
     "fantasyValue": 7.7,
     "totalPoints": 54,
     "pointsByMatchday": {
@@ -11067,6 +12896,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 23,
       "minutes": 0,
       "keyActions": 10
+    },
+    "priceHistory": {
+      "1": 7650000,
+      "2": 11550000,
+      "3": 13750000,
+      "4": 12250000,
+      "5": 15050000,
+      "6": 17600000,
+      "7": 20250000
     }
   },
   {
@@ -11076,8 +12914,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEF",
-    "basePrice": 4304958,
-    "currentPrice": 4304958,
+    "basePrice": 4460985,
+    "currentPrice": 4050000,
     "fantasyValue": -0.1,
     "totalPoints": -1,
     "pointsByMatchday": {
@@ -11108,6 +12946,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4850000,
+      "2": 4300000,
+      "3": 4450000,
+      "4": 5250000,
+      "5": 4550000,
+      "6": 4300000,
+      "7": 4050000
     }
   },
   {
@@ -11117,8 +12964,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "MED",
-    "basePrice": 9148150,
-    "currentPrice": 9148150,
+    "basePrice": 4153766,
+    "currentPrice": 6900000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -11149,6 +12996,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4550000,
+      "2": 5200000,
+      "3": 7300000,
+      "4": 7200000,
+      "5": 6900000,
+      "6": 6900000,
+      "7": 6900000
     }
   },
   {
@@ -11182,7 +13038,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fc3",
@@ -11191,8 +13048,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "POR",
-    "basePrice": 3889753,
-    "currentPrice": 3889753,
+    "basePrice": 4205095,
+    "currentPrice": 3850000,
     "fantasyValue": -0.3,
     "totalPoints": -2,
     "pointsByMatchday": {
@@ -11223,6 +13080,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3000000,
+      "2": 2650000,
+      "3": 2550000,
+      "4": 2300000,
+      "5": 4850000,
+      "6": 3150000,
+      "7": 3850000
     }
   },
   {
@@ -11232,8 +13098,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "DEF",
-    "basePrice": 3255179,
-    "currentPrice": 3255179,
+    "basePrice": 4370932,
+    "currentPrice": 2600000,
     "fantasyValue": -1,
     "totalPoints": -7,
     "pointsByMatchday": {
@@ -11264,6 +13130,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3950000,
+      "2": 3300000,
+      "3": 3200000,
+      "4": 2950000,
+      "5": 1900000,
+      "6": 2750000,
+      "7": 2600000
     }
   },
   {
@@ -11273,8 +13148,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "DEL",
-    "basePrice": 15927727,
-    "currentPrice": 15927727,
+    "basePrice": 5100192,
+    "currentPrice": 10700000,
     "fantasyValue": 3.3,
     "totalPoints": 23,
     "pointsByMatchday": {
@@ -11305,6 +13180,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 16,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 7500000,
+      "2": 7400000,
+      "3": 7500000,
+      "4": 9750000,
+      "5": 10450000,
+      "6": 11850000,
+      "7": 10700000
     }
   },
   {
@@ -11314,8 +13198,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEL",
-    "basePrice": 8792943,
-    "currentPrice": 8792943,
+    "basePrice": 5198833,
+    "currentPrice": 7200000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -11346,6 +13230,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5600000,
+      "2": 5450000,
+      "3": 7050000,
+      "4": 7250000,
+      "5": 7350000,
+      "6": 7200000,
+      "7": 7200000
     }
   },
   {
@@ -11355,8 +13248,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "MED",
-    "basePrice": 4975997,
-    "currentPrice": 4975997,
+    "basePrice": 4111065,
+    "currentPrice": 4900000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -11387,6 +13280,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3700000,
+      "2": 3450000,
+      "3": 3600000,
+      "4": 3600000,
+      "5": 5200000,
+      "6": 3800000,
+      "7": 4900000
     }
   },
   {
@@ -11420,7 +13322,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a031",
@@ -11429,8 +13332,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEF",
-    "basePrice": 15510133,
-    "currentPrice": 15510133,
+    "basePrice": 4643557,
+    "currentPrice": 10250000,
     "fantasyValue": 3.3,
     "totalPoints": 23,
     "pointsByMatchday": {
@@ -11461,6 +13364,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 5
+    },
+    "priceHistory": {
+      "1": 4250000,
+      "2": 6400000,
+      "3": 8050000,
+      "4": 7950000,
+      "5": 10050000,
+      "6": 11550000,
+      "7": 10250000
     }
   },
   {
@@ -11470,8 +13382,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "DEL",
-    "basePrice": 24090874,
-    "currentPrice": 24090874,
+    "basePrice": 5063339,
+    "currentPrice": 15650000,
     "fantasyValue": 5.7,
     "totalPoints": 40,
     "pointsByMatchday": {
@@ -11502,6 +13414,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 16,
       "minutes": 0,
       "keyActions": 8
+    },
+    "priceHistory": {
+      "1": 7450000,
+      "2": 9350000,
+      "3": 10700000,
+      "4": 11800000,
+      "5": 13050000,
+      "6": 15100000,
+      "7": 15650000
     }
   },
   {
@@ -11511,8 +13432,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEF",
-    "basePrice": 4550903,
-    "currentPrice": 4550903,
+    "basePrice": 4707341,
+    "currentPrice": 4300000,
     "fantasyValue": -0.1,
     "totalPoints": -1,
     "pointsByMatchday": {
@@ -11543,6 +13464,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5100000,
+      "2": 4550000,
+      "3": 4300000,
+      "4": 4850000,
+      "5": 5100000,
+      "6": 4550000,
+      "7": 4300000
     }
   },
   {
@@ -11552,8 +13482,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "POR",
-    "basePrice": 3579245,
-    "currentPrice": 3579245,
+    "basePrice": 3574861,
+    "currentPrice": 3700000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -11584,6 +13514,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 2350000,
+      "2": 2400000,
+      "3": 2150000,
+      "4": 1900000,
+      "5": 4450000,
+      "6": 3150000,
+      "7": 3700000
     }
   },
   {
@@ -11593,8 +13532,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "POR",
-    "basePrice": 5504639,
-    "currentPrice": 5504639,
+    "basePrice": 4210529,
+    "currentPrice": 4800000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -11625,6 +13564,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3800000,
+      "2": 3550000,
+      "3": 3300000,
+      "4": 3050000,
+      "5": 4000000,
+      "6": 6100000,
+      "7": 4800000
     }
   },
   {
@@ -11658,7 +13606,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e7c",
@@ -11691,7 +13640,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a073",
@@ -11700,8 +13650,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEL",
-    "basePrice": 21254125,
-    "currentPrice": 21254125,
+    "basePrice": 5067686,
+    "currentPrice": 15050000,
     "fantasyValue": 4.9,
     "totalPoints": 34,
     "pointsByMatchday": {
@@ -11732,6 +13682,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 14,
       "minutes": 0,
       "keyActions": 6
+    },
+    "priceHistory": {
+      "1": 7050000,
+      "2": 6700000,
+      "3": 8550000,
+      "4": 9800000,
+      "5": 9050000,
+      "6": 12250000,
+      "7": 15050000
     }
   },
   {
@@ -11741,8 +13700,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "POR",
-    "basePrice": 1024558,
-    "currentPrice": 1024558,
+    "basePrice": 3577160,
+    "currentPrice": 500000,
     "fantasyValue": -2.3,
     "totalPoints": -16,
     "pointsByMatchday": {
@@ -11773,6 +13732,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 2000000,
+      "2": 1800000,
+      "3": 500000,
+      "4": 500000,
+      "5": 500000,
+      "6": 500000,
+      "7": 500000
     }
   },
   {
@@ -11806,7 +13774,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69923097c0f68d6fa12bcd6a",
@@ -11815,8 +13784,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "MED",
-    "basePrice": 15225761,
-    "currentPrice": 15225761,
+    "basePrice": 4381103,
+    "currentPrice": 10700000,
     "fantasyValue": 3.4,
     "totalPoints": 24,
     "pointsByMatchday": {
@@ -11847,6 +13816,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 14,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 6000000,
+      "2": 5800000,
+      "3": 6450000,
+      "4": 6150000,
+      "5": 8950000,
+      "6": 11100000,
+      "7": 10700000
     }
   },
   {
@@ -11856,8 +13834,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEF",
-    "basePrice": 3750807,
-    "currentPrice": 3750807,
+    "basePrice": 4226149,
+    "currentPrice": 3200000,
     "fantasyValue": -0.4,
     "totalPoints": -3,
     "pointsByMatchday": {
@@ -11888,6 +13866,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4250000,
+      "2": 6650000,
+      "3": 4950000,
+      "4": 3650000,
+      "5": 3850000,
+      "6": 4000000,
+      "7": 3200000
     }
   },
   {
@@ -11897,8 +13884,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "MED",
-    "basePrice": 3675632,
-    "currentPrice": 3675632,
+    "basePrice": 4470289,
+    "currentPrice": 3200000,
     "fantasyValue": -0.7,
     "totalPoints": -5,
     "pointsByMatchday": {
@@ -11929,6 +13916,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4050000,
+      "2": 4200000,
+      "3": 3400000,
+      "4": 3700000,
+      "5": 3700000,
+      "6": 2900000,
+      "7": 3200000
     }
   },
   {
@@ -11938,8 +13934,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEL",
-    "basePrice": 22661399,
-    "currentPrice": 22661399,
+    "basePrice": 5295234,
+    "currentPrice": 15000000,
     "fantasyValue": 5.3,
     "totalPoints": 37,
     "pointsByMatchday": {
@@ -11970,6 +13966,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 15,
       "minutes": 0,
       "keyActions": 6
+    },
+    "priceHistory": {
+      "1": 8900000,
+      "2": 9550000,
+      "3": 10800000,
+      "4": 11250000,
+      "5": 13200000,
+      "6": 14700000,
+      "7": 15000000
     }
   },
   {
@@ -12003,7 +14008,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e0d",
@@ -12012,8 +14018,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "DEL",
-    "basePrice": 17842634,
-    "currentPrice": 17842634,
+    "basePrice": 5034688,
+    "currentPrice": 11650000,
     "fantasyValue": 3.9,
     "totalPoints": 27,
     "pointsByMatchday": {
@@ -12044,6 +14050,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 16,
       "minutes": 0,
       "keyActions": 5
+    },
+    "priceHistory": {
+      "1": 7450000,
+      "2": 10550000,
+      "3": 9450000,
+      "4": 11300000,
+      "5": 12950000,
+      "6": 12050000,
+      "7": 11650000
     }
   },
   {
@@ -12053,8 +14068,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
-    "basePrice": 6516568,
-    "currentPrice": 6516568,
+    "basePrice": 4363143,
+    "currentPrice": 5600000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -12085,6 +14100,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4750000,
+      "2": 4600000,
+      "3": 5000000,
+      "4": 4850000,
+      "5": 5250000,
+      "6": 5900000,
+      "7": 5600000
     }
   },
   {
@@ -12094,8 +14118,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEL",
-    "basePrice": 23083569,
-    "currentPrice": 23083569,
+    "basePrice": 4834801,
+    "currentPrice": 16300000,
     "fantasyValue": 5.4,
     "totalPoints": 38,
     "pointsByMatchday": {
@@ -12126,6 +14150,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 16,
       "minutes": 0,
       "keyActions": 9
+    },
+    "priceHistory": {
+      "1": 10050000,
+      "2": 8100000,
+      "3": 11300000,
+      "4": 12100000,
+      "5": 11350000,
+      "6": 10950000,
+      "7": 16300000
     }
   },
   {
@@ -12135,8 +14168,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEF",
-    "basePrice": 5632395,
-    "currentPrice": 5632395,
+    "basePrice": 4338696,
+    "currentPrice": 5250000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -12167,6 +14200,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3950000,
+      "2": 6500000,
+      "3": 5600000,
+      "4": 5200000,
+      "5": 4950000,
+      "6": 4700000,
+      "7": 5250000
     }
   },
   {
@@ -12200,7 +14242,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0cc",
@@ -12209,8 +14252,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEF",
-    "basePrice": 3383402,
-    "currentPrice": 3383402,
+    "basePrice": 4499292,
+    "currentPrice": 2600000,
     "fantasyValue": -1,
     "totalPoints": -7,
     "pointsByMatchday": {
@@ -12241,6 +14284,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4100000,
+      "2": 4650000,
+      "3": 3300000,
+      "4": 3350000,
+      "5": 3100000,
+      "6": 2850000,
+      "7": 2600000
     }
   },
   {
@@ -12274,7 +14326,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-685d55461961cecfcf38cc3d",
@@ -12307,7 +14360,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a04b",
@@ -12340,7 +14394,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a05f",
@@ -12373,7 +14428,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a04c",
@@ -12406,7 +14462,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fc4",
@@ -12415,8 +14472,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEL",
-    "basePrice": 12779111,
-    "currentPrice": 12779111,
+    "basePrice": 4901713,
+    "currentPrice": 9300000,
     "fantasyValue": 2.4,
     "totalPoints": 17,
     "pointsByMatchday": {
@@ -12447,6 +14504,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 15,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 4900000,
+      "2": 6100000,
+      "3": 7250000,
+      "4": 8650000,
+      "5": 7900000,
+      "6": 9500000,
+      "7": 9300000
     }
   },
   {
@@ -12456,8 +14522,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEL",
-    "basePrice": 15816534,
-    "currentPrice": 15816534,
+    "basePrice": 5530643,
+    "currentPrice": 11500000,
     "fantasyValue": 3.1,
     "totalPoints": 22,
     "pointsByMatchday": {
@@ -12488,6 +14554,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 5550000,
+      "2": 5550000,
+      "3": 6750000,
+      "4": 8300000,
+      "5": 10350000,
+      "6": 10900000,
+      "7": 11500000
     }
   },
   {
@@ -12497,8 +14572,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEF",
-    "basePrice": 3818786,
-    "currentPrice": 3818786,
+    "basePrice": 4454128,
+    "currentPrice": 3000000,
     "fantasyValue": -0.6,
     "totalPoints": -4,
     "pointsByMatchday": {
@@ -12529,6 +14604,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3650000,
+      "2": 3150000,
+      "3": 5850000,
+      "4": 3350000,
+      "5": 4750000,
+      "6": 4050000,
+      "7": 3000000
     }
   },
   {
@@ -12562,7 +14646,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69922eb5c68c0157b571c22d",
@@ -12595,7 +14680,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a048",
@@ -12628,7 +14714,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e81",
@@ -12661,7 +14748,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a03d",
@@ -12694,7 +14782,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e66",
@@ -12703,8 +14792,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "POR",
-    "basePrice": 4284938,
-    "currentPrice": 4284938,
+    "basePrice": 4281102,
+    "currentPrice": 4150000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -12735,6 +14824,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5100000,
+      "2": 4400000,
+      "3": 4950000,
+      "4": 5200000,
+      "5": 4650000,
+      "6": 4400000,
+      "7": 4150000
     }
   },
   {
@@ -12744,8 +14842,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEF",
-    "basePrice": 3745995,
-    "currentPrice": 3745995,
+    "basePrice": 4221748,
+    "currentPrice": 3150000,
     "fantasyValue": -0.4,
     "totalPoints": -3,
     "pointsByMatchday": {
@@ -12776,6 +14874,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5000000,
+      "2": 4700000,
+      "3": 3900000,
+      "4": 4600000,
+      "5": 4050000,
+      "6": 3800000,
+      "7": 3150000
     }
   },
   {
@@ -12809,7 +14916,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fdc",
@@ -12842,7 +14950,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a076",
@@ -12875,7 +14984,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e0e",
@@ -12908,7 +15018,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479dfa",
@@ -12941,7 +15052,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0d1",
@@ -12974,7 +15086,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69922f84c49f79532e4d3703",
@@ -13007,7 +15120,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a03c",
@@ -13040,7 +15154,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fc8",
@@ -13073,7 +15188,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69923139c68c0157b58075cf",
@@ -13106,7 +15222,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e0f",
@@ -13115,8 +15232,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEF",
-    "basePrice": 3804708,
-    "currentPrice": 3804708,
+    "basePrice": 3800324,
+    "currentPrice": 3950000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -13147,6 +15264,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 2600000,
+      "2": 2650000,
+      "3": 2400000,
+      "4": 2150000,
+      "5": 4700000,
+      "6": 3400000,
+      "7": 3950000
     }
   },
   {
@@ -13156,8 +15282,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "MED",
-    "basePrice": 15342932,
-    "currentPrice": 15342932,
+    "basePrice": 4308000,
+    "currentPrice": 10450000,
     "fantasyValue": 3.4,
     "totalPoints": 24,
     "pointsByMatchday": {
@@ -13188,6 +15314,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 7500000,
+      "2": 9900000,
+      "3": 8950000,
+      "4": 8800000,
+      "5": 8800000,
+      "6": 10800000,
+      "7": 10450000
     }
   },
   {
@@ -13221,7 +15356,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a006",
@@ -13230,8 +15366,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "DEF",
-    "basePrice": 4220361,
-    "currentPrice": 4220361,
+    "basePrice": 4216662,
+    "currentPrice": 4050000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -13262,6 +15398,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4600000,
+      "2": 4050000,
+      "3": 4200000,
+      "4": 3400000,
+      "5": 4500000,
+      "6": 4600000,
+      "7": 4050000
     }
   },
   {
@@ -13295,7 +15440,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ff2",
@@ -13328,7 +15474,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992318315adfbb713906005",
@@ -13361,7 +15508,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e84",
@@ -13394,7 +15542,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a07f",
@@ -13427,7 +15576,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699230f0da0ea3c860f0534d",
@@ -13460,7 +15610,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69922fe032694b82e19ca754",
@@ -13469,8 +15620,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEL",
-    "basePrice": 14141638,
-    "currentPrice": 14141638,
+    "basePrice": 4866843,
+    "currentPrice": 10150000,
     "fantasyValue": 2.9,
     "totalPoints": 20,
     "pointsByMatchday": {
@@ -13501,6 +15652,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 4850000,
+      "2": 6850000,
+      "3": 6100000,
+      "4": 8900000,
+      "5": 8250000,
+      "6": 10100000,
+      "7": 10150000
     }
   },
   {
@@ -13534,7 +15694,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479dff",
@@ -13567,7 +15728,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fe5",
@@ -13600,7 +15762,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992313b265a40c1eef628ce",
@@ -13609,8 +15772,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "DEF",
-    "basePrice": 3311911,
-    "currentPrice": 3311911,
+    "basePrice": 3627801,
+    "currentPrice": 3300000,
     "fantasyValue": -0.3,
     "totalPoints": -2,
     "pointsByMatchday": {
@@ -13641,6 +15804,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 2450000,
+      "2": 3300000,
+      "3": 2750000,
+      "4": 2500000,
+      "5": 3450000,
+      "6": 2750000,
+      "7": 3300000
     }
   },
   {
@@ -13674,7 +15846,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e87",
@@ -13707,7 +15880,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f41",
@@ -13716,8 +15890,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "POR",
-    "basePrice": 9099283,
-    "currentPrice": 9099283,
+    "basePrice": 4365995,
+    "currentPrice": 8000000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -13748,6 +15922,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4750000,
+      "2": 4200000,
+      "3": 5150000,
+      "4": 5250000,
+      "5": 5500000,
+      "6": 5750000,
+      "7": 8000000
     }
   },
   {
@@ -13781,7 +15964,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f6d",
@@ -13790,8 +15974,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "POR",
-    "basePrice": 6143753,
-    "currentPrice": 6143753,
+    "basePrice": 4420054,
+    "currentPrice": 5550000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -13822,6 +16006,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4000000,
+      "2": 3750000,
+      "3": 6300000,
+      "4": 5800000,
+      "5": 5250000,
+      "6": 5000000,
+      "7": 5550000
     }
   },
   {
@@ -13831,8 +16024,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "MED",
-    "basePrice": 5283139,
-    "currentPrice": 5283139,
+    "basePrice": 3989029,
+    "currentPrice": 5050000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -13863,6 +16056,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3600000,
+      "2": 4150000,
+      "3": 4000000,
+      "4": 4000000,
+      "5": 4400000,
+      "6": 4250000,
+      "7": 5050000
     }
   },
   {
@@ -13872,8 +16074,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "POR",
-    "basePrice": 4033058,
-    "currentPrice": 4033058,
+    "basePrice": 4029222,
+    "currentPrice": 3900000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -13904,6 +16106,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4450000,
+      "2": 5100000,
+      "3": 4400000,
+      "4": 4950000,
+      "5": 4400000,
+      "6": 4150000,
+      "7": 3900000
     }
   },
   {
@@ -13937,7 +16148,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992304ab5253ba2a1f890c7",
@@ -13946,8 +16158,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEF",
-    "basePrice": 6177982,
-    "currentPrice": 6177982,
+    "basePrice": 4883872,
+    "currentPrice": 5500000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -13978,6 +16190,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 4250000,
+      "3": 4000000,
+      "4": 3750000,
+      "5": 4700000,
+      "6": 6800000,
+      "7": 5500000
     }
   },
   {
@@ -14011,7 +16232,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ff0",
@@ -14020,8 +16242,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEL",
-    "basePrice": 6775162,
-    "currentPrice": 6775162,
+    "basePrice": 4900778,
+    "currentPrice": 5900000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -14052,6 +16274,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 6500000,
+      "2": 5900000,
+      "3": 5900000,
+      "4": 5900000,
+      "5": 5900000,
+      "6": 5900000,
+      "7": 5900000
     }
   },
   {
@@ -14085,7 +16316,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a052",
@@ -14118,7 +16350,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699230ac833742717ee6914c",
@@ -14151,7 +16384,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f48",
@@ -14184,7 +16418,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e3a",
@@ -14193,8 +16428,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEF",
-    "basePrice": 1265877,
-    "currentPrice": 1265877,
+    "basePrice": 4140123,
+    "currentPrice": 500000,
     "fantasyValue": -2.6,
     "totalPoints": -18,
     "pointsByMatchday": {
@@ -14225,6 +16460,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 2550000,
+      "2": 2350000,
+      "3": 1050000,
+      "4": 850000,
+      "5": 750000,
+      "6": 500000,
+      "7": 500000
     }
   },
   {
@@ -14258,7 +16502,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f57",
@@ -14267,8 +16512,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEF",
-    "basePrice": 4172498,
-    "currentPrice": 4172498,
+    "basePrice": 3737977,
+    "currentPrice": 4300000,
     "fantasyValue": 0.1,
     "totalPoints": 1,
     "pointsByMatchday": {
@@ -14299,6 +16544,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 2550000,
+      "2": 2600000,
+      "3": 2350000,
+      "4": 2100000,
+      "5": 4650000,
+      "6": 3350000,
+      "7": 4300000
     }
   },
   {
@@ -14332,7 +16586,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479de2",
@@ -14341,8 +16596,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEL",
-    "basePrice": 31788901,
-    "currentPrice": 31788901,
+    "basePrice": 5281092,
+    "currentPrice": 20950000,
     "fantasyValue": 8,
     "totalPoints": 56,
     "pointsByMatchday": {
@@ -14373,6 +16628,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 18,
       "minutes": 0,
       "keyActions": 11
+    },
+    "priceHistory": {
+      "1": 10500000,
+      "2": 13350000,
+      "3": 13950000,
+      "4": 13050000,
+      "5": 15050000,
+      "6": 17900000,
+      "7": 20950000
     }
   },
   {
@@ -14406,7 +16670,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-685b388c9bb6bca116d5994a",
@@ -14439,7 +16704,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f4c",
@@ -14472,7 +16738,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fe4",
@@ -14505,7 +16772,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a04a",
@@ -14538,7 +16806,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69922ea84177d9f2b852b5fc",
@@ -14547,8 +16816,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEL",
-    "basePrice": 8426797,
-    "currentPrice": 8426797,
+    "basePrice": 4832550,
+    "currentPrice": 6850000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -14579,6 +16848,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5250000,
+      "2": 5900000,
+      "3": 7200000,
+      "4": 7000000,
+      "5": 6850000,
+      "6": 6850000,
+      "7": 6850000
     }
   },
   {
@@ -14612,7 +16890,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a01c",
@@ -14645,7 +16924,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e13",
@@ -14678,7 +16958,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69923188232f90c18aa1e95e",
@@ -14711,7 +16992,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f85",
@@ -14744,7 +17026,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-685416a539c3de1a09b316b1",
@@ -14777,7 +17060,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e86",
@@ -14810,7 +17094,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ffb",
@@ -14843,7 +17128,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a08a",
@@ -14876,7 +17162,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992309b19491beeb353496e",
@@ -14885,8 +17172,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEL",
-    "basePrice": 28374277,
-    "currentPrice": 28374277,
+    "basePrice": 4634002,
+    "currentPrice": 17900000,
     "fantasyValue": 7.1,
     "totalPoints": 50,
     "pointsByMatchday": {
@@ -14917,6 +17204,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 23,
       "minutes": 0,
       "keyActions": 9
+    },
+    "priceHistory": {
+      "1": 8650000,
+      "2": 9550000,
+      "3": 10650000,
+      "4": 12300000,
+      "5": 14600000,
+      "6": 17400000,
+      "7": 17900000
     }
   },
   {
@@ -14950,7 +17246,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699230e9b5253ba2a1fc998e",
@@ -14983,7 +17280,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0b6",
@@ -14992,8 +17290,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEL",
-    "basePrice": 22728712,
-    "currentPrice": 22728712,
+    "basePrice": 5171040,
+    "currentPrice": 16650000,
     "fantasyValue": 5.3,
     "totalPoints": 37,
     "pointsByMatchday": {
@@ -15024,6 +17322,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 15,
       "minutes": 0,
       "keyActions": 8
+    },
+    "priceHistory": {
+      "1": 5150000,
+      "2": 7150000,
+      "3": 8000000,
+      "4": 10600000,
+      "5": 9400000,
+      "6": 11400000,
+      "7": 16650000
     }
   },
   {
@@ -15033,8 +17340,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEF",
-    "basePrice": 3251243,
-    "currentPrice": 3251243,
+    "basePrice": 4206859,
+    "currentPrice": 2550000,
     "fantasyValue": -0.9,
     "totalPoints": -6,
     "pointsByMatchday": {
@@ -15065,6 +17372,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4200000,
+      "2": 3000000,
+      "3": 3050000,
+      "4": 3200000,
+      "5": 3200000,
+      "6": 2800000,
+      "7": 2550000
     }
   },
   {
@@ -15074,8 +17390,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "POR",
-    "basePrice": 2805001,
-    "currentPrice": 2805001,
+    "basePrice": 3440891,
+    "currentPrice": 2600000,
     "fantasyValue": -0.6,
     "totalPoints": -4,
     "pointsByMatchday": {
@@ -15106,6 +17422,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3050000,
+      "2": 2800000,
+      "3": 2550000,
+      "4": 2300000,
+      "5": 1250000,
+      "6": 2500000,
+      "7": 2600000
     }
   },
   {
@@ -15139,7 +17464,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e88",
@@ -15172,7 +17498,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fda",
@@ -15181,8 +17508,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEF",
-    "basePrice": 4960921,
-    "currentPrice": 4960921,
+    "basePrice": 3665304,
+    "currentPrice": 4550000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -15213,6 +17540,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 6450000,
+      "2": 5000000,
+      "3": 4750000,
+      "4": 3700000,
+      "5": 3750000,
+      "6": 4300000,
+      "7": 4550000
     }
   },
   {
@@ -15222,8 +17558,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
-    "basePrice": 22338765,
-    "currentPrice": 22338765,
+    "basePrice": 4652463,
+    "currentPrice": 15200000,
     "fantasyValue": 5.4,
     "totalPoints": 38,
     "pointsByMatchday": {
@@ -15254,6 +17590,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 16,
       "minutes": 0,
       "keyActions": 6
+    },
+    "priceHistory": {
+      "1": 7850000,
+      "2": 8650000,
+      "3": 8700000,
+      "4": 10000000,
+      "5": 13800000,
+      "6": 12550000,
+      "7": 15200000
     }
   },
   {
@@ -15287,7 +17632,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fc5",
@@ -15296,8 +17642,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "MED",
-    "basePrice": 8430171,
-    "currentPrice": 8430171,
+    "basePrice": 4556061,
+    "currentPrice": 7100000,
     "fantasyValue": 1.3,
     "totalPoints": 9,
     "pointsByMatchday": {
@@ -15328,6 +17674,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4550000,
+      "2": 4550000,
+      "3": 4150000,
+      "4": 5900000,
+      "5": 6100000,
+      "6": 6600000,
+      "7": 7100000
     }
   },
   {
@@ -15337,8 +17692,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "MED",
-    "basePrice": 6459277,
-    "currentPrice": 6459277,
+    "basePrice": 5165304,
+    "currentPrice": 6050000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -15369,6 +17724,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5150000,
+      "2": 6750000,
+      "3": 6150000,
+      "4": 5750000,
+      "5": 5900000,
+      "6": 5500000,
+      "7": 6050000
     }
   },
   {
@@ -15378,8 +17742,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEL",
-    "basePrice": 10579427,
-    "currentPrice": 10579427,
+    "basePrice": 4574632,
+    "currentPrice": 8550000,
     "fantasyValue": 1.9,
     "totalPoints": 13,
     "pointsByMatchday": {
@@ -15410,6 +17774,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 4950000,
+      "2": 6000000,
+      "3": 5550000,
+      "4": 6750000,
+      "5": 6300000,
+      "6": 6700000,
+      "7": 8550000
     }
   },
   {
@@ -15419,8 +17792,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "DEF",
-    "basePrice": 4685847,
-    "currentPrice": 4685847,
+    "basePrice": 4252559,
+    "currentPrice": 4350000,
     "fantasyValue": 0.1,
     "totalPoints": 1,
     "pointsByMatchday": {
@@ -15451,6 +17824,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4650000,
+      "2": 4100000,
+      "3": 4650000,
+      "4": 4100000,
+      "5": 4650000,
+      "6": 4900000,
+      "7": 4350000
     }
   },
   {
@@ -15484,7 +17866,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f44",
@@ -15517,7 +17900,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992318c663645950edcb4fb",
@@ -15526,8 +17910,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
-    "basePrice": 7277803,
-    "currentPrice": 7277803,
+    "basePrice": 4693967,
+    "currentPrice": 6200000,
     "fantasyValue": 0.9,
     "totalPoints": 6,
     "pointsByMatchday": {
@@ -15558,6 +17942,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5500000,
+      "2": 4800000,
+      "3": 5750000,
+      "4": 5450000,
+      "5": 6250000,
+      "6": 6350000,
+      "7": 6200000
     }
   },
   {
@@ -15567,8 +17960,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEL",
-    "basePrice": 9070331,
-    "currentPrice": 9070331,
+    "basePrice": 5046358,
+    "currentPrice": 7450000,
     "fantasyValue": 1.3,
     "totalPoints": 9,
     "pointsByMatchday": {
@@ -15599,6 +17992,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 5050000,
+      "3": 5050000,
+      "4": 5850000,
+      "5": 7550000,
+      "6": 7200000,
+      "7": 7450000
     }
   },
   {
@@ -15608,8 +18010,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEL",
-    "basePrice": 30043807,
-    "currentPrice": 30043807,
+    "basePrice": 5016820,
+    "currentPrice": 19450000,
     "fantasyValue": 7.6,
     "totalPoints": 53,
     "pointsByMatchday": {
@@ -15640,6 +18042,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 18,
       "minutes": 0,
       "keyActions": 9
+    },
+    "priceHistory": {
+      "1": 11400000,
+      "2": 11000000,
+      "3": 14250000,
+      "4": 15550000,
+      "5": 14900000,
+      "6": 17150000,
+      "7": 19450000
     }
   },
   {
@@ -15649,8 +18060,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "MED",
-    "basePrice": 5342646,
-    "currentPrice": 5342646,
+    "basePrice": 4478810,
+    "currentPrice": 4850000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -15681,6 +18092,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4900000,
+      "2": 5150000,
+      "3": 5400000,
+      "4": 5250000,
+      "5": 5250000,
+      "6": 5250000,
+      "7": 4850000
     }
   },
   {
@@ -15714,7 +18134,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f42",
@@ -15723,8 +18144,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEL",
-    "basePrice": 14747382,
-    "currentPrice": 14747382,
+    "basePrice": 4892039,
+    "currentPrice": 10750000,
     "fantasyValue": 3,
     "totalPoints": 21,
     "pointsByMatchday": {
@@ -15755,6 +18176,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 5700000,
+      "2": 7400000,
+      "3": 6650000,
+      "4": 6650000,
+      "5": 8650000,
+      "6": 9900000,
+      "7": 10750000
     }
   },
   {
@@ -15764,8 +18194,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEL",
-    "basePrice": 21242634,
-    "currentPrice": 21242634,
+    "basePrice": 5166058,
+    "currentPrice": 14250000,
     "fantasyValue": 4.9,
     "totalPoints": 34,
     "pointsByMatchday": {
@@ -15796,6 +18226,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 15,
       "minutes": 0,
       "keyActions": 6
+    },
+    "priceHistory": {
+      "1": 7950000,
+      "2": 10100000,
+      "3": 10900000,
+      "4": 11750000,
+      "5": 13150000,
+      "6": 12800000,
+      "7": 14250000
     }
   },
   {
@@ -15829,7 +18268,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0a1",
@@ -15838,8 +18278,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEF",
-    "basePrice": 4783077,
-    "currentPrice": 4783077,
+    "basePrice": 4349241,
+    "currentPrice": 4900000,
     "fantasyValue": 0.1,
     "totalPoints": 1,
     "pointsByMatchday": {
@@ -15870,6 +18310,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3950000,
+      "2": 4900000,
+      "3": 3000000,
+      "4": 4400000,
+      "5": 4500000,
+      "6": 3950000,
+      "7": 4900000
     }
   },
   {
@@ -15879,8 +18328,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEF",
-    "basePrice": 9241957,
-    "currentPrice": 9241957,
+    "basePrice": 4078532,
+    "currentPrice": 8000000,
     "fantasyValue": 1.7,
     "totalPoints": 12,
     "pointsByMatchday": {
@@ -15911,6 +18360,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 3950000,
+      "3": 4900000,
+      "4": 5000000,
+      "5": 5250000,
+      "6": 5900000,
+      "7": 8000000
     }
   },
   {
@@ -15944,7 +18402,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f84",
@@ -15953,8 +18412,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEL",
-    "basePrice": 22452197,
-    "currentPrice": 22452197,
+    "basePrice": 5533977,
+    "currentPrice": 14900000,
     "fantasyValue": 5,
     "totalPoints": 35,
     "pointsByMatchday": {
@@ -15985,6 +18444,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 15,
       "minutes": 0,
       "keyActions": 8
+    },
+    "priceHistory": {
+      "1": 9150000,
+      "2": 9800000,
+      "3": 12650000,
+      "4": 13700000,
+      "5": 14000000,
+      "6": 13150000,
+      "7": 14900000
     }
   },
   {
@@ -16018,7 +18486,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a064",
@@ -16051,7 +18520,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a061",
@@ -16084,7 +18554,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e89",
@@ -16117,7 +18588,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479de3",
@@ -16126,8 +18598,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEF",
-    "basePrice": 7355884,
-    "currentPrice": 7355884,
+    "basePrice": 4772048,
+    "currentPrice": 6550000,
     "fantasyValue": 0.9,
     "totalPoints": 6,
     "pointsByMatchday": {
@@ -16158,6 +18630,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 6750000,
+      "2": 6800000,
+      "3": 6900000,
+      "4": 6350000,
+      "5": 6100000,
+      "6": 5450000,
+      "7": 6550000
     }
   },
   {
@@ -16191,7 +18672,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e3c",
@@ -16200,8 +18682,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEF",
-    "basePrice": 3327270,
-    "currentPrice": 3327270,
+    "basePrice": 4451653,
+    "currentPrice": 2900000,
     "fantasyValue": -1.1,
     "totalPoints": -8,
     "pointsByMatchday": {
@@ -16232,6 +18714,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 3250000,
+      "2": 3300000,
+      "3": 3050000,
+      "4": 4000000,
+      "5": 2100000,
+      "6": 1100000,
+      "7": 2900000
     }
   },
   {
@@ -16241,8 +18732,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEF",
-    "basePrice": 5135521,
-    "currentPrice": 5135521,
+    "basePrice": 4271548,
+    "currentPrice": 4600000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -16273,6 +18764,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3850000,
+      "2": 4400000,
+      "3": 3850000,
+      "4": 3600000,
+      "5": 3350000,
+      "6": 5900000,
+      "7": 4600000
     }
   },
   {
@@ -16306,7 +18806,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69922feb46ac2f60773b8704",
@@ -16315,8 +18816,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "POR",
-    "basePrice": 3294472,
-    "currentPrice": 3294472,
+    "basePrice": 3610362,
+    "currentPrice": 3250000,
     "fantasyValue": -0.3,
     "totalPoints": -2,
     "pointsByMatchday": {
@@ -16347,6 +18848,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 2400000,
+      "2": 3250000,
+      "3": 2700000,
+      "4": 2450000,
+      "5": 3400000,
+      "6": 2700000,
+      "7": 3250000
     }
   },
   {
@@ -16356,8 +18866,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "MED",
-    "basePrice": 8341766,
-    "currentPrice": 8341766,
+    "basePrice": 4596560,
+    "currentPrice": 6750000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -16388,6 +18898,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 4200000,
+      "2": 4350000,
+      "3": 3950000,
+      "4": 7300000,
+      "5": 5700000,
+      "6": 6650000,
+      "7": 6750000
     }
   },
   {
@@ -16421,7 +18940,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f46",
@@ -16454,7 +18974,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699230f3f9246e13658b5d07",
@@ -16487,7 +19008,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ff1",
@@ -16496,8 +19018,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEL",
-    "basePrice": 8025591,
-    "currentPrice": 8025591,
+    "basePrice": 5611070,
+    "currentPrice": 6850000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -16528,6 +19050,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5600000,
+      "2": 6000000,
+      "3": 5450000,
+      "4": 7600000,
+      "5": 6850000,
+      "6": 6850000,
+      "7": 6850000
     }
   },
   {
@@ -16537,8 +19068,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEL",
-    "basePrice": 9055729,
-    "currentPrice": 9055729,
+    "basePrice": 5351345,
+    "currentPrice": 7500000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -16569,6 +19100,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4950000,
+      "2": 7100000,
+      "3": 7550000,
+      "4": 7500000,
+      "5": 7350000,
+      "6": 6950000,
+      "7": 7500000
     }
   },
   {
@@ -16602,7 +19142,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a065",
@@ -16635,7 +19176,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e27",
@@ -16668,7 +19210,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69923146409e57cdd30eec25",
@@ -16701,7 +19244,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e10",
@@ -16710,8 +19254,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEF",
-    "basePrice": 4581658,
-    "currentPrice": 4581658,
+    "basePrice": 4737685,
+    "currentPrice": 4350000,
     "fantasyValue": -0.1,
     "totalPoints": -1,
     "pointsByMatchday": {
@@ -16742,6 +19286,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5550000,
+      "2": 4050000,
+      "3": 4100000,
+      "4": 4650000,
+      "5": 5300000,
+      "6": 4600000,
+      "7": 4350000
     }
   },
   {
@@ -16751,8 +19304,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "MED",
-    "basePrice": 5348124,
-    "currentPrice": 5348124,
+    "basePrice": 4053740,
+    "currentPrice": 5100000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -16783,6 +19336,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3650000,
+      "2": 4600000,
+      "3": 4300000,
+      "4": 4300000,
+      "5": 4300000,
+      "6": 4300000,
+      "7": 5100000
     }
   },
   {
@@ -16792,8 +19354,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEF",
-    "basePrice": 3935095,
-    "currentPrice": 3935095,
+    "basePrice": 4570985,
+    "currentPrice": 3250000,
     "fantasyValue": -0.6,
     "totalPoints": -4,
     "pointsByMatchday": {
@@ -16824,6 +19386,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4950000,
+      "2": 3600000,
+      "3": 3650000,
+      "4": 4200000,
+      "5": 4850000,
+      "6": 3750000,
+      "7": 3250000
     }
   },
   {
@@ -16833,8 +19404,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "MED",
-    "basePrice": 5210021,
-    "currentPrice": 5210021,
+    "basePrice": 4345089,
+    "currentPrice": 5150000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -16865,6 +19436,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3950000,
+      "2": 4500000,
+      "3": 3950000,
+      "4": 4100000,
+      "5": 4500000,
+      "6": 4350000,
+      "7": 5150000
     }
   },
   {
@@ -16874,8 +19454,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEF",
-    "basePrice": 2175656,
-    "currentPrice": 2175656,
+    "basePrice": 4729491,
+    "currentPrice": 500000,
     "fantasyValue": -2.3,
     "totalPoints": -16,
     "pointsByMatchday": {
@@ -16906,6 +19486,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3550000,
+      "2": 3600000,
+      "3": 3350000,
+      "4": 3100000,
+      "5": 2050000,
+      "6": 1300000,
+      "7": 500000
     }
   },
   {
@@ -16939,7 +19528,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f58",
@@ -16948,8 +19538,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "DEF",
-    "basePrice": 3237749,
-    "currentPrice": 3237749,
+    "basePrice": 3873502,
+    "currentPrice": 2400000,
     "fantasyValue": -0.6,
     "totalPoints": -4,
     "pointsByMatchday": {
@@ -16980,6 +19570,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4650000,
+      "2": 4750000,
+      "3": 4600000,
+      "4": 3800000,
+      "5": 3700000,
+      "6": 3450000,
+      "7": 2400000
     }
   },
   {
@@ -17013,7 +19612,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e67",
@@ -17022,8 +19622,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "POR",
-    "basePrice": 6727384,
-    "currentPrice": 6727384,
+    "basePrice": 4573685,
+    "currentPrice": 6100000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -17054,6 +19654,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4150000,
+      "2": 6700000,
+      "3": 6200000,
+      "4": 5650000,
+      "5": 5400000,
+      "6": 5150000,
+      "7": 6100000
     }
   },
   {
@@ -17087,7 +19696,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a08d",
@@ -17096,8 +19706,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEL",
-    "basePrice": 8812819,
-    "currentPrice": 8812819,
+    "basePrice": 5497339,
+    "currentPrice": 7100000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -17128,6 +19738,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 5500000,
+      "2": 7100000,
+      "3": 6100000,
+      "4": 6250000,
+      "5": 7850000,
+      "6": 7650000,
+      "7": 7100000
     }
   },
   {
@@ -17137,8 +19756,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEL",
-    "basePrice": 19101731,
-    "currentPrice": 19101731,
+    "basePrice": 5325840,
+    "currentPrice": 12600000,
     "fantasyValue": 4.1,
     "totalPoints": 29,
     "pointsByMatchday": {
@@ -17169,6 +19788,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 5
+    },
+    "priceHistory": {
+      "1": 5750000,
+      "2": 9600000,
+      "3": 8900000,
+      "4": 9000000,
+      "5": 10850000,
+      "6": 14100000,
+      "7": 12600000
     }
   },
   {
@@ -17178,8 +19806,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEF",
-    "basePrice": 2223379,
-    "currentPrice": 2223379,
+    "basePrice": 3978858,
+    "currentPrice": 1100000,
     "fantasyValue": -1.6,
     "totalPoints": -11,
     "pointsByMatchday": {
@@ -17210,6 +19838,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3200000,
+      "2": 2700000,
+      "3": 2600000,
+      "4": 1950000,
+      "5": 1450000,
+      "6": 1350000,
+      "7": 1100000
     }
   },
   {
@@ -17219,8 +19856,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "POR",
-    "basePrice": 5017313,
-    "currentPrice": 5017313,
+    "basePrice": 3724162,
+    "currentPrice": 4600000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -17251,6 +19888,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4100000,
+      "2": 4350000,
+      "3": 4600000,
+      "4": 4050000,
+      "5": 3800000,
+      "6": 4350000,
+      "7": 4600000
     }
   },
   {
@@ -17260,8 +19906,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEL",
-    "basePrice": 9662468,
-    "currentPrice": 9662468,
+    "basePrice": 4928906,
+    "currentPrice": 8150000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -17292,6 +19938,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5350000,
+      "2": 5200000,
+      "3": 5600000,
+      "4": 6250000,
+      "5": 6750000,
+      "6": 7250000,
+      "7": 8150000
     }
   },
   {
@@ -17325,7 +19980,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a08c",
@@ -17334,8 +19990,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEF",
-    "basePrice": 5041145,
-    "currentPrice": 5041145,
+    "basePrice": 4776761,
+    "currentPrice": 3900000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -17366,6 +20022,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5200000,
+      "2": 4650000,
+      "3": 4400000,
+      "4": 4150000,
+      "5": 7900000,
+      "6": 6150000,
+      "7": 3900000
     }
   },
   {
@@ -17375,8 +20040,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEL",
-    "basePrice": 9306275,
-    "currentPrice": 9306275,
+    "basePrice": 5602302,
+    "currentPrice": 7750000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -17407,6 +20072,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5600000,
+      "2": 6400000,
+      "3": 8500000,
+      "4": 7600000,
+      "5": 7600000,
+      "6": 7200000,
+      "7": 7750000
     }
   },
   {
@@ -17440,7 +20114,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-685d52f25a86187e5ca911ba",
@@ -17473,7 +20148,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a008",
@@ -17482,8 +20158,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "MED",
-    "basePrice": 10070366,
-    "currentPrice": 10070366,
+    "basePrice": 4755845,
+    "currentPrice": 8050000,
     "fantasyValue": 1.7,
     "totalPoints": 12,
     "pointsByMatchday": {
@@ -17514,6 +20190,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4750000,
+      "2": 5150000,
+      "3": 5000000,
+      "4": 5400000,
+      "5": 6050000,
+      "6": 8150000,
+      "7": 8050000
     }
   },
   {
@@ -17523,8 +20208,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEF",
-    "basePrice": 8222795,
-    "currentPrice": 8222795,
+    "basePrice": 3919370,
+    "currentPrice": 7300000,
     "fantasyValue": 1.4,
     "totalPoints": 10,
     "pointsByMatchday": {
@@ -17555,6 +20240,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4300000,
+      "2": 3750000,
+      "3": 4300000,
+      "4": 4550000,
+      "5": 4400000,
+      "6": 5200000,
+      "7": 7300000
     }
   },
   {
@@ -17564,8 +20258,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEL",
-    "basePrice": 7361824,
-    "currentPrice": 7361824,
+    "basePrice": 5376755,
+    "currentPrice": 6400000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -17596,6 +20290,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5400000,
+      "2": 5400000,
+      "3": 5000000,
+      "4": 4750000,
+      "5": 4900000,
+      "6": 7300000,
+      "7": 6400000
     }
   },
   {
@@ -17605,8 +20308,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEF",
-    "basePrice": 3828289,
-    "currentPrice": 3828289,
+    "basePrice": 3824042,
+    "currentPrice": 3650000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -17637,6 +20340,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3000000,
+      "2": 2900000,
+      "3": 2650000,
+      "4": 2800000,
+      "5": 2400000,
+      "6": 4950000,
+      "7": 3650000
     }
   },
   {
@@ -17646,8 +20358,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "MED",
-    "basePrice": 7835929,
-    "currentPrice": 7835929,
+    "basePrice": 4520860,
+    "currentPrice": 6250000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -17678,6 +20390,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 5700000,
+      "2": 5650000,
+      "3": 5100000,
+      "4": 5250000,
+      "5": 6850000,
+      "6": 6250000,
+      "7": 6250000
     }
   },
   {
@@ -17711,7 +20432,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e69",
@@ -17720,8 +20442,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEF",
-    "basePrice": 2465292,
-    "currentPrice": 2465292,
+    "basePrice": 4859949,
+    "currentPrice": 950000,
     "fantasyValue": -2.1,
     "totalPoints": -15,
     "pointsByMatchday": {
@@ -17752,6 +20474,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3650000,
+      "2": 3300000,
+      "3": 2400000,
+      "4": 2450000,
+      "5": 2200000,
+      "6": 750000,
+      "7": 950000
     }
   },
   {
@@ -17785,7 +20516,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-688386d00a65d86e9a14cdf6",
@@ -17818,7 +20550,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68868a1a4d16ce1807dac872",
@@ -17851,7 +20584,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-685476e2ecfc9678387f7af5",
@@ -17860,8 +20594,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "MED",
-    "basePrice": 6385153,
-    "currentPrice": 6385153,
+    "basePrice": 4661043,
+    "currentPrice": 5650000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -17892,6 +20626,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 5700000,
+      "3": 5000000,
+      "4": 5950000,
+      "5": 5650000,
+      "6": 5650000,
+      "7": 5650000
     }
   },
   {
@@ -17925,7 +20668,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69923148852082242fce8d1c",
@@ -17958,7 +20702,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69922ff4232f90c18a98db0d",
@@ -17991,7 +20736,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6871125e553a7ca565ba1331",
@@ -18024,7 +20770,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e26",
@@ -18033,8 +20780,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEF",
-    "basePrice": 3891224,
-    "currentPrice": 3891224,
+    "basePrice": 3896566,
+    "currentPrice": 3350000,
     "fantasyValue": -0.1,
     "totalPoints": -1,
     "pointsByMatchday": {
@@ -18065,6 +20812,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 3100000,
+      "2": 3000000,
+      "3": 3150000,
+      "4": 3950000,
+      "5": 4850000,
+      "6": 4000000,
+      "7": 3350000
     }
   },
   {
@@ -18074,8 +20830,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEL",
-    "basePrice": 6896946,
-    "currentPrice": 6896946,
+    "basePrice": 5173658,
+    "currentPrice": 6300000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -18106,6 +20862,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5150000,
+      "2": 5550000,
+      "3": 5400000,
+      "4": 5800000,
+      "5": 6050000,
+      "6": 5900000,
+      "7": 6300000
     }
   },
   {
@@ -18115,8 +20880,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEF",
-    "basePrice": 8837048,
-    "currentPrice": 8837048,
+    "basePrice": 4103760,
+    "currentPrice": 7750000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -18147,6 +20912,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4900000,
+      "2": 4200000,
+      "3": 4750000,
+      "4": 5000000,
+      "5": 5250000,
+      "6": 5500000,
+      "7": 7750000
     }
   },
   {
@@ -18180,7 +20954,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fde",
@@ -18213,7 +20988,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e52",
@@ -18222,8 +20998,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEF",
-    "basePrice": 4119443,
-    "currentPrice": 4119443,
+    "basePrice": 4755607,
+    "currentPrice": 3600000,
     "fantasyValue": -0.6,
     "totalPoints": -4,
     "pointsByMatchday": {
@@ -18254,6 +21030,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4750000,
+      "2": 3550000,
+      "3": 3600000,
+      "4": 4150000,
+      "5": 4400000,
+      "6": 3850000,
+      "7": 3600000
     }
   },
   {
@@ -18263,8 +21048,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "POR",
-    "basePrice": 3880783,
-    "currentPrice": 3880783,
+    "basePrice": 3876947,
+    "currentPrice": 3750000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -18295,6 +21080,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4300000,
+      "2": 4550000,
+      "3": 4000000,
+      "4": 4950000,
+      "5": 4250000,
+      "6": 4000000,
+      "7": 3750000
     }
   },
   {
@@ -18304,8 +21098,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEL",
-    "basePrice": 10268521,
-    "currentPrice": 10268521,
+    "basePrice": 4954685,
+    "currentPrice": 8250000,
     "fantasyValue": 1.7,
     "totalPoints": 12,
     "pointsByMatchday": {
@@ -18336,6 +21130,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5350000,
+      "2": 5200000,
+      "3": 5600000,
+      "4": 5850000,
+      "5": 7700000,
+      "6": 7750000,
+      "7": 8250000
     }
   },
   {
@@ -18369,7 +21172,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e12",
@@ -18402,7 +21206,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a08e",
@@ -18435,7 +21240,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a060",
@@ -18444,8 +21250,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "MED",
-    "basePrice": 9112815,
-    "currentPrice": 9112815,
+    "basePrice": 4546924,
+    "currentPrice": 7800000,
     "fantasyValue": 1.4,
     "totalPoints": 10,
     "pointsByMatchday": {
@@ -18476,6 +21282,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4550000,
+      "2": 4550000,
+      "3": 6150000,
+      "4": 5150000,
+      "5": 6100000,
+      "6": 5800000,
+      "7": 7800000
     }
   },
   {
@@ -18485,8 +21300,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "MED",
-    "basePrice": 5661650,
-    "currentPrice": 5661650,
+    "basePrice": 4797403,
+    "currentPrice": 5300000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -18517,6 +21332,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5200000,
+      "2": 6250000,
+      "3": 5000000,
+      "4": 4900000,
+      "5": 5050000,
+      "6": 5450000,
+      "7": 5300000
     }
   },
   {
@@ -18526,8 +21350,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEF",
-    "basePrice": 8037011,
-    "currentPrice": 8037011,
+    "basePrice": 4163312,
+    "currentPrice": 6550000,
     "fantasyValue": 1.3,
     "totalPoints": 9,
     "pointsByMatchday": {
@@ -18558,6 +21382,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 6550000,
+      "2": 5650000,
+      "3": 6450000,
+      "4": 5750000,
+      "5": 5500000,
+      "6": 6450000,
+      "7": 6550000
     }
   },
   {
@@ -18567,8 +21400,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "MED",
-    "basePrice": 8498759,
-    "currentPrice": 8498759,
+    "basePrice": 4473279,
+    "currentPrice": 6700000,
     "fantasyValue": 1.3,
     "totalPoints": 9,
     "pointsByMatchday": {
@@ -18599,6 +21432,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4450000,
+      "2": 4450000,
+      "3": 4450000,
+      "4": 6850000,
+      "5": 5550000,
+      "6": 7300000,
+      "7": 6700000
     }
   },
   {
@@ -18632,7 +21474,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-685d5f01e9f378d6b07a530a",
@@ -18641,8 +21484,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEF",
-    "basePrice": 5049367,
-    "currentPrice": 5049367,
+    "basePrice": 4185394,
+    "currentPrice": 4550000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -18673,6 +21516,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3800000,
+      "2": 3550000,
+      "3": 3300000,
+      "4": 3050000,
+      "5": 3600000,
+      "6": 5850000,
+      "7": 4550000
     }
   },
   {
@@ -18706,7 +21558,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fc9",
@@ -18739,7 +21592,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a063",
@@ -18772,7 +21626,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e3e",
@@ -18781,8 +21636,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "MED",
-    "basePrice": 19155780,
-    "currentPrice": 19155780,
+    "basePrice": 4188656,
+    "currentPrice": 12800000,
     "fantasyValue": 4.6,
     "totalPoints": 32,
     "pointsByMatchday": {
@@ -18813,6 +21668,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 15,
       "minutes": 0,
       "keyActions": 8
+    },
+    "priceHistory": {
+      "1": 3800000,
+      "2": 5550000,
+      "3": 6550000,
+      "4": 11150000,
+      "5": 10800000,
+      "6": 11800000,
+      "7": 12800000
     }
   },
   {
@@ -18822,8 +21686,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEL",
-    "basePrice": 9751518,
-    "currentPrice": 9751518,
+    "basePrice": 5017956,
+    "currentPrice": 8200000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -18854,6 +21718,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5400000,
+      "2": 5250000,
+      "3": 6050000,
+      "4": 6150000,
+      "5": 6800000,
+      "6": 7300000,
+      "7": 8200000
     }
   },
   {
@@ -18863,8 +21736,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "MED",
-    "basePrice": 5519976,
-    "currentPrice": 5519976,
+    "basePrice": 4655729,
+    "currentPrice": 5750000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -18895,6 +21768,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4650000,
+      "2": 3850000,
+      "3": 4550000,
+      "4": 4400000,
+      "5": 4400000,
+      "6": 4000000,
+      "7": 5750000
     }
   },
   {
@@ -18904,8 +21786,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEF",
-    "basePrice": 10697653,
-    "currentPrice": 10697653,
+    "basePrice": 4843406,
+    "currentPrice": 9000000,
     "fantasyValue": 1.9,
     "totalPoints": 13,
     "pointsByMatchday": {
@@ -18936,6 +21818,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4450000,
+      "2": 5400000,
+      "3": 4700000,
+      "4": 7250000,
+      "5": 6750000,
+      "6": 6600000,
+      "7": 9000000
     }
   },
   {
@@ -18969,7 +21860,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a009",
@@ -18978,8 +21870,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEL",
-    "basePrice": 14302528,
-    "currentPrice": 14302528,
+    "basePrice": 4487733,
+    "currentPrice": 10050000,
     "fantasyValue": 3,
     "totalPoints": 21,
     "pointsByMatchday": {
@@ -19010,6 +21902,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 6900000,
+      "3": 8000000,
+      "4": 9650000,
+      "5": 9550000,
+      "6": 9250000,
+      "7": 10050000
     }
   },
   {
@@ -19043,7 +21944,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a035",
@@ -19052,8 +21954,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEL",
-    "basePrice": 15096020,
-    "currentPrice": 15096020,
+    "basePrice": 5670129,
+    "currentPrice": 12000000,
     "fantasyValue": 2.9,
     "totalPoints": 20,
     "pointsByMatchday": {
@@ -19084,6 +21986,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 5650000,
+      "2": 5650000,
+      "3": 6850000,
+      "4": 8000000,
+      "5": 7800000,
+      "6": 8850000,
+      "7": 12000000
     }
   },
   {
@@ -19093,8 +22004,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "MED",
-    "basePrice": 7770523,
-    "currentPrice": 7770523,
+    "basePrice": 4175728,
+    "currentPrice": 6200000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -19125,6 +22036,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5000000,
+      "2": 5100000,
+      "3": 4950000,
+      "4": 5350000,
+      "5": 6800000,
+      "6": 6200000,
+      "7": 6200000
     }
   },
   {
@@ -19158,7 +22078,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e29",
@@ -19191,7 +22112,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68f25b79603413997d30cfde",
@@ -19224,7 +22146,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-693585175e8f7df450cf43ec",
@@ -19257,7 +22180,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e28",
@@ -19266,8 +22190,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "POR",
-    "basePrice": 3749268,
-    "currentPrice": 3749268,
+    "basePrice": 3315432,
+    "currentPrice": 3700000,
     "fantasyValue": 0.1,
     "totalPoints": 1,
     "pointsByMatchday": {
@@ -19298,6 +22222,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4100000,
+      "2": 3400000,
+      "3": 3150000,
+      "4": 2900000,
+      "5": 2650000,
+      "6": 3600000,
+      "7": 3700000
     }
   },
   {
@@ -19307,8 +22240,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEL",
-    "basePrice": 9115914,
-    "currentPrice": 9115914,
+    "basePrice": 5090571,
+    "currentPrice": 7500000,
     "fantasyValue": 1.3,
     "totalPoints": 9,
     "pointsByMatchday": {
@@ -19339,6 +22272,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4700000,
+      "2": 4850000,
+      "3": 4850000,
+      "4": 7250000,
+      "5": 7550000,
+      "6": 7100000,
+      "7": 7500000
     }
   },
   {
@@ -19372,7 +22314,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fdd",
@@ -19381,8 +22324,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEF",
-    "basePrice": 4245853,
-    "currentPrice": 4245853,
+    "basePrice": 4242017,
+    "currentPrice": 4100000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -19413,6 +22356,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4650000,
+      "2": 4900000,
+      "3": 4350000,
+      "4": 5300000,
+      "5": 4600000,
+      "6": 4350000,
+      "7": 4100000
     }
   },
   {
@@ -19422,8 +22374,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEF",
-    "basePrice": 7766018,
-    "currentPrice": 7766018,
+    "basePrice": 4171908,
+    "currentPrice": 6300000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -19454,6 +22406,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 3750000,
+      "2": 3500000,
+      "3": 6050000,
+      "4": 7150000,
+      "5": 6000000,
+      "6": 5750000,
+      "7": 6300000
     }
   },
   {
@@ -19487,7 +22448,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a01f",
@@ -19496,8 +22458,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "MED",
-    "basePrice": 5702057,
-    "currentPrice": 5702057,
+    "basePrice": 3977810,
+    "currentPrice": 5300000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -19528,6 +22490,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3600000,
+      "2": 4150000,
+      "3": 4000000,
+      "4": 4000000,
+      "5": 4800000,
+      "6": 4500000,
+      "7": 5300000
     }
   },
   {
@@ -19537,8 +22508,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "POR",
-    "basePrice": 3570910,
-    "currentPrice": 3570910,
+    "basePrice": 3886800,
+    "currentPrice": 3700000,
     "fantasyValue": -0.3,
     "totalPoints": -2,
     "pointsByMatchday": {
@@ -19569,6 +22540,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 2700000,
+      "2": 3550000,
+      "3": 3000000,
+      "4": 2750000,
+      "5": 3300000,
+      "6": 2750000,
+      "7": 3700000
     }
   },
   {
@@ -19602,7 +22582,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69922f8ac68c0157b5776a28",
@@ -19635,7 +22616,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-685d51fc94a3fbe7b41a1c19",
@@ -19668,7 +22650,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a04d",
@@ -19701,7 +22684,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f5a",
@@ -19710,8 +22694,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "MED",
-    "basePrice": 6877461,
-    "currentPrice": 6877461,
+    "basePrice": 5152803,
+    "currentPrice": 6150000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -19742,6 +22726,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5150000,
+      "2": 5150000,
+      "3": 5150000,
+      "4": 5950000,
+      "5": 6450000,
+      "6": 6150000,
+      "7": 6150000
     }
   },
   {
@@ -19751,8 +22744,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEF",
-    "basePrice": 4997697,
-    "currentPrice": 4997697,
+    "basePrice": 4563587,
+    "currentPrice": 4500000,
     "fantasyValue": 0.1,
     "totalPoints": 1,
     "pointsByMatchday": {
@@ -19783,6 +22776,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4150000,
+      "2": 4700000,
+      "3": 4150000,
+      "4": 3900000,
+      "5": 3650000,
+      "6": 6200000,
+      "7": 4500000
     }
   },
   {
@@ -19792,8 +22794,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEF",
-    "basePrice": 5005219,
-    "currentPrice": 5005219,
+    "basePrice": 4571383,
+    "currentPrice": 4650000,
     "fantasyValue": 0.1,
     "totalPoints": 1,
     "pointsByMatchday": {
@@ -19824,6 +22826,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4950000,
+      "2": 4400000,
+      "3": 4150000,
+      "4": 5100000,
+      "5": 5600000,
+      "6": 4900000,
+      "7": 4650000
     }
   },
   {
@@ -19833,8 +22844,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "MED",
-    "basePrice": 5118256,
-    "currentPrice": 5118256,
+    "basePrice": 4684283,
+    "currentPrice": 4800000,
     "fantasyValue": 0.1,
     "totalPoints": 1,
     "pointsByMatchday": {
@@ -19865,6 +22876,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5100000,
+      "2": 5350000,
+      "3": 5600000,
+      "4": 5050000,
+      "5": 5200000,
+      "6": 5200000,
+      "7": 4800000
     }
   },
   {
@@ -19874,8 +22894,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "MED",
-    "basePrice": 9195534,
-    "currentPrice": 9195534,
+    "basePrice": 5061424,
+    "currentPrice": 7300000,
     "fantasyValue": 1.3,
     "totalPoints": 9,
     "pointsByMatchday": {
@@ -19906,6 +22926,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5850000,
+      "2": 5550000,
+      "3": 5550000,
+      "4": 5550000,
+      "5": 5950000,
+      "6": 8200000,
+      "7": 7300000
     }
   },
   {
@@ -19939,7 +22968,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0ba",
@@ -19948,8 +22978,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEL",
-    "basePrice": 18638540,
-    "currentPrice": 18638540,
+    "basePrice": 5402649,
+    "currentPrice": 13150000,
     "fantasyValue": 4,
     "totalPoints": 28,
     "pointsByMatchday": {
@@ -19980,6 +23010,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 5
+    },
+    "priceHistory": {
+      "1": 5800000,
+      "2": 5650000,
+      "3": 6050000,
+      "4": 8700000,
+      "5": 7650000,
+      "6": 13250000,
+      "7": 13150000
     }
   },
   {
@@ -19989,8 +23028,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEF",
-    "basePrice": 4030241,
-    "currentPrice": 4030241,
+    "basePrice": 4564624,
+    "currentPrice": 3150000,
     "fantasyValue": -0.7,
     "totalPoints": -5,
     "pointsByMatchday": {
@@ -20021,6 +23060,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 3350000,
+      "2": 3400000,
+      "3": 2350000,
+      "4": 5600000,
+      "5": 4150000,
+      "6": 3100000,
+      "7": 3150000
     }
   },
   {
@@ -20030,8 +23078,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEL",
-    "basePrice": 14978473,
-    "currentPrice": 14978473,
+    "basePrice": 4800801,
+    "currentPrice": 10900000,
     "fantasyValue": 3.1,
     "totalPoints": 22,
     "pointsByMatchday": {
@@ -20062,6 +23110,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 16,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 4800000,
+      "2": 4800000,
+      "3": 6800000,
+      "4": 8050000,
+      "5": 9300000,
+      "6": 9750000,
+      "7": 10900000
     }
   },
   {
@@ -20071,8 +23128,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "MED",
-    "basePrice": 6696238,
-    "currentPrice": 6696238,
+    "basePrice": 4542265,
+    "currentPrice": 5800000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -20103,6 +23160,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4950000,
+      "2": 6400000,
+      "3": 5800000,
+      "4": 5400000,
+      "5": 5550000,
+      "6": 5950000,
+      "7": 5800000
     }
   },
   {
@@ -20112,8 +23178,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEF",
-    "basePrice": 3216517,
-    "currentPrice": 3216517,
+    "basePrice": 4971722,
+    "currentPrice": 2050000,
     "fantasyValue": -1.6,
     "totalPoints": -11,
     "pointsByMatchday": {
@@ -20144,6 +23210,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3750000,
+      "2": 3800000,
+      "3": 3550000,
+      "4": 4100000,
+      "5": 2750000,
+      "6": 2000000,
+      "7": 2050000
     }
   },
   {
@@ -20177,7 +23252,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c64ed1aab797fdd31b207",
@@ -20210,7 +23286,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a022",
@@ -20243,7 +23320,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69923ae385dd029e3327a265",
@@ -20276,7 +23354,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479dfd",
@@ -20285,8 +23364,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "MED",
-    "basePrice": 7601170,
-    "currentPrice": 7601170,
+    "basePrice": 4866375,
+    "currentPrice": 6200000,
     "fantasyValue": 0.9,
     "totalPoints": 6,
     "pointsByMatchday": {
@@ -20317,6 +23396,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 6450000,
+      "2": 5850000,
+      "3": 5850000,
+      "4": 5850000,
+      "5": 5450000,
+      "6": 7200000,
+      "7": 6200000
     }
   },
   {
@@ -20350,7 +23438,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68555618e4e1847e955ca9bf",
@@ -20383,7 +23472,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e6a",
@@ -20392,8 +23482,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "MED",
-    "basePrice": 5125706,
-    "currentPrice": 5125706,
+    "basePrice": 5121596,
+    "currentPrice": 5100000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -20424,6 +23514,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5100000,
+      "2": 5500000,
+      "3": 4950000,
+      "4": 5100000,
+      "5": 5100000,
+      "6": 5100000,
+      "7": 5100000
     }
   },
   {
@@ -20433,8 +23532,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "MED",
-    "basePrice": 10772573,
-    "currentPrice": 10772573,
+    "basePrice": 4488052,
+    "currentPrice": 8150000,
     "fantasyValue": 2,
     "totalPoints": 14,
     "pointsByMatchday": {
@@ -20465,6 +23564,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 6100000,
+      "3": 5900000,
+      "4": 8950000,
+      "5": 7750000,
+      "6": 7750000,
+      "7": 8150000
     }
   },
   {
@@ -20474,8 +23582,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "POR",
-    "basePrice": 4958603,
-    "currentPrice": 4958603,
+    "basePrice": 3664493,
+    "currentPrice": 4250000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -20506,6 +23614,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4050000,
+      "2": 6300000,
+      "3": 5000000,
+      "4": 3950000,
+      "5": 4000000,
+      "6": 4950000,
+      "7": 4250000
     }
   },
   {
@@ -20539,7 +23656,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699262215865cd5125548521",
@@ -20572,7 +23690,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fcb",
@@ -20605,7 +23724,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992300285dd029e33e83ce2",
@@ -20638,7 +23758,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fe0",
@@ -20671,7 +23792,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0d0",
@@ -20680,8 +23802,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "MED",
-    "basePrice": 4455906,
-    "currentPrice": 4455906,
+    "basePrice": 4770974,
+    "currentPrice": 4250000,
     "fantasyValue": -0.3,
     "totalPoints": -2,
     "pointsByMatchday": {
@@ -20712,6 +23834,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4750000,
+      "2": 4750000,
+      "3": 4750000,
+      "4": 3950000,
+      "5": 4250000,
+      "6": 4250000,
+      "7": 4250000
     }
   },
   {
@@ -20745,7 +23876,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f45",
@@ -20754,8 +23886,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "MED",
-    "basePrice": 14567130,
-    "currentPrice": 14567130,
+    "basePrice": 4240554,
+    "currentPrice": 9750000,
     "fantasyValue": 3.1,
     "totalPoints": 22,
     "pointsByMatchday": {
@@ -20786,6 +23918,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 5
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 4750000,
+      "3": 4750000,
+      "4": 10350000,
+      "5": 9050000,
+      "6": 10350000,
+      "7": 9750000
     }
   },
   {
@@ -20795,8 +23936,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "POR",
-    "basePrice": 3639268,
-    "currentPrice": 3639268,
+    "basePrice": 4115432,
+    "currentPrice": 2900000,
     "fantasyValue": -0.4,
     "totalPoints": -3,
     "pointsByMatchday": {
@@ -20827,6 +23968,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 4750000,
+      "3": 5000000,
+      "4": 4450000,
+      "5": 4200000,
+      "6": 3950000,
+      "7": 2900000
     }
   },
   {
@@ -20860,7 +24010,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e8c",
@@ -20893,7 +24044,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6903da6eb3722e020e2819aa",
@@ -20902,8 +24054,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEL",
-    "basePrice": 6399213,
-    "currentPrice": 6399213,
+    "basePrice": 5534692,
+    "currentPrice": 6050000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -20934,6 +24086,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5550000,
+      "2": 5550000,
+      "3": 5550000,
+      "4": 5550000,
+      "5": 5550000,
+      "6": 6350000,
+      "7": 6050000
     }
   },
   {
@@ -20967,7 +24128,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6903e5442a103838b76f934b",
@@ -21000,7 +24162,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479de7",
@@ -21009,8 +24172,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "DEF",
-    "basePrice": 2987503,
-    "currentPrice": 2987503,
+    "basePrice": 3942845,
+    "currentPrice": 2750000,
     "fantasyValue": -0.9,
     "totalPoints": -6,
     "pointsByMatchday": {
@@ -21041,6 +24204,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3150000,
+      "2": 3050000,
+      "3": 2400000,
+      "4": 1900000,
+      "5": 1000000,
+      "6": 2250000,
+      "7": 2750000
     }
   },
   {
@@ -21050,8 +24222,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "MED",
-    "basePrice": 12851834,
-    "currentPrice": 12851834,
+    "basePrice": 4226354,
+    "currentPrice": 9000000,
     "fantasyValue": 2.7,
     "totalPoints": 19,
     "pointsByMatchday": {
@@ -21082,6 +24254,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 7950000,
+      "3": 8350000,
+      "4": 7350000,
+      "5": 9100000,
+      "6": 9300000,
+      "7": 9000000
     }
   },
   {
@@ -21091,8 +24272,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEL",
-    "basePrice": 10326272,
-    "currentPrice": 10326272,
+    "basePrice": 5181340,
+    "currentPrice": 7950000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -21123,6 +24304,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 5200000,
+      "2": 5200000,
+      "3": 6400000,
+      "4": 5950000,
+      "5": 9550000,
+      "6": 7800000,
+      "7": 7950000
     }
   },
   {
@@ -21132,8 +24322,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "DEL",
-    "basePrice": 6117854,
-    "currentPrice": 6117854,
+    "basePrice": 4823881,
+    "currentPrice": 5400000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -21164,6 +24354,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5200000,
+      "2": 5850000,
+      "3": 5950000,
+      "4": 5800000,
+      "5": 5800000,
+      "6": 5800000,
+      "7": 5400000
     }
   },
   {
@@ -21197,7 +24396,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a038",
@@ -21230,7 +24430,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-685554fac4220f4452f791c3",
@@ -21263,7 +24464,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a00b",
@@ -21272,8 +24474,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "MED",
-    "basePrice": 8259037,
-    "currentPrice": 8259037,
+    "basePrice": 4234653,
+    "currentPrice": 6500000,
     "fantasyValue": 1.3,
     "totalPoints": 9,
     "pointsByMatchday": {
@@ -21304,6 +24506,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4650000,
+      "2": 4500000,
+      "3": 5300000,
+      "4": 5800000,
+      "5": 5500000,
+      "6": 7100000,
+      "7": 6500000
     }
   },
   {
@@ -21337,7 +24548,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f73",
@@ -21346,8 +24558,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "MED",
-    "basePrice": 5710958,
-    "currentPrice": 5710958,
+    "basePrice": 4846300,
+    "currentPrice": 5500000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -21378,6 +24590,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4050000,
+      "2": 3950000,
+      "3": 4100000,
+      "4": 4100000,
+      "5": 5700000,
+      "6": 5100000,
+      "7": 5500000
     }
   },
   {
@@ -21387,8 +24608,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEF",
-    "basePrice": 3026673,
-    "currentPrice": 3026673,
+    "basePrice": 4622152,
+    "currentPrice": 1800000,
     "fantasyValue": -1.4,
     "totalPoints": -10,
     "pointsByMatchday": {
@@ -21419,6 +24640,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4200000,
+      "2": 4350000,
+      "3": 3150000,
+      "4": 3200000,
+      "5": 2550000,
+      "6": 2450000,
+      "7": 1800000
     }
   },
   {
@@ -21452,7 +24682,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e54",
@@ -21461,8 +24692,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "MED",
-    "basePrice": 6499241,
-    "currentPrice": 6499241,
+    "basePrice": 4345268,
+    "currentPrice": 5600000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -21493,6 +24724,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4350000,
+      "2": 4350000,
+      "3": 4350000,
+      "4": 4750000,
+      "5": 4600000,
+      "6": 6200000,
+      "7": 5600000
     }
   },
   {
@@ -21502,8 +24742,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEL",
-    "basePrice": 18658198,
-    "currentPrice": 18658198,
+    "basePrice": 4992033,
+    "currentPrice": 12850000,
     "fantasyValue": 4.1,
     "totalPoints": 29,
     "pointsByMatchday": {
@@ -21534,6 +24774,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 14,
       "minutes": 0,
       "keyActions": 5
+    },
+    "priceHistory": {
+      "1": 7000000,
+      "2": 9050000,
+      "3": 8000000,
+      "4": 10000000,
+      "5": 11250000,
+      "6": 11700000,
+      "7": 12850000
     }
   },
   {
@@ -21543,8 +24792,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEL",
-    "basePrice": 14919710,
-    "currentPrice": 14919710,
+    "basePrice": 5274093,
+    "currentPrice": 10250000,
     "fantasyValue": 2.9,
     "totalPoints": 20,
     "pointsByMatchday": {
@@ -21575,6 +24824,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 9250000,
+      "2": 7750000,
+      "3": 9750000,
+      "4": 11000000,
+      "5": 10250000,
+      "6": 10250000,
+      "7": 10250000
     }
   },
   {
@@ -21608,7 +24866,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6963c8c7852082242f0fa8c8",
@@ -21641,7 +24900,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f8a",
@@ -21650,8 +24910,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEF",
-    "basePrice": 3705462,
-    "currentPrice": 3705462,
+    "basePrice": 4501078,
+    "currentPrice": 3100000,
     "fantasyValue": -0.7,
     "totalPoints": -5,
     "pointsByMatchday": {
@@ -21682,6 +24942,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4100000,
+      "2": 3850000,
+      "3": 3600000,
+      "4": 3350000,
+      "5": 3100000,
+      "6": 3650000,
+      "7": 3100000
     }
   },
   {
@@ -21715,7 +24984,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68f357d79c9dd5d3ab951710",
@@ -21748,7 +25018,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-690cf3143a5979417f9d0557",
@@ -21757,8 +25028,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "MED",
-    "basePrice": 5635747,
-    "currentPrice": 5635747,
+    "basePrice": 4341911,
+    "currentPrice": 5100000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -21789,6 +25060,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4750000,
+      "2": 4200000,
+      "3": 4350000,
+      "4": 4750000,
+      "5": 5400000,
+      "6": 5100000,
+      "7": 5100000
     }
   },
   {
@@ -21822,7 +25102,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c8373fbdc93ad2b0f6c13",
@@ -21855,7 +25136,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0a6",
@@ -21864,8 +25146,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEF",
-    "basePrice": 4591531,
-    "currentPrice": 4591531,
+    "basePrice": 4437010,
+    "currentPrice": 4300000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -21896,6 +25178,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4450000,
+      "2": 3250000,
+      "3": 2900000,
+      "4": 3600000,
+      "5": 5850000,
+      "6": 4550000,
+      "7": 4300000
     }
   },
   {
@@ -21905,8 +25196,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEL",
-    "basePrice": 8931394,
-    "currentPrice": 8931394,
+    "basePrice": 4646462,
+    "currentPrice": 6900000,
     "fantasyValue": 1.3,
     "totalPoints": 9,
     "pointsByMatchday": {
@@ -21937,6 +25228,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 4650000,
+      "2": 4650000,
+      "3": 5050000,
+      "4": 5300000,
+      "5": 7150000,
+      "6": 7200000,
+      "7": 6900000
     }
   },
   {
@@ -21946,8 +25246,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "DEF",
-    "basePrice": 4072740,
-    "currentPrice": 4072740,
+    "basePrice": 4229178,
+    "currentPrice": 3850000,
     "fantasyValue": -0.1,
     "totalPoints": -1,
     "pointsByMatchday": {
@@ -21978,6 +25278,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4650000,
+      "2": 4100000,
+      "3": 3450000,
+      "4": 3350000,
+      "5": 4300000,
+      "6": 4400000,
+      "7": 3850000
     }
   },
   {
@@ -22011,7 +25320,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699260e5bd4c1c1e46d1636c",
@@ -22044,7 +25354,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699234635af6640949fc0d58",
@@ -22053,8 +25364,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEF",
-    "basePrice": 5156011,
-    "currentPrice": 5156011,
+    "basePrice": 3711764,
+    "currentPrice": 4750000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -22085,6 +25396,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4100000,
+      "2": 3550000,
+      "3": 4900000,
+      "4": 4050000,
+      "5": 3800000,
+      "6": 3950000,
+      "7": 4750000
     }
   },
   {
@@ -22094,8 +25414,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEF",
-    "basePrice": 9458163,
-    "currentPrice": 9458163,
+    "basePrice": 4143916,
+    "currentPrice": 7450000,
     "fantasyValue": 1.7,
     "totalPoints": 12,
     "pointsByMatchday": {
@@ -22126,6 +25446,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 6550000,
+      "2": 6050000,
+      "3": 6700000,
+      "4": 5600000,
+      "5": 7100000,
+      "6": 6650000,
+      "7": 7450000
     }
   },
   {
@@ -22135,8 +25464,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEL",
-    "basePrice": 21694819,
-    "currentPrice": 21694819,
+    "basePrice": 5437695,
+    "currentPrice": 14800000,
     "fantasyValue": 5,
     "totalPoints": 35,
     "pointsByMatchday": {
@@ -22167,6 +25496,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 15,
       "minutes": 0,
       "keyActions": 8
+    },
+    "priceHistory": {
+      "1": 7050000,
+      "2": 10050000,
+      "3": 10300000,
+      "4": 9700000,
+      "5": 11300000,
+      "6": 14700000,
+      "7": 14800000
     }
   },
   {
@@ -22176,8 +25514,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEL",
-    "basePrice": 8635857,
-    "currentPrice": 8635857,
+    "basePrice": 5640103,
+    "currentPrice": 7150000,
     "fantasyValue": 0.9,
     "totalPoints": 6,
     "pointsByMatchday": {
@@ -22208,6 +25546,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 5250000,
+      "2": 5400000,
+      "3": 5400000,
+      "4": 7400000,
+      "5": 7850000,
+      "6": 7000000,
+      "7": 7150000
     }
   },
   {
@@ -22241,7 +25588,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69866fab521d568b0b36dc3e",
@@ -22274,7 +25622,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69866df4999ccd1bd773ae3a",
@@ -22283,8 +25632,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "MED",
-    "basePrice": 15745212,
-    "currentPrice": 15745212,
+    "basePrice": 5029869,
+    "currentPrice": 10800000,
     "fantasyValue": 3.3,
     "totalPoints": 23,
     "pointsByMatchday": {
@@ -22315,6 +25664,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 5450000,
+      "2": 5300000,
+      "3": 8100000,
+      "4": 11050000,
+      "5": 9950000,
+      "6": 11400000,
+      "7": 10800000
     }
   },
   {
@@ -22324,8 +25682,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "DEF",
-    "basePrice": 5027703,
-    "currentPrice": 5027703,
+    "basePrice": 4594278,
+    "currentPrice": 5000000,
     "fantasyValue": 0.1,
     "totalPoints": 1,
     "pointsByMatchday": {
@@ -22356,6 +25714,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5000000,
+      "2": 5250000,
+      "3": 5100000,
+      "4": 4700000,
+      "5": 4050000,
+      "6": 4750000,
+      "7": 5000000
     }
   },
   {
@@ -22365,8 +25732,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEL",
-    "basePrice": 7434240,
-    "currentPrice": 7434240,
+    "basePrice": 5280541,
+    "currentPrice": 6700000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -22397,6 +25764,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5300000,
+      "2": 5300000,
+      "3": 6500000,
+      "4": 6450000,
+      "5": 6300000,
+      "6": 6300000,
+      "7": 6700000
     }
   },
   {
@@ -22406,8 +25782,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "MED",
-    "basePrice": 11156803,
-    "currentPrice": 11156803,
+    "basePrice": 4401049,
+    "currentPrice": 8300000,
     "fantasyValue": 2.1,
     "totalPoints": 15,
     "pointsByMatchday": {
@@ -22438,6 +25814,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 4400000,
+      "2": 4400000,
+      "3": 6000000,
+      "4": 7800000,
+      "5": 6900000,
+      "6": 8500000,
+      "7": 8300000
     }
   },
   {
@@ -22471,7 +25856,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c7971de31082a4f7b554c",
@@ -22504,7 +25890,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fe1",
@@ -22513,8 +25900,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
-    "basePrice": 9997399,
-    "currentPrice": 9997399,
+    "basePrice": 4532741,
+    "currentPrice": 7550000,
     "fantasyValue": 1.7,
     "totalPoints": 12,
     "pointsByMatchday": {
@@ -22545,6 +25932,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 6950000,
+      "2": 7650000,
+      "3": 7050000,
+      "4": 7050000,
+      "5": 7850000,
+      "6": 7550000,
+      "7": 7550000
     }
   },
   {
@@ -22554,8 +25950,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEF",
-    "basePrice": 5256863,
-    "currentPrice": 5256863,
+    "basePrice": 4392890,
+    "currentPrice": 4750000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -22586,6 +25982,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4000000,
+      "2": 3750000,
+      "3": 3500000,
+      "4": 4050000,
+      "5": 3500000,
+      "6": 6050000,
+      "7": 4750000
     }
   },
   {
@@ -22619,7 +26024,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68f90111ba75a6bd8a8e9035",
@@ -22652,7 +26058,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69358bbf2a5cd17fb6ad5577",
@@ -22685,7 +26092,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68711455c38ec543f20ac6d9",
@@ -22694,8 +26102,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "MED",
-    "basePrice": 6924666,
-    "currentPrice": 6924666,
+    "basePrice": 4190145,
+    "currentPrice": 6000000,
     "fantasyValue": 0.9,
     "totalPoints": 6,
     "pointsByMatchday": {
@@ -22726,6 +26134,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4200000,
+      "2": 4200000,
+      "3": 5800000,
+      "4": 5200000,
+      "5": 4800000,
+      "6": 5350000,
+      "7": 6000000
     }
   },
   {
@@ -22735,8 +26152,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "MED",
-    "basePrice": 7823527,
-    "currentPrice": 7823527,
+    "basePrice": 4228458,
+    "currentPrice": 6550000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -22767,6 +26184,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 3850000,
+      "2": 4000000,
+      "3": 4000000,
+      "4": 5600000,
+      "5": 6600000,
+      "6": 5600000,
+      "7": 6550000
     }
   },
   {
@@ -22800,7 +26226,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a04e",
@@ -22809,8 +26236,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEL",
-    "basePrice": 11056313,
-    "currentPrice": 11056313,
+    "basePrice": 5650148,
+    "currentPrice": 8400000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -22841,6 +26268,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 5250000,
+      "2": 5400000,
+      "3": 7400000,
+      "4": 10650000,
+      "5": 8350000,
+      "6": 8250000,
+      "7": 8400000
     }
   },
   {
@@ -22850,8 +26286,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEL",
-    "basePrice": 6162889,
-    "currentPrice": 6162889,
+    "basePrice": 5298916,
+    "currentPrice": 5650000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -22882,6 +26318,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5300000,
+      "2": 5300000,
+      "3": 6100000,
+      "4": 5800000,
+      "5": 6200000,
+      "6": 6050000,
+      "7": 5650000
     }
   },
   {
@@ -22915,7 +26360,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c762b18a4ade80775459f",
@@ -22948,7 +26394,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e8d",
@@ -22981,7 +26428,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6962d5f1da0ea3c860d61374",
@@ -23014,7 +26462,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0a9",
@@ -23047,7 +26496,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-685559dfc070f8be66727134",
@@ -23056,8 +26506,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEF",
-    "basePrice": 2068928,
-    "currentPrice": 2068928,
+    "basePrice": 4144407,
+    "currentPrice": 600000,
     "fantasyValue": -1.9,
     "totalPoints": -13,
     "pointsByMatchday": {
@@ -23088,6 +26538,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3750000,
+      "2": 3100000,
+      "3": 2600000,
+      "4": 1300000,
+      "5": 1500000,
+      "6": 1250000,
+      "7": 600000
     }
   },
   {
@@ -23121,7 +26580,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992418aad2d585c20a43e17",
@@ -23154,7 +26614,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fdf",
@@ -23163,8 +26624,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEL",
-    "basePrice": 22573520,
-    "currentPrice": 22573520,
+    "basePrice": 4516807,
+    "currentPrice": 15500000,
     "fantasyValue": 5.4,
     "totalPoints": 38,
     "pointsByMatchday": {
@@ -23195,6 +26656,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 15,
       "minutes": 0,
       "keyActions": 7
+    },
+    "priceHistory": {
+      "1": 7300000,
+      "2": 6650000,
+      "3": 6500000,
+      "4": 8900000,
+      "5": 9600000,
+      "6": 13000000,
+      "7": 15500000
     }
   },
   {
@@ -23228,7 +26698,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e2b",
@@ -23237,8 +26708,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEF",
-    "basePrice": 5452573,
-    "currentPrice": 5452573,
+    "basePrice": 4158463,
+    "currentPrice": 4750000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -23269,6 +26740,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3750000,
+      "2": 4700000,
+      "3": 4000000,
+      "4": 3750000,
+      "5": 3500000,
+      "6": 6050000,
+      "7": 4750000
     }
   },
   {
@@ -23302,7 +26782,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c5de2a860dc0648ab74e1",
@@ -23335,7 +26816,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c5ddd566dc6fe235d9548",
@@ -23368,7 +26850,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6962d9f06d780a79e494a88f",
@@ -23401,7 +26884,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6935737c9286b6b3cb6a512e",
@@ -23434,7 +26918,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699261c8521d568b0b417faf",
@@ -23467,7 +26952,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-693581e4c8ab027defd8a36b",
@@ -23500,7 +26986,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0c1",
@@ -23533,7 +27020,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6988f24f999ccd1bd7cb4656",
@@ -23566,7 +27054,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e6f",
@@ -23599,7 +27088,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6962d75aa92bf30b1b6eeacf",
@@ -23632,7 +27122,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e6d",
@@ -23641,8 +27132,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "MED",
-    "basePrice": 4215112,
-    "currentPrice": 4215112,
+    "basePrice": 4690865,
+    "currentPrice": 3950000,
     "fantasyValue": -0.4,
     "totalPoints": -3,
     "pointsByMatchday": {
@@ -23673,6 +27164,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4700000,
+      "2": 5100000,
+      "3": 4550000,
+      "4": 3500000,
+      "5": 3950000,
+      "6": 3950000,
+      "7": 3950000
     }
   },
   {
@@ -23706,7 +27206,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69357258d61e9010125dc416",
@@ -23739,7 +27240,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69aad2e8f1d58c27ec8ecdad",
@@ -23748,8 +27250,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "MED",
-    "basePrice": 5787643,
-    "currentPrice": 5787643,
+    "basePrice": 4063533,
+    "currentPrice": 4900000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -23780,6 +27282,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4450000,
+      "2": 5100000,
+      "3": 5600000,
+      "4": 5300000,
+      "5": 5300000,
+      "6": 5300000,
+      "7": 4900000
     }
   },
   {
@@ -23813,7 +27324,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a024",
@@ -23846,7 +27358,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a07a",
@@ -23855,8 +27368,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEL",
-    "basePrice": 9711166,
-    "currentPrice": 9711166,
+    "basePrice": 4565823,
+    "currentPrice": 8050000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -23887,6 +27400,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 4550000,
+      "2": 4550000,
+      "3": 4550000,
+      "4": 4550000,
+      "5": 6950000,
+      "6": 6050000,
+      "7": 8050000
     }
   },
   {
@@ -23920,7 +27442,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e8f",
@@ -23953,7 +27476,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e90",
@@ -23986,7 +27510,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6963c81e32694b82e1b68113",
@@ -24019,7 +27544,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e16",
@@ -24052,7 +27578,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0bc",
@@ -24061,8 +27588,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEL",
-    "basePrice": 14491415,
-    "currentPrice": 14491415,
+    "basePrice": 5175798,
+    "currentPrice": 10200000,
     "fantasyValue": 2.9,
     "totalPoints": 20,
     "pointsByMatchday": {
@@ -24093,6 +27620,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 6000000,
+      "2": 5700000,
+      "3": 7300000,
+      "4": 8300000,
+      "5": 10500000,
+      "6": 10650000,
+      "7": 10200000
     }
   },
   {
@@ -24126,7 +27662,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f60",
@@ -24159,7 +27696,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992615d04d46f6fe5ccb950",
@@ -24192,7 +27730,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69926074ad2d585c203be38c",
@@ -24225,7 +27764,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69925eff833742717ecfb025",
@@ -24258,7 +27798,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a07b",
@@ -24267,8 +27808,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "POR",
-    "basePrice": 3692264,
-    "currentPrice": 3692264,
+    "basePrice": 3688428,
+    "currentPrice": 3550000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -24299,6 +27840,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4100000,
+      "2": 3550000,
+      "3": 4500000,
+      "4": 4600000,
+      "5": 4050000,
+      "6": 3800000,
+      "7": 3550000
     }
   },
   {
@@ -24332,7 +27882,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0bf",
@@ -24365,7 +27916,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a069",
@@ -24398,7 +27950,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c763f024040d0b2332a13",
@@ -24431,7 +27984,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c79771aab797fdda9ffa3",
@@ -24464,7 +28018,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0bd",
@@ -24473,8 +28028,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEF",
-    "basePrice": 4032907,
-    "currentPrice": 4032907,
+    "basePrice": 4829071,
+    "currentPrice": 3300000,
     "fantasyValue": -0.7,
     "totalPoints": -5,
     "pointsByMatchday": {
@@ -24505,6 +28060,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5250000,
+      "2": 4300000,
+      "3": 4200000,
+      "4": 3950000,
+      "5": 4500000,
+      "6": 3950000,
+      "7": 3300000
     }
   },
   {
@@ -24514,8 +28078,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEF",
-    "basePrice": 4503944,
-    "currentPrice": 4503944,
+    "basePrice": 4660382,
+    "currentPrice": 4250000,
     "fantasyValue": -0.1,
     "totalPoints": -1,
     "pointsByMatchday": {
@@ -24546,6 +28110,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 4500000,
+      "3": 4250000,
+      "4": 4800000,
+      "5": 5050000,
+      "6": 4500000,
+      "7": 4250000
     }
   },
   {
@@ -24555,8 +28128,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "POR",
-    "basePrice": 5922981,
-    "currentPrice": 5922981,
+    "basePrice": 4628871,
+    "currentPrice": 5250000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -24587,6 +28160,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4250000,
+      "2": 5200000,
+      "3": 4500000,
+      "4": 4250000,
+      "5": 4000000,
+      "6": 6550000,
+      "7": 5250000
     }
   },
   {
@@ -24596,8 +28178,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "MED",
-    "basePrice": 4622652,
-    "currentPrice": 4622652,
+    "basePrice": 4938405,
+    "currentPrice": 4300000,
     "fantasyValue": -0.3,
     "totalPoints": -2,
     "pointsByMatchday": {
@@ -24628,6 +28210,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4950000,
+      "2": 4550000,
+      "3": 4700000,
+      "4": 4700000,
+      "5": 4700000,
+      "6": 4700000,
+      "7": 4300000
     }
   },
   {
@@ -24661,7 +28252,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a00f",
@@ -24694,7 +28286,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699261b85af6640949f1261b",
@@ -24727,7 +28320,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69926201c68c0157b589679f",
@@ -24760,7 +28354,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6962dfe7da0ea3c8602446c6",
@@ -24793,7 +28388,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6903de0f2a103838b75c18bb",
@@ -24826,7 +28422,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a050",
@@ -24835,8 +28432,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEF",
-    "basePrice": 4209478,
-    "currentPrice": 4209478,
+    "basePrice": 4205231,
+    "currentPrice": 4050000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -24867,6 +28464,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3800000,
+      "2": 3150000,
+      "3": 2650000,
+      "4": 3350000,
+      "5": 2800000,
+      "6": 5350000,
+      "7": 4050000
     }
   },
   {
@@ -24900,7 +28506,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e2c",
@@ -24933,7 +28540,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6903dc6733f52a4eda87ff1f",
@@ -24966,7 +28574,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68fe650891bafbfafaed5d04",
@@ -24975,8 +28584,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEL",
-    "basePrice": 11765320,
-    "currentPrice": 11765320,
+    "basePrice": 5028607,
+    "currentPrice": 9300000,
     "fantasyValue": 2,
     "totalPoints": 14,
     "pointsByMatchday": {
@@ -25007,6 +28616,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 4650000,
+      "2": 4800000,
+      "3": 4400000,
+      "4": 4550000,
+      "5": 6150000,
+      "6": 8350000,
+      "7": 9300000
     }
   },
   {
@@ -25040,7 +28658,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c7637ddec61d6fb38e839",
@@ -25073,7 +28692,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6962db398334d431b3d62126",
@@ -25106,7 +28726,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-692874963685bb7f2bf7568e",
@@ -25139,7 +28760,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c64e120cf63c240beb928",
@@ -25172,7 +28794,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f49",
@@ -25205,7 +28828,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6985d780409e57cdd3d47542",
@@ -25214,8 +28838,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEF",
-    "basePrice": 3946833,
-    "currentPrice": 3946833,
+    "basePrice": 3942997,
+    "currentPrice": 3800000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -25246,6 +28870,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4750000,
+      "2": 4050000,
+      "3": 4600000,
+      "4": 4850000,
+      "5": 4300000,
+      "6": 4050000,
+      "7": 3800000
     }
   },
   {
@@ -25279,7 +28912,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6994469346ac2f607745b91c",
@@ -25312,7 +28946,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69866ea0eed6e169e679135e",
@@ -25345,7 +28980,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-697bcb4e489a7b887d0c2289",
@@ -25354,8 +28990,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "MED",
-    "basePrice": 6638410,
-    "currentPrice": 6638410,
+    "basePrice": 4484163,
+    "currentPrice": 5600000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -25386,6 +29022,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 4500000,
+      "3": 4500000,
+      "4": 4500000,
+      "5": 5300000,
+      "6": 6600000,
+      "7": 5600000
     }
   },
   {
@@ -25419,7 +29064,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6903dd998902e00484c167c0",
@@ -25452,7 +29098,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f8d",
@@ -25485,7 +29132,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699858e8c49f79532e043a11",
@@ -25518,7 +29166,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6962da4d521d568b0b8b9848",
@@ -25551,7 +29200,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fcd",
@@ -25584,7 +29234,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6903dd7b0cbb4946f9f474d9",
@@ -25617,7 +29268,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-693590f37d92105eda0f9671",
@@ -25626,8 +29278,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEL",
-    "basePrice": 14521164,
-    "currentPrice": 14521164,
+    "basePrice": 5094999,
+    "currentPrice": 10700000,
     "fantasyValue": 2.9,
     "totalPoints": 20,
     "pointsByMatchday": {
@@ -25658,6 +29310,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 5100000,
+      "2": 5100000,
+      "3": 7100000,
+      "4": 6350000,
+      "5": 9950000,
+      "6": 9400000,
+      "7": 10700000
     }
   },
   {
@@ -25691,7 +29352,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69499e3b2d9fe4ec9a60e642",
@@ -25724,7 +29386,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0c0",
@@ -25757,7 +29420,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69419ee1bcac81f99eea2540",
@@ -25790,7 +29454,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699262378de9396db92cae27",
@@ -25823,7 +29488,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c64f5566dc6fe237106f1",
@@ -25856,7 +29522,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-694973d07ebe240e3da7ca7b",
@@ -25889,7 +29556,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699856f76d780a79e4666366",
@@ -25922,7 +29590,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-692873d0c8ab027defdd9db1",
@@ -25931,8 +29600,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "MED",
-    "basePrice": 7532924,
-    "currentPrice": 7532924,
+    "basePrice": 5118403,
+    "currentPrice": 6200000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -25963,6 +29632,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5500000,
+      "2": 3750000,
+      "3": 4350000,
+      "4": 4750000,
+      "5": 7800000,
+      "6": 6600000,
+      "7": 6200000
     }
   },
   {
@@ -25996,7 +29674,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69866fea85dd029e3375c96c",
@@ -26029,7 +29708,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699261374177d9f2b86084fc",
@@ -26062,7 +29742,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69945fe18de9396db91c5047",
@@ -26095,7 +29776,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6941811526304a6b969d25c0",
@@ -26128,7 +29810,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c8816a860dc06486dea98",
@@ -26161,7 +29844,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a00d",
@@ -26170,8 +29854,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "DEL",
-    "basePrice": 8664153,
-    "currentPrice": 8664153,
+    "basePrice": 4959632,
+    "currentPrice": 7100000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -26202,6 +29886,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4550000,
+      "2": 5500000,
+      "3": 7200000,
+      "4": 6450000,
+      "5": 6850000,
+      "6": 6700000,
+      "7": 7100000
     }
   },
   {
@@ -26235,7 +29928,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c76456d141383e55bc28e",
@@ -26244,8 +29938,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEL",
-    "basePrice": 9692982,
-    "currentPrice": 9692982,
+    "basePrice": 5128735,
+    "currentPrice": 8400000,
     "fantasyValue": 1.4,
     "totalPoints": 10,
     "pointsByMatchday": {
@@ -26276,6 +29970,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5950000,
+      "2": 5650000,
+      "3": 5650000,
+      "4": 6450000,
+      "5": 6550000,
+      "6": 6400000,
+      "7": 8400000
     }
   },
   {
@@ -26285,8 +29988,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEF",
-    "basePrice": 5805968,
-    "currentPrice": 5805968,
+    "basePrice": 4082269,
+    "currentPrice": 5400000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -26317,6 +30020,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3700000,
+      "2": 4250000,
+      "3": 3700000,
+      "4": 4650000,
+      "5": 5150000,
+      "6": 4450000,
+      "7": 5400000
     }
   },
   {
@@ -26326,8 +30038,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEL",
-    "basePrice": 14155869,
-    "currentPrice": 14155869,
+    "basePrice": 5461485,
+    "currentPrice": 10350000,
     "fantasyValue": 2.7,
     "totalPoints": 19,
     "pointsByMatchday": {
@@ -26358,6 +30070,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 6650000,
+      "2": 9000000,
+      "3": 8350000,
+      "4": 10200000,
+      "5": 9450000,
+      "6": 10250000,
+      "7": 10350000
     }
   },
   {
@@ -26391,7 +30112,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6a0eb1ac4cd35beeeee7892d",
@@ -26400,8 +30122,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "MED",
-    "basePrice": 4877064,
-    "currentPrice": 4877064,
+    "basePrice": 4872954,
+    "currentPrice": 4850000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -26432,6 +30154,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4850000,
+      "2": 5250000,
+      "3": 4700000,
+      "4": 4850000,
+      "5": 4850000,
+      "6": 4850000,
+      "7": 4850000
     }
   },
   {
@@ -26465,7 +30196,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a092",
@@ -26474,8 +30206,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "MED",
-    "basePrice": 6234961,
-    "currentPrice": 6234961,
+    "basePrice": 4510851,
+    "currentPrice": 5500000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -26506,6 +30238,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 4100000,
+      "3": 4250000,
+      "4": 4650000,
+      "5": 4500000,
+      "6": 6100000,
+      "7": 5500000
     }
   },
   {
@@ -26515,8 +30256,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "DEL",
-    "basePrice": 8165615,
-    "currentPrice": 8165615,
+    "basePrice": 4999039,
+    "currentPrice": 6900000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -26547,6 +30288,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5800000,
+      "2": 5900000,
+      "3": 7350000,
+      "4": 6750000,
+      "5": 6750000,
+      "6": 6350000,
+      "7": 6900000
     }
   },
   {
@@ -26580,7 +30330,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69ff87bb25eb52f9571c629b",
@@ -26589,8 +30340,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "MED",
-    "basePrice": 13077439,
-    "currentPrice": 13077439,
+    "basePrice": 4643329,
+    "currentPrice": 10000000,
     "fantasyValue": 2.7,
     "totalPoints": 19,
     "pointsByMatchday": {
@@ -26621,6 +30372,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 4900000,
+      "3": 5700000,
+      "4": 6200000,
+      "5": 9100000,
+      "6": 8700000,
+      "7": 10000000
     }
   },
   {
@@ -26630,8 +30390,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEF",
-    "basePrice": 4405744,
-    "currentPrice": 4405744,
+    "basePrice": 4721908,
+    "currentPrice": 4050000,
     "fantasyValue": -0.3,
     "totalPoints": -2,
     "pointsByMatchday": {
@@ -26662,6 +30422,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5500000,
+      "2": 4000000,
+      "3": 4050000,
+      "4": 4600000,
+      "5": 4850000,
+      "6": 4300000,
+      "7": 4050000
     }
   },
   {
@@ -26671,8 +30440,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "MED",
-    "basePrice": 9811868,
-    "currentPrice": 9811868,
+    "basePrice": 5357210,
+    "currentPrice": 8450000,
     "fantasyValue": 1.4,
     "totalPoints": 10,
     "pointsByMatchday": {
@@ -26703,6 +30472,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4950000,
+      "2": 5100000,
+      "3": 4700000,
+      "4": 8050000,
+      "5": 6850000,
+      "6": 6850000,
+      "7": 8450000
     }
   },
   {
@@ -26712,8 +30490,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEL",
-    "basePrice": 6409889,
-    "currentPrice": 6409889,
+    "basePrice": 5284409,
+    "currentPrice": 5800000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -26744,6 +30522,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4900000,
+      "2": 5050000,
+      "3": 4650000,
+      "4": 4800000,
+      "5": 4800000,
+      "6": 6400000,
+      "7": 5800000
     }
   },
   {
@@ -26777,7 +30564,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6962da5432694b82e143fc1d",
@@ -26810,7 +30598,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a023",
@@ -26819,8 +30608,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEF",
-    "basePrice": 3674513,
-    "currentPrice": 3674513,
+    "basePrice": 4150677,
+    "currentPrice": 3550000,
     "fantasyValue": -0.4,
     "totalPoints": -3,
     "pointsByMatchday": {
@@ -26851,6 +30640,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4550000,
+      "2": 3600000,
+      "3": 3500000,
+      "4": 3250000,
+      "5": 3000000,
+      "6": 3150000,
+      "7": 3550000
     }
   },
   {
@@ -26860,8 +30658,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "POR",
-    "basePrice": 2406107,
-    "currentPrice": 2406107,
+    "basePrice": 4001175,
+    "currentPrice": 1350000,
     "fantasyValue": -1.4,
     "totalPoints": -10,
     "pointsByMatchday": {
@@ -26892,6 +30690,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 2800000,
+      "2": 2850000,
+      "3": 2600000,
+      "4": 3550000,
+      "5": 2050000,
+      "6": 1300000,
+      "7": 1350000
     }
   },
   {
@@ -26901,8 +30708,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "POR",
-    "basePrice": 2343915,
-    "currentPrice": 2343915,
+    "basePrice": 4418846,
+    "currentPrice": 1000000,
     "fantasyValue": -1.9,
     "totalPoints": -13,
     "pointsByMatchday": {
@@ -26933,6 +30740,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3200000,
+      "2": 3250000,
+      "3": 2200000,
+      "4": 2250000,
+      "5": 2000000,
+      "6": 950000,
+      "7": 1000000
     }
   },
   {
@@ -26966,7 +30782,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c655e3b32a0b91bb39aa4",
@@ -26999,7 +30816,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0d3",
@@ -27008,8 +30826,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEL",
-    "basePrice": 12118320,
-    "currentPrice": 12118320,
+    "basePrice": 5532429,
+    "currentPrice": 9650000,
     "fantasyValue": 2,
     "totalPoints": 14,
     "pointsByMatchday": {
@@ -27040,6 +30858,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 5550000,
+      "2": 5550000,
+      "3": 6750000,
+      "4": 8700000,
+      "5": 7800000,
+      "6": 8200000,
+      "7": 9650000
     }
   },
   {
@@ -27073,7 +30900,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69417f9ef53756b1dda9b34e",
@@ -27106,7 +30934,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69924274999ccd1bd73fa7b7",
@@ -27139,7 +30968,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6962dee515adfbb713fb28b0",
@@ -27148,8 +30978,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "MED",
-    "basePrice": 7652077,
-    "currentPrice": 7652077,
+    "basePrice": 4638652,
+    "currentPrice": 6550000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -27180,6 +31010,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5450000,
+      "2": 5550000,
+      "3": 5800000,
+      "4": 5650000,
+      "5": 5650000,
+      "6": 6450000,
+      "7": 6550000
     }
   },
   {
@@ -27213,7 +31052,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f74",
@@ -27222,8 +31062,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "MED",
-    "basePrice": 11764955,
-    "currentPrice": 11764955,
+    "basePrice": 4749475,
+    "currentPrice": 8950000,
     "fantasyValue": 2.1,
     "totalPoints": 15,
     "pointsByMatchday": {
@@ -27254,6 +31094,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 4750000,
+      "2": 5550000,
+      "3": 5650000,
+      "4": 5500000,
+      "5": 9500000,
+      "6": 7600000,
+      "7": 8950000
     }
   },
   {
@@ -27287,7 +31136,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c881b1a31b2d0b37dd5f7",
@@ -27320,7 +31170,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f8b",
@@ -27329,8 +31180,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEF",
-    "basePrice": 3498883,
-    "currentPrice": 3498883,
+    "basePrice": 4774636,
+    "currentPrice": 2600000,
     "fantasyValue": -1.1,
     "totalPoints": -8,
     "pointsByMatchday": {
@@ -27361,6 +31212,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4350000,
+      "2": 4900000,
+      "3": 3550000,
+      "4": 3200000,
+      "5": 3100000,
+      "6": 2850000,
+      "7": 2600000
     }
   },
   {
@@ -27394,7 +31254,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-696a54a7409e57cdd32f825c",
@@ -27403,8 +31264,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEL",
-    "basePrice": 14992315,
-    "currentPrice": 14992315,
+    "basePrice": 5246698,
+    "currentPrice": 10500000,
     "fantasyValue": 3,
     "totalPoints": 21,
     "pointsByMatchday": {
@@ -27435,6 +31296,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 5250000,
+      "2": 5250000,
+      "3": 8850000,
+      "4": 7500000,
+      "5": 9500000,
+      "6": 11550000,
+      "7": 10500000
     }
   },
   {
@@ -27444,8 +31314,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEF",
-    "basePrice": 6745015,
-    "currentPrice": 6745015,
+    "basePrice": 4591316,
+    "currentPrice": 6000000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -27476,6 +31346,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4200000,
+      "2": 6750000,
+      "3": 6650000,
+      "4": 5950000,
+      "5": 5700000,
+      "6": 5450000,
+      "7": 6000000
     }
   },
   {
@@ -27485,8 +31364,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEF",
-    "basePrice": 10187105,
-    "currentPrice": 10187105,
+    "basePrice": 4013543,
+    "currentPrice": 8400000,
     "fantasyValue": 2,
     "totalPoints": 14,
     "pointsByMatchday": {
@@ -27517,6 +31396,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 6000000,
+      "2": 4850000,
+      "3": 5400000,
+      "4": 5650000,
+      "5": 5900000,
+      "6": 6150000,
+      "7": 8400000
     }
   },
   {
@@ -27550,7 +31438,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6997059f409e57cdd3151502",
@@ -27559,8 +31448,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "MED",
-    "basePrice": 9414467,
-    "currentPrice": 9414467,
+    "basePrice": 4680631,
+    "currentPrice": 8050000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -27591,6 +31480,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4700000,
+      "2": 4700000,
+      "3": 4700000,
+      "4": 6300000,
+      "5": 6100000,
+      "6": 6750000,
+      "7": 8050000
     }
   },
   {
@@ -27624,7 +31522,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69867362eed6e169e68fa3f4",
@@ -27633,8 +31532,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "MED",
-    "basePrice": 6280374,
-    "currentPrice": 6280374,
+    "basePrice": 4555990,
+    "currentPrice": 5250000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -27665,6 +31564,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4550000,
+      "2": 4550000,
+      "3": 6150000,
+      "4": 5550000,
+      "5": 6350000,
+      "6": 6050000,
+      "7": 5250000
     }
   },
   {
@@ -27698,7 +31606,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69985906663645950ef46486",
@@ -27731,7 +31640,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0a8",
@@ -27740,8 +31650,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "POR",
-    "basePrice": 3254298,
-    "currentPrice": 3254298,
+    "basePrice": 4370188,
+    "currentPrice": 2450000,
     "fantasyValue": -1,
     "totalPoints": -7,
     "pointsByMatchday": {
@@ -27772,6 +31682,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3950000,
+      "2": 4500000,
+      "3": 3150000,
+      "4": 3200000,
+      "5": 2950000,
+      "6": 2700000,
+      "7": 2450000
     }
   },
   {
@@ -27805,7 +31724,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c83f1445c86b0f83153b6",
@@ -27838,7 +31758,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69925a41c0f68d6fa11c461b",
@@ -27847,8 +31768,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "POR",
-    "basePrice": 3759526,
-    "currentPrice": 3759526,
+    "basePrice": 4235690,
+    "currentPrice": 3050000,
     "fantasyValue": -0.4,
     "totalPoints": -3,
     "pointsByMatchday": {
@@ -27879,6 +31800,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4650000,
+      "2": 4900000,
+      "3": 5150000,
+      "4": 4600000,
+      "5": 4350000,
+      "6": 4100000,
+      "7": 3050000
     }
   },
   {
@@ -27912,7 +31842,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fe2",
@@ -27921,8 +31852,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "MED",
-    "basePrice": 22212885,
-    "currentPrice": 22212885,
+    "basePrice": 4875350,
+    "currentPrice": 14750000,
     "fantasyValue": 5.3,
     "totalPoints": 37,
     "pointsByMatchday": {
@@ -27953,6 +31884,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 16,
       "minutes": 0,
       "keyActions": 8
+    },
+    "priceHistory": {
+      "1": 9700000,
+      "2": 8700000,
+      "3": 12000000,
+      "4": 12250000,
+      "5": 11650000,
+      "6": 14050000,
+      "7": 14750000
     }
   },
   {
@@ -27986,7 +31926,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699856fd5af66409491a7270",
@@ -28019,7 +31960,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69946c665db4258925b2067a",
@@ -28028,8 +31970,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "MED",
-    "basePrice": 8524884,
-    "currentPrice": 8524884,
+    "basePrice": 4930637,
+    "currentPrice": 7550000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -28060,6 +32002,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5350000,
+      "2": 5200000,
+      "3": 6000000,
+      "4": 6100000,
+      "5": 5950000,
+      "6": 5950000,
+      "7": 7550000
     }
   },
   {
@@ -28069,8 +32020,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEF",
-    "basePrice": 3656834,
-    "currentPrice": 3656834,
+    "basePrice": 4452450,
+    "currentPrice": 3050000,
     "fantasyValue": -0.7,
     "totalPoints": -5,
     "pointsByMatchday": {
@@ -28101,6 +32052,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4050000,
+      "2": 3800000,
+      "3": 3550000,
+      "4": 3300000,
+      "5": 3050000,
+      "6": 3600000,
+      "7": 3050000
     }
   },
   {
@@ -28110,8 +32070,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "MED",
-    "basePrice": 18550016,
-    "currentPrice": 18550016,
+    "basePrice": 5254536,
+    "currentPrice": 13100000,
     "fantasyValue": 4.1,
     "totalPoints": 29,
     "pointsByMatchday": {
@@ -28142,6 +32102,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 6850000,
+      "2": 7850000,
+      "3": 9650000,
+      "4": 12750000,
+      "5": 11650000,
+      "6": 11500000,
+      "7": 13100000
     }
   },
   {
@@ -28151,8 +32120,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "MED",
-    "basePrice": 14424466,
-    "currentPrice": 14424466,
+    "basePrice": 4178986,
+    "currentPrice": 10000000,
     "fantasyValue": 3.1,
     "totalPoints": 22,
     "pointsByMatchday": {
@@ -28183,6 +32152,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 8600000,
+      "2": 7350000,
+      "3": 7200000,
+      "4": 10000000,
+      "5": 9350000,
+      "6": 9200000,
+      "7": 10000000
     }
   },
   {
@@ -28192,8 +32170,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "MED",
-    "basePrice": 6950864,
-    "currentPrice": 6950864,
+    "basePrice": 4366206,
+    "currentPrice": 5850000,
     "fantasyValue": 0.9,
     "totalPoints": 6,
     "pointsByMatchday": {
@@ -28224,6 +32202,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5150000,
+      "2": 6450000,
+      "3": 5850000,
+      "4": 5450000,
+      "5": 5600000,
+      "6": 6000000,
+      "7": 5850000
     }
   },
   {
@@ -28233,8 +32220,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEL",
-    "basePrice": 10321945,
-    "currentPrice": 10321945,
+    "basePrice": 5287424,
+    "currentPrice": 8050000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -28265,6 +32252,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 5700000,
+      "2": 7550000,
+      "3": 8400000,
+      "4": 8200000,
+      "5": 8050000,
+      "6": 8050000,
+      "7": 8050000
     }
   },
   {
@@ -28274,8 +32270,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "DEL",
-    "basePrice": 20336327,
-    "currentPrice": 20336327,
+    "basePrice": 4370299,
+    "currentPrice": 12850000,
     "fantasyValue": 4.9,
     "totalPoints": 34,
     "pointsByMatchday": {
@@ -28306,6 +32302,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 15,
       "minutes": 0,
       "keyActions": 6
+    },
+    "priceHistory": {
+      "1": 4750000,
+      "2": 7000000,
+      "3": 8100000,
+      "4": 9350000,
+      "5": 12600000,
+      "6": 13900000,
+      "7": 12850000
     }
   },
   {
@@ -28315,8 +32320,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "MED",
-    "basePrice": 9423341,
-    "currentPrice": 9423341,
+    "basePrice": 4538546,
+    "currentPrice": 7450000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -28347,6 +32352,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4550000,
+      "2": 4550000,
+      "3": 7750000,
+      "4": 7350000,
+      "5": 7050000,
+      "6": 7050000,
+      "7": 7450000
     }
   },
   {
@@ -28356,8 +32370,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEL",
-    "basePrice": 11019017,
-    "currentPrice": 11019017,
+    "basePrice": 5334496,
+    "currentPrice": 8350000,
     "fantasyValue": 1.7,
     "totalPoints": 12,
     "pointsByMatchday": {
@@ -28388,6 +32402,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 5750000,
+      "2": 7200000,
+      "3": 6600000,
+      "4": 7000000,
+      "5": 9250000,
+      "6": 8350000,
+      "7": 8350000
     }
   },
   {
@@ -28421,7 +32444,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c797d024040d0b24282ca",
@@ -28430,8 +32454,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "MED",
-    "basePrice": 8792683,
-    "currentPrice": 8792683,
+    "basePrice": 5198162,
+    "currentPrice": 7200000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -28462,6 +32486,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5200000,
+      "2": 5600000,
+      "3": 5450000,
+      "4": 6650000,
+      "5": 6200000,
+      "6": 7800000,
+      "7": 7200000
     }
   },
   {
@@ -28495,7 +32528,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6a0c4c4cd4b0bdb8c55e1b81",
@@ -28504,8 +32538,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "DEL",
-    "basePrice": 5737093,
-    "currentPrice": 5737093,
+    "basePrice": 4442983,
+    "currentPrice": 5500000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -28536,6 +32570,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4050000,
+      "2": 4600000,
+      "3": 4450000,
+      "4": 4450000,
+      "5": 4850000,
+      "6": 4700000,
+      "7": 5500000
     }
   },
   {
@@ -28569,7 +32612,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c764c6f73ff64099f7b8e",
@@ -28602,7 +32646,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6a0ea57ee5ad658dcd521174",
@@ -28611,8 +32656,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "MED",
-    "basePrice": 7725244,
-    "currentPrice": 7725244,
+    "basePrice": 4281682,
+    "currentPrice": 6300000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -28643,6 +32688,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5900000,
+      "2": 5700000,
+      "3": 6350000,
+      "4": 6050000,
+      "5": 6050000,
+      "6": 6450000,
+      "7": 6300000
     }
   },
   {
@@ -28676,7 +32730,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992616e03a416cfe91e8a28",
@@ -28709,7 +32764,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699709ca489a7b887d2dcff8",
@@ -28742,7 +32798,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e58",
@@ -28751,8 +32808,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "MED",
-    "basePrice": 8699408,
-    "currentPrice": 8699408,
+    "basePrice": 4675024,
+    "currentPrice": 7550000,
     "fantasyValue": 1.3,
     "totalPoints": 9,
     "pointsByMatchday": {
@@ -28783,6 +32840,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5100000,
+      "2": 4950000,
+      "3": 5750000,
+      "4": 6250000,
+      "5": 5950000,
+      "6": 5950000,
+      "7": 7550000
     }
   },
   {
@@ -28792,8 +32858,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEF",
-    "basePrice": 5109823,
-    "currentPrice": 5109823,
+    "basePrice": 4246124,
+    "currentPrice": 5050000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -28824,6 +32890,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3850000,
+      "2": 4400000,
+      "3": 3450000,
+      "4": 4150000,
+      "5": 4800000,
+      "6": 4100000,
+      "7": 5050000
     }
   },
   {
@@ -28857,7 +32932,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a027",
@@ -28890,7 +32966,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c65dacd00df3139aa4633",
@@ -28923,7 +33000,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6994487646ac2f60774afe12",
@@ -28956,7 +33034,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69926183852082242fda87e8",
@@ -28989,7 +33068,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6994470df9246e1365534c57",
@@ -28998,8 +33078,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "MED",
-    "basePrice": 9026411,
-    "currentPrice": 9026411,
+    "basePrice": 4292986,
+    "currentPrice": 7650000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -29030,6 +33110,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4700000,
+      "2": 4550000,
+      "3": 5350000,
+      "4": 5850000,
+      "5": 5950000,
+      "6": 6200000,
+      "7": 7650000
     }
   },
   {
@@ -29063,7 +33152,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69767d667b4555b9bdc22b75",
@@ -29096,7 +33186,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6985db6b521d568b0b4bef1f",
@@ -29105,8 +33196,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEF",
-    "basePrice": 9491737,
-    "currentPrice": 9491737,
+    "basePrice": 4327901,
+    "currentPrice": 8250000,
     "fantasyValue": 1.7,
     "totalPoints": 12,
     "pointsByMatchday": {
@@ -29137,6 +33228,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3950000,
+      "2": 3700000,
+      "3": 3450000,
+      "4": 6000000,
+      "5": 5500000,
+      "6": 6150000,
+      "7": 8250000
     }
   },
   {
@@ -29170,7 +33270,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c88234681189b2356c7bf",
@@ -29203,7 +33304,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6a0e9fcb1cdee0c96afdbf02",
@@ -29212,8 +33314,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEF",
-    "basePrice": 4423017,
-    "currentPrice": 4423017,
+    "basePrice": 3559044,
+    "currentPrice": 3900000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -29244,6 +33346,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3150000,
+      "2": 2900000,
+      "3": 2650000,
+      "4": 3200000,
+      "5": 2650000,
+      "6": 5200000,
+      "7": 3900000
     }
   },
   {
@@ -29253,8 +33364,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "MED",
-    "basePrice": 7894450,
-    "currentPrice": 7894450,
+    "basePrice": 5310340,
+    "currentPrice": 6800000,
     "fantasyValue": 0.9,
     "totalPoints": 6,
     "pointsByMatchday": {
@@ -29285,6 +33396,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5300000,
+      "2": 6100000,
+      "3": 5800000,
+      "4": 5800000,
+      "5": 5800000,
+      "6": 7400000,
+      "7": 6800000
     }
   },
   {
@@ -29318,7 +33438,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6a0eb1b59a9787b3143013a4",
@@ -29327,8 +33448,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEL",
-    "basePrice": 5165216,
-    "currentPrice": 5165216,
+    "basePrice": 5161106,
+    "currentPrice": 5150000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -29359,6 +33480,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5150000,
+      "2": 5550000,
+      "3": 5000000,
+      "4": 5150000,
+      "5": 5150000,
+      "6": 5150000,
+      "7": 5150000
     }
   },
   {
@@ -29368,8 +33498,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEF",
-    "basePrice": 3717533,
-    "currentPrice": 3717533,
+    "basePrice": 4513149,
+    "currentPrice": 3100000,
     "fantasyValue": -0.7,
     "totalPoints": -5,
     "pointsByMatchday": {
@@ -29400,6 +33530,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4100000,
+      "2": 3850000,
+      "3": 3600000,
+      "4": 3350000,
+      "5": 3100000,
+      "6": 3650000,
+      "7": 3100000
     }
   },
   {
@@ -29433,7 +33572,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-693574762a5cd17fb64c126e",
@@ -29466,7 +33606,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992604c833742717edbc1fa",
@@ -29499,7 +33640,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6a0e9f673f5dda4f49733332",
@@ -29508,8 +33650,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEF",
-    "basePrice": 5268921,
-    "currentPrice": 5268921,
+    "basePrice": 4405496,
+    "currentPrice": 5050000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -29540,6 +33682,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4000000,
+      "2": 4950000,
+      "3": 4250000,
+      "4": 4800000,
+      "5": 5050000,
+      "6": 4500000,
+      "7": 5050000
     }
   },
   {
@@ -29549,8 +33700,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "POR",
-    "basePrice": 3362706,
-    "currentPrice": 3362706,
+    "basePrice": 3359007,
+    "currentPrice": 3500000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -29581,6 +33732,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4150000,
+      "2": 3450000,
+      "3": 3200000,
+      "4": 2950000,
+      "5": 2700000,
+      "6": 3250000,
+      "7": 3500000
     }
   },
   {
@@ -29590,8 +33750,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEL",
-    "basePrice": 13090998,
-    "currentPrice": 13090998,
+    "basePrice": 5274285,
+    "currentPrice": 9250000,
     "fantasyValue": 2.3,
     "totalPoints": 16,
     "pointsByMatchday": {
@@ -29622,6 +33782,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 8450000,
+      "2": 9250000,
+      "3": 8100000,
+      "4": 8250000,
+      "5": 10250000,
+      "6": 9100000,
+      "7": 9250000
     }
   },
   {
@@ -29631,8 +33800,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "DEL",
-    "basePrice": 10174528,
-    "currentPrice": 10174528,
+    "basePrice": 5029870,
+    "currentPrice": 7650000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -29663,6 +33832,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 5450000,
+      "2": 7700000,
+      "3": 7200000,
+      "4": 8650000,
+      "5": 8050000,
+      "6": 8050000,
+      "7": 7650000
     }
   },
   {
@@ -29696,7 +33874,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a093",
@@ -29705,8 +33884,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "MED",
-    "basePrice": 7283208,
-    "currentPrice": 7283208,
+    "basePrice": 4868139,
+    "currentPrice": 6100000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -29737,6 +33916,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4450000,
+      "2": 4200000,
+      "3": 4350000,
+      "4": 6750000,
+      "5": 5850000,
+      "6": 6250000,
+      "7": 6100000
     }
   },
   {
@@ -29770,7 +33958,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6a0ea0ff3b79020d92dc60d0",
@@ -29779,8 +33968,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
-    "basePrice": 6848378,
-    "currentPrice": 6848378,
+    "basePrice": 4694953,
+    "currentPrice": 5950000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -29811,6 +34000,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5100000,
+      "2": 4950000,
+      "3": 5350000,
+      "4": 5200000,
+      "5": 6000000,
+      "6": 6100000,
+      "7": 5950000
     }
   },
   {
@@ -29844,7 +34042,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fcf",
@@ -29877,7 +34076,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-696a558d5af6640949ca69d7",
@@ -29910,7 +34110,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479fe3",
@@ -29919,8 +34120,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "MED",
-    "basePrice": 4222526,
-    "currentPrice": 4222526,
+    "basePrice": 5017183,
+    "currentPrice": 3750000,
     "fantasyValue": -0.7,
     "totalPoints": -5,
     "pointsByMatchday": {
@@ -29951,6 +34152,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4200000,
+      "2": 4500000,
+      "3": 3700000,
+      "4": 4000000,
+      "5": 4000000,
+      "6": 3600000,
+      "7": 3750000
     }
   },
   {
@@ -29960,8 +34170,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "MED",
-    "basePrice": 4633703,
-    "currentPrice": 4633703,
+    "basePrice": 4199730,
+    "currentPrice": 4600000,
     "fantasyValue": 0.1,
     "totalPoints": 1,
     "pointsByMatchday": {
@@ -29992,6 +34202,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4200000,
+      "2": 4200000,
+      "3": 4200000,
+      "4": 4200000,
+      "5": 3800000,
+      "6": 4350000,
+      "7": 4600000
     }
   },
   {
@@ -30001,8 +34220,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEF",
-    "basePrice": 2715317,
-    "currentPrice": 2715317,
+    "basePrice": 3831344,
+    "currentPrice": 1950000,
     "fantasyValue": -1,
     "totalPoints": -7,
     "pointsByMatchday": {
@@ -30033,6 +34252,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3450000,
+      "2": 3200000,
+      "3": 2950000,
+      "4": 2700000,
+      "5": 2450000,
+      "6": 2200000,
+      "7": 1950000
     }
   },
   {
@@ -30066,7 +34294,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c5de9e63a332a75f30980",
@@ -30099,7 +34328,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a067",
@@ -30108,8 +34338,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEF",
-    "basePrice": 8835356,
-    "currentPrice": 8835356,
+    "basePrice": 4531931,
+    "currentPrice": 7950000,
     "fantasyValue": 1.4,
     "totalPoints": 10,
     "pointsByMatchday": {
@@ -30140,6 +34370,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4950000,
+      "2": 4000000,
+      "3": 4700000,
+      "4": 5350000,
+      "5": 5450000,
+      "6": 5700000,
+      "7": 7950000
     }
   },
   {
@@ -30149,8 +34388,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEL",
-    "basePrice": 14416330,
-    "currentPrice": 14416330,
+    "basePrice": 5461124,
+    "currentPrice": 10950000,
     "fantasyValue": 2.7,
     "totalPoints": 19,
     "pointsByMatchday": {
@@ -30181,6 +34420,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 6250000,
+      "2": 5550000,
+      "3": 7700000,
+      "4": 9750000,
+      "5": 9100000,
+      "6": 8950000,
+      "7": 10950000
     }
   },
   {
@@ -30190,8 +34438,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEL",
-    "basePrice": 12377648,
-    "currentPrice": 12377648,
+    "basePrice": 4671757,
+    "currentPrice": 8650000,
     "fantasyValue": 2.3,
     "totalPoints": 16,
     "pointsByMatchday": {
@@ -30222,6 +34470,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 8250000,
+      "2": 8500000,
+      "3": 10300000,
+      "4": 9400000,
+      "5": 9400000,
+      "6": 8200000,
+      "7": 8650000
     }
   },
   {
@@ -30255,7 +34512,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69985706833742717e06d741",
@@ -30288,7 +34546,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6a0e9d7dd4b0bdb8c5465a80",
@@ -30297,8 +34556,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEF",
-    "basePrice": 7174508,
-    "currentPrice": 7174508,
+    "basePrice": 5020809,
+    "currentPrice": 6400000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -30329,6 +34588,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4600000,
+      "2": 7150000,
+      "3": 7050000,
+      "4": 6350000,
+      "5": 6100000,
+      "6": 5850000,
+      "7": 6400000
     }
   },
   {
@@ -30338,8 +34606,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "MED",
-    "basePrice": 6736664,
-    "currentPrice": 6736664,
+    "basePrice": 4583513,
+    "currentPrice": 6000000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -30370,6 +34638,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5000000,
+      "2": 5250000,
+      "3": 5500000,
+      "4": 5350000,
+      "5": 5350000,
+      "6": 5750000,
+      "7": 6000000
     }
   },
   {
@@ -30379,8 +34656,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "POR",
-    "basePrice": 3497022,
-    "currentPrice": 3497022,
+    "basePrice": 4292638,
+    "currentPrice": 2900000,
     "fantasyValue": -0.7,
     "totalPoints": -5,
     "pointsByMatchday": {
@@ -30411,6 +34688,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3900000,
+      "2": 3650000,
+      "3": 3400000,
+      "4": 3150000,
+      "5": 2900000,
+      "6": 3450000,
+      "7": 2900000
     }
   },
   {
@@ -30444,7 +34730,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f76",
@@ -30453,8 +34740,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEF",
-    "basePrice": 5160651,
-    "currentPrice": 5160651,
+    "basePrice": 4726678,
+    "currentPrice": 5150000,
     "fantasyValue": 0.1,
     "totalPoints": 1,
     "pointsByMatchday": {
@@ -30485,6 +34772,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4350000,
+      "2": 6500000,
+      "3": 6150000,
+      "4": 5200000,
+      "5": 5100000,
+      "6": 4450000,
+      "7": 5150000
     }
   },
   {
@@ -30494,8 +34790,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEL",
-    "basePrice": 13894693,
-    "currentPrice": 13894693,
+    "basePrice": 4939624,
+    "currentPrice": 9850000,
     "fantasyValue": 2.7,
     "totalPoints": 19,
     "pointsByMatchday": {
@@ -30526,6 +34822,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 4950000,
+      "2": 8950000,
+      "3": 8650000,
+      "4": 10600000,
+      "5": 9700000,
+      "6": 9300000,
+      "7": 9850000
     }
   },
   {
@@ -30535,8 +34840,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "MED",
-    "basePrice": 7067038,
-    "currentPrice": 7067038,
+    "basePrice": 4483065,
+    "currentPrice": 6000000,
     "fantasyValue": 0.9,
     "totalPoints": 6,
     "pointsByMatchday": {
@@ -30567,6 +34872,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 4500000,
+      "3": 6100000,
+      "4": 6300000,
+      "5": 6000000,
+      "6": 6000000,
+      "7": 6000000
     }
   },
   {
@@ -30600,7 +34914,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f78",
@@ -30609,8 +34924,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEL",
-    "basePrice": 23376853,
-    "currentPrice": 23376853,
+    "basePrice": 4949455,
+    "currentPrice": 15200000,
     "fantasyValue": 5.4,
     "totalPoints": 38,
     "pointsByMatchday": {
@@ -30641,6 +34956,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 14,
       "minutes": 0,
       "keyActions": 8
+    },
+    "priceHistory": {
+      "1": 12550000,
+      "2": 9700000,
+      "3": 11300000,
+      "4": 10700000,
+      "5": 12700000,
+      "6": 13950000,
+      "7": 15200000
     }
   },
   {
@@ -30674,7 +34998,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6a0e9fd95afc4d1f05eae54a",
@@ -30683,8 +35008,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "MED",
-    "basePrice": 6729388,
-    "currentPrice": 6729388,
+    "basePrice": 4575415,
+    "currentPrice": 5850000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -30715,6 +35040,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4600000,
+      "2": 4600000,
+      "3": 4600000,
+      "4": 5000000,
+      "5": 4850000,
+      "6": 6450000,
+      "7": 5850000
     }
   },
   {
@@ -30724,8 +35058,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEF",
-    "basePrice": 4728317,
-    "currentPrice": 4728317,
+    "basePrice": 4724207,
+    "currentPrice": 4250000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -30756,6 +35090,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4300000,
+      "2": 4050000,
+      "3": 6600000,
+      "4": 5300000,
+      "5": 5850000,
+      "6": 5300000,
+      "7": 4250000
     }
   },
   {
@@ -30789,7 +35132,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6a0ea4ad40f3cd059c803745",
@@ -30798,8 +35142,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEF",
-    "basePrice": 5934282,
-    "currentPrice": 5934282,
+    "basePrice": 4210035,
+    "currentPrice": 5050000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -30830,6 +35174,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5000000,
+      "2": 7100000,
+      "3": 5800000,
+      "4": 4750000,
+      "5": 4800000,
+      "6": 5750000,
+      "7": 5050000
     }
   },
   {
@@ -30839,8 +35192,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEL",
-    "basePrice": 4962091,
-    "currentPrice": 4962091,
+    "basePrice": 5437022,
+    "currentPrice": 4700000,
     "fantasyValue": -0.4,
     "totalPoints": -3,
     "pointsByMatchday": {
@@ -30871,6 +35224,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 5200000,
+      "3": 4800000,
+      "4": 4950000,
+      "5": 4950000,
+      "6": 4550000,
+      "7": 4700000
     }
   },
   {
@@ -30904,7 +35266,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-696a57184177d9f2b80a9248",
@@ -30937,7 +35300,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6995758846ac2f607711edf1",
@@ -30970,7 +35334,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69946c8546ac2f6077a7f225",
@@ -31003,7 +35368,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6a0ea69af46c5dddee620b20",
@@ -31012,8 +35378,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "DEF",
-    "basePrice": 3268496,
-    "currentPrice": 3268496,
+    "basePrice": 4064523,
+    "currentPrice": 2950000,
     "fantasyValue": -0.7,
     "totalPoints": -5,
     "pointsByMatchday": {
@@ -31044,6 +35410,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3650000,
+      "2": 3400000,
+      "3": 3150000,
+      "4": 2900000,
+      "5": 1850000,
+      "6": 2700000,
+      "7": 2950000
     }
   },
   {
@@ -31053,8 +35428,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEL",
-    "basePrice": 20206965,
-    "currentPrice": 20206965,
+    "basePrice": 4560800,
+    "currentPrice": 12950000,
     "fantasyValue": 4.7,
     "totalPoints": 33,
     "pointsByMatchday": {
@@ -31085,6 +35460,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 14,
       "minutes": 0,
       "keyActions": 6
+    },
+    "priceHistory": {
+      "1": 6950000,
+      "2": 8050000,
+      "3": 9300000,
+      "4": 8550000,
+      "5": 12150000,
+      "6": 13600000,
+      "7": 12950000
     }
   },
   {
@@ -31094,8 +35478,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEF",
-    "basePrice": 3080417,
-    "currentPrice": 3080417,
+    "basePrice": 4675485,
+    "currentPrice": 2050000,
     "fantasyValue": -1.4,
     "totalPoints": -10,
     "pointsByMatchday": {
@@ -31126,6 +35510,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3500000,
+      "2": 3550000,
+      "3": 3300000,
+      "4": 4250000,
+      "5": 2750000,
+      "6": 2000000,
+      "7": 2050000
     }
   },
   {
@@ -31135,8 +35528,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEL",
-    "basePrice": 9242981,
-    "currentPrice": 9242981,
+    "basePrice": 5108049,
+    "currentPrice": 7650000,
     "fantasyValue": 1.3,
     "totalPoints": 9,
     "pointsByMatchday": {
@@ -31167,6 +35560,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 6700000,
+      "2": 6100000,
+      "3": 6100000,
+      "4": 6100000,
+      "5": 7300000,
+      "6": 6850000,
+      "7": 7650000
     }
   },
   {
@@ -31176,8 +35578,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "MED",
-    "basePrice": 9514164,
-    "currentPrice": 9514164,
+    "basePrice": 4478410,
+    "currentPrice": 7250000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -31208,6 +35610,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 6500000,
+      "2": 6150000,
+      "3": 6400000,
+      "4": 6250000,
+      "5": 6250000,
+      "6": 7850000,
+      "7": 7250000
     }
   },
   {
@@ -31217,8 +35628,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "MED",
-    "basePrice": 5459443,
-    "currentPrice": 5459443,
+    "basePrice": 5025196,
+    "currentPrice": 5300000,
     "fantasyValue": 0.1,
     "totalPoints": 1,
     "pointsByMatchday": {
@@ -31249,6 +35660,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 5850000,
+      "3": 5150000,
+      "4": 5300000,
+      "5": 5300000,
+      "6": 5300000,
+      "7": 5300000
     }
   },
   {
@@ -31258,8 +35678,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
-    "basePrice": 6258660,
-    "currentPrice": 6258660,
+    "basePrice": 4105235,
+    "currentPrice": 5350000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -31290,6 +35710,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 4350000,
+      "3": 4750000,
+      "4": 4600000,
+      "5": 5000000,
+      "6": 5650000,
+      "7": 5350000
     }
   },
   {
@@ -31323,7 +35752,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6a0ea53af46c5dddee58e214",
@@ -31332,8 +35762,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "MED",
-    "basePrice": 6165359,
-    "currentPrice": 6165359,
+    "basePrice": 4871386,
+    "currentPrice": 5450000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -31364,6 +35794,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5250000,
+      "2": 5500000,
+      "3": 6150000,
+      "4": 5850000,
+      "5": 5850000,
+      "6": 5850000,
+      "7": 5450000
     }
   },
   {
@@ -31397,7 +35836,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e59",
@@ -31406,8 +35846,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEL",
-    "basePrice": 8454359,
-    "currentPrice": 8454359,
+    "basePrice": 5439564,
+    "currentPrice": 7500000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -31438,6 +35878,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5450000,
+      "2": 5450000,
+      "3": 5450000,
+      "4": 6250000,
+      "5": 6750000,
+      "6": 6850000,
+      "7": 7500000
     }
   },
   {
@@ -31447,8 +35896,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEF",
-    "basePrice": 5830782,
-    "currentPrice": 5830782,
+    "basePrice": 4386124,
+    "currentPrice": 5000000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -31479,6 +35928,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4800000,
+      "2": 4250000,
+      "3": 3200000,
+      "4": 4450000,
+      "5": 4950000,
+      "6": 5850000,
+      "7": 5000000
     }
   },
   {
@@ -31512,7 +35970,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6a0ea452438aea5581c29902",
@@ -31521,8 +35980,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEF",
-    "basePrice": 6955505,
-    "currentPrice": 6955505,
+    "basePrice": 4371532,
+    "currentPrice": 6150000,
     "fantasyValue": 0.9,
     "totalPoints": 6,
     "pointsByMatchday": {
@@ -31553,6 +36012,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3950000,
+      "2": 3700000,
+      "3": 6250000,
+      "4": 6150000,
+      "5": 5450000,
+      "6": 5200000,
+      "7": 6150000
     }
   },
   {
@@ -31586,7 +36054,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992608d409e57cdd3145272",
@@ -31619,7 +36088,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992451346ac2f6077b4eefd",
@@ -31652,7 +36122,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f77",
@@ -31661,8 +36132,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "MED",
-    "basePrice": 12623741,
-    "currentPrice": 12623741,
+    "basePrice": 5049494,
+    "currentPrice": 9900000,
     "fantasyValue": 2.4,
     "totalPoints": 17,
     "pointsByMatchday": {
@@ -31693,6 +36164,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 5050000,
+      "3": 5050000,
+      "4": 9050000,
+      "5": 7950000,
+      "6": 8600000,
+      "7": 9900000
     }
   },
   {
@@ -31726,7 +36206,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-695c133f034407a12058a9ac",
@@ -31759,7 +36240,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f4b",
@@ -31768,8 +36250,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEL",
-    "basePrice": 6699035,
-    "currentPrice": 6699035,
+    "basePrice": 5404925,
+    "currentPrice": 6000000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -31800,6 +36282,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5400000,
+      "2": 5400000,
+      "3": 6600000,
+      "4": 6150000,
+      "5": 6550000,
+      "6": 6400000,
+      "7": 6000000
     }
   },
   {
@@ -31809,8 +36300,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEF",
-    "basePrice": 5917780,
-    "currentPrice": 5917780,
+    "basePrice": 4194218,
+    "currentPrice": 5350000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -31841,6 +36332,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3800000,
+      "2": 6350000,
+      "3": 5850000,
+      "4": 5300000,
+      "5": 5050000,
+      "6": 4800000,
+      "7": 5350000
     }
   },
   {
@@ -31874,7 +36374,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69971e88663645950e0e6397",
@@ -31883,8 +36384,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "MED",
-    "basePrice": 6274434,
-    "currentPrice": 6274434,
+    "basePrice": 4550735,
+    "currentPrice": 5700000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -31915,6 +36416,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4950000,
+      "2": 4800000,
+      "3": 4800000,
+      "4": 4800000,
+      "5": 4800000,
+      "6": 5600000,
+      "7": 5700000
     }
   },
   {
@@ -31924,8 +36434,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEF",
-    "basePrice": 7590297,
-    "currentPrice": 7590297,
+    "basePrice": 4147009,
+    "currentPrice": 6300000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -31956,6 +36466,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 6550000,
+      "2": 6050000,
+      "3": 6300000,
+      "4": 5750000,
+      "5": 5500000,
+      "6": 6050000,
+      "7": 6300000
     }
   },
   {
@@ -31965,8 +36484,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEF",
-    "basePrice": 4562644,
-    "currentPrice": 4562644,
+    "basePrice": 3978397,
+    "currentPrice": 4400000,
     "fantasyValue": 0.1,
     "totalPoints": 1,
     "pointsByMatchday": {
@@ -31997,6 +36516,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4400000,
+      "2": 2650000,
+      "3": 2850000,
+      "4": 4200000,
+      "5": 3350000,
+      "6": 4300000,
+      "7": 4400000
     }
   },
   {
@@ -32006,8 +36534,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEL",
-    "basePrice": 13056680,
-    "currentPrice": 13056680,
+    "basePrice": 4960926,
+    "currentPrice": 9350000,
     "fantasyValue": 2.4,
     "totalPoints": 17,
     "pointsByMatchday": {
@@ -32038,6 +36566,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 6550000,
+      "2": 7950000,
+      "3": 6800000,
+      "4": 6950000,
+      "5": 8150000,
+      "6": 9700000,
+      "7": 9350000
     }
   },
   {
@@ -32071,7 +36608,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6a0e9d0c82a8985eaa1edfaf",
@@ -32080,8 +36618,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEL",
-    "basePrice": 4951290,
-    "currentPrice": 4951290,
+    "basePrice": 5426221,
+    "currentPrice": 4700000,
     "fantasyValue": -0.4,
     "totalPoints": -3,
     "pointsByMatchday": {
@@ -32112,6 +36650,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 5200000,
+      "3": 4800000,
+      "4": 4950000,
+      "5": 4950000,
+      "6": 4550000,
+      "7": 4700000
     }
   },
   {
@@ -32145,7 +36692,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479dec",
@@ -32154,8 +36702,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "MED",
-    "basePrice": 5701284,
-    "currentPrice": 5701284,
+    "basePrice": 4837585,
+    "currentPrice": 5350000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -32186,6 +36734,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5250000,
+      "2": 5100000,
+      "3": 5100000,
+      "4": 5500000,
+      "5": 5350000,
+      "6": 5350000,
+      "7": 5350000
     }
   },
   {
@@ -32195,8 +36752,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "POR",
-    "basePrice": 4997345,
-    "currentPrice": 4997345,
+    "basePrice": 4133920,
+    "currentPrice": 4950000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -32227,6 +36784,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3750000,
+      "2": 4300000,
+      "3": 3750000,
+      "4": 4300000,
+      "5": 4550000,
+      "6": 4000000,
+      "7": 4950000
     }
   },
   {
@@ -32260,7 +36826,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e2d",
@@ -32269,8 +36836,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "MED",
-    "basePrice": 20637840,
-    "currentPrice": 20637840,
+    "basePrice": 4851127,
+    "currentPrice": 13350000,
     "fantasyValue": 4.9,
     "totalPoints": 34,
     "pointsByMatchday": {
@@ -32301,6 +36868,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 15,
       "minutes": 0,
       "keyActions": 7
+    },
+    "priceHistory": {
+      "1": 6850000,
+      "2": 9300000,
+      "3": 10100000,
+      "4": 10150000,
+      "5": 12250000,
+      "6": 14550000,
+      "7": 13350000
     }
   },
   {
@@ -32310,8 +36886,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "MED",
-    "basePrice": 7737859,
-    "currentPrice": 7737859,
+    "basePrice": 4724160,
+    "currentPrice": 6450000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -32342,6 +36918,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5100000,
+      "2": 5750000,
+      "3": 6250000,
+      "4": 5950000,
+      "5": 5950000,
+      "6": 6750000,
+      "7": 6450000
     }
   },
   {
@@ -32351,8 +36936,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEF",
-    "basePrice": 3710015,
-    "currentPrice": 3710015,
+    "basePrice": 3866453,
+    "currentPrice": 3750000,
     "fantasyValue": -0.1,
     "totalPoints": -1,
     "pointsByMatchday": {
@@ -32383,6 +36968,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4250000,
+      "2": 3700000,
+      "3": 3450000,
+      "4": 3200000,
+      "5": 2950000,
+      "6": 3500000,
+      "7": 3750000
     }
   },
   {
@@ -32392,8 +36986,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "MED",
-    "basePrice": 12722002,
-    "currentPrice": 12722002,
+    "basePrice": 4456522,
+    "currentPrice": 9250000,
     "fantasyValue": 2.6,
     "totalPoints": 18,
     "pointsByMatchday": {
@@ -32424,6 +37018,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 4050000,
+      "2": 4200000,
+      "3": 4200000,
+      "4": 7000000,
+      "5": 9950000,
+      "6": 8450000,
+      "7": 9250000
     }
   },
   {
@@ -32433,8 +37036,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEL",
-    "basePrice": 15141412,
-    "currentPrice": 15141412,
+    "basePrice": 4895795,
+    "currentPrice": 10400000,
     "fantasyValue": 3.1,
     "totalPoints": 22,
     "pointsByMatchday": {
@@ -32465,6 +37068,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 14,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 5700000,
+      "2": 6600000,
+      "3": 8550000,
+      "4": 7250000,
+      "5": 11400000,
+      "6": 10700000,
+      "7": 10400000
     }
   },
   {
@@ -32474,8 +37086,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "MED",
-    "basePrice": 8434705,
-    "currentPrice": 8434705,
+    "basePrice": 4410595,
+    "currentPrice": 6950000,
     "fantasyValue": 1.3,
     "totalPoints": 9,
     "pointsByMatchday": {
@@ -32506,6 +37118,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4400000,
+      "2": 5200000,
+      "3": 5300000,
+      "4": 6750000,
+      "5": 6150000,
+      "6": 6150000,
+      "7": 6950000
     }
   },
   {
@@ -32515,8 +37136,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "MED",
-    "basePrice": 5429198,
-    "currentPrice": 5429198,
+    "basePrice": 4565636,
+    "currentPrice": 5050000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -32547,6 +37168,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4950000,
+      "2": 4800000,
+      "3": 4800000,
+      "4": 4800000,
+      "5": 5200000,
+      "6": 5050000,
+      "7": 5050000
     }
   },
   {
@@ -32556,8 +37186,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "MED",
-    "basePrice": 17168222,
-    "currentPrice": 17168222,
+    "basePrice": 4512468,
+    "currentPrice": 12150000,
     "fantasyValue": 3.9,
     "totalPoints": 27,
     "pointsByMatchday": {
@@ -32588,6 +37218,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 13,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 6500000,
+      "3": 8550000,
+      "4": 7900000,
+      "5": 8550000,
+      "6": 10650000,
+      "7": 12150000
     }
   },
   {
@@ -32597,8 +37236,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEF",
-    "basePrice": 4565337,
-    "currentPrice": 4565337,
+    "basePrice": 4560953,
+    "currentPrice": 4400000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -32629,6 +37268,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4950000,
+      "2": 4400000,
+      "3": 4950000,
+      "4": 5600000,
+      "5": 4900000,
+      "6": 4650000,
+      "7": 4400000
     }
   },
   {
@@ -32662,7 +37310,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992625d15adfbb713874e86",
@@ -32695,7 +37344,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e43",
@@ -32704,8 +37354,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEL",
-    "basePrice": 24891757,
-    "currentPrice": 24891757,
+    "basePrice": 4534359,
+    "currentPrice": 16050000,
     "fantasyValue": 6.1,
     "totalPoints": 43,
     "pointsByMatchday": {
@@ -32736,6 +37386,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 17,
       "minutes": 0,
       "keyActions": 8
+    },
+    "priceHistory": {
+      "1": 10150000,
+      "2": 11650000,
+      "3": 10300000,
+      "4": 13100000,
+      "5": 12050000,
+      "6": 15250000,
+      "7": 16050000
     }
   },
   {
@@ -32745,8 +37404,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEL",
-    "basePrice": 11429259,
-    "currentPrice": 11429259,
+    "basePrice": 5145012,
+    "currentPrice": 9850000,
     "fantasyValue": 2,
     "totalPoints": 14,
     "pointsByMatchday": {
@@ -32777,6 +37436,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5150000,
+      "2": 5150000,
+      "3": 5150000,
+      "4": 6350000,
+      "5": 6300000,
+      "6": 6950000,
+      "7": 9850000
     }
   },
   {
@@ -32786,8 +37454,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEF",
-    "basePrice": 4366181,
-    "currentPrice": 4366181,
+    "basePrice": 4362345,
+    "currentPrice": 4200000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -32818,6 +37486,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4750000,
+      "2": 4200000,
+      "3": 5150000,
+      "4": 5250000,
+      "5": 4700000,
+      "6": 4450000,
+      "7": 4200000
     }
   },
   {
@@ -32827,8 +37504,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEL",
-    "basePrice": 5912079,
-    "currentPrice": 5912079,
+    "basePrice": 5047558,
+    "currentPrice": 5550000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -32859,6 +37536,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 5050000,
+      "3": 5050000,
+      "4": 5050000,
+      "5": 5050000,
+      "6": 5850000,
+      "7": 5550000
     }
   },
   {
@@ -32868,8 +37554,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEF",
-    "basePrice": 5831141,
-    "currentPrice": 5831141,
+    "basePrice": 4537031,
+    "currentPrice": 5150000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -32900,6 +37586,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4150000,
+      "2": 5100000,
+      "3": 4400000,
+      "4": 4150000,
+      "5": 3900000,
+      "6": 6450000,
+      "7": 5150000
     }
   },
   {
@@ -32933,7 +37628,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6a0ea2bc1cdee0c96a0a6b2c",
@@ -32942,8 +37638,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEL",
-    "basePrice": 6201640,
-    "currentPrice": 6201640,
+    "basePrice": 4907804,
+    "currentPrice": 5650000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -32974,6 +37670,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5700000,
+      "2": 5000000,
+      "3": 5150000,
+      "4": 5550000,
+      "5": 5800000,
+      "6": 5650000,
+      "7": 5650000
     }
   },
   {
@@ -33007,7 +37712,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a026",
@@ -33016,8 +37722,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "MED",
-    "basePrice": 6200954,
-    "currentPrice": 6200954,
+    "basePrice": 4476844,
+    "currentPrice": 5500000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -33048,6 +37754,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4500000,
+      "2": 4500000,
+      "3": 4500000,
+      "4": 4500000,
+      "5": 4500000,
+      "6": 6100000,
+      "7": 5500000
     }
   },
   {
@@ -33081,7 +37796,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c5fc637ce3870c6769657",
@@ -33114,7 +37830,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c5ded3b32a0b91b9b481f",
@@ -33147,7 +37864,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0aa",
@@ -33156,8 +37874,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "MED",
-    "basePrice": 13053780,
-    "currentPrice": 13053780,
+    "basePrice": 4318574,
+    "currentPrice": 9050000,
     "fantasyValue": 2.7,
     "totalPoints": 19,
     "pointsByMatchday": {
@@ -33188,6 +37906,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 6300000,
+      "2": 7150000,
+      "3": 6550000,
+      "4": 6150000,
+      "5": 10300000,
+      "6": 9200000,
+      "7": 9050000
     }
   },
   {
@@ -33197,8 +37924,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEL",
-    "basePrice": 8271668,
-    "currentPrice": 8271668,
+    "basePrice": 5107147,
+    "currentPrice": 6700000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -33229,6 +37956,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5100000,
+      "2": 6700000,
+      "3": 7300000,
+      "4": 6850000,
+      "5": 7250000,
+      "6": 7100000,
+      "7": 6700000
     }
   },
   {
@@ -33262,7 +37998,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992614a5af6640949ee741e",
@@ -33295,7 +38032,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e45",
@@ -33304,8 +38042,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "DEL",
-    "basePrice": 11251012,
-    "currentPrice": 11251012,
+    "basePrice": 4706902,
+    "currentPrice": 8950000,
     "fantasyValue": 2,
     "totalPoints": 14,
     "pointsByMatchday": {
@@ -33336,6 +38074,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 5100000,
+      "2": 4950000,
+      "3": 7350000,
+      "4": 6450000,
+      "5": 6850000,
+      "6": 7100000,
+      "7": 8950000
     }
   },
   {
@@ -33345,8 +38092,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "POR",
-    "basePrice": 5056141,
-    "currentPrice": 5056141,
+    "basePrice": 3762579,
+    "currentPrice": 4350000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -33377,6 +38124,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4550000,
+      "2": 3850000,
+      "3": 4400000,
+      "4": 3850000,
+      "5": 4400000,
+      "6": 5050000,
+      "7": 4350000
     }
   },
   {
@@ -33410,7 +38166,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c605cde31082a4ff0127f",
@@ -33443,7 +38200,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69970a0df9246e13658e4e9e",
@@ -33476,7 +38234,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e95",
@@ -33509,7 +38268,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69984543f9246e13655e50a5",
@@ -33542,7 +38302,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c765bcd00df3139f5daae",
@@ -33575,7 +38336,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69926211265a40c1ee134871",
@@ -33608,7 +38370,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c6b953b32a0b91bdfbe1e",
@@ -33641,7 +38404,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c848ad4b5ffa0b0fef519",
@@ -33674,7 +38438,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69c05290019ae610f1a40019",
@@ -33707,7 +38472,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a094",
@@ -33716,8 +38482,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "MED",
-    "basePrice": 6618735,
-    "currentPrice": 6618735,
+    "basePrice": 5063255,
+    "currentPrice": 5800000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -33748,6 +38514,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4650000,
+      "2": 4800000,
+      "3": 6800000,
+      "4": 6050000,
+      "5": 6050000,
+      "6": 5650000,
+      "7": 5800000
     }
   },
   {
@@ -33781,7 +38556,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6998571415adfbb7138a13a3",
@@ -33814,7 +38590,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a0d6",
@@ -33823,8 +38600,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "POR",
-    "basePrice": 4551174,
-    "currentPrice": 4551174,
+    "basePrice": 3686927,
+    "currentPrice": 3900000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -33855,6 +38632,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3300000,
+      "2": 3050000,
+      "3": 2800000,
+      "4": 3750000,
+      "5": 3050000,
+      "6": 5600000,
+      "7": 3900000
     }
   },
   {
@@ -33888,7 +38674,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e2e",
@@ -33897,8 +38684,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "DEF",
-    "basePrice": 3640340,
-    "currentPrice": 3640340,
+    "basePrice": 4275956,
+    "currentPrice": 3000000,
     "fantasyValue": -0.6,
     "totalPoints": -4,
     "pointsByMatchday": {
@@ -33929,6 +38716,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4700000,
+      "2": 4150000,
+      "3": 4700000,
+      "4": 2550000,
+      "5": 3700000,
+      "6": 3950000,
+      "7": 3000000
     }
   },
   {
@@ -33962,7 +38758,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699859e78334d431b34187b8",
@@ -33995,7 +38792,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6995759f4177d9f2b840149b",
@@ -34028,7 +38826,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992f03ceed6e169e66c14ca",
@@ -34061,7 +38860,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c882df1d58c27ecd18435",
@@ -34094,7 +38894,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699857de04d46f6fe50b5668",
@@ -34127,7 +38928,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c7c77fbdc93ad2bfa3ccf",
@@ -34160,7 +38962,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992d24721c116671903d214",
@@ -34193,7 +38996,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69926102265a40c1ee100d06",
@@ -34226,7 +39030,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992605ceed6e169e6bad2cb",
@@ -34259,7 +39064,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a068",
@@ -34268,8 +39074,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "MED",
-    "basePrice": 4697574,
-    "currentPrice": 4697574,
+    "basePrice": 4692916,
+    "currentPrice": 4400000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -34300,6 +39106,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4300000,
+      "2": 4050000,
+      "3": 5000000,
+      "4": 4700000,
+      "5": 5500000,
+      "6": 5200000,
+      "7": 4400000
     }
   },
   {
@@ -34333,7 +39148,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c6d627ec22fdaf541ea2f",
@@ -34366,7 +39182,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69944a7b852082242fda1f1f",
@@ -34399,7 +39216,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699840ddbd4c1c1e46459376",
@@ -34432,7 +39250,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69985a4ba92bf30b1bc62ee4",
@@ -34441,8 +39260,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEL",
-    "basePrice": 11606337,
-    "currentPrice": 11606337,
+    "basePrice": 5061542,
+    "currentPrice": 8550000,
     "fantasyValue": 2,
     "totalPoints": 14,
     "pointsByMatchday": {
@@ -34473,6 +39292,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 5050000,
+      "3": 7050000,
+      "4": 6700000,
+      "5": 6550000,
+      "6": 9750000,
+      "7": 8550000
     }
   },
   {
@@ -34482,8 +39310,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEF",
-    "basePrice": 6118740,
-    "currentPrice": 6118740,
+    "basePrice": 4824630,
+    "currentPrice": 5400000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -34514,6 +39342,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4400000,
+      "2": 4150000,
+      "3": 3900000,
+      "4": 3650000,
+      "5": 4600000,
+      "6": 6700000,
+      "7": 5400000
     }
   },
   {
@@ -34547,7 +39384,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699721f8da0ea3c8606373c1",
@@ -34580,7 +39418,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c883c49f0fee3a84a1b24",
@@ -34613,7 +39452,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69926129dab44c379848cd3c",
@@ -34646,7 +39486,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c667ff1d58c27ec151c56",
@@ -34679,7 +39520,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c7018ddec61d6fb1ba711",
@@ -34712,7 +39554,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699256cf8334d431b3069130",
@@ -34721,8 +39564,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "MED",
-    "basePrice": 7898121,
-    "currentPrice": 7898121,
+    "basePrice": 4623463,
+    "currentPrice": 6950000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -34753,6 +39596,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5400000,
+      "2": 5500000,
+      "3": 5350000,
+      "4": 5350000,
+      "5": 5350000,
+      "6": 5350000,
+      "7": 6950000
     }
   },
   {
@@ -34786,7 +39638,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69925b2e833742717ec32770",
@@ -34795,8 +39648,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "MED",
-    "basePrice": 9599214,
-    "currentPrice": 9599214,
+    "basePrice": 4604693,
+    "currentPrice": 7650000,
     "fantasyValue": 1.6,
     "totalPoints": 11,
     "pointsByMatchday": {
@@ -34827,6 +39680,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5000000,
+      "2": 4850000,
+      "3": 7650000,
+      "4": 6600000,
+      "5": 6200000,
+      "6": 7150000,
+      "7": 7650000
     }
   },
   {
@@ -34860,7 +39722,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c7190a860dc0648181e38",
@@ -34893,7 +39756,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69984c3c409e57cdd32740cd",
@@ -34926,7 +39790,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c6babe629fa9e5795786e",
@@ -34959,7 +39824,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e92",
@@ -34992,7 +39858,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e19",
@@ -35001,8 +39868,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEL",
-    "basePrice": 13271410,
-    "currentPrice": 13271410,
+    "basePrice": 5284286,
+    "currentPrice": 10150000,
     "fantasyValue": 2.4,
     "totalPoints": 17,
     "pointsByMatchday": {
@@ -35033,6 +39900,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 14,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 5300000,
+      "2": 6900000,
+      "3": 7500000,
+      "4": 7050000,
+      "5": 7850000,
+      "6": 9150000,
+      "7": 10150000
     }
   },
   {
@@ -35066,7 +39942,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69971e90a92bf30b1bd6b188",
@@ -35075,8 +39952,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEL",
-    "basePrice": 10673402,
-    "currentPrice": 10673402,
+    "basePrice": 4668881,
+    "currentPrice": 8200000,
     "fantasyValue": 1.9,
     "totalPoints": 13,
     "pointsByMatchday": {
@@ -35107,6 +39984,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 4900000,
+      "3": 4900000,
+      "4": 6500000,
+      "5": 5900000,
+      "6": 8300000,
+      "7": 8200000
     }
   },
   {
@@ -35116,8 +40002,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEL",
-    "basePrice": 20769170,
-    "currentPrice": 20769170,
+    "basePrice": 5082183,
+    "currentPrice": 14700000,
     "fantasyValue": 4.7,
     "totalPoints": 33,
     "pointsByMatchday": {
@@ -35148,6 +40034,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 15,
       "minutes": 0,
       "keyActions": 7
+    },
+    "priceHistory": {
+      "1": 7500000,
+      "2": 8200000,
+      "3": 11200000,
+      "4": 10650000,
+      "5": 11950000,
+      "6": 10950000,
+      "7": 14700000
     }
   },
   {
@@ -35157,8 +40052,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEL",
-    "basePrice": 9651942,
-    "currentPrice": 9651942,
+    "basePrice": 5047421,
+    "currentPrice": 8150000,
     "fantasyValue": 1.4,
     "totalPoints": 10,
     "pointsByMatchday": {
@@ -35189,6 +40084,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 2
+    },
+    "priceHistory": {
+      "1": 5450000,
+      "2": 4900000,
+      "3": 6650000,
+      "4": 6450000,
+      "5": 6700000,
+      "6": 6550000,
+      "7": 8150000
     }
   },
   {
@@ -35222,7 +40126,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6994603f6d780a79e48f96b6",
@@ -35255,7 +40160,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699857e3c49f79532e00ef71",
@@ -35288,7 +40194,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c61606f5aa4fdfe2cc26e",
@@ -35321,7 +40228,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992f06399a65e594378d9b2",
@@ -35354,7 +40262,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e2f",
@@ -35363,8 +40272,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEF",
-    "basePrice": 7598682,
-    "currentPrice": 7598682,
+    "basePrice": 4434024,
+    "currentPrice": 6350000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -35395,6 +40304,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4050000,
+      "2": 5400000,
+      "3": 7350000,
+      "4": 7250000,
+      "5": 5750000,
+      "6": 5800000,
+      "7": 6350000
     }
   },
   {
@@ -35404,8 +40322,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "MED",
-    "basePrice": 6367360,
-    "currentPrice": 6367360,
+    "basePrice": 4643524,
+    "currentPrice": 5650000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -35436,6 +40354,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 5700000,
+      "3": 5400000,
+      "4": 5800000,
+      "5": 5650000,
+      "6": 5650000,
+      "7": 5650000
     }
   },
   {
@@ -35469,7 +40396,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699702cd15adfbb71357933a",
@@ -35502,7 +40430,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6992372f32694b82e1bee372",
@@ -35511,8 +40440,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEL",
-    "basePrice": 9369396,
-    "currentPrice": 9369396,
+    "basePrice": 5235012,
+    "currentPrice": 8250000,
     "fantasyValue": 1.3,
     "totalPoints": 9,
     "pointsByMatchday": {
@@ -35543,6 +40472,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 6050000,
+      "2": 5750000,
+      "3": 5750000,
+      "4": 5750000,
+      "5": 6550000,
+      "6": 6250000,
+      "7": 8250000
     }
   },
   {
@@ -35576,7 +40514,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6998483d852082242fc816c8",
@@ -35609,7 +40548,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c616af6546d4feed13c98",
@@ -35618,8 +40558,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "MED",
-    "basePrice": 4650871,
-    "currentPrice": 4650871,
+    "basePrice": 5125802,
+    "currentPrice": 4400000,
     "fantasyValue": -0.4,
     "totalPoints": -3,
     "pointsByMatchday": {
@@ -35650,6 +40590,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4750000,
+      "2": 4900000,
+      "3": 4500000,
+      "4": 4650000,
+      "5": 4650000,
+      "6": 4250000,
+      "7": 4400000
     }
   },
   {
@@ -35683,7 +40632,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6997027fdab44c37983244cf",
@@ -35692,8 +40642,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "MED",
-    "basePrice": 7720548,
-    "currentPrice": 7720548,
+    "basePrice": 4276986,
+    "currentPrice": 6450000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -35724,6 +40674,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5900000,
+      "2": 5700000,
+      "3": 5550000,
+      "4": 5550000,
+      "5": 5550000,
+      "6": 6350000,
+      "7": 6450000
     }
   },
   {
@@ -35757,7 +40716,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699847a6c0f68d6fa1d294fe",
@@ -35790,7 +40750,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e97",
@@ -35823,7 +40784,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e75647a011",
@@ -35832,8 +40794,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "POR",
-    "basePrice": 4479579,
-    "currentPrice": 4479579,
+    "basePrice": 4045058,
+    "currentPrice": 4600000,
     "fantasyValue": 0.1,
     "totalPoints": 1,
     "pointsByMatchday": {
@@ -35864,6 +40826,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 2850000,
+      "2": 2900000,
+      "3": 2650000,
+      "4": 2400000,
+      "5": 4950000,
+      "6": 3650000,
+      "7": 4600000
     }
   },
   {
@@ -35897,7 +40868,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699857e7833742717e0a21eb",
@@ -35930,7 +40902,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699260f05865cd51254e61e4",
@@ -35963,7 +40936,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699857eac49f79532e0113bd",
@@ -35996,7 +40970,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699702ff8de9396db9c58c99",
@@ -36029,7 +41004,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699575de46ac2f607712d581",
@@ -36062,7 +41038,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-696ce95b15adfbb7138f4b32",
@@ -36071,8 +41048,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "POR",
-    "basePrice": 3458231,
-    "currentPrice": 3458231,
+    "basePrice": 3774395,
+    "currentPrice": 3100000,
     "fantasyValue": -0.3,
     "totalPoints": -2,
     "pointsByMatchday": {
@@ -36103,6 +41080,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4150000,
+      "2": 2800000,
+      "3": 2850000,
+      "4": 3800000,
+      "5": 3900000,
+      "6": 3350000,
+      "7": 3100000
     }
   },
   {
@@ -36136,7 +41122,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69984cbdc0f68d6fa1e041ec",
@@ -36169,7 +41156,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69984ced03a416cfe9f5e9ad",
@@ -36202,7 +41190,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e98",
@@ -36235,7 +41224,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c61ed20cf63c240b8116e",
@@ -36268,7 +41258,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69946219a92bf30b1b69d88b",
@@ -36301,7 +41292,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69945f667b4555b9bd9ba4ba",
@@ -36334,7 +41326,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69a47fdad7b8c48ae5f1bd36",
@@ -36343,8 +41336,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "DEF",
-    "basePrice": 3309514,
-    "currentPrice": 3309514,
+    "basePrice": 4104993,
+    "currentPrice": 2400000,
     "fantasyValue": -0.7,
     "totalPoints": -5,
     "pointsByMatchday": {
@@ -36375,6 +41368,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4900000,
+      "2": 4600000,
+      "3": 5000000,
+      "4": 4450000,
+      "5": 3400000,
+      "6": 3450000,
+      "7": 2400000
     }
   },
   {
@@ -36408,7 +41410,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69957d5fc68c0157b574f59a",
@@ -36441,7 +41444,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-6994622b852082242f10cdcc",
@@ -36474,7 +41478,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c677be629fa9e57743f5c",
@@ -36507,7 +41512,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c7317d4b5ffa0b0c48c63",
@@ -36540,7 +41546,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c7fa1de31082a4f91aa6f",
@@ -36573,7 +41580,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69c07000a897b7587bf98af0",
@@ -36606,7 +41614,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699575d36d780a79e41a11b8",
@@ -36615,8 +41624,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEL",
-    "basePrice": 8054286,
-    "currentPrice": 8054286,
+    "basePrice": 5040313,
+    "currentPrice": 7100000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -36647,6 +41656,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5050000,
+      "2": 5850000,
+      "3": 5550000,
+      "4": 6350000,
+      "5": 6850000,
+      "6": 6150000,
+      "7": 7100000
     }
   },
   {
@@ -36680,7 +41698,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699db3034681189b23115ac7",
@@ -36689,8 +41708,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "POR",
-    "basePrice": 7510874,
-    "currentPrice": 7510874,
+    "basePrice": 3637449,
+    "currentPrice": 6050000,
     "fantasyValue": 1.3,
     "totalPoints": 9,
     "pointsByMatchday": {
@@ -36721,6 +41740,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 6050000,
+      "2": 5550000,
+      "3": 5800000,
+      "4": 5250000,
+      "5": 5000000,
+      "6": 5950000,
+      "7": 6050000
     }
   },
   {
@@ -36754,7 +41782,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e9b",
@@ -36787,7 +41816,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c801ede31082a4f9348d1",
@@ -36820,7 +41850,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e9c",
@@ -36853,7 +41884,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69984db599a65e5943a9d966",
@@ -36886,7 +41918,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c8025024040d0b25794bb",
@@ -36919,7 +41952,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69984dee5865cd51252843a6",
@@ -36952,7 +41986,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-699c671d90207a17fc00d85d",
@@ -36961,8 +41996,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "MED",
-    "basePrice": 7033403,
-    "currentPrice": 7033403,
+    "basePrice": 4728471,
+    "currentPrice": 6000000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -36993,6 +42028,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4350000,
+      "2": 4500000,
+      "3": 6100000,
+      "4": 5500000,
+      "5": 6300000,
+      "6": 6000000,
+      "7": 6000000
     }
   },
   {
@@ -37026,7 +42070,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e9f",
@@ -37059,7 +42104,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ea0",
@@ -37092,7 +42138,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ea1",
@@ -37125,7 +42172,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ea2",
@@ -37158,7 +42206,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ea3",
@@ -37191,7 +42240,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ea4",
@@ -37224,7 +42274,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ea5",
@@ -37257,7 +42308,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ea6",
@@ -37290,7 +42342,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ea7",
@@ -37323,7 +42376,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ea8",
@@ -37356,7 +42410,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ea9",
@@ -37389,7 +42444,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479e9d",
@@ -37422,7 +42478,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eaa",
@@ -37455,7 +42512,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eab",
@@ -37488,7 +42546,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eac",
@@ -37521,7 +42580,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ead",
@@ -37554,7 +42614,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eb1",
@@ -37587,7 +42648,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eb2",
@@ -37620,7 +42682,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eb3",
@@ -37653,7 +42716,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eb4",
@@ -37686,7 +42750,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eb6",
@@ -37719,7 +42784,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eb7",
@@ -37752,7 +42818,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eae",
@@ -37785,7 +42852,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eb8",
@@ -37818,7 +42886,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ebb",
@@ -37851,7 +42920,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ebc",
@@ -37884,7 +42954,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ebd",
@@ -37917,7 +42988,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ebe",
@@ -37950,7 +43022,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eaf",
@@ -37959,8 +43032,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "MED",
-    "basePrice": 6115717,
-    "currentPrice": 6115717,
+    "basePrice": 4821881,
+    "currentPrice": 5550000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -37991,6 +43064,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5200000,
+      "2": 4650000,
+      "3": 4800000,
+      "4": 5200000,
+      "5": 5850000,
+      "6": 5550000,
+      "7": 5550000
     }
   },
   {
@@ -38024,7 +43106,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ec1",
@@ -38057,7 +43140,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ec3",
@@ -38090,7 +43174,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ec7",
@@ -38123,7 +43208,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ec8",
@@ -38156,7 +43242,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ec9",
@@ -38189,7 +43276,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eb9",
@@ -38198,8 +43286,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEF",
-    "basePrice": 4878567,
-    "currentPrice": 4878567,
+    "basePrice": 4014594,
+    "currentPrice": 4350000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -38230,6 +43318,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4400000,
+      "2": 6650000,
+      "3": 5350000,
+      "4": 4300000,
+      "5": 4350000,
+      "6": 4900000,
+      "7": 4350000
     }
   },
   {
@@ -38263,7 +43360,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eca",
@@ -38296,7 +43394,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ecb",
@@ -38329,7 +43428,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ecd",
@@ -38362,7 +43462,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ebf",
@@ -38371,8 +43472,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEF",
-    "basePrice": 8109056,
-    "currentPrice": 8109056,
+    "basePrice": 4404398,
+    "currentPrice": 5950000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -38403,6 +43504,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4000000,
+      "2": 3750000,
+      "3": 6300000,
+      "4": 5000000,
+      "5": 5550000,
+      "6": 8200000,
+      "7": 5950000
     }
   },
   {
@@ -38436,7 +43546,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ed0",
@@ -38469,7 +43580,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ec6",
@@ -38502,7 +43614,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ec2",
@@ -38535,7 +43648,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ed1",
@@ -38568,7 +43682,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ed2",
@@ -38601,7 +43716,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ec4",
@@ -38634,7 +43750,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ed4",
@@ -38667,7 +43784,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ec5",
@@ -38700,7 +43818,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ed5",
@@ -38733,7 +43852,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ecc",
@@ -38766,7 +43886,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ed7",
@@ -38799,7 +43920,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ed9",
@@ -38832,7 +43954,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eda",
@@ -38865,7 +43988,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479edb",
@@ -38898,7 +44022,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479edc",
@@ -38931,7 +44056,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479edd",
@@ -38964,7 +44090,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ece",
@@ -38997,7 +44124,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ede",
@@ -39030,7 +44158,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ee0",
@@ -39063,7 +44192,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ee2",
@@ -39096,7 +44226,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ee3",
@@ -39129,7 +44260,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ee4",
@@ -39162,7 +44294,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ee5",
@@ -39195,7 +44328,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ee6",
@@ -39228,7 +44362,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ed3",
@@ -39237,8 +44372,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "POR",
-    "basePrice": 4408292,
-    "currentPrice": 4408292,
+    "basePrice": 4404182,
+    "currentPrice": 3950000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -39269,6 +44404,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4000000,
+      "2": 3750000,
+      "3": 6300000,
+      "4": 5000000,
+      "5": 5550000,
+      "6": 5000000,
+      "7": 3950000
     }
   },
   {
@@ -39302,7 +44446,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ee8",
@@ -39335,7 +44480,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ed6",
@@ -39344,8 +44490,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "MED",
-    "basePrice": 7762807,
-    "currentPrice": 7762807,
+    "basePrice": 4597875,
+    "currentPrice": 6500000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -39376,6 +44522,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5800000,
+      "2": 4950000,
+      "3": 5100000,
+      "4": 5100000,
+      "5": 6700000,
+      "6": 6100000,
+      "7": 6500000
     }
   },
   {
@@ -39409,7 +44564,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eeb",
@@ -39442,7 +44598,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ed8",
@@ -39451,8 +44608,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "MED",
-    "basePrice": 4243365,
-    "currentPrice": 4243365,
+    "basePrice": 4399255,
+    "currentPrice": 4000000,
     "fantasyValue": -0.1,
     "totalPoints": -1,
     "pointsByMatchday": {
@@ -39483,6 +44640,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4800000,
+      "2": 3850000,
+      "3": 4150000,
+      "4": 4550000,
+      "5": 4400000,
+      "6": 4400000,
+      "7": 4000000
     }
   },
   {
@@ -39516,7 +44682,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eef",
@@ -39549,7 +44716,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479edf",
@@ -39582,7 +44750,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ef0",
@@ -39615,7 +44784,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eec",
@@ -39648,7 +44818,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ef1",
@@ -39681,7 +44852,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ef2",
@@ -39714,7 +44886,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ef4",
@@ -39747,7 +44920,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ef6",
@@ -39780,7 +44954,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ef7",
@@ -39813,7 +44988,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ef8",
@@ -39846,7 +45022,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ef9",
@@ -39879,7 +45056,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ef3",
@@ -39912,7 +45090,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479efa",
@@ -39945,7 +45124,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479efb",
@@ -39978,7 +45158,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479efc",
@@ -40011,7 +45192,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479ee9",
@@ -40020,8 +45202,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEL",
-    "basePrice": 5892125,
-    "currentPrice": 5892125,
+    "basePrice": 4597741,
+    "currentPrice": 5500000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -40052,6 +45234,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4200000,
+      "2": 4350000,
+      "3": 4350000,
+      "4": 4350000,
+      "5": 5550000,
+      "6": 5100000,
+      "7": 5500000
     }
   },
   {
@@ -40085,7 +45276,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eff",
@@ -40118,7 +45310,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479eee",
@@ -40151,7 +45344,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f01",
@@ -40184,7 +45378,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f02",
@@ -40217,7 +45412,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f04",
@@ -40250,7 +45446,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f03",
@@ -40259,8 +45456,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "MED",
-    "basePrice": 9180799,
-    "currentPrice": 9180799,
+    "basePrice": 4877511,
+    "currentPrice": 8000000,
     "fantasyValue": 1.4,
     "totalPoints": 10,
     "pointsByMatchday": {
@@ -40291,6 +45488,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5700000,
+      "2": 5400000,
+      "3": 5800000,
+      "4": 6050000,
+      "5": 6300000,
+      "6": 6550000,
+      "7": 8000000
     }
   },
   {
@@ -40324,7 +45530,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f06",
@@ -40357,7 +45564,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f09",
@@ -40390,7 +45598,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f0a",
@@ -40423,7 +45632,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f0b",
@@ -40456,7 +45666,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f0d",
@@ -40489,7 +45700,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f0e",
@@ -40522,7 +45734,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f0f",
@@ -40555,7 +45768,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479efe",
@@ -40588,7 +45802,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f12",
@@ -40621,7 +45836,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f00",
@@ -40654,7 +45870,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f13",
@@ -40687,7 +45904,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f15",
@@ -40720,7 +45938,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f11",
@@ -40753,7 +45972,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f18",
@@ -40786,7 +46006,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f19",
@@ -40819,7 +46040,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f1a",
@@ -40852,7 +46074,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f08",
@@ -40885,7 +46108,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f1b",
@@ -40918,7 +46142,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f07",
@@ -40927,8 +46152,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "MED",
-    "basePrice": 6627343,
-    "currentPrice": 6627343,
+    "basePrice": 4903781,
+    "currentPrice": 6050000,
     "fantasyValue": 0.6,
     "totalPoints": 4,
     "pointsByMatchday": {
@@ -40959,6 +46184,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4900000,
+      "2": 5700000,
+      "3": 5800000,
+      "4": 5650000,
+      "5": 5650000,
+      "6": 5650000,
+      "7": 6050000
     }
   },
   {
@@ -40992,7 +46226,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f10",
@@ -41025,7 +46260,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f1c",
@@ -41058,7 +46294,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f23",
@@ -41091,7 +46328,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f25",
@@ -41124,7 +46362,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f20",
@@ -41157,7 +46396,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f26",
@@ -41190,7 +46430,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f14",
@@ -41223,7 +46464,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f16",
@@ -41256,7 +46498,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f2c",
@@ -41289,7 +46532,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f2f",
@@ -41322,7 +46566,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f30",
@@ -41355,7 +46600,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f31",
@@ -41388,7 +46634,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f1d",
@@ -41421,7 +46668,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f1f",
@@ -41430,8 +46678,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEL",
-    "basePrice": 6407649,
-    "currentPrice": 6407649,
+    "basePrice": 5113950,
+    "currentPrice": 5850000,
     "fantasyValue": 0.4,
     "totalPoints": 3,
     "pointsByMatchday": {
@@ -41462,6 +46710,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 5500000,
+      "2": 5350000,
+      "3": 5350000,
+      "4": 5350000,
+      "5": 6150000,
+      "6": 5850000,
+      "7": 5850000
     }
   },
   {
@@ -41495,7 +46752,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f34",
@@ -41528,7 +46786,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f35",
@@ -41561,7 +46820,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f1e",
@@ -41570,8 +46830,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "MED",
-    "basePrice": 8393733,
-    "currentPrice": 8393733,
+    "basePrice": 4688938,
+    "currentPrice": 6700000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -41602,6 +46862,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4700000,
+      "2": 4300000,
+      "3": 6450000,
+      "4": 6100000,
+      "5": 5550000,
+      "6": 7300000,
+      "7": 6700000
     }
   },
   {
@@ -41635,7 +46904,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f24",
@@ -41668,7 +46938,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f28",
@@ -41701,7 +46972,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f36",
@@ -41734,7 +47006,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f2a",
@@ -41767,7 +47040,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f27",
@@ -41776,8 +47050,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEL",
-    "basePrice": 13896926,
-    "currentPrice": 13896926,
+    "basePrice": 5591857,
+    "currentPrice": 10700000,
     "fantasyValue": 2.6,
     "totalPoints": 18,
     "pointsByMatchday": {
@@ -41808,6 +47082,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 12,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 7600000,
+      "2": 9650000,
+      "3": 9400000,
+      "4": 9100000,
+      "5": 9100000,
+      "6": 9100000,
+      "7": 10700000
     }
   },
   {
@@ -41841,7 +47124,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-68486e4bce4b47e756479f2b",
@@ -41850,8 +47134,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEF",
-    "basePrice": 5167827,
-    "currentPrice": 5167827,
+    "basePrice": 4303854,
+    "currentPrice": 4650000,
     "fantasyValue": 0.3,
     "totalPoints": 2,
     "pointsByMatchday": {
@@ -41882,6 +47166,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 3900000,
+      "2": 3650000,
+      "3": 3400000,
+      "4": 3950000,
+      "5": 3400000,
+      "6": 5950000,
+      "7": 4650000
     }
   },
   {
@@ -41915,7 +47208,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-686662da0e7ca37740715d7c",
@@ -41948,7 +47242,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-685e61f3d0ea2db3ed5b2fce",
@@ -41957,8 +47252,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEF",
-    "basePrice": 4200889,
-    "currentPrice": 4200889,
+    "basePrice": 3766368,
+    "currentPrice": 4300000,
     "fantasyValue": 0.1,
     "totalPoints": 1,
     "pointsByMatchday": {
@@ -41989,6 +47284,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 2550000,
+      "2": 2600000,
+      "3": 2350000,
+      "4": 2100000,
+      "5": 4650000,
+      "6": 3350000,
+      "7": 4300000
     }
   },
   {
@@ -42022,7 +47326,8 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 0,
       "minutes": 0,
       "keyActions": 0
-    }
+    },
+    "priceHistory": {}
   },
   {
     "id": "player-69deaf05b810bdcdd3fa0ed0",
@@ -42031,8 +47336,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "DEF",
-    "basePrice": 3619041,
-    "currentPrice": 3619041,
+    "basePrice": 3784246,
+    "currentPrice": 4050000,
     "fantasyValue": -0.3,
     "totalPoints": -2,
     "pointsByMatchday": {
@@ -42063,6 +47368,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 3400000,
+      "2": 2750000,
+      "3": 2650000,
+      "4": 2000000,
+      "5": 1100000,
+      "6": 2350000,
+      "7": 4050000
     }
   },
   {
@@ -42072,8 +47386,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEL",
-    "basePrice": 12800290,
-    "currentPrice": 12800290,
+    "basePrice": 5355358,
+    "currentPrice": 9350000,
     "fantasyValue": 2.3,
     "totalPoints": 16,
     "pointsByMatchday": {
@@ -42104,6 +47418,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 3
+    },
+    "priceHistory": {
+      "1": 5750000,
+      "2": 5600000,
+      "3": 5600000,
+      "4": 8000000,
+      "5": 9100000,
+      "6": 9950000,
+      "7": 9350000
     }
   },
   {
@@ -42113,8 +47436,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEF",
-    "basePrice": 3970359,
-    "currentPrice": 3970359,
+    "basePrice": 3966523,
+    "currentPrice": 3800000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -42145,6 +47468,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 8,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4350000,
+      "2": 4600000,
+      "3": 4050000,
+      "4": 5000000,
+      "5": 4300000,
+      "6": 4050000,
+      "7": 3800000
     }
   },
   {
@@ -42154,8 +47486,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "DEF",
-    "basePrice": 6141107,
-    "currentPrice": 6141107,
+    "basePrice": 3987408,
+    "currentPrice": 5400000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -42186,6 +47518,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4400000,
+      "2": 5050000,
+      "3": 5550000,
+      "4": 4450000,
+      "5": 4350000,
+      "6": 5300000,
+      "7": 5400000
     }
   },
   {
@@ -42195,8 +47536,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "MED",
-    "basePrice": 6625979,
-    "currentPrice": 6625979,
+    "basePrice": 3891321,
+    "currentPrice": 5700000,
     "fantasyValue": 0.9,
     "totalPoints": 6,
     "pointsByMatchday": {
@@ -42227,6 +47568,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 5100000,
+      "2": 5050000,
+      "3": 4900000,
+      "4": 4900000,
+      "5": 4900000,
+      "6": 4900000,
+      "7": 5700000
     }
   },
   {
@@ -42236,8 +47586,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "MED",
-    "basePrice": 7715676,
-    "currentPrice": 7715676,
+    "basePrice": 4701977,
+    "currentPrice": 6750000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -42268,6 +47618,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4700000,
+      "2": 5500000,
+      "3": 5200000,
+      "4": 6000000,
+      "5": 6100000,
+      "6": 5950000,
+      "7": 6750000
     }
   },
   {
@@ -42277,8 +47636,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEF",
-    "basePrice": 7904199,
-    "currentPrice": 7904199,
+    "basePrice": 4889952,
+    "currentPrice": 7550000,
     "fantasyValue": 1,
     "totalPoints": 7,
     "pointsByMatchday": {
@@ -42309,6 +47668,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4100000,
+      "2": 2800000,
+      "3": 3000000,
+      "4": 5150000,
+      "5": 4800000,
+      "6": 5450000,
+      "7": 7550000
     }
   },
   {
@@ -42318,8 +47686,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "MED",
-    "basePrice": 7996022,
-    "currentPrice": 7996022,
+    "basePrice": 4402049,
+    "currentPrice": 6550000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
@@ -42350,6 +47718,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 9,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4400000,
+      "2": 6400000,
+      "3": 5650000,
+      "4": 6450000,
+      "5": 6550000,
+      "6": 6000000,
+      "7": 6550000
     }
   },
   {
@@ -42359,8 +47736,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEF",
-    "basePrice": 3992536,
-    "currentPrice": 3992536,
+    "basePrice": 4468974,
+    "currentPrice": 3550000,
     "fantasyValue": -0.4,
     "totalPoints": -3,
     "pointsByMatchday": {
@@ -42391,6 +47768,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 7,
       "minutes": 0,
       "keyActions": 0
+    },
+    "priceHistory": {
+      "1": 4850000,
+      "2": 4300000,
+      "3": 4050000,
+      "4": 3800000,
+      "5": 4350000,
+      "6": 3800000,
+      "7": 3550000
     }
   },
   {
@@ -42400,8 +47786,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "MED",
-    "basePrice": 6755563,
-    "currentPrice": 6755563,
+    "basePrice": 4450220,
+    "currentPrice": 5700000,
     "fantasyValue": 0.7,
     "totalPoints": 5,
     "pointsByMatchday": {
@@ -42432,6 +47818,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 10,
       "minutes": 0,
       "keyActions": 1
+    },
+    "priceHistory": {
+      "1": 4850000,
+      "2": 4300000,
+      "3": 4450000,
+      "4": 4450000,
+      "5": 6450000,
+      "6": 5700000,
+      "7": 5700000
     }
   },
   {
@@ -42441,8 +47836,8 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEL",
-    "basePrice": 15330202,
-    "currentPrice": 15330202,
+    "basePrice": 5254174,
+    "currentPrice": 10500000,
     "fantasyValue": 3,
     "totalPoints": 21,
     "pointsByMatchday": {
@@ -42473,6 +47868,15 @@ export const challengePlayers: Player[] = [
       "overloadPoints": 11,
       "minutes": 0,
       "keyActions": 4
+    },
+    "priceHistory": {
+      "1": 7250000,
+      "2": 8500000,
+      "3": 9750000,
+      "4": 9000000,
+      "5": 11000000,
+      "6": 10650000,
+      "7": 10500000
     }
   }
 ];
