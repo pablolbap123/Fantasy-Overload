@@ -20,7 +20,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button = ({ className, variant = "primary", loading, icon, children, disabled, ...props }: ButtonProps) => (
   <button
     className={clsx(
+<<<<<<< HEAD
       "inline-flex min-h-10 items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-black transition active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50",
+=======
+      "inline-flex min-h-10 min-w-0 items-center justify-center gap-2 rounded-lg px-4 py-2 text-center text-sm font-black leading-tight transition active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50",
+>>>>>>> 6bc6cc2 (Version 2.2)
       variantClass[variant],
       className,
     )}

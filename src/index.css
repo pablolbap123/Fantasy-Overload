@@ -31,9 +31,15 @@ body {
   margin: 0;
   overflow-x: hidden;
   background:
+<<<<<<< HEAD
     radial-gradient(circle at 16% 10%, rgba(255, 63, 85, 0.16), transparent 28rem),
     radial-gradient(circle at 86% 0%, rgba(98, 215, 255, 0.18), transparent 26rem),
     linear-gradient(180deg, #11182d 0%, #080d1b 54%, #070a14 100%);
+=======
+    linear-gradient(135deg, rgba(33, 209, 127, 0.08), transparent 32%),
+    linear-gradient(225deg, rgba(245, 189, 67, 0.09), transparent 36%),
+    linear-gradient(180deg, #101729 0%, #080d1b 54%, #070a14 100%);
+>>>>>>> 6bc6cc2 (Version 2.2)
   color: #f7f9ff;
 }
 
@@ -67,17 +73,29 @@ textarea {
 
 @layer components {
   .field {
+<<<<<<< HEAD
     @apply w-full rounded-lg border border-white/10 bg-[#151c31]/90 px-3 py-2.5 text-sm font-semibold text-white outline-none transition placeholder:text-slate-400 focus:border-[#62d7ff]/70 focus:ring-2 focus:ring-[#62d7ff]/20;
+=======
+    @apply min-h-10 w-full rounded-lg border border-white/10 bg-[#11182b]/95 px-3 py-2.5 text-sm font-semibold text-white outline-none transition placeholder:text-slate-400 focus:border-[#62d7ff]/70 focus:ring-2 focus:ring-[#62d7ff]/20;
+>>>>>>> 6bc6cc2 (Version 2.2)
   }
 
   .panel {
     @apply rounded-lg border border-white/10 backdrop-blur;
     background:
+<<<<<<< HEAD
       linear-gradient(180deg, rgba(73, 86, 115, 0.94), rgba(43, 52, 78, 0.94)),
       #46536f;
     box-shadow:
       0 18px 48px rgba(0, 0, 0, 0.34),
       inset 0 1px 0 rgba(255, 255, 255, 0.08),
+=======
+      linear-gradient(180deg, rgba(49, 61, 89, 0.96), rgba(29, 38, 61, 0.97)),
+      #26314a;
+    box-shadow:
+      0 14px 34px rgba(0, 0, 0, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.075),
+>>>>>>> 6bc6cc2 (Version 2.2)
       inset 0 -1px 0 rgba(0, 0, 0, 0.2);
   }
 
@@ -97,6 +115,29 @@ textarea {
     padding-bottom: max(1rem, env(safe-area-inset-bottom));
   }
 
+<<<<<<< HEAD
+=======
+  .thin-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.7) rgba(15, 23, 42, 0.4);
+  }
+
+  .thin-scrollbar::-webkit-scrollbar {
+    width: 0.55rem;
+    height: 0.55rem;
+  }
+
+  .thin-scrollbar::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.35);
+    border-radius: 999px;
+  }
+
+  .thin-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.68);
+    border-radius: 999px;
+  }
+
+>>>>>>> 6bc6cc2 (Version 2.2)
   .safe-top-header {
     padding-top: max(0.85rem, env(safe-area-inset-top));
   }

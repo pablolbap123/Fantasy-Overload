@@ -55,12 +55,21 @@ export const PlayerCard = ({
       <div className="flex items-start gap-3">
         <PlayerAvatar player={player} />
         <div className="min-w-0 flex-1">
+<<<<<<< HEAD
           <div className="flex items-start justify-between gap-2">
             <div className="min-w-0">
               <h3 className="truncate text-sm font-black text-white">{player.name}</h3>
               <p className="truncate text-xs text-slate-400">{player.teamName}</p>
             </div>
             <div className="text-right">
+=======
+          <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-2">
+            <div className="min-w-0 pr-1">
+              <h3 className="truncate text-sm font-black text-white">{player.name}</h3>
+              <p className="truncate text-xs text-slate-400">{player.teamName}</p>
+            </div>
+            <div className="shrink-0 rounded-lg bg-white/[0.06] px-2 py-1 text-center ring-1 ring-white/10">
+>>>>>>> 6bc6cc2 (Version 2.2)
               <div className="text-lg font-black text-white">{player.totalPoints}</div>
               <div className="text-[10px] uppercase text-slate-500">pts</div>
             </div>
@@ -98,29 +107,51 @@ export const PlayerCard = ({
             </div>
           ) : null}
           {ownerName || ownerLabel ? <p className="mt-2 text-xs text-slate-400">{ownerLabel ?? `Dueño: ${ownerName}`}</p> : null}
+<<<<<<< HEAD
           <div className="mt-3 flex gap-2">
             {action === "buy" ? (
               <Button className="flex-1" icon={<ArrowDownToLine className="h-4 w-4" />} onClick={onBuy}>
+=======
+          <div className="mt-3 grid grid-cols-[minmax(0,1fr)_auto] gap-2">
+            {action === "buy" ? (
+              <Button className="min-w-0 px-2" icon={<ArrowDownToLine className="h-4 w-4" />} onClick={onBuy}>
+>>>>>>> 6bc6cc2 (Version 2.2)
                 Comprar
               </Button>
             ) : null}
             {action === "bid" ? (
+<<<<<<< HEAD
               <Button className="flex-1" icon={<Gavel className="h-4 w-4" />} onClick={onBid}>
+=======
+              <Button className="min-w-0 px-2" icon={<Gavel className="h-4 w-4" />} onClick={onBid}>
+>>>>>>> 6bc6cc2 (Version 2.2)
                 Pujar{nextBidAmount ? ` ${formatMoney(nextBidAmount)}` : ""}
               </Button>
             ) : null}
             {action === "sell" ? (
+<<<<<<< HEAD
               <Button className="flex-1" variant="secondary" icon={<ArrowUpFromLine className="h-4 w-4" />} onClick={onSell}>
+=======
+              <Button className="min-w-0 px-2" variant="secondary" icon={<ArrowUpFromLine className="h-4 w-4" />} onClick={onSell}>
+>>>>>>> 6bc6cc2 (Version 2.2)
                 Vender
               </Button>
             ) : null}
             {action === "offer" ? (
+<<<<<<< HEAD
               <Button className="flex-1" variant="secondary" icon={<HandCoins className="h-4 w-4" />} onClick={onOffer}>
+=======
+              <Button className="min-w-0 px-2" variant="secondary" icon={<HandCoins className="h-4 w-4" />} onClick={onOffer}>
+>>>>>>> 6bc6cc2 (Version 2.2)
                 Ofertar
               </Button>
             ) : null}
             {action === "clause" ? (
+<<<<<<< HEAD
               <Button className="flex-1" variant="secondary" icon={<ShieldPlus className="h-4 w-4" />} onClick={onClause}>
+=======
+              <Button className="min-w-0 px-2" variant="secondary" icon={<ShieldPlus className="h-4 w-4" />} onClick={onClause}>
+>>>>>>> 6bc6cc2 (Version 2.2)
                 Pagar cláusula
               </Button>
             ) : null}

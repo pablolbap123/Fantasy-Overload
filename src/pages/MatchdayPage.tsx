@@ -1,5 +1,9 @@
 import { Zap } from "lucide-react";
+<<<<<<< HEAD
 import { useMemo, useState } from "react";
+=======
+import { useEffect, useMemo, useState } from "react";
+>>>>>>> 6bc6cc2 (Version 2.2)
 import type { Match, PlayerMatchStats } from "../types";
 import { MatchCard } from "../components/matches/MatchCard";
 import { PlayerDetailDrawer } from "../components/players/PlayerDetailDrawer";
@@ -10,10 +14,43 @@ import { useFantasy } from "../store/fantasyStore";
 
 export const MatchdayPage = () => {
   const { currentLeague, matchdays, teams, players } = useFantasy();
+<<<<<<< HEAD
   const [selectedMatchdayId, setSelectedMatchdayId] = useState(matchdays[0]?.id ?? "");
   const [selectedMatch, setSelectedMatch] = useState<Match | undefined>();
   const [selectedPlayerId, setSelectedPlayerId] = useState<string | undefined>();
   const selectedMatchday = matchdays.find((matchday) => matchday.id === selectedMatchdayId) ?? matchdays[0];
+=======
+  const latestMatchday = useMemo(() => [...matchdays].sort((a, b) => b.number - a.number)[0], [matchdays]);
+  const latestResultMatchday = useMemo(
+    () =>
+      [...matchdays]
+        .filter((matchday) =>
+          matchday.matches.some(
+            (match) =>
+              match.status === "finalizada" ||
+              match.homeScore !== null ||
+              match.awayScore !== null ||
+              match.playerStats.length > 0,
+          ),
+        )
+        .sort((a, b) => b.number - a.number)[0],
+    [matchdays],
+  );
+  const defaultMatchday = latestResultMatchday ?? latestMatchday;
+  const [selectedMatchdayId, setSelectedMatchdayId] = useState("");
+  const [selectedMatch, setSelectedMatch] = useState<Match | undefined>();
+  const [selectedPlayerId, setSelectedPlayerId] = useState<string | undefined>();
+  const selectedMatchday = matchdays.find((matchday) => matchday.id === selectedMatchdayId) ?? defaultMatchday;
+
+  useEffect(() => {
+    if (!defaultMatchday) return;
+    const selectedStillExists = matchdays.some((matchday) => matchday.id === selectedMatchdayId);
+    if (!selectedMatchdayId || !selectedStillExists) {
+      setSelectedMatchdayId(defaultMatchday.id);
+      setSelectedMatch(undefined);
+    }
+  }, [defaultMatchday, matchdays, selectedMatchdayId]);
+>>>>>>> 6bc6cc2 (Version 2.2)
 
   const topStats = useMemo(() => {
     const stats = selectedMatch?.playerStats ?? [];
@@ -125,4 +162,7 @@ export const MatchdayPage = () => {
     </div>
   );
 };
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6bc6cc2 (Version 2.2)

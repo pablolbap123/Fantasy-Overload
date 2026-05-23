@@ -6,6 +6,10 @@ export type MarketStatus = "market" | "owned" | "locked";
 export type TransferType = "buy" | "sell" | "offer" | "offer_accepted" | "clause_buy" | "clause_raise" | "auction_win" | "league_offer";
 export type OfferStatus = "pending" | "accepted" | "rejected" | "outbid";
 export type OfferKind = "transfer" | "exchange";
+<<<<<<< HEAD
+=======
+export type BudgetEventType = "matchday_bonus" | "manual" | "correction";
+>>>>>>> 6bc6cc2 (Version 2.2)
 
 export interface Profile {
   id: string;
@@ -100,6 +104,22 @@ export interface Transfer {
   createdAt: string;
 }
 
+<<<<<<< HEAD
+=======
+export interface BudgetEvent {
+  id: string;
+  leagueId: string;
+  userId: string;
+  type: BudgetEventType;
+  matchdayNumber?: number | null;
+  amount: number;
+  description: string;
+  metadata?: Record<string, unknown>;
+  createdAt: string;
+  updatedAt?: string;
+}
+
+>>>>>>> 6bc6cc2 (Version 2.2)
 export interface Offer {
   id: string;
   leagueId: string;

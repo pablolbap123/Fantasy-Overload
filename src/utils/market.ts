@@ -116,6 +116,10 @@ export const resolveExpiredDailyMarket = ({ leagueId, leaguePlayers, players, me
     return {
       leaguePlayers: normalizeDailyMarket(leaguePlayers, players),
       members,
+<<<<<<< HEAD
+=======
+      players,
+>>>>>>> 6bc6cc2 (Version 2.2)
       offers,
       transfers: [] as Transfer[],
       activities: [] as ActivityItem[],
@@ -126,6 +130,10 @@ export const resolveExpiredDailyMarket = ({ leagueId, leaguePlayers, players, me
 
   const playerById = new Map(players.map((player) => [player.id, player]));
   let nextLeaguePlayers = [...leaguePlayers];
+<<<<<<< HEAD
+=======
+  let nextPlayers = [...players];
+>>>>>>> 6bc6cc2 (Version 2.2)
   let nextMembers = [...members];
   let nextOffers = [...offers];
   const transfers: Transfer[] = [];
@@ -170,6 +178,10 @@ export const resolveExpiredDailyMarket = ({ leagueId, leaguePlayers, players, me
               }
             : item,
         );
+<<<<<<< HEAD
+=======
+        nextPlayers = nextPlayers.map((item) => (item.id === player.id ? { ...item, currentPrice: leagueOfferAmount } : item));
+>>>>>>> 6bc6cc2 (Version 2.2)
         nextOffers = nextOffers.map((offer) =>
           offer.playerId === marketPlayer.playerId && offer.status === "pending" ? { ...offer, status: "rejected" } : offer,
         );
@@ -234,6 +246,10 @@ export const resolveExpiredDailyMarket = ({ leagueId, leaguePlayers, players, me
           }
         : item,
     );
+<<<<<<< HEAD
+=======
+    nextPlayers = nextPlayers.map((item) => (item.id === player.id ? { ...item, currentPrice: winningBid.amount } : item));
+>>>>>>> 6bc6cc2 (Version 2.2)
     nextOffers = nextOffers.map((offer) => {
       if (offer.playerId !== marketPlayer.playerId || offer.status !== "pending") return offer;
       return { ...offer, status: offer.id === winningBid.id ? ("accepted" as const) : ("outbid" as const) };
@@ -274,6 +290,10 @@ export const resolveExpiredDailyMarket = ({ leagueId, leaguePlayers, players, me
 
   return {
     leaguePlayers: nextLeaguePlayers,
+<<<<<<< HEAD
+=======
+    players: nextPlayers,
+>>>>>>> 6bc6cc2 (Version 2.2)
     members: nextMembers,
     offers: nextOffers,
     transfers,

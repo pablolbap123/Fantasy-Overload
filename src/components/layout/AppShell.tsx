@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { BarChart3, CalendarDays, Home, LogOut, RefreshCw, Shield, SlidersHorizontal, Store, Trophy, Users, Wifi } from "lucide-react";
+=======
+import { BarChart3, Bell, CalendarDays, Home, LogOut, RefreshCw, Shield, SlidersHorizontal, Store, Trophy, Users, Wallet, Wifi } from "lucide-react";
+>>>>>>> 6bc6cc2 (Version 2.2)
 import { clsx } from "clsx";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -7,10 +11,18 @@ import { LeagueIntroOverlay } from "../fantasy/LeagueIntroOverlay";
 import { Button } from "../ui/Button";
 import { useFantasy } from "../../store/fantasyStore";
 import { formatDate } from "../../utils/formatters";
+<<<<<<< HEAD
+=======
+import { getFantasyNotificationPermission, requestFantasyNotificationPermission } from "../../utils/notifications";
+>>>>>>> 6bc6cc2 (Version 2.2)
 
 const baseNavItems = [
   { label: "Inicio", to: "home", icon: Home },
   { label: "Equipo", to: "team", icon: Shield },
+<<<<<<< HEAD
+=======
+  { label: "Caja", to: "budget", icon: Wallet },
+>>>>>>> 6bc6cc2 (Version 2.2)
   { label: "Mercado", to: "market", icon: Store },
   { label: "Jornada", to: "matchday", icon: CalendarDays },
   { label: "Ranking", to: "standings", icon: Trophy },
@@ -54,6 +66,10 @@ export const AppShell = () => {
   } = useFantasy();
   const navigate = useNavigate();
   const [syncing, setSyncing] = useState(false);
+<<<<<<< HEAD
+=======
+  const [notificationPermission, setNotificationPermission] = useState(getFantasyNotificationPermission());
+>>>>>>> 6bc6cc2 (Version 2.2)
 
   useEffect(() => {
     if (leagueId && leagueId !== currentLeague?.id) void selectLeague(leagueId);
@@ -75,6 +91,19 @@ export const AppShell = () => {
     }
   };
 
+<<<<<<< HEAD
+=======
+  const enableNotifications = async () => {
+    try {
+      const permission = await requestFantasyNotificationPermission();
+      setNotificationPermission(permission);
+    } catch (error) {
+      console.warn("No se pudieron activar las notificaciones", error);
+      setNotificationPermission("denied");
+    }
+  };
+
+>>>>>>> 6bc6cc2 (Version 2.2)
   return (
     <div className="min-h-screen pb-24 lg:pb-0">
       <LeagueIntroOverlay leagueId={currentLeague?.id} userId={userId} players={players} leaguePlayers={leaguePlayers} />
@@ -188,6 +217,14 @@ export const AppShell = () => {
               <Button variant="secondary" className="hidden sm:inline-flex" onClick={() => navigate("/leagues")}>
                 Mis ligas
               </Button>
+<<<<<<< HEAD
+=======
+              {notificationPermission !== "granted" && notificationPermission !== "unsupported" ? (
+                <Button variant="ghost" className="min-h-10 px-3" aria-label="Activar notificaciones" onClick={() => void enableNotifications()}>
+                  <Bell className="h-4 w-4" />
+                </Button>
+              ) : null}
+>>>>>>> 6bc6cc2 (Version 2.2)
               <Button variant="ghost" className="min-h-10 px-3" onClick={() => navigate("/profile")}>
                 {profile?.username?.slice(0, 2).toUpperCase() ?? "ME"}
               </Button>

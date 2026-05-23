@@ -4,4 +4,8 @@
     <string name="title_activity_main">Overload Fantasy</string>
     <string name="package_name">com.overload.fantasy</string>
     <string name="custom_url_scheme">com.overload.fantasy</string>
+<<<<<<< HEAD
+=======
+    <string name="default_notification_channel_id">overload_fantasy</string>
+>>>>>>> 6bc6cc2 (Version 2.2)
 </resources>
