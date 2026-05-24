@@ -995,7 +995,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
   const resetPassword = useCallback(async (email: string) => {
     if (!supabase) throw new Error("Supabase no está configurado.");
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: getAuthRedirectUrl(),
+      redirectTo: "https://fantasy-overload.vercel.app/update-password",
     });
     if (error) throw error;
   }, []);
