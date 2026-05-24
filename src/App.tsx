@@ -21,6 +21,7 @@ import { ProfilePage } from "./pages/ProfilePage";
 import { StandingsPage } from "./pages/StandingsPage";
 import { StatsPage } from "./pages/StatsPage";
 import { useFantasy } from "./store/fantasyStore";
+import UpdatePassword from "./pages/UpdatePassword";
 
 const PrivateRoute = ({ children }: { children: ReactElement }) => {
   const { userId, loading } = useFantasy();
@@ -59,6 +60,7 @@ export default function App() {
         <Route path="/" element={<Navigate to={defaultPath} replace />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/auth/callback" element={<AuthCallbackPage />} />
+        <Route path="/update-password" element={<UpdatePassword />} />
         <Route
           path="/leagues"
           element={
