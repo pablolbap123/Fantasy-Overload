@@ -9,7 +9,7 @@ import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
 import { EmptyState } from "../components/ui/EmptyState";
 import { useFantasy } from "../store/fantasyStore";
-import { formationShape, validateLineup } from "../utils/calculatePoints";
+import { formationShape, normalizePlayerPosition, playerPositions, positionOrder, validateLineup } from "../utils/calculatePoints";
 import { formatMoney, positionTone } from "../utils/formatters";
 import { availabilityText, isUnavailableForMatchday, playerMatchdayPoints } from "../utils/playerAvailability";
 
@@ -22,11 +22,59 @@ const lineupForMatchday = (lineups: Lineup[], userId: string | null, matchdayId?
     .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())[0];
 };
 
+const REQUIRED_MATCHES_PER_MATCHDAY = 14;
+
+const matchdayHasCompleteResults = (matchday?: { matches?: Array<{ status: string; homeScore?: number | null; awayScore?: number | null }> }) =>
+  Boolean(
+    matchday?.matches?.length &&
+      matchday.matches.length >= REQUIRED_MATCHES_PER_MATCHDAY &&
+      matchday.matches.every((match) => match.status === "finalizada" && match.homeScore !== null && match.awayScore !== null),
+  );
+
+const emptyStats = {
+  appearances: 0,
+  goals: 0,
+  assists: 0,
+  goalsConceded: 0,
+  cleanSheets: 0,
+  yellowCards: 0,
+  redCards: 0,
+  doubleYellowCards: 0,
+  penaltiesScored: 0,
+  penaltiesMissed: 0,
+  penaltiesSaved: 0,
+  penaltiesProvoked: 0,
+  ownGoals: 0,
+  mvps: 0,
+  overloadPoints: 0,
+  minutes: 0,
+  keyActions: 0,
+};
+
+const missingSnapshotPlayer = (playerId: string, position: Player["position"]): Player => ({
+  id: playerId,
+  name: "Jugador transferido",
+  teamId: "snapshot",
+  teamName: "-",
+  position,
+  positions: [position],
+  basePrice: 0,
+  currentPrice: 0,
+  fantasyValue: 0,
+  totalPoints: 0,
+  pointsByMatchday: {},
+  status: "disponible",
+  stats: emptyStats,
+});
+
 export const MyTeamPage = () => {
-  const { currentLeague, userId, leaguePlayers, players, members, lineups, matchdays, submitLineup, sellPlayer } = useFantasy();
-  const currentMatchdayNumber = currentLeague?.currentMatchday ?? matchdays.at(-1)?.number ?? 1;
-  const nextMatchdayNumber = currentMatchdayNumber + 1;
-  const [selectedMatchdayNumber, setSelectedMatchdayNumber] = useState(nextMatchdayNumber);
+  const { currentLeague, userId, leaguePlayers, players, members, lineups, matchdays, submitLineup, setLineupCaptain, sellPlayer } = useFantasy();
+  const sortedMatchdays = useMemo(() => [...matchdays].sort((a, b) => a.number - b.number), [matchdays]);
+  const latestCompletedMatchdayNumber = sortedMatchdays.filter(matchdayHasCompleteResults).at(-1)?.number ?? 0;
+  const openMatchdayNumber =
+    sortedMatchdays.find((matchday) => !matchdayHasCompleteResults(matchday))?.number ??
+    Math.max(1, latestCompletedMatchdayNumber + 1, currentLeague?.currentMatchday ?? 1);
+  const [selectedMatchdayNumber, setSelectedMatchdayNumber] = useState(openMatchdayNumber);
   const [formation, setFormation] = useState<Formation>("4-4-2");
   const [starterIds, setStarterIds] = useState<string[]>([]);
   const [benchIds, setBenchIds] = useState<string[]>([]);
@@ -35,10 +83,6 @@ export const MyTeamPage = () => {
   const [swapCandidate, setSwapCandidate] = useState<Player | undefined>();
   const [error, setError] = useState("");
   const [saving, setSaving] = useState(false);
-
-  useEffect(() => {
-    setSelectedMatchdayNumber(nextMatchdayNumber);
-  }, [nextMatchdayNumber]);
 
   // Squad = jugadores que poseo + los que tengo en el mercado (aún míos hasta que se vendan)
   const myLeaguePlayers = useMemo(
@@ -54,7 +98,7 @@ export const MyTeamPage = () => {
         .sort((a, b) =>
           a!.position === b!.position
             ? b!.totalPoints - a!.totalPoints
-            : formationShape["4-4-2"][a!.position] - formationShape["4-4-2"][b!.position],
+            : positionOrder.indexOf(a!.position) - positionOrder.indexOf(b!.position),
         ) as Player[],
     [myLeaguePlayers, players],
   );
@@ -62,15 +106,15 @@ export const MyTeamPage = () => {
   const me = members.find((member) => member.userId === userId);
   const activeMatchday = matchdays.find((matchday) => matchday.number === selectedMatchdayNumber);
   const activeLineup = lineupForMatchday(lineups, userId, activeMatchday?.id);
-  const isPlanningMatchday = selectedMatchdayNumber >= nextMatchdayNumber;
-  const isEditable = isPlanningMatchday;
+  const isEditable = selectedMatchdayNumber === openMatchdayNumber && !activeLineup && !currentLeague?.lineupsLocked;
+  const canChangeCaptain = selectedMatchdayNumber === openMatchdayNumber && Boolean(activeLineup) && !currentLeague?.lineupsLocked;
 
   const availableMatchdayNumbers = useMemo(() => {
     const numbers = new Set<number>();
     matchdays.forEach((matchday) => {
-      if (matchday.number <= currentMatchdayNumber) numbers.add(matchday.number);
+      if (matchdayHasCompleteResults(matchday)) numbers.add(matchday.number);
     });
-    numbers.add(nextMatchdayNumber);
+    numbers.add(openMatchdayNumber);
     lineups
       .filter((lineup) => lineup.userId === userId)
       .forEach((lineup) => {
@@ -78,7 +122,11 @@ export const MyTeamPage = () => {
         if (found) numbers.add(found.number);
       });
     return [...numbers].sort((a, b) => a - b);
-  }, [currentMatchdayNumber, lineups, matchdays, nextMatchdayNumber, userId]);
+  }, [lineups, matchdays, openMatchdayNumber, userId]);
+
+  useEffect(() => {
+    setSelectedMatchdayNumber((current) => (availableMatchdayNumbers.includes(current) ? current : openMatchdayNumber));
+  }, [availableMatchdayNumbers, openMatchdayNumber]);
 
   const starters = Array.from(new Set(starterIds))
     .map((id) => squad.find((player) => player.id === id))
@@ -94,7 +142,7 @@ export const MyTeamPage = () => {
     if (!activeLineup) return null;
     return activeLineup.players.map((lp) => {
       const player = players.find((p) => p.id === lp.playerId);
-      return player ?? { id: lp.playerId, name: "Jugador vendido", position: lp.position, teamName: "-", currentPrice: 0, totalPoints: 0, status: "active", pointsByMatchday: {} } as Player;
+      return player ?? missingSnapshotPlayer(lp.playerId, normalizePlayerPosition(lp.position));
     });
   }, [activeLineup, players]);
 
@@ -110,7 +158,7 @@ export const MyTeamPage = () => {
         return sum + (isCapt ? pts * 2 : pts);
       }, 0);
     }
-    return squad.reduce((sum, player) => sum + playerMatchdayPoints(player, matchdayNumber), 0);
+    return 0;
   };
 
   useEffect(() => {
@@ -127,23 +175,29 @@ export const MyTeamPage = () => {
       return;
     }
 
-    if (!isPlanningMatchday) {
+    if (!isEditable) {
       setStarterIds([]);
       setBenchIds([]);
       return;
     }
 
-    const startersByDefault = [
-      ...squad.filter((player) => player.position === "POR" && !isUnavailableForMatchday(player, selectedMatchdayNumber)).slice(0, 1),
-      ...squad.filter((player) => player.position === "DEF" && !isUnavailableForMatchday(player, selectedMatchdayNumber)).slice(0, 4),
-      ...squad.filter((player) => player.position === "MED" && !isUnavailableForMatchday(player, selectedMatchdayNumber)).slice(0, 4),
-      ...squad.filter((player) => player.position === "DEL" && !isUnavailableForMatchday(player, selectedMatchdayNumber)).slice(0, 2),
-    ].map((player) => player.id);
+    const picked = new Set<string>();
+    const shape = formationShape["4-4-2"];
+    const startersByDefault = positionOrder.flatMap((position) =>
+      squad
+        .filter((player) => !picked.has(player.id) && playerPositions(player).includes(position) && !isUnavailableForMatchday(player, selectedMatchdayNumber))
+        .sort((a, b) => b.totalPoints - a.totalPoints)
+        .slice(0, shape[position])
+        .map((player) => {
+          picked.add(player.id);
+          return player.id;
+        }),
+    );
     setFormation("4-4-2");
     setStarterIds(startersByDefault);
     setBenchIds(squad.filter((player) => !startersByDefault.includes(player.id)).map((player) => player.id));
     setCaptainPlayerId(null);
-  }, [activeLineup, isPlanningMatchday, selectedMatchdayNumber, squad]);
+  }, [activeLineup, isEditable, selectedMatchdayNumber, squad]);
 
   const validation = useMemo(
     () => validateLineup(squad, starterIds, formation, selectedMatchdayNumber),
@@ -158,13 +212,12 @@ export const MyTeamPage = () => {
       setError(`${player.name} no puede ser titular: ${availabilityText(player, selectedMatchdayNumber)}.`);
       return;
     }
-    const shape = formationShape[formation];
-    const samePositionStarters = starters.filter((item) => item.position === player.position);
-    if (samePositionStarters.length >= shape[player.position]) {
+    const nextStarters = Array.from(new Set([...starterIds, playerId]));
+    if (nextStarters.length > 11 || (nextStarters.length === 11 && !validateLineup(squad, nextStarters, formation, selectedMatchdayNumber).valid)) {
       setSwapCandidate(player);
       return;
     }
-    setStarterIds((current) => (current.includes(playerId) ? current : [...current, playerId]));
+    setStarterIds(nextStarters);
     setBenchIds((current) => current.filter((id) => id !== playerId));
   };
 
@@ -182,19 +235,35 @@ export const MyTeamPage = () => {
     if (captainPlayerId === playerId) setCaptainPlayerId(null);
   };
 
-  const toggleCaptain = (playerId: string) => {
+  const toggleCaptain = async (playerId: string) => {
+    if (activeLineup && !isEditable) {
+      setError("");
+      setSaving(true);
+      try {
+        await setLineupCaptain(activeLineup.id, activeLineup.captainPlayerId === playerId ? null : playerId);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "No se pudo cambiar el capitan.");
+      } finally {
+        setSaving(false);
+      }
+      return;
+    }
     setCaptainPlayerId((current) => (current === playerId ? null : playerId));
   };
 
   const autofill = () => {
     if (!isEditable) return;
     const shape = formationShape[formation];
-    const startersByPoints = (Object.keys(shape) as Array<keyof typeof shape>).flatMap((position) =>
+    const picked = new Set<string>();
+    const startersByPoints = positionOrder.flatMap((position) =>
       squad
-        .filter((player) => player.position === position && !isUnavailableForMatchday(player, selectedMatchdayNumber))
+        .filter((player) => !picked.has(player.id) && playerPositions(player).includes(position) && !isUnavailableForMatchday(player, selectedMatchdayNumber))
         .sort((a, b) => b.totalPoints - a.totalPoints)
         .slice(0, shape[position])
-        .map((player) => player.id),
+        .map((player) => {
+          picked.add(player.id);
+          return player.id;
+        }),
     );
     setStarterIds(startersByPoints);
     setBenchIds(squad.filter((player) => !startersByPoints.includes(player.id)).map((player) => player.id));
@@ -204,6 +273,9 @@ export const MyTeamPage = () => {
     setError("");
     setSaving(true);
     try {
+      if (captainPlayerId && !starterIds.includes(captainPlayerId)) {
+        throw new Error("El capitan debe estar dentro del once titular.");
+      }
       await submitLineup(formation, starterIds, benchIds, selectedMatchdayNumber, captainPlayerId);
     } catch (err) {
       setError(err instanceof Error ? err.message : "No se pudo guardar la alineacion.");
@@ -220,6 +292,17 @@ export const MyTeamPage = () => {
   const boardPlayers = !isEditable && lineupPlayers ? lineupPlayers : squad;
   const boardStarterIds = !isEditable && activeLineup ? activeLineup.players.filter((p) => p.isStarter).map((p) => p.playerId) : starterIds;
   const boardCaptain = !isEditable && activeLineup ? activeLineup.captainPlayerId : captainPlayerId;
+  const boardLineupPlayers = !isEditable && activeLineup
+    ? activeLineup.players
+    : boardStarterIds.map((playerId, slot) => {
+        const player = squad.find((item) => item.id === playerId);
+        return {
+          playerId,
+          slot,
+          isStarter: true,
+          position: validation.assignedPositions[playerId] ?? player?.position ?? "MED",
+        };
+      });
 
   return (
     <div className="space-y-5">
@@ -259,13 +342,13 @@ export const MyTeamPage = () => {
               key={number}
               className={`min-w-28 rounded-lg border px-3 py-2 text-left transition ${
                 selectedMatchdayNumber === number
-                  ? "border-[#62d7ff]/60 bg-[#62d7ff]/15 text-white"
+                  ? "border-[#4bb3fd]/60 bg-[#4bb3fd]/15 text-white"
                   : "border-white/10 bg-white/[0.05] text-slate-200 hover:bg-white/10"
               }`}
               onClick={() => setSelectedMatchdayNumber(number)}
             >
               <div className="text-xs font-black uppercase text-slate-300">
-                {number === nextMatchdayNumber ? "Proxima" : number === currentMatchdayNumber ? "Actual" : "Historico"}
+                {number === openMatchdayNumber ? (activeLineup && selectedMatchdayNumber === number ? "Subida" : "Abierta") : "Resultados"}
               </div>
               <div className="text-lg font-black">J{number}</div>
               <div className="text-sm font-black text-[#21d17f]">{squadPointsFor(number)} pts</div>
@@ -274,16 +357,18 @@ export const MyTeamPage = () => {
         </div>
       </Card>
 
-      {currentLeague?.lineupsLocked && !isPlanningMatchday ? (
+      {currentLeague?.lineupsLocked && selectedMatchdayNumber === openMatchdayNumber ? (
         <div className="rounded-lg border border-[#f5bd43]/25 bg-[#f5bd43]/15 p-3 text-sm font-semibold text-[#ffe2a2]">
           La alineacion esta bloqueada porque la jornada esta en curso.
         </div>
       ) : null}
 
-      {isEditable && captainPlayerId && (
+      {(isEditable || canChangeCaptain) && (captainPlayerId || activeLineup?.captainPlayerId) && (
         <div className="flex items-center gap-2 rounded-lg border border-amber-400/30 bg-amber-400/10 p-3 text-sm text-amber-200">
           <Crown className="h-4 w-4 text-amber-400" />
-          <span>Capitán: <strong>{starters.find((p) => p.id === captainPlayerId)?.name ?? "—"}</strong> · sus puntos se multiplican por ×2</span>
+          <span>
+            Capitan: <strong>{boardPlayers.find((player) => player.id === (activeLineup?.captainPlayerId ?? captainPlayerId))?.name ?? "-"}</strong> · sus puntos se multiplican por x2
+          </span>
         </div>
       )}
 
@@ -299,7 +384,7 @@ export const MyTeamPage = () => {
                 <button
                   key={item}
                   className={`rounded-lg px-3 py-2 text-sm font-black transition ${
-                    formation === item ? "bg-[#62d7ff] text-[#08101f]" : "bg-white/10 text-slate-100 hover:bg-white/15"
+                    formation === item ? "bg-[#23c979] text-[#06130d]" : "bg-white/10 text-slate-100 hover:bg-white/15"
                   }`}
                   onClick={() => isEditable && setFormation(item)}
                   disabled={!isEditable}
@@ -319,7 +404,8 @@ export const MyTeamPage = () => {
               matchdayNumber={selectedMatchdayNumber}
               readOnly={!isEditable}
               captainPlayerId={boardCaptain}
-              onCaptainChange={isEditable ? toggleCaptain : undefined}
+              onCaptainChange={isEditable || canChangeCaptain ? (playerId) => void toggleCaptain(playerId) : undefined}
+              lineupPlayers={boardLineupPlayers}
             />
           ) : (
             <EmptyState title="No hay once guardado" description="No existe alineacion para esta jornada." />
@@ -335,7 +421,7 @@ export const MyTeamPage = () => {
                   </Badge>
                 ))
               )}
-              {activeLineup ? <Badge className="bg-[#62d7ff]/20 text-[#c5f2ff] ring-[#62d7ff]/35">Guardada</Badge> : null}
+              {activeLineup ? <Badge className="bg-[#4bb3fd]/20 text-[#c5f2ff] ring-[#4bb3fd]/35">Guardada</Badge> : null}
             </div>
           )}
           {error ? <div className="mt-3 rounded-lg border border-[#ff3f55]/30 bg-[#ff3f55]/15 p-3 text-sm text-rose-100">{error}</div> : null}
@@ -348,7 +434,7 @@ export const MyTeamPage = () => {
               {bench.map((player) => {
                 const isListed = leaguePlayers.find((lp) => lp.playerId === player.id)?.listedByUserId === userId;
                 return (
-                  <div key={player.id} className="grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-lg bg-[#202a43]/80 p-3 sm:flex">
+                  <div key={player.id} className="grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-lg bg-[#111a23] p-3 sm:flex">
                     <PlayerAvatar player={player} />
                     <div className="min-w-0 flex-1">
                       <div className="truncate text-sm font-black text-white">{player.name}</div>
@@ -361,7 +447,11 @@ export const MyTeamPage = () => {
                       )}
                     </div>
                     <div className="text-right">
-                      <Badge className={positionTone[player.position]}>{player.position}</Badge>
+                      <div className="flex justify-end gap-1">
+                        {playerPositions(player).map((position) => (
+                          <Badge key={position} className={positionTone[position]}>{position}</Badge>
+                        ))}
+                      </div>
                       <div className="mt-1 text-sm font-black text-[#21d17f]">{playerMatchdayPoints(player, selectedMatchdayNumber)} pts</div>
                       {isUnavailableForMatchday(player, selectedMatchdayNumber) ? (
                         <div className="mt-1 text-[11px] font-bold text-rose-200">{availabilityText(player, selectedMatchdayNumber)}</div>
@@ -408,7 +498,7 @@ export const MyTeamPage = () => {
                   return (
                     <button
                       key={player.id}
-                      className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-3 rounded-lg bg-[#202a43]/80 p-3 text-left hover:bg-[#26314a]"
+                      className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-3 rounded-lg bg-[#111a23] p-3 text-left hover:bg-[#162230]"
                       onClick={() => setSelectedPlayer(player)}
                     >
                       <PlayerAvatar player={player} size="sm" />
@@ -435,15 +525,15 @@ export const MyTeamPage = () => {
           <Card className="w-full max-w-lg" onClick={(event) => event.stopPropagation()}>
             <h2 className="text-xl font-black text-white">Cambiar por titular</h2>
             <p className="mt-1 text-sm text-slate-300">
-              Elige que {swapCandidate.position} sale del once para que entre {swapCandidate.name}.
+              Elige quien sale del once para que entre {swapCandidate.name}.
             </p>
             <div className="mt-4 space-y-2">
               {starters
-                .filter((player) => player.position === swapCandidate.position)
+                .filter((player) => playerPositions(player).some((position) => playerPositions(swapCandidate).includes(position)))
                 .map((starter) => (
                   <button
                     key={starter.id}
-                    className="flex w-full items-center gap-3 rounded-lg bg-[#202a43]/80 p-3 text-left hover:bg-[#26314a]"
+                    className="flex w-full items-center gap-3 rounded-lg bg-[#111a23] p-3 text-left hover:bg-[#162230]"
                     onClick={() => replaceStarter(swapCandidate, starter)}
                   >
                     <PlayerAvatar player={starter} size="sm" />
@@ -451,7 +541,7 @@ export const MyTeamPage = () => {
                       <div className="truncate font-black text-white">{starter.name}</div>
                       <div className="text-xs text-slate-300">{playerMatchdayPoints(starter, selectedMatchdayNumber)} pts en J{selectedMatchdayNumber}</div>
                     </div>
-                    <ArrowRightLeft className="h-5 w-5 text-[#62d7ff]" />
+                    <ArrowRightLeft className="h-5 w-5 text-[#4bb3fd]" />
                   </button>
                 ))}
             </div>

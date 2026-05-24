@@ -8,7 +8,7 @@ export const challengeMeta = {
   "stageUrl": "https://challenge.place/c/68486e1155cbb0e036a0559f/stage/69de85f89e7d357d88be816c",
   "stageName": "Temporada 1 GO",
   "stageId": "69de85f89e7d357d88be816c",
-  "fetchedAt": "2026-05-22T07:54:27.940Z",
+  "fetchedAt": "2026-05-24T10:10:07.991Z",
   "playerCount": 1148,
   "teamCount": 39,
   "matchdayCount": 7,
@@ -342,6 +342,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4739612,
     "currentPrice": 7350000,
     "fantasyValue": 1.1,
@@ -392,6 +395,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3101023,
     "currentPrice": 3101023,
     "fantasyValue": 0,
@@ -426,6 +432,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4108610,
     "currentPrice": 3400000,
     "fantasyValue": -0.1,
@@ -476,6 +485,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4562924,
     "currentPrice": 12650000,
     "fantasyValue": 3.9,
@@ -526,6 +538,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR",
+      "DEF"
+    ],
     "basePrice": 2583616,
     "currentPrice": 2583616,
     "fantasyValue": 0,
@@ -560,6 +576,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4076933,
     "currentPrice": 3450000,
     "fantasyValue": -0.3,
@@ -610,6 +629,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3957474,
     "currentPrice": 5150000,
     "fantasyValue": 0.9,
@@ -660,6 +682,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEL"
+    ],
     "basePrice": 5011130,
     "currentPrice": 10600000,
     "fantasyValue": 2.9,
@@ -710,6 +736,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3824670,
     "currentPrice": 3824670,
     "fantasyValue": 0,
@@ -744,6 +773,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4327326,
     "currentPrice": 3450000,
     "fantasyValue": -0.4,
@@ -794,6 +826,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4493999,
     "currentPrice": 7250000,
     "fantasyValue": 1.1,
@@ -844,6 +879,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2960902,
     "currentPrice": 2960902,
     "fantasyValue": 0,
@@ -878,6 +916,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5348603,
     "currentPrice": 13600000,
     "fantasyValue": 4.3,
@@ -928,6 +969,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2668161,
     "currentPrice": 2668161,
     "fantasyValue": 0,
@@ -962,6 +1006,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3097222,
     "currentPrice": 3097222,
     "fantasyValue": 0,
@@ -996,6 +1043,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5284599,
     "currentPrice": 4300000,
     "fantasyValue": -0.6,
@@ -1046,6 +1096,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4042123,
     "currentPrice": 2950000,
     "fantasyValue": -0.7,
@@ -1096,6 +1149,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2907599,
     "currentPrice": 2907599,
     "fantasyValue": 0,
@@ -1130,6 +1186,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4154505,
     "currentPrice": 8050000,
     "fantasyValue": 1.7,
@@ -1180,6 +1239,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4679788,
     "currentPrice": 5700000,
     "fantasyValue": 0.6,
@@ -1230,6 +1292,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4727424,
     "currentPrice": 5650000,
     "fantasyValue": 0.4,
@@ -1280,6 +1345,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEL"
+    ],
     "basePrice": 5051090,
     "currentPrice": 14600000,
     "fantasyValue": 4.9,
@@ -1330,6 +1399,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEL"
+    ],
     "basePrice": 4387675,
     "currentPrice": 16750000,
     "fantasyValue": 6.7,
@@ -1380,6 +1453,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4170520,
     "currentPrice": 4000000,
     "fantasyValue": 0,
@@ -1430,6 +1506,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3551895,
     "currentPrice": 3900000,
     "fantasyValue": 0.3,
@@ -1480,6 +1559,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4274177,
     "currentPrice": 7550000,
     "fantasyValue": 1.3,
@@ -1530,6 +1612,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2643421,
     "currentPrice": 2643421,
     "fantasyValue": 0,
@@ -1564,6 +1649,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEF",
+    "positions": [
+      "DEF",
+      "DEL"
+    ],
     "basePrice": 3779215,
     "currentPrice": 6050000,
     "fantasyValue": 1.3,
@@ -1614,6 +1703,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEL"
+    ],
     "basePrice": 4351273,
     "currentPrice": 14050000,
     "fantasyValue": 4.9,
@@ -1664,6 +1757,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3834150,
     "currentPrice": 2450000,
     "fantasyValue": -0.7,
@@ -1714,6 +1810,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4049400,
     "currentPrice": 5000000,
     "fantasyValue": 0.7,
@@ -1764,6 +1863,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "MED"
+    ],
     "basePrice": 5277098,
     "currentPrice": 9300000,
     "fantasyValue": 2.3,
@@ -1814,6 +1917,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4286032,
     "currentPrice": 2650000,
     "fantasyValue": -0.9,
@@ -1864,6 +1970,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3964344,
     "currentPrice": 4300000,
     "fantasyValue": 0.3,
@@ -1914,6 +2023,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2544300,
     "currentPrice": 2544300,
     "fantasyValue": 0,
@@ -1948,6 +2060,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2949553,
     "currentPrice": 2949553,
     "fantasyValue": 0,
@@ -1982,6 +2097,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5290965,
     "currentPrice": 6900000,
     "fantasyValue": 1,
@@ -2032,6 +2150,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4363848,
     "currentPrice": 1450000,
     "fantasyValue": -1.6,
@@ -2082,6 +2203,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEF",
+    "positions": [
+      "DEF",
+      "DEL"
+    ],
     "basePrice": 4357941,
     "currentPrice": 6650000,
     "fantasyValue": 1.1,
@@ -2132,6 +2257,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4859032,
     "currentPrice": 3950000,
     "fantasyValue": -0.4,
@@ -2182,6 +2310,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5339173,
     "currentPrice": 13700000,
     "fantasyValue": 4,
@@ -2232,6 +2363,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3775032,
     "currentPrice": 6350000,
     "fantasyValue": 1.3,
@@ -2282,6 +2416,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3559460,
     "currentPrice": 3200000,
     "fantasyValue": -0.3,
@@ -2332,6 +2469,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5334907,
     "currentPrice": 11200000,
     "fantasyValue": 2.6,
@@ -2382,6 +2522,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3578119,
     "currentPrice": 3578119,
     "fantasyValue": 0,
@@ -2416,6 +2559,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4511863,
     "currentPrice": 7900000,
     "fantasyValue": 1.4,
@@ -2466,6 +2612,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4041623,
     "currentPrice": 4041623,
     "fantasyValue": 0,
@@ -2500,6 +2649,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3778728,
     "currentPrice": 3778728,
     "fantasyValue": 0,
@@ -2534,6 +2686,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR",
+      "MED"
+    ],
     "basePrice": 2322350,
     "currentPrice": 2322350,
     "fantasyValue": 0,
@@ -2568,6 +2724,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3929269,
     "currentPrice": 4200000,
     "fantasyValue": 0.1,
@@ -2618,6 +2777,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5580051,
     "currentPrice": 14100000,
     "fantasyValue": 4.9,
@@ -2668,6 +2830,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3428343,
     "currentPrice": 3428343,
     "fantasyValue": 0,
@@ -2702,6 +2867,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5145399,
     "currentPrice": 7900000,
     "fantasyValue": 1.6,
@@ -2752,6 +2920,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4587078,
     "currentPrice": 7850000,
     "fantasyValue": 1.9,
@@ -2802,6 +2973,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4774578,
     "currentPrice": 7350000,
     "fantasyValue": 1.1,
@@ -2852,6 +3026,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3521965,
     "currentPrice": 3521965,
     "fantasyValue": 0,
@@ -2886,6 +3063,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4478881,
     "currentPrice": 3700000,
     "fantasyValue": -0.3,
@@ -2936,6 +3116,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3642441,
     "currentPrice": 3642441,
     "fantasyValue": 0,
@@ -2970,6 +3153,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3934824,
     "currentPrice": 3934824,
     "fantasyValue": 0,
@@ -3004,6 +3190,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5305488,
     "currentPrice": 4800000,
     "fantasyValue": -0.3,
@@ -3054,6 +3243,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2787502,
     "currentPrice": 2787502,
     "fantasyValue": 0,
@@ -3088,6 +3280,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5465799,
     "currentPrice": 8850000,
     "fantasyValue": 1.9,
@@ -3138,6 +3333,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2377912,
     "currentPrice": 2377912,
     "fantasyValue": 0,
@@ -3172,6 +3370,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3647034,
     "currentPrice": 3647034,
     "fantasyValue": 0,
@@ -3206,6 +3407,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4849959,
     "currentPrice": 5650000,
     "fantasyValue": 0.7,
@@ -3256,6 +3460,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4513855,
     "currentPrice": 9900000,
     "fantasyValue": 3,
@@ -3306,6 +3513,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5033999,
     "currentPrice": 6550000,
     "fantasyValue": 0.9,
@@ -3356,6 +3566,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3740621,
     "currentPrice": 3740621,
     "fantasyValue": 0,
@@ -3390,6 +3603,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5715974,
     "currentPrice": 8700000,
     "fantasyValue": 1.7,
@@ -3440,6 +3656,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2378600,
     "currentPrice": 2378600,
     "fantasyValue": 0,
@@ -3474,6 +3693,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "MED"
+    ],
     "basePrice": 5653308,
     "currentPrice": 10250000,
     "fantasyValue": 2.3,
@@ -3524,6 +3747,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5084704,
     "currentPrice": 12000000,
     "fantasyValue": 3.9,
@@ -3574,6 +3800,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3508988,
     "currentPrice": 3508988,
     "fantasyValue": 0,
@@ -3608,6 +3837,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4716517,
     "currentPrice": 4700000,
     "fantasyValue": 0,
@@ -3658,6 +3890,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "DEF"
+    ],
     "basePrice": 4197467,
     "currentPrice": 4197467,
     "fantasyValue": 0,
@@ -3692,6 +3928,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4535319,
     "currentPrice": 4200000,
     "fantasyValue": -0.3,
@@ -3742,6 +3981,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2678075,
     "currentPrice": 2678075,
     "fantasyValue": 0,
@@ -3776,6 +4018,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2816498,
     "currentPrice": 2816498,
     "fantasyValue": 0,
@@ -3810,6 +4055,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4533145,
     "currentPrice": 5050000,
     "fantasyValue": 0.3,
@@ -3860,6 +4108,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4214630,
     "currentPrice": 3050000,
     "fantasyValue": -0.6,
@@ -3910,6 +4161,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4573239,
     "currentPrice": 6000000,
     "fantasyValue": 1,
@@ -3960,6 +4214,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3378928,
     "currentPrice": 3378928,
     "fantasyValue": 0,
@@ -3994,6 +4251,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3903678,
     "currentPrice": 3903678,
     "fantasyValue": 0,
@@ -4028,6 +4288,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4084523,
     "currentPrice": 5250000,
     "fantasyValue": 0.6,
@@ -4078,6 +4341,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3039852,
     "currentPrice": 3039852,
     "fantasyValue": 0,
@@ -4112,6 +4378,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2780217,
     "currentPrice": 2780217,
     "fantasyValue": 0,
@@ -4146,6 +4415,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5636997,
     "currentPrice": 8700000,
     "fantasyValue": 1.6,
@@ -4196,6 +4468,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3860212,
     "currentPrice": 4900000,
     "fantasyValue": 0.4,
@@ -4246,6 +4521,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4510362,
     "currentPrice": 2400000,
     "fantasyValue": -0.9,
@@ -4296,6 +4574,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4070042,
     "currentPrice": 3900000,
     "fantasyValue": 0,
@@ -4346,6 +4627,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3003670,
     "currentPrice": 3003670,
     "fantasyValue": 0,
@@ -4380,6 +4664,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2658118,
     "currentPrice": 2658118,
     "fantasyValue": 0,
@@ -4414,6 +4701,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4147331,
     "currentPrice": 6650000,
     "fantasyValue": 1,
@@ -4464,6 +4754,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2527073,
     "currentPrice": 2527073,
     "fantasyValue": 0,
@@ -4498,6 +4791,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3743245,
     "currentPrice": 3743245,
     "fantasyValue": 0,
@@ -4532,6 +4828,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEF",
+    "positions": [
+      "DEF",
+      "MED"
+    ],
     "basePrice": 4195036,
     "currentPrice": 2300000,
     "fantasyValue": -1,
@@ -4582,6 +4882,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "DEF"
+    ],
     "basePrice": 3496128,
     "currentPrice": 3496128,
     "fantasyValue": 0,
@@ -4616,6 +4920,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4845896,
     "currentPrice": 16100000,
     "fantasyValue": 5.6,
@@ -4666,6 +4973,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4924961,
     "currentPrice": 6450000,
     "fantasyValue": 0.7,
@@ -4716,6 +5026,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3727266,
     "currentPrice": 3727266,
     "fantasyValue": 0,
@@ -4750,6 +5063,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4088300,
     "currentPrice": 6750000,
     "fantasyValue": 1.4,
@@ -4800,6 +5116,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4465622,
     "currentPrice": 5050000,
     "fantasyValue": 0.4,
@@ -4850,6 +5169,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5032871,
     "currentPrice": 6850000,
     "fantasyValue": 0.9,
@@ -4900,6 +5222,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4420249,
     "currentPrice": 3550000,
     "fantasyValue": -0.6,
@@ -4950,6 +5275,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4079310,
     "currentPrice": 2300000,
     "fantasyValue": -1.3,
@@ -5000,6 +5328,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "MED"
+    ],
     "basePrice": 5376710,
     "currentPrice": 7150000,
     "fantasyValue": 1,
@@ -5050,6 +5382,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3817683,
     "currentPrice": 3817683,
     "fantasyValue": 0,
@@ -5084,6 +5419,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3032160,
     "currentPrice": 3032160,
     "fantasyValue": 0,
@@ -5118,6 +5456,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5182679,
     "currentPrice": 7100000,
     "fantasyValue": 1,
@@ -5168,6 +5509,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3857608,
     "currentPrice": 3350000,
     "fantasyValue": -0.3,
@@ -5218,6 +5562,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2969114,
     "currentPrice": 2969114,
     "fantasyValue": 0,
@@ -5252,6 +5599,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4547307,
     "currentPrice": 9150000,
     "fantasyValue": 2.3,
@@ -5302,6 +5652,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4646943,
     "currentPrice": 8450000,
     "fantasyValue": 1.6,
@@ -5352,6 +5705,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4703888,
     "currentPrice": 3300000,
     "fantasyValue": -0.7,
@@ -5402,6 +5758,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4262069,
     "currentPrice": 5850000,
     "fantasyValue": 0.6,
@@ -5452,6 +5811,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2944095,
     "currentPrice": 2944095,
     "fantasyValue": 0,
@@ -5486,6 +5848,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5777192,
     "currentPrice": 6150000,
     "fantasyValue": 0.3,
@@ -5536,6 +5901,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4648528,
     "currentPrice": 3750000,
     "fantasyValue": -0.4,
@@ -5586,6 +5954,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "POR",
+    "positions": [
+      "POR",
+      "DEF"
+    ],
     "basePrice": 4450419,
     "currentPrice": 5600000,
     "fantasyValue": 0.6,
@@ -5636,6 +6008,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4343082,
     "currentPrice": 4950000,
     "fantasyValue": 0.4,
@@ -5686,6 +6061,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4312798,
     "currentPrice": 5100000,
     "fantasyValue": 0.3,
@@ -5736,6 +6114,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "DEF"
+    ],
     "basePrice": 3401741,
     "currentPrice": 3401741,
     "fantasyValue": 0,
@@ -5770,6 +6152,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4890834,
     "currentPrice": 7550000,
     "fantasyValue": 1.4,
@@ -5820,6 +6205,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4334042,
     "currentPrice": 3600000,
     "fantasyValue": -0.4,
@@ -5870,6 +6258,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEF"
+    ],
     "basePrice": 3245561,
     "currentPrice": 3245561,
     "fantasyValue": 0,
@@ -5904,6 +6296,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5164875,
     "currentPrice": 7950000,
     "fantasyValue": 1.4,
@@ -5954,6 +6349,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2663607,
     "currentPrice": 2663607,
     "fantasyValue": 0,
@@ -5988,6 +6386,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4157366,
     "currentPrice": 6150000,
     "fantasyValue": 1.1,
@@ -6038,6 +6439,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5137158,
     "currentPrice": 5650000,
     "fantasyValue": 0.3,
@@ -6088,6 +6492,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5398599,
     "currentPrice": 11150000,
     "fantasyValue": 3.3,
@@ -6138,6 +6545,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3448957,
     "currentPrice": 3448957,
     "fantasyValue": 0,
@@ -6172,6 +6582,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4905978,
     "currentPrice": 19050000,
     "fantasyValue": 7.1,
@@ -6222,6 +6635,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2975458,
     "currentPrice": 2975458,
     "fantasyValue": 0,
@@ -6256,6 +6672,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3294819,
     "currentPrice": 3294819,
     "fantasyValue": 0,
@@ -6290,6 +6709,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4937910,
     "currentPrice": 2300000,
     "fantasyValue": -1.4,
@@ -6340,6 +6762,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5174823,
     "currentPrice": 6650000,
     "fantasyValue": 0.9,
@@ -6390,6 +6815,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3923988,
     "currentPrice": 4500000,
     "fantasyValue": 0.4,
@@ -6440,6 +6868,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4982436,
     "currentPrice": 13550000,
     "fantasyValue": 4.7,
@@ -6490,6 +6921,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3233713,
     "currentPrice": 3233713,
     "fantasyValue": 0,
@@ -6524,6 +6958,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3588052,
     "currentPrice": 3588052,
     "fantasyValue": 0,
@@ -6558,6 +6995,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4357440,
     "currentPrice": 3450000,
     "fantasyValue": -0.4,
@@ -6608,6 +7048,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "MED"
+    ],
     "basePrice": 5293717,
     "currentPrice": 13000000,
     "fantasyValue": 4.1,
@@ -6658,6 +7102,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3728196,
     "currentPrice": 2900000,
     "fantasyValue": -0.6,
@@ -6708,6 +7155,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3160333,
     "currentPrice": 3160333,
     "fantasyValue": 0,
@@ -6742,6 +7192,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4871778,
     "currentPrice": 3900000,
     "fantasyValue": -0.3,
@@ -6792,6 +7245,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4855344,
     "currentPrice": 11200000,
     "fantasyValue": 3.3,
@@ -6842,6 +7298,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3520455,
     "currentPrice": 3520455,
     "fantasyValue": 0,
@@ -6876,6 +7335,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4203913,
     "currentPrice": 3100000,
     "fantasyValue": -0.7,
@@ -6926,6 +7388,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4792788,
     "currentPrice": 9350000,
     "fantasyValue": 2,
@@ -6976,6 +7441,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3858994,
     "currentPrice": 3858994,
     "fantasyValue": 0,
@@ -7010,6 +7478,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4249222,
     "currentPrice": 1100000,
     "fantasyValue": -1.7,
@@ -7060,6 +7531,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3796067,
     "currentPrice": 3400000,
     "fantasyValue": -0.1,
@@ -7110,6 +7584,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5596342,
     "currentPrice": 5350000,
     "fantasyValue": -0.1,
@@ -7160,6 +7637,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5118955,
     "currentPrice": 11700000,
     "fantasyValue": 3.4,
@@ -7210,6 +7690,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3071537,
     "currentPrice": 3071537,
     "fantasyValue": 0,
@@ -7244,6 +7727,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3800501,
     "currentPrice": 2600000,
     "fantasyValue": -0.9,
@@ -7294,6 +7780,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2445246,
     "currentPrice": 2445246,
     "fantasyValue": 0,
@@ -7328,6 +7817,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4514157,
     "currentPrice": 2850000,
     "fantasyValue": -0.9,
@@ -7378,6 +7870,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2585282,
     "currentPrice": 2585282,
     "fantasyValue": 0,
@@ -7412,6 +7907,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEF"
+    ],
     "basePrice": 4549291,
     "currentPrice": 7800000,
     "fantasyValue": 1.9,
@@ -7462,6 +7961,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4874002,
     "currentPrice": 4850000,
     "fantasyValue": 0,
@@ -7512,6 +8014,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5013356,
     "currentPrice": 13300000,
     "fantasyValue": 4.1,
@@ -7562,6 +8067,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4469497,
     "currentPrice": 5700000,
     "fantasyValue": 0.7,
@@ -7612,6 +8120,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4436924,
     "currentPrice": 6100000,
     "fantasyValue": 0.9,
@@ -7662,6 +8173,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3438527,
     "currentPrice": 3438527,
     "fantasyValue": 0,
@@ -7696,6 +8210,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF",
+      "DEL"
+    ],
     "basePrice": 3126223,
     "currentPrice": 3126223,
     "fantasyValue": 0,
@@ -7730,6 +8248,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4294383,
     "currentPrice": 6700000,
     "fantasyValue": 1.3,
@@ -7780,6 +8301,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4438734,
     "currentPrice": 5700000,
     "fantasyValue": 0.3,
@@ -7830,6 +8354,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4853934,
     "currentPrice": 9700000,
     "fantasyValue": 2.4,
@@ -7880,6 +8407,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4033801,
     "currentPrice": 4400000,
     "fantasyValue": 0.3,
@@ -7930,6 +8460,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4145341,
     "currentPrice": 6800000,
     "fantasyValue": 1,
@@ -7980,6 +8513,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4430621,
     "currentPrice": 8700000,
     "fantasyValue": 2.4,
@@ -8030,6 +8566,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4540204,
     "currentPrice": 9050000,
     "fantasyValue": 2.6,
@@ -8080,6 +8619,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4860506,
     "currentPrice": 5850000,
     "fantasyValue": 0.6,
@@ -8130,6 +8672,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3865964,
     "currentPrice": 3800000,
     "fantasyValue": 0.1,
@@ -8180,6 +8725,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4286803,
     "currentPrice": 5850000,
     "fantasyValue": 0.7,
@@ -8230,6 +8778,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5159008,
     "currentPrice": 5750000,
     "fantasyValue": 0.4,
@@ -8280,6 +8831,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5098121,
     "currentPrice": 8600000,
     "fantasyValue": 2,
@@ -8330,6 +8884,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2684516,
     "currentPrice": 2684516,
     "fantasyValue": 0,
@@ -8364,6 +8921,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4055978,
     "currentPrice": 12800000,
     "fantasyValue": 5,
@@ -8414,6 +8974,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3743158,
     "currentPrice": 3743158,
     "fantasyValue": 0,
@@ -8448,6 +9011,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4474327,
     "currentPrice": 4600000,
     "fantasyValue": 0,
@@ -8498,6 +9064,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3112731,
     "currentPrice": 3112731,
     "fantasyValue": 0,
@@ -8532,6 +9101,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4793379,
     "currentPrice": 7700000,
     "fantasyValue": 1.6,
@@ -8581,19 +9153,22 @@ export const challengePlayers: Player[] = [
     "imageUrl": "https://static.challengeplace.com/2025/6/10/14/player/d26922c8-b4c6-48de-bd87-7d1a3763fb25.jpg",
     "teamId": "team-che",
     "teamName": "Chelsea",
-    "position": "MED",
-    "basePrice": 4521908,
-    "currentPrice": 7600000,
-    "fantasyValue": 1.4,
-    "totalPoints": 10,
+    "position": "POR",
+    "positions": [
+      "POR"
+    ],
+    "basePrice": 3821908,
+    "currentPrice": 7450000,
+    "fantasyValue": 1.6,
+    "totalPoints": 11,
     "pointsByMatchday": {
-      "1": 0,
-      "2": 0,
-      "3": 0,
-      "4": 4,
+      "1": -1,
+      "2": -1,
+      "3": -1,
+      "4": 6,
       "5": 1,
       "6": 1,
-      "7": 4
+      "7": 6
     },
     "status": "disponible",
     "stats": {
@@ -8616,13 +9191,13 @@ export const challengePlayers: Player[] = [
       "keyActions": 0
     },
     "priceHistory": {
-      "1": 4500000,
-      "2": 4500000,
-      "3": 4500000,
-      "4": 6100000,
-      "5": 5900000,
-      "6": 6150000,
-      "7": 7600000
+      "1": 3400000,
+      "2": 3150000,
+      "3": 2900000,
+      "4": 5450000,
+      "5": 4950000,
+      "6": 5200000,
+      "7": 7450000
     }
   },
   {
@@ -8632,6 +9207,12 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEL",
+      "DEF",
+      "POR"
+    ],
     "basePrice": 4604875,
     "currentPrice": 5500000,
     "fantasyValue": 0.4,
@@ -8682,6 +9263,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4913653,
     "currentPrice": 6750000,
     "fantasyValue": 1.1,
@@ -8732,6 +9316,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4894435,
     "currentPrice": 2500000,
     "fantasyValue": -1.3,
@@ -8782,6 +9369,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEL"
+    ],
     "basePrice": 4988574,
     "currentPrice": 8200000,
     "fantasyValue": 1.6,
@@ -8832,6 +9423,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3730060,
     "currentPrice": 3730060,
     "fantasyValue": 0,
@@ -8866,6 +9460,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4615930,
     "currentPrice": 5900000,
     "fantasyValue": 0.6,
@@ -8916,6 +9513,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5283954,
     "currentPrice": 11650000,
     "fantasyValue": 3.3,
@@ -8966,6 +9566,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4642375,
     "currentPrice": 1750000,
     "fantasyValue": -1.6,
@@ -9016,6 +9619,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3819054,
     "currentPrice": 3819054,
     "fantasyValue": 0,
@@ -9050,6 +9656,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2727521,
     "currentPrice": 2727521,
     "fantasyValue": 0,
@@ -9084,6 +9693,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4525432,
     "currentPrice": 8900000,
     "fantasyValue": 2.6,
@@ -9134,6 +9746,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4985048,
     "currentPrice": 8650000,
     "fantasyValue": 2,
@@ -9184,6 +9799,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4930866,
     "currentPrice": 14950000,
     "fantasyValue": 5.3,
@@ -9234,6 +9852,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3969022,
     "currentPrice": 3800000,
     "fantasyValue": 0,
@@ -9284,6 +9905,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3658509,
     "currentPrice": 3658509,
     "fantasyValue": 0,
@@ -9318,6 +9942,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEF",
+    "positions": [
+      "DEF",
+      "MED"
+    ],
     "basePrice": 4317566,
     "currentPrice": 3500000,
     "fantasyValue": -0.3,
@@ -9368,6 +9996,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4123532,
     "currentPrice": 4123532,
     "fantasyValue": 0,
@@ -9402,6 +10033,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "MED"
+    ],
     "basePrice": 5638845,
     "currentPrice": 7700000,
     "fantasyValue": 1,
@@ -9452,6 +10087,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3885120,
     "currentPrice": 2600000,
     "fantasyValue": -0.6,
@@ -9502,6 +10140,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3312138,
     "currentPrice": 3312138,
     "fantasyValue": 0,
@@ -9536,6 +10177,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5173903,
     "currentPrice": 12200000,
     "fantasyValue": 3.9,
@@ -9586,6 +10230,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4685852,
     "currentPrice": 6750000,
     "fantasyValue": 1,
@@ -9636,6 +10283,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4846465,
     "currentPrice": 11500000,
     "fantasyValue": 3.7,
@@ -9686,6 +10336,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4357675,
     "currentPrice": 15000000,
     "fantasyValue": 5.1,
@@ -9736,6 +10389,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4853633,
     "currentPrice": 10050000,
     "fantasyValue": 2.7,
@@ -9786,6 +10442,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4524627,
     "currentPrice": 6750000,
     "fantasyValue": 1.3,
@@ -9836,6 +10495,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2839907,
     "currentPrice": 2839907,
     "fantasyValue": 0,
@@ -9870,6 +10532,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5006656,
     "currentPrice": 5900000,
     "fantasyValue": 0.4,
@@ -9920,6 +10585,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5573040,
     "currentPrice": 11750000,
     "fantasyValue": 3.3,
@@ -9970,6 +10638,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4234432,
     "currentPrice": 5250000,
     "fantasyValue": 0.6,
@@ -10020,6 +10691,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4429311,
     "currentPrice": 10700000,
     "fantasyValue": 3.6,
@@ -10070,6 +10744,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4574325,
     "currentPrice": 9850000,
     "fantasyValue": 2.4,
@@ -10120,6 +10797,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2660617,
     "currentPrice": 2660617,
     "fantasyValue": 0,
@@ -10154,6 +10834,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4094102,
     "currentPrice": 2700000,
     "fantasyValue": -0.7,
@@ -10204,6 +10887,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5139980,
     "currentPrice": 5250000,
     "fantasyValue": 0.1,
@@ -10254,6 +10940,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5227590,
     "currentPrice": 17700000,
     "fantasyValue": 6,
@@ -10304,6 +10993,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3556670,
     "currentPrice": 1650000,
     "fantasyValue": -1,
@@ -10354,6 +11046,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3491208,
     "currentPrice": 3491208,
     "fantasyValue": 0,
@@ -10388,6 +11083,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4456391,
     "currentPrice": 8250000,
     "fantasyValue": 1.6,
@@ -10438,6 +11136,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4107112,
     "currentPrice": 500000,
     "fantasyValue": -2.4,
@@ -10488,6 +11189,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2794896,
     "currentPrice": 2794896,
     "fantasyValue": 0,
@@ -10522,6 +11226,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3621769,
     "currentPrice": 3621769,
     "fantasyValue": 0,
@@ -10556,6 +11263,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3852892,
     "currentPrice": 3852892,
     "fantasyValue": 0,
@@ -10590,6 +11300,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4629805,
     "currentPrice": 3300000,
     "fantasyValue": -0.4,
@@ -10640,6 +11353,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5026264,
     "currentPrice": 12150000,
     "fantasyValue": 3.3,
@@ -10690,6 +11406,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4267802,
     "currentPrice": 6050000,
     "fantasyValue": 0.9,
@@ -10740,6 +11459,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4437678,
     "currentPrice": 550000,
     "fantasyValue": -2.1,
@@ -10790,6 +11512,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4516721,
     "currentPrice": 7850000,
     "fantasyValue": 1.6,
@@ -10840,6 +11565,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4489965,
     "currentPrice": 10250000,
     "fantasyValue": 3.3,
@@ -10890,6 +11618,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4370386,
     "currentPrice": 4950000,
     "fantasyValue": 0.4,
@@ -10940,6 +11671,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4636211,
     "currentPrice": 8450000,
     "fantasyValue": 2,
@@ -10990,6 +11724,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4683108,
     "currentPrice": 6350000,
     "fantasyValue": 0.9,
@@ -11040,6 +11777,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2442839,
     "currentPrice": 2442839,
     "fantasyValue": 0,
@@ -11074,6 +11814,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2835701,
     "currentPrice": 2835701,
     "fantasyValue": 0,
@@ -11108,6 +11851,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5066704,
     "currentPrice": 7050000,
     "fantasyValue": 1.1,
@@ -11158,6 +11904,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4079364,
     "currentPrice": 1750000,
     "fantasyValue": -1,
@@ -11208,6 +11957,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "POR",
+    "positions": [
+      "POR",
+      "DEL"
+    ],
     "basePrice": 4071137,
     "currentPrice": 7700000,
     "fantasyValue": 1.6,
@@ -11258,6 +12011,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEF"
+    ],
     "basePrice": 5368948,
     "currentPrice": 6350000,
     "fantasyValue": 0.6,
@@ -11308,6 +12065,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4002616,
     "currentPrice": 2550000,
     "fantasyValue": -0.6,
@@ -11358,6 +12118,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4875526,
     "currentPrice": 4200000,
     "fantasyValue": -0.1,
@@ -11408,6 +12171,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3540743,
     "currentPrice": 3540743,
     "fantasyValue": 0,
@@ -11442,6 +12208,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3691487,
     "currentPrice": 4050000,
     "fantasyValue": 0.3,
@@ -11492,6 +12261,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4427002,
     "currentPrice": 800000,
     "fantasyValue": -2,
@@ -11542,6 +12314,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2763028,
     "currentPrice": 2763028,
     "fantasyValue": 0,
@@ -11576,6 +12351,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4557830,
     "currentPrice": 6400000,
     "fantasyValue": 1.1,
@@ -11626,6 +12404,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3973992,
     "currentPrice": 3973992,
     "fantasyValue": 0,
@@ -11660,6 +12441,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4006606,
     "currentPrice": 5550000,
     "fantasyValue": 0.7,
@@ -11710,6 +12494,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5045780,
     "currentPrice": 14700000,
     "fantasyValue": 5,
@@ -11760,6 +12547,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3568938,
     "currentPrice": 3568938,
     "fantasyValue": 0,
@@ -11794,6 +12584,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5132681,
     "currentPrice": 7950000,
     "fantasyValue": 1.4,
@@ -11844,6 +12637,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4502726,
     "currentPrice": 5600000,
     "fantasyValue": 0.7,
@@ -11894,6 +12690,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4573745,
     "currentPrice": 13150000,
     "fantasyValue": 4.6,
@@ -11944,6 +12743,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5054375,
     "currentPrice": 11200000,
     "fantasyValue": 3.4,
@@ -11994,6 +12796,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5026547,
     "currentPrice": 5800000,
     "fantasyValue": 0.4,
@@ -12044,6 +12849,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3544333,
     "currentPrice": 3544333,
     "fantasyValue": 0,
@@ -12078,6 +12886,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3601127,
     "currentPrice": 3601127,
     "fantasyValue": 0,
@@ -12112,6 +12923,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "DEF"
+    ],
     "basePrice": 5201833,
     "currentPrice": 6550000,
     "fantasyValue": 0.9,
@@ -12162,6 +12977,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4561759,
     "currentPrice": 3900000,
     "fantasyValue": -0.3,
@@ -12212,6 +13030,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4197365,
     "currentPrice": 1650000,
     "fantasyValue": -1.3,
@@ -12262,6 +13083,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4509663,
     "currentPrice": 11450000,
     "fantasyValue": 3.3,
@@ -12312,6 +13136,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4759655,
     "currentPrice": 5650000,
     "fantasyValue": 0.4,
@@ -12362,6 +13189,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4791723,
     "currentPrice": 6050000,
     "fantasyValue": 0.7,
@@ -12412,6 +13242,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3115515,
     "currentPrice": 3115515,
     "fantasyValue": 0,
@@ -12446,6 +13279,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3585230,
     "currentPrice": 3585230,
     "fantasyValue": 0,
@@ -12480,6 +13316,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4648498,
     "currentPrice": 9350000,
     "fantasyValue": 2.4,
@@ -12530,6 +13369,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4919397,
     "currentPrice": 7500000,
     "fantasyValue": 1.1,
@@ -12580,6 +13422,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3687605,
     "currentPrice": 3687605,
     "fantasyValue": 0,
@@ -12614,6 +13459,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3773797,
     "currentPrice": 5150000,
     "fantasyValue": 0.7,
@@ -12664,6 +13512,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "DEF"
+    ],
     "basePrice": 4906737,
     "currentPrice": 5900000,
     "fantasyValue": 0.6,
@@ -12714,6 +13566,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4398524,
     "currentPrice": 5650000,
     "fantasyValue": 0.7,
@@ -12764,6 +13619,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4643339,
     "currentPrice": 10050000,
     "fantasyValue": 3,
@@ -12814,6 +13672,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4234673,
     "currentPrice": 3700000,
     "fantasyValue": -0.1,
@@ -12864,6 +13725,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5268838,
     "currentPrice": 20250000,
     "fantasyValue": 7.7,
@@ -12914,6 +13778,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4460985,
     "currentPrice": 4050000,
     "fantasyValue": -0.1,
@@ -12964,6 +13831,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4153766,
     "currentPrice": 6900000,
     "fantasyValue": 1.6,
@@ -13014,6 +13884,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4019635,
     "currentPrice": 4019635,
     "fantasyValue": 0,
@@ -13048,6 +13921,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "POR",
+    "positions": [
+      "POR",
+      "DEF"
+    ],
     "basePrice": 4205095,
     "currentPrice": 3850000,
     "fantasyValue": -0.3,
@@ -13098,6 +13975,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4370932,
     "currentPrice": 2600000,
     "fantasyValue": -1,
@@ -13148,6 +14028,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5100192,
     "currentPrice": 10700000,
     "fantasyValue": 3.3,
@@ -13198,6 +14081,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5198833,
     "currentPrice": 7200000,
     "fantasyValue": 1.1,
@@ -13248,6 +14134,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4111065,
     "currentPrice": 4900000,
     "fantasyValue": 0.3,
@@ -13298,6 +14187,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2817933,
     "currentPrice": 2817933,
     "fantasyValue": 0,
@@ -13332,6 +14224,11 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEF",
+    "positions": [
+      "DEF",
+      "MED",
+      "DEL"
+    ],
     "basePrice": 4643557,
     "currentPrice": 10250000,
     "fantasyValue": 3.3,
@@ -13382,6 +14279,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5063339,
     "currentPrice": 15650000,
     "fantasyValue": 5.7,
@@ -13432,6 +14332,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4707341,
     "currentPrice": 4300000,
     "fantasyValue": -0.1,
@@ -13482,6 +14385,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3574861,
     "currentPrice": 3700000,
     "fantasyValue": 0,
@@ -13532,6 +14438,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4210529,
     "currentPrice": 4800000,
     "fantasyValue": 0.4,
@@ -13582,6 +14491,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3500410,
     "currentPrice": 3500410,
     "fantasyValue": 0,
@@ -13616,6 +14528,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3050943,
     "currentPrice": 3050943,
     "fantasyValue": 0,
@@ -13650,6 +14565,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5067686,
     "currentPrice": 15050000,
     "fantasyValue": 4.9,
@@ -13700,6 +14618,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3577160,
     "currentPrice": 500000,
     "fantasyValue": -2.3,
@@ -13750,6 +14671,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4046799,
     "currentPrice": 4046799,
     "fantasyValue": 0,
@@ -13784,6 +14708,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4381103,
     "currentPrice": 10700000,
     "fantasyValue": 3.4,
@@ -13834,6 +14761,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4226149,
     "currentPrice": 3200000,
     "fantasyValue": -0.4,
@@ -13884,6 +14814,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4470289,
     "currentPrice": 3200000,
     "fantasyValue": -0.7,
@@ -13934,6 +14867,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5295234,
     "currentPrice": 15000000,
     "fantasyValue": 5.3,
@@ -13984,6 +14920,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2553943,
     "currentPrice": 2553943,
     "fantasyValue": 0,
@@ -14018,6 +14957,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5034688,
     "currentPrice": 11650000,
     "fantasyValue": 3.9,
@@ -14068,6 +15010,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEL"
+    ],
     "basePrice": 4363143,
     "currentPrice": 5600000,
     "fantasyValue": 0.7,
@@ -14118,6 +15064,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4834801,
     "currentPrice": 16300000,
     "fantasyValue": 5.4,
@@ -14168,6 +15117,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4338696,
     "currentPrice": 5250000,
     "fantasyValue": 0.4,
@@ -14218,6 +15170,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4061892,
     "currentPrice": 4061892,
     "fantasyValue": 0,
@@ -14252,6 +15207,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4499292,
     "currentPrice": 2600000,
     "fantasyValue": -1,
@@ -14302,6 +15260,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3036264,
     "currentPrice": 3036264,
     "fantasyValue": 0,
@@ -14336,6 +15297,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3817948,
     "currentPrice": 3817948,
     "fantasyValue": 0,
@@ -14370,6 +15334,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3148368,
     "currentPrice": 3148368,
     "fantasyValue": 0,
@@ -14404,6 +15371,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR",
+      "DEL"
+    ],
     "basePrice": 2638041,
     "currentPrice": 2638041,
     "fantasyValue": 0,
@@ -14438,6 +15409,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3058346,
     "currentPrice": 3058346,
     "fantasyValue": 0,
@@ -14472,6 +15446,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4901713,
     "currentPrice": 9300000,
     "fantasyValue": 2.4,
@@ -14522,6 +15499,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5530643,
     "currentPrice": 11500000,
     "fantasyValue": 3.1,
@@ -14572,6 +15552,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4454128,
     "currentPrice": 3000000,
     "fantasyValue": -0.6,
@@ -14622,6 +15605,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4271959,
     "currentPrice": 4271959,
     "fantasyValue": 0,
@@ -14656,6 +15642,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3468360,
     "currentPrice": 3468360,
     "fantasyValue": 0,
@@ -14690,6 +15679,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3834635,
     "currentPrice": 3834635,
     "fantasyValue": 0,
@@ -14724,6 +15716,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3945437,
     "currentPrice": 3945437,
     "fantasyValue": 0,
@@ -14758,6 +15753,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2750058,
     "currentPrice": 2750058,
     "fantasyValue": 0,
@@ -14792,6 +15790,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4281102,
     "currentPrice": 4150000,
     "fantasyValue": 0,
@@ -14842,6 +15843,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4221748,
     "currentPrice": 3150000,
     "fantasyValue": -0.4,
@@ -14892,6 +15896,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3499681,
     "currentPrice": 3499681,
     "fantasyValue": 0,
@@ -14926,6 +15933,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3167289,
     "currentPrice": 3167289,
     "fantasyValue": 0,
@@ -14960,6 +15970,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2404698,
     "currentPrice": 2404698,
     "fantasyValue": 0,
@@ -14994,6 +16007,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2808633,
     "currentPrice": 2808633,
     "fantasyValue": 0,
@@ -15028,6 +16044,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2922090,
     "currentPrice": 2922090,
     "fantasyValue": 0,
@@ -15062,6 +16081,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3057560,
     "currentPrice": 3057560,
     "fantasyValue": 0,
@@ -15096,6 +16118,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3336750,
     "currentPrice": 3336750,
     "fantasyValue": 0,
@@ -15130,6 +16155,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3428984,
     "currentPrice": 3428984,
     "fantasyValue": 0,
@@ -15164,6 +16192,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2878372,
     "currentPrice": 2878372,
     "fantasyValue": 0,
@@ -15198,6 +16229,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2337280,
     "currentPrice": 2337280,
     "fantasyValue": 0,
@@ -15232,6 +16266,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3800324,
     "currentPrice": 3950000,
     "fantasyValue": 0,
@@ -15282,6 +16319,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4308000,
     "currentPrice": 10450000,
     "fantasyValue": 3.4,
@@ -15332,6 +16372,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3500782,
     "currentPrice": 3500782,
     "fantasyValue": 0,
@@ -15366,6 +16409,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4216662,
     "currentPrice": 4050000,
     "fantasyValue": 0,
@@ -15416,6 +16462,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3198731,
     "currentPrice": 3198731,
     "fantasyValue": 0,
@@ -15450,6 +16499,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3467413,
     "currentPrice": 3467413,
     "fantasyValue": 0,
@@ -15484,6 +16536,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2561877,
     "currentPrice": 2561877,
     "fantasyValue": 0,
@@ -15518,6 +16573,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2305858,
     "currentPrice": 2305858,
     "fantasyValue": 0,
@@ -15552,6 +16610,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3747922,
     "currentPrice": 3747922,
     "fantasyValue": 0,
@@ -15586,6 +16647,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEL"
+    ],
     "basePrice": 3480242,
     "currentPrice": 3480242,
     "fantasyValue": 0,
@@ -15620,6 +16685,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4866843,
     "currentPrice": 10150000,
     "fantasyValue": 2.9,
@@ -15670,6 +16738,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3100084,
     "currentPrice": 3100084,
     "fantasyValue": 0,
@@ -15704,6 +16775,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3195050,
     "currentPrice": 3195050,
     "fantasyValue": 0,
@@ -15738,6 +16812,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3441588,
     "currentPrice": 3441588,
     "fantasyValue": 0,
@@ -15772,6 +16849,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3627801,
     "currentPrice": 3300000,
     "fantasyValue": -0.3,
@@ -15822,6 +16902,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3711454,
     "currentPrice": 3711454,
     "fantasyValue": 0,
@@ -15856,6 +16939,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3554702,
     "currentPrice": 3554702,
     "fantasyValue": 0,
@@ -15890,6 +16976,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4365995,
     "currentPrice": 8000000,
     "fantasyValue": 1.6,
@@ -15940,6 +17029,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3275221,
     "currentPrice": 3275221,
     "fantasyValue": 0,
@@ -15974,6 +17066,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4420054,
     "currentPrice": 5550000,
     "fantasyValue": 0.6,
@@ -16024,6 +17119,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3989029,
     "currentPrice": 5050000,
     "fantasyValue": 0.4,
@@ -16074,6 +17172,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4029222,
     "currentPrice": 3900000,
     "fantasyValue": 0,
@@ -16123,9 +17224,12 @@ export const challengePlayers: Player[] = [
     "imageUrl": "https://static.challengeplace.com/2025/6/10/14/player/fded1e9e-8252-4757-947f-f3c931b29032.jpg",
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
-    "position": "POR",
-    "basePrice": 2950755,
-    "currentPrice": 2950755,
+    "position": "MED",
+    "positions": [
+      "MED"
+    ],
+    "basePrice": 3650755,
+    "currentPrice": 3650755,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {},
@@ -16158,6 +17262,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4883872,
     "currentPrice": 5500000,
     "fantasyValue": 0.4,
@@ -16208,6 +17315,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3601809,
     "currentPrice": 3601809,
     "fantasyValue": 0,
@@ -16242,6 +17352,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4900778,
     "currentPrice": 5900000,
     "fantasyValue": 0.6,
@@ -16292,6 +17405,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3126698,
     "currentPrice": 3126698,
     "fantasyValue": 0,
@@ -16326,6 +17442,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2784561,
     "currentPrice": 2784561,
     "fantasyValue": 0,
@@ -16360,6 +17479,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3839396,
     "currentPrice": 3839396,
     "fantasyValue": 0,
@@ -16394,6 +17516,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2670138,
     "currentPrice": 2670138,
     "fantasyValue": 0,
@@ -16428,6 +17553,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4140123,
     "currentPrice": 500000,
     "fantasyValue": -2.6,
@@ -16478,6 +17606,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2671020,
     "currentPrice": 2671020,
     "fantasyValue": 0,
@@ -16512,6 +17643,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3737977,
     "currentPrice": 4300000,
     "fantasyValue": 0.1,
@@ -16562,6 +17696,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3201378,
     "currentPrice": 3201378,
     "fantasyValue": 0,
@@ -16596,6 +17733,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5281092,
     "currentPrice": 20950000,
     "fantasyValue": 8,
@@ -16646,6 +17786,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2605046,
     "currentPrice": 2605046,
     "fantasyValue": 0,
@@ -16680,6 +17823,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "MED"
+    ],
     "basePrice": 3494797,
     "currentPrice": 3494797,
     "fantasyValue": 0,
@@ -16714,6 +17861,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3023076,
     "currentPrice": 3023076,
     "fantasyValue": 0,
@@ -16748,6 +17898,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3228328,
     "currentPrice": 3228328,
     "fantasyValue": 0,
@@ -16782,6 +17935,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4281814,
     "currentPrice": 4281814,
     "fantasyValue": 0,
@@ -16816,6 +17972,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "POR"
+    ],
     "basePrice": 4832550,
     "currentPrice": 6850000,
     "fantasyValue": 1.1,
@@ -16866,6 +18026,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3075719,
     "currentPrice": 3075719,
     "fantasyValue": 0,
@@ -16900,6 +18063,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2878345,
     "currentPrice": 2878345,
     "fantasyValue": 0,
@@ -16934,6 +18100,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4024206,
     "currentPrice": 4024206,
     "fantasyValue": 0,
@@ -16968,6 +18137,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2851716,
     "currentPrice": 2851716,
     "fantasyValue": 0,
@@ -17002,6 +18174,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3804442,
     "currentPrice": 3804442,
     "fantasyValue": 0,
@@ -17036,6 +18211,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3371635,
     "currentPrice": 3371635,
     "fantasyValue": 0,
@@ -17070,6 +18248,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2765855,
     "currentPrice": 2765855,
     "fantasyValue": 0,
@@ -17104,6 +18285,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3280789,
     "currentPrice": 3280789,
     "fantasyValue": 0,
@@ -17138,6 +18322,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "MED"
+    ],
     "basePrice": 4028659,
     "currentPrice": 4028659,
     "fantasyValue": 0,
@@ -17172,6 +18360,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4634002,
     "currentPrice": 17900000,
     "fantasyValue": 7.1,
@@ -17222,6 +18413,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3716193,
     "currentPrice": 3716193,
     "fantasyValue": 0,
@@ -17256,6 +18450,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3602066,
     "currentPrice": 3602066,
     "fantasyValue": 0,
@@ -17290,6 +18487,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5171040,
     "currentPrice": 16650000,
     "fantasyValue": 5.3,
@@ -17340,6 +18540,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4206859,
     "currentPrice": 2550000,
     "fantasyValue": -0.9,
@@ -17390,6 +18593,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "POR",
+    "positions": [
+      "POR",
+      "DEF"
+    ],
     "basePrice": 3440891,
     "currentPrice": 2600000,
     "fantasyValue": -0.6,
@@ -17440,6 +18647,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3880740,
     "currentPrice": 3880740,
     "fantasyValue": 0,
@@ -17474,6 +18684,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3052157,
     "currentPrice": 3052157,
     "fantasyValue": 0,
@@ -17508,6 +18721,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3665304,
     "currentPrice": 4550000,
     "fantasyValue": 0.4,
@@ -17558,6 +18774,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEL"
+    ],
     "basePrice": 4652463,
     "currentPrice": 15200000,
     "fantasyValue": 5.4,
@@ -17608,6 +18828,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3518705,
     "currentPrice": 3518705,
     "fantasyValue": 0,
@@ -17642,6 +18865,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEF"
+    ],
     "basePrice": 4556061,
     "currentPrice": 7100000,
     "fantasyValue": 1.3,
@@ -17692,6 +18919,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5165304,
     "currentPrice": 6050000,
     "fantasyValue": 0.4,
@@ -17742,6 +18972,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4574632,
     "currentPrice": 8550000,
     "fantasyValue": 1.9,
@@ -17792,6 +19025,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4252559,
     "currentPrice": 4350000,
     "fantasyValue": 0.1,
@@ -17842,6 +19078,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3118306,
     "currentPrice": 3118306,
     "fantasyValue": 0,
@@ -17876,6 +19115,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3458369,
     "currentPrice": 3458369,
     "fantasyValue": 0,
@@ -17910,6 +19152,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4693967,
     "currentPrice": 6200000,
     "fantasyValue": 0.9,
@@ -17960,6 +19205,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5046358,
     "currentPrice": 7450000,
     "fantasyValue": 1.3,
@@ -18010,6 +19258,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5016820,
     "currentPrice": 19450000,
     "fantasyValue": 7.6,
@@ -18060,6 +19311,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4478810,
     "currentPrice": 4850000,
     "fantasyValue": 0.3,
@@ -18110,6 +19364,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEF"
+    ],
     "basePrice": 3459949,
     "currentPrice": 3459949,
     "fantasyValue": 0,
@@ -18144,6 +19402,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4892039,
     "currentPrice": 10750000,
     "fantasyValue": 3,
@@ -18194,6 +19455,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5166058,
     "currentPrice": 14250000,
     "fantasyValue": 4.9,
@@ -18244,6 +19508,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3420071,
     "currentPrice": 3420071,
     "fantasyValue": 0,
@@ -18278,6 +19545,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4349241,
     "currentPrice": 4900000,
     "fantasyValue": 0.1,
@@ -18328,6 +19598,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4078532,
     "currentPrice": 8000000,
     "fantasyValue": 1.7,
@@ -18378,6 +19651,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3210403,
     "currentPrice": 3210403,
     "fantasyValue": 0,
@@ -18412,6 +19688,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5533977,
     "currentPrice": 14900000,
     "fantasyValue": 5,
@@ -18462,6 +19741,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3496890,
     "currentPrice": 3496890,
     "fantasyValue": 0,
@@ -18496,6 +19778,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3978173,
     "currentPrice": 3978173,
     "fantasyValue": 0,
@@ -18530,6 +19815,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3639775,
     "currentPrice": 3639775,
     "fantasyValue": 0,
@@ -18564,6 +19852,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3297195,
     "currentPrice": 3297195,
     "fantasyValue": 0,
@@ -18598,6 +19889,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4772048,
     "currentPrice": 6550000,
     "fantasyValue": 0.9,
@@ -18648,6 +19942,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3304782,
     "currentPrice": 3304782,
     "fantasyValue": 0,
@@ -18682,6 +19979,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4451653,
     "currentPrice": 2900000,
     "fantasyValue": -1.1,
@@ -18732,6 +20032,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4271548,
     "currentPrice": 4600000,
     "fantasyValue": 0.3,
@@ -18782,6 +20085,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3670786,
     "currentPrice": 3670786,
     "fantasyValue": 0,
@@ -18816,6 +20122,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3610362,
     "currentPrice": 3250000,
     "fantasyValue": -0.3,
@@ -18866,6 +20175,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4596560,
     "currentPrice": 6750000,
     "fantasyValue": 1.1,
@@ -18916,6 +20228,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3400828,
     "currentPrice": 3400828,
     "fantasyValue": 0,
@@ -18950,6 +20265,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3099230,
     "currentPrice": 3099230,
     "fantasyValue": 0,
@@ -18984,6 +20302,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2928834,
     "currentPrice": 2928834,
     "fantasyValue": 0,
@@ -19018,6 +20339,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5611070,
     "currentPrice": 6850000,
     "fantasyValue": 0.7,
@@ -19068,6 +20392,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5351345,
     "currentPrice": 7500000,
     "fantasyValue": 1.1,
@@ -19118,6 +20445,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2650490,
     "currentPrice": 2650490,
     "fantasyValue": 0,
@@ -19152,6 +20482,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2794389,
     "currentPrice": 2794389,
     "fantasyValue": 0,
@@ -19186,6 +20519,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3584937,
     "currentPrice": 3584937,
     "fantasyValue": 0,
@@ -19220,6 +20556,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3684411,
     "currentPrice": 3684411,
     "fantasyValue": 0,
@@ -19254,6 +20593,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4737685,
     "currentPrice": 4350000,
     "fantasyValue": -0.1,
@@ -19304,6 +20646,11 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEL",
+      "POR"
+    ],
     "basePrice": 4053740,
     "currentPrice": 5100000,
     "fantasyValue": 0.4,
@@ -19354,6 +20701,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4570985,
     "currentPrice": 3250000,
     "fantasyValue": -0.6,
@@ -19404,6 +20754,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4345089,
     "currentPrice": 5150000,
     "fantasyValue": 0.3,
@@ -19454,6 +20807,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4729491,
     "currentPrice": 500000,
     "fantasyValue": -2.3,
@@ -19504,6 +20860,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3007224,
     "currentPrice": 3007224,
     "fantasyValue": 0,
@@ -19538,6 +20897,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3873502,
     "currentPrice": 2400000,
     "fantasyValue": -0.6,
@@ -19588,6 +20950,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3197391,
     "currentPrice": 3197391,
     "fantasyValue": 0,
@@ -19622,6 +20987,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4573685,
     "currentPrice": 6100000,
     "fantasyValue": 0.7,
@@ -19672,6 +21040,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3627848,
     "currentPrice": 3627848,
     "fantasyValue": 0,
@@ -19706,6 +21077,12 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "MED",
+      "DEF",
+      "POR"
+    ],
     "basePrice": 5497339,
     "currentPrice": 7100000,
     "fantasyValue": 1,
@@ -19756,6 +21133,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5325840,
     "currentPrice": 12600000,
     "fantasyValue": 4.1,
@@ -19806,6 +21186,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3978858,
     "currentPrice": 1100000,
     "fantasyValue": -1.6,
@@ -19856,6 +21239,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3724162,
     "currentPrice": 4600000,
     "fantasyValue": 0.4,
@@ -19906,6 +21292,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4928906,
     "currentPrice": 8150000,
     "fantasyValue": 1.6,
@@ -19956,6 +21345,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2741867,
     "currentPrice": 2741867,
     "fantasyValue": 0,
@@ -19990,6 +21382,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4776761,
     "currentPrice": 3900000,
     "fantasyValue": 0,
@@ -20040,6 +21435,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5602302,
     "currentPrice": 7750000,
     "fantasyValue": 1.1,
@@ -20090,6 +21488,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEF"
+    ],
     "basePrice": 3374294,
     "currentPrice": 3374294,
     "fantasyValue": 0,
@@ -20124,6 +21526,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEF"
+    ],
     "basePrice": 3522712,
     "currentPrice": 3522712,
     "fantasyValue": 0,
@@ -20158,6 +21564,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4755845,
     "currentPrice": 8050000,
     "fantasyValue": 1.7,
@@ -20208,6 +21617,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3919370,
     "currentPrice": 7300000,
     "fantasyValue": 1.4,
@@ -20258,6 +21670,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5376755,
     "currentPrice": 6400000,
     "fantasyValue": 0.6,
@@ -20308,6 +21723,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3824042,
     "currentPrice": 3650000,
     "fantasyValue": 0,
@@ -20358,6 +21776,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4520860,
     "currentPrice": 6250000,
     "fantasyValue": 1,
@@ -20408,6 +21829,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4272339,
     "currentPrice": 4272339,
     "fantasyValue": 0,
@@ -20442,6 +21866,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4859949,
     "currentPrice": 950000,
     "fantasyValue": -2.1,
@@ -20492,6 +21919,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3883031,
     "currentPrice": 3883031,
     "fantasyValue": 0,
@@ -20526,6 +21956,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "DEF"
+    ],
     "basePrice": 4030055,
     "currentPrice": 4030055,
     "fantasyValue": 0,
@@ -20560,6 +21994,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3549053,
     "currentPrice": 3549053,
     "fantasyValue": 0,
@@ -20594,6 +22031,12 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "MED",
+    "positions": [
+      "MED",
+      "POR",
+      "DEL",
+      "DEF"
+    ],
     "basePrice": 4661043,
     "currentPrice": 5650000,
     "fantasyValue": 0.6,
@@ -20644,6 +22087,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3527038,
     "currentPrice": 3527038,
     "fantasyValue": 0,
@@ -20678,6 +22124,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3419204,
     "currentPrice": 3419204,
     "fantasyValue": 0,
@@ -20712,6 +22161,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3637743,
     "currentPrice": 3637743,
     "fantasyValue": 0,
@@ -20746,6 +22198,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3214403,
     "currentPrice": 3214403,
     "fantasyValue": 0,
@@ -20780,6 +22235,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3896566,
     "currentPrice": 3350000,
     "fantasyValue": -0.1,
@@ -20830,6 +22288,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5173658,
     "currentPrice": 6300000,
     "fantasyValue": 0.6,
@@ -20880,6 +22341,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEF",
+    "positions": [
+      "DEF",
+      "DEL"
+    ],
     "basePrice": 4103760,
     "currentPrice": 7750000,
     "fantasyValue": 1.6,
@@ -20930,6 +22395,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3525954,
     "currentPrice": 3525954,
     "fantasyValue": 0,
@@ -20964,6 +22432,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4162656,
     "currentPrice": 4162656,
     "fantasyValue": 0,
@@ -20998,6 +22469,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4755607,
     "currentPrice": 3600000,
     "fantasyValue": -0.6,
@@ -21048,6 +22522,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3876947,
     "currentPrice": 3750000,
     "fantasyValue": 0,
@@ -21098,6 +22575,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4954685,
     "currentPrice": 8250000,
     "fantasyValue": 1.7,
@@ -21148,6 +22628,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3762508,
     "currentPrice": 3762508,
     "fantasyValue": 0,
@@ -21182,6 +22665,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2856558,
     "currentPrice": 2856558,
     "fantasyValue": 0,
@@ -21216,6 +22702,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2509269,
     "currentPrice": 2509269,
     "fantasyValue": 0,
@@ -21250,6 +22739,11 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEF",
+      "DEL"
+    ],
     "basePrice": 4546924,
     "currentPrice": 7800000,
     "fantasyValue": 1.4,
@@ -21300,6 +22794,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4797403,
     "currentPrice": 5300000,
     "fantasyValue": 0.3,
@@ -21350,6 +22847,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4163312,
     "currentPrice": 6550000,
     "fantasyValue": 1.3,
@@ -21400,6 +22900,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4473279,
     "currentPrice": 6700000,
     "fantasyValue": 1.3,
@@ -21450,6 +22953,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3421685,
     "currentPrice": 3421685,
     "fantasyValue": 0,
@@ -21484,6 +22990,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4185394,
     "currentPrice": 4550000,
     "fantasyValue": 0.3,
@@ -21534,6 +23043,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3066047,
     "currentPrice": 3066047,
     "fantasyValue": 0,
@@ -21568,6 +23080,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3275844,
     "currentPrice": 3275844,
     "fantasyValue": 0,
@@ -21601,9 +23116,13 @@ export const challengePlayers: Player[] = [
     "imageUrl": "https://static.challengeplace.com/2026/2/17/10/player/2c84beb3-9f77-4a89-a6fd-46553c014129.jpg",
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
-    "position": "MED",
-    "basePrice": 3657350,
-    "currentPrice": 3657350,
+    "position": "DEF",
+    "positions": [
+      "DEF",
+      "MED"
+    ],
+    "basePrice": 3307350,
+    "currentPrice": 3307350,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {},
@@ -21636,6 +23155,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4188656,
     "currentPrice": 12800000,
     "fantasyValue": 4.6,
@@ -21686,6 +23208,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5017956,
     "currentPrice": 8200000,
     "fantasyValue": 1.6,
@@ -21736,6 +23261,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4655729,
     "currentPrice": 5750000,
     "fantasyValue": 0.3,
@@ -21786,6 +23314,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4843406,
     "currentPrice": 9000000,
     "fantasyValue": 1.9,
@@ -21836,6 +23367,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3700822,
     "currentPrice": 3700822,
     "fantasyValue": 0,
@@ -21870,6 +23404,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4487733,
     "currentPrice": 10050000,
     "fantasyValue": 3,
@@ -21920,6 +23457,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2887681,
     "currentPrice": 2887681,
     "fantasyValue": 0,
@@ -21954,6 +23494,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "MED"
+    ],
     "basePrice": 5670129,
     "currentPrice": 12000000,
     "fantasyValue": 2.9,
@@ -22004,6 +23548,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4175728,
     "currentPrice": 6200000,
     "fantasyValue": 1.1,
@@ -22054,6 +23601,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEF"
+    ],
     "basePrice": 3469676,
     "currentPrice": 3469676,
     "fantasyValue": 0,
@@ -22088,6 +23639,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2536691,
     "currentPrice": 2536691,
     "fantasyValue": 0,
@@ -22122,6 +23676,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4015662,
     "currentPrice": 4015662,
     "fantasyValue": 0,
@@ -22156,6 +23713,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3498208,
     "currentPrice": 3498208,
     "fantasyValue": 0,
@@ -22190,6 +23750,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3315432,
     "currentPrice": 3700000,
     "fantasyValue": 0.1,
@@ -22240,6 +23803,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5090571,
     "currentPrice": 7500000,
     "fantasyValue": 1.3,
@@ -22290,6 +23856,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3090732,
     "currentPrice": 3090732,
     "fantasyValue": 0,
@@ -22324,6 +23893,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4242017,
     "currentPrice": 4100000,
     "fantasyValue": 0,
@@ -22374,6 +23946,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4171908,
     "currentPrice": 6300000,
     "fantasyValue": 1.1,
@@ -22424,6 +23999,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "MED"
+    ],
     "basePrice": 3479393,
     "currentPrice": 3479393,
     "fantasyValue": 0,
@@ -22458,6 +24037,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3977810,
     "currentPrice": 5300000,
     "fantasyValue": 0.6,
@@ -22508,6 +24090,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3886800,
     "currentPrice": 3700000,
     "fantasyValue": -0.3,
@@ -22558,6 +24143,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3956686,
     "currentPrice": 3956686,
     "fantasyValue": 0,
@@ -22592,6 +24180,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2711484,
     "currentPrice": 2711484,
     "fantasyValue": 0,
@@ -22626,6 +24217,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3287014,
     "currentPrice": 3287014,
     "fantasyValue": 0,
@@ -22660,6 +24254,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3543905,
     "currentPrice": 3543905,
     "fantasyValue": 0,
@@ -22694,6 +24291,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5152803,
     "currentPrice": 6150000,
     "fantasyValue": 0.6,
@@ -22744,6 +24344,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4563587,
     "currentPrice": 4500000,
     "fantasyValue": 0.1,
@@ -22794,6 +24397,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4571383,
     "currentPrice": 4650000,
     "fantasyValue": 0.1,
@@ -22844,6 +24450,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4684283,
     "currentPrice": 4800000,
     "fantasyValue": 0.1,
@@ -22894,6 +24503,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5061424,
     "currentPrice": 7300000,
     "fantasyValue": 1.3,
@@ -22944,6 +24556,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3131932,
     "currentPrice": 3131932,
     "fantasyValue": 0,
@@ -22978,6 +24593,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5402649,
     "currentPrice": 13150000,
     "fantasyValue": 4,
@@ -23028,6 +24646,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4564624,
     "currentPrice": 3150000,
     "fantasyValue": -0.7,
@@ -23078,6 +24699,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4800801,
     "currentPrice": 10900000,
     "fantasyValue": 3.1,
@@ -23128,6 +24752,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4542265,
     "currentPrice": 5800000,
     "fantasyValue": 0.7,
@@ -23178,6 +24805,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4971722,
     "currentPrice": 2050000,
     "fantasyValue": -1.6,
@@ -23228,6 +24858,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEF"
+    ],
     "basePrice": 3193724,
     "currentPrice": 3193724,
     "fantasyValue": 0,
@@ -23262,6 +24896,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3039612,
     "currentPrice": 3039612,
     "fantasyValue": 0,
@@ -23296,6 +24933,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4233701,
     "currentPrice": 4233701,
     "fantasyValue": 0,
@@ -23330,6 +24970,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3638899,
     "currentPrice": 3638899,
     "fantasyValue": 0,
@@ -23364,6 +25007,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4866375,
     "currentPrice": 6200000,
     "fantasyValue": 0.9,
@@ -23414,6 +25060,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3675658,
     "currentPrice": 3675658,
     "fantasyValue": 0,
@@ -23448,6 +25097,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3866714,
     "currentPrice": 3866714,
     "fantasyValue": 0,
@@ -23482,6 +25134,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEL"
+    ],
     "basePrice": 5121596,
     "currentPrice": 5100000,
     "fantasyValue": 0,
@@ -23532,6 +25188,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4488052,
     "currentPrice": 8150000,
     "fantasyValue": 2,
@@ -23582,6 +25241,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3664493,
     "currentPrice": 4250000,
     "fantasyValue": 0.4,
@@ -23632,6 +25294,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF",
+      "MED"
+    ],
     "basePrice": 3455085,
     "currentPrice": 3455085,
     "fantasyValue": 0,
@@ -23666,6 +25332,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2847140,
     "currentPrice": 2847140,
     "fantasyValue": 0,
@@ -23700,6 +25369,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3950771,
     "currentPrice": 3950771,
     "fantasyValue": 0,
@@ -23734,6 +25406,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3656220,
     "currentPrice": 3656220,
     "fantasyValue": 0,
@@ -23768,6 +25443,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4063746,
     "currentPrice": 4063746,
     "fantasyValue": 0,
@@ -23802,6 +25480,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEF"
+    ],
     "basePrice": 4770974,
     "currentPrice": 4250000,
     "fantasyValue": -0.3,
@@ -23852,6 +25534,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3933872,
     "currentPrice": 3933872,
     "fantasyValue": 0,
@@ -23886,6 +25571,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4240554,
     "currentPrice": 9750000,
     "fantasyValue": 3.1,
@@ -23936,6 +25624,12 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "POR",
+    "positions": [
+      "POR",
+      "MED",
+      "DEL",
+      "DEF"
+    ],
     "basePrice": 4115432,
     "currentPrice": 2900000,
     "fantasyValue": -0.4,
@@ -23986,6 +25680,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF",
+      "MED"
+    ],
     "basePrice": 3499720,
     "currentPrice": 3499720,
     "fantasyValue": 0,
@@ -24020,6 +25718,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3816610,
     "currentPrice": 3816610,
     "fantasyValue": 0,
@@ -24054,6 +25755,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5534692,
     "currentPrice": 6050000,
     "fantasyValue": 0.3,
@@ -24104,6 +25808,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3349293,
     "currentPrice": 3349293,
     "fantasyValue": 0,
@@ -24138,6 +25845,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3534122,
     "currentPrice": 3534122,
     "fantasyValue": 0,
@@ -24172,6 +25882,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3942845,
     "currentPrice": 2750000,
     "fantasyValue": -0.9,
@@ -24222,6 +25935,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4226354,
     "currentPrice": 9000000,
     "fantasyValue": 2.7,
@@ -24272,6 +25988,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "DEF"
+    ],
     "basePrice": 5181340,
     "currentPrice": 7950000,
     "fantasyValue": 1.6,
@@ -24322,6 +26042,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4823881,
     "currentPrice": 5400000,
     "fantasyValue": 0.4,
@@ -24372,6 +26095,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3152585,
     "currentPrice": 3152585,
     "fantasyValue": 0,
@@ -24406,6 +26132,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3173549,
     "currentPrice": 3173549,
     "fantasyValue": 0,
@@ -24440,6 +26169,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2755950,
     "currentPrice": 2755950,
     "fantasyValue": 0,
@@ -24474,6 +26206,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4234653,
     "currentPrice": 6500000,
     "fantasyValue": 1.3,
@@ -24524,6 +26259,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3537973,
     "currentPrice": 3537973,
     "fantasyValue": 0,
@@ -24558,6 +26296,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4846300,
     "currentPrice": 5500000,
     "fantasyValue": 0.3,
@@ -24608,6 +26349,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4622152,
     "currentPrice": 1800000,
     "fantasyValue": -1.4,
@@ -24658,6 +26402,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3661628,
     "currentPrice": 3661628,
     "fantasyValue": 0,
@@ -24692,6 +26439,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4345268,
     "currentPrice": 5600000,
     "fantasyValue": 0.7,
@@ -24742,6 +26492,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4992033,
     "currentPrice": 12850000,
     "fantasyValue": 4.1,
@@ -24792,6 +26545,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5274093,
     "currentPrice": 10250000,
     "fantasyValue": 2.9,
@@ -24842,6 +26598,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4047141,
     "currentPrice": 4047141,
     "fantasyValue": 0,
@@ -24876,6 +26635,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4150588,
     "currentPrice": 4150588,
     "fantasyValue": 0,
@@ -24910,6 +26672,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4501078,
     "currentPrice": 3100000,
     "fantasyValue": -0.7,
@@ -24960,6 +26725,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3004649,
     "currentPrice": 3004649,
     "fantasyValue": 0,
@@ -24994,6 +26762,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3608198,
     "currentPrice": 3608198,
     "fantasyValue": 0,
@@ -25028,6 +26799,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4341911,
     "currentPrice": 5100000,
     "fantasyValue": 0.4,
@@ -25078,6 +26852,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2726309,
     "currentPrice": 2726309,
     "fantasyValue": 0,
@@ -25112,6 +26889,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2886907,
     "currentPrice": 2886907,
     "fantasyValue": 0,
@@ -25146,6 +26926,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4437010,
     "currentPrice": 4300000,
     "fantasyValue": 0,
@@ -25196,6 +26979,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4646462,
     "currentPrice": 6900000,
     "fantasyValue": 1.3,
@@ -25246,6 +27032,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4229178,
     "currentPrice": 3850000,
     "fantasyValue": -0.1,
@@ -25296,6 +27085,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3501526,
     "currentPrice": 3501526,
     "fantasyValue": 0,
@@ -25330,6 +27122,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3478431,
     "currentPrice": 3478431,
     "fantasyValue": 0,
@@ -25364,6 +27159,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3711764,
     "currentPrice": 4750000,
     "fantasyValue": 0.4,
@@ -25414,6 +27212,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4143916,
     "currentPrice": 7450000,
     "fantasyValue": 1.7,
@@ -25464,6 +27265,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5437695,
     "currentPrice": 14800000,
     "fantasyValue": 5,
@@ -25514,6 +27318,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5640103,
     "currentPrice": 7150000,
     "fantasyValue": 0.9,
@@ -25564,6 +27371,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2655262,
     "currentPrice": 2655262,
     "fantasyValue": 0,
@@ -25598,6 +27408,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3275236,
     "currentPrice": 3275236,
     "fantasyValue": 0,
@@ -25632,6 +27445,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5029869,
     "currentPrice": 10800000,
     "fantasyValue": 3.3,
@@ -25682,6 +27498,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4594278,
     "currentPrice": 5000000,
     "fantasyValue": 0.1,
@@ -25732,6 +27551,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5280541,
     "currentPrice": 6700000,
     "fantasyValue": 0.7,
@@ -25782,6 +27604,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4401049,
     "currentPrice": 8300000,
     "fantasyValue": 2.1,
@@ -25832,6 +27657,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3560273,
     "currentPrice": 3560273,
     "fantasyValue": 0,
@@ -25866,6 +27694,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2893303,
     "currentPrice": 2893303,
     "fantasyValue": 0,
@@ -25900,6 +27731,12 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEL",
+      "POR",
+      "DEF"
+    ],
     "basePrice": 4532741,
     "currentPrice": 7550000,
     "fantasyValue": 1.7,
@@ -25950,6 +27787,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4392890,
     "currentPrice": 4750000,
     "fantasyValue": 0.3,
@@ -26000,6 +27840,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2974325,
     "currentPrice": 2974325,
     "fantasyValue": 0,
@@ -26034,6 +27877,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3833620,
     "currentPrice": 3833620,
     "fantasyValue": 0,
@@ -26068,6 +27914,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3491068,
     "currentPrice": 3491068,
     "fantasyValue": 0,
@@ -26102,6 +27951,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4190145,
     "currentPrice": 6000000,
     "fantasyValue": 0.9,
@@ -26152,6 +28004,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4228458,
     "currentPrice": 6550000,
     "fantasyValue": 1.1,
@@ -26202,6 +28057,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3592281,
     "currentPrice": 3592281,
     "fantasyValue": 0,
@@ -26236,6 +28094,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5650148,
     "currentPrice": 8400000,
     "fantasyValue": 1.6,
@@ -26286,6 +28147,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "MED"
+    ],
     "basePrice": 5298916,
     "currentPrice": 5650000,
     "fantasyValue": 0.3,
@@ -26336,6 +28201,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3458532,
     "currentPrice": 3458532,
     "fantasyValue": 0,
@@ -26370,6 +28238,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3453927,
     "currentPrice": 3453927,
     "fantasyValue": 0,
@@ -26404,6 +28275,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3429093,
     "currentPrice": 3429093,
     "fantasyValue": 0,
@@ -26438,6 +28312,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3455483,
     "currentPrice": 3455483,
     "fantasyValue": 0,
@@ -26472,6 +28349,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2749444,
     "currentPrice": 2749444,
     "fantasyValue": 0,
@@ -26506,6 +28386,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4144407,
     "currentPrice": 600000,
     "fantasyValue": -1.9,
@@ -26556,6 +28439,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4088916,
     "currentPrice": 4088916,
     "fantasyValue": 0,
@@ -26590,6 +28476,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3531577,
     "currentPrice": 3531577,
     "fantasyValue": 0,
@@ -26624,6 +28513,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4516807,
     "currentPrice": 15500000,
     "fantasyValue": 5.4,
@@ -26674,6 +28566,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2479826,
     "currentPrice": 2479826,
     "fantasyValue": 0,
@@ -26708,6 +28603,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4158463,
     "currentPrice": 4750000,
     "fantasyValue": 0.4,
@@ -26758,6 +28656,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3224572,
     "currentPrice": 3224572,
     "fantasyValue": 0,
@@ -26792,6 +28693,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3542987,
     "currentPrice": 3542987,
     "fantasyValue": 0,
@@ -26826,6 +28730,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2718389,
     "currentPrice": 2718389,
     "fantasyValue": 0,
@@ -26860,6 +28767,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3690192,
     "currentPrice": 3690192,
     "fantasyValue": 0,
@@ -26894,6 +28804,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2998768,
     "currentPrice": 2998768,
     "fantasyValue": 0,
@@ -26928,6 +28841,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3669380,
     "currentPrice": 3669380,
     "fantasyValue": 0,
@@ -26962,6 +28878,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3677773,
     "currentPrice": 3677773,
     "fantasyValue": 0,
@@ -26996,6 +28915,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3467897,
     "currentPrice": 3467897,
     "fantasyValue": 0,
@@ -27030,6 +28952,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3419522,
     "currentPrice": 3419522,
     "fantasyValue": 0,
@@ -27064,6 +28989,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEL"
+    ],
     "basePrice": 3491354,
     "currentPrice": 3491354,
     "fantasyValue": 0,
@@ -27098,6 +29027,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEF"
+    ],
     "basePrice": 3749550,
     "currentPrice": 3749550,
     "fantasyValue": 0,
@@ -27132,6 +29065,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEF"
+    ],
     "basePrice": 4690865,
     "currentPrice": 3950000,
     "fantasyValue": -0.4,
@@ -27182,6 +29119,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3218531,
     "currentPrice": 3218531,
     "fantasyValue": 0,
@@ -27216,6 +29156,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3841641,
     "currentPrice": 3841641,
     "fantasyValue": 0,
@@ -27250,6 +29193,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4063533,
     "currentPrice": 4900000,
     "fantasyValue": 0.6,
@@ -27300,6 +29246,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3548769,
     "currentPrice": 3548769,
     "fantasyValue": 0,
@@ -27334,6 +29283,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3775118,
     "currentPrice": 3775118,
     "fantasyValue": 0,
@@ -27368,6 +29320,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4565823,
     "currentPrice": 8050000,
     "fantasyValue": 1.6,
@@ -27418,6 +29373,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2897808,
     "currentPrice": 2897808,
     "fantasyValue": 0,
@@ -27452,6 +29410,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3296145,
     "currentPrice": 3296145,
     "fantasyValue": 0,
@@ -27486,6 +29447,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3533057,
     "currentPrice": 3533057,
     "fantasyValue": 0,
@@ -27520,6 +29484,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3950949,
     "currentPrice": 3950949,
     "fantasyValue": 0,
@@ -27554,6 +29521,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3498341,
     "currentPrice": 3498341,
     "fantasyValue": 0,
@@ -27588,6 +29558,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5175798,
     "currentPrice": 10200000,
     "fantasyValue": 2.9,
@@ -27638,6 +29611,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3562490,
     "currentPrice": 3562490,
     "fantasyValue": 0,
@@ -27672,6 +29648,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2972230,
     "currentPrice": 2972230,
     "fantasyValue": 0,
@@ -27706,6 +29685,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEF"
+    ],
     "basePrice": 3295295,
     "currentPrice": 3295295,
     "fantasyValue": 0,
@@ -27740,6 +29723,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2700775,
     "currentPrice": 2700775,
     "fantasyValue": 0,
@@ -27774,6 +29760,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3548801,
     "currentPrice": 3548801,
     "fantasyValue": 0,
@@ -27808,6 +29797,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3688428,
     "currentPrice": 3550000,
     "fantasyValue": 0,
@@ -27858,6 +29850,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2695408,
     "currentPrice": 2695408,
     "fantasyValue": 0,
@@ -27892,6 +29887,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3552186,
     "currentPrice": 3552186,
     "fantasyValue": 0,
@@ -27926,6 +29924,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3609777,
     "currentPrice": 3609777,
     "fantasyValue": 0,
@@ -27960,6 +29961,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3744864,
     "currentPrice": 3744864,
     "fantasyValue": 0,
@@ -27994,6 +29998,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3735779,
     "currentPrice": 3735779,
     "fantasyValue": 0,
@@ -28028,6 +30035,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4829071,
     "currentPrice": 3300000,
     "fantasyValue": -0.7,
@@ -28078,6 +30088,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4660382,
     "currentPrice": 4250000,
     "fantasyValue": -0.1,
@@ -28128,6 +30141,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4628871,
     "currentPrice": 5250000,
     "fantasyValue": 0.4,
@@ -28178,6 +30194,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4938405,
     "currentPrice": 4300000,
     "fantasyValue": -0.3,
@@ -28228,6 +30247,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2664707,
     "currentPrice": 2664707,
     "fantasyValue": 0,
@@ -28262,6 +30284,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3059395,
     "currentPrice": 3059395,
     "fantasyValue": 0,
@@ -28296,6 +30321,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3711777,
     "currentPrice": 3711777,
     "fantasyValue": 0,
@@ -28330,6 +30358,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2788344,
     "currentPrice": 2788344,
     "fantasyValue": 0,
@@ -28364,6 +30395,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2535267,
     "currentPrice": 2535267,
     "fantasyValue": 0,
@@ -28398,6 +30432,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEF"
+    ],
     "basePrice": 3580083,
     "currentPrice": 3580083,
     "fantasyValue": 0,
@@ -28432,6 +30470,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4205231,
     "currentPrice": 4050000,
     "fantasyValue": 0,
@@ -28482,6 +30523,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3675261,
     "currentPrice": 3675261,
     "fantasyValue": 0,
@@ -28516,6 +30560,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3691875,
     "currentPrice": 3691875,
     "fantasyValue": 0,
@@ -28550,6 +30597,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2773024,
     "currentPrice": 2773024,
     "fantasyValue": 0,
@@ -28584,6 +30634,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5028607,
     "currentPrice": 9300000,
     "fantasyValue": 2,
@@ -28634,6 +30687,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3538266,
     "currentPrice": 3538266,
     "fantasyValue": 0,
@@ -28668,6 +30724,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3127141,
     "currentPrice": 3127141,
     "fantasyValue": 0,
@@ -28702,6 +30761,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3320301,
     "currentPrice": 3320301,
     "fantasyValue": 0,
@@ -28736,6 +30798,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3360520,
     "currentPrice": 3360520,
     "fantasyValue": 0,
@@ -28770,6 +30835,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3452217,
     "currentPrice": 3452217,
     "fantasyValue": 0,
@@ -28804,6 +30872,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3513848,
     "currentPrice": 3513848,
     "fantasyValue": 0,
@@ -28838,6 +30909,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3942997,
     "currentPrice": 3800000,
     "fantasyValue": 0,
@@ -28888,6 +30962,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3807189,
     "currentPrice": 3807189,
     "fantasyValue": 0,
@@ -28922,6 +30999,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2922950,
     "currentPrice": 2922950,
     "fantasyValue": 0,
@@ -28956,6 +31036,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3769629,
     "currentPrice": 3769629,
     "fantasyValue": 0,
@@ -28990,6 +31073,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4484163,
     "currentPrice": 5600000,
     "fantasyValue": 0.7,
@@ -29040,6 +31126,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3646770,
     "currentPrice": 3646770,
     "fantasyValue": 0,
@@ -29074,6 +31163,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3350568,
     "currentPrice": 3350568,
     "fantasyValue": 0,
@@ -29108,6 +31200,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR",
+      "DEF"
+    ],
     "basePrice": 2700179,
     "currentPrice": 2700179,
     "fantasyValue": 0,
@@ -29142,6 +31238,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2783977,
     "currentPrice": 2783977,
     "fantasyValue": 0,
@@ -29176,6 +31275,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3352458,
     "currentPrice": 3352458,
     "fantasyValue": 0,
@@ -29210,6 +31312,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3502773,
     "currentPrice": 3502773,
     "fantasyValue": 0,
@@ -29244,6 +31349,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3782477,
     "currentPrice": 3782477,
     "fantasyValue": 0,
@@ -29278,6 +31386,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5094999,
     "currentPrice": 10700000,
     "fantasyValue": 2.9,
@@ -29328,6 +31439,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3092646,
     "currentPrice": 3092646,
     "fantasyValue": 0,
@@ -29362,6 +31476,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2717440,
     "currentPrice": 2717440,
     "fantasyValue": 0,
@@ -29396,6 +31513,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3658568,
     "currentPrice": 3658568,
     "fantasyValue": 0,
@@ -29430,6 +31550,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3276046,
     "currentPrice": 3276046,
     "fantasyValue": 0,
@@ -29464,6 +31587,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3779921,
     "currentPrice": 3779921,
     "fantasyValue": 0,
@@ -29498,6 +31624,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2814209,
     "currentPrice": 2814209,
     "fantasyValue": 0,
@@ -29532,6 +31661,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3552900,
     "currentPrice": 3552900,
     "fantasyValue": 0,
@@ -29566,6 +31698,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3463881,
     "currentPrice": 3463881,
     "fantasyValue": 0,
@@ -29600,6 +31735,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5118403,
     "currentPrice": 6200000,
     "fantasyValue": 0.7,
@@ -29649,9 +31787,15 @@ export const challengePlayers: Player[] = [
     "imageUrl": "https://static.challengeplace.com/2026/2/24/11/player/b8f2b807-1cfd-426a-93f8-aa05a7223797.jpg",
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
-    "position": "MED",
-    "basePrice": 3480792,
-    "currentPrice": 3480792,
+    "position": "POR",
+    "positions": [
+      "POR",
+      "DEF",
+      "MED",
+      "DEL"
+    ],
+    "basePrice": 2780792,
+    "currentPrice": 2780792,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {},
@@ -29684,6 +31828,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2952070,
     "currentPrice": 2952070,
     "fantasyValue": 0,
@@ -29718,6 +31865,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3583247,
     "currentPrice": 3583247,
     "fantasyValue": 0,
@@ -29752,6 +31902,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3498978,
     "currentPrice": 3498978,
     "fantasyValue": 0,
@@ -29786,6 +31939,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3089674,
     "currentPrice": 3089674,
     "fantasyValue": 0,
@@ -29820,6 +31976,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4045661,
     "currentPrice": 4045661,
     "fantasyValue": 0,
@@ -29854,6 +32013,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "POR"
+    ],
     "basePrice": 4959632,
     "currentPrice": 7100000,
     "fantasyValue": 1.1,
@@ -29904,6 +32067,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3972416,
     "currentPrice": 3972416,
     "fantasyValue": 0,
@@ -29938,6 +32104,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5128735,
     "currentPrice": 8400000,
     "fantasyValue": 1.4,
@@ -29988,6 +32157,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4082269,
     "currentPrice": 5400000,
     "fantasyValue": 0.6,
@@ -30038,6 +32210,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5461485,
     "currentPrice": 10350000,
     "fantasyValue": 2.7,
@@ -30088,6 +32263,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2672420,
     "currentPrice": 2672420,
     "fantasyValue": 0,
@@ -30122,6 +32300,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4872954,
     "currentPrice": 4850000,
     "fantasyValue": 0,
@@ -30172,6 +32353,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2932114,
     "currentPrice": 2932114,
     "fantasyValue": 0,
@@ -30206,6 +32390,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4510851,
     "currentPrice": 5500000,
     "fantasyValue": 0.6,
@@ -30256,6 +32443,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4999039,
     "currentPrice": 6900000,
     "fantasyValue": 1,
@@ -30306,6 +32496,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3113920,
     "currentPrice": 3113920,
     "fantasyValue": 0,
@@ -30340,6 +32533,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4643329,
     "currentPrice": 10000000,
     "fantasyValue": 2.7,
@@ -30390,6 +32586,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4721908,
     "currentPrice": 4050000,
     "fantasyValue": -0.3,
@@ -30440,6 +32639,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5357210,
     "currentPrice": 8450000,
     "fantasyValue": 1.4,
@@ -30490,6 +32692,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5284409,
     "currentPrice": 5800000,
     "fantasyValue": 0.3,
@@ -30540,6 +32745,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3683461,
     "currentPrice": 3683461,
     "fantasyValue": 0,
@@ -30574,6 +32782,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3215986,
     "currentPrice": 3215986,
     "fantasyValue": 0,
@@ -30608,6 +32819,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4150677,
     "currentPrice": 3550000,
     "fantasyValue": -0.4,
@@ -30658,6 +32872,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4001175,
     "currentPrice": 1350000,
     "fantasyValue": -1.4,
@@ -30708,6 +32925,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4418846,
     "currentPrice": 1000000,
     "fantasyValue": -1.9,
@@ -30758,6 +32978,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2778778,
     "currentPrice": 2778778,
     "fantasyValue": 0,
@@ -30792,6 +33015,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2663495,
     "currentPrice": 2663495,
     "fantasyValue": 0,
@@ -30826,6 +33052,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "MED"
+    ],
     "basePrice": 5532429,
     "currentPrice": 9650000,
     "fantasyValue": 2,
@@ -30876,6 +33106,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3606780,
     "currentPrice": 3606780,
     "fantasyValue": 0,
@@ -30910,6 +33143,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2738930,
     "currentPrice": 2738930,
     "fantasyValue": 0,
@@ -30944,6 +33180,12 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF",
+      "MED",
+      "DEL",
+      "POR"
+    ],
     "basePrice": 2721403,
     "currentPrice": 2721403,
     "fantasyValue": 0,
@@ -30978,6 +33220,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4638652,
     "currentPrice": 6550000,
     "fantasyValue": 1,
@@ -31028,6 +33273,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3514760,
     "currentPrice": 3514760,
     "fantasyValue": 0,
@@ -31062,6 +33310,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4749475,
     "currentPrice": 8950000,
     "fantasyValue": 2.1,
@@ -31112,6 +33363,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3032047,
     "currentPrice": 3032047,
     "fantasyValue": 0,
@@ -31146,6 +33400,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3739430,
     "currentPrice": 3739430,
     "fantasyValue": 0,
@@ -31180,6 +33437,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4774636,
     "currentPrice": 2600000,
     "fantasyValue": -1.1,
@@ -31230,6 +33490,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3737474,
     "currentPrice": 3737474,
     "fantasyValue": 0,
@@ -31264,6 +33527,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5246698,
     "currentPrice": 10500000,
     "fantasyValue": 3,
@@ -31314,6 +33580,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4591316,
     "currentPrice": 6000000,
     "fantasyValue": 0.7,
@@ -31364,6 +33633,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4013543,
     "currentPrice": 8400000,
     "fantasyValue": 2,
@@ -31414,6 +33686,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF",
+      "POR"
+    ],
     "basePrice": 3173985,
     "currentPrice": 3173985,
     "fantasyValue": 0,
@@ -31448,6 +33724,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4680631,
     "currentPrice": 8050000,
     "fantasyValue": 1.6,
@@ -31498,6 +33777,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2505105,
     "currentPrice": 2505105,
     "fantasyValue": 0,
@@ -31532,6 +33814,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4555990,
     "currentPrice": 5250000,
     "fantasyValue": 0.6,
@@ -31582,6 +33867,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4045331,
     "currentPrice": 4045331,
     "fantasyValue": 0,
@@ -31616,6 +33904,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3252142,
     "currentPrice": 3252142,
     "fantasyValue": 0,
@@ -31650,6 +33941,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4370188,
     "currentPrice": 2450000,
     "fantasyValue": -1,
@@ -31699,9 +33993,13 @@ export const challengePlayers: Player[] = [
     "imageUrl": "https://static.challengeplace.com/2026/2/16/6/player/3ea0a9f4-d3b4-464d-b458-40f2093ddfba.jpg",
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
-    "position": "POR",
-    "basePrice": 2679405,
-    "currentPrice": 2679405,
+    "position": "DEL",
+    "positions": [
+      "DEL",
+      "POR"
+    ],
+    "basePrice": 3779405,
+    "currentPrice": 3779405,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {},
@@ -31734,6 +34032,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2920631,
     "currentPrice": 2920631,
     "fantasyValue": 0,
@@ -31768,6 +34069,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4235690,
     "currentPrice": 3050000,
     "fantasyValue": -0.4,
@@ -31818,6 +34122,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2735172,
     "currentPrice": 2735172,
     "fantasyValue": 0,
@@ -31852,6 +34159,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4875350,
     "currentPrice": 14750000,
     "fantasyValue": 5.3,
@@ -31902,6 +34212,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3738956,
     "currentPrice": 3738956,
     "fantasyValue": 0,
@@ -31936,6 +34249,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3574663,
     "currentPrice": 3574663,
     "fantasyValue": 0,
@@ -31970,6 +34286,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4930637,
     "currentPrice": 7550000,
     "fantasyValue": 1.1,
@@ -32020,6 +34339,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4452450,
     "currentPrice": 3050000,
     "fantasyValue": -0.7,
@@ -32070,6 +34392,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5254536,
     "currentPrice": 13100000,
     "fantasyValue": 4.1,
@@ -32120,6 +34445,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4178986,
     "currentPrice": 10000000,
     "fantasyValue": 3.1,
@@ -32169,19 +34497,25 @@ export const challengePlayers: Player[] = [
     "imageUrl": "https://static.challengeplace.com/2025/6/10/14/player/ebb66987-13d8-491c-844c-529bb56e4fe6.jpg",
     "teamId": "team-psg",
     "teamName": "PSG",
-    "position": "MED",
-    "basePrice": 4366206,
-    "currentPrice": 5850000,
-    "fantasyValue": 0.9,
-    "totalPoints": 6,
+    "position": "DEF",
+    "positions": [
+      "DEF",
+      "DEL",
+      "MED",
+      "POR"
+    ],
+    "basePrice": 4016206,
+    "currentPrice": 4600000,
+    "fantasyValue": 0.4,
+    "totalPoints": 3,
     "pointsByMatchday": {
       "1": 2,
-      "2": 4,
-      "3": 0,
-      "4": -1,
-      "5": 0,
+      "2": 6,
+      "3": -1,
+      "4": -3,
+      "5": -1,
       "6": 1,
-      "7": 0
+      "7": -1
     },
     "status": "disponible",
     "stats": {
@@ -32204,13 +34538,13 @@ export const challengePlayers: Player[] = [
       "keyActions": 0
     },
     "priceHistory": {
-      "1": 5150000,
-      "2": 6450000,
-      "3": 5850000,
-      "4": 5450000,
-      "5": 5600000,
-      "6": 6000000,
-      "7": 5850000
+      "1": 4800000,
+      "2": 6900000,
+      "3": 5600000,
+      "4": 4550000,
+      "5": 4600000,
+      "6": 5150000,
+      "7": 4600000
     }
   },
   {
@@ -32220,6 +34554,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5287424,
     "currentPrice": 8050000,
     "fantasyValue": 1.6,
@@ -32270,6 +34607,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4370299,
     "currentPrice": 12850000,
     "fantasyValue": 4.9,
@@ -32320,6 +34660,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4538546,
     "currentPrice": 7450000,
     "fantasyValue": 1.6,
@@ -32370,6 +34713,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5334496,
     "currentPrice": 8350000,
     "fantasyValue": 1.7,
@@ -32420,6 +34766,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3729904,
     "currentPrice": 3729904,
     "fantasyValue": 0,
@@ -32454,6 +34803,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5198162,
     "currentPrice": 7200000,
     "fantasyValue": 1.1,
@@ -32504,6 +34856,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2812102,
     "currentPrice": 2812102,
     "fantasyValue": 0,
@@ -32538,6 +34893,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4442983,
     "currentPrice": 5500000,
     "fantasyValue": 0.4,
@@ -32588,6 +34946,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2320487,
     "currentPrice": 2320487,
     "fantasyValue": 0,
@@ -32622,6 +34983,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3096461,
     "currentPrice": 3096461,
     "fantasyValue": 0,
@@ -32656,6 +35020,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4281682,
     "currentPrice": 6300000,
     "fantasyValue": 1.1,
@@ -32706,6 +35073,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2903017,
     "currentPrice": 2903017,
     "fantasyValue": 0,
@@ -32740,6 +35110,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3924534,
     "currentPrice": 3924534,
     "fantasyValue": 0,
@@ -32774,6 +35147,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4250597,
     "currentPrice": 4250597,
     "fantasyValue": 0,
@@ -32808,6 +35184,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4675024,
     "currentPrice": 7550000,
     "fantasyValue": 1.3,
@@ -32858,6 +35237,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4246124,
     "currentPrice": 5050000,
     "fantasyValue": 0.3,
@@ -32908,6 +35290,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4102093,
     "currentPrice": 4102093,
     "fantasyValue": 0,
@@ -32942,6 +35327,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "DEF"
+    ],
     "basePrice": 4276019,
     "currentPrice": 4276019,
     "fantasyValue": 0,
@@ -32976,6 +35365,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2751004,
     "currentPrice": 2751004,
     "fantasyValue": 0,
@@ -33010,6 +35402,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3743416,
     "currentPrice": 3743416,
     "fantasyValue": 0,
@@ -33044,6 +35439,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4236294,
     "currentPrice": 4236294,
     "fantasyValue": 0,
@@ -33078,6 +35476,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4292986,
     "currentPrice": 7650000,
     "fantasyValue": 1.6,
@@ -33128,6 +35529,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3505901,
     "currentPrice": 3505901,
     "fantasyValue": 0,
@@ -33162,6 +35566,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3406691,
     "currentPrice": 3406691,
     "fantasyValue": 0,
@@ -33196,6 +35603,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4327901,
     "currentPrice": 8250000,
     "fantasyValue": 1.7,
@@ -33246,6 +35656,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3050483,
     "currentPrice": 3050483,
     "fantasyValue": 0,
@@ -33280,6 +35693,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3132226,
     "currentPrice": 3132226,
     "fantasyValue": 0,
@@ -33314,6 +35730,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3559044,
     "currentPrice": 3900000,
     "fantasyValue": 0.3,
@@ -33364,6 +35783,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5310340,
     "currentPrice": 6800000,
     "fantasyValue": 0.9,
@@ -33414,6 +35836,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2798488,
     "currentPrice": 2798488,
     "fantasyValue": 0,
@@ -33448,6 +35873,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5161106,
     "currentPrice": 5150000,
     "fantasyValue": 0,
@@ -33498,6 +35926,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4513149,
     "currentPrice": 3100000,
     "fantasyValue": -0.7,
@@ -33548,6 +35979,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2849527,
     "currentPrice": 2849527,
     "fantasyValue": 0,
@@ -33582,6 +36016,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4161911,
     "currentPrice": 4161911,
     "fantasyValue": 0,
@@ -33616,6 +36053,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3047750,
     "currentPrice": 3047750,
     "fantasyValue": 0,
@@ -33650,6 +36090,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4405496,
     "currentPrice": 5050000,
     "fantasyValue": 0.3,
@@ -33700,6 +36143,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3359007,
     "currentPrice": 3500000,
     "fantasyValue": 0,
@@ -33750,6 +36196,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5274285,
     "currentPrice": 9250000,
     "fantasyValue": 2.3,
@@ -33800,6 +36249,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5029870,
     "currentPrice": 7650000,
     "fantasyValue": 1.6,
@@ -33850,6 +36302,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3533949,
     "currentPrice": 3533949,
     "fantasyValue": 0,
@@ -33883,19 +36338,23 @@ export const challengePlayers: Player[] = [
     "imageUrl": "https://static.challengeplace.com/2025/6/10/14/player/50024ef9-a39d-4968-98f9-74a203e32001.jpg",
     "teamId": "team-por",
     "teamName": "Oporto",
-    "position": "MED",
-    "basePrice": 4868139,
-    "currentPrice": 6100000,
-    "fantasyValue": 0.7,
-    "totalPoints": 5,
+    "position": "DEF",
+    "positions": [
+      "DEF",
+      "MED"
+    ],
+    "basePrice": 4518139,
+    "currentPrice": 4350000,
+    "fantasyValue": 0,
+    "totalPoints": 0,
     "pointsByMatchday": {
-      "1": -1,
-      "2": -1,
-      "3": 0,
+      "1": -2,
+      "2": -2,
+      "3": -1,
       "4": 6,
-      "5": 0,
+      "5": -1,
       "6": 1,
-      "7": 0
+      "7": -1
     },
     "status": "disponible",
     "stats": {
@@ -33918,13 +36377,13 @@ export const challengePlayers: Player[] = [
       "keyActions": 1
     },
     "priceHistory": {
-      "1": 4450000,
-      "2": 4200000,
-      "3": 4350000,
-      "4": 6750000,
-      "5": 5850000,
-      "6": 6250000,
-      "7": 6100000
+      "1": 3700000,
+      "2": 3200000,
+      "3": 3100000,
+      "4": 5650000,
+      "5": 4350000,
+      "6": 4900000,
+      "7": 4350000
     }
   },
   {
@@ -33934,6 +36393,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3849993,
     "currentPrice": 3849993,
     "fantasyValue": 0,
@@ -33968,6 +36430,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4694953,
     "currentPrice": 5950000,
     "fantasyValue": 0.7,
@@ -34018,6 +36483,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3616634,
     "currentPrice": 3616634,
     "fantasyValue": 0,
@@ -34052,6 +36520,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3834817,
     "currentPrice": 3834817,
     "fantasyValue": 0,
@@ -34086,6 +36557,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3264050,
     "currentPrice": 3264050,
     "fantasyValue": 0,
@@ -34120,6 +36594,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5017183,
     "currentPrice": 3750000,
     "fantasyValue": -0.7,
@@ -34170,6 +36647,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4199730,
     "currentPrice": 4600000,
     "fantasyValue": 0.1,
@@ -34220,6 +36700,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3831344,
     "currentPrice": 1950000,
     "fantasyValue": -1,
@@ -34270,6 +36753,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2834287,
     "currentPrice": 2834287,
     "fantasyValue": 0,
@@ -34304,6 +36790,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3585095,
     "currentPrice": 3585095,
     "fantasyValue": 0,
@@ -34338,6 +36827,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4531931,
     "currentPrice": 7950000,
     "fantasyValue": 1.4,
@@ -34388,6 +36880,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5461124,
     "currentPrice": 10950000,
     "fantasyValue": 2.7,
@@ -34438,6 +36933,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-liv",
     "teamName": "Liverpool",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4671757,
     "currentPrice": 8650000,
     "fantasyValue": 2.3,
@@ -34488,6 +36986,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3472646,
     "currentPrice": 3472646,
     "fantasyValue": 0,
@@ -34522,6 +37023,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3046362,
     "currentPrice": 3046362,
     "fantasyValue": 0,
@@ -34556,6 +37060,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 5020809,
     "currentPrice": 6400000,
     "fantasyValue": 0.7,
@@ -34606,6 +37113,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4583513,
     "currentPrice": 6000000,
     "fantasyValue": 0.7,
@@ -34656,6 +37166,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4292638,
     "currentPrice": 2900000,
     "fantasyValue": -0.7,
@@ -34706,6 +37219,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3723513,
     "currentPrice": 3723513,
     "fantasyValue": 0,
@@ -34740,6 +37256,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4726678,
     "currentPrice": 5150000,
     "fantasyValue": 0.1,
@@ -34790,6 +37309,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4939624,
     "currentPrice": 9850000,
     "fantasyValue": 2.7,
@@ -34840,6 +37362,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4483065,
     "currentPrice": 6000000,
     "fantasyValue": 0.9,
@@ -34890,6 +37415,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR",
+      "DEL"
+    ],
     "basePrice": 2997956,
     "currentPrice": 2997956,
     "fantasyValue": 0,
@@ -34924,6 +37453,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4949455,
     "currentPrice": 15200000,
     "fantasyValue": 5.4,
@@ -34974,6 +37506,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3166465,
     "currentPrice": 3166465,
     "fantasyValue": 0,
@@ -35008,6 +37543,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4575415,
     "currentPrice": 5850000,
     "fantasyValue": 0.7,
@@ -35058,6 +37596,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4724207,
     "currentPrice": 4250000,
     "fantasyValue": 0,
@@ -35108,6 +37649,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2851270,
     "currentPrice": 2851270,
     "fantasyValue": 0,
@@ -35142,6 +37686,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4210035,
     "currentPrice": 5050000,
     "fantasyValue": 0.6,
@@ -35192,6 +37739,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5437022,
     "currentPrice": 4700000,
     "fantasyValue": -0.4,
@@ -35242,6 +37792,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3118479,
     "currentPrice": 3118479,
     "fantasyValue": 0,
@@ -35276,6 +37829,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3967353,
     "currentPrice": 3967353,
     "fantasyValue": 0,
@@ -35310,6 +37866,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3001641,
     "currentPrice": 3001641,
     "fantasyValue": 0,
@@ -35344,6 +37903,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3090054,
     "currentPrice": 3090054,
     "fantasyValue": 0,
@@ -35378,6 +37940,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4064523,
     "currentPrice": 2950000,
     "fantasyValue": -0.7,
@@ -35428,6 +37993,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4560800,
     "currentPrice": 12950000,
     "fantasyValue": 4.7,
@@ -35478,6 +38046,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mar",
     "teamName": "Olympique de Marsella",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4675485,
     "currentPrice": 2050000,
     "fantasyValue": -1.4,
@@ -35528,6 +38099,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5108049,
     "currentPrice": 7650000,
     "fantasyValue": 1.3,
@@ -35578,6 +38152,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4478410,
     "currentPrice": 7250000,
     "fantasyValue": 1.6,
@@ -35628,6 +38205,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-val",
     "teamName": "Valencia",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5025196,
     "currentPrice": 5300000,
     "fantasyValue": 0.1,
@@ -35678,6 +38258,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4105235,
     "currentPrice": 5350000,
     "fantasyValue": 0.7,
@@ -35728,6 +38311,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3396365,
     "currentPrice": 3396365,
     "fantasyValue": 0,
@@ -35762,6 +38348,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4871386,
     "currentPrice": 5450000,
     "fantasyValue": 0.4,
@@ -35812,6 +38401,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3644059,
     "currentPrice": 3644059,
     "fantasyValue": 0,
@@ -35846,6 +38438,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "DEF"
+    ],
     "basePrice": 5439564,
     "currentPrice": 7500000,
     "fantasyValue": 1,
@@ -35896,6 +38492,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4386124,
     "currentPrice": 5000000,
     "fantasyValue": 0.4,
@@ -35946,6 +38545,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3878265,
     "currentPrice": 3878265,
     "fantasyValue": 0,
@@ -35980,6 +38582,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4371532,
     "currentPrice": 6150000,
     "fantasyValue": 0.9,
@@ -36030,6 +38635,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4196132,
     "currentPrice": 4196132,
     "fantasyValue": 0,
@@ -36064,6 +38672,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2701830,
     "currentPrice": 2701830,
     "fantasyValue": 0,
@@ -36098,6 +38709,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3442475,
     "currentPrice": 3442475,
     "fantasyValue": 0,
@@ -36131,19 +38745,23 @@ export const challengePlayers: Player[] = [
     "imageUrl": "https://static.challengeplace.com/2026/2/19/11/player/48e69313-092c-4922-a683-ba27ae422e76.jpg",
     "teamId": "team-che",
     "teamName": "Chelsea",
-    "position": "MED",
-    "basePrice": 5049494,
-    "currentPrice": 9900000,
-    "fantasyValue": 2.4,
-    "totalPoints": 17,
+    "position": "DEL",
+    "positions": [
+      "DEL",
+      "MED"
+    ],
+    "basePrice": 5449494,
+    "currentPrice": 9400000,
+    "fantasyValue": 2,
+    "totalPoints": 14,
     "pointsByMatchday": {
       "1": 0,
       "2": 0,
       "3": 0,
-      "4": 10,
+      "4": 8,
       "5": 1,
       "6": 2,
-      "7": 4
+      "7": 3
     },
     "status": "disponible",
     "stats": {
@@ -36166,13 +38784,13 @@ export const challengePlayers: Player[] = [
       "keyActions": 1
     },
     "priceHistory": {
-      "1": 5050000,
-      "2": 5050000,
-      "3": 5050000,
-      "4": 9050000,
-      "5": 7950000,
-      "6": 8600000,
-      "7": 9900000
+      "1": 5450000,
+      "2": 5450000,
+      "3": 5450000,
+      "4": 8650000,
+      "5": 7850000,
+      "6": 8500000,
+      "7": 9400000
     }
   },
   {
@@ -36182,6 +38800,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2768406,
     "currentPrice": 2768406,
     "fantasyValue": 0,
@@ -36216,6 +38837,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3169065,
     "currentPrice": 3169065,
     "fantasyValue": 0,
@@ -36250,6 +38874,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "DEF"
+    ],
     "basePrice": 5404925,
     "currentPrice": 6000000,
     "fantasyValue": 0.4,
@@ -36300,6 +38928,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4194218,
     "currentPrice": 5350000,
     "fantasyValue": 0.6,
@@ -36350,6 +38981,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3877667,
     "currentPrice": 3877667,
     "fantasyValue": 0,
@@ -36384,6 +39018,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4550735,
     "currentPrice": 5700000,
     "fantasyValue": 0.6,
@@ -36434,6 +39071,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4147009,
     "currentPrice": 6300000,
     "fantasyValue": 1.1,
@@ -36484,6 +39124,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3978397,
     "currentPrice": 4400000,
     "fantasyValue": 0.1,
@@ -36534,6 +39177,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4960926,
     "currentPrice": 9350000,
     "fantasyValue": 2.4,
@@ -36584,6 +39230,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3203295,
     "currentPrice": 3203295,
     "fantasyValue": 0,
@@ -36618,6 +39267,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5426221,
     "currentPrice": 4700000,
     "fantasyValue": -0.4,
@@ -36668,6 +39320,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2949984,
     "currentPrice": 2949984,
     "fantasyValue": 0,
@@ -36702,6 +39357,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4837585,
     "currentPrice": 5350000,
     "fantasyValue": 0.3,
@@ -36752,6 +39410,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4133920,
     "currentPrice": 4950000,
     "fantasyValue": 0.3,
@@ -36802,6 +39463,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3629789,
     "currentPrice": 3629789,
     "fantasyValue": 0,
@@ -36836,6 +39500,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4851127,
     "currentPrice": 13350000,
     "fantasyValue": 4.9,
@@ -36886,6 +39553,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4724160,
     "currentPrice": 6450000,
     "fantasyValue": 1,
@@ -36936,6 +39606,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3866453,
     "currentPrice": 3750000,
     "fantasyValue": -0.1,
@@ -36986,6 +39659,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEL"
+    ],
     "basePrice": 4456522,
     "currentPrice": 9250000,
     "fantasyValue": 2.6,
@@ -37036,6 +39713,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4895795,
     "currentPrice": 10400000,
     "fantasyValue": 3.1,
@@ -37086,6 +39766,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4410595,
     "currentPrice": 6950000,
     "fantasyValue": 1.3,
@@ -37136,6 +39819,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4565636,
     "currentPrice": 5050000,
     "fantasyValue": 0.3,
@@ -37186,6 +39872,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4512468,
     "currentPrice": 12150000,
     "fantasyValue": 3.9,
@@ -37236,6 +39925,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4560953,
     "currentPrice": 4400000,
     "fantasyValue": 0,
@@ -37286,6 +39978,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3223891,
     "currentPrice": 3223891,
     "fantasyValue": 0,
@@ -37320,6 +40015,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2866691,
     "currentPrice": 2866691,
     "fantasyValue": 0,
@@ -37354,6 +40052,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4534359,
     "currentPrice": 16050000,
     "fantasyValue": 6.1,
@@ -37404,6 +40105,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5145012,
     "currentPrice": 9850000,
     "fantasyValue": 2,
@@ -37454,6 +40158,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-atm",
     "teamName": "Atlético de Madrid",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4362345,
     "currentPrice": 4200000,
     "fantasyValue": 0,
@@ -37504,6 +40211,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5047558,
     "currentPrice": 5550000,
     "fantasyValue": 0.3,
@@ -37554,6 +40264,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fey",
     "teamName": "Feyenoord",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4537031,
     "currentPrice": 5150000,
     "fantasyValue": 0.4,
@@ -37604,6 +40317,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2743457,
     "currentPrice": 2743457,
     "fantasyValue": 0,
@@ -37638,6 +40354,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4907804,
     "currentPrice": 5650000,
     "fantasyValue": 0.4,
@@ -37688,6 +40407,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3290682,
     "currentPrice": 3290682,
     "fantasyValue": 0,
@@ -37722,6 +40444,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4476844,
     "currentPrice": 5500000,
     "fantasyValue": 0.6,
@@ -37772,6 +40497,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3429614,
     "currentPrice": 3429614,
     "fantasyValue": 0,
@@ -37806,6 +40534,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2909121,
     "currentPrice": 2909121,
     "fantasyValue": 0,
@@ -37840,6 +40571,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4252399,
     "currentPrice": 4252399,
     "fantasyValue": 0,
@@ -37874,6 +40608,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4318574,
     "currentPrice": 9050000,
     "fantasyValue": 2.7,
@@ -37924,6 +40661,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5107147,
     "currentPrice": 6700000,
     "fantasyValue": 1,
@@ -37974,6 +40714,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2959949,
     "currentPrice": 2959949,
     "fantasyValue": 0,
@@ -38008,6 +40751,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3865301,
     "currentPrice": 3865301,
     "fantasyValue": 0,
@@ -38042,6 +40788,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4706902,
     "currentPrice": 8950000,
     "fantasyValue": 2,
@@ -38091,19 +40840,23 @@ export const challengePlayers: Player[] = [
     "imageUrl": "https://static.challengeplace.com/2026/2/24/11/player/84cab249-2d14-40e5-9a1b-a60b737fc11f.jpg",
     "teamId": "team-s04",
     "teamName": "Schalke 04",
-    "position": "POR",
-    "basePrice": 3762579,
-    "currentPrice": 4350000,
-    "fantasyValue": 0.4,
-    "totalPoints": 3,
+    "position": "DEL",
+    "positions": [
+      "DEL",
+      "POR"
+    ],
+    "basePrice": 4862579,
+    "currentPrice": 6350000,
+    "fantasyValue": 0.9,
+    "totalPoints": 6,
     "pointsByMatchday": {
       "1": 2,
-      "2": -1,
+      "2": 0,
       "3": 1,
-      "4": -1,
+      "4": 0,
       "5": 1,
       "6": 2,
-      "7": -1
+      "7": 0
     },
     "status": "disponible",
     "stats": {
@@ -38126,13 +40879,13 @@ export const challengePlayers: Player[] = [
       "keyActions": 0
     },
     "priceHistory": {
-      "1": 4550000,
-      "2": 3850000,
-      "3": 4400000,
-      "4": 3850000,
-      "5": 4400000,
-      "6": 5050000,
-      "7": 4350000
+      "1": 5650000,
+      "2": 5350000,
+      "3": 5750000,
+      "4": 5600000,
+      "5": 6000000,
+      "6": 6650000,
+      "7": 6350000
     }
   },
   {
@@ -38142,6 +40895,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2946126,
     "currentPrice": 2946126,
     "fantasyValue": 0,
@@ -38176,6 +40932,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3399833,
     "currentPrice": 3399833,
     "fantasyValue": 0,
@@ -38210,6 +40969,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3525253,
     "currentPrice": 3525253,
     "fantasyValue": 0,
@@ -38244,6 +41006,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2715234,
     "currentPrice": 2715234,
     "fantasyValue": 0,
@@ -38278,6 +41043,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3666599,
     "currentPrice": 3666599,
     "fantasyValue": 0,
@@ -38312,6 +41080,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3530537,
     "currentPrice": 3530537,
     "fantasyValue": 0,
@@ -38346,6 +41117,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2859846,
     "currentPrice": 2859846,
     "fantasyValue": 0,
@@ -38380,6 +41154,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEF"
+    ],
     "basePrice": 3809573,
     "currentPrice": 3809573,
     "fantasyValue": 0,
@@ -38414,6 +41192,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3195539,
     "currentPrice": 3195539,
     "fantasyValue": 0,
@@ -38448,6 +41229,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2858759,
     "currentPrice": 2858759,
     "fantasyValue": 0,
@@ -38482,6 +41266,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEL"
+    ],
     "basePrice": 5063255,
     "currentPrice": 5800000,
     "fantasyValue": 0.4,
@@ -38532,6 +41320,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3289936,
     "currentPrice": 3289936,
     "fantasyValue": 0,
@@ -38566,6 +41357,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3345160,
     "currentPrice": 3345160,
     "fantasyValue": 0,
@@ -38600,6 +41394,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "POR",
+    "positions": [
+      "POR",
+      "DEF"
+    ],
     "basePrice": 3686927,
     "currentPrice": 3900000,
     "fantasyValue": 0.3,
@@ -38650,6 +41448,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3314615,
     "currentPrice": 3314615,
     "fantasyValue": 0,
@@ -38684,6 +41485,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-s04",
     "teamName": "Schalke 04",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4275956,
     "currentPrice": 3000000,
     "fantasyValue": -0.6,
@@ -38734,6 +41538,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4098164,
     "currentPrice": 4098164,
     "fantasyValue": 0,
@@ -38768,6 +41575,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "MED"
+    ],
     "basePrice": 3431761,
     "currentPrice": 3431761,
     "fantasyValue": 0,
@@ -38802,6 +41613,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3719763,
     "currentPrice": 3719763,
     "fantasyValue": 0,
@@ -38836,6 +41650,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3028706,
     "currentPrice": 3028706,
     "fantasyValue": 0,
@@ -38870,6 +41687,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3369946,
     "currentPrice": 3369946,
     "fantasyValue": 0,
@@ -38904,6 +41724,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3448911,
     "currentPrice": 3448911,
     "fantasyValue": 0,
@@ -38938,6 +41761,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3810762,
     "currentPrice": 3810762,
     "fantasyValue": 0,
@@ -38972,6 +41798,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2569861,
     "currentPrice": 2569861,
     "fantasyValue": 0,
@@ -39006,6 +41835,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3186417,
     "currentPrice": 3186417,
     "fantasyValue": 0,
@@ -39040,6 +41872,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2784230,
     "currentPrice": 2784230,
     "fantasyValue": 0,
@@ -39074,6 +41909,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4692916,
     "currentPrice": 4400000,
     "fantasyValue": 0,
@@ -39124,6 +41962,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3326574,
     "currentPrice": 3326574,
     "fantasyValue": 0,
@@ -39158,6 +41999,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3773540,
     "currentPrice": 3773540,
     "fantasyValue": 0,
@@ -39192,6 +42036,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3175742,
     "currentPrice": 3175742,
     "fantasyValue": 0,
@@ -39226,6 +42073,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3090588,
     "currentPrice": 3090588,
     "fantasyValue": 0,
@@ -39260,6 +42110,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5061542,
     "currentPrice": 8550000,
     "fantasyValue": 2,
@@ -39310,6 +42163,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-juv",
     "teamName": "Juventus",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4824630,
     "currentPrice": 5400000,
     "fantasyValue": 0.4,
@@ -39360,6 +42216,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3389565,
     "currentPrice": 3389565,
     "fantasyValue": 0,
@@ -39394,6 +42253,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3559084,
     "currentPrice": 3559084,
     "fantasyValue": 0,
@@ -39428,6 +42290,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2915854,
     "currentPrice": 2915854,
     "fantasyValue": 0,
@@ -39462,6 +42327,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3842599,
     "currentPrice": 3842599,
     "fantasyValue": 0,
@@ -39496,6 +42364,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3508761,
     "currentPrice": 3508761,
     "fantasyValue": 0,
@@ -39530,6 +42401,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3405972,
     "currentPrice": 3405972,
     "fantasyValue": 0,
@@ -39564,6 +42438,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4623463,
     "currentPrice": 6950000,
     "fantasyValue": 1,
@@ -39614,6 +42491,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3714830,
     "currentPrice": 3714830,
     "fantasyValue": 0,
@@ -39648,6 +42528,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4604693,
     "currentPrice": 7650000,
     "fantasyValue": 1.6,
@@ -39698,6 +42581,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2341449,
     "currentPrice": 2341449,
     "fantasyValue": 0,
@@ -39732,6 +42618,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3432272,
     "currentPrice": 3432272,
     "fantasyValue": 0,
@@ -39766,6 +42655,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2742098,
     "currentPrice": 2742098,
     "fantasyValue": 0,
@@ -39800,6 +42692,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2930100,
     "currentPrice": 2930100,
     "fantasyValue": 0,
@@ -39834,6 +42729,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3930136,
     "currentPrice": 3930136,
     "fantasyValue": 0,
@@ -39868,6 +42766,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5284286,
     "currentPrice": 10150000,
     "fantasyValue": 2.4,
@@ -39918,6 +42819,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2600650,
     "currentPrice": 2600650,
     "fantasyValue": 0,
@@ -39952,6 +42856,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lev",
     "teamName": "Bayer Leverkusen",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4668881,
     "currentPrice": 8200000,
     "fantasyValue": 1.9,
@@ -40002,6 +42909,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5082183,
     "currentPrice": 14700000,
     "fantasyValue": 4.7,
@@ -40052,6 +42962,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5047421,
     "currentPrice": 8150000,
     "fantasyValue": 1.4,
@@ -40102,6 +43015,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR",
+      "DEF"
+    ],
     "basePrice": 2397314,
     "currentPrice": 2397314,
     "fantasyValue": 0,
@@ -40136,6 +43053,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3639001,
     "currentPrice": 3639001,
     "fantasyValue": 0,
@@ -40170,6 +43090,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3306872,
     "currentPrice": 3306872,
     "fantasyValue": 0,
@@ -40204,6 +43127,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3543041,
     "currentPrice": 3543041,
     "fantasyValue": 0,
@@ -40238,6 +43164,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2952836,
     "currentPrice": 2952836,
     "fantasyValue": 0,
@@ -40272,6 +43201,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rom",
     "teamName": "AS Roma",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4434024,
     "currentPrice": 6350000,
     "fantasyValue": 1,
@@ -40322,6 +43254,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4643524,
     "currentPrice": 5650000,
     "fantasyValue": 0.6,
@@ -40372,6 +43307,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3185671,
     "currentPrice": 3185671,
     "fantasyValue": 0,
@@ -40406,6 +43344,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3559141,
     "currentPrice": 3559141,
     "fantasyValue": 0,
@@ -40440,6 +43381,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5235012,
     "currentPrice": 8250000,
     "fantasyValue": 1.3,
@@ -40490,6 +43434,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3513703,
     "currentPrice": 3513703,
     "fantasyValue": 0,
@@ -40524,6 +43471,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4279795,
     "currentPrice": 4279795,
     "fantasyValue": 0,
@@ -40558,6 +43508,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-fcb",
     "teamName": "Barcelona",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 5125802,
     "currentPrice": 4400000,
     "fantasyValue": -0.4,
@@ -40608,6 +43561,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2988989,
     "currentPrice": 2988989,
     "fantasyValue": 0,
@@ -40641,17 +43597,23 @@ export const challengePlayers: Player[] = [
     "imageUrl": "https://static.challengeplace.com/2026/2/24/11/player/7ff8b85c-0759-4c4a-8ecf-84c6657e852d.jpg",
     "teamId": "team-aja",
     "teamName": "Ajax",
-    "position": "MED",
-    "basePrice": 4276986,
-    "currentPrice": 6450000,
+    "position": "POR",
+    "positions": [
+      "POR",
+      "DEF",
+      "MED",
+      "DEL"
+    ],
+    "basePrice": 3576986,
+    "currentPrice": 5750000,
     "fantasyValue": 1.1,
     "totalPoints": 8,
     "pointsByMatchday": {
-      "1": 4,
+      "1": 6,
       "2": 1,
       "3": 0,
-      "4": 0,
-      "5": 0,
+      "4": -1,
+      "5": -1,
       "6": 2,
       "7": 1
     },
@@ -40676,13 +43638,13 @@ export const challengePlayers: Player[] = [
       "keyActions": 0
     },
     "priceHistory": {
-      "1": 5900000,
-      "2": 5700000,
-      "3": 5550000,
-      "4": 5550000,
-      "5": 5550000,
-      "6": 6350000,
-      "7": 6450000
+      "1": 6000000,
+      "2": 5500000,
+      "3": 5350000,
+      "4": 4950000,
+      "5": 4700000,
+      "6": 5650000,
+      "7": 5750000
     }
   },
   {
@@ -40692,6 +43654,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3084425,
     "currentPrice": 3084425,
     "fantasyValue": 0,
@@ -40726,6 +43691,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3361785,
     "currentPrice": 3361785,
     "fantasyValue": 0,
@@ -40760,6 +43728,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3533892,
     "currentPrice": 3533892,
     "fantasyValue": 0,
@@ -40794,6 +43765,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4045058,
     "currentPrice": 4600000,
     "fantasyValue": 0.1,
@@ -40844,6 +43818,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3100659,
     "currentPrice": 3100659,
     "fantasyValue": 0,
@@ -40878,6 +43855,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3395114,
     "currentPrice": 3395114,
     "fantasyValue": 0,
@@ -40912,6 +43892,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3814208,
     "currentPrice": 3814208,
     "fantasyValue": 0,
@@ -40946,6 +43929,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2467642,
     "currentPrice": 2467642,
     "fantasyValue": 0,
@@ -40980,6 +43966,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3858881,
     "currentPrice": 3858881,
     "fantasyValue": 0,
@@ -41014,6 +44003,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4202783,
     "currentPrice": 4202783,
     "fantasyValue": 0,
@@ -41048,6 +44040,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3774395,
     "currentPrice": 3100000,
     "fantasyValue": -0.3,
@@ -41098,6 +44093,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2761737,
     "currentPrice": 2761737,
     "fantasyValue": 0,
@@ -41132,6 +44130,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3364739,
     "currentPrice": 3364739,
     "fantasyValue": 0,
@@ -41166,6 +44167,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3393552,
     "currentPrice": 3393552,
     "fantasyValue": 0,
@@ -41200,6 +44204,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3524372,
     "currentPrice": 3524372,
     "fantasyValue": 0,
@@ -41234,6 +44241,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3644788,
     "currentPrice": 3644788,
     "fantasyValue": 0,
@@ -41268,6 +44278,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3070905,
     "currentPrice": 3070905,
     "fantasyValue": 0,
@@ -41302,6 +44315,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3646863,
     "currentPrice": 3646863,
     "fantasyValue": 0,
@@ -41336,6 +44352,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-lyo",
     "teamName": "Olympique de Lyon",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4104993,
     "currentPrice": 2400000,
     "fantasyValue": -0.7,
@@ -41386,6 +44405,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3715309,
     "currentPrice": 3715309,
     "fantasyValue": 0,
@@ -41420,6 +44442,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3476433,
     "currentPrice": 3476433,
     "fantasyValue": 0,
@@ -41454,6 +44479,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3005970,
     "currentPrice": 3005970,
     "fantasyValue": 0,
@@ -41488,6 +44516,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3941139,
     "currentPrice": 3941139,
     "fantasyValue": 0,
@@ -41522,6 +44553,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4145772,
     "currentPrice": 4145772,
     "fantasyValue": 0,
@@ -41556,6 +44590,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3648151,
     "currentPrice": 3648151,
     "fantasyValue": 0,
@@ -41590,6 +44627,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2929675,
     "currentPrice": 2929675,
     "fantasyValue": 0,
@@ -41624,6 +44664,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5040313,
     "currentPrice": 7100000,
     "fantasyValue": 1,
@@ -41674,6 +44717,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3133621,
     "currentPrice": 3133621,
     "fantasyValue": 0,
@@ -41708,6 +44754,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-aja",
     "teamName": "Ajax",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3637449,
     "currentPrice": 6050000,
     "fantasyValue": 1.3,
@@ -41758,6 +44807,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3128567,
     "currentPrice": 3128567,
     "fantasyValue": 0,
@@ -41792,6 +44844,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3413540,
     "currentPrice": 3413540,
     "fantasyValue": 0,
@@ -41826,6 +44881,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4162571,
     "currentPrice": 4162571,
     "fantasyValue": 0,
@@ -41860,6 +44918,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3639819,
     "currentPrice": 3639819,
     "fantasyValue": 0,
@@ -41894,6 +44955,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3851284,
     "currentPrice": 3851284,
     "fantasyValue": 0,
@@ -41928,6 +44992,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4114569,
     "currentPrice": 4114569,
     "fantasyValue": 0,
@@ -41962,6 +45029,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4238004,
     "currentPrice": 4238004,
     "fantasyValue": 0,
@@ -41996,6 +45066,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4728471,
     "currentPrice": 6000000,
     "fantasyValue": 0.7,
@@ -42046,6 +45119,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3587063,
     "currentPrice": 3587063,
     "fantasyValue": 0,
@@ -42080,6 +45156,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4081800,
     "currentPrice": 4081800,
     "fantasyValue": 0,
@@ -42114,6 +45193,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4281003,
     "currentPrice": 4281003,
     "fantasyValue": 0,
@@ -42148,6 +45230,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3502249,
     "currentPrice": 3502249,
     "fantasyValue": 0,
@@ -42182,6 +45267,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3873706,
     "currentPrice": 3873706,
     "fantasyValue": 0,
@@ -42216,6 +45304,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3107405,
     "currentPrice": 3107405,
     "fantasyValue": 0,
@@ -42250,6 +45341,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3017901,
     "currentPrice": 3017901,
     "fantasyValue": 0,
@@ -42284,6 +45378,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2760498,
     "currentPrice": 2760498,
     "fantasyValue": 0,
@@ -42318,6 +45415,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3344068,
     "currentPrice": 3344068,
     "fantasyValue": 0,
@@ -42352,6 +45452,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3800208,
     "currentPrice": 3800208,
     "fantasyValue": 0,
@@ -42386,6 +45489,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3543744,
     "currentPrice": 3543744,
     "fantasyValue": 0,
@@ -42420,6 +45526,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2862982,
     "currentPrice": 2862982,
     "fantasyValue": 0,
@@ -42454,6 +45563,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4243282,
     "currentPrice": 4243282,
     "fantasyValue": 0,
@@ -42488,6 +45600,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3355350,
     "currentPrice": 3355350,
     "fantasyValue": 0,
@@ -42522,6 +45637,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3785789,
     "currentPrice": 3785789,
     "fantasyValue": 0,
@@ -42556,6 +45674,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3650833,
     "currentPrice": 3650833,
     "fantasyValue": 0,
@@ -42590,6 +45711,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3093839,
     "currentPrice": 3093839,
     "fantasyValue": 0,
@@ -42624,6 +45748,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2833065,
     "currentPrice": 2833065,
     "fantasyValue": 0,
@@ -42658,6 +45785,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2777542,
     "currentPrice": 2777542,
     "fantasyValue": 0,
@@ -42692,6 +45822,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2983965,
     "currentPrice": 2983965,
     "fantasyValue": 0,
@@ -42726,6 +45859,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2451248,
     "currentPrice": 2451248,
     "fantasyValue": 0,
@@ -42760,6 +45896,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4218927,
     "currentPrice": 4218927,
     "fantasyValue": 0,
@@ -42794,6 +45933,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3462481,
     "currentPrice": 3462481,
     "fantasyValue": 0,
@@ -42828,6 +45970,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3577120,
     "currentPrice": 3577120,
     "fantasyValue": 0,
@@ -42862,6 +46007,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3190736,
     "currentPrice": 3190736,
     "fantasyValue": 0,
@@ -42896,6 +46044,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2881013,
     "currentPrice": 2881013,
     "fantasyValue": 0,
@@ -42930,6 +46081,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3910486,
     "currentPrice": 3910486,
     "fantasyValue": 0,
@@ -42964,6 +46118,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3018674,
     "currentPrice": 3018674,
     "fantasyValue": 0,
@@ -42998,6 +46155,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3849084,
     "currentPrice": 3849084,
     "fantasyValue": 0,
@@ -43032,6 +46192,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mun",
     "teamName": "Manchester United",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4821881,
     "currentPrice": 5550000,
     "fantasyValue": 0.4,
@@ -43082,6 +46245,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3618857,
     "currentPrice": 3618857,
     "fantasyValue": 0,
@@ -43116,6 +46282,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3782375,
     "currentPrice": 3782375,
     "fantasyValue": 0,
@@ -43150,6 +46319,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3023317,
     "currentPrice": 3023317,
     "fantasyValue": 0,
@@ -43184,6 +46356,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3439046,
     "currentPrice": 3439046,
     "fantasyValue": 0,
@@ -43218,6 +46393,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3142900,
     "currentPrice": 3142900,
     "fantasyValue": 0,
@@ -43252,6 +46430,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2849728,
     "currentPrice": 2849728,
     "fantasyValue": 0,
@@ -43286,6 +46467,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-psg",
     "teamName": "PSG",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4014594,
     "currentPrice": 4350000,
     "fantasyValue": 0.3,
@@ -43336,6 +46520,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL",
+      "MED"
+    ],
     "basePrice": 3634895,
     "currentPrice": 3634895,
     "fantasyValue": 0,
@@ -43370,6 +46558,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3395221,
     "currentPrice": 3395221,
     "fantasyValue": 0,
@@ -43404,6 +46595,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3121107,
     "currentPrice": 3121107,
     "fantasyValue": 0,
@@ -43438,6 +46632,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3451053,
     "currentPrice": 3451053,
     "fantasyValue": 0,
@@ -43472,6 +46669,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4404398,
     "currentPrice": 5950000,
     "fantasyValue": 1.1,
@@ -43522,6 +46722,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3276203,
     "currentPrice": 3276203,
     "fantasyValue": 0,
@@ -43556,6 +46759,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3732735,
     "currentPrice": 3732735,
     "fantasyValue": 0,
@@ -43590,6 +46796,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3548055,
     "currentPrice": 3548055,
     "fantasyValue": 0,
@@ -43624,6 +46833,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3617152,
     "currentPrice": 3617152,
     "fantasyValue": 0,
@@ -43658,6 +46870,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3821050,
     "currentPrice": 3821050,
     "fantasyValue": 0,
@@ -43692,6 +46907,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3844867,
     "currentPrice": 3844867,
     "fantasyValue": 0,
@@ -43726,6 +46944,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3115665,
     "currentPrice": 3115665,
     "fantasyValue": 0,
@@ -43760,6 +46981,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3522434,
     "currentPrice": 3522434,
     "fantasyValue": 0,
@@ -43794,6 +47018,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2791763,
     "currentPrice": 2791763,
     "fantasyValue": 0,
@@ -43828,6 +47055,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3739963,
     "currentPrice": 3739963,
     "fantasyValue": 0,
@@ -43862,6 +47092,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3460275,
     "currentPrice": 3460275,
     "fantasyValue": 0,
@@ -43896,6 +47129,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3339900,
     "currentPrice": 3339900,
     "fantasyValue": 0,
@@ -43930,6 +47166,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3004346,
     "currentPrice": 3004346,
     "fantasyValue": 0,
@@ -43964,6 +47203,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2616456,
     "currentPrice": 2616456,
     "fantasyValue": 0,
@@ -43998,6 +47240,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4191575,
     "currentPrice": 4191575,
     "fantasyValue": 0,
@@ -44032,6 +47277,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3384477,
     "currentPrice": 3384477,
     "fantasyValue": 0,
@@ -44066,6 +47314,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2988546,
     "currentPrice": 2988546,
     "fantasyValue": 0,
@@ -44100,6 +47351,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3187769,
     "currentPrice": 3187769,
     "fantasyValue": 0,
@@ -44134,6 +47388,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3853545,
     "currentPrice": 3853545,
     "fantasyValue": 0,
@@ -44168,6 +47425,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4217991,
     "currentPrice": 4217991,
     "fantasyValue": 0,
@@ -44202,6 +47462,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3477634,
     "currentPrice": 3477634,
     "fantasyValue": 0,
@@ -44236,6 +47499,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3119282,
     "currentPrice": 3119282,
     "fantasyValue": 0,
@@ -44270,6 +47536,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2975060,
     "currentPrice": 2975060,
     "fantasyValue": 0,
@@ -44304,6 +47573,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2761654,
     "currentPrice": 2761654,
     "fantasyValue": 0,
@@ -44338,6 +47610,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3509236,
     "currentPrice": 3509236,
     "fantasyValue": 0,
@@ -44372,6 +47647,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ath",
     "teamName": "Athletic Club",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 4404182,
     "currentPrice": 3950000,
     "fantasyValue": 0,
@@ -44422,6 +47700,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3906086,
     "currentPrice": 3906086,
     "fantasyValue": 0,
@@ -44456,6 +47737,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3143032,
     "currentPrice": 3143032,
     "fantasyValue": 0,
@@ -44490,6 +47774,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4597875,
     "currentPrice": 6500000,
     "fantasyValue": 1,
@@ -44540,6 +47827,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3528927,
     "currentPrice": 3528927,
     "fantasyValue": 0,
@@ -44574,6 +47864,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2672924,
     "currentPrice": 2672924,
     "fantasyValue": 0,
@@ -44608,6 +47901,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mci",
     "teamName": "Manchester City",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4399255,
     "currentPrice": 4000000,
     "fantasyValue": -0.1,
@@ -44658,6 +47954,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2676071,
     "currentPrice": 2676071,
     "fantasyValue": 0,
@@ -44692,6 +47991,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3028300,
     "currentPrice": 3028300,
     "fantasyValue": 0,
@@ -44726,6 +48028,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3155434,
     "currentPrice": 3155434,
     "fantasyValue": 0,
@@ -44760,6 +48065,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3106272,
     "currentPrice": 3106272,
     "fantasyValue": 0,
@@ -44794,6 +48102,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3405381,
     "currentPrice": 3405381,
     "fantasyValue": 0,
@@ -44828,6 +48139,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3948074,
     "currentPrice": 3948074,
     "fantasyValue": 0,
@@ -44862,6 +48176,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3542587,
     "currentPrice": 3542587,
     "fantasyValue": 0,
@@ -44896,6 +48213,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2688988,
     "currentPrice": 2688988,
     "fantasyValue": 0,
@@ -44930,6 +48250,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2845640,
     "currentPrice": 2845640,
     "fantasyValue": 0,
@@ -44964,6 +48287,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3536744,
     "currentPrice": 3536744,
     "fantasyValue": 0,
@@ -44998,6 +48324,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3907905,
     "currentPrice": 3907905,
     "fantasyValue": 0,
@@ -45031,9 +48360,12 @@ export const challengePlayers: Player[] = [
     "imageUrl": "https://static.challengeplace.com/2025/6/10/14/player/cf00d964-7ffe-42fc-99b8-cdedca8e84ba.jpg",
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
-    "position": "DEF",
-    "basePrice": 3458895,
-    "currentPrice": 3458895,
+    "position": "MED",
+    "positions": [
+      "MED"
+    ],
+    "basePrice": 3808895,
+    "currentPrice": 3808895,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {},
@@ -45066,6 +48398,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3206874,
     "currentPrice": 3206874,
     "fantasyValue": 0,
@@ -45100,6 +48435,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3265732,
     "currentPrice": 3265732,
     "fantasyValue": 0,
@@ -45134,6 +48472,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2750786,
     "currentPrice": 2750786,
     "fantasyValue": 0,
@@ -45168,6 +48509,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3855763,
     "currentPrice": 3855763,
     "fantasyValue": 0,
@@ -45202,6 +48546,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4597741,
     "currentPrice": 5500000,
     "fantasyValue": 0.4,
@@ -45252,6 +48599,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3647727,
     "currentPrice": 3647727,
     "fantasyValue": 0,
@@ -45286,6 +48636,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3403227,
     "currentPrice": 3403227,
     "fantasyValue": 0,
@@ -45320,6 +48673,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2558208,
     "currentPrice": 2558208,
     "fantasyValue": 0,
@@ -45354,6 +48710,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3463425,
     "currentPrice": 3463425,
     "fantasyValue": 0,
@@ -45388,6 +48747,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3253648,
     "currentPrice": 3253648,
     "fantasyValue": 0,
@@ -45422,6 +48784,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2935703,
     "currentPrice": 2935703,
     "fantasyValue": 0,
@@ -45456,6 +48821,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-rma",
     "teamName": "Real Madrid",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4877511,
     "currentPrice": 8000000,
     "fantasyValue": 1.4,
@@ -45506,6 +48874,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3527594,
     "currentPrice": 3527594,
     "fantasyValue": 0,
@@ -45540,6 +48911,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3593457,
     "currentPrice": 3593457,
     "fantasyValue": 0,
@@ -45574,6 +48948,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3898723,
     "currentPrice": 3898723,
     "fantasyValue": 0,
@@ -45608,6 +48985,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3990023,
     "currentPrice": 3990023,
     "fantasyValue": 0,
@@ -45642,6 +49022,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2889676,
     "currentPrice": 2889676,
     "fantasyValue": 0,
@@ -45676,6 +49059,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3098289,
     "currentPrice": 3098289,
     "fantasyValue": 0,
@@ -45710,6 +49096,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3471727,
     "currentPrice": 3471727,
     "fantasyValue": 0,
@@ -45744,6 +49133,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4169940,
     "currentPrice": 4169940,
     "fantasyValue": 0,
@@ -45778,6 +49170,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2791459,
     "currentPrice": 2791459,
     "fantasyValue": 0,
@@ -45812,6 +49207,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3704324,
     "currentPrice": 3704324,
     "fantasyValue": 0,
@@ -45846,6 +49244,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2335537,
     "currentPrice": 2335537,
     "fantasyValue": 0,
@@ -45880,6 +49281,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3632462,
     "currentPrice": 3632462,
     "fantasyValue": 0,
@@ -45914,6 +49318,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3082876,
     "currentPrice": 3082876,
     "fantasyValue": 0,
@@ -45948,6 +49355,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3436445,
     "currentPrice": 3436445,
     "fantasyValue": 0,
@@ -45982,6 +49392,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3274350,
     "currentPrice": 3274350,
     "fantasyValue": 0,
@@ -46016,6 +49429,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3730686,
     "currentPrice": 3730686,
     "fantasyValue": 0,
@@ -46050,6 +49466,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 4215843,
     "currentPrice": 4215843,
     "fantasyValue": 0,
@@ -46084,6 +49503,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2834156,
     "currentPrice": 2834156,
     "fantasyValue": 0,
@@ -46118,6 +49540,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3335405,
     "currentPrice": 3335405,
     "fantasyValue": 0,
@@ -46152,6 +49577,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4903781,
     "currentPrice": 6050000,
     "fantasyValue": 0.6,
@@ -46202,6 +49630,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2727390,
     "currentPrice": 2727390,
     "fantasyValue": 0,
@@ -46236,6 +49667,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2977763,
     "currentPrice": 2977763,
     "fantasyValue": 0,
@@ -46270,6 +49704,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2866020,
     "currentPrice": 2866020,
     "fantasyValue": 0,
@@ -46304,6 +49741,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2851701,
     "currentPrice": 2851701,
     "fantasyValue": 0,
@@ -46338,6 +49778,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3624621,
     "currentPrice": 3624621,
     "fantasyValue": 0,
@@ -46372,6 +49815,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2693261,
     "currentPrice": 2693261,
     "fantasyValue": 0,
@@ -46406,6 +49852,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3711224,
     "currentPrice": 3711224,
     "fantasyValue": 0,
@@ -46440,6 +49889,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3229024,
     "currentPrice": 3229024,
     "fantasyValue": 0,
@@ -46474,6 +49926,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3008373,
     "currentPrice": 3008373,
     "fantasyValue": 0,
@@ -46508,6 +49963,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3536674,
     "currentPrice": 3536674,
     "fantasyValue": 0,
@@ -46542,6 +50000,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3106319,
     "currentPrice": 3106319,
     "fantasyValue": 0,
@@ -46576,6 +50037,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 2996994,
     "currentPrice": 2996994,
     "fantasyValue": 0,
@@ -46610,6 +50074,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3814861,
     "currentPrice": 3814861,
     "fantasyValue": 0,
@@ -46644,6 +50111,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3273724,
     "currentPrice": 3273724,
     "fantasyValue": 0,
@@ -46678,6 +50148,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5113950,
     "currentPrice": 5850000,
     "fantasyValue": 0.4,
@@ -46728,6 +50201,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3580004,
     "currentPrice": 3580004,
     "fantasyValue": 0,
@@ -46762,6 +50238,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3183303,
     "currentPrice": 3183303,
     "fantasyValue": 0,
@@ -46796,6 +50275,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3130476,
     "currentPrice": 3130476,
     "fantasyValue": 0,
@@ -46830,6 +50312,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4688938,
     "currentPrice": 6700000,
     "fantasyValue": 1.1,
@@ -46880,6 +50365,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3204654,
     "currentPrice": 3204654,
     "fantasyValue": 0,
@@ -46914,6 +50402,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3050152,
     "currentPrice": 3050152,
     "fantasyValue": 0,
@@ -46948,6 +50439,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 2822494,
     "currentPrice": 2822494,
     "fantasyValue": 0,
@@ -46982,6 +50476,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3078739,
     "currentPrice": 3078739,
     "fantasyValue": 0,
@@ -47016,6 +50513,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "POR",
+    "positions": [
+      "POR"
+    ],
     "basePrice": 3005744,
     "currentPrice": 3005744,
     "fantasyValue": 0,
@@ -47050,6 +50550,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ars",
     "teamName": "Arsenal",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5591857,
     "currentPrice": 10700000,
     "fantasyValue": 2.6,
@@ -47100,6 +50603,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3134627,
     "currentPrice": 3134627,
     "fantasyValue": 0,
@@ -47134,6 +50640,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-int",
     "teamName": "Inter de Milan",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4303854,
     "currentPrice": 4650000,
     "fantasyValue": 0.3,
@@ -47184,6 +50693,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3376567,
     "currentPrice": 3376567,
     "fantasyValue": 0,
@@ -47218,6 +50730,10 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "MED",
+    "positions": [
+      "MED",
+      "DEF"
+    ],
     "basePrice": 3004856,
     "currentPrice": 3004856,
     "fantasyValue": 0,
@@ -47252,6 +50768,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-nap",
     "teamName": "Napoli",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3766368,
     "currentPrice": 4300000,
     "fantasyValue": 0.1,
@@ -47302,6 +50821,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-blsa",
     "teamName": "Bolsa de Jugadores",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 3640082,
     "currentPrice": 3640082,
     "fantasyValue": 0,
@@ -47336,6 +50858,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-oly",
     "teamName": "Olympiakos",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3784246,
     "currentPrice": 4050000,
     "fantasyValue": -0.3,
@@ -47386,6 +50911,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5355358,
     "currentPrice": 9350000,
     "fantasyValue": 2.3,
@@ -47436,6 +50964,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-ben",
     "teamName": "Benfica",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3966523,
     "currentPrice": 3800000,
     "fantasyValue": 0,
@@ -47486,6 +51017,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-tot",
     "teamName": "Tottenham",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 3987408,
     "currentPrice": 5400000,
     "fantasyValue": 0.7,
@@ -47536,6 +51070,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-dor",
     "teamName": "Borussia Dortmund",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 3891321,
     "currentPrice": 5700000,
     "fantasyValue": 0.9,
@@ -47586,6 +51123,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4701977,
     "currentPrice": 6750000,
     "fantasyValue": 1,
@@ -47636,6 +51176,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-che",
     "teamName": "Chelsea",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4889952,
     "currentPrice": 7550000,
     "fantasyValue": 1,
@@ -47686,6 +51229,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-mil",
     "teamName": "AC Milan",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4402049,
     "currentPrice": 6550000,
     "fantasyValue": 1.1,
@@ -47736,6 +51282,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "DEF",
+    "positions": [
+      "DEF"
+    ],
     "basePrice": 4468974,
     "currentPrice": 3550000,
     "fantasyValue": -0.4,
@@ -47786,6 +51335,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-bay",
     "teamName": "Bayern Münich",
     "position": "MED",
+    "positions": [
+      "MED"
+    ],
     "basePrice": 4450220,
     "currentPrice": 5700000,
     "fantasyValue": 0.7,
@@ -47836,6 +51388,9 @@ export const challengePlayers: Player[] = [
     "teamId": "team-por",
     "teamName": "Oporto",
     "position": "DEL",
+    "positions": [
+      "DEL"
+    ],
     "basePrice": 5254174,
     "currentPrice": 10500000,
     "fantasyValue": 3,

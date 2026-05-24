@@ -13,20 +13,14 @@ interface MarketFiltersProps {
   teamId: string;
   sortBy: string;
   maxPrice: number;
-<<<<<<< HEAD
-=======
   hideBagPlayers: boolean;
->>>>>>> 6bc6cc2 (Version 2.2)
   teams: Team[];
   onPositionChange: (value: "todos" | PlayerPosition) => void;
   onStatusChange: (value: "todos" | PlayerStatus) => void;
   onTeamChange: (value: string) => void;
   onSortChange: (value: string) => void;
   onMaxPriceChange: (value: number) => void;
-<<<<<<< HEAD
-=======
   onHideBagPlayersChange: (value: boolean) => void;
->>>>>>> 6bc6cc2 (Version 2.2)
 }
 
 export const MarketFilters = ({
@@ -35,20 +29,14 @@ export const MarketFilters = ({
   teamId,
   sortBy,
   maxPrice,
-<<<<<<< HEAD
-=======
   hideBagPlayers,
->>>>>>> 6bc6cc2 (Version 2.2)
   teams,
   onPositionChange,
   onStatusChange,
   onTeamChange,
   onSortChange,
   onMaxPriceChange,
-<<<<<<< HEAD
-=======
   onHideBagPlayersChange,
->>>>>>> 6bc6cc2 (Version 2.2)
 }: MarketFiltersProps) => (
   <Card>
     <div className="grid gap-3 md:grid-cols-4">
@@ -75,8 +63,8 @@ export const MarketFilters = ({
         ))}
       </select>
       <select className="field" value={sortBy} onChange={(event) => onSortChange(event.target.value)}>
-        <option value="points">Más puntos</option>
-        <option value="price">Más caros</option>
+        <option value="points">Mas puntos</option>
+        <option value="price">Mas caros</option>
         <option value="name">Nombre</option>
       </select>
     </div>
@@ -91,9 +79,7 @@ export const MarketFilters = ({
         value={maxPrice}
         onChange={(event) => onMaxPriceChange(Number(event.target.value))}
       />
-      <span className="text-sm text-slate-300">Precio máximo {formatMoney(maxPrice)}</span>
-<<<<<<< HEAD
-=======
+      <span className="text-sm text-slate-300">Precio maximo {formatMoney(maxPrice)}</span>
       <label className="inline-flex min-h-9 items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 text-sm font-bold text-slate-200">
         <input
           type="checkbox"
@@ -103,7 +89,6 @@ export const MarketFilters = ({
         />
         Ocultar jugadores de Bolsa
       </label>
->>>>>>> 6bc6cc2 (Version 2.2)
     </div>
   </Card>
 );

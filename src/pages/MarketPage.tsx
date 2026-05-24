@@ -38,13 +38,8 @@ export const MarketPage = () => {
   const [maxPrice, setMaxPrice] = useState(80_000_000);
   const [hideBagPlayers, setHideBagPlayers] = useState(true);
   const [now, setNow] = useState(Date.now());
-  const [dismissedOutbidIds, setDismissedOutbidIds] = useState<string[]>(() => {
-    try {
-      return JSON.parse(localStorage.getItem("fantasy_dismissed_outbids") ?? "[]") as string[];
-    } catch {
-      return [];
-    }
-  });
+  const [dismissedOutbidIds, setDismissedOutbidIds] = useState<string[]>([]);
+  const dismissedOutbidStorageKey = `fantasy_dismissed_outbids:${currentLeague?.id ?? "no-league"}:${userId ?? "guest"}`;
 
   const me = members.find((member) => member.userId === userId);
   const ownerNameByUser = new Map(members.map((member) => [member.userId, member.username]));
@@ -84,6 +79,14 @@ export const MarketPage = () => {
     };
   }, [refreshDailyMarket]);
 
+  useEffect(() => {
+    try {
+      setDismissedOutbidIds(JSON.parse(localStorage.getItem(dismissedOutbidStorageKey) ?? "[]") as string[]);
+    } catch {
+      setDismissedOutbidIds([]);
+    }
+  }, [dismissedOutbidStorageKey]);
+
   const rows = useMemo(() => {
     const mappedRows = leaguePlayers
       .map((leaguePlayer) => {
@@ -96,14 +99,15 @@ export const MarketPage = () => {
         const leaguePlayer = row!.leaguePlayer;
         const highestBid = getHighestBid(offers, player.id);
         const currentPrice = Math.max(leaguePlayer.price, highestBid?.amount ?? 0);
+        const isManagerListing = Boolean(leaguePlayer.listedByUserId);
         const isActiveAuction =
-          !leaguePlayer.ownerUserId &&
+          (!leaguePlayer.ownerUserId || isManagerListing) &&
           leaguePlayer.marketStatus === "market" &&
           Boolean(leaguePlayer.marketExpiresAt) &&
           new Date(leaguePlayer.marketExpiresAt ?? "").getTime() > now;
         return (
           isActiveAuction &&
-          (position === "todos" || player.position === position) &&
+          (position === "todos" || player.position === position || player.positions?.includes(position)) &&
           (status === "todos" || player.status === status) &&
           (teamId === "todos" || player.teamId === teamId) &&
           (!hideBagPlayers || !bagTeamIds.has(player.teamId)) &&
@@ -222,7 +226,7 @@ export const MarketPage = () => {
               onClick={() => {
                 const newIds = [...dismissedOutbidIds, ...outbidOffers.map((offer) => offer.id)];
                 setDismissedOutbidIds(newIds);
-                try { localStorage.setItem("fantasy_dismissed_outbids", JSON.stringify(newIds)); } catch { /* noop */ }
+                try { localStorage.setItem(dismissedOutbidStorageKey, JSON.stringify(newIds)); } catch { /* noop */ }
               }}
             >
               Entendido

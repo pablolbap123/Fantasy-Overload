@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { BarChart3, CalendarDays, Home, LogOut, RefreshCw, Shield, SlidersHorizontal, Store, Trophy, Users, Wifi } from "lucide-react";
-=======
 import { BarChart3, Bell, CalendarDays, Home, LogOut, RefreshCw, Shield, SlidersHorizontal, Store, Trophy, Users, Wallet, Wifi } from "lucide-react";
->>>>>>> 6bc6cc2 (Version 2.2)
 import { clsx } from "clsx";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -11,18 +7,12 @@ import { LeagueIntroOverlay } from "../fantasy/LeagueIntroOverlay";
 import { Button } from "../ui/Button";
 import { useFantasy } from "../../store/fantasyStore";
 import { formatDate } from "../../utils/formatters";
-<<<<<<< HEAD
-=======
 import { getFantasyNotificationPermission, requestFantasyNotificationPermission } from "../../utils/notifications";
->>>>>>> 6bc6cc2 (Version 2.2)
 
 const baseNavItems = [
   { label: "Inicio", to: "home", icon: Home },
   { label: "Equipo", to: "team", icon: Shield },
-<<<<<<< HEAD
-=======
   { label: "Caja", to: "budget", icon: Wallet },
->>>>>>> 6bc6cc2 (Version 2.2)
   { label: "Mercado", to: "market", icon: Store },
   { label: "Jornada", to: "matchday", icon: CalendarDays },
   { label: "Ranking", to: "standings", icon: Trophy },
@@ -34,8 +24,8 @@ const navClass = ({ isActive }: { isActive: boolean }) =>
   clsx(
     "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-bold transition",
     isActive
-      ? "bg-gradient-to-r from-[#ff3f55] to-[#f5bd43] text-white shadow-lg shadow-[#ff3f55]/20"
-      : "text-slate-200 hover:bg-white/10 hover:text-white",
+      ? "bg-[#23c979] text-[#06130d] shadow-lg shadow-[#23c979]/15"
+      : "text-slate-300 hover:bg-white/10 hover:text-white",
   );
 
 const syncTone = (status?: string) =>
@@ -45,7 +35,7 @@ const syncTone = (status?: string) =>
     status === "checking" && "border-[#62d7ff]/45 bg-[#62d7ff]/15 text-[#b9efff]",
     status === "changed" && "border-[#21d17f]/45 bg-[#21d17f]/15 text-[#a9ffd4]",
     status === "ok" && "border-[#f5bd43]/40 bg-[#f5bd43]/12 text-[#ffe0a2]",
-    (!status || status === "idle") && "border-white/10 bg-white/6 text-slate-300",
+    (!status || status === "idle") && "border-white/10 bg-white/[0.06] text-slate-300",
   );
 
 export const AppShell = () => {
@@ -66,10 +56,7 @@ export const AppShell = () => {
   } = useFantasy();
   const navigate = useNavigate();
   const [syncing, setSyncing] = useState(false);
-<<<<<<< HEAD
-=======
   const [notificationPermission, setNotificationPermission] = useState(getFantasyNotificationPermission());
->>>>>>> 6bc6cc2 (Version 2.2)
 
   useEffect(() => {
     if (leagueId && leagueId !== currentLeague?.id) void selectLeague(leagueId);
@@ -91,8 +78,6 @@ export const AppShell = () => {
     }
   };
 
-<<<<<<< HEAD
-=======
   const enableNotifications = async () => {
     try {
       const permission = await requestFantasyNotificationPermission();
@@ -103,14 +88,13 @@ export const AppShell = () => {
     }
   };
 
->>>>>>> 6bc6cc2 (Version 2.2)
   return (
-    <div className="min-h-screen pb-24 lg:pb-0">
+    <div className="min-h-screen bg-[#080f14] pb-24 lg:pb-0">
       <LeagueIntroOverlay leagueId={currentLeague?.id} userId={userId} players={players} leaguePlayers={leaguePlayers} />
-      <aside className="fixed inset-y-0 left-0 z-30 hidden w-72 border-r border-white/10 bg-[#080d1b]/95 p-4 backdrop-blur-xl lg:block">
+      <aside className="fixed inset-y-0 left-0 z-30 hidden w-72 border-r border-white/10 bg-[#0b1218]/96 p-4 backdrop-blur-xl lg:block">
         <button className="mb-6 flex w-full items-center gap-3 text-left" onClick={() => navigate("/leagues")}>
-          <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-black text-lg font-black text-white shadow-lg shadow-[#f5bd43]/15 ring-1 ring-[#f5bd43]/30">
-            <span className="text-[#f5bd43]">O</span>
+          <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#23c979] text-lg font-black text-[#06130d] shadow-lg shadow-[#23c979]/15">
+            <span>O</span>
           </div>
           <div>
             <div className="text-sm font-black text-white">Overload Fantasy</div>
@@ -162,7 +146,7 @@ export const AppShell = () => {
               </Button>
             </div>
           ) : null}
-          <div className="rounded-lg border border-white/10 bg-[#202a43]/85 p-3">
+          <div className="rounded-lg border border-white/10 bg-[#111a23] p-3">
             <div className="flex items-center justify-between gap-3">
               <div className="min-w-0">
                 <div className="truncate text-sm font-semibold text-white">{profile?.username ?? "Manager"}</div>
@@ -177,10 +161,10 @@ export const AppShell = () => {
       </aside>
 
       <main className="lg:pl-72">
-        <header className="safe-top-header sticky top-0 z-20 border-b border-white/10 bg-[#080d1b]/82 backdrop-blur-xl">
+        <header className="safe-top-header sticky top-0 z-20 border-b border-white/10 bg-[#080f14]/92 backdrop-blur-xl">
           <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 pb-3 pt-1 lg:py-3">
             <button className="flex min-w-0 items-center gap-3 text-left lg:hidden" onClick={() => navigate("/leagues")}>
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-black text-sm font-black text-[#f5bd43] ring-1 ring-[#f5bd43]/35">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#23c979] text-sm font-black text-[#06130d]">
                 O
               </div>
               <div className="min-w-0">
@@ -217,14 +201,11 @@ export const AppShell = () => {
               <Button variant="secondary" className="hidden sm:inline-flex" onClick={() => navigate("/leagues")}>
                 Mis ligas
               </Button>
-<<<<<<< HEAD
-=======
               {notificationPermission !== "granted" && notificationPermission !== "unsupported" ? (
                 <Button variant="ghost" className="min-h-10 px-3" aria-label="Activar notificaciones" onClick={() => void enableNotifications()}>
                   <Bell className="h-4 w-4" />
                 </Button>
               ) : null}
->>>>>>> 6bc6cc2 (Version 2.2)
               <Button variant="ghost" className="min-h-10 px-3" onClick={() => navigate("/profile")}>
                 {profile?.username?.slice(0, 2).toUpperCase() ?? "ME"}
               </Button>
@@ -241,7 +222,7 @@ export const AppShell = () => {
         </motion.div>
       </main>
 
-      <nav className="safe-bottom fixed bottom-0 left-0 right-0 z-40 border-t border-white/10 bg-[#080d1b]/92 px-2 pt-2 backdrop-blur-xl lg:hidden">
+      <nav className="safe-bottom fixed bottom-0 left-0 right-0 z-40 border-t border-white/10 bg-[#080f14]/96 px-2 pt-2 backdrop-blur-xl lg:hidden">
         <div className="mx-auto flex max-w-2xl gap-1 overflow-x-auto pb-1">
           {navItems.map((item) => (
             <NavLink
@@ -250,7 +231,7 @@ export const AppShell = () => {
               className={({ isActive }) =>
                 clsx(
                   "flex min-w-[4.35rem] flex-col items-center justify-center rounded-lg px-1 py-1.5 text-[10px] font-bold leading-tight transition",
-                  isActive ? "bg-gradient-to-r from-[#ff3f55] to-[#f5bd43] text-white" : "text-slate-400",
+                  isActive ? "bg-[#23c979] text-[#06130d]" : "text-slate-400",
                 )
               }
             >

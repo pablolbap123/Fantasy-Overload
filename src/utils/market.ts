@@ -64,8 +64,7 @@ export const openDailyMarketCycle = (
   const activeIds = new Set(available.map((item) => item.playerId));
 
   return leaguePlayers.map((item) => {
-    if (item.ownerUserId) return item;
-    if (item.listedByUserId) return item;
+    if (item.ownerUserId || item.listedByUserId) return item;
     if (activeIds.has(item.playerId)) {
       return {
         ...item,
@@ -105,21 +104,21 @@ interface ResolveDailyMarketInput {
   createdAt: string;
 }
 
-// Resuelve subastas vencidas y abre un nuevo ciclo rotativo de 20 jugadores si hace falta.
 export const resolveExpiredDailyMarket = ({ leagueId, leaguePlayers, players, members, offers, createdAt }: ResolveDailyMarketInput) => {
   const now = Date.now();
   const expired = leaguePlayers.filter(
-    (item) => !item.ownerUserId && item.marketStatus === "market" && item.marketExpiresAt && new Date(item.marketExpiresAt).getTime() <= now,
+    (item) =>
+      (!item.ownerUserId || Boolean(item.listedByUserId)) &&
+      item.marketStatus === "market" &&
+      item.marketExpiresAt &&
+      new Date(item.marketExpiresAt).getTime() <= now,
   );
 
   if (expired.length === 0) {
     return {
       leaguePlayers: normalizeDailyMarket(leaguePlayers, players),
-      members,
-<<<<<<< HEAD
-=======
       players,
->>>>>>> 6bc6cc2 (Version 2.2)
+      members,
       offers,
       transfers: [] as Transfer[],
       activities: [] as ActivityItem[],
@@ -130,10 +129,7 @@ export const resolveExpiredDailyMarket = ({ leagueId, leaguePlayers, players, me
 
   const playerById = new Map(players.map((player) => [player.id, player]));
   let nextLeaguePlayers = [...leaguePlayers];
-<<<<<<< HEAD
-=======
   let nextPlayers = [...players];
->>>>>>> 6bc6cc2 (Version 2.2)
   let nextMembers = [...members];
   let nextOffers = [...offers];
   const transfers: Transfer[] = [];
@@ -178,10 +174,7 @@ export const resolveExpiredDailyMarket = ({ leagueId, leaguePlayers, players, me
               }
             : item,
         );
-<<<<<<< HEAD
-=======
         nextPlayers = nextPlayers.map((item) => (item.id === player.id ? { ...item, currentPrice: leagueOfferAmount } : item));
->>>>>>> 6bc6cc2 (Version 2.2)
         nextOffers = nextOffers.map((offer) =>
           offer.playerId === marketPlayer.playerId && offer.status === "pending" ? { ...offer, status: "rejected" } : offer,
         );
@@ -205,6 +198,7 @@ export const resolveExpiredDailyMarket = ({ leagueId, leaguePlayers, players, me
         });
         return;
       }
+
       nextOffers = nextOffers.map((offer) => (offer.playerId === marketPlayer.playerId && offer.status === "pending" ? { ...offer, status: "rejected" } : offer));
       nextLeaguePlayers = nextLeaguePlayers.map((item) =>
         item.playerId === marketPlayer.playerId ? { ...item, listedByUserId: null, marketStatus: "locked", marketListedAt: null, marketExpiresAt: null } : item,
@@ -229,7 +223,7 @@ export const resolveExpiredDailyMarket = ({ leagueId, leaguePlayers, players, me
               budget: member.budget + winningBid.amount,
               squadValue: Math.max(0, member.squadValue - calculateSquadValue([player])),
             }
-        : member,
+          : member,
     );
     nextLeaguePlayers = nextLeaguePlayers.map((item) =>
       item.playerId === marketPlayer.playerId
@@ -246,10 +240,7 @@ export const resolveExpiredDailyMarket = ({ leagueId, leaguePlayers, players, me
           }
         : item,
     );
-<<<<<<< HEAD
-=======
     nextPlayers = nextPlayers.map((item) => (item.id === player.id ? { ...item, currentPrice: winningBid.amount } : item));
->>>>>>> 6bc6cc2 (Version 2.2)
     nextOffers = nextOffers.map((offer) => {
       if (offer.playerId !== marketPlayer.playerId || offer.status !== "pending") return offer;
       return { ...offer, status: offer.id === winningBid.id ? ("accepted" as const) : ("outbid" as const) };
@@ -284,16 +275,13 @@ export const resolveExpiredDailyMarket = ({ leagueId, leaguePlayers, players, me
       new Date(item.marketExpiresAt).getTime() > now,
   );
 
-  if (activeAfterSettlement.length === 0) {
-    nextLeaguePlayers = openDailyMarketCycle(nextLeaguePlayers, players, new Date(createdAt), expiredIds);
+  if (activeAfterSettlement.length < DAILY_MARKET_SIZE) {
+    nextLeaguePlayers = openDailyMarketCycle(nextLeaguePlayers, nextPlayers, new Date(createdAt), expiredIds);
   }
 
   return {
     leaguePlayers: nextLeaguePlayers,
-<<<<<<< HEAD
-=======
     players: nextPlayers,
->>>>>>> 6bc6cc2 (Version 2.2)
     members: nextMembers,
     offers: nextOffers,
     transfers,

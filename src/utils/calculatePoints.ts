@@ -10,6 +10,77 @@ export const formationShape: Record<string, Record<PlayerPosition, number>> = {
   "4-5-1": { POR: 1, DEF: 4, MED: 5, DEL: 1 },
 };
 
+export const positionOrder: PlayerPosition[] = ["POR", "DEF", "MED", "DEL"];
+
+const isPlayerPosition = (value: unknown): value is PlayerPosition =>
+  typeof value === "string" && positionOrder.includes(value as PlayerPosition);
+
+export const normalizePlayerPosition = (value: unknown, fallback: PlayerPosition = "MED"): PlayerPosition => {
+  if (Array.isArray(value)) return normalizePlayerPosition(value[0], fallback);
+  return isPlayerPosition(value) ? value : fallback;
+};
+
+export const normalizePlayerPositions = (value: unknown, fallback: PlayerPosition = "MED"): PlayerPosition[] => {
+  const raw = Array.isArray(value) ? value : value ? [value] : [];
+  const unique = raw
+    .map((position) => normalizePlayerPosition(position, fallback))
+    .filter((position, index, list) => list.indexOf(position) === index);
+  return unique.length > 0 ? unique : [fallback];
+};
+
+export const playerPositions = (player: Player) => {
+  const fallback = normalizePlayerPosition(player.position);
+  const raw = [fallback, ...normalizePlayerPositions(player.positions, fallback)];
+  const unique = raw.filter((position, index, list) => list.indexOf(position) === index);
+  return unique.length > 0 ? unique : [fallback];
+};
+
+export const assignLineupPositions = (
+  players: Player[],
+  starterIds: string[],
+  formation: keyof typeof formationShape,
+): Record<string, PlayerPosition> | null => {
+  const shape = formationShape[formation];
+  if (!shape || starterIds.length !== 11 || new Set(starterIds).size !== starterIds.length) return null;
+
+  const starters = starterIds.map((playerId) => players.find((player) => player.id === playerId));
+  if (starters.some((player) => !player)) return null;
+
+  const remaining = { ...shape };
+  const assignment: Record<string, PlayerPosition> = {};
+  const ordered = (starters as Player[])
+    .map((player, slot) => ({
+      player,
+      slot,
+      positions: playerPositions(player).filter((position) => remaining[position] > 0),
+    }))
+    .sort((a, b) => a.positions.length - b.positions.length || a.slot - b.slot);
+
+  const choose = (index: number): boolean => {
+    if (index >= ordered.length) return true;
+
+    const { player, positions } = ordered[index];
+    const choices = [
+      player.position,
+      ...positions,
+      ...positionOrder,
+    ].filter((position, choiceIndex, list) => positions.includes(position) && list.indexOf(position) === choiceIndex);
+
+    for (const position of choices) {
+      if (remaining[position] <= 0) continue;
+      remaining[position] -= 1;
+      assignment[player.id] = position;
+      if (choose(index + 1)) return true;
+      remaining[position] += 1;
+      delete assignment[player.id];
+    }
+
+    return false;
+  };
+
+  return choose(0) ? assignment : null;
+};
+
 export interface PlayerPointBreakdownItem {
   key: string;
   label: string;
@@ -109,15 +180,19 @@ export const validateLineup = (players: Player[], starterIds: string[], formatio
   const starters = starterIds.map((playerId) => players.find((player) => player.id === playerId)).filter(Boolean) as Player[];
   const uniqueStarters = new Set(starterIds);
 
+  if (!shape) errors.push("Formacion no valida.");
   if (starterIds.length !== uniqueStarters.size) errors.push("Hay jugadores repetidos en el once.");
   if (starters.length !== 11) errors.push("El once titular debe tener exactamente 11 jugadores.");
 
-  (Object.keys(shape) as PlayerPosition[]).forEach((position) => {
-    const count = starters.filter((player) => player.position === position).length;
-    if (count !== shape[position]) {
-      errors.push(`${position}: necesitas ${shape[position]} y tienes ${count}.`);
-    }
-  });
+  const assignedPositions = shape ? assignLineupPositions(players, starterIds, formation) : null;
+  if (shape && starters.length === 11 && !assignedPositions) {
+    errors.push("La formacion no encaja con las posiciones disponibles de esos jugadores.");
+  } else if (shape && assignedPositions) {
+    (Object.keys(shape) as PlayerPosition[]).forEach((position) => {
+      const count = Object.values(assignedPositions).filter((assignedPosition) => assignedPosition === position).length;
+      if (count !== shape[position]) errors.push(`${position}: necesitas ${shape[position]} y tienes ${count}.`);
+    });
+  }
 
   const blocked = starters.filter((player) => isUnavailableForMatchday(player, matchdayNumber));
   if (blocked.length > 0) {
@@ -127,6 +202,7 @@ export const validateLineup = (players: Player[], starterIds: string[], formatio
   return {
     valid: errors.length === 0,
     errors,
+    assignedPositions: assignedPositions ?? {},
   };
 };
 

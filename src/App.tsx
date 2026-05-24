@@ -5,10 +5,7 @@ import { LoadingScreen } from "./components/ui/LoadingScreen";
 import { ToastHost } from "./components/ui/ToastHost";
 import { AuthCallbackPage } from "./pages/AuthCallbackPage";
 import { AuthPage } from "./pages/AuthPage";
-<<<<<<< HEAD
-=======
 import { BudgetPage } from "./pages/BudgetPage";
->>>>>>> 6bc6cc2 (Version 2.2)
 import { CreateLeaguePage } from "./pages/CreateLeaguePage";
 import { HomePage } from "./pages/HomePage";
 import { JoinLeaguePage } from "./pages/JoinLeaguePage";
@@ -107,10 +104,7 @@ export default function App() {
           <Route index element={<LeagueDashboardPage />} />
           <Route path="home" element={<HomePage />} />
           <Route path="team" element={<MyTeamPage />} />
-<<<<<<< HEAD
-=======
           <Route path="budget" element={<BudgetPage />} />
->>>>>>> 6bc6cc2 (Version 2.2)
           <Route path="market" element={<MarketPage />} />
           <Route path="matchday" element={<MatchdayPage />} />
           <Route path="standings" element={<StandingsPage />} />

@@ -8,10 +8,18 @@ import { FormationBoard } from "../components/fantasy/FormationBoard";
 import { useFantasy } from "../store/fantasyStore";
 import type { LeagueMember, Matchday } from "../types";
 import { formatMoney } from "../utils/formatters";
-import { playerMatchdayPoints } from "../utils/playerAvailability";
+import { normalizePlayerPosition } from "../utils/calculatePoints";
 
 const avatarLabel = (name: string) => name.slice(0, 2).toUpperCase();
 const scoreFrom = (member: LeagueMember, matchdayNumber: number) => Number(member.pointsByMatchday[matchdayNumber] ?? 0);
+const REQUIRED_MATCHES_PER_MATCHDAY = 14;
+
+const matchdayHasCompleteResults = (matchday?: Matchday) =>
+  Boolean(
+    matchday?.matches?.length &&
+      matchday.matches.length >= REQUIRED_MATCHES_PER_MATCHDAY &&
+      matchday.matches.every((match) => match.status === "finalizada" && match.homeScore !== null && match.awayScore !== null),
+  );
 
 const joinedFromMatchday = (member: LeagueMember, matchdays: Matchday[], fallback: number) => {
   if (member.joinedMatchday > 0) return member.joinedMatchday;
@@ -31,14 +39,20 @@ export const StandingsPage = () => {
   const [rightUserId, setRightUserId] = useState(members[1]?.userId ?? members[0]?.userId ?? "");
   const [profileUserId, setProfileUserId] = useState<string | null>(null);
 
-  const currentMatchdayNumber = currentLeague?.currentMatchday ?? matchdays.at(-1)?.number ?? 1;
+  const latestResultMatchday =
+    Math.max(
+      0,
+      ...matchdays.filter(matchdayHasCompleteResults).map((matchday) => matchday.number),
+      ...members.flatMap((member) => Object.keys(member.pointsByMatchday).map(Number).filter(Boolean)),
+    ) || Math.max(1, currentLeague?.currentMatchday ?? 1);
+  const currentMatchdayNumber = latestResultMatchday;
   const visibleMatchdays = useMemo(() => {
     const numbers = new Set<number>();
     members.forEach((member) => Object.keys(member.pointsByMatchday).forEach((number) => numbers.add(Number(number))));
     matchdays.forEach((matchday) => {
-      if (matchday.number <= currentMatchdayNumber) numbers.add(matchday.number);
+      if (matchdayHasCompleteResults(matchday)) numbers.add(matchday.number);
     });
-    Array.from({ length: currentMatchdayNumber }, (_, index) => index + 1).forEach((number) => numbers.add(number));
+    if (numbers.size === 0) numbers.add(currentMatchdayNumber);
     return [...numbers].filter(Boolean).sort((a, b) => a - b);
   }, [currentMatchdayNumber, matchdays, members]);
 
@@ -109,7 +123,8 @@ export const StandingsPage = () => {
     return lineups
       .filter((l) => l.userId === profileUserId)
       .map((l) => matchdays.find((m) => m.id === l.matchdayId)?.number)
-      .filter(Boolean) as number[];
+      .filter(Boolean)
+      .sort((a, b) => Number(a) - Number(b)) as number[];
   }, [lineups, matchdays, profileUserId]);
   const [profileMatchdayNumber, setProfileMatchdayNumber] = useState<number>(currentMatchdayNumber);
 
@@ -127,13 +142,36 @@ export const StandingsPage = () => {
     return profileLineup.players.map((lp) => {
       return players.find((p) => p.id === lp.playerId) ?? ({
         id: lp.playerId,
-        name: "Jugador",
-        position: lp.position,
+        name: "Jugador transferido",
+        teamId: "snapshot",
+        position: normalizePlayerPosition(lp.position),
+        positions: [normalizePlayerPosition(lp.position)],
         teamName: "-",
+        basePrice: 0,
         currentPrice: 0,
+        fantasyValue: 0,
         totalPoints: 0,
-        status: "active",
+        status: "disponible",
         pointsByMatchday: {},
+        stats: {
+          appearances: 0,
+          goals: 0,
+          assists: 0,
+          goalsConceded: 0,
+          cleanSheets: 0,
+          yellowCards: 0,
+          redCards: 0,
+          doubleYellowCards: 0,
+          penaltiesScored: 0,
+          penaltiesMissed: 0,
+          penaltiesSaved: 0,
+          penaltiesProvoked: 0,
+          ownGoals: 0,
+          mvps: 0,
+          overloadPoints: 0,
+          minutes: 0,
+          keyActions: 0,
+        },
       } as any);
     });
   }, [profileLineup, players]);
@@ -158,7 +196,7 @@ export const StandingsPage = () => {
 
         <Card>
           <div className="flex items-center gap-4">
-            <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border-2 border-white bg-[#202a43] text-xl font-black text-white">
+            <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border-2 border-white bg-[#111a23] text-xl font-black text-white">
               {profileMember.avatarUrl ? <img src={profileMember.avatarUrl} alt={profileMember.username} className="h-full w-full object-cover" /> : avatarLabel(profileMember.username)}
             </div>
             <div>
@@ -184,12 +222,12 @@ export const StandingsPage = () => {
 
           {profileLineupNumbers.length > 0 ? (
             <div className="mb-3 flex gap-2 overflow-x-auto pb-1">
-              {profileLineupNumbers.sort((a, b) => a - b).map((number) => (
+              {profileLineupNumbers.map((number) => (
                 <button
                   key={number}
                   className={`min-w-14 rounded-lg border px-3 py-2 text-center text-sm font-black transition ${
                     profileMatchdayNumber === number
-                      ? "border-[#62d7ff]/60 bg-[#62d7ff]/15 text-white"
+                      ? "border-[#4bb3fd]/60 bg-[#4bb3fd]/15 text-white"
                       : "border-white/10 bg-white/[0.05] text-slate-300 hover:bg-white/10"
                   }`}
                   onClick={() => setProfileMatchdayNumber(number)}
@@ -208,6 +246,7 @@ export const StandingsPage = () => {
               matchdayNumber={profileMatchdayNumber}
               readOnly
               captainPlayerId={profileLineup.captainPlayerId}
+              lineupPlayers={profileLineup.players}
             />
           ) : (
             <EmptyState title="Sin alineación guardada" description="Este manager no ha subido once para esta jornada." />
@@ -219,8 +258,8 @@ export const StandingsPage = () => {
 
   return (
     <div className="space-y-5">
-      <div className="overflow-hidden rounded-lg border border-white/10 bg-[#46536f] shadow-2xl shadow-black/30">
-        <div className="flex flex-col gap-4 border-b border-black/15 bg-[#3f4b66] px-4 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-5">
+      <div className="overflow-hidden rounded-lg border border-white/10 bg-[#121a22] shadow-2xl shadow-black/25">
+        <div className="flex flex-col gap-4 border-b border-white/10 bg-[#0f171f] px-4 py-5 sm:flex-row sm:items-end sm:justify-between sm:px-5">
           <div>
             <h1 className="text-3xl font-black text-white sm:text-4xl">
               <span className="text-[#f5bd43]">Top {Math.min(100, rows.length)}</span> Managers
@@ -238,14 +277,14 @@ export const StandingsPage = () => {
                 Total
               </button>
               <button
-                className={`rounded-md px-3 py-2 text-sm font-black ${mode === "matchday" ? "bg-[#62d7ff] text-[#11182d]" : "text-white"}`}
+                className={`rounded-md px-3 py-2 text-sm font-black ${mode === "matchday" ? "bg-[#4bb3fd] text-[#07121b]" : "text-white"}`}
                 onClick={() => setMode("matchday")}
               >
                 Jornada
               </button>
             </div>
             <label className="flex items-center gap-2 text-sm font-bold text-slate-100">
-              <CalendarDays className="h-4 w-4 text-[#62d7ff]" />
+              <CalendarDays className="h-4 w-4 text-[#4bb3fd]" />
               <select className="field min-h-9 py-1.5" value={selectedMatchday} onChange={(event) => setSelectedMatchday(Number(event.target.value))}>
                 {visibleMatchdays.map((number) => (
                   <option key={number} value={number}>
@@ -266,7 +305,7 @@ export const StandingsPage = () => {
               row.position === 1
                 ? "from-[#f5bd43]/20"
                 : row.position === 2
-                  ? "from-[#62d7ff]/14"
+                  ? "from-[#4bb3fd]/15"
                   : row.position === 3
                     ? "from-[#ff3f55]/12"
                     : "from-white/[0.025]";
@@ -277,7 +316,7 @@ export const StandingsPage = () => {
                 className={`grid grid-cols-[2rem_3.25rem_1fr] gap-3 bg-gradient-to-r ${tone} to-transparent px-3 py-4 sm:grid-cols-[3.5rem_5rem_1fr_auto] sm:items-center sm:px-6 sm:py-5`}
               >
                 <div className="pt-2 text-xl font-black text-white sm:pt-0 sm:text-3xl">{row.position}</div>
-                <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 border-white bg-[#202a43] text-base font-black text-white shadow-lg shadow-black/20 sm:h-20 sm:w-20 sm:border-4 sm:text-xl">
+                <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border-2 border-white bg-[#111a23] text-base font-black text-white shadow-lg shadow-black/20 sm:h-20 sm:w-20 sm:border-4 sm:text-xl">
                   {member.avatarUrl ? <img src={member.avatarUrl} alt={member.username} className="h-full w-full object-cover" /> : avatarLabel(member.username)}
                 </div>
                 <div className="min-w-0">
@@ -297,7 +336,7 @@ export const StandingsPage = () => {
                     <span className="rounded-md bg-white/10 px-2 py-1">Caja {formatMoney(member.budget)}</span>
                   </div>
                   <div className="mt-2 flex min-w-0 items-center gap-2 text-sm font-black text-white sm:text-lg">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-200 text-sm text-[#46536f]">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-200 text-sm text-[#121a22]">
                       <Euro className="h-4 w-4" />
                     </span>
                     <span className="truncate">{formatMoney(member.squadValue).replace(/\s?€/u, "")}</span>
@@ -331,7 +370,7 @@ export const StandingsPage = () => {
 
       <Card>
         <div className="mb-4 flex items-center gap-2">
-          <ArrowRightLeft className="h-5 w-5 text-[#62d7ff]" />
+          <ArrowRightLeft className="h-5 w-5 text-[#4bb3fd]" />
           <h2 className="text-base font-black text-white">Comparador entre managers</h2>
         </div>
         <div className="grid gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
@@ -363,7 +402,7 @@ export const StandingsPage = () => {
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           {[left, right].map((member) =>
             member ? (
-              <div key={member.userId} className="rounded-lg border border-white/10 bg-[#202a43]/80 p-4">
+              <div key={member.userId} className="rounded-lg border border-white/10 bg-[#111a23] p-4">
                 <div className="text-lg font-black text-white">{member.username}</div>
                 <div className="mt-3 grid grid-cols-3 gap-2 text-center">
                   <div className="rounded-lg bg-white/[0.06] p-2">
@@ -383,7 +422,7 @@ export const StandingsPage = () => {
             ) : null,
           )}
         </div>
-        <div className="mt-4 rounded-lg border border-white/10 bg-[#202a43]/80 p-3">
+        <div className="mt-4 rounded-lg border border-white/10 bg-[#111a23] p-3">
           <div className="mb-2 text-sm font-black text-white">Evolucion desde entrada en liga</div>
           <svg viewBox={`0 0 ${chart.width} ${chart.height}`} className="h-48 w-full overflow-visible">
             {[0, 0.5, 1].map((ratio) => (
@@ -396,11 +435,11 @@ export const StandingsPage = () => {
                 stroke="rgba(255,255,255,.10)"
               />
             ))}
-            <polyline points={lineFor(left)} fill="none" stroke="#62d7ff" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+            <polyline points={lineFor(left)} fill="none" stroke="#4bb3fd" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
             <polyline points={lineFor(right)} fill="none" stroke="#f5bd43" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           <div className="flex flex-wrap gap-3 text-xs font-bold">
-            <span className="text-[#62d7ff]">{left?.username ?? "Manager 1"}</span>
+            <span className="text-[#4bb3fd]">{left?.username ?? "Manager 1"}</span>
             <span className="text-[#f5bd43]">{right?.username ?? "Manager 2"}</span>
           </div>
         </div>

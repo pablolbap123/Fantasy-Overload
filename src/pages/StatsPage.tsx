@@ -16,7 +16,7 @@ export const StatsPage = () => {
     () =>
       players.filter((player) => {
         const byTeam = teamId === "todos" || player.teamId === teamId;
-        const byPosition = position === "todos" || player.position === position;
+        const byPosition = position === "todos" || player.position === position || player.positions?.includes(position as typeof player.position);
         return byTeam && byPosition;
       }),
     [players, position, teamId],

@@ -24,6 +24,7 @@ create table if not exists public.players (
   image_url text,
   team_id uuid not null references public.teams(id) on delete cascade,
   position text not null check (position in ('POR', 'DEF', 'MED', 'DEL')),
+  positions text[] not null default array['MED']::text[],
   base_price numeric not null default 1000000 check (base_price >= 0),
   current_price numeric not null default 1000000 check (current_price >= 0),
   fantasy_value numeric not null default 0,
@@ -163,6 +164,7 @@ create table if not exists public.lineups (
   matchday_id uuid not null references public.matchdays(id) on delete cascade,
   formation text not null check (formation in ('4-4-2', '4-3-3', '3-5-2', '3-4-3', '5-3-2', '4-5-1')),
   status text not null default 'submitted' check (status in ('draft', 'submitted', 'locked')),
+  captain_player_id uuid references public.players(id) on delete set null,
   created_at timestamptz not null default now(),
   unique (league_id, user_id, matchday_id)
 );

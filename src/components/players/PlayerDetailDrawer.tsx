@@ -3,7 +3,7 @@ import { ArrowUpFromLine, CheckCircle2, Gavel, Lock, RotateCcw, ShieldPlus, Stor
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Player } from "../../types";
 import { useFantasy } from "../../store/fantasyStore";
-import { buildPlayerPointBreakdown } from "../../utils/calculatePoints";
+import { buildPlayerPointBreakdown, playerPositions } from "../../utils/calculatePoints";
 import { getErrorMessage } from "../../utils/errors";
 import { formatMoney, positionLabel, positionTone, statusLabel, statusTone } from "../../utils/formatters";
 import { getHighestBid, getNextBidAmount, roundBidAmount } from "../../utils/market";
@@ -87,7 +87,11 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
   const listedBy = leaguePlayer?.listedByUserId ? members.find((member) => member.userId === leaguePlayer.listedByUserId) : undefined;
   const isMine = Boolean(leaguePlayer?.ownerUserId && leaguePlayer.ownerUserId === userId);
   const isMyListing = Boolean(leaguePlayer?.listedByUserId && leaguePlayer.listedByUserId === userId);
-  const isListed = Boolean(leaguePlayer?.marketStatus === "market" && leaguePlayer.marketExpiresAt && !leaguePlayer.ownerUserId);
+  const isListed = Boolean(
+    leaguePlayer?.marketStatus === "market" &&
+      leaguePlayer.marketExpiresAt &&
+      (!leaguePlayer.ownerUserId || Boolean(leaguePlayer.listedByUserId)),
+  );
   const highestBid = player ? getHighestBid(offers, player.id) : undefined;
   const nextBidAmount = player && leaguePlayer ? getNextBidAmount(leaguePlayer.price, highestBid) : 0;
   const quickSellAmount = leaguePlayer ? roundBidAmount(leaguePlayer.price * 0.5) : 0;
@@ -134,11 +138,7 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
     <AnimatePresence>
       {player ? (
         <motion.div
-<<<<<<< HEAD
-          className="fixed inset-0 z-50 bg-slate-950/70 p-3 backdrop-blur"
-=======
           className="fixed inset-0 z-50 bg-slate-950/70 p-2 backdrop-blur sm:p-3"
->>>>>>> 6bc6cc2 (Version 2.2)
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -151,15 +151,6 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
             className="ml-auto flex h-full max-w-2xl flex-col"
             onClick={(event) => event.stopPropagation()}
           >
-<<<<<<< HEAD
-            <Card className="flex h-full flex-col overflow-hidden p-0">
-              <div className="relative overflow-hidden border-b border-white/10 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,.22),transparent_34%),linear-gradient(135deg,rgba(148,163,184,.16),rgba(15,23,42,.9))] p-4 sm:p-5">
-                <Button variant="ghost" className="absolute right-3 top-3 px-3" onClick={onClose} aria-label="Cerrar">
-                  <X className="h-5 w-5" />
-                </Button>
-
-                <div className="grid gap-4 pr-12 sm:grid-cols-[auto_1fr_auto] sm:items-start">
-=======
             <Card className="flex h-full max-h-[calc(100dvh-1rem)] flex-col overflow-hidden p-0 sm:max-h-[calc(100dvh-1.5rem)]">
               <div className="thin-scrollbar relative max-h-[62dvh] overflow-y-auto border-b border-white/10 bg-[linear-gradient(135deg,rgba(56,189,248,.18),rgba(15,23,42,.92)_48%,rgba(245,189,67,.1))] p-4 sm:max-h-none sm:overflow-visible sm:p-5">
                 <Button variant="ghost" className="absolute right-3 top-3 z-10 px-3" onClick={onClose} aria-label="Cerrar">
@@ -167,7 +158,6 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
                 </Button>
 
                 <div className="grid gap-4 pr-10 sm:grid-cols-[auto_1fr_auto] sm:items-start sm:pr-12">
->>>>>>> 6bc6cc2 (Version 2.2)
                   <div className="flex h-28 w-28 items-center justify-center overflow-hidden rounded-lg bg-slate-950/40 ring-1 ring-white/10 sm:h-36 sm:w-36">
                     <div className="scale-[2.15]">
                       <PlayerAvatar player={player} size="lg" />
@@ -176,7 +166,9 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
 
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-center gap-2">
-                      <Badge className={positionTone[player.position]}>{player.position}</Badge>
+                      {playerPositions(player).map((position) => (
+                        <Badge key={position} className={positionTone[position]}>{position}</Badge>
+                      ))}
                       <h2 className="min-w-0 truncate text-2xl font-black text-white sm:text-3xl">{player.name}</h2>
                     </div>
                     <div className="mt-3 flex flex-wrap gap-3 text-sm">
@@ -186,11 +178,7 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
                       </span>
                       <span className="font-bold text-slate-200">{player.teamName}</span>
                     </div>
-<<<<<<< HEAD
-                    <div className="mt-4 grid max-w-md grid-cols-2 gap-2">
-=======
                     <div className="mt-4 grid max-w-md grid-cols-1 gap-2 min-[380px]:grid-cols-2">
->>>>>>> 6bc6cc2 (Version 2.2)
                       <div className="rounded-lg bg-white/10 px-3 py-2">
                         <div className="text-xs text-slate-300">Valor</div>
                         <div className="text-base font-black text-white">{formatMoney(player.currentPrice)}</div>
@@ -213,18 +201,6 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
                     </div>
                   </div>
 
-<<<<<<< HEAD
-                  <div className="grid grid-cols-3 gap-2 sm:block sm:space-y-2 sm:text-right">
-                    <div>
-                      <div className="text-xs uppercase text-slate-400">PFSY</div>
-                      <div className="text-3xl font-black text-white">{player.totalPoints}</div>
-                    </div>
-                    <div>
-                      <div className="text-xs uppercase text-slate-400">Media</div>
-                      <div className="text-xl font-black text-white">{player.fantasyValue}</div>
-                    </div>
-                    <div>
-=======
                   <div className="grid grid-cols-3 gap-2 sm:w-28 sm:grid-cols-1 sm:text-right">
                     <div className="rounded-lg bg-slate-950/35 px-2 py-2 ring-1 ring-white/10">
                       <div className="text-xs uppercase text-slate-400">PFSY</div>
@@ -235,9 +211,8 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
                       <div className="text-xl font-black text-white">{player.fantasyValue}</div>
                     </div>
                     <div className="rounded-lg bg-slate-950/35 px-2 py-2 ring-1 ring-white/10">
->>>>>>> 6bc6cc2 (Version 2.2)
                       <div className="text-xs uppercase text-slate-400">Pos.</div>
-                      <div className="text-xl font-black text-white">{positionLabel[player.position]}</div>
+                      <div className="text-xl font-black text-white">{playerPositions(player).map((position) => positionLabel[position]).join("/")}</div>
                     </div>
                   </div>
                 </div>
@@ -375,16 +350,10 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
                           >
                             Intercambio
                           </Button>
-<<<<<<< HEAD
-                          <Button
-                            variant="danger"
-                            loading={actionLoading === "buyClause"}
-=======
                       <Button
                         className="sm:col-span-2"
                         variant="danger"
                         loading={actionLoading === "buyClause"}
->>>>>>> 6bc6cc2 (Version 2.2)
                             icon={<ShieldPlus className="h-4 w-4" />}
                             disabled={isClauseLocked}
                             onClick={() => void runPlayerAction("buyClause", () => buyPlayer(player.id, leaguePlayer.releaseClause))}
@@ -418,17 +387,10 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
                 ) : null}
               </div>
 
-<<<<<<< HEAD
-              <div className="border-b border-white/10 bg-slate-950/70 px-4 py-3">
-                <div
-                  className="grid gap-2"
-                  style={{ gridTemplateColumns: `repeat(${Math.max(1, visibleMatchdays.length)}, minmax(0, 1fr))` }}
-=======
               <div className="thin-scrollbar overflow-x-auto border-b border-white/10 bg-slate-950/70 px-4 py-3">
                 <div
                   className="grid min-w-max gap-2"
                   style={{ gridTemplateColumns: `repeat(${Math.max(1, visibleMatchdays.length)}, minmax(4.25rem, 1fr))` }}
->>>>>>> 6bc6cc2 (Version 2.2)
                 >
                   {visibleMatchdays.map((number) => {
                     const points = playerMatchdayPoints(player, number);
@@ -449,11 +411,7 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
                 </div>
               </div>
 
-<<<<<<< HEAD
-              <div ref={contentRef} className="min-h-0 flex-1 overflow-y-auto bg-slate-900/80 p-4">
-=======
               <div ref={contentRef} className="thin-scrollbar min-h-0 flex-1 overflow-y-auto bg-slate-900/80 p-4">
->>>>>>> 6bc6cc2 (Version 2.2)
                 <div className="mb-4 text-center">
                   <h3 className="text-xl font-black text-white">Jornada {activeNumber}</h3>
                   <p className="mt-1 text-sm text-slate-400">

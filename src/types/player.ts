@@ -29,6 +29,7 @@ export interface Player {
   teamId: string;
   teamName: string;
   position: PlayerPosition;
+  positions?: PlayerPosition[];
   basePrice: number;
   currentPrice: number;
   fantasyValue: number;

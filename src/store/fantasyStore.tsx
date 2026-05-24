@@ -26,7 +26,7 @@ import type {
   Team,
   Transfer,
 } from "../types";
-import { calculateSquadValue, validateLineup } from "../utils/calculatePoints";
+import { assignLineupPositions, calculateSquadValue, normalizePlayerPosition, normalizePlayerPositions, validateLineup } from "../utils/calculatePoints";
 import { getAuthRedirectUrl } from "../utils/authRedirect";
 import { getErrorMessage } from "../utils/errors";
 import { formatMoney } from "../utils/formatters";
@@ -111,6 +111,7 @@ interface FantasyContextValue {
   rejectOffer: (offerId: string) => Promise<void>;
   cancelOffer: (offerId: string) => Promise<void>;
   submitLineup: (formation: Formation, starterIds: string[], benchIds: string[], matchdayNumber?: number, captainPlayerId?: string | null) => Promise<void>;
+  setLineupCaptain: (lineupId: string, captainPlayerId: string | null) => Promise<void>;
   requestChallengeSync: () => Promise<void>;
   simulateCurrentMatchday: () => Promise<void>;
   updateMatchResult: (match: Match) => Promise<void>;
@@ -354,44 +355,53 @@ const mapChallengeSyncStatus = (row: any): ChallengeSyncStatus => ({
   updatedAt: row.updated_at,
 });
 
-const mapPlayer = (row: any): Player => ({
-  id: row.id,
-  name: row.name,
-  imageUrl: row.image_url ?? "",
-  teamId: row.team_id,
-  teamName: row.teams?.name ?? row.team_name ?? "Sin equipo",
-  position: row.position,
-  basePrice: Number(row.base_price),
-  currentPrice: Number(row.current_price),
-  fantasyValue: Number(row.fantasy_value ?? 0),
-  totalPoints: Number(row.total_points ?? 0),
-  pointsByMatchday: row.points_by_matchday ?? {},
-  priceHistory: row.stats_json?.priceHistory ?? row.stats_json?.price_history ?? {},
-  status: row.status,
-  unavailableUntilMatchday:
-    row.unavailable_until_matchday === undefined || row.unavailable_until_matchday === null
-      ? null
-      : Number(row.unavailable_until_matchday),
-  stats: {
-    appearances: Number(row.stats_json?.appearances ?? 0),
-    goals: Number(row.stats_json?.goals ?? 0),
-    assists: Number(row.stats_json?.assists ?? 0),
-    goalsConceded: Number(row.stats_json?.goalsConceded ?? row.stats_json?.goals_conceded ?? 0),
-    cleanSheets: Number(row.stats_json?.cleanSheets ?? row.stats_json?.clean_sheets ?? 0),
-    yellowCards: Number(row.stats_json?.yellowCards ?? row.stats_json?.yellow_cards ?? 0),
-    redCards: Number(row.stats_json?.redCards ?? row.stats_json?.red_cards ?? 0),
-    doubleYellowCards: Number(row.stats_json?.doubleYellowCards ?? row.stats_json?.double_yellow_cards ?? 0),
-    penaltiesScored: Number(row.stats_json?.penaltiesScored ?? row.stats_json?.penalties_scored ?? 0),
-    penaltiesMissed: Number(row.stats_json?.penaltiesMissed ?? row.stats_json?.penalties_missed ?? 0),
-    penaltiesSaved: Number(row.stats_json?.penaltiesSaved ?? row.stats_json?.penalties_saved ?? 0),
-    penaltiesProvoked: Number(row.stats_json?.penaltiesProvoked ?? row.stats_json?.penalties_provoked ?? 0),
-    ownGoals: Number(row.stats_json?.ownGoals ?? row.stats_json?.own_goals ?? 0),
-    mvps: Number(row.stats_json?.mvps ?? 0),
-    overloadPoints: Number(row.stats_json?.overloadPoints ?? row.stats_json?.overload_points ?? 0),
-    minutes: Number(row.stats_json?.minutes ?? 0),
-    keyActions: Number(row.stats_json?.keyActions ?? row.stats_json?.key_actions ?? 0),
-  },
-});
+const mapPlayer = (row: any): Player => {
+  const position = normalizePlayerPosition(row.position);
+  return {
+    id: row.id,
+    name: row.name,
+    imageUrl: row.image_url ?? "",
+    teamId: row.team_id,
+    teamName: row.teams?.name ?? row.team_name ?? "Sin equipo",
+    position,
+    positions:
+      Array.isArray(row.positions) && row.positions.length > 0
+        ? normalizePlayerPositions(row.positions, position)
+        : Array.isArray(row.stats_json?.positions) && row.stats_json.positions.length > 0
+          ? normalizePlayerPositions(row.stats_json.positions, position)
+          : [position],
+    basePrice: Number(row.base_price),
+    currentPrice: Number(row.current_price),
+    fantasyValue: Number(row.fantasy_value ?? 0),
+    totalPoints: Number(row.total_points ?? 0),
+    pointsByMatchday: row.points_by_matchday ?? {},
+    priceHistory: row.stats_json?.priceHistory ?? row.stats_json?.price_history ?? {},
+    status: row.status,
+    unavailableUntilMatchday:
+      row.unavailable_until_matchday === undefined || row.unavailable_until_matchday === null
+        ? null
+        : Number(row.unavailable_until_matchday),
+    stats: {
+      appearances: Number(row.stats_json?.appearances ?? 0),
+      goals: Number(row.stats_json?.goals ?? 0),
+      assists: Number(row.stats_json?.assists ?? 0),
+      goalsConceded: Number(row.stats_json?.goalsConceded ?? row.stats_json?.goals_conceded ?? 0),
+      cleanSheets: Number(row.stats_json?.cleanSheets ?? row.stats_json?.clean_sheets ?? 0),
+      yellowCards: Number(row.stats_json?.yellowCards ?? row.stats_json?.yellow_cards ?? 0),
+      redCards: Number(row.stats_json?.redCards ?? row.stats_json?.red_cards ?? 0),
+      doubleYellowCards: Number(row.stats_json?.doubleYellowCards ?? row.stats_json?.double_yellow_cards ?? 0),
+      penaltiesScored: Number(row.stats_json?.penaltiesScored ?? row.stats_json?.penalties_scored ?? 0),
+      penaltiesMissed: Number(row.stats_json?.penaltiesMissed ?? row.stats_json?.penalties_missed ?? 0),
+      penaltiesSaved: Number(row.stats_json?.penaltiesSaved ?? row.stats_json?.penalties_saved ?? 0),
+      penaltiesProvoked: Number(row.stats_json?.penaltiesProvoked ?? row.stats_json?.penalties_provoked ?? 0),
+      ownGoals: Number(row.stats_json?.ownGoals ?? row.stats_json?.own_goals ?? 0),
+      mvps: Number(row.stats_json?.mvps ?? 0),
+      overloadPoints: Number(row.stats_json?.overloadPoints ?? row.stats_json?.overload_points ?? 0),
+      minutes: Number(row.stats_json?.minutes ?? 0),
+      keyActions: Number(row.stats_json?.keyActions ?? row.stats_json?.key_actions ?? 0),
+    },
+  };
+};
 
 const mapMatch = (row: any): Match => ({
   id: row.id,
@@ -569,8 +579,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
             client
               .from("lineups")
               .select("*, lineup_players(*)")
-              .eq("league_id", leagueId)
-              .eq("user_id", session.user.id),
+              .eq("league_id", leagueId),
           ),
           fetchRows(
             client
@@ -670,7 +679,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
               playerId: lineupPlayer.player_id,
               slot: Number(lineupPlayer.slot),
               isStarter: Boolean(lineupPlayer.is_starter),
-              position: lineupPlayer.position,
+              position: normalizePlayerPosition(lineupPlayer.position),
             }))
             .sort((a: LineupPlayer, b: LineupPlayer) => a.slot - b.slot),
         })) satisfies Lineup[];
@@ -1334,15 +1343,6 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           return item;
         }),
       );
-      if (previousOwner) {
-        setLineups((current) =>
-          current.map((lineup) =>
-            lineup.userId === previousOwner.userId
-              ? { ...lineup, players: lineup.players.filter((lineupPlayer) => lineupPlayer.playerId !== playerId) }
-              : lineup,
-          ),
-        );
-      }
       const transfer: Transfer = {
         id: randomId("transfer"),
         leagueId: currentLeague.id,
@@ -1442,6 +1442,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       if (!currentLeague || !userId) return;
       const target = leaguePlayers.find((item) => item.playerId === playerId);
       const player = players.find((item) => item.id === playerId);
+      const member = members.find((item) => item.userId === userId);
       if (!player || target?.ownerUserId !== userId) throw new Error("Ese jugador no pertenece a tu plantilla.");
       const amount = Math.round((target.price * 0.5) / 50_000) * 50_000;
 
@@ -1484,17 +1485,6 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
             : item,
         ),
       );
-      setMembers((current) =>
-        current.map((member) =>
-          member.userId === userId
-            ? {
-                ...member,
-                squadValue: Math.max(0, member.squadValue - player.currentPrice),
-              }
-            : member,
-        ),
-      );
-      // Only remove player from DRAFT lineups (not yet submitted), submitted ones are kept as snapshot
       setLineups((current) =>
         current.map((lineup) =>
           lineup.userId === userId && lineup.status === "draft"
@@ -1502,9 +1492,25 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
             : lineup,
         ),
       );
-          type: "sell",
-          amount,
-          createdAt: new Date().toISOString(),
+      const transfer: Transfer = {
+        id: randomId("transfer"),
+        leagueId: currentLeague.id,
+        userId,
+        username: member?.username ?? "Manager",
+        playerId,
+        playerName: player.name,
+        type: "sell",
+        amount,
+        createdAt: new Date().toISOString(),
+      };
+      setTransfers((current) => [transfer, ...current]);
+      setActivities((current) => [
+        {
+          id: randomId("activity"),
+          leagueId: currentLeague.id,
+          type: "transfer",
+          message: `${member?.username ?? "Manager"} vende rapido a ${player.name} por ${formatMoney(amount)}.`,
+          createdAt: transfer.createdAt,
         },
         ...current,
       ]);
@@ -1545,13 +1551,6 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
                 marketExpiresAt: new Date(listedAt.getTime() + MARKET_DURATION_MS).toISOString(),
               }
             : item,
-        ),
-      );
-      setLineups((current) =>
-        current.map((lineup) =>
-          lineup.userId === userId && lineup.status === "draft"
-            ? { ...lineup, players: lineup.players.filter((lineupPlayer) => lineupPlayer.playerId !== playerId) }
-            : lineup,
         ),
       );
       setActivities((current) => [
@@ -1604,16 +1603,6 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       setOffers((current) =>
         current.map((offer) => (offer.playerId === playerId && offer.status === "pending" ? { ...offer, status: "rejected" } : offer)),
       );
-      setMembers((current) =>
-        current.map((member) =>
-          member.userId === userId
-            ? {
-                ...member,
-                squadValue: member.squadValue + player.currentPrice,
-              }
-            : member,
-        ),
-      );
       pushToast(`${player.name} vuelve a tu club.`, "success");
     },
     [currentLeague, leaguePlayers, loadLeagueData, onlineReady, players, pushToast, userId],
@@ -1661,7 +1650,11 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       if (!currentLeague || !userId) return;
       const player = players.find((item) => item.id === playerId);
       const target = leaguePlayers.find((item) => item.playerId === playerId);
-      const owner = target?.ownerUserId ?? null;
+      const isAuction =
+        target?.marketStatus === "market" &&
+        Boolean(target.marketExpiresAt) &&
+        (!target.ownerUserId || Boolean(target.listedByUserId));
+      const owner = isAuction ? null : (target?.ownerUserId ?? null);
       const member = members.find((item) => item.userId === userId);
       const exchangePlayer = exchangePlayerId ? leaguePlayers.find((item) => item.playerId === exchangePlayerId) : undefined;
       const highestBid = getHighestBid(offers, playerId);
@@ -1809,6 +1802,13 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
         .filter(Boolean) as Player[];
       const validation = validateLineup(squadPlayers, starterIds, formation, requestedMatchdayNumber);
       if (!validation.valid) throw new Error(validation.errors.join(" "));
+      if (captainPlayerId && !starterIds.includes(captainPlayerId)) {
+        throw new Error("El capitan debe estar dentro del once titular.");
+      }
+      const assignedPositions = assignLineupPositions(squadPlayers, starterIds, formation);
+      if (!assignedPositions) throw new Error("La formacion no encaja con las posiciones disponibles de esos jugadores.");
+      const starterPositions = starterIds.map((playerId) => assignedPositions[playerId] ?? players.find((item) => item.id === playerId)?.position ?? "MED");
+      const benchPositions = benchIds.map((playerId) => players.find((item) => item.id === playerId)?.position ?? "MED");
       const targetMatchday =
         matchdays.find((matchday) => matchday.number === requestedMatchdayNumber) ??
         matchdays.find((matchday) => matchday.number === currentLeague.currentMatchday) ??
@@ -1823,6 +1823,8 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           p_starters: starterIds,
           p_bench: benchIds,
           p_captain_player_id: captainPlayerId ?? null,
+          p_starter_positions: starterPositions,
+          p_bench_positions: benchPositions,
         });
         if (error) throw error;
         await loadLeagueData(currentLeague.id);
@@ -1843,7 +1845,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       const lineupPlayers: LineupPlayer[] = [
         ...starterIds.map((playerId, slot) => {
           const player = players.find((item) => item.id === playerId)!;
-          return { playerId, slot, isStarter: true, position: player.position };
+          return { playerId, slot, isStarter: true, position: assignedPositions[playerId] ?? player.position };
         }),
         ...benchIds.map((playerId, index) => {
           const player = players.find((item) => item.id === playerId)!;
@@ -1871,6 +1873,33 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       pushToast(`Alineacion subida para J${requestedMatchdayNumber}.`, "success");
     },
     [currentLeague, leaguePlayers, loadLeagueData, matchdays, onlineReady, players, pushToast, userId],
+  );
+
+  const setLineupCaptain = useCallback(
+    async (lineupId: string, captainPlayerId: string | null) => {
+      const lineup = lineups.find((item) => item.id === lineupId);
+      if (!lineup || !currentLeague || !userId) return;
+      if (lineup.userId !== userId) throw new Error("Solo puedes cambiar el capitan de tu alineacion.");
+      const starterIds = lineup.players.filter((player) => player.isStarter).map((player) => player.playerId);
+      if (captainPlayerId && !starterIds.includes(captainPlayerId)) {
+        throw new Error("El capitan debe estar dentro del once titular.");
+      }
+
+      if (onlineReady && supabase) {
+        const { error } = await supabase.rpc("set_lineup_captain", {
+          p_lineup_id: lineupId,
+          p_captain_player_id: captainPlayerId,
+        });
+        if (error) throw error;
+        await loadLeagueData(currentLeague.id);
+      } else {
+        setLineups((current) =>
+          current.map((item) => (item.id === lineupId ? { ...item, captainPlayerId } : item)),
+        );
+      }
+      pushToast(captainPlayerId ? "Capitan actualizado." : "Capitan quitado.", "success");
+    },
+    [currentLeague, lineups, loadLeagueData, onlineReady, pushToast, userId],
   );
 
   const requestChallengeSync = useCallback(async () => {
@@ -2209,6 +2238,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       rejectOffer,
       cancelOffer,
       submitLineup,
+      setLineupCaptain,
       requestChallengeSync,
       simulateCurrentMatchday,
       updateMatchResult,
@@ -2256,6 +2286,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       selectedLeagueId,
       sellPlayer,
       session,
+      setLineupCaptain,
       signIn,
       signOut,
       signUp,
