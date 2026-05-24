@@ -8,10 +8,7 @@ import { mockTeams } from "../data/mockTeams";
 import { isSupabaseConfigured, supabase } from "../lib/supabaseClient";
 import type {
   ActivityItem,
-<<<<<<< HEAD
-=======
   BudgetEvent,
->>>>>>> 6bc6cc2 (Version 2.2)
   ChallengeSyncStatus,
   FantasyStanding,
   Formation,
@@ -33,11 +30,8 @@ import { calculateSquadValue, validateLineup } from "../utils/calculatePoints";
 import { getAuthRedirectUrl } from "../utils/authRedirect";
 import { getErrorMessage } from "../utils/errors";
 import { formatMoney } from "../utils/formatters";
-<<<<<<< HEAD
-=======
 import { sendFantasyNotification } from "../utils/notifications";
 import { sendRemoteFantasyPush, setupFantasyPushNotifications } from "../utils/pushNotifications";
->>>>>>> 6bc6cc2 (Version 2.2)
 import {
   DAILY_MARKET_SIZE,
   MARKET_DURATION_MS,
@@ -82,10 +76,7 @@ interface FantasyContextValue {
   matchdays: Matchday[];
   lineups: Lineup[];
   transfers: Transfer[];
-<<<<<<< HEAD
-=======
   budgetEvents: BudgetEvent[];
->>>>>>> 6bc6cc2 (Version 2.2)
   offers: Offer[];
   activities: ActivityItem[];
   challengeSyncStatus?: ChallengeSyncStatus;
@@ -118,11 +109,8 @@ interface FantasyContextValue {
   refreshDailyMarket: () => Promise<void>;
   acceptOffer: (offerId: string) => Promise<void>;
   rejectOffer: (offerId: string) => Promise<void>;
-<<<<<<< HEAD
-=======
   cancelOffer: (offerId: string) => Promise<void>;
->>>>>>> 6bc6cc2 (Version 2.2)
-  submitLineup: (formation: Formation, starterIds: string[], benchIds: string[], matchdayNumber?: number) => Promise<void>;
+  submitLineup: (formation: Formation, starterIds: string[], benchIds: string[], matchdayNumber?: number, captainPlayerId?: string | null) => Promise<void>;
   requestChallengeSync: () => Promise<void>;
   simulateCurrentMatchday: () => Promise<void>;
   updateMatchResult: (match: Match) => Promise<void>;
@@ -140,10 +128,7 @@ interface DemoSnapshot {
   matchdays: Matchday[];
   lineups: Lineup[];
   transfers: Transfer[];
-<<<<<<< HEAD
-=======
   budgetEvents: BudgetEvent[];
->>>>>>> 6bc6cc2 (Version 2.2)
   offers: Offer[];
   activities: ActivityItem[];
   scoringRules: ScoringRules;
@@ -321,10 +306,7 @@ const buildDemoSnapshot = (): DemoSnapshot => {
         createdAt: now,
       },
     ],
-<<<<<<< HEAD
-=======
     budgetEvents: [],
->>>>>>> 6bc6cc2 (Version 2.2)
     offers: [],
     activities: [
       {
@@ -465,22 +447,13 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
   const [matchdays, setMatchdays] = useState<Matchday[]>([]);
   const [lineups, setLineups] = useState<Lineup[]>([]);
   const [transfers, setTransfers] = useState<Transfer[]>([]);
-<<<<<<< HEAD
-=======
   const [budgetEvents, setBudgetEvents] = useState<BudgetEvent[]>([]);
->>>>>>> 6bc6cc2 (Version 2.2)
   const [offers, setOffers] = useState<Offer[]>([]);
   const [activities, setActivities] = useState<ActivityItem[]>([]);
   const [challengeSyncStatus, setChallengeSyncStatus] = useState<ChallengeSyncStatus | undefined>();
   const [scoringRules, setScoringRules] = useState<ScoringRules>(defaultScoringRules);
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
   const reloadTimerRef = useRef<number | null>(null);
-<<<<<<< HEAD
-
-  const userId = demoMode ? demoUserId : session?.user.id ?? null;
-  const onlineReady = Boolean(isSupabaseConfigured && supabase && session && !demoMode);
-  const isOverloadAdmin = session?.user.email?.toLowerCase() === "pablogarvac@gmail.com";
-=======
   const notificationLeagueRef = useRef<string | null>(null);
   const pushRegistrationRef = useRef<string | null>(null);
   const knownNotificationTransferIdsRef = useRef<Set<string>>(new Set());
@@ -489,7 +462,6 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
   const userId = demoMode ? demoUserId : session?.user.id ?? null;
   const onlineReady = Boolean(isSupabaseConfigured && supabase && session && !demoMode);
   const isOverloadAdmin = Boolean(session?.user.email?.toLowerCase().startsWith("pablogarvac"));
->>>>>>> 6bc6cc2 (Version 2.2)
 
   const pushToast = useCallback((message: string, tone: ToastTone = "info") => {
     const toast: ToastMessage = { id: randomId("toast"), tone, message };
@@ -508,10 +480,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
     setMatchdays(snapshot.matchdays);
     setLineups(snapshot.lineups);
     setTransfers(snapshot.transfers);
-<<<<<<< HEAD
-=======
     setBudgetEvents(snapshot.budgetEvents);
->>>>>>> 6bc6cc2 (Version 2.2)
     setOffers(snapshot.offers);
     setActivities(snapshot.activities);
     setChallengeSyncStatus(undefined);
@@ -577,10 +546,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           matchdayRows,
           lineupRows,
           transferRows,
-<<<<<<< HEAD
-=======
           budgetEventRows,
->>>>>>> 6bc6cc2 (Version 2.2)
           offerRows,
           activityRows,
           scoringRow,
@@ -612,10 +578,6 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
               .select("*, players(name), profiles(username)")
               .eq("league_id", leagueId)
               .order("created_at", { ascending: false })
-<<<<<<< HEAD
-              .limit(40),
-          ),
-=======
               .limit(120),
           ),
           fetchRows(
@@ -627,7 +589,6 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
               .order("created_at", { ascending: false })
               .limit(120),
           ).catch(() => []),
->>>>>>> 6bc6cc2 (Version 2.2)
           fetchRows(client.from("offers").select("*").eq("league_id", leagueId).order("created_at", { ascending: false })),
           fetchRows(
             client
@@ -702,6 +663,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           matchdayId: row.matchday_id,
           formation: row.formation,
           status: row.status,
+          captainPlayerId: row.captain_player_id ?? null,
           createdAt: row.created_at,
           players: (row.lineup_players ?? [])
             .map((lineupPlayer: any) => ({
@@ -723,8 +685,6 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           amount: Number(row.amount),
           createdAt: row.created_at,
         })) satisfies Transfer[];
-<<<<<<< HEAD
-=======
         const mappedBudgetEvents = budgetEventRows.map((row: any) => ({
           id: row.id,
           leagueId: row.league_id,
@@ -738,7 +698,6 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           createdAt: row.created_at,
           updatedAt: row.updated_at,
         })) satisfies BudgetEvent[];
->>>>>>> 6bc6cc2 (Version 2.2)
         const mappedOffers = offerRows.map((row: any) => ({
           id: row.id,
           leagueId: row.league_id,
@@ -770,10 +729,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
         setMatchdays(mappedMatchdays);
         setLineups(mappedLineups);
         setTransfers(mappedTransfers);
-<<<<<<< HEAD
-=======
         setBudgetEvents(mappedBudgetEvents);
->>>>>>> 6bc6cc2 (Version 2.2)
         setOffers(mappedOffers);
         setActivities(mappedActivities);
         setChallengeSyncStatus(syncStatusRow ? mapChallengeSyncStatus(syncStatusRow) : undefined);
@@ -870,8 +826,6 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
   }, [demoMode, loadLeagues, session]);
 
   useEffect(() => {
-<<<<<<< HEAD
-=======
     if (!onlineReady || !supabase || !session?.user.id) return;
     if (pushRegistrationRef.current === session.user.id) return;
     pushRegistrationRef.current = session.user.id;
@@ -881,7 +835,6 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
   }, [onlineReady, session?.user.id]);
 
   useEffect(() => {
->>>>>>> 6bc6cc2 (Version 2.2)
     const client = supabase;
     if (!onlineReady || !selectedLeagueId || !client) return;
     const scheduleReload = () => {
@@ -909,14 +862,11 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       )
       .on(
         "postgres_changes",
-<<<<<<< HEAD
-=======
         { event: "*", schema: "public", table: "budget_events", filter: `league_id=eq.${selectedLeagueId}` },
         scheduleReload,
       )
       .on(
         "postgres_changes",
->>>>>>> 6bc6cc2 (Version 2.2)
         { event: "*", schema: "public", table: "matchdays", filter: `league_id=eq.${selectedLeagueId}` },
         scheduleReload,
       )
@@ -934,8 +884,6 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
 
   const currentLeague = leagues.find((league) => league.id === selectedLeagueId);
 
-<<<<<<< HEAD
-=======
   useEffect(() => {
     if (!currentLeague?.id || !userId) return;
 
@@ -984,7 +932,6 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
     });
   }, [activities, currentLeague?.id, members, players, transfers, userId]);
 
->>>>>>> 6bc6cc2 (Version 2.2)
   const standings = useMemo(
     () =>
       [...members]
@@ -1315,12 +1262,9 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       const target = leaguePlayers.find((item) => item.playerId === playerId);
       const player = players.find((item) => item.id === playerId);
       const price = amount ?? (target?.ownerUserId ? target.releaseClause : target?.price) ?? player?.currentPrice ?? 0;
-<<<<<<< HEAD
-=======
       const member = members.find((item) => item.userId === userId);
       const previousOwner = target?.ownerUserId ? members.find((item) => item.userId === target.ownerUserId) : undefined;
       const isClauseBuy = Boolean(target?.ownerUserId);
->>>>>>> 6bc6cc2 (Version 2.2)
       if (!player || !target) throw new Error("Jugador no encontrado.");
       if (currentLeague.marketLocked) throw new Error("El mercado está bloqueado.");
       if (target.ownerUserId === userId) throw new Error("Ese jugador ya es tuyo.");
@@ -1336,8 +1280,6 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
         });
         if (error) throw error;
         await loadLeagueData(currentLeague.id);
-<<<<<<< HEAD
-=======
         await sendRemoteFantasyPush(supabase, {
           leagueId: currentLeague.id,
           userIds: [userId],
@@ -1352,19 +1294,11 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
             data: { type: "clause_buy", playerId, buyerId: userId },
           }).catch(() => undefined);
         }
->>>>>>> 6bc6cc2 (Version 2.2)
         pushToast(`${player.name} fichado.`, "success");
         return;
       }
 
-<<<<<<< HEAD
-      const member = members.find((item) => item.userId === userId);
       if (!member || member.budget < price) throw new Error("No tienes presupuesto suficiente.");
-      const previousOwner = target.ownerUserId ? members.find((item) => item.userId === target.ownerUserId) : undefined;
-      const isClauseBuy = Boolean(target.ownerUserId);
-=======
-      if (!member || member.budget < price) throw new Error("No tienes presupuesto suficiente.");
->>>>>>> 6bc6cc2 (Version 2.2)
       setLeaguePlayers((current) =>
         current.map((item) =>
           item.playerId === playerId
@@ -1380,32 +1314,21 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
             : item,
         ),
       );
-<<<<<<< HEAD
-=======
       setPlayers((current) => current.map((item) => (item.id === playerId ? { ...item, currentPrice: price } : item)));
->>>>>>> 6bc6cc2 (Version 2.2)
       setMembers((current) =>
         current.map((item) => {
           if (item.userId === userId) {
             return {
               ...item,
               budget: item.budget - price,
-<<<<<<< HEAD
-              squadValue: item.squadValue + player.currentPrice,
-=======
               squadValue: item.squadValue + price,
->>>>>>> 6bc6cc2 (Version 2.2)
             };
           }
           if (item.userId === previousOwner?.userId) {
             return {
               ...item,
               budget: item.budget + price,
-<<<<<<< HEAD
-              squadValue: Math.max(0, item.squadValue - player.currentPrice),
-=======
               squadValue: Math.max(0, item.squadValue - price),
->>>>>>> 6bc6cc2 (Version 2.2)
             };
           }
           return item;
@@ -1571,21 +1494,14 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
             : member,
         ),
       );
+      // Only remove player from DRAFT lineups (not yet submitted), submitted ones are kept as snapshot
       setLineups((current) =>
         current.map((lineup) =>
-          lineup.userId === userId
+          lineup.userId === userId && lineup.status === "draft"
             ? { ...lineup, players: lineup.players.filter((lineupPlayer) => lineupPlayer.playerId !== playerId) }
             : lineup,
         ),
       );
-      setTransfers((current) => [
-        {
-          id: randomId("transfer"),
-          leagueId: currentLeague.id,
-          userId,
-          username: members.find((member) => member.userId === userId)?.username ?? "Manager",
-          playerId,
-          playerName: player.name,
           type: "sell",
           amount,
           createdAt: new Date().toISOString(),
@@ -1622,7 +1538,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           item.playerId === playerId
             ? {
                 ...item,
-                ownerUserId: null,
+                // Keep ownerUserId so player still appears in squad until actually sold
                 listedByUserId: userId,
                 marketStatus: "market",
                 marketListedAt: listedAt.toISOString(),
@@ -1633,7 +1549,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       );
       setLineups((current) =>
         current.map((lineup) =>
-          lineup.userId === userId
+          lineup.userId === userId && lineup.status === "draft"
             ? { ...lineup, players: lineup.players.filter((lineupPlayer) => lineupPlayer.playerId !== playerId) }
             : lineup,
         ),
@@ -1725,10 +1641,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
     });
 
     setLeaguePlayers(resolved.leaguePlayers);
-<<<<<<< HEAD
-=======
     setPlayers(resolved.players);
->>>>>>> 6bc6cc2 (Version 2.2)
     setMembers(resolved.members);
     setOffers(resolved.offers);
     if (resolved.transfers.length > 0) setTransfers((current) => [...resolved.transfers, ...current]);
@@ -1783,8 +1696,6 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
             });
         if (error) throw error;
         await loadLeagueData(currentLeague.id);
-<<<<<<< HEAD
-=======
         if (owner) {
           await sendRemoteFantasyPush(supabase, {
             leagueId: currentLeague.id,
@@ -1800,7 +1711,6 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
             data: { type: "outbid", playerId, fromUserId: userId },
           }).catch(() => undefined);
         }
->>>>>>> 6bc6cc2 (Version 2.2)
       } else {
         setOffers((current) => {
           const next = current.map((offer) =>
@@ -1830,17 +1740,12 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
 
   const acceptOffer = useCallback(
     async (offerId: string) => {
-<<<<<<< HEAD
-=======
       const offer = offers.find((item) => item.id === offerId);
       const player = offer ? players.find((item) => item.id === offer.playerId) : undefined;
->>>>>>> 6bc6cc2 (Version 2.2)
       if (onlineReady && supabase) {
         const { error } = await supabase.rpc("accept_offer", { p_offer_id: offerId });
         if (error) throw error;
         if (currentLeague) await loadLeagueData(currentLeague.id);
-<<<<<<< HEAD
-=======
         if (currentLeague && offer?.fromUserId && player) {
           await sendRemoteFantasyPush(supabase, {
             leagueId: currentLeague.id,
@@ -1849,17 +1754,12 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
             data: { type: "offer_accepted", playerId: player.id },
           }).catch(() => undefined);
         }
->>>>>>> 6bc6cc2 (Version 2.2)
       } else {
         setOffers((current) => current.map((offer) => (offer.id === offerId ? { ...offer, status: "accepted" } : offer)));
       }
       pushToast("Oferta aceptada.", "success");
     },
-<<<<<<< HEAD
-    [currentLeague, loadLeagueData, onlineReady, pushToast],
-=======
     [currentLeague, loadLeagueData, offers, onlineReady, players, pushToast],
->>>>>>> 6bc6cc2 (Version 2.2)
   );
 
   const rejectOffer = useCallback(
@@ -1876,8 +1776,6 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
     [currentLeague, loadLeagueData, onlineReady, pushToast],
   );
 
-<<<<<<< HEAD
-=======
   const cancelOffer = useCallback(
     async (offerId: string) => {
       const offer = offers.find((item) => item.id === offerId);
@@ -1897,16 +1795,16 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
     [currentLeague, loadLeagueData, offers, onlineReady, pushToast, userId],
   );
 
->>>>>>> 6bc6cc2 (Version 2.2)
   const submitLineup = useCallback(
-    async (formation: Formation, starterIds: string[], benchIds: string[], matchdayNumber?: number) => {
+    async (formation: Formation, starterIds: string[], benchIds: string[], matchdayNumber?: number, captainPlayerId?: string | null) => {
       if (!currentLeague || !userId) return;
       const requestedMatchdayNumber = matchdayNumber ?? currentLeague.currentMatchday;
       if (currentLeague.lineupsLocked && requestedMatchdayNumber <= currentLeague.currentMatchday) {
         throw new Error("Las alineaciones de esta jornada estan bloqueadas. Puedes preparar la siguiente.");
       }
+      // Include listed players in squad for validation (they're still "yours" until sold)
       const squadPlayers = leaguePlayers
-        .filter((leaguePlayer) => leaguePlayer.ownerUserId === userId)
+        .filter((leaguePlayer) => leaguePlayer.ownerUserId === userId || leaguePlayer.listedByUserId === userId)
         .map((leaguePlayer) => players.find((player) => player.id === leaguePlayer.playerId))
         .filter(Boolean) as Player[];
       const validation = validateLineup(squadPlayers, starterIds, formation, requestedMatchdayNumber);
@@ -1924,6 +1822,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           p_formation: formation,
           p_starters: starterIds,
           p_bench: benchIds,
+          p_captain_player_id: captainPlayerId ?? null,
         });
         if (error) throw error;
         await loadLeagueData(currentLeague.id);
@@ -1960,6 +1859,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           formation,
           status: "submitted",
           players: lineupPlayers,
+          captainPlayerId: captainPlayerId ?? null,
           createdAt: new Date().toISOString(),
         },
         ...current.filter(
@@ -2204,10 +2104,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           matchdays,
           lineups,
           transfers,
-<<<<<<< HEAD
-=======
           budgetEvents,
->>>>>>> 6bc6cc2 (Version 2.2)
           offers,
           activities,
           scoringRules,
@@ -2222,10 +2119,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       lineups,
       matchdays,
       members,
-<<<<<<< HEAD
-=======
       budgetEvents,
->>>>>>> 6bc6cc2 (Version 2.2)
       offers,
       profile,
       scoringRules,
@@ -2249,10 +2143,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       setMatchdays(parsed.matchdays);
       setLineups(parsed.lineups ?? []);
       setTransfers(parsed.transfers ?? []);
-<<<<<<< HEAD
-=======
       setBudgetEvents(parsed.budgetEvents ?? []);
->>>>>>> 6bc6cc2 (Version 2.2)
       setOffers(parsed.offers ?? []);
       setActivities(parsed.activities ?? []);
       setChallengeSyncStatus(undefined);
@@ -2280,10 +2171,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       matchdays,
       lineups,
       transfers,
-<<<<<<< HEAD
-=======
       budgetEvents,
->>>>>>> 6bc6cc2 (Version 2.2)
       offers,
       activities,
       challengeSyncStatus,
@@ -2319,10 +2207,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       refreshDailyMarket,
       acceptOffer,
       rejectOffer,
-<<<<<<< HEAD
-=======
       cancelOffer,
->>>>>>> 6bc6cc2 (Version 2.2)
       submitLineup,
       requestChallengeSync,
       simulateCurrentMatchday,
@@ -2337,10 +2222,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       applyDemoSnapshot,
       buyPlayer,
       cancelMarketListing,
-<<<<<<< HEAD
-=======
       cancelOffer,
->>>>>>> 6bc6cc2 (Version 2.2)
       createLeague,
       currentLeague,
       deleteLeague,
@@ -2383,10 +2265,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       teams,
       toasts,
       transfers,
-<<<<<<< HEAD
-=======
       budgetEvents,
->>>>>>> 6bc6cc2 (Version 2.2)
       uploadAvatar,
       updatePlayerAvailability,
       updateLeagueSettings,

@@ -1,4 +1,4 @@
-import { ArrowRightLeft, Eye, Lock, Save, Shuffle, Trash2, UserRoundPlus } from "lucide-react";
+import { ArrowRightLeft, Crown, Eye, Lock, Save, ShoppingBag, Shuffle, Trash2, UserRoundPlus } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import type { Formation, Lineup, Player } from "../types";
 import { FormationBoard } from "../components/fantasy/FormationBoard";
@@ -30,6 +30,7 @@ export const MyTeamPage = () => {
   const [formation, setFormation] = useState<Formation>("4-4-2");
   const [starterIds, setStarterIds] = useState<string[]>([]);
   const [benchIds, setBenchIds] = useState<string[]>([]);
+  const [captainPlayerId, setCaptainPlayerId] = useState<string | null>(null);
   const [selectedPlayer, setSelectedPlayer] = useState<Player | undefined>();
   const [swapCandidate, setSwapCandidate] = useState<Player | undefined>();
   const [error, setError] = useState("");
@@ -39,7 +40,12 @@ export const MyTeamPage = () => {
     setSelectedMatchdayNumber(nextMatchdayNumber);
   }, [nextMatchdayNumber]);
 
-  const myLeaguePlayers = useMemo(() => leaguePlayers.filter((item) => item.ownerUserId === userId), [leaguePlayers, userId]);
+  // Squad = jugadores que poseo + los que tengo en el mercado (aún míos hasta que se vendan)
+  const myLeaguePlayers = useMemo(
+    () => leaguePlayers.filter((item) => item.ownerUserId === userId || item.listedByUserId === userId),
+    [leaguePlayers, userId],
+  );
+
   const squad = useMemo(
     () =>
       myLeaguePlayers
@@ -83,14 +89,34 @@ export const MyTeamPage = () => {
     .map((id) => squad.find((player) => player.id === id))
     .filter(Boolean) as Player[];
 
-  const squadPointsFor = (matchdayNumber: number) =>
-    squad.reduce((sum, player) => sum + playerMatchdayPoints(player, matchdayNumber), 0);
+  // For past/submitted lineups, use snapshot players (may include sold players)
+  const lineupPlayers = useMemo(() => {
+    if (!activeLineup) return null;
+    return activeLineup.players.map((lp) => {
+      const player = players.find((p) => p.id === lp.playerId);
+      return player ?? { id: lp.playerId, name: "Jugador vendido", position: lp.position, teamName: "-", currentPrice: 0, totalPoints: 0, status: "active", pointsByMatchday: {} } as Player;
+    });
+  }, [activeLineup, players]);
 
-  const selectedSquadPoints = squadPointsFor(selectedMatchdayNumber);
+  const squadPointsFor = (matchdayNumber: number) => {
+    const lineup = lineups.find((l) => l.userId === userId && matchdays.find((m) => m.id === l.matchdayId)?.number === matchdayNumber);
+    if (lineup) {
+      const starterPlayerIds = lineup.players.filter((p) => p.isStarter).map((p) => p.playerId);
+      return starterPlayerIds.reduce((sum, pid) => {
+        const player = players.find((p) => p.id === pid);
+        if (!player) return sum;
+        const pts = playerMatchdayPoints(player, matchdayNumber);
+        const isCapt = lineup.captainPlayerId === pid;
+        return sum + (isCapt ? pts * 2 : pts);
+      }, 0);
+    }
+    return squad.reduce((sum, player) => sum + playerMatchdayPoints(player, matchdayNumber), 0);
+  };
 
   useEffect(() => {
     if (activeLineup) {
       setFormation(activeLineup.formation);
+      setCaptainPlayerId(activeLineup.captainPlayerId ?? null);
       const nextStarters = Array.from(new Set(activeLineup.players.filter((player) => player.isStarter).map((player) => player.playerId)));
       setStarterIds(nextStarters);
       setBenchIds(
@@ -116,6 +142,7 @@ export const MyTeamPage = () => {
     setFormation("4-4-2");
     setStarterIds(startersByDefault);
     setBenchIds(squad.filter((player) => !startersByDefault.includes(player.id)).map((player) => player.id));
+    setCaptainPlayerId(null);
   }, [activeLineup, isPlanningMatchday, selectedMatchdayNumber, squad]);
 
   const validation = useMemo(
@@ -144,6 +171,7 @@ export const MyTeamPage = () => {
   const replaceStarter = (benchPlayer: Player, starterPlayer: Player) => {
     setStarterIds((current) => current.map((id) => (id === starterPlayer.id ? benchPlayer.id : id)));
     setBenchIds((current) => current.filter((id) => id !== benchPlayer.id).concat(starterPlayer.id));
+    if (captainPlayerId === starterPlayer.id) setCaptainPlayerId(benchPlayer.id);
     setSwapCandidate(undefined);
   };
 
@@ -151,6 +179,11 @@ export const MyTeamPage = () => {
     if (!isEditable) return;
     setStarterIds((current) => current.filter((id) => id !== playerId));
     setBenchIds((current) => (current.includes(playerId) ? current : [...current, playerId]));
+    if (captainPlayerId === playerId) setCaptainPlayerId(null);
+  };
+
+  const toggleCaptain = (playerId: string) => {
+    setCaptainPlayerId((current) => (current === playerId ? null : playerId));
   };
 
   const autofill = () => {
@@ -171,7 +204,7 @@ export const MyTeamPage = () => {
     setError("");
     setSaving(true);
     try {
-      await submitLineup(formation, starterIds, benchIds, selectedMatchdayNumber);
+      await submitLineup(formation, starterIds, benchIds, selectedMatchdayNumber, captainPlayerId);
     } catch (err) {
       setError(err instanceof Error ? err.message : "No se pudo guardar la alineacion.");
     } finally {
@@ -182,6 +215,11 @@ export const MyTeamPage = () => {
   if (squad.length === 0) {
     return <EmptyState title="Tu plantilla esta vacia" description="Compra jugadores en el mercado para construir tu once." />;
   }
+
+  // For read-only view, use lineup snapshot players; for editable use current squad
+  const boardPlayers = !isEditable && lineupPlayers ? lineupPlayers : squad;
+  const boardStarterIds = !isEditable && activeLineup ? activeLineup.players.filter((p) => p.isStarter).map((p) => p.playerId) : starterIds;
+  const boardCaptain = !isEditable && activeLineup ? activeLineup.captainPlayerId : captainPlayerId;
 
   return (
     <div className="space-y-5">
@@ -242,15 +280,22 @@ export const MyTeamPage = () => {
         </div>
       ) : null}
 
+      {isEditable && captainPlayerId && (
+        <div className="flex items-center gap-2 rounded-lg border border-amber-400/30 bg-amber-400/10 p-3 text-sm text-amber-200">
+          <Crown className="h-4 w-4 text-amber-400" />
+          <span>Capitán: <strong>{starters.find((p) => p.id === captainPlayerId)?.name ?? "—"}</strong> · sus puntos se multiplican por ×2</span>
+        </div>
+      )}
+
       <div className="grid gap-5 xl:grid-cols-[1.1fr_.9fr]">
         <Card className="overflow-hidden">
           <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
             <div>
               <h2 className="text-base font-black text-white">Once titular · J{selectedMatchdayNumber}</h2>
-              <p className="text-sm font-black text-[#21d17f]">{selectedSquadPoints} puntos de plantilla</p>
+              <p className="text-sm font-black text-[#21d17f]">{squadPointsFor(selectedMatchdayNumber)} puntos</p>
             </div>
             <div className="flex flex-wrap gap-2">
-              {formations.map((item) => (
+              {isEditable && formations.map((item) => (
                 <button
                   key={item}
                   className={`rounded-lg px-3 py-2 text-sm font-black transition ${
@@ -264,31 +309,35 @@ export const MyTeamPage = () => {
               ))}
             </div>
           </div>
-          {starters.length > 0 ? (
+          {boardStarterIds.length > 0 ? (
             <FormationBoard
-              formation={formation}
-              players={squad}
-              starterIds={starterIds}
-              onPlayerClick={moveToBench}
+              formation={isEditable ? formation : (activeLineup?.formation ?? formation)}
+              players={boardPlayers}
+              starterIds={boardStarterIds}
+              onPlayerClick={isEditable ? moveToBench : undefined}
               onPlayerDetail={setSelectedPlayer}
               matchdayNumber={selectedMatchdayNumber}
               readOnly={!isEditable}
+              captainPlayerId={boardCaptain}
+              onCaptainChange={isEditable ? toggleCaptain : undefined}
             />
           ) : (
             <EmptyState title="No hay once guardado" description="No existe alineacion para esta jornada." />
           )}
-          <div className="mt-3 flex flex-wrap gap-2">
-            {validation.valid ? (
-              <Badge className="bg-[#21d17f]/20 text-[#a9ffd4] ring-[#21d17f]/35">Alineacion valida</Badge>
-            ) : (
-              validation.errors.map((item) => (
-                <Badge key={item} className="bg-[#ff3f55]/20 text-[#ffc0c8] ring-[#ff3f55]/35">
-                  {item}
-                </Badge>
-              ))
-            )}
-            {activeLineup ? <Badge className="bg-[#62d7ff]/20 text-[#c5f2ff] ring-[#62d7ff]/35">Guardada</Badge> : null}
-          </div>
+          {isEditable && (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {validation.valid ? (
+                <Badge className="bg-[#21d17f]/20 text-[#a9ffd4] ring-[#21d17f]/35">Alineacion valida</Badge>
+              ) : (
+                validation.errors.map((item) => (
+                  <Badge key={item} className="bg-[#ff3f55]/20 text-[#ffc0c8] ring-[#ff3f55]/35">
+                    {item}
+                  </Badge>
+                ))
+              )}
+              {activeLineup ? <Badge className="bg-[#62d7ff]/20 text-[#c5f2ff] ring-[#62d7ff]/35">Guardada</Badge> : null}
+            </div>
+          )}
           {error ? <div className="mt-3 rounded-lg border border-[#ff3f55]/30 bg-[#ff3f55]/15 p-3 text-sm text-rose-100">{error}</div> : null}
         </Card>
 
@@ -296,44 +345,54 @@ export const MyTeamPage = () => {
           <Card className="overflow-hidden">
             <h2 className="mb-3 text-base font-black text-white">Banquillo</h2>
             <div className="space-y-2">
-              {bench.map((player) => (
-                <div key={player.id} className="grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-lg bg-[#202a43]/80 p-3 sm:flex">
-                  <PlayerAvatar player={player} />
-                  <div className="min-w-0 flex-1">
-                    <div className="truncate text-sm font-black text-white">{player.name}</div>
-                    <div className="truncate text-xs font-semibold text-slate-300">{player.teamName}</div>
-                    <div className="mt-1 text-xs font-black text-[#f5bd43]">{formatMoney(player.currentPrice)}</div>
-                  </div>
-                  <div className="text-right">
-                    <Badge className={positionTone[player.position]}>{player.position}</Badge>
-                    <div className="mt-1 text-sm font-black text-[#21d17f]">{playerMatchdayPoints(player, selectedMatchdayNumber)} pts</div>
-                    {isUnavailableForMatchday(player, selectedMatchdayNumber) ? (
-                      <div className="mt-1 text-[11px] font-bold text-rose-200">{availabilityText(player, selectedMatchdayNumber)}</div>
-                    ) : null}
-                  </div>
-                  <div className="col-span-3 flex flex-wrap justify-end gap-2 sm:col-span-1">
-                    <button className="rounded-lg p-2 text-slate-200 hover:bg-white/10 hover:text-white" onClick={() => setSelectedPlayer(player)} aria-label="Ver detalle">
-                      <Eye className="h-4 w-4" />
-                    </button>
-                    {isEditable ? (
-                      <>
-                      <Button variant="secondary" className="px-3" icon={<UserRoundPlus className="h-4 w-4" />} onClick={() => moveToStarter(player.id)}>
-                        Titular
-                      </Button>
-                      <button
-                        className="rounded-lg p-2 text-rose-200 hover:bg-rose-500/10"
-                        onClick={() => {
-                          if (window.confirm(`Vender rapido a ${player.name} por la mitad de su precio de mercado?`)) void sellPlayer(player.id);
-                        }}
-                        aria-label="Vender"
-                      >
-                        <Trash2 className="h-4 w-4" />
+              {bench.map((player) => {
+                const isListed = leaguePlayers.find((lp) => lp.playerId === player.id)?.listedByUserId === userId;
+                return (
+                  <div key={player.id} className="grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-lg bg-[#202a43]/80 p-3 sm:flex">
+                    <PlayerAvatar player={player} />
+                    <div className="min-w-0 flex-1">
+                      <div className="truncate text-sm font-black text-white">{player.name}</div>
+                      <div className="truncate text-xs font-semibold text-slate-300">{player.teamName}</div>
+                      <div className="mt-1 text-xs font-black text-[#f5bd43]">{formatMoney(player.currentPrice)}</div>
+                      {isListed && (
+                        <div className="mt-1 flex items-center gap-1 text-[11px] font-bold text-amber-300">
+                          <ShoppingBag className="h-3 w-3" /> En venta (sigue en tu plantilla)
+                        </div>
+                      )}
+                    </div>
+                    <div className="text-right">
+                      <Badge className={positionTone[player.position]}>{player.position}</Badge>
+                      <div className="mt-1 text-sm font-black text-[#21d17f]">{playerMatchdayPoints(player, selectedMatchdayNumber)} pts</div>
+                      {isUnavailableForMatchday(player, selectedMatchdayNumber) ? (
+                        <div className="mt-1 text-[11px] font-bold text-rose-200">{availabilityText(player, selectedMatchdayNumber)}</div>
+                      ) : null}
+                    </div>
+                    <div className="col-span-3 flex flex-wrap justify-end gap-2 sm:col-span-1">
+                      <button className="rounded-lg p-2 text-slate-200 hover:bg-white/10 hover:text-white" onClick={() => setSelectedPlayer(player)} aria-label="Ver detalle">
+                        <Eye className="h-4 w-4" />
                       </button>
-                      </>
-                    ) : null}
+                      {isEditable ? (
+                        <>
+                          <Button variant="secondary" className="px-3" icon={<UserRoundPlus className="h-4 w-4" />} onClick={() => moveToStarter(player.id)}>
+                            Titular
+                          </Button>
+                          {!isListed && (
+                            <button
+                              className="rounded-lg p-2 text-rose-200 hover:bg-rose-500/10"
+                              onClick={() => {
+                                if (window.confirm(`Vender rapido a ${player.name} por la mitad de su precio de mercado?`)) void sellPlayer(player.id);
+                              }}
+                              aria-label="Vender"
+                            >
+                              <Trash2 className="h-4 w-4" />
+                            </button>
+                          )}
+                        </>
+                      ) : null}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </Card>
 
@@ -342,20 +401,30 @@ export const MyTeamPage = () => {
             <div className="space-y-2">
               {squad
                 .sort((a, b) => playerMatchdayPoints(b, selectedMatchdayNumber) - playerMatchdayPoints(a, selectedMatchdayNumber))
-                .map((player) => (
-                  <button
-                    key={player.id}
-                    className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-3 rounded-lg bg-[#202a43]/80 p-3 text-left hover:bg-[#26314a]"
-                    onClick={() => setSelectedPlayer(player)}
-                  >
-                    <PlayerAvatar player={player} size="sm" />
-                    <div className="min-w-0">
-                      <div className="truncate text-sm font-black text-white">{player.name}</div>
-                      <div className="truncate text-xs font-semibold text-slate-300">{player.teamName}</div>
-                    </div>
-                    <div className="text-right text-lg font-black text-[#21d17f]">{playerMatchdayPoints(player, selectedMatchdayNumber)}</div>
-                  </button>
-                ))}
+                .map((player) => {
+                  const pts = playerMatchdayPoints(player, selectedMatchdayNumber);
+                  const isCapt = activeLineup?.captainPlayerId === player.id || (isEditable && captainPlayerId === player.id);
+                  const displayPts = isCapt ? pts * 2 : pts;
+                  return (
+                    <button
+                      key={player.id}
+                      className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-3 rounded-lg bg-[#202a43]/80 p-3 text-left hover:bg-[#26314a]"
+                      onClick={() => setSelectedPlayer(player)}
+                    >
+                      <PlayerAvatar player={player} size="sm" />
+                      <div className="min-w-0">
+                        <div className="truncate text-sm font-black text-white">
+                          {player.name}
+                          {isCapt && <Crown className="ml-1 inline h-3.5 w-3.5 text-amber-400" />}
+                        </div>
+                        <div className="truncate text-xs font-semibold text-slate-300">{player.teamName}</div>
+                      </div>
+                      <div className={`text-right text-lg font-black ${displayPts > 0 ? "text-[#21d17f]" : displayPts < 0 ? "text-rose-400" : "text-amber-400"}`}>
+                        {displayPts}
+                      </div>
+                    </button>
+                  );
+                })}
             </div>
           </Card>
         </div>

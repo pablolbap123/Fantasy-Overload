@@ -1,12 +1,14 @@
-import { ArrowRightLeft, CalendarDays, Euro, TrendingUp, Trophy } from "lucide-react";
+import { ArrowLeft, ArrowRightLeft, CalendarDays, Euro, TrendingUp, Trophy, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
 import { EmptyState } from "../components/ui/EmptyState";
+import { FormationBoard } from "../components/fantasy/FormationBoard";
 import { useFantasy } from "../store/fantasyStore";
 import type { LeagueMember, Matchday } from "../types";
 import { formatMoney } from "../utils/formatters";
+import { playerMatchdayPoints } from "../utils/playerAvailability";
 
 const avatarLabel = (name: string) => name.slice(0, 2).toUpperCase();
 const scoreFrom = (member: LeagueMember, matchdayNumber: number) => Number(member.pointsByMatchday[matchdayNumber] ?? 0);
@@ -22,11 +24,12 @@ const joinedFromMatchday = (member: LeagueMember, matchdays: Matchday[], fallbac
 type RankingMode = "total" | "matchday";
 
 export const StandingsPage = () => {
-  const { members, currentLeague, matchdays } = useFantasy();
+  const { members, currentLeague, matchdays, lineups, players } = useFantasy();
   const [mode, setMode] = useState<RankingMode>("total");
   const [selectedMatchday, setSelectedMatchday] = useState(currentLeague?.currentMatchday ?? 1);
   const [leftUserId, setLeftUserId] = useState(members[0]?.userId ?? "");
   const [rightUserId, setRightUserId] = useState(members[1]?.userId ?? members[0]?.userId ?? "");
+  const [profileUserId, setProfileUserId] = useState<string | null>(null);
 
   const currentMatchdayNumber = currentLeague?.currentMatchday ?? matchdays.at(-1)?.number ?? 1;
   const visibleMatchdays = useMemo(() => {
@@ -99,8 +102,119 @@ export const StandingsPage = () => {
       .join(" ");
   };
 
+  // Profile / rival lineup view
+  const profileMember = profileUserId ? members.find((m) => m.userId === profileUserId) : null;
+  const profileLineupNumbers = useMemo(() => {
+    if (!profileUserId) return [];
+    return lineups
+      .filter((l) => l.userId === profileUserId)
+      .map((l) => matchdays.find((m) => m.id === l.matchdayId)?.number)
+      .filter(Boolean) as number[];
+  }, [lineups, matchdays, profileUserId]);
+  const [profileMatchdayNumber, setProfileMatchdayNumber] = useState<number>(currentMatchdayNumber);
+
+  useEffect(() => {
+    if (profileLineupNumbers.length > 0 && !profileLineupNumbers.includes(profileMatchdayNumber)) {
+      setProfileMatchdayNumber(profileLineupNumbers.at(-1) ?? currentMatchdayNumber);
+    }
+  }, [profileLineupNumbers, profileMatchdayNumber, currentMatchdayNumber]);
+
+  const profileMatchday = matchdays.find((m) => m.number === profileMatchdayNumber);
+  const profileLineup = profileMatchday ? lineups.find((l) => l.userId === profileUserId && l.matchdayId === profileMatchday.id) : undefined;
+  const profileStarterIds = profileLineup?.players.filter((p) => p.isStarter).map((p) => p.playerId) ?? [];
+  const profilePlayers = useMemo(() => {
+    if (!profileLineup) return [];
+    return profileLineup.players.map((lp) => {
+      return players.find((p) => p.id === lp.playerId) ?? ({
+        id: lp.playerId,
+        name: "Jugador",
+        position: lp.position,
+        teamName: "-",
+        currentPrice: 0,
+        totalPoints: 0,
+        status: "active",
+        pointsByMatchday: {},
+      } as any);
+    });
+  }, [profileLineup, players]);
+
   if (members.length === 0) {
     return <EmptyState title="Todavia no hay clasificacion" description="Cuando haya miembros y puntos, aparecera el ranking de la liga." />;
+  }
+
+  // Profile detail view
+  if (profileMember) {
+    return (
+      <div className="space-y-5">
+        <div className="flex items-center gap-3">
+          <button
+            className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.05] px-3 py-2 text-sm font-bold text-white hover:bg-white/10"
+            onClick={() => setProfileUserId(null)}
+          >
+            <ArrowLeft className="h-4 w-4" /> Clasificación
+          </button>
+          <h1 className="text-2xl font-black text-white">{profileMember.username}</h1>
+        </div>
+
+        <Card>
+          <div className="flex items-center gap-4">
+            <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border-2 border-white bg-[#202a43] text-xl font-black text-white">
+              {profileMember.avatarUrl ? <img src={profileMember.avatarUrl} alt={profileMember.username} className="h-full w-full object-cover" /> : avatarLabel(profileMember.username)}
+            </div>
+            <div>
+              <div className="text-xl font-black text-white">{profileMember.username}</div>
+              <div className="mt-1 flex flex-wrap gap-2 text-sm font-bold text-slate-300">
+                <span>{profileMember.totalPoints} PFSY</span>
+                <span>·</span>
+                <span>{formatMoney(profileMember.squadValue)} valor</span>
+                <span>·</span>
+                <span>{formatMoney(profileMember.budget)} caja</span>
+              </div>
+            </div>
+          </div>
+        </Card>
+
+        <Card className="overflow-hidden">
+          <div className="mb-3 flex items-center justify-between gap-3">
+            <h2 className="text-base font-black text-white">Once · J{profileMatchdayNumber}</h2>
+            <div className="text-sm font-bold text-[#21d17f]">
+              {scoreFrom(profileMember, profileMatchdayNumber)} pts
+            </div>
+          </div>
+
+          {profileLineupNumbers.length > 0 ? (
+            <div className="mb-3 flex gap-2 overflow-x-auto pb-1">
+              {profileLineupNumbers.sort((a, b) => a - b).map((number) => (
+                <button
+                  key={number}
+                  className={`min-w-14 rounded-lg border px-3 py-2 text-center text-sm font-black transition ${
+                    profileMatchdayNumber === number
+                      ? "border-[#62d7ff]/60 bg-[#62d7ff]/15 text-white"
+                      : "border-white/10 bg-white/[0.05] text-slate-300 hover:bg-white/10"
+                  }`}
+                  onClick={() => setProfileMatchdayNumber(number)}
+                >
+                  J{number}
+                </button>
+              ))}
+            </div>
+          ) : null}
+
+          {profileLineup && profileStarterIds.length > 0 ? (
+            <FormationBoard
+              formation={profileLineup.formation}
+              players={profilePlayers}
+              starterIds={profileStarterIds}
+              matchdayNumber={profileMatchdayNumber}
+              readOnly
+              captainPlayerId={profileLineup.captainPlayerId}
+            />
+          ) : (
+            <EmptyState title="Sin alineación guardada" description="Este manager no ha subido once para esta jornada." />
+          )}
+        </Card>
+      </div>
+    );
   }
 
   return (
@@ -167,7 +281,16 @@ export const StandingsPage = () => {
                   {member.avatarUrl ? <img src={member.avatarUrl} alt={member.username} className="h-full w-full object-cover" /> : avatarLabel(member.username)}
                 </div>
                 <div className="min-w-0">
-                  <div className="truncate text-xl font-black text-white sm:text-4xl">{member.username}</div>
+                  <div className="flex items-center gap-2">
+                    <div className="truncate text-xl font-black text-white sm:text-4xl">{member.username}</div>
+                    <button
+                      className="shrink-0 rounded-lg border border-white/10 bg-white/[0.07] p-1.5 text-slate-300 hover:bg-white/15 hover:text-white"
+                      onClick={() => setProfileUserId(member.userId)}
+                      title="Ver equipo"
+                    >
+                      <Users className="h-4 w-4" />
+                    </button>
+                  </div>
                   <div className="mt-2 flex flex-wrap items-center gap-2 text-xs font-black text-slate-100 sm:text-sm">
                     <span className="rounded-md bg-white/10 px-2 py-1">Desde J{row.joinedFrom}</span>
                     <span className="rounded-md bg-white/10 px-2 py-1">Media {row.average.toFixed(1)}</span>

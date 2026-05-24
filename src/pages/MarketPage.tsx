@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { BellRing, Clock3, Lock, RefreshCw } from "lucide-react";
-=======
 import { BellRing, Clock3, Lock, RefreshCw, Trash2 } from "lucide-react";
->>>>>>> 6bc6cc2 (Version 2.2)
 import { useEffect, useMemo, useState } from "react";
 import type { Player } from "../types";
 import { MarketFilters, marketFilterOptions } from "../components/market/MarketFilters";
@@ -31,10 +27,7 @@ export const MarketPage = () => {
     offers,
     acceptOffer,
     rejectOffer,
-<<<<<<< HEAD
-=======
     cancelOffer,
->>>>>>> 6bc6cc2 (Version 2.2)
   } = useFantasy();
   const [position, setPosition] = useState<(typeof marketFilterOptions.positions)[number]>("todos");
   const [status, setStatus] = useState<(typeof marketFilterOptions.statuses)[number]>("todos");
@@ -43,17 +36,18 @@ export const MarketPage = () => {
   const [selectedPlayer, setSelectedPlayer] = useState<Player | undefined>();
   const [error, setError] = useState("");
   const [maxPrice, setMaxPrice] = useState(80_000_000);
-<<<<<<< HEAD
-=======
   const [hideBagPlayers, setHideBagPlayers] = useState(true);
->>>>>>> 6bc6cc2 (Version 2.2)
   const [now, setNow] = useState(Date.now());
-  const [dismissedOutbidIds, setDismissedOutbidIds] = useState<string[]>([]);
+  const [dismissedOutbidIds, setDismissedOutbidIds] = useState<string[]>(() => {
+    try {
+      return JSON.parse(localStorage.getItem("fantasy_dismissed_outbids") ?? "[]") as string[];
+    } catch {
+      return [];
+    }
+  });
 
   const me = members.find((member) => member.userId === userId);
   const ownerNameByUser = new Map(members.map((member) => [member.userId, member.username]));
-<<<<<<< HEAD
-=======
   const bagTeamIds = useMemo(
     () =>
       new Set(
@@ -63,7 +57,6 @@ export const MarketPage = () => {
       ),
     [teams],
   );
->>>>>>> 6bc6cc2 (Version 2.2)
 
   const runAction = async (action: () => Promise<void>) => {
     setError("");
@@ -113,10 +106,7 @@ export const MarketPage = () => {
           (position === "todos" || player.position === position) &&
           (status === "todos" || player.status === status) &&
           (teamId === "todos" || player.teamId === teamId) &&
-<<<<<<< HEAD
-=======
           (!hideBagPlayers || !bagTeamIds.has(player.teamId)) &&
->>>>>>> 6bc6cc2 (Version 2.2)
           currentPrice <= maxPrice
         );
       })
@@ -134,11 +124,7 @@ export const MarketPage = () => {
       daily: mappedRows.filter((row) => !row!.leaguePlayer.listedByUserId).slice(0, DAILY_MARKET_SIZE),
       listed: mappedRows.filter((row) => Boolean(row!.leaguePlayer.listedByUserId)),
     };
-<<<<<<< HEAD
-  }, [leaguePlayers, maxPrice, now, offers, players, position, sortBy, status, teamId]);
-=======
   }, [bagTeamIds, hideBagPlayers, leaguePlayers, maxPrice, now, offers, players, position, sortBy, status, teamId]);
->>>>>>> 6bc6cc2 (Version 2.2)
 
   const activeMarketCount = rows.daily.length;
   const firstExpiration = rows.daily[0]?.leaguePlayer.marketExpiresAt;
@@ -209,20 +195,14 @@ export const MarketPage = () => {
           teamId={teamId}
           sortBy={sortBy}
           maxPrice={maxPrice}
-<<<<<<< HEAD
-=======
           hideBagPlayers={hideBagPlayers}
->>>>>>> 6bc6cc2 (Version 2.2)
           teams={teams}
           onPositionChange={setPosition}
           onStatusChange={setStatus}
           onTeamChange={setTeamId}
           onSortChange={setSortBy}
           onMaxPriceChange={setMaxPrice}
-<<<<<<< HEAD
-=======
           onHideBagPlayersChange={setHideBagPlayers}
->>>>>>> 6bc6cc2 (Version 2.2)
         />
         {error ? <div className="mt-3 rounded-xl border border-rose-300/20 bg-rose-500/10 p-3 text-sm text-rose-100">{error}</div> : null}
       </div>
@@ -239,7 +219,11 @@ export const MarketPage = () => {
             </div>
             <button
               className="rounded-lg border border-[#f5bd43]/30 px-3 py-2 text-sm font-black text-[#ffe2a2]"
-              onClick={() => setDismissedOutbidIds((current) => [...current, ...outbidOffers.map((offer) => offer.id)])}
+              onClick={() => {
+                const newIds = [...dismissedOutbidIds, ...outbidOffers.map((offer) => offer.id)];
+                setDismissedOutbidIds(newIds);
+                try { localStorage.setItem("fantasy_dismissed_outbids", JSON.stringify(newIds)); } catch { /* noop */ }
+              }}
             >
               Entendido
             </button>
@@ -332,9 +316,6 @@ export const MarketPage = () => {
                       {exchangePlayer ? ` · intercambio: ${exchangePlayer.name}` : ""}
                     </div>
                   </div>
-<<<<<<< HEAD
-                  <div className="text-sm font-black text-emerald-200">{formatMoney(offer.amount)}</div>
-=======
                   <div className="flex shrink-0 items-center gap-2">
                     <div className="text-sm font-black text-emerald-200">{formatMoney(offer.amount)}</div>
                     {offer.status === "pending" ? (
@@ -347,7 +328,6 @@ export const MarketPage = () => {
                       </button>
                     ) : null}
                   </div>
->>>>>>> 6bc6cc2 (Version 2.2)
                 </div>
               );
             })}
