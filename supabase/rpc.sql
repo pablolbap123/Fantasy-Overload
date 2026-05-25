@@ -868,12 +868,22 @@ begin
     raise exception 'not_player_owner';
   end if;
 
+  if exists (
+    select 1
+    from public.players p
+    join public.teams t on t.id = p.team_id
+    where p.id = p_player_id
+      and (upper(t.short_name) = 'BLSA' or lower(t.name) like '%bolsa%')
+  ) then
+    raise exception 'bag_player_not_marketable';
+  end if;
+
   update public.league_players
   set owner_user_id = null,
       listed_by_user_id = auth.uid(),
       market_status = 'market',
       market_listed_at = now(),
-      market_expires_at = now() + interval '24 hours'
+      market_expires_at = now() + interval '5 hours'
   where id = v_lp.id;
 
   delete from public.squads
@@ -889,7 +899,7 @@ begin
     p_league_id,
     'market_listing',
     'Jugador puesto en mercado: ' || coalesce(v_player_name, 'jugador'),
-    jsonb_build_object('user_id', auth.uid(), 'player_id', p_player_id, 'expires_at', now() + interval '24 hours')
+    jsonb_build_object('user_id', auth.uid(), 'player_id', p_player_id, 'expires_at', now() + interval '5 hours', 'duration_hours', 5)
   );
 end;
 $$;
@@ -1048,6 +1058,16 @@ begin
     raise exception 'player_not_in_daily_market';
   end if;
 
+  if exists (
+    select 1
+    from public.players p
+    join public.teams t on t.id = p.team_id
+    where p.id = p_player_id
+      and (upper(t.short_name) = 'BLSA' or lower(t.name) like '%bolsa%')
+  ) then
+    raise exception 'bag_player_not_marketable';
+  end if;
+
   if v_lp.listed_by_user_id = auth.uid() then
     raise exception 'cannot_bid_own_listing';
   end if;
@@ -1116,6 +1136,46 @@ begin
       raise exception 'not_member';
     end if;
   end if;
+
+  insert into public.squads (league_id, user_id, player_id, acquired_price)
+  select lp.league_id, lp.listed_by_user_id, lp.player_id, lp.price
+  from public.league_players lp
+  join public.players p on p.id = lp.player_id
+  join public.teams t on t.id = p.team_id
+  where lp.league_id = p_league_id
+    and lp.listed_by_user_id is not null
+    and lp.market_status = 'market'
+    and (upper(t.short_name) = 'BLSA' or lower(t.name) like '%bolsa%')
+  on conflict (league_id, user_id, player_id) do update
+  set acquired_price = excluded.acquired_price,
+      acquired_at = now();
+
+  update public.league_players lp
+  set owner_user_id = lp.listed_by_user_id,
+      listed_by_user_id = null,
+      market_status = 'owned',
+      market_listed_at = null,
+      market_expires_at = null
+  from public.players p
+  join public.teams t on t.id = p.team_id
+  where p.id = lp.player_id
+    and lp.league_id = p_league_id
+    and lp.listed_by_user_id is not null
+    and lp.market_status = 'market'
+    and (upper(t.short_name) = 'BLSA' or lower(t.name) like '%bolsa%');
+
+  update public.league_players lp
+  set market_status = 'locked',
+      market_listed_at = null,
+      market_expires_at = null
+  from public.players p
+  join public.teams t on t.id = p.team_id
+  where p.id = lp.player_id
+    and lp.league_id = p_league_id
+    and lp.owner_user_id is null
+    and lp.listed_by_user_id is null
+    and lp.market_status = 'market'
+    and (upper(t.short_name) = 'BLSA' or lower(t.name) like '%bolsa%');
 
   for v_lp in
     select *
@@ -1225,14 +1285,20 @@ begin
 
   with ranked_active as (
     select
-      id,
-      row_number() over (order by market_listed_at asc nulls last, id) as position
-    from public.league_players
-    where league_id = p_league_id
-      and owner_user_id is null
-      and listed_by_user_id is null
-      and market_status = 'market'
-      and market_expires_at > now()
+      lp.id,
+      (upper(t.short_name) = 'BLSA' or lower(t.name) like '%bolsa%') as is_bag_player,
+      row_number() over (
+        partition by case when upper(t.short_name) = 'BLSA' or lower(t.name) like '%bolsa%' then 1 else 0 end
+        order by lp.market_listed_at asc nulls last, lp.id
+      ) as position
+    from public.league_players lp
+    join public.players p on p.id = lp.player_id
+    join public.teams t on t.id = p.team_id
+    where lp.league_id = p_league_id
+      and lp.owner_user_id is null
+      and lp.listed_by_user_id is null
+      and lp.market_status = 'market'
+      and lp.market_expires_at > now()
   )
   update public.league_players lp
   set market_status = 'locked',
@@ -1240,44 +1306,56 @@ begin
       market_expires_at = null
   from ranked_active ranked
   where lp.id = ranked.id
-    and ranked.position > 10;
+    and (ranked.is_bag_player or ranked.position > 15);
 
-  update public.league_players
-  set market_expires_at = greatest(market_expires_at, now() + interval '24 hours')
-  where league_id = p_league_id
-    and owner_user_id is null
-    and listed_by_user_id is null
-    and market_status = 'market'
-    and market_expires_at > now();
+  update public.league_players lp
+  set market_expires_at = least(lp.market_expires_at, now() + interval '5 hours')
+  from public.players p
+  join public.teams t on t.id = p.team_id
+  where p.id = lp.player_id
+    and lp.league_id = p_league_id
+    and lp.owner_user_id is null
+    and lp.market_status = 'market'
+    and lp.market_expires_at > now()
+    and upper(t.short_name) <> 'BLSA'
+    and lower(t.name) not like '%bolsa%';
 
   select count(*) into v_active_count
-  from public.league_players
-  where league_id = p_league_id
-    and owner_user_id is null
-    and listed_by_user_id is null
-    and market_status = 'market'
-    and market_expires_at > now();
+  from public.league_players lp
+  join public.players p on p.id = lp.player_id
+  join public.teams t on t.id = p.team_id
+  where lp.league_id = p_league_id
+    and lp.owner_user_id is null
+    and lp.listed_by_user_id is null
+    and lp.market_status = 'market'
+    and lp.market_expires_at > now()
+    and upper(t.short_name) <> 'BLSA'
+    and lower(t.name) not like '%bolsa%';
 
-  if v_active_count < 10 then
+  if v_active_count < 15 then
     with next_players as (
-      select id
-      from public.league_players
-      where league_id = p_league_id
-        and owner_user_id is null
-        and listed_by_user_id is null
-        and market_status = 'locked'
+      select lp.id
+      from public.league_players lp
+      join public.players p on p.id = lp.player_id
+      join public.teams t on t.id = p.team_id
+      where lp.league_id = p_league_id
+        and lp.owner_user_id is null
+        and lp.listed_by_user_id is null
+        and lp.market_status = 'locked'
+        and upper(t.short_name) <> 'BLSA'
+        and lower(t.name) not like '%bolsa%'
       order by random()
-      limit greatest(0, 10 - v_active_count)
+      limit greatest(0, 15 - v_active_count)
     )
     update public.league_players lp
     set market_status = 'market',
         listed_by_user_id = null,
         market_listed_at = now(),
-        market_expires_at = now() + interval '24 hours'
+        market_expires_at = now() + interval '5 hours'
     where lp.id in (select id from next_players);
 
     insert into public.activity_feed (league_id, type, message, metadata_json)
-    values (p_league_id, 'market', 'Mercado rotativo actualizado con hasta 10 jugadores.', jsonb_build_object('size', 10, 'duration_hours', 24));
+    values (p_league_id, 'market', 'Mercado rotativo actualizado con hasta 15 jugadores.', jsonb_build_object('size', 15, 'duration_hours', 5));
   end if;
 end;
 $$;

@@ -58,8 +58,9 @@ export const PlayerCard = ({
   onDetail,
 }: PlayerCardProps) => (
   <motion.div layout initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
-    <Card className="h-full">
-      <div className="flex items-start gap-3">
+    <Card className="group relative h-full overflow-hidden border-white/10 bg-[#121d29]/95 transition duration-200 hover:-translate-y-0.5 hover:border-[#62d7ff]/35 hover:shadow-2xl hover:shadow-[#4bb3fd]/10">
+      <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#23c979,#62d7ff,#f5bd43,#ff3f55)] opacity-90" />
+      <div className="relative flex items-start gap-3">
         <PlayerAvatar player={player} />
         <div className="min-w-0 flex-1">
           <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-2">
@@ -67,9 +68,9 @@ export const PlayerCard = ({
               <h3 className="truncate text-sm font-black text-white">{player.name}</h3>
               <p className="truncate text-xs text-slate-400">{player.teamName}</p>
             </div>
-            <div className="shrink-0 rounded-lg bg-white/[0.06] px-2 py-1 text-center ring-1 ring-white/10">
-              <div className="text-lg font-black text-white">{player.totalPoints}</div>
-              <div className="text-[10px] uppercase text-slate-500">pts</div>
+            <div className="shrink-0 rounded-lg bg-[#edf7ff] px-2 py-1 text-center shadow-lg shadow-black/15 ring-1 ring-white/20">
+              <div className="text-lg font-black text-[#111827]">{player.totalPoints}</div>
+              <div className="text-[10px] font-black uppercase text-[#556579]">pts</div>
             </div>
           </div>
           <div className="mt-3 flex flex-wrap items-center gap-1.5">
@@ -113,7 +114,7 @@ export const PlayerCard = ({
                 Puja personalizada {bidMinimum ? `(min. ${formatMoney(bidMinimum)})` : ""}
               </span>
               <input
-                className="field min-h-10 text-sm font-black"
+                className="field min-h-10 border-[#f5bd43]/25 bg-[#17212d] text-sm font-black focus:border-[#f5bd43]/70 focus:ring-[#f5bd43]/20"
                 inputMode="numeric"
                 min={bidMinimum ?? price ?? player.currentPrice}
                 placeholder={formatMoney(bidMinimum ?? nextBidAmount ?? price ?? player.currentPrice)}

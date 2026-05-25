@@ -37,8 +37,13 @@ const stableHash = (value: string) => {
 };
 
 const marketWindowSeed = (date: Date) => {
-  return date.toISOString().slice(0, 10);
+  return String(Math.floor(date.getTime() / MARKET_DURATION_MS));
 };
+
+export const isBagPlayer = (player?: Player | null) =>
+  Boolean(player && (player.teamName.toLowerCase().includes("bolsa") || player.teamId.toLowerCase() === "team-blsa"));
+
+const isMarketEligiblePlayer = (player?: Player | null) => Boolean(player && !isBagPlayer(player));
 
 export const openDailyMarketCycle = (
   leaguePlayers: LeaguePlayer[],
@@ -52,15 +57,10 @@ export const openDailyMarketCycle = (
   const playerById = new Map(players.map((player) => [player.id, player]));
   const excluded = new Set(excludePlayerIds);
   const available = leaguePlayers
-  .filter((item) => {
-    const player = playerById.get(item.playerId);
-    return (
-      !item.ownerUserId &&
-      !item.listedByUserId &&
-      !excluded.has(item.playerId) &&
-      player?.teamId !== "team-blsa"
-    );
-  })
+    .filter((item) => {
+      const player = playerById.get(item.playerId);
+      return !item.ownerUserId && !item.listedByUserId && !excluded.has(item.playerId) && isMarketEligiblePlayer(player);
+    })
     .sort((a, b) => {
       const aPlayer = playerById.get(a.playerId);
       const bPlayer = playerById.get(b.playerId);
@@ -74,6 +74,14 @@ export const openDailyMarketCycle = (
 
   return leaguePlayers.map((item) => {
     if (item.ownerUserId || item.listedByUserId) return item;
+    if (!isMarketEligiblePlayer(playerById.get(item.playerId))) {
+      return {
+        ...item,
+        marketStatus: "locked" as const,
+        marketListedAt: null,
+        marketExpiresAt: null,
+      };
+    }
     if (activeIds.has(item.playerId)) {
       return {
         ...item,
@@ -92,10 +100,12 @@ export const openDailyMarketCycle = (
 };
 
 export const normalizeDailyMarket = (leaguePlayers: LeaguePlayer[], players: Player[]) => {
+  const playerById = new Map(players.map((player) => [player.id, player]));
   const active = leaguePlayers.filter(
     (item) =>
       !item.ownerUserId &&
       !item.listedByUserId &&
+      isMarketEligiblePlayer(playerById.get(item.playerId)) &&
       item.marketStatus === "market" &&
       item.marketExpiresAt &&
       new Date(item.marketExpiresAt).getTime() > Date.now(),
@@ -279,6 +289,7 @@ export const resolveExpiredDailyMarket = ({ leagueId, leaguePlayers, players, me
     (item) =>
       !item.ownerUserId &&
       !item.listedByUserId &&
+      !isBagPlayer(playerById.get(item.playerId)) &&
       item.marketStatus === "market" &&
       item.marketExpiresAt &&
       new Date(item.marketExpiresAt).getTime() > now,

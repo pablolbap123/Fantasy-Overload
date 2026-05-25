@@ -1,188 +1,203 @@
-import { readFile } from "node:fs/promises";
-import { Client } from "pg";
+import dotenv from "dotenv";
+import path from "node:path";
+import { Client, GatewayIntentBits } from "discord.js";
+import { createClient } from "@supabase/supabase-js";
 
-const loadEnvFile = async (fileName) => {
-  const fileUrl = new URL(`../${fileName}`, import.meta.url);
-  const content = await readFile(fileUrl, "utf8").catch(() => "");
-  for (const line of content.split(/\r?\n/)) {
-    const trimmed = line.trim();
-    if (!trimmed || trimmed.startsWith("#") || !trimmed.includes("=")) continue;
-    const [key, ...valueParts] = trimmed.split("=");
-    if (!key || process.env[key]) continue;
-    process.env[key] = valueParts.join("=").replace(/^["']|["']$/g, "");
-  }
-};
+dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
 
-await loadEnvFile(".env");
-await loadEnvFile(".env.local");
-await loadEnvFile(".env.server.local");
+const SUPABASE_URL = process.env.VITE_SUPABASE_URL;
+const SUPABASE_KEY =
+  process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.VITE_SUPABASE_ANON_KEY;
 
-const databaseUrl = process.env.SUPABASE_DB_URL;
-const discordToken = process.env.DISCORD_BOT_TOKEN;
-const channelId = process.env.DISCORD_CHANNEL_ID;
-const leagueId = process.env.DISCORD_LEAGUE_ID || null;
-const importLimit = Math.max(1, Math.min(100, Number(process.env.DISCORD_IMPORT_LIMIT ?? 50)));
+const RESULTS_CHANNEL_ID = process.env.DISCORD_RESULTS_CHANNEL_ID;
+const SINCE = new Date(process.env.DISCORD_IMPORT_SINCE);
 
-if (!databaseUrl) throw new Error("Falta SUPABASE_DB_URL en el entorno del worker.");
-if (!discordToken) throw new Error("Falta DISCORD_BOT_TOKEN. Crea un bot de Discord y anade su token solo al servidor.");
-if (!channelId) throw new Error("Falta DISCORD_CHANNEL_ID. Usa el id del canal donde se suben los partidos.");
+if (!SUPABASE_URL) throw new Error("Falta VITE_SUPABASE_URL en .env.local");
+if (!SUPABASE_KEY) throw new Error("Falta SUPABASE_SERVICE_ROLE_KEY o VITE_SUPABASE_ANON_KEY");
+if (!RESULTS_CHANNEL_ID) throw new Error("Falta DISCORD_RESULTS_CHANNEL_ID en .env.local");
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const discord = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
+  ],
+});
 
 const normalize = (value) =>
   String(value ?? "")
     .normalize("NFD")
-    .replace(/\p{Diacritic}/gu, "")
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, " ")
     .trim();
 
-const extractPayloads = (content) => {
-  const blocks = [...content.matchAll(/```(?:json)?\s*([\s\S]*?)```/gi)].map((match) => match[1]);
-  const candidates = blocks.length > 0 ? blocks : [content];
-  return candidates
-    .map((candidate) => {
-      try {
-        return JSON.parse(candidate);
-      } catch {
-        return null;
-      }
-    })
-    .filter(Boolean);
+const addStat = (map, playerName, key, amount = 1) => {
+  const cleanName = String(playerName ?? "")
+    .replace(/[📊⚽🧤🟨🟥🔴🔵⚪🟢🟡🟣🟠]/g, "")
+    .replace(/[.:]+$/g, "")
+    .trim();
+
+  if (!cleanName || /^ninguna$/i.test(cleanName)) return;
+
+  const id = normalize(cleanName);
+
+  if (!map.has(id)) {
+    map.set(id, {
+      playerName: cleanName,
+      minutes: 0,
+      goals: 0,
+      assists: 0,
+      keyPasses: 0,
+      shotsOnTarget: 0,
+      boxEntries: 0,
+      goalsConceded: 0,
+      ballsLost: 0,
+      ballsRecovered: 0,
+      clearances: 0,
+      penaltiesScored: 0,
+      penaltiesMissed: 0,
+      penaltiesProvoked: 0,
+      yellowCards: 0,
+      doubleYellowCards: 0,
+      redCards: 0,
+      ownGoals: 0,
+      saves: 0,
+      overloadScore: null,
+      overloadRating: 0,
+    });
+  }
+
+  map.get(id)[key] = Number(map.get(id)[key] ?? 0) + Number(amount);
 };
 
-const fetchMessages = async () => {
-  const response = await fetch(`https://discord.com/api/v10/channels/${channelId}/messages?limit=${importLimit}`, {
-    headers: { Authorization: `Bot ${discordToken}` },
-  });
-  if (!response.ok) throw new Error(`Discord respondio ${response.status}: ${await response.text()}`);
-  return response.json();
-};
+const parseMatch = (text) => {
+  const stats = new Map();
 
-const findMatch = async (client, payload) => {
-  const matchday = Number(payload.matchday ?? payload.jornada ?? payload.round);
-  if (!Number.isFinite(matchday)) throw new Error("El JSON de Discord necesita matchday/jornada.");
-  const { rows } = await client.query(
-    `
-      select
-        m.id,
-        m.home_team_id,
-        m.away_team_id,
-        md.league_id,
-        md.number,
-        ht.name as home_name,
-        ht.short_name as home_short_name,
-        at.name as away_name,
-        at.short_name as away_short_name
-      from public.matches m
-      join public.matchdays md on md.id = m.matchday_id
-      join public.teams ht on ht.id = m.home_team_id
-      join public.teams at on at.id = m.away_team_id
-      where md.number = $1 and ($2::uuid is null or md.league_id = $2::uuid)
-    `,
-    [matchday, leagueId],
-  );
+  const finalMatch =
+    text.match(/RESULTADO FINAL[\s\S]*?\n\s*[🔵🔴⚪⚫🟢🟡🟣🟠]*\s*(.+?)\s+(\d+)\s*-\s*(\d+)\s+(.+?)(?:\n|$)/i) ||
+    text.match(/[🔵🔴⚪⚫🟢🟡🟣🟠]*\s*([A-Za-zÀ-ÿ0-9 .'-]+?)\s+(\d+)\s*-\s*(\d+)\s+[🔵🔴⚪⚫🟢🟡🟣🟠]*\s*([A-Za-zÀ-ÿ0-9 .'-]+)(?:\n|$)/i);
 
-  const home = normalize(payload.homeTeam ?? payload.home ?? payload.local);
-  const away = normalize(payload.awayTeam ?? payload.away ?? payload.visitante);
-  const match = rows.find(
-    (row) =>
-      [row.home_name, row.home_short_name].map(normalize).includes(home) &&
-      [row.away_name, row.away_short_name].map(normalize).includes(away),
-  );
-  if (!match) throw new Error(`No se encontro partido J${matchday}: ${payload.homeTeam ?? payload.home} - ${payload.awayTeam ?? payload.away}.`);
-  return match;
-};
+  if (!finalMatch) return null;
 
-const loadPlayersForMatch = async (client, match) => {
-  const { rows } = await client.query(
-    `
-      select p.id, p.name, p.position, t.name as team_name, t.short_name as team_short_name
-      from public.players p
-      join public.teams t on t.id = p.team_id
-      where p.team_id in ($1::uuid, $2::uuid)
-    `,
-    [match.home_team_id, match.away_team_id],
-  );
-  return rows;
-};
+  const homeTeam = finalMatch[1].trim();
+  const homeScore = Number(finalMatch[2]);
+  const awayScore = Number(finalMatch[3]);
+  const awayTeam = finalMatch[4].trim();
 
-const resolvePlayer = (players, raw) => {
-  const name = normalize(raw.name ?? raw.player ?? raw.jugador);
-  const team = normalize(raw.team ?? raw.equipo ?? "");
-  return players.find((player) => {
-    const sameName = normalize(player.name) === name;
-    const sameTeam = !team || [player.team_name, player.team_short_name].map(normalize).includes(team);
-    return sameName && sameTeam;
-  });
-};
+  const goalSection =
+    text.match(/⚽\s*GOLES[\s\S]*?(?=🟨|🟥|━━━━━━━━|$)/i)?.[0] ?? "";
 
-const statPayloadFor = (player, raw, match, homeScore, awayScore) => {
-  const teamIsHome = player.team_id === match.home_team_id;
-  const goalsConceded = Number(raw.goalsConceded ?? raw.goals_conceded ?? raw.golesRecibidos ?? (teamIsHome ? awayScore : homeScore) ?? 0);
+  for (const match of goalSection.matchAll(/^[^\nA-Za-zÀ-ÿ]*([A-Za-zÀ-ÿ0-9 '\-.]+?)\s*\(/gmu)) {
+    addStat(stats, match[1], "goals", 1);
+  }
+
+  for (const match of text.matchAll(/🧤\s*([A-Za-zÀ-ÿ0-9 '\-.]+)/gu)) {
+    addStat(stats, match[1], "saves", 1);
+  }
+
+  for (const match of text.matchAll(/🟨\s*([A-Za-zÀ-ÿ0-9 '\-.]+)/gu)) {
+    addStat(stats, match[1], "yellowCards", 1);
+  }
+
+  for (const match of text.matchAll(/🟥\s*([A-Za-zÀ-ÿ0-9 '\-.]+)/gu)) {
+    addStat(stats, match[1], "redCards", 1);
+  }
+
+  for (const match of text.matchAll(/\b([A-Za-zÀ-ÿ0-9 '\-.]+?)\s+(?:roba|recupera|intercepta)/giu)) {
+    addStat(stats, match[1], "ballsRecovered", 1);
+  }
+
+  for (const match of text.matchAll(/\b([A-Za-zÀ-ÿ0-9 '\-.]+?)\s+(?:pierde el balón|pierde la pelota|regala el balón)/giu)) {
+    addStat(stats, match[1], "ballsLost", 1);
+  }
+
+  for (const match of text.matchAll(/\b([A-Za-zÀ-ÿ0-9 '\-.]+?)\s+(?:despeja|aleja el peligro|saca el balón)/giu)) {
+    addStat(stats, match[1], "clearances", 1);
+  }
+
+  for (const match of text.matchAll(/\b([A-Za-zÀ-ÿ0-9 '\-.]+?)\s+(?:filtra|centra|asiste|pase perfecto|pase vertical|encuentra hueco|encuentra espacio)/giu)) {
+    addStat(stats, match[1], "keyPasses", 1);
+  }
+
+  for (const match of text.matchAll(/⚽\s*([A-Za-zÀ-ÿ0-9 '\-.]+)[\s\S]{0,80}?(?:disparo|remate)/giu)) {
+    addStat(stats, match[1], "shotsOnTarget", 1);
+  }
+
+  for (const match of text.matchAll(/\b([A-Za-zÀ-ÿ0-9 '\-.]+?)\s+(?:entra al área|llega al área|rompe hacia dentro|aparece en el área)/giu)) {
+    addStat(stats, match[1], "boxEntries", 1);
+  }
+
+  for (const stat of stats.values()) {
+    if (
+      stat.goals ||
+      stat.saves ||
+      stat.keyPasses ||
+      stat.shotsOnTarget ||
+      stat.ballsRecovered ||
+      stat.yellowCards ||
+      stat.redCards
+    ) {
+      stat.minutes = 90;
+    }
+  }
+
   return {
-    playerId: player.id,
-    minutes: Number(raw.minutes ?? raw.minutos ?? 0),
-    goals: Number(raw.goals ?? raw.goles ?? 0),
-    assists: Number(raw.assists ?? raw.asistencias ?? 0),
-    keyPasses: Number(raw.keyPasses ?? raw.asistenciasSinGol ?? raw.chancesCreated ?? 0),
-    yellowCards: Number(raw.yellowCards ?? raw.amarillas ?? 0),
-    redCards: Number(raw.redCards ?? raw.rojas ?? 0),
-    doubleYellowCards: Number(raw.doubleYellowCards ?? raw.dobleAmarilla ?? 0),
-    ownGoals: Number(raw.ownGoals ?? raw.golesPropia ?? 0),
-    penaltiesScored: Number(raw.penaltiesScored ?? raw.penaltisMarcados ?? 0),
-    penaltiesMissed: Number(raw.penaltiesMissed ?? raw.penaltisFallados ?? 0),
-    penaltiesSaved: Number(raw.penaltiesSaved ?? raw.penaltisParados ?? 0),
-    penaltiesProvoked: Number(raw.penaltiesProvoked ?? raw.penaltisProvocados ?? 0),
-    goalsConceded,
-    cleanSheet: Boolean(raw.cleanSheet ?? raw.porteriaCero ?? goalsConceded === 0),
-    overloadScore: Number(raw.overloadScore ?? raw.notaOverload ?? raw.nota ?? 0),
-    saves: Number(raw.saves ?? raw.paradas ?? 0),
-    shotsOnTarget: Number(raw.shotsOnTarget ?? raw.rematesPuerta ?? 0),
-    successfulDribbles: Number(raw.successfulDribbles ?? raw.regatesLogrados ?? 0),
-    boxEntries: Number(raw.boxEntries ?? raw.llegadasArea ?? 0),
-    ballsLost: Number(raw.ballsLost ?? raw.balonesPerdidos ?? 0),
-    ballsRecovered: Number(raw.ballsRecovered ?? raw.balonesRecuperados ?? 0),
-    clearances: Number(raw.clearances ?? raw.despejes ?? 0),
+    homeTeam,
+    awayTeam,
+    homeScore,
+    awayScore,
+    playerStats: [...stats.values()],
   };
 };
 
-const client = new Client({ connectionString: databaseUrl, ssl: { rejectUnauthorized: false } });
-await client.connect();
-try {
-  const messages = await fetchMessages();
-  const payloads = messages.flatMap((message) => extractPayloads(message.content)).reverse();
-  let imported = 0;
+discord.once("clientReady", async () => {
+  console.log("Bot conectado");
 
-  for (const payload of payloads) {
-    const playersPayload = payload.players ?? payload.jugadores ?? payload.stats;
-    if (!Array.isArray(playersPayload)) continue;
+  const channel = await discord.channels.fetch(RESULTS_CHANNEL_ID);
 
-    const match = await findMatch(client, payload);
-    const players = await loadPlayersForMatch(client, match);
-    const homeScore = Number(payload.homeScore ?? payload.home_score ?? payload.localGoals ?? payload.golesLocal ?? 0);
-    const awayScore = Number(payload.awayScore ?? payload.away_score ?? payload.awayGoals ?? payload.golesVisitante ?? 0);
-    const stats = playersPayload
-      .map((raw) => {
-        const player = resolvePlayer(players, raw);
-        if (!player) {
-          console.warn(`[discord-sync] Jugador no encontrado: ${raw.name ?? raw.player ?? raw.jugador}`);
-          return null;
-        }
-        return statPayloadFor(player, raw, match, homeScore, awayScore);
-      })
-      .filter(Boolean);
+  const messages = await channel.messages.fetch({ limit: 100 });
 
-    await client.query("select set_config('request.jwt.claim.role', 'service_role', false)");
-    await client.query("select public.update_match_result($1::uuid, $2::integer, $3::integer, $4::jsonb)", [
-      match.id,
-      homeScore,
-      awayScore,
-      JSON.stringify(stats),
-    ]);
-    imported += 1;
-    console.log(`[discord-sync] J${match.number} ${match.home_short_name}-${match.away_short_name}: ${stats.length} jugadores importados.`);
+  const orderedMessages = [...messages.values()]
+    .reverse()
+    .filter((message) => message.createdAt >= SINCE);
+
+  console.log("Mensajes leídos:", orderedMessages.length);
+
+  const fullText = orderedMessages
+    .map((message) => message.content)
+    .join("\n\n");
+
+  console.log("Texto unido:", fullText.slice(0, 1000));
+
+  const parsed = parseMatch(fullText);
+
+  if (!parsed) {
+    console.log("No parseado texto unido");
+    await discord.destroy();
+    process.exit(0);
   }
 
-  console.log(`[discord-sync] Importados ${imported} partidos desde Discord.`);
-} finally {
-  await client.end();
-}
+  console.log(`${parsed.homeTeam} ${parsed.homeScore}-${parsed.awayScore} ${parsed.awayTeam}`);
+  console.log(parsed.playerStats);
+
+  const { error } = await supabase.from("official_matches").insert({
+  home_team: parsed.homeTeam,
+  away_team: parsed.awayTeam,
+  home_score: parsed.homeScore,
+  away_score: parsed.awayScore,
+  player_stats_json: parsed.playerStats,
+});
+
+  if (error) {
+    console.error("Error Supabase:", error);
+  } else {
+    console.log("Partido guardado");
+  }
+
+  await discord.destroy();
+  process.exit(0);
+});
+
+discord.login(process.env.DISCORD_BOT_TOKEN);

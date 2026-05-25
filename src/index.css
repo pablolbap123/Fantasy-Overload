@@ -30,7 +30,9 @@ body {
   min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
-  background: #080f14;
+  background:
+    linear-gradient(180deg, rgba(10, 18, 27, 0.98), rgba(7, 11, 17, 1) 46%, rgba(9, 16, 23, 1)),
+    #080f14;
   color: #f7f9ff;
 }
 
@@ -69,9 +71,9 @@ textarea {
 
   .panel {
     @apply rounded-lg border border-white/10 backdrop-blur;
-    background: linear-gradient(180deg, rgba(20, 30, 39, 0.98), rgba(14, 22, 30, 0.98));
+    background: linear-gradient(180deg, rgba(20, 31, 42, 0.98), rgba(12, 20, 29, 0.98));
     box-shadow:
-      0 14px 30px rgba(0, 0, 0, 0.24),
+      0 16px 36px rgba(0, 0, 0, 0.28),
       inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
 

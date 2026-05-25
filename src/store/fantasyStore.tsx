@@ -508,7 +508,10 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
 
   const pushToast = useCallback((message: string, tone: ToastTone = "info") => {
     const toast: ToastMessage = { id: randomId("toast"), tone, message };
-    setToasts((current) => [...current, toast]);
+    setToasts((current) => {
+      const withoutDuplicate = current.filter((item) => item.message !== message || item.tone !== tone);
+      return [...withoutDuplicate.slice(-2), toast];
+    });
     window.setTimeout(() => {
       setToasts((current) => current.filter((item) => item.id !== toast.id));
     }, 4200);
@@ -1559,6 +1562,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       const player = players.find((item) => item.id === playerId);
       if (!player || target?.ownerUserId !== userId) throw new Error("Ese jugador no pertenece a tu plantilla.");
       if (currentLeague.marketLocked) throw new Error("El mercado esta bloqueado.");
+      if (player.teamName.toLowerCase().includes("bolsa")) throw new Error("Los jugadores de Bolsa no pueden salir al mercado.");
 
       if (onlineReady && supabase) {
         const { error } = await supabase.rpc("list_player_on_market", {
@@ -1567,7 +1571,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
         });
         if (error) throw error;
         await loadLeagueData(currentLeague.id);
-        pushToast(`${player.name} puesto en mercado durante 24 horas.`, "success");
+        pushToast(`${player.name} puesto en mercado durante 5 horas.`, "success");
         return;
       }
 
@@ -1591,12 +1595,12 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           id: randomId("activity"),
           leagueId: currentLeague.id,
           type: "market_listing",
-          message: `${player.name} sale al mercado durante 24 horas.`,
+          message: `${player.name} sale al mercado durante 5 horas.`,
           createdAt: listedAt.toISOString(),
         },
         ...current,
       ]);
-      pushToast(`${player.name} puesto en mercado durante 24 horas.`, "success");
+      pushToast(`${player.name} puesto en mercado durante 5 horas.`, "success");
     },
     [currentLeague, leaguePlayers, loadLeagueData, onlineReady, players, pushToast, userId],
   );
@@ -1694,6 +1698,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       const minimumBid = getMinimumBidAmount(target?.price ?? player?.currentPrice ?? 0, highestBid);
 
       if (!player || !target) throw new Error("Jugador no encontrado.");
+      if (player.teamName.toLowerCase().includes("bolsa")) throw new Error("Los jugadores de Bolsa no forman parte del mercado.");
       if (target.listedByUserId === userId) throw new Error("No puedes pujar por tu propio jugador.");
       if (!member || member.budget < amount) throw new Error("No tienes presupuesto suficiente para esa puja.");
       if (exchangePlayerId && exchangePlayer?.ownerUserId !== userId) throw new Error("Solo puedes ofrecer jugadores de tu plantilla.");

@@ -89,9 +89,9 @@ export const AppShell = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#080f14] pb-24 lg:pb-0">
+    <div className="min-h-screen bg-[#080f14] pb-24 text-white lg:pb-0">
       <LeagueIntroOverlay leagueId={currentLeague?.id} userId={userId} players={players} leaguePlayers={leaguePlayers} />
-      <aside className="fixed inset-y-0 left-0 z-30 hidden w-72 border-r border-white/10 bg-[#0b1218]/96 p-4 backdrop-blur-xl lg:block">
+      <aside className="fixed inset-y-0 left-0 z-30 hidden w-72 border-r border-white/10 bg-[#0b1218]/96 p-4 shadow-2xl shadow-black/30 backdrop-blur-xl lg:block">
         <button className="mb-6 flex w-full items-center gap-3 text-left" onClick={() => navigate("/leagues")}>
           <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#23c979] text-lg font-black text-[#06130d] shadow-lg shadow-[#23c979]/15">
             <span>O</span>
@@ -161,7 +161,7 @@ export const AppShell = () => {
       </aside>
 
       <main className="lg:pl-72">
-        <header className="safe-top-header sticky top-0 z-20 border-b border-white/10 bg-[#080f14]/92 backdrop-blur-xl">
+        <header className="safe-top-header sticky top-0 z-20 border-b border-white/10 bg-[#080f14]/92 shadow-lg shadow-black/15 backdrop-blur-xl">
           <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 pb-3 pt-1 lg:py-3">
             <button className="flex min-w-0 items-center gap-3 text-left lg:hidden" onClick={() => navigate("/leagues")}>
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#23c979] text-sm font-black text-[#06130d]">

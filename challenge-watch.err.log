@@ -1,1 +1,43 @@
 #< CLIXML
+[challenge-watch] Error: error: deadlock detected
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 1141,
+  severity: 'ERROR',
+  code: '40P01',
+  detail: 'Process 737062 waits for ShareLock on transaction 35014; blocked by process 761465.\n' +
+    'Process 761465 waits for ShareLock on transaction 35004; blocked by process 737062.',
+  hint: 'See server log for query details.',
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: 'while inserting index tuple (31,12) in relation "league_players"\n' +
+    'SQL statement "insert into public.league_players (league_id, player_id, market_status, price, release_clause)\r\n' +
+    '  select\r\n' +
+    '    p_league_id,\r\n' +
+    '    p.id,\r\n' +
+    "    'locked',\r\n" +
+    '    p.current_price,\r\n' +
+    '    public.default_release_clause(p.current_price)\r\n' +
+    '  from public.players p\r\n' +
+    '  on conflict (league_id, player_id) do update\r\n' +
+    '  set price = excluded.price,\r\n' +
+    '      release_clause = case\r\n' +
+    '        when public.league_players.owner_user_id is null then excluded.release_clause\r\n' +
+    '        else greatest(public.league_players.release_clause, public.default_release_clause(excluded.price))\r\n' +
+    '      end"\n' +
+    'PL/pgSQL function sync_league_from_official(uuid) line 14 at SQL statement\n' +
+    'SQL statement "SELECT public.sync_league_from_official(v_league_id)"\n' +
+    'PL/pgSQL function sync_all_leagues_from_official() line 10 at PERFORM',
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'deadlock.c',
+  line: '1130',
+  routine: 'DeadLockReport'
+}
