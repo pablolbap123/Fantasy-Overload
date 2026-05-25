@@ -97,8 +97,27 @@ const concededRuleFor = (rules: ScoringRules, position: PlayerPosition) => {
   return rule[position] ?? 0;
 };
 
+const playedPointsFor = (rules: ScoringRules, minutes: number) => {
+  if (minutes <= 0) return 0;
+  return minutes > 60 ? (rules.playedOver60 ?? rules.sixtyMinutes ?? 2) : (rules.playedUnder60 ?? rules.played ?? 1);
+};
+
+const perBlockPoints = (quantity: number | undefined, every: number, points = 0) => Math.floor(Math.max(0, quantity ?? 0) / every) * points;
+
+export const overloadRatingFromScore = (score?: number) => {
+  if (typeof score !== "number" || !Number.isFinite(score)) return undefined;
+  if (score >= 9) return 4;
+  if (score >= 7) return 3;
+  if (score >= 5) return 2;
+  if (score >= 2.5) return 1;
+  return 0;
+};
+
 export const getOverloadRating = (playerMatchStats: PlayerMatchStats, position: PlayerPosition) => {
-  if (typeof playerMatchStats.overloadRating === "number" && playerMatchStats.overloadRating > 0) {
+  const ratingFromScore = overloadRatingFromScore(playerMatchStats.overloadScore);
+  if (ratingFromScore !== undefined) return ratingFromScore;
+
+  if (typeof playerMatchStats.overloadRating === "number") {
     return Math.max(0, Math.min(4, Math.round(playerMatchStats.overloadRating)));
   }
 
@@ -107,9 +126,17 @@ export const getOverloadRating = (playerMatchStats: PlayerMatchStats, position: 
   const performance =
     playerMatchStats.goals * (position === "POR" || position === "DEF" ? 2.4 : position === "MED" ? 2.1 : 1.8) +
     playerMatchStats.assists * 1.55 +
+    (playerMatchStats.keyPasses ?? 0) * 0.35 +
     playerMatchStats.penaltiesSaved * 2.2 +
     (playerMatchStats.penaltiesProvoked ?? 0) * 1.3 +
-    (playerMatchStats.cleanSheet ? (position === "POR" || position === "DEF" ? 1.1 : 0.55) : 0) -
+    (playerMatchStats.cleanSheet && playerMatchStats.minutes > 60 ? (position === "POR" || position === "DEF" ? 1.1 : 0.55) : 0) +
+    (position === "POR" ? perBlockPoints(playerMatchStats.saves, 2, 0.35) : 0) +
+    perBlockPoints(playerMatchStats.shotsOnTarget, 2, 0.28) +
+    perBlockPoints(playerMatchStats.successfulDribbles, 2, 0.25) +
+    perBlockPoints(playerMatchStats.boxEntries, 2, 0.2) +
+    perBlockPoints(playerMatchStats.ballsRecovered, 5, 0.4) +
+    perBlockPoints(playerMatchStats.clearances, 5, 0.3) -
+    perBlockPoints(playerMatchStats.ballsLost, 10, 0.3) -
     playerMatchStats.ownGoals * 2.4 -
     playerMatchStats.penaltiesMissed * 1.8 -
     directRedCards * 2.2 -
@@ -141,12 +168,14 @@ export const buildPlayerPointBreakdown = (
     items.push({ key, label, quantity, points });
   };
 
-  // Fuente de verdad de puntos: solo eventos que existen en Challenge, mas la Nota Overload generada.
+  // Fuente de verdad de puntos: estadísticas editables/importadas, con reglas configurables por liga.
+  add("played", playerMatchStats.minutes > 60 ? "Partido jugado (+60 min)" : "Partido jugado", playerMatchStats.minutes, playedPointsFor(scoringRules, playerMatchStats.minutes));
   add("goals", "Goles", playerMatchStats.goals, playerMatchStats.goals * scoringRules.goal[position]);
   add("assists", "Asistencias de gol", playerMatchStats.assists, playerMatchStats.assists * scoringRules.assist);
+  add("keyPasses", "Asistencias sin gol", playerMatchStats.keyPasses ?? 0, (playerMatchStats.keyPasses ?? 0) * (scoringRules.keyPass ?? 1));
   add("ownGoals", "Goles en propia puerta", playerMatchStats.ownGoals, playerMatchStats.ownGoals * scoringRules.ownGoal);
 
-  if (playerMatchStats.cleanSheet) add("cleanSheet", "Porteria a cero", 1, scoringRules.cleanSheet[position] ?? 0);
+  if (playerMatchStats.cleanSheet && playerMatchStats.minutes > 60) add("cleanSheet", "Porteria a cero", 1, scoringRules.cleanSheet[position] ?? 0);
 
   add(
     "goalsConceded",
@@ -166,7 +195,29 @@ export const buildPlayerPointBreakdown = (
   add("yellowCards", "Tarjetas amarillas", playerMatchStats.yellowCards, playerMatchStats.yellowCards * scoringRules.yellowCard);
   add("doubleYellowCards", "Dobles amarillas", doubleYellowCards, doubleYellowCards * scoringRules.doubleYellowCard);
   add("redCards", "Rojas directas", directRedCards, directRedCards * scoringRules.redCard);
-  add("overloadRating", "Nota Overload", overloadRating, scoringRules.overloadRating?.[overloadKey] ?? overloadRating);
+  if (position === "POR") add("saves", "Paradas del portero", playerMatchStats.saves ?? 0, perBlockPoints(playerMatchStats.saves, 2, scoringRules.savesEveryTwo ?? 1));
+  add("overloadRating", "Nota Overload", playerMatchStats.overloadScore !== undefined ? `${playerMatchStats.overloadScore}/10` : overloadRating, scoringRules.overloadRating?.[overloadKey] ?? overloadRating);
+  add(
+    "shotsOnTarget",
+    "Remates a puerta",
+    playerMatchStats.shotsOnTarget ?? 0,
+    perBlockPoints(playerMatchStats.shotsOnTarget, 2, scoringRules.shotsOnTargetEveryTwo ?? 1),
+  );
+  add(
+    "successfulDribbles",
+    "Regates logrados",
+    playerMatchStats.successfulDribbles ?? 0,
+    perBlockPoints(playerMatchStats.successfulDribbles, 2, scoringRules.successfulDribblesEveryTwo ?? 1),
+  );
+  add("boxEntries", "Llegadas al area", playerMatchStats.boxEntries ?? 0, perBlockPoints(playerMatchStats.boxEntries, 2, scoringRules.boxEntriesEveryTwo ?? 1));
+  add("ballsLost", "Balones perdidos", playerMatchStats.ballsLost ?? 0, perBlockPoints(playerMatchStats.ballsLost, 10, scoringRules.ballsLostEveryTen ?? -1));
+  add(
+    "ballsRecovered",
+    "Balones recuperados",
+    playerMatchStats.ballsRecovered ?? 0,
+    perBlockPoints(playerMatchStats.ballsRecovered, 5, scoringRules.ballsRecoveredEveryFive ?? 1),
+  );
+  add("clearances", "Despejes", playerMatchStats.clearances ?? 0, perBlockPoints(playerMatchStats.clearances, 5, scoringRules.clearancesEveryFive ?? 1));
 
   return items;
 };

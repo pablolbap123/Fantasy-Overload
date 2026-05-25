@@ -141,6 +141,21 @@ const randomId = (prefix: string) => `${prefix}-${Math.random().toString(36).sli
 const makeInviteCode = () => Math.random().toString(36).slice(2, 8).toUpperCase();
 
 const clone = <T,>(value: T): T => JSON.parse(JSON.stringify(value)) as T;
+const defaultConcededRules =
+  typeof defaultScoringRules.goalsConcededEveryTwo === "number"
+    ? { POR: defaultScoringRules.goalsConcededEveryTwo, DEF: defaultScoringRules.goalsConcededEveryTwo, MED: 0, DEL: 0 }
+    : defaultScoringRules.goalsConcededEveryTwo;
+const mergeScoringRules = (rules?: Partial<ScoringRules> | null): ScoringRules => ({
+  ...defaultScoringRules,
+  ...(rules ?? {}),
+  goal: { ...defaultScoringRules.goal, ...(rules?.goal ?? {}) },
+  cleanSheet: { ...defaultScoringRules.cleanSheet, ...(rules?.cleanSheet ?? {}) },
+  goalsConcededEveryTwo:
+    typeof rules?.goalsConcededEveryTwo === "number"
+      ? rules.goalsConcededEveryTwo
+      : { ...defaultConcededRules, ...((rules?.goalsConcededEveryTwo as Partial<typeof defaultConcededRules> | undefined) ?? {}) },
+  overloadRating: { ...defaultScoringRules.overloadRating, ...(rules?.overloadRating ?? {}) },
+});
 const supabasePageSize = 1000;
 const supabaseQueryTimeoutMs = 20_000;
 const releaseClauseFor = (price: number) => Math.round((price * 1.2) / 50_000) * 50_000;
@@ -399,6 +414,14 @@ const mapPlayer = (row: any): Player => {
       overloadPoints: Number(row.stats_json?.overloadPoints ?? row.stats_json?.overload_points ?? 0),
       minutes: Number(row.stats_json?.minutes ?? 0),
       keyActions: Number(row.stats_json?.keyActions ?? row.stats_json?.key_actions ?? 0),
+      keyPasses: Number(row.stats_json?.keyPasses ?? row.stats_json?.key_passes ?? 0),
+      saves: Number(row.stats_json?.saves ?? 0),
+      shotsOnTarget: Number(row.stats_json?.shotsOnTarget ?? row.stats_json?.shots_on_target ?? 0),
+      successfulDribbles: Number(row.stats_json?.successfulDribbles ?? row.stats_json?.successful_dribbles ?? 0),
+      boxEntries: Number(row.stats_json?.boxEntries ?? row.stats_json?.box_entries ?? 0),
+      ballsLost: Number(row.stats_json?.ballsLost ?? row.stats_json?.balls_lost ?? 0),
+      ballsRecovered: Number(row.stats_json?.ballsRecovered ?? row.stats_json?.balls_recovered ?? 0),
+      clearances: Number(row.stats_json?.clearances ?? 0),
     },
   };
 };
@@ -421,6 +444,7 @@ const mapMatch = (row: any): Match => ({
     minutes: Number(stat.minutes ?? 0),
     goals: Number(stat.goals ?? 0),
     assists: Number(stat.assists ?? 0),
+    keyPasses: Number(stat.key_passes ?? stat.keyPasses ?? 0),
     yellowCards: Number(stat.yellow_cards ?? 0),
     redCards: Number(stat.red_cards ?? 0),
     doubleYellowCards: Number(stat.double_yellow_cards ?? 0),
@@ -431,12 +455,20 @@ const mapMatch = (row: any): Match => ({
     penaltiesProvoked: Number(stat.penalties_provoked ?? 0),
     goalsConceded: Number(stat.goals_conceded ?? 0),
     cleanSheet: Boolean(stat.clean_sheet),
+    overloadScore: stat.overload_score === undefined || stat.overload_score === null ? undefined : Number(stat.overload_score),
     overloadRating: Number(stat.overload_rating ?? 0),
     mvp: Boolean(stat.mvp),
     teamWon: Boolean(stat.team_won ?? false),
     teamLost: Boolean(stat.team_lost ?? false),
     highlighted: Boolean(stat.highlighted ?? false),
     errorLedToGoal: Boolean(stat.error_led_to_goal ?? false),
+    saves: Number(stat.saves ?? 0),
+    shotsOnTarget: Number(stat.shots_on_target ?? stat.shotsOnTarget ?? 0),
+    successfulDribbles: Number(stat.successful_dribbles ?? stat.successfulDribbles ?? 0),
+    boxEntries: Number(stat.box_entries ?? stat.boxEntries ?? 0),
+    ballsLost: Number(stat.balls_lost ?? stat.ballsLost ?? 0),
+    ballsRecovered: Number(stat.balls_recovered ?? stat.ballsRecovered ?? 0),
+    clearances: Number(stat.clearances ?? 0),
     fantasyPoints: Number(stat.fantasy_points ?? 0),
   })),
 });
@@ -494,7 +526,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
     setOffers(snapshot.offers);
     setActivities(snapshot.activities);
     setChallengeSyncStatus(undefined);
-    setScoringRules(snapshot.scoringRules);
+    setScoringRules(mergeScoringRules(snapshot.scoringRules));
     setPlayers(snapshot.players);
     setTeams(mockTeams);
   }, []);
@@ -742,7 +774,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
         setOffers(mappedOffers);
         setActivities(mappedActivities);
         setChallengeSyncStatus(syncStatusRow ? mapChallengeSyncStatus(syncStatusRow) : undefined);
-        setScoringRules((scoringRow?.rules_json as ScoringRules) ?? defaultScoringRules);
+        setScoringRules(mergeScoringRules((scoringRow?.rules_json as ScoringRules) ?? defaultScoringRules));
       } catch (error) {
         pushToast(getErrorMessage(error, "No se pudo cargar la liga."), "error");
       }
@@ -1087,7 +1119,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           createdAt: league.createdAt,
         },
       ]);
-      setScoringRules(input.scoringRules);
+      setScoringRules(mergeScoringRules(input.scoringRules));
       pushToast("Liga demo creada.", "success");
       return leagueId;
     },
@@ -1211,7 +1243,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
         setLeagues((current) =>
           current.map((league) => (league.id === currentLeague.id ? { ...league, ...patch } : league)),
         );
-        if (patch.scoringRules) setScoringRules(patch.scoringRules);
+        if (patch.scoringRules) setScoringRules(mergeScoringRules(patch.scoringRules));
       }
       pushToast("Configuración guardada.", "success");
     },
@@ -2176,7 +2208,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       setOffers(parsed.offers ?? []);
       setActivities(parsed.activities ?? []);
       setChallengeSyncStatus(undefined);
-      setScoringRules(parsed.scoringRules ?? defaultScoringRules);
+      setScoringRules(mergeScoringRules(parsed.scoringRules ?? defaultScoringRules));
       pushToast("Datos importados en modo demo.", "success");
     },
     [pushToast],

@@ -38,7 +38,7 @@ const createBlankStats = (
 ): PlayerMatchStats => {
   const starterBias = player.position === "POR" ? 1 : Math.random();
   const minutes = starterBias > 0.22 ? 60 + Math.floor(Math.random() * 31) : Math.floor(Math.random() * 45);
-  const cleanSheet = minutes > 0 && goalsConceded === 0;
+  const cleanSheet = minutes > 60 && goalsConceded === 0;
 
   return {
     matchId,
@@ -46,6 +46,7 @@ const createBlankStats = (
     minutes,
     goals: 0,
     assists: 0,
+    keyPasses: player.position === "POR" ? 0 : Math.floor(Math.random() * 3),
     yellowCards: Math.random() < 0.12 ? 1 : 0,
     redCards: Math.random() < 0.018 ? 1 : 0,
     doubleYellowCards: 0,
@@ -56,11 +57,20 @@ const createBlankStats = (
     penaltiesProvoked: 0,
     goalsConceded,
     cleanSheet,
+    overloadScore: Number((Math.random() * 4 + (teamWon ? 4.2 : teamLost ? 2.7 : 3.5)).toFixed(1)),
+    overloadRating: 0,
     mvp: false,
     teamWon,
     teamLost,
     highlighted: Math.random() < 0.08,
     errorLedToGoal: Math.random() < 0.025,
+    saves: player.position === "POR" ? Math.floor(Math.random() * 7) : 0,
+    shotsOnTarget: player.position === "POR" ? 0 : Math.floor(Math.random() * 4),
+    successfulDribbles: player.position === "MED" || player.position === "DEL" ? Math.floor(Math.random() * 4) : 0,
+    boxEntries: player.position === "POR" ? 0 : Math.floor(Math.random() * 4),
+    ballsLost: player.position === "POR" ? 0 : Math.floor(Math.random() * 12),
+    ballsRecovered: player.position === "DEL" ? Math.floor(Math.random() * 4) : Math.floor(Math.random() * 8),
+    clearances: player.position === "POR" || player.position === "DEF" ? Math.floor(Math.random() * 8) : 0,
   };
 };
 

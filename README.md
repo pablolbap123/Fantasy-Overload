@@ -140,6 +140,8 @@ npm run sync:challenge:watch
 
 El watcher no consulta Challenge por su cuenta. Solo revisa la tabla de solicitudes y, si hay una solicitud pendiente, descarga Challenge, actualiza equipos, jugadores, posiciones, precios, jornadas y partidos oficiales, recalcula ligas y avisa por Supabase Realtime.
 
+La sincronizacion de Challenge tambien actualiza cambios de club y de posicion. Si Challenge trae dos posiciones para un jugador, se guardan en `players.positions` y la app las usa para alineaciones y filtros; la posicion principal queda en `players.position`.
+
 La app guarda el ultimo estado en `challenge_sync_status`. Ese estado aparece como **Challenge manual**, por lo que puedes ver si la ultima actualizacion se aplico o si hubo un error.
 
 Para desplegar el watcher en Render:
@@ -175,6 +177,62 @@ Esto regenera:
 - `supabase/seed.sql`
 
 En local puedes forzar una actualizacion tecnica con `npm run sync:challenge` y aplicando `supabase/seed.sql`, pero el flujo normal online es el boton de la app.
+
+## Sistema de puntuacion actual
+
+La app usa estas reglas por defecto, editables por liga desde `scoring_rules`:
+
+- Partido jugado: +2 si juega mas de 60 minutos, +1 si juega menos.
+- Gol: POR/DEF +6, MED +5, DEL +4.
+- Asistencia de gol +3 y asistencia sin gol +1.
+- Porteria a cero con mas de 60 minutos: POR +4, DEF +4, MED +2, DEL +1.
+- Cada 2 goles recibidos: POR/DEF -2, MED/DEL -1.
+- Penalti fallado -2, penalti parado +5, penalti provocado +2.
+- Amarilla -1, doble amarilla -1, roja directa -3, gol en propia -2.
+- Portero: cada 2 paradas +1.
+- Nota Overload: 0 puntos si la nota es 0-2.5, +1 si es 2.5-5, +2 si es 5-7, +3 si es 7-9, +4 si es 9-10.
+- Bonus ataque: cada 2 remates a puerta, regates logrados o llegadas al area suma +1.
+- Bonus defensivo: cada 10 balones perdidos resta -1; cada 5 recuperaciones o despejes suma +1.
+
+El panel Overload permite editar manualmente estas estadisticas por jugador y partido. En esa pantalla no aparecen jugadores de la Bolsa para asignar puntuacion.
+
+## Importar estadisticas desde Discord
+
+Opcionalmente puedes importar partidos desde un canal de Discord usando un bot. El mensaje del canal debe contener un bloque JSON:
+
+```json
+{
+  "matchday": 6,
+  "homeTeam": "RMA",
+  "awayTeam": "BAR",
+  "homeScore": 2,
+  "awayScore": 1,
+  "players": [
+    {
+      "name": "Nombre Jugador",
+      "team": "RMA",
+      "minutes": 90,
+      "goals": 1,
+      "assists": 0,
+      "overloadScore": 8.2,
+      "shotsOnTarget": 3,
+      "ballsRecovered": 6
+    }
+  ]
+}
+```
+
+Configura estas variables solo en servidor/worker:
+
+```bash
+SUPABASE_DB_URL="postgresql://..."
+DISCORD_BOT_TOKEN="..."
+DISCORD_CHANNEL_ID="..."
+DISCORD_LEAGUE_ID="uuid-de-la-liga"
+npm run sync:discord
+```
+
+El script busca el partido por jornada/equipos, resuelve jugadores por nombre y equipo, llama a `update_match_result` y recalcula puntos, precios y clasificacion.
 
 ## App movil
 

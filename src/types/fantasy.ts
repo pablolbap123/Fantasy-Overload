@@ -162,8 +162,11 @@ export interface ChallengeSyncStatus {
 export interface ScoringRules {
   played?: number;
   sixtyMinutes?: number;
+  playedUnder60?: number;
+  playedOver60?: number;
   goal: Record<PlayerPosition, number>;
   assist: number;
+  keyPass?: number;
   cleanSheet: Record<PlayerPosition, number>;
   goalsConcededEveryTwo: Record<PlayerPosition, number> | number;
   yellowCard: number;
@@ -174,7 +177,14 @@ export interface ScoringRules {
   penaltyMissed: number;
   penaltySaved: number;
   penaltyProvoked: number;
+  savesEveryTwo?: number;
   overloadRating: Record<"0" | "1" | "2" | "3" | "4", number>;
+  shotsOnTargetEveryTwo?: number;
+  successfulDribblesEveryTwo?: number;
+  boxEntriesEveryTwo?: number;
+  ballsLostEveryTen?: number;
+  ballsRecoveredEveryFive?: number;
+  clearancesEveryFive?: number;
   mvp?: number;
   teamWin?: number;
   teamLoss?: number;

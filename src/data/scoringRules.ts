@@ -1,6 +1,8 @@
 import type { ScoringRules } from "../types";
 
 export const defaultScoringRules: ScoringRules = {
+  playedUnder60: 1,
+  playedOver60: 2,
   goal: {
     POR: 6,
     DEF: 6,
@@ -8,6 +10,7 @@ export const defaultScoringRules: ScoringRules = {
     DEL: 4,
   },
   assist: 3,
+  keyPass: 1,
   cleanSheet: {
     POR: 4,
     DEF: 4,
@@ -27,6 +30,7 @@ export const defaultScoringRules: ScoringRules = {
   penaltyMissed: -2,
   penaltySaved: 5,
   penaltyProvoked: 2,
+  savesEveryTwo: 1,
   overloadRating: {
     "0": 0,
     "1": 1,
@@ -34,19 +38,28 @@ export const defaultScoringRules: ScoringRules = {
     "3": 3,
     "4": 4,
   },
+  shotsOnTargetEveryTwo: 1,
+  successfulDribblesEveryTwo: 1,
+  boxEntriesEveryTwo: 1,
+  ballsLostEveryTen: -1,
+  ballsRecoveredEveryFive: 1,
+  clearancesEveryFive: 1,
 };
 
 export const scoringRuleLabels: Array<{ key: keyof ScoringRules | string; label: string; value: string }> = [
+  { key: "playedOver60", label: "Partido jugado (+60 minutos)", value: "+2" },
+  { key: "playedUnder60", label: "Partido jugado (-60 minutos)", value: "+1" },
   { key: "goal.DEL", label: "Gol de delantero", value: "+4" },
   { key: "goal.MED", label: "Gol de centrocampista", value: "+5" },
   { key: "goal.DEF", label: "Gol de defensa", value: "+6" },
   { key: "goal.POR", label: "Gol de portero", value: "+6" },
   { key: "ownGoal", label: "Gol en propia puerta", value: "-2" },
   { key: "assist", label: "Asistencia de gol", value: "+3" },
-  { key: "cleanSheet.POR", label: "Porteria a cero portero", value: "+4" },
-  { key: "cleanSheet.DEF", label: "Porteria a cero defensa", value: "+4" },
-  { key: "cleanSheet.MED", label: "Porteria a cero centrocampista", value: "+2" },
-  { key: "cleanSheet.DEL", label: "Porteria a cero delantero", value: "+1" },
+  { key: "keyPass", label: "Asistencia sin gol", value: "+1" },
+  { key: "cleanSheet.POR", label: "Porteria a cero portero (+60 min)", value: "+4" },
+  { key: "cleanSheet.DEF", label: "Porteria a cero defensa (+60 min)", value: "+4" },
+  { key: "cleanSheet.MED", label: "Porteria a cero centrocampista (+60 min)", value: "+2" },
+  { key: "cleanSheet.DEL", label: "Porteria a cero delantero (+60 min)", value: "+1" },
   { key: "goalsConcededEveryTwo.POR", label: "Cada 2 goles recibidos POR/DEF", value: "-2" },
   { key: "goalsConcededEveryTwo.MED", label: "Cada 2 goles recibidos MED/DEL", value: "-1" },
   { key: "penaltyMissed", label: "Penalti fallado", value: "-2" },
@@ -55,5 +68,12 @@ export const scoringRuleLabels: Array<{ key: keyof ScoringRules | string; label:
   { key: "yellowCard", label: "Tarjeta amarilla", value: "-1" },
   { key: "doubleYellowCard", label: "Doble amarilla", value: "-1" },
   { key: "redCard", label: "Tarjeta roja directa", value: "-3" },
-  { key: "overloadRating", label: "Nota Overload", value: "0 a +4" },
+  { key: "savesEveryTwo", label: "Paradas del portero cada 2", value: "+1" },
+  { key: "overloadRating", label: "Nota Overload segun nota 0-10", value: "0 a +4" },
+  { key: "shotsOnTargetEveryTwo", label: "Remates a puerta cada 2", value: "+1" },
+  { key: "successfulDribblesEveryTwo", label: "Regates logrados cada 2", value: "+1" },
+  { key: "boxEntriesEveryTwo", label: "Llegadas al area cada 2", value: "+1" },
+  { key: "ballsLostEveryTen", label: "Balones perdidos cada 10", value: "-1" },
+  { key: "ballsRecoveredEveryFive", label: "Balones recuperados cada 5", value: "+1" },
+  { key: "clearancesEveryFive", label: "Despejes cada 5", value: "+1" },
 ];

@@ -72,6 +72,10 @@ const statKeyMap = {
   goal: "goals",
   stillGoal: "goals",
   assist: "assists",
+  keyPass: "keyPasses",
+  chanceCreated: "keyPasses",
+  bigChanceCreated: "keyPasses",
+  assistWithoutGoal: "keyPasses",
   yellowCard: "yellowCards",
   redCard: "redCards",
   doubleYellowCard: "doubleYellowCards",
@@ -83,6 +87,22 @@ const statKeyMap = {
   penaltyWon: "penaltiesProvoked",
   penaltyReceived: "penaltiesProvoked",
   goalConceded: "goalsConceded",
+  save: "saves",
+  saves: "saves",
+  shotOnTarget: "shotsOnTarget",
+  shotsOnTarget: "shotsOnTarget",
+  successfulDribble: "successfulDribbles",
+  dribbleCompleted: "successfulDribbles",
+  boxEntry: "boxEntries",
+  areaEntry: "boxEntries",
+  ballLost: "ballsLost",
+  ballsLost: "ballsLost",
+  ballRecovered: "ballsRecovered",
+  ballsRecovered: "ballsRecovered",
+  clearance: "clearances",
+  clearances: "clearances",
+  overloadScore: "overloadScore",
+  overloadRating: "overloadRating",
 };
 const eventTypeMap = {
   goal: "goal",
@@ -194,6 +214,15 @@ const makeEmptyStats = () => ({
   overloadPoints: 0,
   minutes: 0,
   keyActions: 0,
+  keyPasses: 0,
+  overloadScore: 0,
+  saves: 0,
+  shotsOnTarget: 0,
+  successfulDribbles: 0,
+  boxEntries: 0,
+  ballsLost: 0,
+  ballsRecovered: 0,
+  clearances: 0,
 });
 
 const makeStats = (stageStats) => {
@@ -211,17 +240,43 @@ const makeStats = (stageStats) => {
   stats.penaltiesMissed = numberStat(stageStats, "penaltyMissed");
   stats.penaltiesSaved = numberStat(stageStats, "penaltySaved");
   stats.penaltiesProvoked = numberStat(stageStats, "penaltyProvoked") + numberStat(stageStats, "penaltyWon") + numberStat(stageStats, "penaltyReceived");
-  stats.keyActions = stats.assists + stats.goals + stats.penaltiesProvoked + numberStat(stageStats, "corner");
+  stats.keyPasses =
+    numberStat(stageStats, "keyPass") +
+    numberStat(stageStats, "chanceCreated") +
+    numberStat(stageStats, "bigChanceCreated") +
+    numberStat(stageStats, "assistWithoutGoal");
+  stats.overloadScore = numberStat(stageStats, "overloadScore") || numberStat(stageStats, "rating") || numberStat(stageStats, "score");
+  stats.saves = numberStat(stageStats, "save") + numberStat(stageStats, "saves");
+  stats.shotsOnTarget = numberStat(stageStats, "shotOnTarget") + numberStat(stageStats, "shotsOnTarget");
+  stats.successfulDribbles = numberStat(stageStats, "successfulDribble") + numberStat(stageStats, "dribbleCompleted");
+  stats.boxEntries = numberStat(stageStats, "boxEntry") + numberStat(stageStats, "areaEntry");
+  stats.ballsLost = numberStat(stageStats, "ballLost") + numberStat(stageStats, "ballsLost");
+  stats.ballsRecovered = numberStat(stageStats, "ballRecovered") + numberStat(stageStats, "ballsRecovered");
+  stats.clearances = numberStat(stageStats, "clearance") + numberStat(stageStats, "clearances");
+  stats.keyActions = stats.assists + stats.goals + stats.penaltiesProvoked + stats.keyPasses + numberStat(stageStats, "corner");
   return stats;
 };
 
+const overloadRatingFromScore = (score) => {
+  if (!Number.isFinite(Number(score))) return undefined;
+  const value = Number(score);
+  if (value >= 9) return 4;
+  if (value >= 7) return 3;
+  if (value >= 5) return 2;
+  if (value >= 2.5) return 1;
+  return 0;
+};
+
 const overloadRatingFor = (stats, position, seedValue = "") => {
+  const ratingFromScore = overloadRatingFromScore(stats.overloadScore);
+  if (ratingFromScore !== undefined) return ratingFromScore;
   if (typeof stats.overloadRating === "number" && stats.overloadRating > 0) return Math.max(0, Math.min(4, Math.round(stats.overloadRating)));
   const doubleYellowCards = stats.doubleYellowCards ?? Math.min(stats.yellowCards ?? 0, stats.redCards ?? 0);
   const directRedCards = Math.max(0, (stats.redCards ?? 0) - doubleYellowCards);
   const performance =
     (stats.goals ?? 0) * (position === "POR" || position === "DEF" ? 2.4 : position === "MED" ? 2.1 : 1.8) +
     (stats.assists ?? 0) * 1.55 +
+    (stats.keyPasses ?? 0) * 0.35 +
     (stats.penaltiesSaved ?? 0) * 2.2 +
     (stats.penaltiesProvoked ?? 0) * 1.3 +
     (stats.cleanSheet ? (position === "POR" || position === "DEF" ? 1.1 : 0.55) : 0) -
@@ -242,11 +297,15 @@ const overloadRatingFor = (stats, position, seedValue = "") => {
 const totalPointsFor = (stats, position) => {
   const doubleYellowCards = stats.doubleYellowCards ?? Math.min(stats.yellowCards ?? 0, stats.redCards ?? 0);
   const directRedCards = Math.max(0, (stats.redCards ?? 0) - doubleYellowCards);
-  const cleanSheetPoints = stats.cleanSheet ? (position === "POR" ? 4 : position === "DEF" ? 4 : position === "MED" ? 2 : 1) : 0;
+  const minutes = stats.minutes ?? 0;
+  const playedPoints = minutes > 60 ? 2 : minutes > 0 ? 1 : 0;
+  const cleanSheetPoints = stats.cleanSheet && minutes > 60 ? (position === "POR" ? 4 : position === "DEF" ? 4 : position === "MED" ? 2 : 1) : 0;
   const goalsConcededPoints = Math.floor((stats.goalsConceded ?? 0) / 2) * (position === "POR" || position === "DEF" ? -2 : -1);
   return (
+    playedPoints +
     (stats.goals ?? 0) * (position === "DEL" ? 4 : position === "MED" ? 5 : 6) +
     (stats.assists ?? 0) * 3 +
+    (stats.keyPasses ?? 0) +
     cleanSheetPoints +
     goalsConcededPoints -
     (stats.yellowCards ?? 0) -
@@ -256,7 +315,14 @@ const totalPointsFor = (stats, position) => {
     (stats.penaltiesMissed ?? 0) * 2 +
     (stats.penaltiesSaved ?? 0) * 5 +
     (stats.penaltiesProvoked ?? 0) * 2 +
-    overloadRatingFor(stats, position, `${stats.matchId ?? ""}:${stats.playerId ?? ""}`)
+    (position === "POR" ? Math.floor((stats.saves ?? 0) / 2) : 0) +
+    overloadRatingFor(stats, position, `${stats.matchId ?? ""}:${stats.playerId ?? ""}`) +
+    Math.floor((stats.shotsOnTarget ?? 0) / 2) +
+    Math.floor((stats.successfulDribbles ?? 0) / 2) +
+    Math.floor((stats.boxEntries ?? 0) / 2) -
+    Math.floor((stats.ballsLost ?? 0) / 10) +
+    Math.floor((stats.ballsRecovered ?? 0) / 5) +
+    Math.floor((stats.clearances ?? 0) / 5)
   );
 };
 
@@ -464,6 +530,7 @@ const buildPlayerMatchStats = (matchRoom, matchId, homeScore, awayScore, matchTi
         minutes: 0,
         goals: 0,
         assists: 0,
+        keyPasses: 0,
         yellowCards: 0,
         redCards: 0,
         doubleYellowCards: 0,
@@ -474,12 +541,20 @@ const buildPlayerMatchStats = (matchRoom, matchId, homeScore, awayScore, matchTi
         penaltiesProvoked: 0,
         goalsConceded: teamGoalsConceded,
         cleanSheet: teamGoalsConceded === 0,
+        overloadScore: 0,
         overloadRating: 0,
         mvp: false,
         teamWon: teamIsHome ? homeScore > awayScore : awayScore > homeScore,
         teamLost: teamIsHome ? homeScore < awayScore : awayScore < homeScore,
         highlighted: false,
         errorLedToGoal: false,
+        saves: 0,
+        shotsOnTarget: 0,
+        successfulDribbles: 0,
+        boxEntries: 0,
+        ballsLost: 0,
+        ballsRecovered: 0,
+        clearances: 0,
         fantasyPoints: 0,
       });
     }
@@ -584,6 +659,7 @@ await mapLimit(rounds, 1, async (round) => {
         aggregate.appearances += 1;
         aggregate.goals += stat.goals ?? 0;
         aggregate.assists += stat.assists ?? 0;
+        aggregate.keyPasses += stat.keyPasses ?? 0;
         aggregate.goalsConceded += stat.goalsConceded ?? 0;
         aggregate.cleanSheets += stat.cleanSheet ? 1 : 0;
         aggregate.yellowCards += stat.yellowCards ?? 0;
@@ -595,7 +671,16 @@ await mapLimit(rounds, 1, async (round) => {
         aggregate.penaltiesSaved += stat.penaltiesSaved ?? 0;
         aggregate.penaltiesProvoked += stat.penaltiesProvoked ?? 0;
         aggregate.overloadPoints += stat.overloadRating ?? 0;
-        aggregate.keyActions += (stat.goals ?? 0) + (stat.assists ?? 0) + (stat.penaltiesProvoked ?? 0) + (stat.penaltiesSaved ?? 0);
+        aggregate.minutes += stat.minutes ?? 0;
+        aggregate.saves += stat.saves ?? 0;
+        aggregate.shotsOnTarget += stat.shotsOnTarget ?? 0;
+        aggregate.successfulDribbles += stat.successfulDribbles ?? 0;
+        aggregate.boxEntries += stat.boxEntries ?? 0;
+        aggregate.ballsLost += stat.ballsLost ?? 0;
+        aggregate.ballsRecovered += stat.ballsRecovered ?? 0;
+        aggregate.clearances += stat.clearances ?? 0;
+        aggregate.keyActions +=
+          (stat.goals ?? 0) + (stat.assists ?? 0) + (stat.keyPasses ?? 0) + (stat.penaltiesProvoked ?? 0) + (stat.penaltiesSaved ?? 0);
         matchStatsByPlayer.set(stat.playerId, aggregate);
       }
 
@@ -735,6 +820,7 @@ const officialMatchSqlRows = officialMatchdays.flatMap((matchday) =>
     player_stats_json: match.playerStats.map((stat) => ({
       ...stat,
       player_uuid: uuidFrom(stat.playerId),
+      key_passes: stat.keyPasses ?? 0,
       yellow_cards: stat.yellowCards ?? 0,
       red_cards: stat.redCards ?? 0,
       double_yellow_cards: stat.doubleYellowCards ?? 0,
@@ -745,10 +831,18 @@ const officialMatchSqlRows = officialMatchdays.flatMap((matchday) =>
       penalties_provoked: stat.penaltiesProvoked ?? 0,
       goals_conceded: stat.goalsConceded ?? 0,
       clean_sheet: stat.cleanSheet ?? false,
+      overload_score: stat.overloadScore || null,
       overload_rating: stat.overloadRating ?? 0,
       team_won: stat.teamWon ?? false,
       team_lost: stat.teamLost ?? false,
       error_led_to_goal: stat.errorLedToGoal ?? false,
+      saves: stat.saves ?? 0,
+      shots_on_target: stat.shotsOnTarget ?? 0,
+      successful_dribbles: stat.successfulDribbles ?? 0,
+      box_entries: stat.boxEntries ?? 0,
+      balls_lost: stat.ballsLost ?? 0,
+      balls_recovered: stat.ballsRecovered ?? 0,
+      clearances: stat.clearances ?? 0,
       fantasy_points: stat.fantasyPoints ?? 0,
     })),
   })),

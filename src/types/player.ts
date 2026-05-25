@@ -18,8 +18,17 @@ export interface PlayerStats {
   ownGoals: number;
   mvps: number;
   overloadPoints: number;
+  overloadScore?: number;
   minutes: number;
   keyActions: number;
+  keyPasses?: number;
+  saves?: number;
+  shotsOnTarget?: number;
+  successfulDribbles?: number;
+  boxEntries?: number;
+  ballsLost?: number;
+  ballsRecovered?: number;
+  clearances?: number;
 }
 
 export interface Player {
@@ -47,6 +56,7 @@ export interface PlayerMatchStats {
   minutes: number;
   goals: number;
   assists: number;
+  keyPasses?: number;
   yellowCards: number;
   redCards: number;
   doubleYellowCards?: number;
@@ -57,11 +67,19 @@ export interface PlayerMatchStats {
   penaltiesProvoked?: number;
   goalsConceded: number;
   cleanSheet: boolean;
+  overloadScore?: number;
   overloadRating?: number;
   mvp: boolean;
   teamWon: boolean;
   teamLost: boolean;
   highlighted: boolean;
   errorLedToGoal: boolean;
+  saves?: number;
+  shotsOnTarget?: number;
+  successfulDribbles?: number;
+  boxEntries?: number;
+  ballsLost?: number;
+  ballsRecovered?: number;
+  clearances?: number;
   fantasyPoints?: number;
 }

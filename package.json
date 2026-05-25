@@ -11,6 +11,7 @@
     "sync:challenge": "node scripts/syncChallengeData.mjs",
     "sync:challenge:apply": "node scripts/applyChallengeSnapshot.mjs",
     "sync:challenge:watch": "node scripts/watchChallenge.mjs",
+    "sync:discord": "node scripts/syncDiscordMatchStats.mjs",
     "cap:sync": "npm run build && cap sync",
     "android:apk": "npm run cap:sync && cd android && gradlew.bat assembleDebug",
     "mobile:assets": "capacitor-assets generate --android --ios"
