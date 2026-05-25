@@ -751,7 +751,11 @@ begin
 
     delete from public.lineup_players lp
     using public.lineups l
-    where l.id = lp.lineup_id and l.league_id = p_league_id and l.user_id = v_previous_owner and lp.player_id = p_player_id;
+    where l.id = lp.lineup_id
+      and l.league_id = p_league_id
+      and l.user_id = v_previous_owner
+      and l.status = 'draft'
+      and lp.player_id = p_player_id;
   end if;
 
   update public.league_players
@@ -832,7 +836,11 @@ begin
 
   delete from public.lineup_players lp
   using public.lineups l
-  where l.id = lp.lineup_id and l.league_id = p_league_id and l.user_id = auth.uid() and lp.player_id = p_player_id;
+  where l.id = lp.lineup_id
+    and l.league_id = p_league_id
+    and l.user_id = auth.uid()
+    and l.status = 'draft'
+    and lp.player_id = p_player_id;
 
   insert into public.transfers (league_id, user_id, player_id, type, amount)
   values (p_league_id, auth.uid(), p_player_id, 'sell', v_amount);
@@ -891,7 +899,11 @@ begin
 
   delete from public.lineup_players lp
   using public.lineups l
-  where l.id = lp.lineup_id and l.league_id = p_league_id and l.user_id = auth.uid() and lp.player_id = p_player_id;
+  where l.id = lp.lineup_id
+    and l.league_id = p_league_id
+    and l.user_id = auth.uid()
+    and l.status = 'draft'
+    and lp.player_id = p_player_id;
 
   select name into v_player_name from public.players where id = p_player_id;
   insert into public.activity_feed (league_id, type, message, metadata_json)
@@ -905,9 +917,24 @@ end;
 $$;
 
 alter table if exists public.player_match_stats
+  add column if not exists scoring_position text,
   add column if not exists manual_override boolean not null default false,
   add column if not exists updated_by uuid references auth.users(id) on delete set null,
   add column if not exists updated_at timestamptz not null default now();
+
+do $$
+begin
+  if not exists (
+    select 1
+    from pg_constraint
+    where conname = 'player_match_stats_scoring_position_check'
+      and conrelid = 'public.player_match_stats'::regclass
+  ) then
+    alter table public.player_match_stats
+      add constraint player_match_stats_scoring_position_check
+      check (scoring_position is null or scoring_position in ('POR', 'DEF', 'MED', 'DEL'));
+  end if;
+end $$;
 
 create or replace function public.cancel_market_listing(p_league_id uuid, p_player_id uuid)
 returns void
@@ -1452,41 +1479,85 @@ security definer
 set search_path = public
 as $$
 begin
-  if coalesce(auth.role(), '') <> 'service_role' and not public.is_league_admin(p_league_id) and not public.is_league_member(p_league_id) then
+  if coalesce(auth.role(), '') <> 'service_role'
+    and not public.is_overload_admin()
+    and not public.is_league_admin(p_league_id)
+    and not public.is_league_member(p_league_id)
+  then
     raise exception 'not_member';
   end if;
 
-  with squad_scores as (
+  with lineup_scores as (
     select
-      s.user_id,
+      l.user_id,
       md.number,
-      coalesce(sum(pms.fantasy_points), 0)::integer as points
-    from public.squads s
-    join public.league_members lm on lm.league_id = s.league_id and lm.user_id = s.user_id
-    join public.matchdays md on md.league_id = s.league_id
+      md.id as matchday_id,
+      coalesce(sum(
+        case
+          when p.status in ('lesionado', 'sancionado')
+            and (p.unavailable_until_matchday is null or md.number <= p.unavailable_until_matchday)
+          then 0
+          else coalesce(pms.fantasy_points, 0) * case when l.captain_player_id = lp.player_id then 2 else 1 end
+        end
+      ), 0)::integer as points
+    from public.lineups l
+    join public.league_members lm on lm.league_id = l.league_id and lm.user_id = l.user_id
+    join public.matchdays md on md.id = l.matchday_id
+    join public.lineup_players lp on lp.lineup_id = l.id and lp.is_starter
+    join public.players p on p.id = lp.player_id
     join public.matches m on m.matchday_id = md.id
-    join public.player_match_stats pms on pms.match_id = m.id and pms.player_id = s.player_id
-    where s.league_id = p_league_id
+    left join public.player_match_stats pms on pms.match_id = m.id and pms.player_id = lp.player_id
+    where l.league_id = p_league_id
+      and l.status in ('submitted', 'locked')
       and (p_matchday_id is null or md.id = p_matchday_id)
       and md.number >= coalesce(lm.joined_matchday, 1)
-      and coalesce(m.played_at, md.starts_at, now()) >= s.acquired_at
-    group by s.user_id, md.number
+    group by l.user_id, md.number, md.id
   ),
-  latest_matchday as (
-    select md.number
-    from public.matchdays md
-    where md.league_id = p_league_id
+  squad_scores as (
+    select
+      lp.owner_user_id as user_id,
+      md.number,
+      md.id as matchday_id,
+      coalesce(sum(
+        case
+          when p.status in ('lesionado', 'sancionado')
+            and (p.unavailable_until_matchday is null or md.number <= p.unavailable_until_matchday)
+          then 0
+          else coalesce(pms.fantasy_points, 0)
+        end
+      ), 0)::integer as points
+    from public.league_players lp
+    join public.league_members lm on lm.league_id = lp.league_id and lm.user_id = lp.owner_user_id
+    join public.players p on p.id = lp.player_id
+    join public.matchdays md on md.league_id = lp.league_id
+    join public.matches m on m.matchday_id = md.id
+    left join public.player_match_stats pms on pms.match_id = m.id and pms.player_id = lp.player_id
+    where lp.league_id = p_league_id
+      and lp.owner_user_id is not null
       and (p_matchday_id is null or md.id = p_matchday_id)
-    order by md.number desc
-    limit 1
+      and md.number >= coalesce(lm.joined_matchday, 1)
+      and not exists (
+        select 1
+        from public.lineups existing
+        where existing.league_id = p_league_id
+          and existing.user_id = lp.owner_user_id
+          and existing.matchday_id = md.id
+          and existing.status in ('submitted', 'locked')
+      )
+    group by lp.owner_user_id, md.number, md.id
+  ),
+  combined_scores as (
+    select user_id, number, points from lineup_scores
+    union all
+    select user_id, number, points from squad_scores
   ),
   totals as (
     select
       user_id,
       sum(points)::integer as total_points,
-      jsonb_object_agg(number::text, points) as points_by_matchday,
-      coalesce(sum(points) filter (where number = (select number from latest_matchday)), 0)::integer as last_points
-    from squad_scores
+      jsonb_object_agg(number::text, points order by number) as points_by_matchday,
+      coalesce((array_agg(points order by number desc))[1], 0)::integer as last_points
+    from combined_scores
     group by user_id
   )
   update public.league_members lm
@@ -1497,6 +1568,7 @@ begin
   from public.league_members base
   left join totals t on t.user_id = base.user_id
   where lm.id = base.id and base.league_id = p_league_id;
+
 end;
 $$;
 
@@ -1776,6 +1848,7 @@ declare
   v_player public.players%rowtype;
   v_points integer;
   v_rules jsonb;
+  v_scoring_position text;
 begin
   select md.league_id, md.id into v_league_id, v_matchday_id
   from public.matches m
@@ -1799,8 +1872,15 @@ begin
   loop
     select * into v_player from public.players where id = coalesce(v_stat ->> 'playerId', v_stat ->> 'player_id')::uuid;
     if found then
+      v_scoring_position := coalesce(v_stat ->> 'scoringPosition', v_stat ->> 'scoring_position', v_player.position);
+      if v_scoring_position not in ('POR', 'DEF', 'MED', 'DEL')
+        or not v_scoring_position = any(case when cardinality(v_player.positions) > 0 then v_player.positions else array[v_player.position] end)
+      then
+        v_scoring_position := v_player.position;
+      end if;
+
       v_points := public.calculate_points_sql(
-        v_player.position,
+        v_scoring_position,
         coalesce((v_stat ->> 'minutes')::integer, 0),
         coalesce((v_stat ->> 'goals')::integer, 0),
         coalesce((v_stat ->> 'assists')::integer, 0),
@@ -1833,7 +1913,7 @@ begin
       );
 
       insert into public.player_match_stats (
-        match_id, player_id, minutes, goals, assists, key_passes, yellow_cards, red_cards, double_yellow_cards, own_goals,
+        match_id, player_id, scoring_position, minutes, goals, assists, key_passes, yellow_cards, red_cards, double_yellow_cards, own_goals,
         penalties_scored, penalties_missed, penalties_saved, penalties_provoked, goals_conceded, clean_sheet, overload_score, overload_rating, mvp,
         team_won, team_lost, highlighted, error_led_to_goal, saves, shots_on_target, successful_dribbles, box_entries,
         balls_lost, balls_recovered, clearances, fantasy_points, manual_override, updated_by, updated_at
@@ -1841,6 +1921,7 @@ begin
       values (
         p_match_id,
         v_player.id,
+        v_scoring_position,
         coalesce((v_stat ->> 'minutes')::integer, 0),
         coalesce((v_stat ->> 'goals')::integer, 0),
         coalesce((v_stat ->> 'assists')::integer, 0),
@@ -2069,7 +2150,11 @@ begin
 
     delete from public.lineup_players lp
     using public.lineups l
-    where l.id = lp.lineup_id and l.league_id = v_offer.league_id and l.user_id = v_offer.from_user_id and lp.player_id = v_offer.exchange_player_id;
+    where l.id = lp.lineup_id
+      and l.league_id = v_offer.league_id
+      and l.user_id = v_offer.from_user_id
+      and l.status = 'draft'
+      and lp.player_id = v_offer.exchange_player_id;
 
     insert into public.transfers (league_id, user_id, player_id, type, amount)
     values (v_offer.league_id, auth.uid(), v_offer.exchange_player_id, 'offer_accepted', v_exchange_lp.price);
@@ -2077,7 +2162,11 @@ begin
 
   delete from public.lineup_players lp
   using public.lineups l
-  where l.id = lp.lineup_id and l.league_id = v_offer.league_id and l.user_id = auth.uid() and lp.player_id = v_offer.player_id;
+  where l.id = lp.lineup_id
+    and l.league_id = v_offer.league_id
+    and l.user_id = auth.uid()
+    and l.status = 'draft'
+    and lp.player_id = v_offer.player_id;
 
   update public.offers set status = 'accepted' where id = p_offer_id;
   insert into public.transfers (league_id, user_id, player_id, type, amount)
@@ -2103,3 +2192,332 @@ begin
   end if;
 end;
 $$;
+
+alter table public.players
+  add column if not exists unavailable_until_matchday integer,
+  add column if not exists positions text[];
+
+update public.players
+set positions = array[position]
+where positions is null or cardinality(positions) = 0;
+
+alter table public.players
+  alter column positions set default array['MED']::text[],
+  alter column positions set not null;
+
+alter table public.lineups
+  add column if not exists captain_player_id uuid references public.players(id) on delete set null;
+
+create or replace function public.is_overload_admin()
+returns boolean
+language sql
+stable
+as $$
+  select coalesce(auth.email(), '') ilike 'pablogarvac%';
+$$;
+
+create or replace function public.admin_update_player_availability(
+  p_player_id uuid,
+  p_status text,
+  p_unavailable_until_matchday integer default null
+)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_league_id uuid;
+begin
+  if not public.is_overload_admin() then
+    raise exception 'overload_admin_required';
+  end if;
+
+  if p_status not in ('disponible', 'lesionado', 'sancionado', 'duda') then
+    raise exception 'invalid_status';
+  end if;
+
+  update public.players
+  set
+    status = p_status,
+    unavailable_until_matchday = case
+      when p_status in ('lesionado', 'sancionado') then p_unavailable_until_matchday
+      else null
+    end
+  where id = p_player_id;
+
+  if not found then
+    raise exception 'player_not_found';
+  end if;
+
+  for v_league_id in select id from public.leagues loop
+    perform public.recalculate_league_points(v_league_id, null);
+  end loop;
+end;
+$$;
+
+create or replace function public.admin_set_current_matchday(p_league_id uuid, p_matchday_number integer)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_max_matchday integer;
+begin
+  if not public.is_overload_admin() then
+    raise exception 'overload_admin_required';
+  end if;
+  if p_matchday_number < 1 then
+    raise exception 'invalid_matchday';
+  end if;
+  if not exists (select 1 from public.leagues where id = p_league_id) then
+    raise exception 'league_not_found';
+  end if;
+
+  v_max_matchday := greatest(13, p_matchday_number);
+
+  insert into public.matchdays (league_id, number, status, starts_at)
+  select p_league_id, generated.number, 'pendiente', now() + ((generated.number - p_matchday_number) * interval '7 days')
+  from generate_series(1, v_max_matchday) as generated(number)
+  on conflict (league_id, number) do nothing;
+
+  update public.matchdays
+  set status = 'finalizada',
+      ends_at = coalesce(ends_at, now())
+  where league_id = p_league_id
+    and number < p_matchday_number;
+
+  update public.matchdays
+  set status = 'pendiente',
+      starts_at = coalesce(starts_at, now()),
+      ends_at = null
+  where league_id = p_league_id
+    and number = p_matchday_number;
+
+  update public.matchdays
+  set status = 'pendiente',
+      ends_at = null
+  where league_id = p_league_id
+    and number > p_matchday_number;
+
+  update public.leagues
+  set current_matchday = p_matchday_number,
+      lineups_locked = false
+  where id = p_league_id;
+
+  insert into public.activity_feed (league_id, type, message, metadata_json)
+  values (
+    p_league_id,
+    'matchday_opened',
+    'Jornada ' || p_matchday_number || ' abierta para alineaciones.',
+    jsonb_build_object('matchday_number', p_matchday_number, 'user_id', auth.uid())
+  );
+end;
+$$;
+
+create or replace function public.submit_lineup_by_number(
+  p_league_id uuid,
+  p_matchday_number integer,
+  p_formation text,
+  p_starters uuid[],
+  p_bench uuid[] default '{}'::uuid[],
+  p_captain_player_id uuid default null,
+  p_starter_positions text[] default null,
+  p_bench_positions text[] default null
+)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_user_id uuid := auth.uid();
+  v_league public.leagues%rowtype;
+  v_matchday_id uuid;
+  v_existing_lineup_id uuid;
+  v_lineup_id uuid;
+  v_all_players uuid[];
+  v_required_count integer;
+  v_owned_count integer;
+  v_por integer;
+  v_def integer;
+  v_med integer;
+  v_del integer;
+  v_shape_por integer;
+  v_shape_def integer;
+  v_shape_med integer;
+  v_shape_del integer;
+  v_invalid_positions integer;
+begin
+  perform public.ensure_profile();
+
+  select * into v_league
+  from public.leagues
+  where id = p_league_id
+  for update;
+
+  if not found then raise exception 'league_not_found'; end if;
+  if not public.is_league_member(p_league_id) then raise exception 'not_member'; end if;
+  if p_matchday_number < v_league.current_matchday then raise exception 'matchday_closed'; end if;
+  if v_league.lineups_locked and p_matchday_number <= v_league.current_matchday then
+    raise exception 'lineups_locked';
+  end if;
+
+  if p_formation = '4-4-2' then
+    v_shape_por := 1; v_shape_def := 4; v_shape_med := 4; v_shape_del := 2;
+  elsif p_formation = '4-3-3' then
+    v_shape_por := 1; v_shape_def := 4; v_shape_med := 3; v_shape_del := 3;
+  elsif p_formation = '3-5-2' then
+    v_shape_por := 1; v_shape_def := 3; v_shape_med := 5; v_shape_del := 2;
+  elsif p_formation = '3-4-3' then
+    v_shape_por := 1; v_shape_def := 3; v_shape_med := 4; v_shape_del := 3;
+  elsif p_formation = '5-3-2' then
+    v_shape_por := 1; v_shape_def := 5; v_shape_med := 3; v_shape_del := 2;
+  elsif p_formation = '4-5-1' then
+    v_shape_por := 1; v_shape_def := 4; v_shape_med := 5; v_shape_del := 1;
+  else
+    raise exception 'invalid_formation';
+  end if;
+
+  if coalesce(cardinality(p_starters), 0) <> 11 then raise exception 'invalid_starters_count'; end if;
+  if p_captain_player_id is not null and array_position(p_starters, p_captain_player_id) is null then
+    raise exception 'captain_not_starter';
+  end if;
+
+  v_all_players := p_starters || coalesce(p_bench, '{}'::uuid[]);
+
+  select count(*) into v_required_count
+  from (select distinct player_id from unnest(v_all_players) as u(player_id)) unique_players;
+
+  if v_required_count <> cardinality(v_all_players) then raise exception 'duplicate_lineup_player'; end if;
+
+  select count(distinct lp.player_id) into v_owned_count
+  from public.league_players lp
+  where lp.league_id = p_league_id
+    and lp.player_id = any(v_all_players)
+    and (lp.owner_user_id = v_user_id or lp.listed_by_user_id = v_user_id);
+
+  if v_owned_count <> v_required_count then raise exception 'player_not_owned'; end if;
+
+  with assigned as (
+    select
+      s.player_id,
+      coalesce(p_starter_positions[s.ordinality::integer], p.position) as assigned_position,
+      case when cardinality(p.positions) > 0 then p.positions else array[p.position] end as valid_positions
+    from unnest(p_starters) with ordinality as s(player_id, ordinality)
+    join public.players p on p.id = s.player_id
+  )
+  select
+    count(*) filter (where assigned_position = 'POR'),
+    count(*) filter (where assigned_position = 'DEF'),
+    count(*) filter (where assigned_position = 'MED'),
+    count(*) filter (where assigned_position = 'DEL'),
+    count(*) filter (
+      where assigned_position not in ('POR', 'DEF', 'MED', 'DEL')
+        or not assigned_position = any(valid_positions)
+    )
+  into v_por, v_def, v_med, v_del, v_invalid_positions
+  from assigned;
+
+  if v_invalid_positions > 0 then raise exception 'invalid_position_assignment'; end if;
+  if v_por <> v_shape_por or v_def <> v_shape_def or v_med <> v_shape_med or v_del <> v_shape_del then
+    raise exception 'invalid_formation_positions';
+  end if;
+
+  select id into v_matchday_id
+  from public.matchdays
+  where league_id = p_league_id and number = p_matchday_number;
+
+  if v_matchday_id is null then
+    insert into public.matchdays (league_id, number, status, starts_at)
+    values (p_league_id, p_matchday_number, 'pendiente', now())
+    returning id into v_matchday_id;
+  end if;
+
+  select id into v_existing_lineup_id
+  from public.lineups
+  where league_id = p_league_id and user_id = v_user_id and matchday_id = v_matchday_id;
+
+  if v_existing_lineup_id is not null then raise exception 'lineup_already_submitted'; end if;
+
+  insert into public.lineups (league_id, user_id, matchday_id, formation, status, captain_player_id)
+  values (p_league_id, v_user_id, v_matchday_id, p_formation, 'submitted', p_captain_player_id)
+  returning id into v_lineup_id;
+
+  insert into public.lineup_players (lineup_id, player_id, slot, is_starter, position)
+  select
+    v_lineup_id,
+    s.player_id,
+    s.ordinality::integer - 1,
+    true,
+    coalesce(p_starter_positions[s.ordinality::integer], p.position)
+  from unnest(p_starters) with ordinality as s(player_id, ordinality)
+  join public.players p on p.id = s.player_id;
+
+  insert into public.lineup_players (lineup_id, player_id, slot, is_starter, position)
+  select
+    v_lineup_id,
+    b.player_id,
+    10 + b.ordinality::integer,
+    false,
+    coalesce(p_bench_positions[b.ordinality::integer], p.position)
+  from unnest(coalesce(p_bench, '{}'::uuid[])) with ordinality as b(player_id, ordinality)
+  join public.players p on p.id = b.player_id;
+
+  insert into public.activity_feed (league_id, type, message, metadata_json)
+  values (p_league_id, 'lineup', 'Alineacion guardada para J' || p_matchday_number || '.', jsonb_build_object('user_id', v_user_id, 'matchday_number', p_matchday_number));
+end;
+$$;
+
+create or replace function public.set_lineup_captain(
+  p_lineup_id uuid,
+  p_captain_player_id uuid
+)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_lineup record;
+begin
+  select l.id, l.league_id, l.user_id, l.matchday_id, md.number as matchday_number, le.current_matchday, le.lineups_locked
+  into v_lineup
+  from public.lineups l
+  join public.matchdays md on md.id = l.matchday_id
+  join public.leagues le on le.id = l.league_id
+  where l.id = p_lineup_id;
+
+  if not found then
+    raise exception 'lineup_not_found';
+  end if;
+
+  if v_lineup.user_id <> auth.uid() then
+    raise exception 'not_lineup_owner';
+  end if;
+
+  if v_lineup.matchday_number < v_lineup.current_matchday or (v_lineup.lineups_locked and v_lineup.matchday_number <= v_lineup.current_matchday) then
+    raise exception 'lineup_locked';
+  end if;
+
+  if p_captain_player_id is not null and not exists (
+    select 1
+    from public.lineup_players lp
+    where lp.lineup_id = p_lineup_id
+      and lp.player_id = p_captain_player_id
+      and lp.is_starter = true
+  ) then
+    raise exception 'captain_not_starter';
+  end if;
+
+  update public.lineups
+  set captain_player_id = p_captain_player_id
+  where id = p_lineup_id;
+end;
+$$;
+
+grant execute on function public.admin_update_player_availability(uuid, text, integer) to authenticated;
+grant execute on function public.admin_set_current_matchday(uuid, integer) to authenticated;
+grant execute on function public.submit_lineup_by_number(uuid, integer, text, uuid[], uuid[], uuid, text[], text[]) to authenticated;
+grant execute on function public.set_lineup_captain(uuid, uuid) to authenticated;

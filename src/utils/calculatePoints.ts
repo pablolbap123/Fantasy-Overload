@@ -186,9 +186,10 @@ export const buildPlayerPointBreakdown = (
   position: PlayerPosition,
   showAll = false,
 ): PlayerPointBreakdownItem[] => {
+  const effectivePosition = normalizePlayerPosition(playerMatchStats.scoringPosition, position);
   const doubleYellowCards = playerMatchStats.doubleYellowCards ?? Math.min(playerMatchStats.yellowCards, playerMatchStats.redCards);
   const directRedCards = Math.max(0, playerMatchStats.redCards - doubleYellowCards);
-  const overloadRating = getOverloadRating(playerMatchStats, position);
+  const overloadRating = getOverloadRating(playerMatchStats, effectivePosition);
   const overloadKey = String(overloadRating) as keyof ScoringRules["overloadRating"];
   const items: PlayerPointBreakdownItem[] = [];
 
@@ -204,7 +205,7 @@ export const buildPlayerPointBreakdown = (
 
   // Fuente de verdad de puntos: estadísticas editables/importadas, con reglas configurables por liga.
   add("played", playerMatchStats.minutes > 60 ? "Partido jugado (+60 min)" : "Partido jugado", playerMatchStats.minutes, playedPointsFor(scoringRules, playerMatchStats.minutes));
-  add("goals", "Goles", playerMatchStats.goals, playerMatchStats.goals * scoringRules.goal[position]);
+  add("goals", "Goles", playerMatchStats.goals, playerMatchStats.goals * scoringRules.goal[effectivePosition]);
   add("assists", "Asistencias de gol", playerMatchStats.assists, playerMatchStats.assists * scoringRules.assist);
   add("keyPasses", "Asistencias sin gol", playerMatchStats.keyPasses ?? 0, (playerMatchStats.keyPasses ?? 0) * (scoringRules.keyPass ?? 1));
   add("ownGoals", "Goles en propia puerta", playerMatchStats.ownGoals, playerMatchStats.ownGoals * scoringRules.ownGoal);
@@ -213,14 +214,14 @@ export const buildPlayerPointBreakdown = (
     "cleanSheet",
     "Porteria a cero",
     playerMatchStats.cleanSheet && playerMatchStats.minutes > 60 ? 1 : 0,
-    playerMatchStats.cleanSheet && playerMatchStats.minutes > 60 ? (scoringRules.cleanSheet[position] ?? 0) : 0,
+    playerMatchStats.cleanSheet && playerMatchStats.minutes > 60 ? (scoringRules.cleanSheet[effectivePosition] ?? 0) : 0,
   );
 
   add(
     "goalsConceded",
     "Goles recibidos",
     playerMatchStats.goalsConceded > 0 ? `${playerMatchStats.goalsConceded} recibidos` : 0,
-    Math.floor(playerMatchStats.goalsConceded / 2) * concededRuleFor(scoringRules, position),
+    Math.floor(playerMatchStats.goalsConceded / 2) * concededRuleFor(scoringRules, effectivePosition),
   );
 
   add("penaltiesMissed", "Penaltis fallados", playerMatchStats.penaltiesMissed, playerMatchStats.penaltiesMissed * scoringRules.penaltyMissed);
@@ -234,7 +235,7 @@ export const buildPlayerPointBreakdown = (
   add("yellowCards", "Tarjetas amarillas", playerMatchStats.yellowCards, playerMatchStats.yellowCards * scoringRules.yellowCard);
   add("doubleYellowCards", "Dobles amarillas", doubleYellowCards, doubleYellowCards * scoringRules.doubleYellowCard);
   add("redCards", "Rojas directas", directRedCards, directRedCards * scoringRules.redCard);
-  if (position === "POR") add("saves", "Paradas del portero", playerMatchStats.saves ?? 0, perBlockPoints(playerMatchStats.saves, 2, scoringRules.savesEveryTwo ?? 1));
+  if (effectivePosition === "POR") add("saves", "Paradas del portero", playerMatchStats.saves ?? 0, perBlockPoints(playerMatchStats.saves, 2, scoringRules.savesEveryTwo ?? 1));
   add("overloadRating", "Nota Overload", playerMatchStats.overloadScore !== undefined ? `${playerMatchStats.overloadScore}/10` : overloadRating, scoringRules.overloadRating?.[overloadKey] ?? overloadRating);
   add(
     "shotsOnTarget",

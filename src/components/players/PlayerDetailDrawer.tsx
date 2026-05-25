@@ -84,6 +84,7 @@ export const PlayerDetailDrawer = ({ player: selectedPlayer, onClose }: { player
   const selectedStat = selectedAppearance?.stat;
   const emptyMatchStat = player ? {
     matchId: "", playerId: player.id,
+    scoringPosition: player.position,
     minutes: 0, goals: 0, assists: 0, keyPasses: 0,
     yellowCards: 0, redCards: 0, doubleYellowCards: 0, ownGoals: 0,
     penaltiesScored: 0, penaltiesMissed: 0, penaltiesSaved: 0, penaltiesProvoked: 0,

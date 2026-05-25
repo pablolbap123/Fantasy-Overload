@@ -183,6 +183,7 @@ create table if not exists public.player_match_stats (
   id uuid primary key default gen_random_uuid(),
   match_id uuid not null references public.matches(id) on delete cascade,
   player_id uuid not null references public.players(id) on delete cascade,
+  scoring_position text check (scoring_position in ('POR', 'DEF', 'MED', 'DEL')),
   minutes integer not null default 0,
   goals integer not null default 0,
   assists integer not null default 0,

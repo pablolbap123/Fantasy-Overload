@@ -8,7 +8,7 @@ export const challengeMeta = {
   "stageUrl": "https://challenge.place/c/68486e1155cbb0e036a0559f/stage/69de85f89e7d357d88be816c",
   "stageName": "Temporada 1 GO",
   "stageId": "69de85f89e7d357d88be816c",
-  "fetchedAt": "2026-05-25T16:42:41.643Z",
+  "fetchedAt": "2026-05-25T21:26:54.341Z",
   "playerCount": 1105,
   "teamCount": 39,
   "matchdayCount": 8,
@@ -51904,13 +51904,13 @@ export const challengePlayers: Player[] = [
     "imageUrl": "https://static.challengeplace.com/2026/2/24/11/player/84cab249-2d14-40e5-9a1b-a60b737fc11f.jpg",
     "teamId": "team-s04",
     "teamName": "Schalke 04",
-    "position": "DEF",
+    "position": "POR",
     "positions": [
-      "DEF",
-      "POR"
+      "POR",
+      "DEF"
     ],
-    "basePrice": 4112579,
-    "currentPrice": 4100000,
+    "basePrice": 3762579,
+    "currentPrice": 3750000,
     "fantasyValue": 0,
     "totalPoints": 0,
     "pointsByMatchday": {
@@ -51952,13 +51952,13 @@ export const challengePlayers: Player[] = [
       "clearances": 0
     },
     "priceHistory": {
-      "1": 4100000,
-      "2": 4100000,
-      "3": 4100000,
-      "4": 4100000,
-      "5": 4100000,
-      "6": 4100000,
-      "7": 4100000
+      "1": 3750000,
+      "2": 3750000,
+      "3": 3750000,
+      "4": 3750000,
+      "5": 3750000,
+      "6": 3750000,
+      "7": 3750000
     }
   },
   {

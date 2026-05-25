@@ -441,6 +441,7 @@ const mapMatch = (row: any): Match => ({
   playerStats: (row.player_match_stats ?? []).map((stat: any) => ({
     matchId: stat.match_id,
     playerId: stat.player_id,
+    scoringPosition: stat.scoring_position ? normalizePlayerPosition(stat.scoring_position) : undefined,
     minutes: Number(stat.minutes ?? 0),
     goals: Number(stat.goals ?? 0),
     assists: Number(stat.assists ?? 0),
@@ -1293,7 +1294,20 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
         await loadLeagueData(currentLeague.id);
       } else {
         setLeagues((current) =>
-          current.map((league) => (league.id === currentLeague.id ? { ...league, currentMatchday: matchdayNumber } : league)),
+          current.map((league) =>
+            league.id === currentLeague.id ? { ...league, currentMatchday: matchdayNumber, lineupsLocked: false } : league,
+          ),
+        );
+        setMatchdays((current) =>
+          current.map((matchday) =>
+            matchday.leagueId !== currentLeague.id
+              ? matchday
+              : {
+                  ...matchday,
+                  status: matchday.number < matchdayNumber ? "finalizada" : "pendiente",
+                  endsAt: matchday.number < matchdayNumber ? (matchday.endsAt ?? new Date().toISOString()) : undefined,
+                },
+          ),
         );
       }
       pushToast(`Jornada actual movida a J${matchdayNumber}.`, "success");

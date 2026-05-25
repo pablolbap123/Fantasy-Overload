@@ -53,6 +53,7 @@ export interface Player {
 export interface PlayerMatchStats {
   matchId: string;
   playerId: string;
+  scoringPosition?: PlayerPosition;
   minutes: number;
   goals: number;
   assists: number;

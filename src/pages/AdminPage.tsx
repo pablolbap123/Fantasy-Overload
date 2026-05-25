@@ -7,7 +7,7 @@ import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
 import { EmptyState } from "../components/ui/EmptyState";
 import { useFantasy } from "../store/fantasyStore";
-import { calculatePlayerFantasyPoints, overloadRatingFromScore } from "../utils/calculatePoints";
+import { calculatePlayerFantasyPoints, overloadRatingFromScore, playerPositions } from "../utils/calculatePoints";
 import { getErrorMessage } from "../utils/errors";
 import { positionTone, statusLabel, statusTone } from "../utils/formatters";
 import { getPlayerTeamForMatchday } from "../data/transferOverrides";
@@ -154,14 +154,18 @@ const buildStatsPayload = (
   awayScore: number,
   scoringRules: ScoringRules,
   matchdayNumber: number,
+  scoringPosition: PlayerPosition,
 ): PlayerMatchStats => {
   const teamIsHome = playerTeamIdForMatch(player, matchdayNumber) === match.homeTeamId;
   const teamWon = teamIsHome ? homeScore > awayScore : awayScore > homeScore;
   const teamLost = teamIsHome ? homeScore < awayScore : awayScore < homeScore;
   const overloadRating = overloadRatingFromScore(form.overloadScore) ?? 0;
+  const validPositions = playerPositions(player);
+  const effectiveScoringPosition = validPositions.includes(scoringPosition) ? scoringPosition : player.position;
   const base: PlayerMatchStats = {
     matchId: match.id,
     playerId: player.id,
+    scoringPosition: effectiveScoringPosition,
     minutes: Math.max(0, Math.round(form.minutes)),
     goals: Math.max(0, Math.round(form.goals)),
     assists: Math.max(0, Math.round(form.assists)),
@@ -195,7 +199,7 @@ const buildStatsPayload = (
 
   return {
     ...base,
-    fantasyPoints: calculatePlayerFantasyPoints(base, scoringRules, player.position),
+    fantasyPoints: calculatePlayerFantasyPoints(base, scoringRules, effectiveScoringPosition),
   };
 };
 
@@ -222,6 +226,7 @@ export const AdminPage = () => {
   const [awayScore, setAwayScore] = useState(0);
   const [statsQuery, setStatsQuery] = useState("");
   const [selectedStatsPlayerId, setSelectedStatsPlayerId] = useState("");
+  const [scoringPosition, setScoringPosition] = useState<PlayerPosition>("MED");
   const [statsForm, setStatsForm] = useState<EditableStats>(emptyStats);
   const [savingKey, setSavingKey] = useState("");
   const [message, setMessage] = useState("");
@@ -259,9 +264,10 @@ export const AdminPage = () => {
 
   const filteredMatchPlayers = useMemo(() => {
     const needle = statsQuery.trim().toLowerCase();
-    return matchPlayers.filter((player) => `${player.name} ${player.teamName} ${player.position}`.toLowerCase().includes(needle));
+    return matchPlayers.filter((player) => `${player.name} ${player.teamName} ${playerPositions(player).join(" ")}`.toLowerCase().includes(needle));
   }, [matchPlayers, statsQuery]);
   const selectedStatsPlayer = matchPlayers.find((player) => player.id === selectedStatsPlayerId);
+  const selectedStatsPlayerPositions = selectedStatsPlayer ? playerPositions(selectedStatsPlayer) : [];
   const selectedExistingStats = selectedMatch?.playerStats.find((stat) => stat.playerId === selectedStatsPlayerId);
 
   const filteredPlayers = useMemo(
@@ -288,7 +294,7 @@ export const AdminPage = () => {
   const sanctionedCount = players.filter((player) => player.status === "sancionado").length;
   const previewStats =
     selectedMatch && selectedStatsPlayer
-      ? buildStatsPayload(selectedMatch, selectedStatsPlayer, statsForm, homeScore, awayScore, scoringRules, selectedMatchdayNumber)
+      ? buildStatsPayload(selectedMatch, selectedStatsPlayer, statsForm, homeScore, awayScore, scoringRules, selectedMatchdayNumber, scoringPosition)
       : null;
 
   useEffect(() => {
@@ -321,6 +327,12 @@ export const AdminPage = () => {
       setStatsForm(emptyStats);
       return;
     }
+    const availablePositions = playerPositions(selectedStatsPlayer);
+    setScoringPosition(
+      selectedExistingStats?.scoringPosition && availablePositions.includes(selectedExistingStats.scoringPosition)
+        ? selectedExistingStats.scoringPosition
+        : selectedStatsPlayer.position,
+    );
     // Usamos el marcador guardado en el partido (no el que el admin está editando en pantalla)
     // para no recargar el formulario cada vez que se cambia el score, lo que causaba que
     // la nota se "sumara" en vez de reemplazarse al volver a guardar.
@@ -357,7 +369,7 @@ export const AdminPage = () => {
     setMessage("");
     setSavingKey("stats");
     try {
-      const nextStat = buildStatsPayload(selectedMatch, selectedStatsPlayer, statsForm, homeScore, awayScore, scoringRules, selectedMatchdayNumber);
+      const nextStat = buildStatsPayload(selectedMatch, selectedStatsPlayer, statsForm, homeScore, awayScore, scoringRules, selectedMatchdayNumber, scoringPosition);
       const updatedMatch: Match = {
         ...selectedMatch,
         homeScore,
@@ -504,7 +516,11 @@ export const AdminPage = () => {
                     <div className="truncate text-sm font-black text-white">{player.name}</div>
                     <div className="truncate text-xs text-slate-400">{player.teamName}</div>
                   </div>
-                  <Badge className={positionTone[player.position]}>{player.position}</Badge>
+                  <div className="flex flex-wrap justify-end gap-1">
+                    {playerPositions(player).map((position) => (
+                      <Badge key={position} className={positionTone[position]}>{position}</Badge>
+                    ))}
+                  </div>
                 </button>
               ))}
               {filteredMatchPlayers.length === 0 ? <p className="p-3 text-sm text-slate-400">No hay jugadores de equipos para este partido.</p> : null}
@@ -518,11 +534,23 @@ export const AdminPage = () => {
                 <h3 className="truncate text-lg font-black text-white">{selectedStatsPlayer?.name ?? "Selecciona jugador"}</h3>
                 <p className="truncate text-sm text-slate-400">{selectedStatsPlayer?.teamName ?? "Sin jugador seleccionado"}</p>
               </div>
+              {selectedStatsPlayer ? (
+                <label className="ml-auto min-w-32">
+                  <span className="sr-only">Puntua como</span>
+                  <select className="field h-10 py-1 text-sm" value={scoringPosition} onChange={(event) => setScoringPosition(event.target.value as PlayerPosition)}>
+                    {selectedStatsPlayerPositions.map((position) => (
+                      <option key={position} value={position}>
+                        Puntua como {position}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              ) : null}
             </div>
 
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {numericStatFields
-                .filter((field) => !field.positions || (selectedStatsPlayer && field.positions.includes(selectedStatsPlayer.position)))
+                .filter((field) => !field.positions || field.positions.some((position) => selectedStatsPlayerPositions.includes(position)))
                 .map((field) => (
                   <label key={field.key}>
                     <span className="mb-1 block text-[11px] font-black uppercase tracking-[0.12em] text-slate-500">{field.label}</span>

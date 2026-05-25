@@ -71,9 +71,7 @@ export const MyTeamPage = () => {
   const { currentLeague, userId, leaguePlayers, players, members, lineups, matchdays, submitLineup, setLineupCaptain, sellPlayer } = useFantasy();
   const sortedMatchdays = useMemo(() => [...matchdays].sort((a, b) => a.number - b.number), [matchdays]);
   const latestCompletedMatchdayNumber = sortedMatchdays.filter(matchdayHasCompleteResults).at(-1)?.number ?? 0;
-  const openMatchdayNumber =
-    sortedMatchdays.find((matchday) => !matchdayHasCompleteResults(matchday))?.number ??
-    Math.max(1, latestCompletedMatchdayNumber + 1, currentLeague?.currentMatchday ?? 1);
+  const openMatchdayNumber = currentLeague?.currentMatchday ?? Math.max(1, latestCompletedMatchdayNumber + 1);
   const [selectedMatchdayNumber, setSelectedMatchdayNumber] = useState(openMatchdayNumber);
   const [formation, setFormation] = useState<Formation>("4-4-2");
   const [starterIds, setStarterIds] = useState<string[]>([]);
