@@ -8,6 +8,7 @@ const stageName = "Temporada 1 GO";
 const stageUrl = `${challengeUrl}/stage/${stageId}`;
 const transfersUrl = `${challengeUrl}/transfers`;
 const staticBaseUrl = "https://static.challengeplace.com";
+const postJornadaSixTransferCutoff = Date.parse("2026-05-11T00:00:00+02:00");
 
 const canonicalNames = {
   BLSA: "Bolsa de Jugadores",
@@ -268,6 +269,7 @@ const overloadRatingFromScore = (score) => {
 };
 
 const overloadRatingFor = (stats, position, seedValue = "") => {
+  if (!hasTrackedAction(stats)) return 0;
   const ratingFromScore = overloadRatingFromScore(stats.overloadScore);
   if (ratingFromScore !== undefined) return ratingFromScore;
   if (typeof stats.overloadRating === "number" && stats.overloadRating > 0) return Math.max(0, Math.min(4, Math.round(stats.overloadRating)));
@@ -279,7 +281,7 @@ const overloadRatingFor = (stats, position, seedValue = "") => {
     (stats.keyPasses ?? 0) * 0.35 +
     (stats.penaltiesSaved ?? 0) * 2.2 +
     (stats.penaltiesProvoked ?? 0) * 1.3 +
-    (stats.cleanSheet ? (position === "POR" || position === "DEF" ? 1.1 : 0.55) : 0) -
+    (stats.cleanSheet && (stats.minutes ?? 0) > 60 ? (position === "POR" || position === "DEF" ? 1.1 : 0.55) : 0) -
     (stats.ownGoals ?? 0) * 2.4 -
     (stats.penaltiesMissed ?? 0) * 1.8 -
     directRedCards * 2.2 -
@@ -295,6 +297,7 @@ const overloadRatingFor = (stats, position, seedValue = "") => {
 };
 
 const totalPointsFor = (stats, position) => {
+  if (!hasTrackedAction(stats)) return 0;
   const doubleYellowCards = stats.doubleYellowCards ?? Math.min(stats.yellowCards ?? 0, stats.redCards ?? 0);
   const directRedCards = Math.max(0, (stats.redCards ?? 0) - doubleYellowCards);
   const minutes = stats.minutes ?? 0;
@@ -325,6 +328,33 @@ const totalPointsFor = (stats, position) => {
     Math.floor((stats.clearances ?? 0) / 5)
   );
 };
+
+const hasTrackedAction = (stats) =>
+  (stats.minutes ?? 0) > 0 ||
+  [
+    "goals",
+    "assists",
+    "keyPasses",
+    "goalsConceded",
+    "yellowCards",
+    "redCards",
+    "doubleYellowCards",
+    "ownGoals",
+    "penaltiesScored",
+    "penaltiesMissed",
+    "penaltiesSaved",
+    "penaltiesProvoked",
+    "saves",
+    "shotsOnTarget",
+    "successfulDribbles",
+    "boxEntries",
+    "ballsLost",
+    "ballsRecovered",
+    "clearances",
+  ].some((key) => Number(stats[key] ?? 0) !== 0) ||
+  Boolean(stats.mvp || stats.highlighted || stats.errorLedToGoal) ||
+  Number(stats.overloadScore ?? 0) > 0 ||
+  Number(stats.overloadRating ?? 0) > 0;
 
 const priceFor = (team, position, totalPoints, stats, seed) => {
   const positionBase = position === "DEL" ? 3_400_000 : position === "MED" ? 3_000_000 : position === "DEF" ? 2_650_000 : 2_300_000;
@@ -446,19 +476,22 @@ for (const transfer of rawTransfers) {
   current.push(transfer);
   transfersByPlayerId.set(transfer.playerId, current);
 }
-const competitorIdForPlayerAt = (playerId, matchTimestamp) => {
+const shouldIgnoreTransferForMatchday = (transfer, matchdayNumber) =>
+  Number(matchdayNumber) <= 6 && transfer.date >= postJornadaSixTransferCutoff;
+const competitorIdForPlayerAt = (playerId, matchTimestamp, matchdayNumber) => {
   const player = mergedPlayers.get(playerId);
   const transfers = transfersByPlayerId.get(playerId) ?? [];
   if (transfers.length === 0) return player?.competitorId;
   let competitorId = transfers[0].fromCompetitorId;
   for (const transfer of transfers) {
+    if (shouldIgnoreTransferForMatchday(transfer, matchdayNumber)) continue;
     if (transfer.date <= matchTimestamp) competitorId = transfer.toCompetitorId;
     else break;
   }
   return competitorId ?? player?.competitorId;
 };
-const playerIdsForCompetitorAt = (competitorId, matchTimestamp) =>
-  rawPlayers.filter((player) => competitorIdForPlayerAt(player.id, matchTimestamp) === competitorId).map((player) => player.id);
+const playerIdsForCompetitorAt = (competitorId, matchTimestamp, matchdayNumber) =>
+  rawPlayers.filter((player) => competitorIdForPlayerAt(player.id, matchTimestamp, matchdayNumber) === competitorId).map((player) => player.id);
 const stageStatsByPlayerId = new Map();
 const profilePlayerByChallengeId = new Map();
 const lineupPositionsByCompetitorId = new Map();
@@ -516,14 +549,13 @@ const officialMatchdays = [];
 const pointBucketsByPlayer = new Map();
 const matchStatsByPlayer = new Map();
 
-const buildPlayerMatchStats = (matchRoom, matchId, homeScore, awayScore, matchTimestamp) => {
+const buildPlayerMatchStats = (matchRoom, matchId, homeScore, awayScore, matchTimestamp, matchdayNumber) => {
   const buckets = new Map();
   const touch = (playerId, competitorId) => {
     const key = `${matchId}-${playerId}`;
     if (!buckets.has(key)) {
-      const resolvedCompetitorId = competitorId ?? competitorIdForPlayerAt(playerId, matchTimestamp);
+      const resolvedCompetitorId = competitorId ?? competitorIdForPlayerAt(playerId, matchTimestamp, matchdayNumber);
       const teamIsHome = resolvedCompetitorId === matchRoom.homeCompetitorId;
-      const teamGoalsConceded = teamIsHome ? awayScore : homeScore;
       buckets.set(key, {
         matchId,
         playerId: `player-${playerId}`,
@@ -539,8 +571,8 @@ const buildPlayerMatchStats = (matchRoom, matchId, homeScore, awayScore, matchTi
         penaltiesMissed: 0,
         penaltiesSaved: 0,
         penaltiesProvoked: 0,
-        goalsConceded: teamGoalsConceded,
-        cleanSheet: teamGoalsConceded === 0,
+        goalsConceded: 0,
+        cleanSheet: false,
         overloadScore: 0,
         overloadRating: 0,
         mvp: false,
@@ -562,7 +594,7 @@ const buildPlayerMatchStats = (matchRoom, matchId, homeScore, awayScore, matchTi
   };
 
   for (const competitorId of [matchRoom.homeCompetitorId, matchRoom.awayCompetitorId]) {
-    for (const playerId of playerIdsForCompetitorAt(competitorId, matchTimestamp)) {
+    for (const playerId of playerIdsForCompetitorAt(competitorId, matchTimestamp, matchdayNumber)) {
       touch(playerId, competitorId);
     }
   }
@@ -649,19 +681,19 @@ await mapLimit(rounds, 1, async (round) => {
         Number(matchRoom.order ?? 0) * 60_000;
       const matchTimestamp = timestamp || stableFallbackTime;
       const playedAt = new Date(matchTimestamp).toISOString();
-      const playerStats = buildPlayerMatchStats(matchRoom, matchId, homeScore, awayScore, matchTimestamp);
+      const playerStats = buildPlayerMatchStats(matchRoom, matchId, homeScore, awayScore, matchTimestamp, matchdayNumber);
       for (const stat of playerStats) {
         const current = pointBucketsByPlayer.get(stat.playerId) ?? {};
         current[matchdayNumber] = (current[matchdayNumber] ?? 0) + Number(stat.fantasyPoints ?? 0);
         pointBucketsByPlayer.set(stat.playerId, current);
 
         const aggregate = matchStatsByPlayer.get(stat.playerId) ?? makeEmptyStats();
-        aggregate.appearances += 1;
+        if (hasTrackedAction(stat)) aggregate.appearances += 1;
         aggregate.goals += stat.goals ?? 0;
         aggregate.assists += stat.assists ?? 0;
         aggregate.keyPasses += stat.keyPasses ?? 0;
         aggregate.goalsConceded += stat.goalsConceded ?? 0;
-        aggregate.cleanSheets += stat.cleanSheet ? 1 : 0;
+        aggregate.cleanSheets += stat.cleanSheet && (stat.minutes ?? 0) > 60 ? 1 : 0;
         aggregate.yellowCards += stat.yellowCards ?? 0;
         aggregate.redCards += stat.redCards ?? 0;
         aggregate.doubleYellowCards += stat.doubleYellowCards ?? 0;
@@ -852,8 +884,12 @@ const matchdayStarts = officialMatchdays
   .map((matchday) => ({ number: matchday.number, timestamp: safeTimestamp(new Date(matchday.startsAt).getTime()) }))
   .filter((item) => item.timestamp > 0)
   .sort((a, b) => a.timestamp - b.timestamp);
-const effectiveMatchdayForTransfer = (timestamp) =>
+const naturalEffectiveMatchdayForTransfer = (timestamp) =>
   matchdayStarts.find((matchday) => matchday.timestamp >= timestamp)?.number ?? maxRoundNumber + 1;
+const effectiveMatchdayForTransfer = (timestamp) => {
+  const naturalMatchday = naturalEffectiveMatchdayForTransfer(timestamp);
+  return timestamp >= postJornadaSixTransferCutoff ? Math.max(7, naturalMatchday) : naturalMatchday;
+};
 
 const transferSqlRows = rawTransfers
   .filter((transfer) => playerByChallengeId.has(transfer.playerId))
@@ -910,6 +946,25 @@ for (const player of rawPlayers) {
         to_matchday: null,
       });
     }
+  });
+}
+
+const transferOverrideRows = [];
+const seenTransferOverridePlayers = new Set();
+for (const transfer of rawTransfers) {
+  if (transfer.date < postJornadaSixTransferCutoff || seenTransferOverridePlayers.has(transfer.playerId)) continue;
+  const player = playerByChallengeId.get(transfer.playerId);
+  const fromTeam = teamByChallengeId.get(transfer.fromCompetitorId);
+  const toTeam = teamByChallengeId.get(transfer.toCompetitorId);
+  if (!player || !fromTeam || !toTeam) continue;
+  seenTransferOverridePlayers.add(transfer.playerId);
+  transferOverrideRows.push({
+    playerId: `player-${transfer.playerId}`,
+    newTeamId: toTeam.id,
+    newTeamName: toTeam.name,
+    previousTeamId: fromTeam.id,
+    previousTeamName: fromTeam.name,
+    effectiveFromMatchday: effectiveMatchdayForTransfer(transfer.date),
   });
 }
 
@@ -1009,11 +1064,17 @@ seedSql = seedSql
 
 const tsPath = resolve("src/data/challengeData.ts");
 const fixturesPath = resolve("src/data/challengeFixtures.ts");
+const transferOverridesPath = resolve("src/data/transferOverrides.ts");
 const seedPath = resolve("supabase/seed.sql");
 await mkdir(dirname(tsPath), { recursive: true });
 await mkdir(dirname(seedPath), { recursive: true });
 await writeFile(tsPath, ts, "utf8");
 await writeFile(fixturesPath, fixturesTs, "utf8");
+await writeFile(
+  transferOverridesPath,
+  `${header}export interface TransferOverride {\n  playerId: string;\n  newTeamId: string;\n  newTeamName: string;\n  previousTeamId: string;\n  previousTeamName: string;\n  effectiveFromMatchday: number;\n}\n\nexport const transferOverrides: TransferOverride[] = ${JSON.stringify(transferOverrideRows, null, 2)};\n\nexport const getPlayerTeamForMatchday = (\n  playerId: string,\n  matchdayNumber: number,\n  currentTeamId: string,\n  currentTeamName: string,\n): { teamId: string; teamName: string } => {\n  const override = transferOverrides.find((item) => item.playerId === playerId);\n  if (override && matchdayNumber < override.effectiveFromMatchday) {\n    return { teamId: override.previousTeamId, teamName: override.previousTeamName };\n  }\n  return { teamId: currentTeamId, teamName: currentTeamName };\n};\n`,
+  "utf8",
+);
 await writeFile(seedPath, seedSql + transferSeedSql + cleanupSeedSql, "utf8");
 
 const byPosition = players.reduce((acc, player) => {

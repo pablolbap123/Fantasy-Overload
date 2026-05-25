@@ -548,6 +548,12 @@ begin
       status = excluded.status,
       played_at = excluded.played_at;
 
+  delete from public.player_match_stats pms
+  using public.matches m
+  join public.matchdays md on md.id = m.matchday_id
+  where pms.match_id = m.id
+    and md.league_id = p_league_id;
+
   insert into public.player_match_stats (
     match_id, player_id, minutes, goals, assists, key_passes, yellow_cards, red_cards, double_yellow_cards, own_goals,
     penalties_scored, penalties_missed, penalties_saved, penalties_provoked, goals_conceded, clean_sheet,
@@ -864,7 +870,7 @@ begin
       listed_by_user_id = auth.uid(),
       market_status = 'market',
       market_listed_at = now(),
-      market_expires_at = now() + interval '3 hours'
+      market_expires_at = now() + interval '24 hours'
   where id = v_lp.id;
 
   delete from public.squads
@@ -880,7 +886,7 @@ begin
     p_league_id,
     'market_listing',
     'Jugador puesto en mercado: ' || coalesce(v_player_name, 'jugador'),
-    jsonb_build_object('user_id', auth.uid(), 'player_id', p_player_id, 'expires_at', now() + interval '3 hours')
+    jsonb_build_object('user_id', auth.uid(), 'player_id', p_player_id, 'expires_at', now() + interval '24 hours')
   );
 end;
 $$;
@@ -1054,7 +1060,7 @@ begin
   from public.offers
   where league_id = p_league_id and player_id = p_player_id and status = 'pending';
 
-  v_minimum := ceil((greatest(v_lp.price, coalesce(v_highest, 0)) * 1.05) / 50000) * 50000;
+  v_minimum := greatest(v_lp.price, coalesce(v_highest, 0));
   if p_amount < v_minimum then
     raise exception 'bid_too_low';
   end if;
@@ -1209,6 +1215,33 @@ begin
     end if;
   end loop;
 
+  with ranked_active as (
+    select
+      id,
+      row_number() over (order by market_listed_at asc nulls last, id) as position
+    from public.league_players
+    where league_id = p_league_id
+      and owner_user_id is null
+      and listed_by_user_id is null
+      and market_status = 'market'
+      and market_expires_at > now()
+  )
+  update public.league_players lp
+  set market_status = 'locked',
+      market_listed_at = null,
+      market_expires_at = null
+  from ranked_active ranked
+  where lp.id = ranked.id
+    and ranked.position > 10;
+
+  update public.league_players
+  set market_expires_at = greatest(market_expires_at, now() + interval '24 hours')
+  where league_id = p_league_id
+    and owner_user_id is null
+    and listed_by_user_id is null
+    and market_status = 'market'
+    and market_expires_at > now();
+
   select count(*) into v_active_count
   from public.league_players
   where league_id = p_league_id
@@ -1217,7 +1250,7 @@ begin
     and market_status = 'market'
     and market_expires_at > now();
 
-  if v_active_count < 20 then
+  if v_active_count < 10 then
     with next_players as (
       select id
       from public.league_players
@@ -1226,17 +1259,17 @@ begin
         and listed_by_user_id is null
         and market_status = 'locked'
       order by random()
-      limit greatest(0, 20 - v_active_count)
+      limit greatest(0, 10 - v_active_count)
     )
     update public.league_players lp
     set market_status = 'market',
         listed_by_user_id = null,
         market_listed_at = now(),
-        market_expires_at = now() + interval '3 hours'
+        market_expires_at = now() + interval '24 hours'
     where lp.id in (select id from next_players);
 
     insert into public.activity_feed (league_id, type, message, metadata_json)
-    values (p_league_id, 'market', 'Mercado rotativo actualizado con hasta 20 jugadores.', jsonb_build_object('size', 20, 'duration_hours', 3));
+    values (p_league_id, 'market', 'Mercado rotativo actualizado con hasta 10 jugadores.', jsonb_build_object('size', 10, 'duration_hours', 24));
   end if;
 end;
 $$;
@@ -1451,7 +1484,7 @@ begin
   elsif p_position in ('POR', 'DEF') then
     v_conceded_rule := coalesce((p_rules ->> 'goalsConcededEveryTwo')::integer, -1);
   end if;
-  v_points := v_points + floor(p_goals_conceded / 2)::integer * v_conceded_rule;
+  v_points := v_points + floor(coalesce(p_goals_conceded, 0) / 2)::integer * v_conceded_rule;
 
   v_points := v_points + p_yellow_cards * coalesce((p_rules ->> 'yellowCard')::integer, -1);
   v_points := v_points + v_double_yellow * coalesce((p_rules ->> 'doubleYellowCard')::integer, -1);
@@ -1755,12 +1788,17 @@ begin
     end if;
   end loop;
 
-  with matchday_points as (
-    select pms.player_id, md.number, sum(pms.fantasy_points)::integer as points
+  with league_stats as (
+    select pms.*, md.number
     from public.player_match_stats pms
     join public.matches m on m.id = pms.match_id
     join public.matchdays md on md.id = m.matchday_id
-    group by pms.player_id, md.number
+    where md.league_id = v_league_id
+  ),
+  matchday_points as (
+    select player_id, number, sum(fantasy_points)::integer as points
+    from league_stats
+    group by player_id, number
   ),
   point_maps as (
     select player_id, jsonb_object_agg(number::text, points order by number) as points_by_matchday
@@ -1769,34 +1807,60 @@ begin
   ),
   totals as (
     select
-      pms.player_id,
-      coalesce(sum(pms.fantasy_points), 0)::integer as total_points,
-      count(*)::integer as appearances,
-      coalesce(sum(pms.goals), 0)::integer as goals,
-      coalesce(sum(pms.assists), 0)::integer as assists,
-      coalesce(sum(pms.key_passes), 0)::integer as key_passes,
-      coalesce(sum(pms.goals_conceded), 0)::integer as goals_conceded,
-      coalesce(count(*) filter (where pms.clean_sheet), 0)::integer as clean_sheets,
-      coalesce(sum(pms.yellow_cards), 0)::integer as yellow_cards,
-      coalesce(sum(pms.red_cards), 0)::integer as red_cards,
-      coalesce(sum(pms.double_yellow_cards), 0)::integer as double_yellow_cards,
-      coalesce(sum(pms.penalties_scored), 0)::integer as penalties_scored,
-      coalesce(sum(pms.penalties_missed), 0)::integer as penalties_missed,
-      coalesce(sum(pms.penalties_saved), 0)::integer as penalties_saved,
-      coalesce(sum(pms.penalties_provoked), 0)::integer as penalties_provoked,
-      coalesce(sum(pms.own_goals), 0)::integer as own_goals,
-      coalesce(sum(pms.overload_rating), 0)::integer as overload_points,
-      coalesce(sum(pms.minutes), 0)::integer as minutes,
-      coalesce(sum(pms.key_passes + pms.assists + pms.goals + pms.penalties_provoked + pms.penalties_saved), 0)::integer as key_actions,
-      coalesce(sum(pms.saves), 0)::integer as saves,
-      coalesce(sum(pms.shots_on_target), 0)::integer as shots_on_target,
-      coalesce(sum(pms.successful_dribbles), 0)::integer as successful_dribbles,
-      coalesce(sum(pms.box_entries), 0)::integer as box_entries,
-      coalesce(sum(pms.balls_lost), 0)::integer as balls_lost,
-      coalesce(sum(pms.balls_recovered), 0)::integer as balls_recovered,
-      coalesce(sum(pms.clearances), 0)::integer as clearances
-    from public.player_match_stats pms
-    group by pms.player_id
+      p.id as player_id,
+      coalesce(sum(ls.fantasy_points), 0)::integer as total_points,
+      count(ls.player_id) filter (
+        where coalesce(ls.minutes, 0) > 0
+          or coalesce(ls.goals, 0) <> 0
+          or coalesce(ls.assists, 0) <> 0
+          or coalesce(ls.key_passes, 0) <> 0
+          or coalesce(ls.yellow_cards, 0) <> 0
+          or coalesce(ls.red_cards, 0) <> 0
+          or coalesce(ls.double_yellow_cards, 0) <> 0
+          or coalesce(ls.own_goals, 0) <> 0
+          or coalesce(ls.penalties_scored, 0) <> 0
+          or coalesce(ls.penalties_missed, 0) <> 0
+          or coalesce(ls.penalties_saved, 0) <> 0
+          or coalesce(ls.penalties_provoked, 0) <> 0
+          or coalesce(ls.saves, 0) <> 0
+          or coalesce(ls.shots_on_target, 0) <> 0
+          or coalesce(ls.successful_dribbles, 0) <> 0
+          or coalesce(ls.box_entries, 0) <> 0
+          or coalesce(ls.balls_lost, 0) <> 0
+          or coalesce(ls.balls_recovered, 0) <> 0
+          or coalesce(ls.clearances, 0) <> 0
+          or coalesce(ls.overload_score, 0) > 0
+          or coalesce(ls.overload_rating, 0) > 0
+          or coalesce(ls.mvp, false)
+          or coalesce(ls.highlighted, false)
+          or coalesce(ls.error_led_to_goal, false)
+      )::integer as appearances,
+      coalesce(sum(ls.goals), 0)::integer as goals,
+      coalesce(sum(ls.assists), 0)::integer as assists,
+      coalesce(sum(ls.key_passes), 0)::integer as key_passes,
+      coalesce(sum(ls.goals_conceded), 0)::integer as goals_conceded,
+      coalesce(count(ls.player_id) filter (where ls.clean_sheet and coalesce(ls.minutes, 0) > 60), 0)::integer as clean_sheets,
+      coalesce(sum(ls.yellow_cards), 0)::integer as yellow_cards,
+      coalesce(sum(ls.red_cards), 0)::integer as red_cards,
+      coalesce(sum(ls.double_yellow_cards), 0)::integer as double_yellow_cards,
+      coalesce(sum(ls.penalties_scored), 0)::integer as penalties_scored,
+      coalesce(sum(ls.penalties_missed), 0)::integer as penalties_missed,
+      coalesce(sum(ls.penalties_saved), 0)::integer as penalties_saved,
+      coalesce(sum(ls.penalties_provoked), 0)::integer as penalties_provoked,
+      coalesce(sum(ls.own_goals), 0)::integer as own_goals,
+      coalesce(sum(ls.overload_rating), 0)::integer as overload_points,
+      coalesce(sum(ls.minutes), 0)::integer as minutes,
+      coalesce(sum(ls.key_passes + ls.assists + ls.goals + ls.penalties_provoked + ls.penalties_saved), 0)::integer as key_actions,
+      coalesce(sum(ls.saves), 0)::integer as saves,
+      coalesce(sum(ls.shots_on_target), 0)::integer as shots_on_target,
+      coalesce(sum(ls.successful_dribbles), 0)::integer as successful_dribbles,
+      coalesce(sum(ls.box_entries), 0)::integer as box_entries,
+      coalesce(sum(ls.balls_lost), 0)::integer as balls_lost,
+      coalesce(sum(ls.balls_recovered), 0)::integer as balls_recovered,
+      coalesce(sum(ls.clearances), 0)::integer as clearances
+    from public.players p
+    left join league_stats ls on ls.player_id = p.id
+    group by p.id
   )
   update public.players p
   set total_points = t.total_points,

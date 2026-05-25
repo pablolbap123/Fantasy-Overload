@@ -22,6 +22,7 @@ await loadEnvFile(".env.local");
 await loadEnvFile(".env.server.local");
 
 const pollMs = Number(process.env.CHALLENGE_REQUEST_POLL_MS ?? 15_000);
+const autoSyncMs = Number(process.env.CHALLENGE_AUTO_SYNC_MS ?? 0);
 const databaseUrl = process.env.SUPABASE_DB_URL;
 
 const sleep = (ms) => new Promise((resolve) => {
@@ -210,31 +211,46 @@ const applyLatestSnapshot = async () => {
   return snapshotHash;
 };
 
-console.log(`[challenge-watch] Modo manual: solo sincroniza Challenge cuando llega una solicitud. Revisa solicitudes cada ${pollMs}ms.`);
+let nextAutoSyncAt = autoSyncMs > 0 ? Date.now() + autoSyncMs : Number.POSITIVE_INFINITY;
+
+console.log(
+  autoSyncMs > 0
+    ? `[challenge-watch] Modo automatico: sincroniza Challenge cada ${autoSyncMs}ms y revisa solicitudes cada ${pollMs}ms.`
+    : `[challenge-watch] Modo manual: solo sincroniza Challenge cuando llega una solicitud. Revisa solicitudes cada ${pollMs}ms.`,
+);
 
 while (true) {
   let requestIds = [];
   try {
     await recoverStaleProcessingRequests();
     requestIds = await takePendingSyncRequests();
-    if (!requestIds.length) {
+    const autoSyncDue = autoSyncMs > 0 && Date.now() >= nextAutoSyncAt;
+    if (!requestIds.length && !autoSyncDue) {
       await sleep(pollMs);
       continue;
     }
     await updateSyncStatus(
       "checking",
-      "Actualizacion manual solicitada. Comprobando Challenge Place...",
+      requestIds.length
+        ? "Actualizacion manual solicitada. Comprobando Challenge Place..."
+        : "Watcher automatico comprobando Challenge Place...",
     );
     await runNode(["scripts/syncChallengeData.mjs"]);
     const snapshotHash = await applyLatestSnapshot();
-    await updateSyncStatus("changed", "Actualizacion manual de Challenge aplicada en web y movil.", { changed: true, snapshotHash });
+    await updateSyncStatus(
+      "changed",
+      requestIds.length ? "Actualizacion manual de Challenge aplicada en web y movil." : "Actualizacion automatica de Challenge aplicada en web y movil.",
+      { changed: true, snapshotHash },
+    );
     await finishSyncRequests(requestIds, "completed", "Actualizacion manual de Challenge aplicada.");
     await cleanupSyncRequests();
-    console.log(`[challenge-watch] Actualizacion manual aplicada en Supabase: ${new Date().toISOString()}`);
+    nextAutoSyncAt = autoSyncMs > 0 ? Date.now() + autoSyncMs : Number.POSITIVE_INFINITY;
+    console.log(`[challenge-watch] Actualizacion ${requestIds.length ? "manual" : "automatica"} aplicada en Supabase: ${new Date().toISOString()}`);
   } catch (error) {
     await updateSyncStatus("error", `Error al sincronizar Challenge: ${shortError(error)}`);
     await finishSyncRequests(requestIds, "failed", shortError(error));
     console.error("[challenge-watch] Error:", error);
+    nextAutoSyncAt = autoSyncMs > 0 ? Date.now() + autoSyncMs : Number.POSITIVE_INFINITY;
   }
   await sleep(pollMs);
 }

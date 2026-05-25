@@ -19,10 +19,13 @@ interface PlayerCardProps {
   bidCount?: number;
   marketTimeLeft?: string;
   nextBidAmount?: number;
+  bidInputValue?: string;
+  bidMinimum?: number;
   action?: "buy" | "bid" | "sell" | "clause" | "offer" | "detail";
   compact?: boolean;
   onBuy?: () => void;
   onBid?: () => void;
+  onBidInputChange?: (value: string) => void;
   onSell?: () => void;
   onClause?: () => void;
   onRaiseClause?: () => void;
@@ -41,10 +44,13 @@ export const PlayerCard = ({
   bidCount,
   marketTimeLeft,
   nextBidAmount,
+  bidInputValue,
+  bidMinimum,
   action = "detail",
   compact,
   onBuy,
   onBid,
+  onBidInputChange,
   onSell,
   onClause,
   onRaiseClause,
@@ -101,6 +107,23 @@ export const PlayerCard = ({
             </div>
           ) : null}
           {ownerName || ownerLabel ? <p className="mt-2 text-xs text-slate-400">{ownerLabel ?? `Dueño: ${ownerName}`}</p> : null}
+          {action === "bid" ? (
+            <label className="mt-3 block">
+              <span className="mb-1 block text-[10px] font-black uppercase tracking-[0.12em] text-slate-500">
+                Puja personalizada {bidMinimum ? `(min. ${formatMoney(bidMinimum)})` : ""}
+              </span>
+              <input
+                className="field min-h-10 text-sm font-black"
+                inputMode="numeric"
+                min={bidMinimum ?? price ?? player.currentPrice}
+                placeholder={formatMoney(bidMinimum ?? nextBidAmount ?? price ?? player.currentPrice)}
+                step={50_000}
+                type="number"
+                value={bidInputValue ?? ""}
+                onChange={(event) => onBidInputChange?.(event.target.value)}
+              />
+            </label>
+          ) : null}
           <div className="mt-3 grid grid-cols-[minmax(0,1fr)_auto] gap-2">
             {action === "buy" ? (
               <Button className="min-w-0 px-2" icon={<ArrowDownToLine className="h-4 w-4" />} onClick={onBuy}>
@@ -109,7 +132,7 @@ export const PlayerCard = ({
             ) : null}
             {action === "bid" ? (
               <Button className="min-w-0 px-2" icon={<Gavel className="h-4 w-4" />} onClick={onBid}>
-                Pujar{nextBidAmount ? ` ${formatMoney(nextBidAmount)}` : ""}
+                Pujar
               </Button>
             ) : null}
             {action === "sell" ? (

@@ -7,7 +7,7 @@ import { buildPlayerPointBreakdown, playerPositions } from "../../utils/calculat
 import { getPlayerTeamForMatchday } from "../../data/transferOverrides";
 import { getErrorMessage } from "../../utils/errors";
 import { formatMoney, positionLabel, positionTone, statusLabel, statusTone } from "../../utils/formatters";
-import { getHighestBid, getNextBidAmount, roundBidAmount } from "../../utils/market";
+import { getHighestBid, getMinimumBidAmount, roundBidAmount } from "../../utils/market";
 import { availabilityText, isUnavailableForMatchday, playerMatchdayPoints } from "../../utils/playerAvailability";
 import { Badge } from "../ui/Badge";
 import { Button } from "../ui/Button";
@@ -109,7 +109,7 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
       (!leaguePlayer.ownerUserId || Boolean(leaguePlayer.listedByUserId)),
   );
   const highestBid = player ? getHighestBid(offers, player.id) : undefined;
-  const nextBidAmount = player && leaguePlayer ? getNextBidAmount(leaguePlayer.price, highestBid) : 0;
+  const nextBidAmount = player && leaguePlayer ? getMinimumBidAmount(leaguePlayer.price, highestBid) : 0;
   const quickSellAmount = leaguePlayer ? roundBidAmount(leaguePlayer.price * 0.5) : 0;
   const parsedClauseSpend = Number(clauseSpend.replace(/[^\d]/g, ""));
   const clauseSpendAmount = Number.isFinite(parsedClauseSpend) ? roundBidAmount(parsedClauseSpend) : 0;

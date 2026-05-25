@@ -8,3 +8,5 @@ services:
         sync: false
       - key: CHALLENGE_REQUEST_POLL_MS
         value: "15000"
+      - key: CHALLENGE_AUTO_SYNC_MS
+        value: "300000"

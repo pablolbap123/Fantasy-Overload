@@ -104,6 +104,33 @@ const playedPointsFor = (rules: ScoringRules, minutes: number) => {
 
 const perBlockPoints = (quantity: number | undefined, every: number, points = 0) => Math.floor(Math.max(0, quantity ?? 0) / every) * points;
 
+const hasTrackedMatchAction = (playerMatchStats: PlayerMatchStats) =>
+  playerMatchStats.minutes > 0 ||
+  [
+    playerMatchStats.goals,
+    playerMatchStats.assists,
+    playerMatchStats.keyPasses ?? 0,
+    playerMatchStats.goalsConceded,
+    playerMatchStats.yellowCards,
+    playerMatchStats.redCards,
+    playerMatchStats.doubleYellowCards ?? 0,
+    playerMatchStats.ownGoals,
+    playerMatchStats.penaltiesScored,
+    playerMatchStats.penaltiesMissed,
+    playerMatchStats.penaltiesSaved,
+    playerMatchStats.penaltiesProvoked ?? 0,
+    playerMatchStats.saves ?? 0,
+    playerMatchStats.shotsOnTarget ?? 0,
+    playerMatchStats.successfulDribbles ?? 0,
+    playerMatchStats.boxEntries ?? 0,
+    playerMatchStats.ballsLost ?? 0,
+    playerMatchStats.ballsRecovered ?? 0,
+    playerMatchStats.clearances ?? 0,
+  ].some((value) => Number(value ?? 0) !== 0) ||
+  Boolean(playerMatchStats.mvp || playerMatchStats.highlighted || playerMatchStats.errorLedToGoal) ||
+  Number(playerMatchStats.overloadScore ?? 0) > 0 ||
+  Number(playerMatchStats.overloadRating ?? 0) > 0;
+
 export const overloadRatingFromScore = (score?: number) => {
   if (typeof score !== "number" || !Number.isFinite(score)) return undefined;
   if (score >= 9) return 4;
@@ -120,6 +147,7 @@ export const getOverloadRating = (playerMatchStats: PlayerMatchStats, position: 
   if (typeof playerMatchStats.overloadRating === "number") {
     return Math.max(0, Math.min(4, Math.round(playerMatchStats.overloadRating)));
   }
+  if (!hasTrackedMatchAction(playerMatchStats)) return 0;
 
   const doubleYellowCards = playerMatchStats.doubleYellowCards ?? Math.min(playerMatchStats.yellowCards, playerMatchStats.redCards);
   const directRedCards = Math.max(0, playerMatchStats.redCards - doubleYellowCards);
@@ -165,6 +193,10 @@ export const buildPlayerPointBreakdown = (
   const items: PlayerPointBreakdownItem[] = [];
 
   const add = (key: string, label: string, quantity: number | string, points: number, alwaysShow = false) => {
+    if (showAll) {
+      items.push({ key, label, quantity, points });
+      return;
+    }
     if (!showAll && !alwaysShow && (quantity === 0 || points === 0)) return;
     if (!showAll && (quantity === 0 && points === 0)) return;
     items.push({ key, label, quantity, points });
@@ -177,12 +209,17 @@ export const buildPlayerPointBreakdown = (
   add("keyPasses", "Asistencias sin gol", playerMatchStats.keyPasses ?? 0, (playerMatchStats.keyPasses ?? 0) * (scoringRules.keyPass ?? 1));
   add("ownGoals", "Goles en propia puerta", playerMatchStats.ownGoals, playerMatchStats.ownGoals * scoringRules.ownGoal);
 
-  if (playerMatchStats.cleanSheet && playerMatchStats.minutes > 60) add("cleanSheet", "Porteria a cero", 1, scoringRules.cleanSheet[position] ?? 0);
+  add(
+    "cleanSheet",
+    "Porteria a cero",
+    playerMatchStats.cleanSheet && playerMatchStats.minutes > 60 ? 1 : 0,
+    playerMatchStats.cleanSheet && playerMatchStats.minutes > 60 ? (scoringRules.cleanSheet[position] ?? 0) : 0,
+  );
 
   add(
     "goalsConceded",
     "Goles recibidos",
-    Math.floor(playerMatchStats.goalsConceded / 2) > 0 ? `${playerMatchStats.goalsConceded} recibidos` : 0,
+    playerMatchStats.goalsConceded > 0 ? `${playerMatchStats.goalsConceded} recibidos` : 0,
     Math.floor(playerMatchStats.goalsConceded / 2) * concededRuleFor(scoringRules, position),
   );
 

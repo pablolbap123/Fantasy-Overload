@@ -126,21 +126,23 @@ VITE_SUPABASE_ANON_KEY=tu_anon_o_publishable_key
 
 El archivo `netlify.toml` ya está preparado para SPA routing.
 
-## Sincronizacion manual con Challenge
+## Sincronizacion con Challenge
 
-Para ahorrar base de datos y evitar escrituras constantes en el plan gratuito, no hay sincronizacion automatica por tiempo. La app solo actualiza Challenge cuando alguien pulsa el boton **Actualizar Challenge**. Ese boton crea una solicitud en `challenge_sync_requests` y el watcher la procesa.
+La app puede actualizar Challenge de dos formas: con el boton **Actualizar Challenge**, que crea una solicitud en `challenge_sync_requests`, o con un watcher automatico por intervalo usando `CHALLENGE_AUTO_SYNC_MS`.
 
 Ejecuta un watcher permanente en un servidor propio, Railway, Render, Fly.io, una VPS o similar:
 
 ```bash
 SUPABASE_DB_URL="postgresql://postgres:<PASSWORD>@db.<PROJECT>.supabase.co:5432/postgres"
 CHALLENGE_REQUEST_POLL_MS=15000
+# Opcional: 300000 = revisar Challenge cada 5 minutos. 0 = solo boton manual.
+CHALLENGE_AUTO_SYNC_MS=0
 npm run sync:challenge:watch
 ```
 
-El watcher no consulta Challenge por su cuenta. Solo revisa la tabla de solicitudes y, si hay una solicitud pendiente, descarga Challenge, actualiza equipos, jugadores, posiciones, precios, jornadas y partidos oficiales, recalcula ligas y avisa por Supabase Realtime.
+Si `CHALLENGE_AUTO_SYNC_MS` es `0`, el watcher solo revisa la tabla de solicitudes. Si lo configuras por encima de `0`, tambien descarga Challenge en ese intervalo, actualiza equipos, jugadores, posiciones, precios, jornadas y partidos oficiales, recalcula ligas y avisa por Supabase Realtime.
 
-La sincronizacion de Challenge tambien actualiza cambios de club y de posicion. Si Challenge trae dos posiciones para un jugador, se guardan en `players.positions` y la app las usa para alineaciones y filtros; la posicion principal queda en `players.position`.
+La sincronizacion de Challenge tambien actualiza cambios de club y de posicion. Los fichajes hechos desde el 11/05/2026 no se aplican a las jornadas 1-6: esas jornadas se calculan con los clubes anteriores y desde la jornada 7 se usa la plantilla actual. Si Challenge trae dos posiciones para un jugador, se guardan en `players.positions` y la app las usa para alineaciones y filtros; la posicion principal queda en `players.position`.
 
 La app guarda el ultimo estado en `challenge_sync_status`. Ese estado aparece como **Challenge manual**, por lo que puedes ver si la ultima actualizacion se aplico o si hubo un error.
 

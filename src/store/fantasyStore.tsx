@@ -36,7 +36,7 @@ import {
   DAILY_MARKET_SIZE,
   MARKET_DURATION_MS,
   getHighestBid,
-  getNextBidAmount,
+  getMinimumBidAmount,
   normalizeDailyMarket,
   openDailyMarketCycle,
   resolveExpiredDailyMarket,
@@ -1566,7 +1566,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
         });
         if (error) throw error;
         await loadLeagueData(currentLeague.id);
-        pushToast(`${player.name} puesto en mercado durante 3 horas.`, "success");
+        pushToast(`${player.name} puesto en mercado durante 24 horas.`, "success");
         return;
       }
 
@@ -1590,12 +1590,12 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           id: randomId("activity"),
           leagueId: currentLeague.id,
           type: "market_listing",
-          message: `${player.name} sale al mercado durante 3 horas.`,
+          message: `${player.name} sale al mercado durante 24 horas.`,
           createdAt: listedAt.toISOString(),
         },
         ...current,
       ]);
-      pushToast(`${player.name} puesto en mercado durante 3 horas.`, "success");
+      pushToast(`${player.name} puesto en mercado durante 24 horas.`, "success");
     },
     [currentLeague, leaguePlayers, loadLeagueData, onlineReady, players, pushToast, userId],
   );
@@ -1690,7 +1690,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
       const member = members.find((item) => item.userId === userId);
       const exchangePlayer = exchangePlayerId ? leaguePlayers.find((item) => item.playerId === exchangePlayerId) : undefined;
       const highestBid = getHighestBid(offers, playerId);
-      const minimumBid = getNextBidAmount(target?.price ?? player?.currentPrice ?? 0, highestBid);
+      const minimumBid = getMinimumBidAmount(target?.price ?? player?.currentPrice ?? 0, highestBid);
 
       if (!player || !target) throw new Error("Jugador no encontrado.");
       if (target.listedByUserId === userId) throw new Error("No puedes pujar por tu propio jugador.");

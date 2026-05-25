@@ -138,9 +138,12 @@ const statFormFromMatchStat = (stat?: PlayerMatchStats, goalsConceded = 0): Edit
   clearances: stat?.clearances ?? 0,
 });
 
-const playerGoalsConcededFromScore = (player: Player, match?: Match, homeScore?: number, awayScore?: number) => {
+const playerTeamIdForMatch = (player: Player, matchdayNumber: number) =>
+  getPlayerTeamForMatchday(player.id, matchdayNumber, player.teamId, player.teamName).teamId;
+
+const playerGoalsConcededFromScore = (player: Player, matchdayNumber: number, match?: Match, homeScore?: number, awayScore?: number) => {
   if (!match || homeScore === undefined || awayScore === undefined) return 0;
-  return player.teamId === match.homeTeamId ? awayScore : homeScore;
+  return playerTeamIdForMatch(player, matchdayNumber) === match.homeTeamId ? awayScore : homeScore;
 };
 
 const buildStatsPayload = (
@@ -150,8 +153,9 @@ const buildStatsPayload = (
   homeScore: number,
   awayScore: number,
   scoringRules: ScoringRules,
+  matchdayNumber: number,
 ): PlayerMatchStats => {
-  const teamIsHome = player.teamId === match.homeTeamId;
+  const teamIsHome = playerTeamIdForMatch(player, matchdayNumber) === match.homeTeamId;
   const teamWon = teamIsHome ? homeScore > awayScore : awayScore > homeScore;
   const teamLost = teamIsHome ? homeScore < awayScore : awayScore < homeScore;
   const overloadRating = overloadRatingFromScore(form.overloadScore) ?? 0;
@@ -238,8 +242,10 @@ export const AdminPage = () => {
   const clubPlayers = useMemo(() => players.filter(isClubPlayer), [players]);
   const matchPlayers = useMemo(() => {
     if (!selectedMatch) return [];
+    const statPlayerIds = new Set(selectedMatch.playerStats.map((stat) => stat.playerId));
     return clubPlayers
       .filter((player) => {
+        if (statPlayerIds.size > 0) return statPlayerIds.has(player.id);
         const { teamId } = getPlayerTeamForMatchday(player.id, selectedMatchdayNumber, player.teamId, player.teamName);
         return teamId === selectedMatch.homeTeamId || teamId === selectedMatch.awayTeamId;
       })
@@ -280,7 +286,9 @@ export const AdminPage = () => {
   const injuredCount = players.filter((player) => player.status === "lesionado").length;
   const sanctionedCount = players.filter((player) => player.status === "sancionado").length;
   const previewStats =
-    selectedMatch && selectedStatsPlayer ? buildStatsPayload(selectedMatch, selectedStatsPlayer, statsForm, homeScore, awayScore, scoringRules) : null;
+    selectedMatch && selectedStatsPlayer
+      ? buildStatsPayload(selectedMatch, selectedStatsPlayer, statsForm, homeScore, awayScore, scoringRules, selectedMatchdayNumber)
+      : null;
 
   useEffect(() => {
     if (currentLeague?.currentMatchday) {
@@ -317,10 +325,15 @@ export const AdminPage = () => {
     // la nota se "sumara" en vez de reemplazarse al volver a guardar.
     const savedHomeScore = coerceNumber(selectedMatch.homeScore);
     const savedAwayScore = coerceNumber(selectedMatch.awayScore);
-    setStatsForm(statFormFromMatchStat(selectedExistingStats, playerGoalsConcededFromScore(selectedStatsPlayer, selectedMatch, savedHomeScore, savedAwayScore)));
+    setStatsForm(
+      statFormFromMatchStat(
+        selectedExistingStats,
+        playerGoalsConcededFromScore(selectedStatsPlayer, selectedMatchdayNumber, selectedMatch, savedHomeScore, savedAwayScore),
+      ),
+    );
     // Solo recargamos al cambiar de jugador o de partido, no al editar el marcador en pantalla
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedExistingStats, selectedMatch?.id, selectedStatsPlayer?.id]);
+  }, [selectedExistingStats, selectedMatch?.id, selectedMatchdayNumber, selectedStatsPlayer?.id]);
 
   useEffect(() => {
     if (selectedPlayerId && filteredPlayers.some((player) => player.id === selectedPlayerId)) return;
@@ -343,7 +356,7 @@ export const AdminPage = () => {
     setMessage("");
     setSavingKey("stats");
     try {
-      const nextStat = buildStatsPayload(selectedMatch, selectedStatsPlayer, statsForm, homeScore, awayScore, scoringRules);
+      const nextStat = buildStatsPayload(selectedMatch, selectedStatsPlayer, statsForm, homeScore, awayScore, scoringRules, selectedMatchdayNumber);
       const updatedMatch: Match = {
         ...selectedMatch,
         homeScore,

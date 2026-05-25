@@ -2,8 +2,8 @@ import type { ActivityItem, LeagueMember, LeaguePlayer, Offer, Player, Transfer 
 import { calculateSquadValue } from "./calculatePoints";
 import { formatMoney } from "./formatters";
 
-export const DAILY_MARKET_SIZE = 20;
-export const MARKET_DURATION_MS = 3 * 60 * 60 * 1000;
+export const DAILY_MARKET_SIZE = 10;
+export const MARKET_DURATION_MS = 24 * 60 * 60 * 1000;
 export const MIN_BID_INCREMENT = 50_000;
 
 export const roundBidAmount = (amount: number) => Math.ceil(amount / MIN_BID_INCREMENT) * MIN_BID_INCREMENT;
@@ -17,6 +17,8 @@ export const getNextBidAmount = (basePrice: number, highestBid?: Offer) => {
   const currentAmount = Math.max(basePrice, highestBid?.amount ?? 0);
   return roundBidAmount(currentAmount * 1.05);
 };
+
+export const getMinimumBidAmount = (basePrice: number, highestBid?: Offer) => roundBidAmount(Math.max(basePrice, highestBid?.amount ?? 0));
 
 export const formatTimeLeft = (expiresAt?: string | null) => {
   if (!expiresAt) return "Sin cierre";
@@ -35,8 +37,7 @@ const stableHash = (value: string) => {
 };
 
 const marketWindowSeed = (date: Date) => {
-  const windowIndex = Math.floor(date.getUTCHours() / 3);
-  return `${date.toISOString().slice(0, 10)}-${windowIndex}`;
+  return date.toISOString().slice(0, 10);
 };
 
 export const openDailyMarketCycle = (

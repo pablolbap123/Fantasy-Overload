@@ -10,7 +10,7 @@ import { EmptyState } from "../components/ui/EmptyState";
 import { useFantasy } from "../store/fantasyStore";
 import { getErrorMessage } from "../utils/errors";
 import { formatMoney } from "../utils/formatters";
-import { DAILY_MARKET_SIZE, formatTimeLeft, getHighestBid, getNextBidAmount } from "../utils/market";
+import { DAILY_MARKET_SIZE, formatTimeLeft, getHighestBid, getMinimumBidAmount } from "../utils/market";
 
 export const MarketPage = () => {
   const {
@@ -39,6 +39,7 @@ export const MarketPage = () => {
   const [hideBagPlayers, setHideBagPlayers] = useState(true);
   const [now, setNow] = useState(Date.now());
   const [dismissedOutbidIds, setDismissedOutbidIds] = useState<string[]>([]);
+  const [bidAmounts, setBidAmounts] = useState<Record<string, string>>({});
   const dismissedOutbidStorageKey = `fantasy_dismissed_outbids:${currentLeague?.id ?? "no-league"}:${userId ?? "guest"}`;
 
   const me = members.find((member) => member.userId === userId);
@@ -142,7 +143,9 @@ export const MarketPage = () => {
     const player = row.player;
     const playerOffers = pendingOffers.filter((offer) => offer.playerId === player.id);
     const highestBid = getHighestBid(offers, player.id);
-    const nextBidAmount = getNextBidAmount(leaguePlayer.price, highestBid);
+    const minimumBid = getMinimumBidAmount(leaguePlayer.price, highestBid);
+    const typedBid = Number(bidAmounts[player.id]);
+    const bidAmount = Number.isFinite(typedBid) && typedBid > 0 ? typedBid : minimumBid;
     const leader = highestBid ? members.find((member) => member.userId === highestBid.fromUserId) : undefined;
     return (
       <PlayerCard
@@ -152,10 +155,12 @@ export const MarketPage = () => {
         highestBid={highestBid?.amount}
         bidCount={playerOffers.length}
         marketTimeLeft={formatTimeLeft(leaguePlayer.marketExpiresAt)}
-        nextBidAmount={nextBidAmount}
+        bidInputValue={bidAmounts[player.id] ?? ""}
+        bidMinimum={minimumBid}
         ownerLabel={leader ? `Lider actual: ${leader.username}` : (sellerLabel ?? "Sin pujas todavia")}
         action="bid"
-        onBid={() => void runAction(() => makeOffer(player.id, nextBidAmount))}
+        onBid={() => void runAction(() => makeOffer(player.id, bidAmount))}
+        onBidInputChange={(value) => setBidAmounts((current) => ({ ...current, [player.id]: value }))}
         onSell={() => {
           if (window.confirm(`Vender rapido a ${player.name} por la mitad de su precio?`)) void runAction(() => sellPlayer(player.id));
         }}
@@ -170,7 +175,7 @@ export const MarketPage = () => {
         <div>
           <h1 className="text-2xl font-black text-white">Mercado rotativo</h1>
           <p className="mt-1 text-sm text-slate-400">
-            Presupuesto {formatMoney(me?.budget ?? 0)} · {activeMarketCount}/{DAILY_MARKET_SIZE} jugadores activos · cierre cada 3 horas · gana la puja mas alta
+            Presupuesto {formatMoney(me?.budget ?? 0)} · {activeMarketCount}/{DAILY_MARKET_SIZE} jugadores activos · cierre cada 24 horas · gana la puja mas alta
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -248,7 +253,7 @@ export const MarketPage = () => {
         <div className="space-y-3">
           <div>
             <h2 className="text-lg font-black text-white">Puestos por managers</h2>
-            <p className="text-sm text-slate-400">Tambien cierran cada 3 horas. Si no hay pujas, la liga ofrece una cantidad automatica.</p>
+            <p className="text-sm text-slate-400">Tambien cierran cada 24 horas. Si no hay pujas, la liga ofrece una cantidad automatica.</p>
           </div>
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
             {rows.listed.map((row) => {
