@@ -212,6 +212,9 @@ create table if not exists public.player_match_stats (
   balls_recovered integer not null default 0,
   clearances integer not null default 0,
   fantasy_points integer not null default 0,
+  manual_override boolean not null default false,
+  updated_by uuid references auth.users(id) on delete set null,
+  updated_at timestamptz not null default now(),
   unique (match_id, player_id)
 );
 

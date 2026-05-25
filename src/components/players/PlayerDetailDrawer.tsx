@@ -14,7 +14,7 @@ import { Button } from "../ui/Button";
 import { Card } from "../ui/Card";
 import { PlayerAvatar } from "./PlayerAvatar";
 
-export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClose: () => void }) => {
+export const PlayerDetailDrawer = ({ player: selectedPlayer, onClose }: { player?: Player; onClose: () => void }) => {
   const {
     matchdays,
     scoringRules,
@@ -30,6 +30,10 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
     listPlayerOnMarket,
     cancelMarketListing,
   } = useFantasy();
+  const player = useMemo(
+    () => (selectedPlayer ? (players.find((item) => item.id === selectedPlayer.id) ?? selectedPlayer) : undefined),
+    [players, selectedPlayer],
+  );
   const [selectedNumber, setSelectedNumber] = useState<number | null>(null);
   const [showActions, setShowActions] = useState(false);
   const [showValueHistory, setShowValueHistory] = useState(false);

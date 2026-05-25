@@ -82,4 +82,5 @@ export interface PlayerMatchStats {
   ballsRecovered?: number;
   clearances?: number;
   fantasyPoints?: number;
+  manualOverride?: boolean;
 }

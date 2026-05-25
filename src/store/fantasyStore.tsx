@@ -470,6 +470,7 @@ const mapMatch = (row: any): Match => ({
     ballsRecovered: Number(stat.balls_recovered ?? stat.ballsRecovered ?? 0),
     clearances: Number(stat.clearances ?? 0),
     fantasyPoints: Number(stat.fantasy_points ?? 0),
+    manualOverride: Boolean(stat.manual_override ?? stat.manualOverride ?? false),
   })),
 });
 

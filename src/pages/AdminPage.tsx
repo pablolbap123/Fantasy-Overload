@@ -190,6 +190,7 @@ const buildStatsPayload = (
     ballsLost: Math.max(0, Math.round(form.ballsLost)),
     ballsRecovered: Math.max(0, Math.round(form.ballsRecovered)),
     clearances: Math.max(0, Math.round(form.clearances)),
+    manualOverride: true,
   };
 
   return {
@@ -366,6 +367,7 @@ export const AdminPage = () => {
         playerStats: [...selectedMatch.playerStats.filter((stat) => stat.playerId !== selectedStatsPlayer.id), nextStat],
       };
       await updateMatchResult(updatedMatch);
+      setStatsForm(statFormFromMatchStat(nextStat, nextStat.goalsConceded));
       setMessageTone("success");
       setMessage(`${selectedStatsPlayer.name}: ${nextStat.fantasyPoints ?? 0} puntos guardados.`);
     } catch (err) {

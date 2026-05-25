@@ -552,7 +552,8 @@ begin
   using public.matches m
   join public.matchdays md on md.id = m.matchday_id
   where pms.match_id = m.id
-    and md.league_id = p_league_id;
+    and md.league_id = p_league_id
+    and not coalesce(pms.manual_override, false);
 
   insert into public.player_match_stats (
     match_id, player_id, minutes, goals, assists, key_passes, yellow_cards, red_cards, double_yellow_cards, own_goals,
@@ -658,7 +659,9 @@ begin
       balls_lost = excluded.balls_lost,
       balls_recovered = excluded.balls_recovered,
       clearances = excluded.clearances,
-      fantasy_points = excluded.fantasy_points;
+      fantasy_points = excluded.fantasy_points,
+      updated_at = now()
+  where not coalesce(public.player_match_stats.manual_override, false);
 
   update public.leagues
   set current_matchday = coalesce((select max(number) + 1 from public.official_matchdays), current_matchday)
@@ -890,6 +893,11 @@ begin
   );
 end;
 $$;
+
+alter table if exists public.player_match_stats
+  add column if not exists manual_override boolean not null default false,
+  add column if not exists updated_by uuid references auth.users(id) on delete set null,
+  add column if not exists updated_at timestamptz not null default now();
 
 create or replace function public.cancel_market_listing(p_league_id uuid, p_player_id uuid)
 returns void
@@ -1750,7 +1758,7 @@ begin
         match_id, player_id, minutes, goals, assists, key_passes, yellow_cards, red_cards, double_yellow_cards, own_goals,
         penalties_scored, penalties_missed, penalties_saved, penalties_provoked, goals_conceded, clean_sheet, overload_score, overload_rating, mvp,
         team_won, team_lost, highlighted, error_led_to_goal, saves, shots_on_target, successful_dribbles, box_entries,
-        balls_lost, balls_recovered, clearances, fantasy_points
+        balls_lost, balls_recovered, clearances, fantasy_points, manual_override, updated_by, updated_at
       )
       values (
         p_match_id,
@@ -1783,7 +1791,10 @@ begin
         coalesce((v_stat ->> 'ballsLost')::integer, (v_stat ->> 'balls_lost')::integer, 0),
         coalesce((v_stat ->> 'ballsRecovered')::integer, (v_stat ->> 'balls_recovered')::integer, 0),
         coalesce((v_stat ->> 'clearances')::integer, 0),
-        v_points
+        v_points,
+        coalesce((v_stat ->> 'manualOverride')::boolean, (v_stat ->> 'manual_override')::boolean, false),
+        auth.uid(),
+        now()
       );
     end if;
   end loop;
