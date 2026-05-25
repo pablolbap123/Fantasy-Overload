@@ -156,6 +156,7 @@ export const buildPlayerPointBreakdown = (
   playerMatchStats: PlayerMatchStats,
   scoringRules: ScoringRules,
   position: PlayerPosition,
+  showAll = false,
 ): PlayerPointBreakdownItem[] => {
   const doubleYellowCards = playerMatchStats.doubleYellowCards ?? Math.min(playerMatchStats.yellowCards, playerMatchStats.redCards);
   const directRedCards = Math.max(0, playerMatchStats.redCards - doubleYellowCards);
@@ -163,8 +164,9 @@ export const buildPlayerPointBreakdown = (
   const overloadKey = String(overloadRating) as keyof ScoringRules["overloadRating"];
   const items: PlayerPointBreakdownItem[] = [];
 
-  const add = (key: string, label: string, quantity: number | string, points: number) => {
-    if (quantity === 0 || points === 0) return;
+  const add = (key: string, label: string, quantity: number | string, points: number, alwaysShow = false) => {
+    if (!showAll && !alwaysShow && (quantity === 0 || points === 0)) return;
+    if (!showAll && (quantity === 0 && points === 0)) return;
     items.push({ key, label, quantity, points });
   };
 

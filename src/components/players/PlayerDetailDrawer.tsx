@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { Player } from "../../types";
 import { useFantasy } from "../../store/fantasyStore";
 import { buildPlayerPointBreakdown, playerPositions } from "../../utils/calculatePoints";
+import { getPlayerTeamForMatchday } from "../../data/transferOverrides";
 import { getErrorMessage } from "../../utils/errors";
 import { formatMoney, positionLabel, positionTone, statusLabel, statusTone } from "../../utils/formatters";
 import { getHighestBid, getNextBidAmount, roundBidAmount } from "../../utils/market";
@@ -77,7 +78,22 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
   const activeNumber = selectedNumber ?? appearances.at(-1)?.matchdayNumber ?? visibleMatchdays.at(-1) ?? 1;
   const selectedAppearance = appearances.find((item) => item.matchdayNumber === activeNumber);
   const selectedStat = selectedAppearance?.stat;
-  const breakdown = player && selectedStat ? buildPlayerPointBreakdown(selectedStat, scoringRules, player.position) : [];
+  const emptyMatchStat = player ? {
+    matchId: "", playerId: player.id,
+    minutes: 0, goals: 0, assists: 0, keyPasses: 0,
+    yellowCards: 0, redCards: 0, doubleYellowCards: 0, ownGoals: 0,
+    penaltiesScored: 0, penaltiesMissed: 0, penaltiesSaved: 0, penaltiesProvoked: 0,
+    goalsConceded: 0, cleanSheet: false, overloadScore: 0, overloadRating: 0,
+    mvp: false, teamWon: false, teamLost: false, highlighted: false, errorLedToGoal: false,
+    saves: 0, shotsOnTarget: 0, successfulDribbles: 0, boxEntries: 0,
+    ballsLost: 0, ballsRecovered: 0, clearances: 0, fantasyPoints: 0,
+  } : null;
+  const breakdown = player
+    ? buildPlayerPointBreakdown(selectedStat ?? emptyMatchStat!, scoringRules, player.position, true)
+    : [];
+  const teamForMatchday = player
+    ? getPlayerTeamForMatchday(player.id, activeNumber, player.teamId, player.teamName)
+    : null;
   const selectedPoints = player ? playerMatchdayPoints(player, activeNumber) : 0;
   const maxAbsPoints = Math.max(1, ...visibleMatchdays.map((number) => Math.abs(player ? playerMatchdayPoints(player, number) : 0)));
   const playersById = useMemo(() => new Map(players.map((item) => [item.id, item])), [players]);
@@ -176,7 +192,7 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
                         <CheckCircle2 className="h-5 w-5 text-emerald-300" />
                         {statusLabel[player.status]}
                       </span>
-                      <span className="font-bold text-slate-200">{player.teamName}</span>
+                      <span className="font-bold text-slate-200">{teamForMatchday?.teamName ?? player.teamName}</span>
                     </div>
                     <div className="mt-4 grid max-w-md grid-cols-1 gap-2 min-[380px]:grid-cols-2">
                       <div className="rounded-lg bg-white/10 px-3 py-2">
@@ -439,9 +455,9 @@ export const PlayerDetailDrawer = ({ player, onClose }: { player?: Player; onClo
                       <span className={`text-right font-black ${item.points < 0 ? "text-rose-300" : "text-emerald-300"}`}>{item.points}</span>
                     </div>
                   ))}
-                  {!isUnavailableForMatchday(player, activeNumber) && breakdown.length === 0 ? (
-                    <div className="rounded-lg border border-white/10 bg-white/[0.04] p-4 text-center text-sm text-slate-400">
-                      No hay desglose cargado para esta jornada.
+                  {!isUnavailableForMatchday(player, activeNumber) && !selectedStat ? (
+                    <div className="mb-1 rounded-lg border border-amber-300/20 bg-amber-500/10 p-3 text-center text-xs font-semibold text-amber-200">
+                      Sin estadísticas guardadas para J{activeNumber} — mostrando desglose vacío.
                     </div>
                   ) : null}
                 </div>

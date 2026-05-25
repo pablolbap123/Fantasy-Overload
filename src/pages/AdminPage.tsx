@@ -10,6 +10,7 @@ import { useFantasy } from "../store/fantasyStore";
 import { calculatePlayerFantasyPoints, overloadRatingFromScore } from "../utils/calculatePoints";
 import { getErrorMessage } from "../utils/errors";
 import { positionTone, statusLabel, statusTone } from "../utils/formatters";
+import { getPlayerTeamForMatchday } from "../data/transferOverrides";
 
 const editableStatuses: PlayerStatus[] = ["disponible", "duda", "lesionado", "sancionado"];
 const statusFilters: Array<"todos" | PlayerStatus> = ["todos", "lesionado", "sancionado", "duda", "disponible"];
@@ -238,9 +239,16 @@ export const AdminPage = () => {
   const matchPlayers = useMemo(() => {
     if (!selectedMatch) return [];
     return clubPlayers
-      .filter((player) => player.teamId === selectedMatch.homeTeamId || player.teamId === selectedMatch.awayTeamId)
-      .sort((a, b) => a.teamName.localeCompare(b.teamName) || a.position.localeCompare(b.position) || a.name.localeCompare(b.name));
-  }, [clubPlayers, selectedMatch]);
+      .filter((player) => {
+        const { teamId } = getPlayerTeamForMatchday(player.id, selectedMatchdayNumber, player.teamId, player.teamName);
+        return teamId === selectedMatch.homeTeamId || teamId === selectedMatch.awayTeamId;
+      })
+      .sort((a, b) => {
+        const aTeam = getPlayerTeamForMatchday(a.id, selectedMatchdayNumber, a.teamId, a.teamName).teamName;
+        const bTeam = getPlayerTeamForMatchday(b.id, selectedMatchdayNumber, b.teamId, b.teamName).teamName;
+        return aTeam.localeCompare(bTeam) || a.position.localeCompare(b.position) || a.name.localeCompare(b.name);
+      });
+  }, [clubPlayers, selectedMatch, selectedMatchdayNumber]);
 
   const filteredMatchPlayers = useMemo(() => {
     const needle = statsQuery.trim().toLowerCase();
@@ -304,8 +312,15 @@ export const AdminPage = () => {
       setStatsForm(emptyStats);
       return;
     }
-    setStatsForm(statFormFromMatchStat(selectedExistingStats, playerGoalsConcededFromScore(selectedStatsPlayer, selectedMatch, homeScore, awayScore)));
-  }, [homeScore, awayScore, selectedExistingStats, selectedMatch, selectedStatsPlayer]);
+    // Usamos el marcador guardado en el partido (no el que el admin está editando en pantalla)
+    // para no recargar el formulario cada vez que se cambia el score, lo que causaba que
+    // la nota se "sumara" en vez de reemplazarse al volver a guardar.
+    const savedHomeScore = coerceNumber(selectedMatch.homeScore);
+    const savedAwayScore = coerceNumber(selectedMatch.awayScore);
+    setStatsForm(statFormFromMatchStat(selectedExistingStats, playerGoalsConcededFromScore(selectedStatsPlayer, selectedMatch, savedHomeScore, savedAwayScore)));
+    // Solo recargamos al cambiar de jugador o de partido, no al editar el marcador en pantalla
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedExistingStats, selectedMatch?.id, selectedStatsPlayer?.id]);
 
   useEffect(() => {
     if (selectedPlayerId && filteredPlayers.some((player) => player.id === selectedPlayerId)) return;
