@@ -3,3 +3,12 @@
 > node scripts/watchChallenge.mjs
 
 [challenge-watch] Modo automatico: sincroniza Challenge cada 300000ms y revisa solicitudes cada 15000ms.
+Synced 1105 players, 39 teams and 98 matches from Challenge Place.
+{ DEL: 289, POR: 127, MED: 342, DEF: 347 }
+[challenge-watch] Actualizacion automatica aplicada en Supabase: 2026-05-25T11:40:22.911Z
+Synced 1105 players, 39 teams and 98 matches from Challenge Place.
+{ DEL: 289, POR: 127, MED: 342, DEF: 347 }
+[challenge-watch] Actualizacion automatica aplicada en Supabase: 2026-05-25T11:46:57.190Z
+Synced 1105 players, 39 teams and 98 matches from Challenge Place.
+{ DEL: 289, POR: 127, MED: 342, DEF: 347 }
+[challenge-watch] Actualizacion automatica aplicada en Supabase: 2026-05-25T11:53:33.605Z

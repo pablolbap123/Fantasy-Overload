@@ -2,8 +2,8 @@ import type { ActivityItem, LeagueMember, LeaguePlayer, Offer, Player, Transfer 
 import { calculateSquadValue } from "./calculatePoints";
 import { formatMoney } from "./formatters";
 
-export const DAILY_MARKET_SIZE = 10;
-export const MARKET_DURATION_MS = 24 * 60 * 60 * 1000;
+export const DAILY_MARKET_SIZE = 15;
+export const MARKET_DURATION_MS = 5 * 60 * 60 * 1000;
 export const MIN_BID_INCREMENT = 50_000;
 
 export const roundBidAmount = (amount: number) => Math.ceil(amount / MIN_BID_INCREMENT) * MIN_BID_INCREMENT;
@@ -52,7 +52,15 @@ export const openDailyMarketCycle = (
   const playerById = new Map(players.map((player) => [player.id, player]));
   const excluded = new Set(excludePlayerIds);
   const available = leaguePlayers
-    .filter((item) => !item.ownerUserId && !item.listedByUserId && !excluded.has(item.playerId))
+  .filter((item) => {
+    const player = playerById.get(item.playerId);
+    return (
+      !item.ownerUserId &&
+      !item.listedByUserId &&
+      !excluded.has(item.playerId) &&
+      player?.teamId !== "team-blsa"
+    );
+  })
     .sort((a, b) => {
       const aPlayer = playerById.get(a.playerId);
       const bPlayer = playerById.get(b.playerId);
