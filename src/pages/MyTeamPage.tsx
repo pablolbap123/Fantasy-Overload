@@ -18,7 +18,12 @@ const formations = Object.keys(formationShape) as Formation[];
 const lineupForMatchday = (lineups: Lineup[], userId: string | null, matchdayId?: string) => {
   if (!matchdayId) return undefined;
   return [...lineups]
-    .filter((lineup) => lineup.userId === userId && lineup.matchdayId === matchdayId)
+    .filter(
+  (lineup) =>
+    lineup.userId === userId &&
+    lineup.matchdayId === matchdayId &&
+    lineup.status === "submitted"
+)
     .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())[0];
 };
 

@@ -730,6 +730,14 @@ export const transferOverrides: TransferOverride[] = [
     "previousTeamId": "team-blsa",
     "previousTeamName": "Bolsa de Jugadores",
     "effectiveFromMatchday": 7
+  },
+  {
+    "playerId": "player-69924274999ccd1bd73fa7b7",
+    "newTeamId": "team-lev",
+    "newTeamName": "Bayer Leverkusen",
+    "previousTeamId": "team-blsa",
+    "previousTeamName": "Bolsa de Jugadores",
+    "effectiveFromMatchday": 7
   }
 ];
 
