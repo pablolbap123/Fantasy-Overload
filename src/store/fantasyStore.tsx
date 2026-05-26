@@ -198,6 +198,50 @@ const fetchAllRows = async (makeQuery: (from: number, to: number) => PromiseLike
   }
 };
 
+const sumPointMap = (pointsByMatchday: Record<string | number, unknown> = {}): number =>
+  Object.values(pointsByMatchday).reduce<number>((sum, value) => sum + Number(value ?? 0), 0);
+
+const totalWithPointMapFallback = (storedTotal: unknown, pointsByMatchday: Record<string | number, unknown> = {}): number => {
+  const total = Number(storedTotal ?? 0);
+  const derivedTotal = sumPointMap(pointsByMatchday);
+  return total === 0 && derivedTotal !== 0 ? derivedTotal : total;
+};
+
+const notificationStorageKey = (userId: string, leagueId: string) => `overload.notifications.seen.${userId}.${leagueId}`;
+
+const readSeenNotificationIds = (userId: string, leagueId: string) => {
+  if (typeof window === "undefined") {
+    return { initialized: false, transfers: new Set<string>(), activities: new Set<string>() };
+  }
+
+  try {
+    const raw = window.localStorage.getItem(notificationStorageKey(userId, leagueId));
+    if (!raw) return { initialized: false, transfers: new Set<string>(), activities: new Set<string>() };
+    const parsed = JSON.parse(raw) as { transfers?: string[]; activities?: string[] };
+    return {
+      initialized: true,
+      transfers: new Set(parsed.transfers ?? []),
+      activities: new Set(parsed.activities ?? []),
+    };
+  } catch {
+    return { initialized: false, transfers: new Set<string>(), activities: new Set<string>() };
+  }
+};
+
+const writeSeenNotificationIds = (userId: string, leagueId: string, transfers: Set<string>, activities: Set<string>) => {
+  if (typeof window === "undefined") return;
+
+  try {
+    const lastIds = (ids: Set<string>) => [...ids].slice(-300);
+    window.localStorage.setItem(
+      notificationStorageKey(userId, leagueId),
+      JSON.stringify({ transfers: lastIds(transfers), activities: lastIds(activities) }),
+    );
+  } catch {
+    // Las notificaciones locales no deben romper la app si el almacenamiento esta lleno o bloqueado.
+  }
+};
+
 const defaultStarterIds = (players: Player[]) => {
   const por = players.filter((player) => player.position === "POR").slice(0, 1);
   const def = players.filter((player) => player.position === "DEF").slice(0, 4);
@@ -372,6 +416,7 @@ const mapChallengeSyncStatus = (row: any): ChallengeSyncStatus => ({
 
 const mapPlayer = (row: any): Player => {
   const position = normalizePlayerPosition(row.position);
+  const pointsByMatchday = row.points_by_matchday ?? {};
   return {
     id: row.id,
     name: row.name,
@@ -388,8 +433,8 @@ const mapPlayer = (row: any): Player => {
     basePrice: Number(row.base_price),
     currentPrice: Number(row.current_price),
     fantasyValue: Number(row.fantasy_value ?? 0),
-    totalPoints: Number(row.total_points ?? 0),
-    pointsByMatchday: row.points_by_matchday ?? {},
+    totalPoints: totalWithPointMapFallback(row.total_points, pointsByMatchday),
+    pointsByMatchday,
     priceHistory: row.stats_json?.priceHistory ?? row.stats_json?.price_history ?? {},
     status: row.status,
     unavailableUntilMatchday:
@@ -502,6 +547,8 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
   const pushRegistrationRef = useRef<string | null>(null);
   const knownNotificationTransferIdsRef = useRef<Set<string>>(new Set());
   const knownNotificationActivityIdsRef = useRef<Set<string>>(new Set());
+  const initializedNotificationScopesRef = useRef<Set<string>>(new Set());
+  const notificationBaselineMsRef = useRef<Map<string, number>>(new Map());
 
   const userId = demoMode ? demoUserId : session?.user.id ?? null;
   const onlineReady = Boolean(isSupabaseConfigured && supabase && session && !demoMode);
@@ -673,6 +720,7 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
           createdAt: row.created_at,
         })) satisfies LeaguePlayer[], mappedPlayers);
         const mappedMembers = memberRows.map((row: any) => {
+          const pointsByMatchday = row.points_by_matchday ?? {};
           const ownedPlayers = mappedLeaguePlayers
             .filter((leaguePlayer) => leaguePlayer.ownerUserId === row.user_id)
             .map((leaguePlayer) => mappedPlayers.find((player) => player.id === leaguePlayer.playerId))
@@ -685,10 +733,10 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
             avatarUrl: row.profiles?.avatar_url ?? "",
             role: row.role,
             budget: Number(row.budget),
-            totalPoints: Number(row.total_points ?? 0),
+            totalPoints: totalWithPointMapFallback(row.total_points, pointsByMatchday),
             lastMatchdayPoints: Number(row.last_matchday_points ?? 0),
             squadValue: calculateSquadValue(ownedPlayers),
-            pointsByMatchday: row.points_by_matchday ?? {},
+            pointsByMatchday,
             joinedMatchday: Number(row.joined_matchday ?? 1),
             createdAt: row.created_at,
           } satisfies LeagueMember;
@@ -933,33 +981,51 @@ export const FantasyProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     if (!currentLeague?.id || !userId) return;
 
-    const leagueTransferIds = new Set(
-      transfers.filter((transfer) => transfer.leagueId === currentLeague.id).map((transfer) => transfer.id),
-    );
-    const leagueActivityIds = new Set(
-      activities.filter((activity) => activity.leagueId === currentLeague.id).map((activity) => activity.id),
-    );
+    const notificationScope = `${userId}:${currentLeague.id}`;
+    const leagueTransfers = transfers.filter((transfer) => transfer.leagueId === currentLeague.id);
+    const leagueActivities = activities.filter((activity) => activity.leagueId === currentLeague.id);
+    const leagueTransferIds = new Set(leagueTransfers.map((transfer) => transfer.id));
+    const leagueActivityIds = new Set(leagueActivities.map((activity) => activity.id));
 
-    if (notificationLeagueRef.current !== currentLeague.id) {
-      notificationLeagueRef.current = currentLeague.id;
+    if (notificationLeagueRef.current !== notificationScope) {
+      notificationLeagueRef.current = notificationScope;
+      const stored = readSeenNotificationIds(userId, currentLeague.id);
+      knownNotificationTransferIdsRef.current = stored.transfers;
+      knownNotificationActivityIdsRef.current = stored.activities;
+
+      if (stored.initialized) {
+        initializedNotificationScopesRef.current.add(notificationScope);
+        notificationBaselineMsRef.current.set(notificationScope, 0);
+      } else {
+        initializedNotificationScopesRef.current.delete(notificationScope);
+        notificationBaselineMsRef.current.set(notificationScope, Date.now());
+      }
+    }
+
+    if (!initializedNotificationScopesRef.current.has(notificationScope)) {
       knownNotificationTransferIdsRef.current = leagueTransferIds;
       knownNotificationActivityIdsRef.current = leagueActivityIds;
+      writeSeenNotificationIds(userId, currentLeague.id, leagueTransferIds, leagueActivityIds);
+      initializedNotificationScopesRef.current.add(notificationScope);
       return;
     }
 
-    const newTransfers = transfers.filter(
+    const newTransfers = leagueTransfers.filter(
       (transfer) =>
-        transfer.leagueId === currentLeague.id &&
         !knownNotificationTransferIdsRef.current.has(transfer.id) &&
+        new Date(transfer.createdAt).getTime() >= (notificationBaselineMsRef.current.get(notificationScope) ?? 0) &&
         transfer.userId === userId &&
         ["buy", "clause_buy", "auction_win", "offer_accepted"].includes(transfer.type),
     );
-    const newActivities = activities.filter(
-      (activity) => activity.leagueId === currentLeague.id && !knownNotificationActivityIdsRef.current.has(activity.id),
+    const newActivities = leagueActivities.filter(
+      (activity) =>
+        !knownNotificationActivityIdsRef.current.has(activity.id) &&
+        new Date(activity.createdAt).getTime() >= (notificationBaselineMsRef.current.get(notificationScope) ?? 0),
     );
 
     knownNotificationTransferIdsRef.current = leagueTransferIds;
     knownNotificationActivityIdsRef.current = leagueActivityIds;
+    writeSeenNotificationIds(userId, currentLeague.id, leagueTransferIds, leagueActivityIds);
 
     newTransfers.forEach((transfer) => {
       void sendFantasyNotification(`🛒 Has fichado a: ${transfer.playerName}`);

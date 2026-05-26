@@ -182,6 +182,9 @@ export interface ScoringRules {
   shotsOnTargetEveryTwo?: number;
   successfulDribblesEveryTwo?: number;
   boxEntriesEveryTwo?: number;
+  ballsLostEach?: number;
+  ballsRecoveredEach?: number;
+  clearancesEach?: number;
   ballsLostEveryTen?: number;
   ballsRecoveredEveryFive?: number;
   clearancesEveryFive?: number;

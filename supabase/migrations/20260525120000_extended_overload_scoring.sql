@@ -30,6 +30,9 @@ set rules_json = coalesce(rules_json, '{}'::jsonb)
     "shotsOnTargetEveryTwo": 1,
     "successfulDribblesEveryTwo": 1,
     "boxEntriesEveryTwo": 1,
+    "ballsLostEach": -1,
+    "ballsRecoveredEach": 1,
+    "clearancesEach": 1,
     "ballsLostEveryTen": -1,
     "ballsRecoveredEveryFive": 1,
     "clearancesEveryFive": 1

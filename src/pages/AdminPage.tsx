@@ -364,11 +364,13 @@ export const AdminPage = () => {
     setStatsForm((current) => ({ ...current, [key]: Math.max(0, coerceNumber(value)) }));
   };
 
-  const savePlayerStats = async () => {
+  const savePlayerStats = async (goToNext = false) => {
     if (!selectedMatch || !selectedStatsPlayer) return;
     setMessage("");
-    setSavingKey("stats");
+    setSavingKey(goToNext ? "stats-next" : "stats");
     try {
+      const currentPlayerIndex = filteredMatchPlayers.findIndex((player) => player.id === selectedStatsPlayer.id);
+      const nextPlayer = currentPlayerIndex >= 0 ? filteredMatchPlayers[currentPlayerIndex + 1] : undefined;
       const nextStat = buildStatsPayload(selectedMatch, selectedStatsPlayer, statsForm, homeScore, awayScore, scoringRules, selectedMatchdayNumber, scoringPosition);
       const updatedMatch: Match = {
         ...selectedMatch,
@@ -380,8 +382,13 @@ export const AdminPage = () => {
       };
       await updateMatchResult(updatedMatch);
       setStatsForm(statFormFromMatchStat(nextStat, nextStat.goalsConceded));
+      if (goToNext && nextPlayer) setSelectedStatsPlayerId(nextPlayer.id);
       setMessageTone("success");
-      setMessage(`${selectedStatsPlayer.name}: ${nextStat.fantasyPoints ?? 0} puntos guardados.`);
+      setMessage(
+        goToNext && nextPlayer
+          ? `${selectedStatsPlayer.name}: ${nextStat.fantasyPoints ?? 0} puntos guardados. Siguiente: ${nextPlayer.name}.`
+          : `${selectedStatsPlayer.name}: ${nextStat.fantasyPoints ?? 0} puntos guardados.`,
+      );
     } catch (err) {
       setMessageTone("error");
       setMessage(getErrorMessage(err, "No se pudo guardar la puntuacion."));
@@ -586,6 +593,15 @@ export const AdminPage = () => {
               </div>
               <Button loading={savingKey === "stats"} icon={<Save className="h-4 w-4" />} onClick={() => void savePlayerStats()} disabled={!selectedStatsPlayer || !selectedMatch}>
                 Guardar puntos
+              </Button>
+              <Button
+                variant="secondary"
+                loading={savingKey === "stats-next"}
+                icon={<Save className="h-4 w-4" />}
+                onClick={() => void savePlayerStats(true)}
+                disabled={!selectedStatsPlayer || !selectedMatch}
+              >
+                Guardar y siguiente
               </Button>
             </div>
           </div>

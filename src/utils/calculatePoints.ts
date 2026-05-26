@@ -133,10 +133,10 @@ const hasTrackedMatchAction = (playerMatchStats: PlayerMatchStats) =>
 
 export const overloadRatingFromScore = (score?: number) => {
   if (typeof score !== "number" || !Number.isFinite(score)) return undefined;
-  if (score >= 9) return 4;
+  if (score >= 8.5) return 4;
   if (score >= 7) return 3;
-  if (score >= 5) return 2;
-  if (score >= 2.5) return 1;
+  if (score >= 5.5) return 2;
+  if (score >= 4) return 1;
   return 0;
 };
 
@@ -162,9 +162,9 @@ export const getOverloadRating = (playerMatchStats: PlayerMatchStats, position: 
     perBlockPoints(playerMatchStats.shotsOnTarget, 2, 0.28) +
     perBlockPoints(playerMatchStats.successfulDribbles, 2, 0.25) +
     perBlockPoints(playerMatchStats.boxEntries, 2, 0.2) +
-    perBlockPoints(playerMatchStats.ballsRecovered, 5, 0.4) +
-    perBlockPoints(playerMatchStats.clearances, 5, 0.3) -
-    perBlockPoints(playerMatchStats.ballsLost, 10, 0.3) -
+    (playerMatchStats.ballsRecovered ?? 0) * 0.18 +
+    (playerMatchStats.clearances ?? 0) * 0.14 -
+    (playerMatchStats.ballsLost ?? 0) * 0.14 -
     playerMatchStats.ownGoals * 2.4 -
     playerMatchStats.penaltiesMissed * 1.8 -
     directRedCards * 2.2 -
@@ -250,14 +250,24 @@ export const buildPlayerPointBreakdown = (
     perBlockPoints(playerMatchStats.successfulDribbles, 2, scoringRules.successfulDribblesEveryTwo ?? 1),
   );
   add("boxEntries", "Llegadas al area", playerMatchStats.boxEntries ?? 0, perBlockPoints(playerMatchStats.boxEntries, 2, scoringRules.boxEntriesEveryTwo ?? 1));
-  add("ballsLost", "Balones perdidos", playerMatchStats.ballsLost ?? 0, perBlockPoints(playerMatchStats.ballsLost, 10, scoringRules.ballsLostEveryTen ?? -1));
+  add(
+    "ballsLost",
+    "Balones perdidos",
+    playerMatchStats.ballsLost ?? 0,
+    (playerMatchStats.ballsLost ?? 0) * (scoringRules.ballsLostEach ?? scoringRules.ballsLostEveryTen ?? -1),
+  );
   add(
     "ballsRecovered",
     "Balones recuperados",
     playerMatchStats.ballsRecovered ?? 0,
-    perBlockPoints(playerMatchStats.ballsRecovered, 5, scoringRules.ballsRecoveredEveryFive ?? 1),
+    (playerMatchStats.ballsRecovered ?? 0) * (scoringRules.ballsRecoveredEach ?? 1),
   );
-  add("clearances", "Despejes", playerMatchStats.clearances ?? 0, perBlockPoints(playerMatchStats.clearances, 5, scoringRules.clearancesEveryFive ?? 1));
+  add(
+    "clearances",
+    "Despejes",
+    playerMatchStats.clearances ?? 0,
+    (playerMatchStats.clearances ?? 0) * (scoringRules.clearancesEach ?? 1),
+  );
 
   return items;
 };

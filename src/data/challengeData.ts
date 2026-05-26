@@ -8,7 +8,7 @@ export const challengeMeta = {
   "stageUrl": "https://challenge.place/c/68486e1155cbb0e036a0559f/stage/69de85f89e7d357d88be816c",
   "stageName": "Temporada 1 GO",
   "stageId": "69de85f89e7d357d88be816c",
-  "fetchedAt": "2026-05-25T21:26:54.341Z",
+  "fetchedAt": "2026-05-26T06:04:56.014Z",
   "playerCount": 1105,
   "teamCount": 39,
   "matchdayCount": 8,

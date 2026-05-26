@@ -23,6 +23,9 @@ as $$
     "shotsOnTargetEveryTwo": 1,
     "successfulDribblesEveryTwo": 1,
     "boxEntriesEveryTwo": 1,
+    "ballsLostEach": -1,
+    "ballsRecoveredEach": 1,
+    "clearancesEach": 1,
     "ballsLostEveryTen": -1,
     "ballsRecoveredEveryFive": 1,
     "clearancesEveryFive": 1
@@ -668,6 +671,7 @@ begin
   where id = p_league_id;
 
   perform public.recalculate_league_points(p_league_id, null);
+  perform public.recalculate_player_totals_from_league(p_league_id);
 end;
 $$;
 
@@ -1572,6 +1576,130 @@ begin
 end;
 $$;
 
+create or replace function public.recalculate_player_totals_from_league(p_league_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if coalesce(auth.role(), '') <> 'service_role'
+    and not public.is_overload_admin()
+    and not public.is_league_admin(p_league_id)
+  then
+    raise exception 'not_admin';
+  end if;
+
+  with league_stats as (
+    select pms.*, md.number
+    from public.player_match_stats pms
+    join public.matches m on m.id = pms.match_id
+    join public.matchdays md on md.id = m.matchday_id
+    where md.league_id = p_league_id
+  ),
+  matchday_points as (
+    select player_id, number, sum(fantasy_points)::integer as points
+    from league_stats
+    group by player_id, number
+  ),
+  point_maps as (
+    select player_id, jsonb_object_agg(number::text, points order by number) as points_by_matchday
+    from matchday_points
+    group by player_id
+  ),
+  totals as (
+    select
+      p.id as player_id,
+      coalesce(sum(ls.fantasy_points), 0)::integer as total_points,
+      count(ls.player_id) filter (
+        where coalesce(ls.minutes, 0) > 0
+          or coalesce(ls.goals, 0) <> 0
+          or coalesce(ls.assists, 0) <> 0
+          or coalesce(ls.key_passes, 0) <> 0
+          or coalesce(ls.yellow_cards, 0) <> 0
+          or coalesce(ls.red_cards, 0) <> 0
+          or coalesce(ls.double_yellow_cards, 0) <> 0
+          or coalesce(ls.own_goals, 0) <> 0
+          or coalesce(ls.penalties_scored, 0) <> 0
+          or coalesce(ls.penalties_missed, 0) <> 0
+          or coalesce(ls.penalties_saved, 0) <> 0
+          or coalesce(ls.penalties_provoked, 0) <> 0
+          or coalesce(ls.saves, 0) <> 0
+          or coalesce(ls.shots_on_target, 0) <> 0
+          or coalesce(ls.successful_dribbles, 0) <> 0
+          or coalesce(ls.box_entries, 0) <> 0
+          or coalesce(ls.balls_lost, 0) <> 0
+          or coalesce(ls.balls_recovered, 0) <> 0
+          or coalesce(ls.clearances, 0) <> 0
+          or coalesce(ls.overload_score, 0) > 0
+          or coalesce(ls.overload_rating, 0) > 0
+          or coalesce(ls.mvp, false)
+          or coalesce(ls.highlighted, false)
+          or coalesce(ls.error_led_to_goal, false)
+      )::integer as appearances,
+      coalesce(sum(ls.goals), 0)::integer as goals,
+      coalesce(sum(ls.assists), 0)::integer as assists,
+      coalesce(sum(ls.key_passes), 0)::integer as key_passes,
+      coalesce(sum(ls.goals_conceded), 0)::integer as goals_conceded,
+      coalesce(count(ls.player_id) filter (where ls.clean_sheet and coalesce(ls.minutes, 0) > 60), 0)::integer as clean_sheets,
+      coalesce(sum(ls.yellow_cards), 0)::integer as yellow_cards,
+      coalesce(sum(ls.red_cards), 0)::integer as red_cards,
+      coalesce(sum(ls.double_yellow_cards), 0)::integer as double_yellow_cards,
+      coalesce(sum(ls.penalties_scored), 0)::integer as penalties_scored,
+      coalesce(sum(ls.penalties_missed), 0)::integer as penalties_missed,
+      coalesce(sum(ls.penalties_saved), 0)::integer as penalties_saved,
+      coalesce(sum(ls.penalties_provoked), 0)::integer as penalties_provoked,
+      coalesce(sum(ls.own_goals), 0)::integer as own_goals,
+      coalesce(sum(ls.overload_rating), 0)::integer as overload_points,
+      coalesce(sum(ls.minutes), 0)::integer as minutes,
+      coalesce(sum(ls.key_passes + ls.assists + ls.goals + ls.penalties_provoked + ls.penalties_saved), 0)::integer as key_actions,
+      coalesce(sum(ls.saves), 0)::integer as saves,
+      coalesce(sum(ls.shots_on_target), 0)::integer as shots_on_target,
+      coalesce(sum(ls.successful_dribbles), 0)::integer as successful_dribbles,
+      coalesce(sum(ls.box_entries), 0)::integer as box_entries,
+      coalesce(sum(ls.balls_lost), 0)::integer as balls_lost,
+      coalesce(sum(ls.balls_recovered), 0)::integer as balls_recovered,
+      coalesce(sum(ls.clearances), 0)::integer as clearances
+    from public.players p
+    left join league_stats ls on ls.player_id = p.id
+    group by p.id
+  )
+  update public.players p
+  set total_points = t.total_points,
+      points_by_matchday = coalesce(pm.points_by_matchday, '{}'::jsonb),
+      fantasy_value = case when t.appearances > 0 then round((t.total_points::numeric / t.appearances) * 10) / 10 else 0 end,
+      stats_json = coalesce(p.stats_json, '{}'::jsonb) || jsonb_build_object(
+        'appearances', t.appearances,
+        'goals', t.goals,
+        'assists', t.assists,
+        'keyPasses', t.key_passes,
+        'goalsConceded', t.goals_conceded,
+        'cleanSheets', t.clean_sheets,
+        'yellowCards', t.yellow_cards,
+        'redCards', t.red_cards,
+        'doubleYellowCards', t.double_yellow_cards,
+        'penaltiesScored', t.penalties_scored,
+        'penaltiesMissed', t.penalties_missed,
+        'penaltiesSaved', t.penalties_saved,
+        'penaltiesProvoked', t.penalties_provoked,
+        'ownGoals', t.own_goals,
+        'overloadPoints', t.overload_points,
+        'minutes', t.minutes,
+        'keyActions', t.key_actions,
+        'saves', t.saves,
+        'shotsOnTarget', t.shots_on_target,
+        'successfulDribbles', t.successful_dribbles,
+        'boxEntries', t.box_entries,
+        'ballsLost', t.balls_lost,
+        'ballsRecovered', t.balls_recovered,
+        'clearances', t.clearances
+      )
+  from totals t
+  left join point_maps pm on pm.player_id = t.player_id
+  where p.id = t.player_id;
+end;
+$$;
+
 create or replace function public.calculate_points_sql(
   p_position text,
   p_minutes integer,
@@ -1618,10 +1746,10 @@ begin
   v_double_yellow := greatest(coalesce(p_double_yellow_cards, 0), least(coalesce(p_yellow_cards, 0), coalesce(p_red_cards, 0)));
   v_direct_red := greatest(coalesce(p_red_cards, 0) - v_double_yellow, 0);
   v_overload := case
-    when p_overload_score is not null and p_overload_score >= 9 then 4
+    when p_overload_score is not null and p_overload_score >= 8.5 then 4
     when p_overload_score is not null and p_overload_score >= 7 then 3
-    when p_overload_score is not null and p_overload_score >= 5 then 2
-    when p_overload_score is not null and p_overload_score >= 2.5 then 1
+    when p_overload_score is not null and p_overload_score >= 5.5 then 2
+    when p_overload_score is not null and p_overload_score >= 4 then 1
     when p_overload_score is not null then 0
     else least(greatest(coalesce(p_overload_rating, 0), 0), 4)
   end;
@@ -1658,9 +1786,9 @@ begin
   v_points := v_points + floor(coalesce(p_shots_on_target, 0) / 2)::integer * coalesce((p_rules ->> 'shotsOnTargetEveryTwo')::integer, 1);
   v_points := v_points + floor(coalesce(p_successful_dribbles, 0) / 2)::integer * coalesce((p_rules ->> 'successfulDribblesEveryTwo')::integer, 1);
   v_points := v_points + floor(coalesce(p_box_entries, 0) / 2)::integer * coalesce((p_rules ->> 'boxEntriesEveryTwo')::integer, 1);
-  v_points := v_points + floor(coalesce(p_balls_lost, 0) / 10)::integer * coalesce((p_rules ->> 'ballsLostEveryTen')::integer, -1);
-  v_points := v_points + floor(coalesce(p_balls_recovered, 0) / 5)::integer * coalesce((p_rules ->> 'ballsRecoveredEveryFive')::integer, 1);
-  v_points := v_points + floor(coalesce(p_clearances, 0) / 5)::integer * coalesce((p_rules ->> 'clearancesEveryFive')::integer, 1);
+  v_points := v_points + coalesce(p_balls_lost, 0) * coalesce((p_rules ->> 'ballsLostEach')::integer, (p_rules ->> 'ballsLostEveryTen')::integer, -1);
+  v_points := v_points + coalesce(p_balls_recovered, 0) * coalesce((p_rules ->> 'ballsRecoveredEach')::integer, 1);
+  v_points := v_points + coalesce(p_clearances, 0) * coalesce((p_rules ->> 'clearancesEach')::integer, 1);
   return v_points;
 end;
 $$;
@@ -2511,11 +2639,37 @@ begin
     raise exception 'captain_not_starter';
   end if;
 
-  update public.lineups
+update public.lineups
   set captain_player_id = p_captain_player_id
   where id = p_lineup_id;
 end;
 $$;
+
+update public.scoring_rules
+set rules_json =
+  public.default_scoring_rules()
+  || coalesce(rules_json, '{}'::jsonb)
+  || jsonb_build_object(
+    'ballsLostEach', -1,
+    'ballsRecoveredEach', 1,
+    'clearancesEach', 1
+  );
+
+with derived_points as (
+  select player_id, sum(points::integer)::integer as total_points
+  from (
+    select p.id as player_id, e.points
+    from public.players p
+    cross join lateral jsonb_each_text(coalesce(p.points_by_matchday, '{}'::jsonb)) as e(matchday, points)
+  ) rows
+  group by player_id
+)
+update public.players p
+set total_points = derived_points.total_points
+from derived_points
+where p.id = derived_points.player_id
+  and coalesce(p.total_points, 0) = 0
+  and derived_points.total_points <> 0;
 
 grant execute on function public.admin_update_player_availability(uuid, text, integer) to authenticated;
 grant execute on function public.admin_set_current_matchday(uuid, integer) to authenticated;
