@@ -1611,3 +1611,1899 @@
   line: '666',
   routine: '_bt_check_unique'
 }
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[challenge-watch] Error: error: duplicate key value violates unique constraint "player_team_history_player_id_team_id_from_date_key"
+    at C:\Users\pablo\Documents\Fantasy\node_modules\pg\lib\client.js:646:17
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async applySql (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:58:12)
+    at async applyLatestSnapshot (file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:205:3)
+    at async file:///C:/Users/pablo/Documents/Fantasy/scripts/watchChallenge.mjs:239:26 {
+  length: 404,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (player_id, team_id, from_date)=(9f9dcab4-01ce-4807-a9f8-9ca80d545f4a, c892785d-024b-466d-a1a0-c27a2ed8d1a6, 2026-04-13 13:30:08.331+00) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'public',
+  table: 'player_team_history',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'player_team_history_player_id_team_id_from_date_key',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Activity, Calculator, RotateCcw, Save, Search, ShieldAlert, SkipForward } from "lucide-react";
+import { Activity, Calculator, ClipboardPaste, RotateCcw, Save, Search, ShieldAlert, SkipForward } from "lucide-react";
 import type { Match, Player, PlayerMatchStats, PlayerPosition, PlayerStatus, ScoringRules } from "../types";
 import { PlayerAvatar } from "../components/players/PlayerAvatar";
 import { Badge } from "../components/ui/Badge";
@@ -95,6 +95,141 @@ const emptyStats: EditableStats = {
   ballsRecovered: 0,
   clearances: 0,
 };
+
+type BulkImportRow = EditableStats & {
+  playerName: string;
+};
+
+const normalizeImportText = (value: string) =>
+  value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "");
+
+const splitImportLine = (line: string) => {
+  const cleaned = line.trim().replace(/^\|/, "").replace(/\|$/, "");
+  if (!cleaned || /^[-:\s|]+$/.test(cleaned)) return [];
+  if (cleaned.includes("\t")) return cleaned.split("\t").map((item) => item.trim());
+  if (cleaned.includes("|")) return cleaned.split("|").map((item) => item.trim());
+  if (cleaned.includes(";")) return cleaned.split(";").map((item) => item.trim());
+  return cleaned.split(",").map((item) => item.trim());
+};
+
+const parseImportNumber = (value: string | undefined) => {
+  if (!value) return 0;
+  const normalized = value.replace(",", ".").replace(/[^\d.-]/g, "");
+  const number = Number(normalized);
+  return Number.isFinite(number) ? number : 0;
+};
+
+const headerToStatKey = (header: string): keyof EditableStats | "playerName" | null => {
+  const normalized = normalizeImportText(header);
+  const aliases: Record<string, keyof EditableStats | "playerName"> = {
+    jugador: "playerName",
+    nombre: "playerName",
+    player: "playerName",
+    nota: "overloadScore",
+    notaoverload010: "overloadScore",
+    overload: "overloadScore",
+    overloadscore: "overloadScore",
+    minutos: "minutes",
+    min: "minutes",
+    minutes: "minutes",
+    goles: "goals",
+    goals: "goals",
+    asistenciasdegol: "assists",
+    asistencias: "assists",
+    assists: "assists",
+    asistenciassingol: "keyPasses",
+    pasesclave: "keyPasses",
+    keypasses: "keyPasses",
+    rematesapuerta: "shotsOnTarget",
+    tirosapuerta: "shotsOnTarget",
+    shotsontarget: "shotsOnTarget",
+    regateslogrados: "successfulDribbles",
+    regates: "successfulDribbles",
+    successfuldribbles: "successfulDribbles",
+    llegadasalarea: "boxEntries",
+    entradasalarea: "boxEntries",
+    boxentries: "boxEntries",
+    paradas: "saves",
+    saves: "saves",
+    golesrecibidos: "goalsConceded",
+    goalsconceded: "goalsConceded",
+    balonesperdidos: "ballsLost",
+    ballslost: "ballsLost",
+    balonesrecuperados: "ballsRecovered",
+    ballsrecovered: "ballsRecovered",
+    despejes: "clearances",
+    clearances: "clearances",
+    penaltismarcados: "penaltiesScored",
+    penaltisfallados: "penaltiesMissed",
+    penaltisparados: "penaltiesSaved",
+    penaltisprovocados: "penaltiesProvoked",
+    amarillas: "yellowCards",
+    yellowcards: "yellowCards",
+    dobleamarilla: "doubleYellowCards",
+    doubleyellowcards: "doubleYellowCards",
+    rojadirecta: "redCards",
+    rojas: "redCards",
+    redcards: "redCards",
+    golesenpropia: "ownGoals",
+    owngoals: "ownGoals",
+    porteriaacero: "cleanSheet",
+    cleansheet: "cleanSheet",
+  };
+  return aliases[normalized] ?? null;
+};
+
+const parseBulkMatchStats = (rawText: string, match?: Match) => {
+  const rows = rawText
+    .split(/\r?\n/)
+    .map(splitImportLine)
+    .filter((columns) => columns.length >= 2);
+
+  if (!rawText.trim() || rows.length === 0) {
+    return { parsedRows: [] as BulkImportRow[], matchedRows: [] as BulkImportRow[], unmatchedNames: [] as string[] };
+  }
+
+  const headerRowIndex = rows.findIndex((columns) => columns.some((column) => headerToStatKey(column) === "playerName"));
+  const headers = headerRowIndex >= 0 ? rows[headerRowIndex].map(headerToStatKey) : [];
+  const dataRows = headerRowIndex >= 0 ? rows.slice(headerRowIndex + 1) : rows;
+  const parsedRows: BulkImportRow[] = dataRows
+    .map((columns) => {
+      const row: BulkImportRow = { ...emptyStats, playerName: "" };
+      if (headers.length > 0) {
+        columns.forEach((value, index) => {
+          const key = headers[index];
+          if (!key) return;
+          if (key === "playerName") row.playerName = value;
+          else if (key === "cleanSheet") row.cleanSheet = ["1", "si", "sí", "true", "x"].includes(value.trim().toLowerCase());
+          else row[key] = parseImportNumber(value) as never;
+        });
+      } else {
+        row.playerName = columns[0] ?? "";
+        row.overloadScore = parseImportNumber(columns[1]);
+      }
+      row.playerName = row.playerName.replace(/⭐|MVP/gi, "").trim();
+      return row;
+    })
+    .filter((row) => row.playerName && !/^suplentes$/i.test(row.playerName));
+
+  if (!match) return { parsedRows, matchedRows: [] as BulkImportRow[], unmatchedNames: parsedRows.map((row) => row.playerName) };
+
+  const matchPlayerNames = new Set(match.playerStats.map((stat) => stat.playerId));
+  const matchedRows = parsedRows;
+  const unmatchedNames: string[] = [];
+  void matchPlayerNames;
+
+  return { parsedRows, matchedRows, unmatchedNames };
+};
+
+const findBulkPlayer = (row: BulkImportRow, candidates: Player[]) => {
+  const wanted = normalizeImportText(row.playerName);
+  return candidates.find((player) => normalizeImportText(player.name) === wanted) ?? candidates.find((player) => normalizeImportText(player.name).includes(wanted) || wanted.includes(normalizeImportText(player.name)));
+};
+
 
 const isAbsenceStatus = (status: PlayerStatus) => status === "lesionado" || status === "sancionado";
 
@@ -231,6 +366,7 @@ export const AdminPage = () => {
   const [savingKey, setSavingKey] = useState("");
   const [message, setMessage] = useState("");
   const [messageTone, setMessageTone] = useState<"success" | "error">("success");
+  const [bulkMatchText, setBulkMatchText] = useState("");
 
   const currentMatchdayNumber = currentLeague?.currentMatchday ?? matchdays.at(-1)?.number ?? 1;
   const matchdayNumbers = useMemo(() => {
@@ -296,6 +432,18 @@ export const AdminPage = () => {
     selectedMatch && selectedStatsPlayer
       ? buildStatsPayload(selectedMatch, selectedStatsPlayer, statsForm, homeScore, awayScore, scoringRules, selectedMatchdayNumber, scoringPosition)
       : null;
+  const bulkPreview = useMemo(() => {
+    const parsed = parseBulkMatchStats(bulkMatchText, selectedMatch);
+    if (!selectedMatch) return { ...parsed, matchedCount: 0, unmatchedNames: parsed.parsedRows.map((row) => row.playerName) };
+    const unmatchedNames = parsed.parsedRows
+      .filter((row) => !findBulkPlayer(row, matchPlayers))
+      .map((row) => row.playerName);
+    return {
+      ...parsed,
+      matchedCount: parsed.parsedRows.length - unmatchedNames.length,
+      unmatchedNames,
+    };
+  }, [bulkMatchText, selectedMatch, matchPlayers]);
 
   useEffect(() => {
     if (currentLeague?.currentMatchday) {
@@ -362,6 +510,61 @@ export const AdminPage = () => {
 
   const updateNumericStat = (key: keyof Omit<EditableStats, "cleanSheet">, value: string) => {
     setStatsForm((current) => ({ ...current, [key]: Math.max(0, coerceNumber(value)) }));
+  };
+
+  const importBulkMatchStats = async () => {
+    if (!selectedMatch) return;
+    const parsed = parseBulkMatchStats(bulkMatchText, selectedMatch).parsedRows;
+    if (parsed.length === 0) {
+      setMessageTone("error");
+      setMessage("Pega una tabla con al menos las columnas Jugador y Nota.");
+      return;
+    }
+
+    setMessage("");
+    setSavingKey("bulk-stats");
+    try {
+      const unmatchedNames: string[] = [];
+      const importedStats: PlayerMatchStats[] = [];
+
+      parsed.forEach((row) => {
+        const player = findBulkPlayer(row, matchPlayers);
+        if (!player) {
+          unmatchedNames.push(row.playerName);
+          return;
+        }
+
+        const position = playerPositions(player)[0] ?? player.position;
+        importedStats.push(buildStatsPayload(selectedMatch, player, row, homeScore, awayScore, scoringRules, selectedMatchdayNumber, position));
+      });
+
+      if (importedStats.length === 0) {
+        throw new Error("No he podido encontrar ningun jugador de la tabla en este partido.");
+      }
+
+      const importedIds = new Set(importedStats.map((stat) => stat.playerId));
+      const updatedMatch: Match = {
+        ...selectedMatch,
+        homeScore,
+        awayScore,
+        status: "finalizada",
+        playedAt: selectedMatch.playedAt ?? new Date().toISOString(),
+        playerStats: [...selectedMatch.playerStats.filter((stat) => !importedIds.has(stat.playerId)), ...importedStats],
+      };
+
+      await updateMatchResult(updatedMatch);
+      setMessageTone(unmatchedNames.length > 0 ? "error" : "success");
+      setMessage(
+        unmatchedNames.length > 0
+          ? `Importados ${importedStats.length} jugadores. No encontrados: ${unmatchedNames.join(", ")}.`
+          : `Importados ${importedStats.length} jugadores correctamente.`,
+      );
+    } catch (err) {
+      setMessageTone("error");
+      setMessage(getErrorMessage(err, "No se pudo importar el partido completo."));
+    } finally {
+      setSavingKey("");
+    }
   };
 
   const savePlayerStats = async (goToNext = false) => {
@@ -501,6 +704,53 @@ export const AdminPage = () => {
             <span className="mb-1 block text-[11px] font-black uppercase tracking-[0.12em] text-slate-500">Visitante</span>
             <input className="field" type="number" min={0} value={awayScore} onChange={(event) => setAwayScore(coerceNumber(event.target.value))} />
           </label>
+        </div>
+
+        <div className="mt-5 rounded-xl border border-[#62d7ff]/20 bg-[#07101f]/70 p-4">
+          <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <div className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.16em] text-[#62d7ff]">
+                <ClipboardPaste className="h-4 w-4" />
+                Importar partido completo
+              </div>
+              <p className="mt-1 text-sm text-slate-400">
+                Pega una tabla desde Excel, Google Sheets o Markdown. Debe incluir como minimo Jugador y Nota.
+              </p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/[0.06] px-4 py-3 text-right">
+              <div className="text-xs font-bold uppercase text-slate-400">Detectados</div>
+              <div className="text-2xl font-black text-white">
+                {bulkPreview.matchedCount}/{bulkPreview.parsedRows.length}
+              </div>
+            </div>
+          </div>
+
+          <textarea
+            className="field min-h-44 font-mono text-xs"
+            value={bulkMatchText}
+            onChange={(event) => setBulkMatchText(event.target.value)}
+            placeholder={`Jugador\tNota\tMinutos\tGoles\tAsistencias de gol\tAsistencias sin gol\tRemates a puerta\tRegates logrados\tLlegadas al area\tParadas\tGoles recibidos\tBalones perdidos\tBalones recuperados\tDespejes\tPenaltis marcados\tPenaltis fallados\tPenaltis parados\tPenaltis provocados\tAmarillas\tDoble amarilla\tRoja directa\tGoles en propia\nVladimir\t9.5\t90\t1\t1\t5\t2\t2\t4\t0\t0\t0\t4\t0\t0\t0\t0\t0\t0\t0\t0\t0`}
+          />
+
+          {bulkPreview.unmatchedNames.length > 0 ? (
+            <p className="mt-2 text-xs font-bold text-rose-200">
+              No encontrados en este partido: {bulkPreview.unmatchedNames.join(", ")}
+            </p>
+          ) : null}
+
+          <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
+            <p className="text-xs text-slate-400">
+              El importador actualiza los jugadores encontrados y conserva los datos ya guardados de los demas.
+            </p>
+            <Button
+              loading={savingKey === "bulk-stats"}
+              icon={<ClipboardPaste className="h-4 w-4" />}
+              onClick={() => void importBulkMatchStats()}
+              disabled={!selectedMatch || bulkPreview.parsedRows.length === 0}
+            >
+              Importar partido completo
+            </Button>
+          </div>
         </div>
 
         <div className="mt-5 grid gap-5 xl:grid-cols-[minmax(16rem,.8fr)_1.2fr]">
