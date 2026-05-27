@@ -1016,6 +1016,8 @@ set player_id = excluded.player_id,
 
 insert into public.player_team_history (
   id, player_id, team_id, from_date, to_date, from_matchday, to_matchday, source
+  on conflict (player_id, team_id, from_date)
+do nothing;
 )
 select
   h.id,
