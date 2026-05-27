@@ -1014,8 +1014,33 @@ set player_id = excluded.player_id,
     effective_matchday = excluded.effective_matchday,
     raw_json = excluded.raw_json;
 
+delete from public.player_team_history existing
+using jsonb_to_recordset($player_team_history$${JSON.stringify(
+  historySqlRows,
+)}$player_team_history$::jsonb) as h(
+  id uuid,
+  player_id uuid,
+  team_short_name text,
+  from_date timestamptz,
+  to_date timestamptz,
+  from_matchday integer,
+  to_matchday integer
+)
+join public.teams t on t.short_name = h.team_short_name
+where existing.player_id = h.player_id
+  and existing.team_id = t.id
+  and existing.from_date = h.from_date
+  and existing.id <> h.id;
+
 insert into public.player_team_history (
-  id, player_id, team_id, from_date, to_date, from_matchday, to_matchday, source
+  id,
+  player_id,
+  team_id,
+  from_date,
+  to_date,
+  from_matchday,
+  to_matchday,
+  source
 )
 select
   h.id,
@@ -1038,13 +1063,14 @@ from jsonb_to_recordset($player_team_history$${JSON.stringify(
   to_matchday integer
 )
 join public.teams t on t.short_name = h.team_short_name
-on conflict (player_id, team_id, from_date) do update
-set id = excluded.id,
+on conflict (id) do update
+set player_id = excluded.player_id,
+    team_id = excluded.team_id,
+    from_date = excluded.from_date,
     to_date = excluded.to_date,
     from_matchday = excluded.from_matchday,
     to_matchday = excluded.to_matchday,
     source = excluded.source;\n`;
-
 const cleanupSeedSql = `\n\nwith snapshot_players as (
   select id
   from jsonb_to_recordset($snapshot_players$${JSON.stringify(playerSqlRows.map((player) => ({ id: player.id })))}$snapshot_players$::jsonb) as p(id uuid)
