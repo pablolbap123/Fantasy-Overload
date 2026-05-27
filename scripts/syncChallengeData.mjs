@@ -1017,8 +1017,6 @@ set player_id = excluded.player_id,
 insert into public.player_team_history (
   id, player_id, team_id, from_date, to_date, from_matchday, to_matchday, source
 )
-    on conflict (player_id, team_id, from_date)
-do nothing;
 select
   h.id,
   h.player_id,
@@ -1040,10 +1038,8 @@ from jsonb_to_recordset($player_team_history$${JSON.stringify(
   to_matchday integer
 )
 join public.teams t on t.short_name = h.team_short_name
-on conflict (id) do update
-set player_id = excluded.player_id,
-    team_id = excluded.team_id,
-    from_date = excluded.from_date,
+on conflict (player_id, team_id, from_date) do update
+set id = excluded.id,
     to_date = excluded.to_date,
     from_matchday = excluded.from_matchday,
     to_matchday = excluded.to_matchday,
