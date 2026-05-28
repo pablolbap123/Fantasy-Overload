@@ -8,7 +8,7 @@ export const challengeMeta = {
   "stageUrl": "https://challenge.place/c/68486e1155cbb0e036a0559f/stage/69de85f89e7d357d88be816c",
   "stageName": "Temporada 1 GO",
   "stageId": "69de85f89e7d357d88be816c",
-  "fetchedAt": "2026-05-27T22:50:16.319Z",
+  "fetchedAt": "2026-05-28T06:53:46.441Z",
   "playerCount": 1105,
   "teamCount": 39,
   "matchdayCount": 9,
@@ -25008,10 +25008,10 @@ export const challengePlayers: Player[] = [
     },
     "status": "disponible",
     "stats": {
-      "appearances": 6,
+      "appearances": 7,
       "goals": 0,
       "assists": 0,
-      "goalsConceded": 6,
+      "goalsConceded": 7,
       "cleanSheets": 0,
       "yellowCards": 0,
       "redCards": 0,
@@ -25366,9 +25366,9 @@ export const challengePlayers: Player[] = [
       "DEL"
     ],
     "basePrice": 4845896,
-    "currentPrice": 12850000,
-    "fantasyValue": 3.6,
-    "totalPoints": 32,
+    "currentPrice": 14450000,
+    "fantasyValue": 4,
+    "totalPoints": 36,
     "pointsByMatchday": {
       "1": 4,
       "2": 4,
@@ -25378,12 +25378,12 @@ export const challengePlayers: Player[] = [
       "6": 4,
       "7": 8,
       "8": 4,
-      "9": 0
+      "9": 4
     },
     "status": "disponible",
     "stats": {
-      "appearances": 7,
-      "goals": 8,
+      "appearances": 8,
+      "goals": 9,
       "assists": 0,
       "goalsConceded": 0,
       "cleanSheets": 0,
@@ -25398,7 +25398,7 @@ export const challengePlayers: Player[] = [
       "mvps": 0,
       "overloadPoints": 0,
       "minutes": 0,
-      "keyActions": 8,
+      "keyActions": 9,
       "keyPasses": 0,
       "overloadScore": 0,
       "saves": 0,
@@ -25418,7 +25418,7 @@ export const challengePlayers: Player[] = [
       "6": 10450000,
       "7": 13050000,
       "8": 13450000,
-      "9": 12850000
+      "9": 14450000
     }
   },
   {
@@ -33022,9 +33022,9 @@ export const challengePlayers: Player[] = [
       "DEF"
     ],
     "basePrice": 5132681,
-    "currentPrice": 5900000,
-    "fantasyValue": 0.3,
-    "totalPoints": 3,
+    "currentPrice": 5500000,
+    "fantasyValue": 0.2,
+    "totalPoints": 2,
     "pointsByMatchday": {
       "1": 4,
       "2": 0,
@@ -33034,16 +33034,16 @@ export const challengePlayers: Player[] = [
       "6": 0,
       "7": 0,
       "8": -1,
-      "9": 0
+      "9": -1
     },
     "status": "disponible",
     "stats": {
-      "appearances": 2,
+      "appearances": 3,
       "goals": 1,
       "assists": 0,
       "goalsConceded": 0,
       "cleanSheets": 0,
-      "yellowCards": 1,
+      "yellowCards": 2,
       "redCards": 0,
       "doubleYellowCards": 0,
       "penaltiesScored": 0,
@@ -33074,7 +33074,7 @@ export const challengePlayers: Player[] = [
       "6": 6150000,
       "7": 6150000,
       "8": 5750000,
-      "9": 5900000
+      "9": 5500000
     }
   },
   {
@@ -36021,10 +36021,10 @@ export const challengePlayers: Player[] = [
     },
     "status": "disponible",
     "stats": {
-      "appearances": 7,
+      "appearances": 8,
       "goals": 0,
       "assists": 0,
-      "goalsConceded": 7,
+      "goalsConceded": 8,
       "cleanSheets": 0,
       "yellowCards": 0,
       "redCards": 0,
@@ -36331,9 +36331,9 @@ export const challengePlayers: Player[] = [
       "DEL"
     ],
     "basePrice": 4866843,
-    "currentPrice": 7600000,
-    "fantasyValue": 1.2,
-    "totalPoints": 11,
+    "currentPrice": 8800000,
+    "fantasyValue": 1.6,
+    "totalPoints": 14,
     "pointsByMatchday": {
       "1": 0,
       "2": 3,
@@ -36343,13 +36343,13 @@ export const challengePlayers: Player[] = [
       "6": 4,
       "7": 0,
       "8": 0,
-      "9": 0
+      "9": 3
     },
     "status": "disponible",
     "stats": {
-      "appearances": 3,
+      "appearances": 4,
       "goals": 2,
-      "assists": 1,
+      "assists": 2,
       "goalsConceded": 0,
       "cleanSheets": 0,
       "yellowCards": 0,
@@ -36363,7 +36363,7 @@ export const challengePlayers: Player[] = [
       "mvps": 0,
       "overloadPoints": 0,
       "minutes": 0,
-      "keyActions": 3,
+      "keyActions": 4,
       "keyPasses": 0,
       "overloadScore": 0,
       "saves": 0,
@@ -36383,7 +36383,7 @@ export const challengePlayers: Player[] = [
       "6": 8200000,
       "7": 7600000,
       "8": 7600000,
-      "9": 7600000
+      "9": 8800000
     }
   },
   {
@@ -37132,9 +37132,9 @@ export const challengePlayers: Player[] = [
       "DEL"
     ],
     "basePrice": 4634002,
-    "currentPrice": 14150000,
-    "fantasyValue": 4.2,
-    "totalPoints": 38,
+    "currentPrice": 18950000,
+    "fantasyValue": 5.6,
+    "totalPoints": 50,
     "pointsByMatchday": {
       "1": 7,
       "2": 4,
@@ -37144,12 +37144,12 @@ export const challengePlayers: Player[] = [
       "6": 8,
       "7": 3,
       "8": 4,
-      "9": 0
+      "9": 12
     },
     "status": "disponible",
     "stats": {
-      "appearances": 8,
-      "goals": 9,
+      "appearances": 9,
+      "goals": 12,
       "assists": 1,
       "goalsConceded": 0,
       "cleanSheets": 0,
@@ -37164,7 +37164,7 @@ export const challengePlayers: Player[] = [
       "mvps": 0,
       "overloadPoints": 0,
       "minutes": 0,
-      "keyActions": 10,
+      "keyActions": 13,
       "keyPasses": 0,
       "overloadScore": 0,
       "saves": 0,
@@ -37184,7 +37184,7 @@ export const challengePlayers: Player[] = [
       "6": 13600000,
       "7": 13600000,
       "8": 14750000,
-      "9": 14150000
+      "9": 18950000
     }
   },
   {
@@ -39381,9 +39381,9 @@ export const challengePlayers: Player[] = [
       "DEL"
     ],
     "basePrice": 5325840,
-    "currentPrice": 12350000,
-    "fantasyValue": 3.1,
-    "totalPoints": 28,
+    "currentPrice": 15150000,
+    "fantasyValue": 3.9,
+    "totalPoints": 35,
     "pointsByMatchday": {
       "1": 0,
       "2": 8,
@@ -39393,13 +39393,13 @@ export const challengePlayers: Player[] = [
       "6": 8,
       "7": 0,
       "8": 8,
-      "9": 0
+      "9": 7
     },
     "status": "disponible",
     "stats": {
-      "appearances": 4,
-      "goals": 7,
-      "assists": 0,
+      "appearances": 5,
+      "goals": 8,
+      "assists": 1,
       "goalsConceded": 0,
       "cleanSheets": 0,
       "yellowCards": 0,
@@ -39413,7 +39413,7 @@ export const challengePlayers: Player[] = [
       "mvps": 0,
       "overloadPoints": 0,
       "minutes": 0,
-      "keyActions": 7,
+      "keyActions": 9,
       "keyPasses": 0,
       "overloadScore": 0,
       "saves": 0,
@@ -39433,7 +39433,7 @@ export const challengePlayers: Player[] = [
       "6": 11550000,
       "7": 10350000,
       "8": 13550000,
-      "9": 12350000
+      "9": 15150000
     }
   },
   {
@@ -40343,9 +40343,9 @@ export const challengePlayers: Player[] = [
       "DEF"
     ],
     "basePrice": 3896566,
-    "currentPrice": 3400000,
-    "fantasyValue": -0.2,
-    "totalPoints": -2,
+    "currentPrice": 3000000,
+    "fantasyValue": -0.3,
+    "totalPoints": -3,
     "pointsByMatchday": {
       "1": -3,
       "2": 0,
@@ -40355,16 +40355,16 @@ export const challengePlayers: Player[] = [
       "6": 0,
       "7": -1,
       "8": 0,
-      "9": 0
+      "9": -1
     },
     "status": "disponible",
     "stats": {
-      "appearances": 4,
+      "appearances": 5,
       "goals": 0,
       "assists": 1,
       "goalsConceded": 0,
       "cleanSheets": 0,
-      "yellowCards": 2,
+      "yellowCards": 3,
       "redCards": 1,
       "doubleYellowCards": 0,
       "penaltiesScored": 0,
@@ -40395,7 +40395,7 @@ export const challengePlayers: Player[] = [
       "6": 3650000,
       "7": 3250000,
       "8": 3400000,
-      "9": 3400000
+      "9": 3000000
     }
   },
   {
@@ -41034,9 +41034,9 @@ export const challengePlayers: Player[] = [
       "MED"
     ],
     "basePrice": 4188656,
-    "currentPrice": 9200000,
-    "fantasyValue": 2.2,
-    "totalPoints": 20,
+    "currentPrice": 10400000,
+    "fantasyValue": 2.6,
+    "totalPoints": 23,
     "pointsByMatchday": {
       "1": -1,
       "2": 2,
@@ -41046,13 +41046,13 @@ export const challengePlayers: Player[] = [
       "6": 3,
       "7": 2,
       "8": 0,
-      "9": 0
+      "9": 3
     },
     "status": "disponible",
     "stats": {
-      "appearances": 7,
+      "appearances": 8,
       "goals": 0,
-      "assists": 8,
+      "assists": 9,
       "goalsConceded": 0,
       "cleanSheets": 0,
       "yellowCards": 4,
@@ -41066,7 +41066,7 @@ export const challengePlayers: Player[] = [
       "mvps": 0,
       "overloadPoints": 0,
       "minutes": 0,
-      "keyActions": 8,
+      "keyActions": 9,
       "keyPasses": 0,
       "overloadScore": 0,
       "saves": 0,
@@ -41086,7 +41086,7 @@ export const challengePlayers: Player[] = [
       "6": 9150000,
       "7": 9500000,
       "8": 9200000,
-      "9": 9200000
+      "9": 10400000
     }
   },
   {
@@ -41233,9 +41233,9 @@ export const challengePlayers: Player[] = [
       "MED"
     ],
     "basePrice": 4487733,
-    "currentPrice": 7250000,
-    "fantasyValue": 1.2,
-    "totalPoints": 11,
+    "currentPrice": 8450000,
+    "fantasyValue": 1.6,
+    "totalPoints": 14,
     "pointsByMatchday": {
       "1": 0,
       "2": 4,
@@ -41245,13 +41245,13 @@ export const challengePlayers: Player[] = [
       "6": 0,
       "7": 0,
       "8": -1,
-      "9": 0
+      "9": 3
     },
     "status": "disponible",
     "stats": {
-      "appearances": 4,
+      "appearances": 5,
       "goals": 3,
-      "assists": 0,
+      "assists": 1,
       "goalsConceded": 0,
       "cleanSheets": 0,
       "yellowCards": 1,
@@ -41265,7 +41265,7 @@ export const challengePlayers: Player[] = [
       "mvps": 0,
       "overloadPoints": 0,
       "minutes": 0,
-      "keyActions": 3,
+      "keyActions": 4,
       "keyPasses": 0,
       "overloadScore": 0,
       "saves": 0,
@@ -41285,7 +41285,7 @@ export const challengePlayers: Player[] = [
       "6": 7500000,
       "7": 7500000,
       "8": 7100000,
-      "9": 7250000
+      "9": 8450000
     }
   },
   {
@@ -48631,9 +48631,9 @@ export const challengePlayers: Player[] = [
       "DEF"
     ],
     "basePrice": 4246124,
-    "currentPrice": 4000000,
-    "fantasyValue": -0.1,
-    "totalPoints": -1,
+    "currentPrice": 2800000,
+    "fantasyValue": -0.4,
+    "totalPoints": -4,
     "pointsByMatchday": {
       "1": 0,
       "2": 0,
@@ -48643,17 +48643,17 @@ export const challengePlayers: Player[] = [
       "6": 0,
       "7": 0,
       "8": 0,
-      "9": 0
+      "9": -3
     },
     "status": "disponible",
     "stats": {
-      "appearances": 1,
+      "appearances": 2,
       "goals": 0,
       "assists": 0,
       "goalsConceded": 0,
       "cleanSheets": 0,
       "yellowCards": 1,
-      "redCards": 0,
+      "redCards": 1,
       "doubleYellowCards": 0,
       "penaltiesScored": 0,
       "penaltiesMissed": 0,
@@ -48683,7 +48683,7 @@ export const challengePlayers: Player[] = [
       "6": 4000000,
       "7": 4000000,
       "8": 4000000,
-      "9": 4000000
+      "9": 2800000
     }
   },
   {
@@ -51247,12 +51247,12 @@ export const challengePlayers: Player[] = [
     "imageUrl": "https://static.challengeplace.com/2025/6/10/14/player/51fe8e64-ca8c-49e0-ae27-1ceb6ed7a5ab.jpg",
     "teamId": "team-mun",
     "teamName": "Manchester United",
-    "position": "DEF",
+    "position": "MED",
     "positions": [
-      "DEF"
+      "MED"
     ],
-    "basePrice": 4386124,
-    "currentPrice": 4650000,
+    "basePrice": 4736124,
+    "currentPrice": 5000000,
     "fantasyValue": 0.1,
     "totalPoints": 1,
     "pointsByMatchday": {
@@ -51295,14 +51295,14 @@ export const challengePlayers: Player[] = [
       "clearances": 0
     },
     "priceHistory": {
-      "1": 4400000,
-      "2": 4400000,
-      "3": 3600000,
-      "4": 3900000,
-      "5": 3900000,
-      "6": 5100000,
-      "7": 4650000,
-      "8": 4650000
+      "1": 4750000,
+      "2": 4750000,
+      "3": 3950000,
+      "4": 4250000,
+      "5": 4250000,
+      "6": 5450000,
+      "7": 5000000,
+      "8": 5000000
     }
   },
   {
@@ -51952,9 +51952,9 @@ export const challengePlayers: Player[] = [
       "DEL"
     ],
     "basePrice": 4851127,
-    "currentPrice": 10600000,
-    "fantasyValue": 2.6,
-    "totalPoints": 23,
+    "currentPrice": 11800000,
+    "fantasyValue": 2.9,
+    "totalPoints": 26,
     "pointsByMatchday": {
       "1": 3,
       "2": 6,
@@ -51964,13 +51964,13 @@ export const challengePlayers: Player[] = [
       "6": 6,
       "7": 0,
       "8": 0,
-      "9": 0
+      "9": 3
     },
     "status": "disponible",
     "stats": {
-      "appearances": 5,
+      "appearances": 6,
       "goals": 1,
-      "assists": 6,
+      "assists": 7,
       "goalsConceded": 0,
       "cleanSheets": 0,
       "yellowCards": 0,
@@ -51984,7 +51984,7 @@ export const challengePlayers: Player[] = [
       "mvps": 0,
       "overloadPoints": 0,
       "minutes": 0,
-      "keyActions": 7,
+      "keyActions": 8,
       "keyPasses": 0,
       "overloadScore": 0,
       "saves": 0,
@@ -52004,7 +52004,7 @@ export const challengePlayers: Player[] = [
       "6": 11500000,
       "7": 10600000,
       "8": 10600000,
-      "9": 10600000
+      "9": 11800000
     }
   },
   {

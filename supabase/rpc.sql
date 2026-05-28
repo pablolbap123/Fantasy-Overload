@@ -1572,7 +1572,9 @@ begin
   from public.league_members base
   left join totals t on t.user_id = base.user_id
   where lm.id = base.id and base.league_id = p_league_id;
-
+if p_matchday_id is not null then
+    perform public.award_matchday_budget(p_league_id, p_matchday_id);
+  end if;
 end;
 $$;
 
